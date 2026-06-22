@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Silence the favicon.ico RoutingError — browsers always request this.
+  # Must be outside the locale scope so switch_locale never runs on it.
+  get "/favicon.ico", to: proc { [204, {}, []] }
+
   # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
 
