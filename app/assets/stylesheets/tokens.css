@@ -1,0 +1,24 @@
+/*
+ * NeuSkin design tokens — the committed palette and type system.
+ * See docs/DESIGN-AND-TECH-DIRECTION.md §1.2 / §1.3. These hexes are the
+ * single source of truth; every color on the site derives from them.
+ */
+:root {
+  /* Color */
+  --ground:       #F2EBDD; /* bone-parchment — default background */
+  --ground-deep:  #E7DDC9; /* deeper parchment — alternating bands */
+  --text:         #2A211B; /* oud-brown ink */
+  --text-soft:    #6B5D50; /* muted ink — secondary copy */
+  --accent:       #9C5B4E; /* clay-rose — the one bold color */
+  --accent-2:     #B89B6E; /* warm sand-gold — data, numerals */
+  --line:         #CDBFA6; /* hairline rules, card borders */
+  --night:        #241C16; /* warm near-black — footer, closing band */
+
+  /* Type roles */
+  --ar:    "Amiri", "Scheherazade New", "Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua", "Times New Roman", serif;
+  --sans:  "Optima", "Gill Sans", "Gill Sans MT", -apple-system, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --maxw: 1180px;
+}

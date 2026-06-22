@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Locale-scoped pages. Arabic is the default; English is /en.
+  # See docs/DESIGN-AND-TECH-DIRECTION.md §2.7 (path-prefix locales for SEO).
+  scope "(:locale)", locale: /ar|en/ do
+    root "pages#home"
+  end
 end

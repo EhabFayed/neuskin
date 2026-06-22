@@ -24,9 +24,11 @@ module App
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Only loads a smaller set of middleware suitable for API only apps.
-    # Middleware like session, flash, cookies can be added back manually.
-    # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    # Full-stack Hotwire monolith (not API-only): server-rendered ERB/ViewComponent
+    # views, Turbo + Stimulus, sessions/flash/cookies. See docs/DESIGN-AND-TECH-DIRECTION.md.
+
+    # Arabic-first, bilingual. Arabic is the default locale; English is the alternate.
+    config.i18n.available_locales = [:ar, :en]
+    config.i18n.default_locale = :ar
   end
 end

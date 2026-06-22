@@ -1,31 +1,31 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  brand:
+    name: "NEU SKIN"
+    city: "Riyadh"
+    positioning: "Riyadh's doctor-led skin intelligence clinic — subtle, medically guided results, without the noise."
+  nav:
+    clinic: "The Clinic"
+    doctor: "Dr. Maysa"
+    protocols: "Protocols"
+    stories: "Stories"
+    journal: "Journal"
+  cta:
+    inquire: "Inquire"
+    whatsapp: "Speak privately on WhatsApp"
+    assessment: "Request the Maysa Method™ Assessment"
+    private_inquiry: "Begin with a private inquiry"
+  footer:
+    clinic: "The Clinic"
+    care: "Care"
+    contact: "Contact"
+    about: "About"
+    team: "The Medical Team"
+    method: "The Maysa Method™"
+    bridal: "Bridal Concierge"
+    private_care: "Private Care · VIP"
+    faq: "FAQ"
+    address: "Al Malqa, Riyadh"
+    hours: "Sat–Thu · 10:00–22:00"
+    email: "care@neuskin.me"
+    disclaimer: "Results vary. All treatments are subject to medical consultation and individual assessment."
+    license: "SFDA · MOH licensed · PDPL compliant"

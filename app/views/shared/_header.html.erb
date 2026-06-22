@@ -1,0 +1,26 @@
+<header class="site-header" data-controller="header">
+  <%= link_to root_path, class: "brand" do %>
+    <span class="mark"><%= t("brand.name") %></span>
+    <span class="sub"><%= t("brand.city") %></span>
+  <% end %>
+
+  <nav class="site-nav">
+    <%= link_to t("nav.clinic"),    root_path(anchor: "clinic") %>
+    <%= link_to t("nav.doctor"),    root_path(anchor: "doctor") %>
+    <%= link_to t("nav.protocols"), root_path(anchor: "protocols") %>
+    <%= link_to t("nav.stories"),   root_path(anchor: "voices") %>
+    <%= link_to t("nav.journal"),   root_path(anchor: "journal") %>
+  </nav>
+
+  <div class="header-actions">
+    <a class="wa-icon" href="#" aria-label="WhatsApp" title="<%= t("cta.whatsapp") %>">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M3 21l1.6-4.5A8.4 8.4 0 1 1 8 19.4L3 21z"></path>
+      </svg>
+    </a>
+    <%# Language toggle: link to the same page in the other locale. %>
+    <% other = I18n.locale == :ar ? :en : :ar %>
+    <%= link_to "AR ⇄ EN", root_path(locale: (other == I18n.default_locale ? nil : other)), class: "lang-toggle" %>
+    <%= link_to t("cta.inquire"), root_path(anchor: "inquire"), class: "btn-inquire" %>
+  </div>
+</header>

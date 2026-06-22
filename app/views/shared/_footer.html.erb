@@ -1,0 +1,48 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-brand">
+        <span class="mark"><%= t("brand.name") %></span>
+        <p class="pos"><%= t("brand.positioning") %></p>
+        <div class="socials">
+          <a href="#">IG</a><a href="#">SNAP</a><a href="#">TIKTOK</a><a href="#">YT</a>
+        </div>
+      </div>
+
+      <div>
+        <h4><%= t("footer.clinic") %></h4>
+        <ul>
+          <li><%= link_to t("footer.about"),  root_path(anchor: "clinic") %></li>
+          <li><%= link_to t("nav.doctor"),    root_path(anchor: "doctor") %></li>
+          <li><%= link_to t("footer.team"),   "#" %></li>
+          <li><%= link_to t("footer.method"), "#" %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4><%= t("footer.care") %></h4>
+        <ul>
+          <li><%= link_to t("footer.bridal"),       "#" %></li>
+          <li><%= link_to t("footer.private_care"), "#" %></li>
+          <li><%= link_to t("nav.journal"),         "#" %></li>
+          <li><%= link_to t("footer.faq"),          "#" %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4><%= t("footer.contact") %></h4>
+        <ul>
+          <li><%= t("footer.address") %></li>
+          <li><%= t("footer.hours") %></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#"><%= t("footer.email") %></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subfoot">
+      <span><%= t("footer.disclaimer") %></span>
+      <span><%= t("footer.license") %></span>
+    </div>
+  </div>
+</footer>
