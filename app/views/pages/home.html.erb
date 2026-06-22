@@ -10,8 +10,8 @@
     The doctor-led skin intelligence clinic for women in Riyadh.
   </p>
   <div class="cta-row reveal d4" data-reveal-target="item">
-    <%= link_to t("cta.assessment"), root_path(anchor: "inquire"), class: "cta" %>
-    <a class="micro-cta" href="#"><%= t("cta.whatsapp") %></a>
+    <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
+    <%= link_to t("cta.whatsapp"), whatsapp_url, class: "micro-cta", target: "_blank", rel: "noopener" %>
   </div>
   <span class="scroll-cue">Scroll</span>
 </section>
@@ -50,7 +50,7 @@
         </blockquote>
         <p>I founded NeuSkin because I was tired of menus. A face is not a list of services. Before I treat anything, I map it — skin, hair, body, lifestyle — and I write you a plan you keep. That plan is the work. Everything after it is just patience.</p>
         <p class="signed" dir="rtl">— د. ميساء</p>
-        <%= link_to "Read her philosophy · اقرئي فلسفتها", "#", class: "textlink" %>
+        <%= link_to "Read her philosophy · اقرئي فلسفتها", dr_maysa_path, class: "textlink" %>
       </div>
     </div>
   </div>
@@ -64,9 +64,7 @@
       <h2><span class="ar" dir="rtl">البروتوكولات الستة</span>We work in protocols, not à-la-carte.</h2>
     </div>
     <div class="protocols">
-      <% protocols.each do |p| %>
-        <%= render "pages/protocol_card", protocol: p %>
-      <% end %>
+      <%= render partial: "protocols/card", collection: Protocol.all, as: :protocol %>
     </div>
   </div>
 </section>
@@ -107,7 +105,7 @@
     <span class="label">The invitation · الدعوة</span>
     <p class="line-ar" dir="rtl">ابدئي بمحادثة هادئة.</p>
     <p class="line-en">Begin a quiet conversation.</p>
-    <%= link_to t("cta.private_inquiry"), "#", class: "cta" %>
+    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
     <p class="signed" dir="rtl">— د. ميساء</p>
   </div>
 </section>

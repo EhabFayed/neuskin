@@ -1,0 +1,39 @@
+<%# Protocols Hub (§06): hero · "I'm here because…" filter · card grid. %>
+
+<section class="section section--deep protocols-hub" data-controller="reveal filter">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label">Six protocols · One philosophy · No menu pricing</span>
+      <h2>
+        <span class="ar" dir="rtl">ستة بروتوكولات. فلسفة واحدة. بلا قائمة أسعار.</span>
+        We work in protocols, not à-la-carte treatments.
+      </h2>
+    </div>
+
+    <%# Smart filter: visitor picks "I'm here because…" → cards filter by persona. %>
+    <div class="filter reveal" data-reveal-target="item">
+      <span class="filter-lead"><span class="ar" dir="rtl">أنا هنا لأنّني…</span> I'm here because…</span>
+      <div class="filter-chips" role="group" aria-label="Filter protocols">
+        <button type="button" class="chip is-active" data-action="filter#select" data-filter-persona-param="all"><span class="ar" dir="rtl">اعرضي الكل</span> · Show all</button>
+        <button type="button" class="chip" data-action="filter#select" data-filter-persona-param="bride"><span class="ar" dir="rtl">أنا عروس</span> · I'm a bride</button>
+        <button type="button" class="chip" data-action="filter#select" data-filter-persona-param="tired"><span class="ar" dir="rtl">بشرتي متعبة</span> · My skin feels tired</button>
+        <button type="button" class="chip" data-action="filter#select" data-filter-persona-param="hair"><span class="ar" dir="rtl">أريد شعري</span> · I want my hair back</button>
+        <button type="button" class="chip" data-action="filter#select" data-filter-persona-param="maintain"><span class="ar" dir="rtl">أريد الحفاظ</span> · I want to maintain</button>
+        <button type="button" class="chip" data-action="filter#select" data-filter-persona-param="unsure"><span class="ar" dir="rtl">لا أعرف بعد</span> · I don't know yet</button>
+      </div>
+    </div>
+
+    <div class="protocols">
+      <% @protocols.each do |protocol| %>
+        <div class="filter-item" data-filter-target="item" data-persona="<%= protocol.persona %>">
+          <%= render "protocols/card", protocol: protocol %>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="hub-closing reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl">لا تعرفين من أين تبدئين؟ ابدئي بتقييم منهج ميساء.</span>
+      Not sure where to start? Begin with the Maysa Method™ assessment.
+    </p>
+  </div>
+</section>

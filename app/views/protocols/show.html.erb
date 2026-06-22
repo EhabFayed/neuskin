@@ -1,0 +1,115 @@
+<%# Protocol template (§07a–f) — identical structure across all six protocols. %>
+<% p = @protocol %>
+
+<%# 1 · Hero — the protocol as an editorial proposition %>
+<section class="section proto-hero" data-controller="reveal">
+  <div class="wrap">
+    <span class="label reveal" data-reveal-target="item"><%= t("protocols.label") %> · <%= p.duration %></span>
+    <h1 class="proto-title reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= p.name_ar %><% if p.trademark %><span class="tm">™</span><% end %></span>
+      <span class="en"><%= p.name_en %><% if p.trademark %><span class="tm">™</span><% end %></span>
+    </h1>
+    <p class="proto-promise reveal" data-reveal-target="item"><%= p.promise %></p>
+    <%= link_to t("protocols.request", name: p.name_en), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta reveal", data: { reveal_target: "item" } %>
+  </div>
+</section>
+
+<%# 2 · Who it's for %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("protocols.who_for") %></span>
+    </div>
+    <p class="lead reveal" data-reveal-target="item"><%= p.who_for %></p>
+    <p class="honest reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl">هذا البروتوكول ليس للجميع — وهذا مقصود.</span>
+      This protocol is not for everyone — and that is intentional.
+    </p>
+  </div>
+</section>
+
+<%# 3 · What's inside (clinical scope + staged timeline) %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("protocols.inside") %></span>
+    </div>
+    <p class="lead reveal" data-reveal-target="item"><%= p.scope %></p>
+    <ol class="timeline">
+      <% p.stages.each do |stage| %>
+        <li class="stage reveal" data-reveal-target="item">
+          <span class="stage-week"><%= p.loc(stage, "week") %></span>
+          <h3 class="stage-title"><%= p.loc(stage, "title") %></h3>
+          <p class="stage-body"><%= p.loc(stage, "body") %></p>
+        </li>
+      <% end %>
+    </ol>
+    <p class="note reveal" data-reveal-target="item">
+      <%= t("protocols.scope_note") %>
+    </p>
+  </div>
+</section>
+
+<%# 4 · What's not included %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("protocols.excludes") %></span>
+    </div>
+    <p class="lead reveal" data-reveal-target="item"><%= p.excludes %></p>
+  </div>
+</section>
+
+<%# 5 · The patient journey (shared 4-step, consistent across the site) %>
+<%= render "shared/patient_journey" %>
+
+<%# 6 · One consented patient story %>
+<% if p.patient_story.present? %>
+  <section class="section" data-controller="reveal">
+    <div class="wrap narrow">
+      <div class="voice reveal" data-reveal-target="item" style="text-align:center">
+        <span class="mark">”</span>
+        <p class="q ar" dir="rtl"><%= p.loc(p.patient_story, "quote") %></p>
+        <p class="q"><%= p.patient_story["quote_en"] %></p>
+        <p class="by">— <%= p.patient_story["initials"] %> · <%= p.name_en %> · <%= p.patient_story["year"] %></p>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# 7 · Frequently asked (top 5) — accordion %>
+<% if p.faqs.present? %>
+  <section class="section section--deep" data-controller="reveal">
+    <div class="wrap narrow">
+      <div class="sec-head reveal" data-reveal-target="item">
+        <span class="label"><%= t("protocols.faq") %></span>
+      </div>
+      <% p.faqs.each do |faq| %>
+        <details class="faq reveal" data-reveal-target="item">
+          <summary>
+            <span class="ar" dir="rtl"><%= p.loc(faq, "q") %></span>
+            <span class="en"><%= faq["q_en"] %></span>
+          </summary>
+          <div class="faq-a">
+            <p class="ar" dir="rtl"><%= p.loc(faq, "a") %></p>
+            <p class="en"><%= faq["a_en"] %></p>
+            <p class="faq-sign" dir="rtl">— د. ميساء</p>
+          </div>
+        </details>
+      <% end %>
+    </div>
+  </section>
+<% end %>
+
+<%# 8 · CTA + WhatsApp codeword %>
+<section class="section section--night invite" id="inquire">
+  <div class="wrap">
+    <span class="label"><%= t("protocols.begin") %></span>
+    <p class="line-ar" dir="rtl"><%= p.name_ar %></p>
+    <p class="line-en"><%= p.name_en %></p>
+    <%= link_to t("protocols.request", name: p.name_en), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta" %>
+    <p class="codeword">
+      <%= t("protocols.codeword_html", word: content_tag(:strong, p.codeword)).html_safe %>
+    </p>
+  </div>
+</section>

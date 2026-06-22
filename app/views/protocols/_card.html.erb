@@ -1,0 +1,7 @@
+<%# One protocol card. Used on the homepage grid and the Protocols Hub. %>
+<%= link_to protocol_path(protocol), class: "proto reveal", data: { reveal_target: "item" } do %>
+  <span class="pname-ar" dir="rtl"><%= protocol.name_ar %><% if protocol.trademark %><span class="tm">™</span><% end %></span>
+  <span class="pname-en"><%= protocol.name_en %><% if protocol.trademark %><span class="tm">™</span><% end %></span>
+  <p class="promise"><%= protocol.promise %></p>
+  <span class="meta"><%= protocol.meta %></span>
+<% end %>

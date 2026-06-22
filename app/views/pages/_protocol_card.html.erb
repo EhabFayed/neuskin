@@ -1,8 +1,0 @@
-<%# Renders one protocol card. `protocol` is an OpenStruct/Hash for now;
-    swaps cleanly to a Protocol model later (same keys). %>
-<%= link_to "#", class: "proto reveal", data: { reveal_target: "item" } do %>
-  <span class="pname-ar" dir="rtl"><%= protocol[:name_ar] %><% if protocol[:tm] %><span class="tm">™</span><% end %></span>
-  <span class="pname-en"><%= protocol[:name_en] %><% if protocol[:tm] %><span class="tm">™</span><% end %></span>
-  <p class="promise"><%= protocol[:promise] %></p>
-  <span class="meta"><%= protocol[:meta] %></span>
-<% end %>

@@ -1,0 +1,99 @@
+<%# Private Care / VIP (§09) — gated, by invitation. Discretion is the entire offer. %>
+
+<%# Hero — a single sentence %>
+<section class="section vip-hero">
+  <div class="wrap narrow" style="text-align:center">
+    <span class="label"><%= t("vip.eyebrow") %></span>
+    <p class="vip-statement">
+      <span class="ar" dir="rtl"><%= t("vip.statement_ar") %></span>
+      <span class="en"><%= t("vip.statement_en") %></span>
+    </p>
+  </div>
+</section>
+
+<%# 1 · What Private Care includes %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("vip.includes_label") %></span>
+    </div>
+    <ul class="vip-includes">
+      <% t("vip.includes").each do |item| %>
+        <li class="reveal" data-reveal-target="item">
+          <span class="ar" dir="rtl"><%= item[:ar] %></span>
+          <span class="en"><%= item[:en] %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<%# 2 · Membership tiers (no public pricing) %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("vip.tiers_label") %></span>
+    </div>
+    <div class="vip-tiers">
+      <% t("vip.tiers").each do |tier| %>
+        <div class="vip-tier reveal" data-reveal-target="item">
+          <h3>
+            <span class="ar" dir="rtl"><%= tier[:name_ar] %></span>
+            <span class="en"><%= tier[:name_en] %></span>
+          </h3>
+          <p class="vip-tier-value"><%= tier[:value] %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 3 · Application (the only way in) — composes a private WhatsApp message %>
+<section class="section section--night vip-apply" id="apply" data-controller="vipapply">
+  <div class="wrap narrow">
+    <div class="sec-head" style="text-align:center">
+      <span class="label"><%= t("vip.apply_label") %></span>
+      <h2 class="vip-apply-title">
+        <span class="ar" dir="rtl"><%= t("vip.apply_title_ar") %></span>
+        <span class="en"><%= t("vip.apply_title_en") %></span>
+      </h2>
+    </div>
+
+    <div class="vip-form">
+      <label>
+        <span><%= t("vip.fields.name") %></span>
+        <input type="text" data-vipapply-target="name" autocomplete="name">
+      </label>
+      <label>
+        <span><%= t("vip.fields.contact") %></span>
+        <input type="text" data-vipapply-target="contact" inputmode="tel" autocomplete="tel">
+      </label>
+      <label>
+        <span><%= t("vip.fields.referral") %></span>
+        <input type="text" data-vipapply-target="referral">
+      </label>
+      <label>
+        <span><%= t("vip.fields.note") %></span>
+        <textarea data-vipapply-target="note" rows="3"></textarea>
+      </label>
+
+      <%# Falls back to a plain WhatsApp link if JS is off; JS rewrites href with the composed message. %>
+      <a class="cta" data-vipapply-target="submit"
+         data-action="vipapply#compose"
+         href="<%= whatsapp_url(codeword: "PRIVATE") %>"
+         target="_blank" rel="noopener"><%= t("vip.apply_button") %></a>
+    </div>
+  </div>
+</section>
+
+<%# 4 · Discretion policy, signed %>
+<section class="section" data-controller="reveal">
+  <div class="wrap narrow" style="text-align:center">
+    <span class="label reveal" data-reveal-target="item"><%= t("vip.discretion_label") %></span>
+    <p class="vip-discretion reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("vip.discretion_ar") %></span>
+      <span class="en"><%= t("vip.discretion_en") %></span>
+    </p>
+    <p class="signed reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
+  </div>
+</section>

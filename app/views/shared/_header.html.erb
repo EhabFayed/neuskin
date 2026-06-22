@@ -5,15 +5,15 @@
   <% end %>
 
   <nav class="site-nav">
-    <%= link_to t("nav.clinic"),    root_path(anchor: "clinic") %>
-    <%= link_to t("nav.doctor"),    root_path(anchor: "doctor") %>
-    <%= link_to t("nav.protocols"), root_path(anchor: "protocols") %>
-    <%= link_to t("nav.stories"),   root_path(anchor: "voices") %>
-    <%= link_to t("nav.journal"),   root_path(anchor: "journal") %>
+    <%= link_to t("nav.clinic"),    the_clinic_path %>
+    <%= link_to t("nav.doctor"),    dr_maysa_path %>
+    <%= link_to t("nav.protocols"), protocols_path %>
+    <%= link_to t("nav.stories"),   stories_path %>
+    <%= link_to t("nav.journal"),   journal_path %>
   </nav>
 
   <div class="header-actions">
-    <a class="wa-icon" href="#" aria-label="WhatsApp" title="<%= t("cta.whatsapp") %>">
+    <a class="wa-icon" href="<%= whatsapp_url %>" target="_blank" rel="noopener" aria-label="WhatsApp" title="<%= t("cta.whatsapp") %>">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
         <path d="M3 21l1.6-4.5A8.4 8.4 0 1 1 8 19.4L3 21z"></path>
       </svg>
@@ -21,6 +21,6 @@
     <%# Language toggle: link to the same page in the other locale. %>
     <% other = I18n.locale == :ar ? :en : :ar %>
     <%= link_to "AR ⇄ EN", root_path(locale: (other == I18n.default_locale ? nil : other)), class: "lang-toggle" %>
-    <%= link_to t("cta.inquire"), root_path(anchor: "inquire"), class: "btn-inquire" %>
+    <%= link_to t("cta.inquire"), inquire_path, class: "btn-inquire" %>
   </div>
 </header>

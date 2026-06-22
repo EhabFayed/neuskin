@@ -1,0 +1,38 @@
+<%# Shared legal page (§15). `doc` selects the i18n namespace: privacy / medical_disclaimer / terms. %>
+
+<section class="section legal-hero" data-controller="reveal">
+  <div class="wrap narrow">
+    <span class="label reveal" data-reveal-target="item"><%= t("legal.eyebrow") %></span>
+    <h1 class="legal-title reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("legal.#{doc}.title_ar") %></span>
+      <span class="en"><%= t("legal.#{doc}.title_en") %></span>
+    </h1>
+    <p class="legal-meta reveal" data-reveal-target="item"><%= t("legal.last_updated") %></p>
+  </div>
+</section>
+
+<section class="section legal-body" data-controller="reveal">
+  <div class="wrap narrow">
+    <%# Draft notice — these policies must be reviewed by a Saudi legal advisor before launch. %>
+    <aside class="legal-notice reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("legal.draft_notice_ar") %></span>
+      <span class="en"><%= t("legal.draft_notice_en") %></span>
+    </aside>
+
+    <% t("legal.#{doc}.sections").each do |sec| %>
+      <div class="legal-section reveal" data-reveal-target="item">
+        <h2>
+          <span class="ar" dir="rtl"><%= sec[:heading_ar] %></span>
+          <span class="en"><%= sec[:heading_en] %></span>
+        </h2>
+        <p class="ar" dir="rtl"><%= sec[:body_ar] %></p>
+        <p class="en"><%= sec[:body_en] %></p>
+      </div>
+    <% end %>
+
+    <p class="legal-contact reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("legal.contact_ar") %></span>
+      <span class="en"><%= t("legal.contact_en") %></span>
+    </p>
+  </div>
+</section>

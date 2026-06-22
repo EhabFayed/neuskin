@@ -1,0 +1,122 @@
+<%# The Maysa Method™ — the philosophy page (§05). Turns the framework into a category. %>
+
+<%# Hero — bold typographic statement %>
+<section class="section method-hero" data-controller="reveal">
+  <div class="wrap" style="text-align:center">
+    <span class="label reveal" data-reveal-target="item"><%= t("method.eyebrow") %></span>
+    <h1 class="method-statement reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("method.statement_ar") %></span>
+      <span class="en"><%= t("method.statement_en") %></span>
+    </h1>
+  </div>
+</section>
+
+<%# 1 · The principle (~150-word essay) %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow essay">
+    <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
+      <span class="label"><%= t("method.principle_label") %></span>
+    </div>
+    <% t("method.principle").each do |para| %>
+      <p class="reveal" data-reveal-target="item"><%= para %></p>
+    <% end %>
+  </div>
+</section>
+
+<%# 2 · The four pillars as one connected system %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("method.pillars_label") %></span>
+      <h2>
+        <span class="ar" dir="rtl"><%= t("method.pillars_title_ar") %></span>
+        <%= t("method.pillars_title_en") %>
+      </h2>
+    </div>
+    <div class="four-pillars">
+      <% %w[skin hair body lifestyle].each_with_index do |pillar, i| %>
+        <div class="four-pillar reveal" data-reveal-target="item">
+          <span class="four-pillar-num"><%= format("%02d", i + 1) %></span>
+          <h3>
+            <span class="ar" dir="rtl"><%= t("method.pillars.#{pillar}.title_ar") %></span>
+            <span class="en"><%= t("method.pillars.#{pillar}.title_en") %></span>
+          </h3>
+          <p><%= t("method.pillars.#{pillar}.body") %></p>
+        </div>
+      <% end %>
+    </div>
+    <p class="four-pillars-note reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("method.pillars_note_ar") %></span>
+      <%= t("method.pillars_note_en") %>
+    </p>
+  </div>
+</section>
+
+<%# 3 · What the Maysa Method is NOT (discipline + restraint) %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("method.not_label") %></span>
+    </div>
+    <ul class="not-list">
+      <% t("method.not_items").each do |item| %>
+        <li class="reveal" data-reveal-target="item">
+          <span class="ar" dir="rtl"><%= item[:ar] %></span>
+          <span class="en"><%= item[:en] %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<%# 4 · The 12-month timeline as a visual graphic %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("method.timeline_label") %></span>
+      <h2><span class="ar" dir="rtl"><%= t("method.timeline_title_ar") %></span><%= t("method.timeline_title_en") %></h2>
+    </div>
+    <ol class="year-timeline">
+      <% t("method.timeline").each do |phase| %>
+        <li class="year-phase reveal" data-reveal-target="item">
+          <span class="year-months"><%= phase[:months] %></span>
+          <h3>
+            <span class="ar" dir="rtl"><%= phase[:title_ar] %></span>
+            <span class="en"><%= phase[:title_en] %></span>
+          </h3>
+          <p><%= phase[:body] %></p>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</section>
+
+<%# 5 · Three patient stories (anonymous, consented) %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("method.stories_label") %></span>
+    </div>
+    <div class="voices">
+      <% t("method.stories").each do |q| %>
+        <div class="voice reveal" data-reveal-target="item">
+          <span class="mark">”</span>
+          <p class="q ar" dir="rtl"><%= q[:ar] %></p>
+          <p class="q"><%= q[:en] %></p>
+          <p class="by">— <%= q[:by] %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 6 · CTA %>
+<section class="section section--night invite">
+  <div class="wrap">
+    <span class="label"><%= t("method.cta_label") %></span>
+    <p class="line-ar" dir="rtl">منهج ميساء<span class="tm">™</span></p>
+    <p class="line-en">The Maysa Method™</p>
+    <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
+    <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "METHOD")).html_safe %></p>
+  </div>
+</section>

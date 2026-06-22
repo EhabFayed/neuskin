@@ -1,0 +1,44 @@
+<%# Journal (§12) — editorial magazine grid, not a blog feed. %>
+
+<section class="section journal-hero" data-controller="reveal">
+  <div class="wrap narrow" style="text-align:center">
+    <span class="label reveal" data-reveal-target="item"><%= t("journal.eyebrow") %></span>
+    <h1 class="journal-title reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("journal.title_ar") %></span>
+      <span class="en"><%= t("journal.title_en") %></span>
+    </h1>
+    <p class="journal-intro reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("journal.intro_ar") %></span>
+      <span class="en"><%= t("journal.intro_en") %></span>
+    </p>
+  </div>
+</section>
+
+<section class="section journal-body" data-controller="reveal">
+  <div class="wrap">
+    <%# Category labels — the strategy deck's content pillars. Static for now. %>
+    <div class="journal-cats reveal" data-reveal-target="item">
+      <% t("journal.categories").each do |cat| %>
+        <span class="journal-cat"><%= cat %></span>
+      <% end %>
+    </div>
+
+    <div class="journal-grid">
+      <% t("journal.articles").each_with_index do |article, i| %>
+        <article class="journal-card journal-card--<%= i % 3 %> reveal" data-reveal-target="item">
+          <div class="journal-image" aria-hidden="true"></div>
+          <div class="journal-card-body">
+            <span class="journal-card-cat"><%= article[:category] %></span>
+            <h2 class="journal-card-title">
+              <span class="ar" dir="rtl"><%= article[:title_ar] %></span>
+              <span class="en"><%= article[:title_en] %></span>
+            </h2>
+            <p class="journal-card-meta"><%= article[:byline] %> · <%= article[:reading_time] %></p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+
+    <p class="journal-note reveal" data-reveal-target="item"><%= t("journal.placeholder_note") %></p>
+  </div>
+</section>

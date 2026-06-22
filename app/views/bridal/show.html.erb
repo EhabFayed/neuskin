@@ -1,0 +1,141 @@
+<%# Bridal Concierge — the bride funnel (§10). %>
+
+<%# 1 · Hero + 2 · wedding-date picker (the number creates urgency) %>
+<section class="section bridal-hero" data-controller="countdown reveal"
+    data-countdown-ample-value="<%= t('bridal.windows.ample') %>"
+    data-countdown-ideal-value="<%= t('bridal.windows.ideal') %>"
+    data-countdown-soon-value="<%= t('bridal.windows.soon') %>"
+    data-countdown-today-value="<%= t('bridal.windows.today') %>"
+    data-countdown-days-label-value="<%= t('bridal.days_label') %>">
+  <div class="wrap narrow" style="text-align:center">
+    <span class="label reveal" data-reveal-target="item"><%= t("bridal.eyebrow") %></span>
+    <h1 class="bridal-title reveal" data-reveal-target="item">
+      <span class="ar" dir="rtl"><%= t("bridal.title_ar") %></span>
+      <span class="en"><%= t("bridal.title_en") %></span>
+    </h1>
+
+    <div class="date-ask reveal" data-reveal-target="item">
+      <label for="wedding-date">
+        <span class="ar" dir="rtl"><%= t("bridal.date_ask_ar") %></span>
+        <span class="en"><%= t("bridal.date_ask_en") %></span>
+      </label>
+      <input type="date" id="wedding-date"
+             data-countdown-target="input" data-action="change->countdown#change">
+
+      <div class="countdown" data-countdown-target="output" hidden>
+        <span class="countdown-days" data-countdown-target="days"></span>
+        <span class="countdown-msg" data-countdown-target="message"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 3 · The Bride's 180 timeline, month by month (reuses the protocol record) %>
+<% if @protocol %>
+  <section class="section section--deep" data-controller="reveal">
+    <div class="wrap">
+      <div class="sec-head reveal" data-reveal-target="item">
+        <span class="label"><%= t("bridal.timeline_label") %></span>
+        <h2>
+          <span class="ar" dir="rtl"><%= @protocol.name_ar %></span>
+          <%= @protocol.name_en %>
+        </h2>
+      </div>
+      <ol class="timeline">
+        <% @protocol.stages.each do |stage| %>
+          <li class="stage reveal" data-reveal-target="item">
+            <span class="stage-week"><%= @protocol.loc(stage, "week") %></span>
+            <h3 class="stage-title"><%= @protocol.loc(stage, "title") %></h3>
+            <p class="stage-body"><%= @protocol.loc(stage, "body") %></p>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  </section>
+<% end %>
+
+<%# 4 · What's planned, what's flexible, what's locked (reassurance) %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("bridal.reassure_label") %></span>
+    </div>
+    <div class="reassure-grid">
+      <% %w[planned flexible locked].each do |kind| %>
+        <div class="reassure reassure--<%= kind %> reveal" data-reveal-target="item">
+          <h3>
+            <span class="ar" dir="rtl"><%= t("bridal.reassure.#{kind}.title_ar") %></span>
+            <span class="en"><%= t("bridal.reassure.#{kind}.title_en") %></span>
+          </h3>
+          <p><%= t("bridal.reassure.#{kind}.body") %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 5 · Three anonymous bridal quotes %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap">
+    <div class="voices">
+      <% t("bridal.quotes").each do |q| %>
+        <div class="voice reveal" data-reveal-target="item">
+          <span class="mark">”</span>
+          <p class="q ar" dir="rtl"><%= q[:ar] %></p>
+          <p class="q"><%= q[:en] %></p>
+          <p class="by">— <%= q[:by] %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 6 · Mother / sister of the bride sub-card %>
+<section class="section" data-controller="reveal">
+  <div class="wrap narrow">
+    <div class="family-card reveal" data-reveal-target="item">
+      <span class="label"><%= t("bridal.family_label") %></span>
+      <p>
+        <span class="ar" dir="rtl"><%= t("bridal.family_ar") %></span>
+        <span class="en"><%= t("bridal.family_en") %></span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<%# 8 · Lead magnet — the 6-month bridal skin checklist (email-gated) %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow checklist">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("bridal.checklist.label") %></span>
+      <h2 class="checklist-title">
+        <span class="ar" dir="rtl"><%= t("bridal.checklist.title_ar") %></span>
+        <span class="en"><%= t("bridal.checklist.title_en") %></span>
+      </h2>
+    </div>
+
+    <% if params[:checklist] == "sent" %>
+      <p class="checklist-sent reveal" data-reveal-target="item"><%= t("bridal.checklist.sent") %></p>
+    <% else %>
+      <%= form_with model: @lead, url: bridal_checklist_path, method: :post, class: "checklist-form reveal", data: { reveal_target: "item" } do |f| %>
+        <% if @lead.errors.any? %>
+          <div class="form-errors"><% @lead.errors.full_messages.each do |m| %><p><%= m %></p><% end %></div>
+        <% end %>
+        <%= f.email_field :email, required: true, placeholder: t("bridal.checklist.email_ph") %>
+        <%= f.submit t("bridal.checklist.button"), class: "cta" %>
+      <% end %>
+      <p class="checklist-note reveal" data-reveal-target="item"><%= t("bridal.checklist.note") %></p>
+    <% end %>
+  </div>
+</section>
+
+<%# 7 · CTA — request your Bride's 180 plan · codeword BRIDE %>
+<section class="section section--night invite">
+  <div class="wrap">
+    <span class="label"><%= t("bridal.cta_label") %></span>
+    <p class="line-ar" dir="rtl"><%= t("bridal.cta_ar") %></p>
+    <p class="line-en"><%= t("bridal.cta_en") %></p>
+    <%= link_to t("bridal.cta_button"), inquire_path(codeword: "BRIDE", persona: "bride"), class: "cta" %>
+    <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "BRIDE")).html_safe %></p>
+  </div>
+</section>

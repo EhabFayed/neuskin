@@ -1,0 +1,115 @@
+<%# Dr. Maysa — the founder (§03). The most important page on the site. %>
+
+<%# 1 · Editorial portrait + one-line philosophy (full-bleed) %>
+<section class="maysa-hero">
+  <div class="maysa-portrait" role="img" aria-label="<%= t('maysa.portrait_alt') %>"></div>
+  <div class="maysa-hero-copy">
+    <span class="label"><%= t("maysa.eyebrow") %></span>
+    <p class="maysa-philosophy">
+      <span class="ar" dir="rtl"><%= t("maysa.philosophy_ar") %></span>
+      <span class="en"><%= t("maysa.philosophy_en") %></span>
+    </p>
+  </div>
+</section>
+
+<%# 2 · Credentials (visible, but quiet) %>
+<section class="section credentials" data-controller="reveal">
+  <div class="wrap">
+    <ul class="cred-bar reveal" data-reveal-target="item">
+      <% t("maysa.credentials").each do |cred| %>
+        <li><%= cred %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<%# 3 · How I think about treatment — long-form, signed, first person %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap narrow essay">
+    <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
+      <span class="label"><%= t("maysa.essay_label") %></span>
+    </div>
+    <% t("maysa.essay").each_with_index do |para, i| %>
+      <% if para.is_a?(Hash) %>
+        <blockquote class="pull reveal" data-reveal-target="item">
+          <span class="ar" dir="rtl"><%= para[:ar] %></span>
+          <span class="en"><%= para[:en] %></span>
+        </blockquote>
+      <% else %>
+        <p class="reveal" data-reveal-target="item"><%= para %></p>
+      <% end %>
+    <% end %>
+    <p class="essay-sign reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
+  </div>
+</section>
+
+<%# 4 · The Maysa Method™ explainer (3 steps) %>
+<section class="section" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("maysa.method_label") %></span>
+      <h2>
+        <span class="ar" dir="rtl">منهج ميساء<span class="tm">™</span></span>
+        The Maysa Method™
+      </h2>
+    </div>
+    <ol class="method-steps">
+      <% %w[diagnose plan review].each_with_index do |step, i| %>
+        <li class="method-step reveal" data-reveal-target="item">
+          <span class="num"><%= format("%02d", i + 1) %></span>
+          <h3>
+            <span class="ar" dir="rtl"><%= t("maysa.method.#{step}.title_ar") %></span>
+            <span class="en"><%= t("maysa.method.#{step}.title_en") %></span>
+          </h3>
+          <p><%= t("maysa.method.#{step}.body") %></p>
+        </li>
+      <% end %>
+    </ol>
+    <div class="method-cta reveal" data-reveal-target="item">
+      <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
+    </div>
+  </div>
+</section>
+
+<%# 5 · In her words (interview clips) — honest empty state until filmed %>
+<section class="section section--deep" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("maysa.words_label") %></span>
+    </div>
+    <div class="clips">
+      <% t("maysa.clips").each do |clip| %>
+        <div class="clip reveal" data-reveal-target="item">
+          <div class="clip-frame" aria-hidden="true"><span class="clip-soon"><%= t("maysa.coming_soon") %></span></div>
+          <p class="clip-title"><%= clip %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 6 · Press & media — empty better than fake (§03). Only renders if populated. %>
+<% press = t("maysa.press", default: []) %>
+<% if press.present? %>
+  <section class="section press" data-controller="reveal">
+    <div class="wrap">
+      <div class="sec-head reveal" data-reveal-target="item">
+        <span class="label"><%= t("maysa.press_label") %></span>
+      </div>
+      <div class="press-logos reveal" data-reveal-target="item">
+        <% press.each { |name| %><span class="press-logo"><%= name %></span><% } %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# 7 · CTA — request a private consultation with Dr. Maysa %>
+<section class="section section--night invite">
+  <div class="wrap">
+    <span class="label"><%= t("maysa.cta_label") %></span>
+    <p class="line-ar" dir="rtl"><%= t("maysa.cta_ar") %></p>
+    <p class="line-en"><%= t("maysa.cta_en") %></p>
+    <%= link_to t("maysa.cta_button"), inquire_path(codeword: "METHOD"), class: "cta" %>
+    <p class="codeword"><%= t("maysa.cta_note") %></p>
+  </div>
+</section>
