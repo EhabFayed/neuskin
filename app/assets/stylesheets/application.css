@@ -58,9 +58,12 @@ img { max-width: 100%; }
   padding: 14px 32px;
   box-shadow: 0 1px 0 var(--line);
 }
-.brand { display: flex; flex-direction: column; gap: 3px; line-height: 1; text-decoration: none; }
+.brand { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1; text-decoration: none; }
+.brand-logo { height: 50px; width: auto; display: block; transition: height .5s ease; }
+.site-header.solid .brand-logo { height: 40px; }
 .brand .mark { font-size: 1.35rem; letter-spacing: .18em; font-weight: 500; }
-.brand .sub  { font-family: var(--sans); font-size: .58rem; letter-spacing: .42em; color: var(--text-soft); text-transform: uppercase; }
+.brand .sub  { font-family: var(--sans); font-size: .56rem; letter-spacing: .42em; color: var(--text-soft); text-transform: uppercase; }
+@media (max-width: 900px) { .brand-logo { height: 42px; } }
 
 .site-nav { display: flex; gap: 36px; font-family: var(--sans); font-size: .82rem; letter-spacing: .07em; }
 .site-nav a { text-decoration: none; opacity: .82; transition: opacity .25s var(--ease-soft); position: relative; padding-block: 4px; }
@@ -282,8 +285,8 @@ img { max-width: 100%; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 70% 25%, #d8c4ac, transparent 60%),
-    linear-gradient(160deg, #c8ad90, #8d6f59);
+    radial-gradient(120% 90% at 70% 25%, #dccdd0, transparent 60%),
+    linear-gradient(160deg, #cbb3ba, #80646c);
   box-shadow: 0 30px 60px -30px rgba(42, 33, 27, .55);
 }
 .doctor-copy .label { display: block; margin-block-end: 20px; }
@@ -358,6 +361,8 @@ img { max-width: 100%; }
 .site-footer a { text-decoration: none; opacity: .85; }
 .site-footer a:hover { opacity: 1; color: var(--accent-2); }
 .footer-brand .mark { font-size: 1.3rem; letter-spacing: .18em; color: var(--ground); }
+/* Logo on the dark footer: lift the mauve so the monogram + wordmark read on near-black. */
+.footer-logo { height: 84px; width: auto; display: block; margin-block-end: 6px; filter: brightness(1.7) saturate(.8); }
 .footer-brand .pos { font-size: .92rem; max-width: 30ch; margin: 14px 0 18px; color: rgba(242, 235, 221, .6); }
 .socials { display: flex; gap: 14px; font-family: var(--sans); font-size: .7rem; letter-spacing: .1em; }
 .subfoot {
@@ -499,8 +504,8 @@ img { max-width: 100%; }
 .maysa-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 92vh; }
 .maysa-portrait {
   background:
-    radial-gradient(120% 90% at 65% 30%, #d8c4ac, transparent 60%),
-    linear-gradient(160deg, #c8ad90, #8d6f59);
+    radial-gradient(120% 90% at 65% 30%, #dccdd0, transparent 60%),
+    linear-gradient(160deg, #cbb3ba, #80646c);
 }
 .maysa-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 80px clamp(32px, 6vw, 96px); }
 .maysa-hero-copy .label { margin-block-end: 28px; }
@@ -543,7 +548,7 @@ img { max-width: 100%; }
 .clips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .clip-frame {
   aspect-ratio: 9 / 11; border-radius: 4px;
-  background: linear-gradient(165deg, #cdb494, #9a7c63);
+  background: linear-gradient(165deg, #cbb6bc, #8a7077);
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
@@ -629,7 +634,7 @@ img { max-width: 100%; }
 .clinic-hero-media {
   position: absolute; inset: 0;
   background:
-    radial-gradient(110% 80% at 30% 20%, #cdb79a, transparent 60%),
+    radial-gradient(110% 80% at 30% 20%, #ccb7bd, transparent 60%),
     linear-gradient(150deg, #b89e82, #6f5847);
 }
 /* When a real photo is supplied, it sits above the gradient fallback. */
@@ -653,11 +658,11 @@ img { max-width: 100%; }
 .space-shot.has-photo { background-image: var(--shot-photo); background-size: cover; background-position: center; }
 .space-shot.has-photo:hover { transform: scale(1.015); }
 /* varied warm placeholder fills, no two identical */
-.space-shot--0 { background: linear-gradient(150deg, #c9b094, #8a6e57); grid-column: span 4; min-height: 320px; }
+.space-shot--0 { background: linear-gradient(150deg, #c9b2b9, #7e646b); grid-column: span 4; min-height: 320px; }
 .space-shot--1 { background: linear-gradient(150deg, #bda787, #6f5946); grid-column: span 2; }
-.space-shot--2 { background: linear-gradient(150deg, #d0b89d, #97795f); grid-column: span 2; }
-.space-shot--3 { background: linear-gradient(150deg, #b69f80, #7a6250); grid-column: span 2; }
-.space-shot--4 { background: linear-gradient(150deg, #c4ac8d, #82664f); grid-column: span 2; }
+.space-shot--2 { background: linear-gradient(150deg, #cdb8be, #8a6f76); grid-column: span 2; }
+.space-shot--3 { background: linear-gradient(150deg, #b29aa2, #6f5860); grid-column: span 2; }
+.space-shot--4 { background: linear-gradient(150deg, #c4adb4, #785c63); grid-column: span 2; }
 .space-shot:nth-child(6) { grid-column: span 4; min-height: 300px; }
 @media (max-width: 760px) {
   .space-grid { grid-template-columns: 1fr 1fr; }
@@ -846,10 +851,10 @@ img { max-width: 100%; }
   aspect-ratio: 4 / 5; border-radius: 4px;
   box-shadow: 0 20px 44px -26px rgba(42,33,27,.5);
 }
-.team-portrait--0 { background: radial-gradient(120% 90% at 65% 25%, #d8c4ac, transparent 60%), linear-gradient(160deg, #c8ad90, #8d6f59); }
-.team-portrait--1 { background: radial-gradient(120% 90% at 60% 30%, #cfb89a, transparent 60%), linear-gradient(160deg, #bda788, #806449); }
-.team-portrait--2 { background: radial-gradient(120% 90% at 70% 20%, #d3bd9f, transparent 60%), linear-gradient(160deg, #c2a983, #8a6d54); }
-.team-portrait--3 { background: radial-gradient(120% 90% at 55% 28%, #cbb293, transparent 60%), linear-gradient(160deg, #b69d7c, #79604b); }
+.team-portrait--0 { background: radial-gradient(120% 90% at 65% 25%, #dccdd0, transparent 60%), linear-gradient(160deg, #cbb3ba, #80646c); }
+.team-portrait--1 { background: radial-gradient(120% 90% at 60% 30%, #cfb89a, transparent 60%), linear-gradient(160deg, #bda788, #74585f); }
+.team-portrait--2 { background: radial-gradient(120% 90% at 70% 20%, #cebbc1, transparent 60%), linear-gradient(160deg, #c1aab2, #8a6d54); }
+.team-portrait--3 { background: radial-gradient(120% 90% at 55% 28%, #c9b4ba, transparent 60%), linear-gradient(160deg, #b199a1, #6e565d); }
 .team-name { font-weight: 400; margin: 0 0 4px; }
 .team-name .ar { display: block; font-family: var(--ar); font-size: 1.7rem; }
 .team-name .en { display: block; font-size: 1rem; color: var(--text-soft); }
@@ -875,10 +880,10 @@ img { max-width: 100%; }
 
 .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px; }
 .journal-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.journal-image { aspect-ratio: 3 / 2; border-radius: 4px; margin-block-end: 18px; background: linear-gradient(155deg, #c9b094, #8a6e57); }
-.journal-card--0 .journal-image { background: linear-gradient(155deg, #cdb79a, #806449); }
-.journal-card--1 .journal-image { background: linear-gradient(155deg, #c2a983, #8a6d54); }
-.journal-card--2 .journal-image { background: linear-gradient(155deg, #b69d7c, #79604b); }
+.journal-image { aspect-ratio: 3 / 2; border-radius: 4px; margin-block-end: 18px; background: linear-gradient(155deg, #c9b2b9, #7e646b); }
+.journal-card--0 .journal-image { background: linear-gradient(155deg, #ccb7bd, #74585f); }
+.journal-card--1 .journal-image { background: linear-gradient(155deg, #c1aab2, #8a6d54); }
+.journal-card--2 .journal-image { background: linear-gradient(155deg, #b199a1, #6e565d); }
 .journal-card-cat { font-family: var(--sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
 .journal-card-title { font-weight: 400; margin: 10px 0 8px; }
 .journal-card-title .ar { display: block; font-family: var(--ar); font-size: 1.45rem; line-height: 1.4; }

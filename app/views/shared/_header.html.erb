@@ -1,6 +1,6 @@
 <header class="site-header" data-controller="header">
-  <%= link_to root_path, class: "brand" do %>
-    <span class="mark"><%= t("brand.name") %></span>
+  <%= link_to root_path, class: "brand", "aria-label": t("brand.name") do %>
+    <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: t("brand.name") %>
     <span class="sub"><%= t("brand.city") %></span>
   <% end %>
 

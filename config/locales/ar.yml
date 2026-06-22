@@ -23,8 +23,8 @@ ar:
       ar: "«أختار كل من يعمل معي بعناية، كما أختار كل خطة. الفريق امتدادٌ لطريقتي.»"
       en: "“I choose everyone who works with me as carefully as I choose each plan. The team is an extension of my method.”"
   home:
-    hero_h1: "بشرة تليق بجمالك<br>وثقة تليق بإطلالتك"
-    hero_sub: "عيادة الذكاء الجلدي بقيادة الطبيبة، للنساء في الرياض."
+    hero_h1: "رحلتك تبدأ من هنا."
+    hero_sub: "عناية فاخرة بالبشرة بقيادة الطبيبة، للنساء في الرياض — حيث نهتمّ بأدقّ التفاصيل."
     promise_label: "وعدنا"
     promise_title: "ثلاثة مبادئ نلتزم بها."
     founder_label: "المؤسِّسة"
@@ -39,7 +39,7 @@ ar:
       - { q: "«قالت لي د. ميساء \"لا\" أكثر مما قالت \"نعم\". وثقت بها أكثر.»", by: "R.K. · Maysa Method™ · 2025" }
       - { q: "«بعد الولادة استعدت شعري بهدوء، دون وعود كبيرة.»", by: "N.S. · Reset Crown · 2024" }
     invite_label: "الدعوة"
-    invite_line: "ابدئي بمحادثة هادئة."
+    invite_line: "لأنكِ تستحقين العناية الأرقى."
     credibility:
       - { ar: "بقيادة طبيبة", en: "Doctor-led" }
       - { ar: "مرخّصة · الهيئة العامة للغذاء والدواء ووزارة الصحة", en: "Licensed · SFDA & MOH" }
@@ -64,10 +64,10 @@ ar:
     stories: "قصص"
     journal: "المجلّة"
   cta:
-    inquire: "استفسري"
-    whatsapp: "تحدّثي معنا بسرية على واتساب"
-    assessment: "اطلبي تقييم منهج ميساء"
-    private_inquiry: "ابدئي باستفسار خاص"
+    inquire: "احجزي الآن"
+    whatsapp: "احجزي تجربتك عبر واتساب"
+    assessment: "احجزي تقييم منهج ميساء"
+    private_inquiry: "احجزي تجربتك الفاخرة"
   protocols:
     eyebrow_tagline: "ستة بروتوكولات · فلسفة واحدة · بلا قائمة أسعار"
     hub_title: "ستة بروتوكولات. فلسفة واحدة. بلا قائمة أسعار."

@@ -23,8 +23,8 @@ en:
       ar: "«أختار كل من يعمل معي بعناية، كما أختار كل خطة. الفريق امتدادٌ لطريقتي.»"
       en: "“I choose everyone who works with me as carefully as I choose each plan. The team is an extension of my method.”"
   home:
-    hero_h1: "Skin, measured. Confidence, quiet. Here."
-    hero_sub: "The doctor-led skin intelligence clinic for women in Riyadh."
+    hero_h1: "Your journey begins."
+    hero_sub: "Luxury skin care, doctor-led, for women in Riyadh — where every detail is tended to."
     promise_label: "The Promise"
     promise_title: "Three things we hold to."
     founder_label: "The Founder"
@@ -39,7 +39,7 @@ en:
       - { q: "Dr. Maysa told me “no” more than she told me “yes.” I trusted her more for it.", by: "R.K. · Maysa Method™ · 2025" }
       - { q: "After my pregnancy I got my hair back — quietly, with no big promises.", by: "N.S. · Reset Crown · 2024" }
     invite_label: "The invitation"
-    invite_line: "Begin a quiet conversation."
+    invite_line: "Because you deserve nothing less than the finest care."
     credibility:
       - { ar: "بقيادة طبيبة", en: "Doctor-led" }
       - { ar: "مرخّصة · الهيئة العامة للغذاء والدواء ووزارة الصحة", en: "Licensed · SFDA & MOH" }
@@ -64,10 +64,10 @@ en:
     stories: "Stories"
     journal: "Journal"
   cta:
-    inquire: "Inquire"
-    whatsapp: "Speak privately on WhatsApp"
-    assessment: "Request the Maysa Method™ Assessment"
-    private_inquiry: "Begin with a private inquiry"
+    inquire: "Book Now"
+    whatsapp: "Book your experience on WhatsApp"
+    assessment: "Book the Maysa Method™ Assessment"
+    private_inquiry: "Book your luxury experience"
   protocols:
     eyebrow_tagline: "Six protocols · One philosophy · No menu pricing"
     hub_title: "We work in protocols, not à-la-carte treatments."

@@ -1,18 +1,20 @@
 /*
- * NeuSkin design tokens — the committed palette and type system.
- * See docs/DESIGN-AND-TECH-DIRECTION.md §1.2 / §1.3. These hexes are the
- * single source of truth; every color on the site derives from them.
+ * NeuSkin design tokens — palette matched to the official brand identity
+ * (the NS monogram + brand deck, Milaknight June). The brand mark is a muted
+ * mauve / dusty-rose (#9C8484); the palette below derives from it. These hexes
+ * are the single source of truth; every color on the site derives from them.
  */
 :root {
-  /* Color */
-  --ground:       #F2EBDD; /* bone-parchment — default background */
-  --ground-deep:  #E7DDC9; /* deeper parchment — alternating bands */
-  --text:         #2A211B; /* oud-brown ink */
-  --text-soft:    #6B5D50; /* muted ink — secondary copy */
-  --accent:       #9C5B4E; /* clay-rose — the one bold color */
-  --accent-2:     #B89B6E; /* warm sand-gold — data, numerals */
-  --line:         #CDBFA6; /* hairline rules, card borders */
-  --night:        #241C16; /* warm near-black — footer, closing band */
+  /* Color /*— brand mauve over a soft parchment base */
+   --ground:       #F4EEE9; /* warm ivory — default background, cooled slightly toward rose */
+   --ground-deep:  #EBE0DC; /*deeper rose-ivory — alternating bands */
+   --text:         #2E2429; /* deep mauve-ink (near-black, rose undertone) */
+   --text-soft:    #7A6A70; /* muted mauve-grey — secondary copy */
+   --accent:       #8E6E76; /* brand mauve, deepened for legible CTAs — the one bold color */
+   --accent-2:     #A8909A; /* soft mauve-taupe — data, numerals, secondary accent */
+   --line:         #D8C8CC; /* dusty-rose hairline — rules, card borders */
+  --night:        #2B2126; /*warm near-black with rose undertone — footer, closing band */
+  --brand-mauve:  #9C8484; /* the exact logo mauve, for the monogram + brand touches */
 
   /* Type roles */
   --ar:    "Amiri", "Scheherazade New", "Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", serif;
@@ -29,4 +31,12 @@
 
   /* Motion */
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+/*  --ground:       #F2EBDD; /* bone-parchment — default background */
+/*  --ground-deep:  #E7DDC9; /* deeper parchment — alternating bands */
+/*  --text:         #2A211B; /* oud-brown ink */
+/*  --text-soft:    #6B5D50; /* muted ink — secondary copy */
+/*  --accent:       #9C5B4E; /* clay-rose — the one bold color */
+/*  --accent-2:     #B89B6E; /* warm sand-gold — data, numerals */
+/*  --line:         #CDBFA6; /* hairline rules, card borders */
+/*  --night:        #241C16; /* warm near-black — footer, closing band */
 }
