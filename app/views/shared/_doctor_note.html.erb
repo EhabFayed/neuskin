@@ -1,0 +1,8 @@
+<%# Quiet cross-page doctor anchor (voice split: first-person warmth, signed).
+    Pass `key` = an i18n key under `doctor_note.*` with ar/en strings. %>
+<aside class="doctor-note reveal" data-reveal-target="item">
+  <p class="doctor-note-quote" dir="<%= loc_dir %>">
+    <%= loc(ar: t("doctor_note.#{key}.ar"), en: t("doctor_note.#{key}.en")) %>
+  </p>
+  <p class="doctor-note-sign" dir="rtl">— د. ميساء</p>
+</aside>

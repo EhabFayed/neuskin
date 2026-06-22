@@ -1,13 +1,10 @@
 <%# About — The Clinic (§02). %>
 
-<%# 1 · Hero — clinic interior film (placeholder loop) + overlay headline %>
-<section class="clinic-hero">
+<%# 1 · Hero — clinic interior photograph + overlay headline %>
+<section class="clinic-hero has-photo" style="--hero-photo: url('<%= asset_path('site/lounge.jpg') %>')">
   <div class="clinic-hero-media" aria-hidden="true"></div>
   <div class="clinic-hero-overlay">
-    <p class="clinic-overline">
-      <span class="ar" dir="rtl"><%= t("clinic.hero_ar") %></span>
-      <span class="en"><%= t("clinic.hero_en") %></span>
-    </p>
+    <p class="clinic-overline" dir="<%= loc_dir %>"><%= loc(ar: t("clinic.hero_ar"), en: t("clinic.hero_en")) %></p>
   </div>
 </section>
 
@@ -30,9 +27,11 @@
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("clinic.space_label") %></span>
     </div>
+    <% space_photos = { 0 => "site/lounge.jpg", 2 => "site/plaster-texture.jpg", 5 => "site/desert-atmosphere.jpg" } %>
     <div class="space-grid">
       <% t("clinic.space_rooms").each_with_index do |room, i| %>
-        <figure class="space-shot space-shot--<%= i % 5 %> reveal" data-reveal-target="item">
+        <figure class="space-shot space-shot--<%= i % 5 %><%= " has-photo" if space_photos[i] %> reveal-img" data-reveal-target="item"
+                <%= "style=\"--shot-photo: url('#{asset_path(space_photos[i])}')\"".html_safe if space_photos[i] %>>
           <figcaption><%= room %></figcaption>
         </figure>
       <% end %>
@@ -51,10 +50,7 @@
     </div>
     <ul class="standard-list">
       <% t("clinic.standard").each do |item| %>
-        <li class="reveal" data-reveal-target="item">
-          <span class="ar" dir="rtl"><%= item[:ar] %></span>
-          <span class="en"><%= item[:en] %></span>
-        </li>
+        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
       <% end %>
     </ul>
   </div>
@@ -64,8 +60,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("clinic.cta_label") %></span>
-    <p class="line-ar" dir="rtl"><%= t("clinic.cta_ar") %></p>
-    <p class="line-en"><%= t("clinic.cta_en") %></p>
+    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= loc(ar: t("clinic.cta_ar"), en: t("clinic.cta_en")) %></p>
     <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
     <p class="codeword"><%= t("clinic.cta_note") %></p>
   </div>

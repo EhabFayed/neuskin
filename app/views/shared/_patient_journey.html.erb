@@ -8,9 +8,8 @@
       <% %w[inquire consult plan treat].each_with_index do |step, i| %>
         <li class="journey-step reveal" data-reveal-target="item">
           <span class="num"><%= format("%02d", i + 1) %></span>
-          <h3>
-            <span class="ar" dir="rtl"><%= t("journey.#{step}.title_ar") %></span>
-            <span class="en"><%= t("journey.#{step}.title_en") %></span>
+          <h3 dir="<%= loc_dir %>">
+            <%= loc(ar: t("journey.#{step}.title_ar"), en: t("journey.#{step}.title_en")) %>
           </h3>
           <p><%= t("journey.#{step}.body") %></p>
         </li>

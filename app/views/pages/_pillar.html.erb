@@ -1,5 +1,5 @@
 <div class="pillar reveal" data-reveal-target="item">
   <span class="num"><%= num %></span>
-  <h3><span class="ar" dir="rtl"><%= ar_title %></span><%= en_title %></h3>
-  <p><span class="ar" dir="rtl"><%= ar_body %></span><%= en_body %></p>
+  <h3 dir="<%= loc_dir %>"><%= loc(ar: ar_title, en: en_title) %></h3>
+  <p dir="<%= loc_dir %>"><%= loc(ar: ar_body, en: en_body) %></p>
 </div>

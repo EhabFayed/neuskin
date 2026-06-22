@@ -3,11 +3,9 @@
 <section class="hero" data-controller="reveal">
   <span class="seam"></span>
   <span class="label reveal d1" data-reveal-target="item">Arabic-first · Doctor-led · By consultation</span>
-  <h1 class="hero-ar reveal d2" data-reveal-target="item" dir="rtl">بشرة تليق بجمالك<br>وثقة تليق بإطلالتك</h1>
-  <p class="hero-en reveal d3" data-reveal-target="item">Skin, measured. Confidence, quiet. Here.</p>
-  <p class="hero-sub reveal d3" data-reveal-target="item">
-    <span class="ar" dir="rtl">عيادة الذكاء الجلدي بقيادة الطبيبة، للنساء في الرياض.</span>
-    The doctor-led skin intelligence clinic for women in Riyadh.
+  <h1 class="<%= ar? ? "hero-ar" : "hero-en" %> reveal d2" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("home.hero_h1").html_safe %></h1>
+  <p class="hero-sub reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
+    <%= t("home.hero_sub") %>
   </p>
   <div class="cta-row reveal d4" data-reveal-target="item">
     <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
@@ -16,12 +14,23 @@
   <span class="scroll-cue">Scroll</span>
 </section>
 
+<%# Quiet credibility strip — copy-woven trust, never a badge wall (Lutétia/Hortman). %>
+<section class="cred-strip" data-controller="reveal">
+  <div class="wrap">
+    <ul class="cred-strip-items reveal" data-reveal-target="item">
+      <% t("home.credibility").each do |item| %>
+        <li dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
 <%# Section 2 — The Promise (three pillars) %>
 <section class="section section--deep" id="clinic" data-controller="reveal">
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label">The Promise · وعدنا</span>
-      <h2>Three things we hold to.</h2>
+      <span class="label"><%= t("home.promise_label") %></span>
+      <h2 dir="<%= loc_dir %>"><%= t("home.promise_title") %></h2>
     </div>
     <div class="pillars">
       <%= render "pages/pillar", num: "01", ar_title: "بقيادة الطبيبة", en_title: "Doctor-led",
@@ -41,17 +50,33 @@
 <section class="section" id="doctor" data-controller="reveal">
   <div class="wrap">
     <div class="doctor">
-      <div class="portrait reveal" data-reveal-target="item" role="img" aria-label="Editorial portrait of Dr. Maysa"></div>
+      <div class="portrait has-photo reveal-img" data-reveal-target="item" style="--portrait-photo: url('<%= asset_path('site/people/maysa.jpg') %>')" role="img" aria-label="Editorial portrait of Dr. Maysa"></div>
       <div class="doctor-copy reveal" data-reveal-target="item">
-        <span class="label">The Founder · المؤسِّسة</span>
-        <blockquote>
-          <span class="ar" dir="rtl">«البشرة بيانات. اقرأيها أولًا، ثم عالجيها.»</span>
-          “Skin is data. Read it first — then treat it.”
+        <span class="label"><%= t("home.founder_label") %></span>
+        <blockquote dir="<%= loc_dir %>">
+          <%= t("home.founder_quote") %>
         </blockquote>
-        <p>I founded NeuSkin because I was tired of menus. A face is not a list of services. Before I treat anything, I map it — skin, hair, body, lifestyle — and I write you a plan you keep. That plan is the work. Everything after it is just patience.</p>
+        <p dir="<%= loc_dir %>"><%= t("home.founder_body") %></p>
         <p class="signed" dir="rtl">— د. ميساء</p>
-        <%= link_to "Read her philosophy · اقرئي فلسفتها", dr_maysa_path, class: "textlink" %>
+        <%= link_to t("home.founder_link"), dr_maysa_path, class: "textlink" %>
       </div>
+    </div>
+  </div>
+</section>
+
+<%# Concern-led discovery (dual-axis, Lutétia "vos besoins"). Routes into the hub by persona. %>
+<section class="section concern-strip" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("home.concern.label") %></span>
+      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("home.concern.title_ar"), en: t("home.concern.title_en")) %></h2>
+    </div>
+    <div class="concern-grid">
+      <% t("home.concern.items").each do |c| %>
+        <%= link_to protocols_path(persona: c[:persona]), class: "concern reveal", data: { reveal_target: "item" }, dir: loc_dir do %>
+          <%= loc(ar: c[:ar], en: c[:en]) %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </section>
@@ -60,8 +85,8 @@
 <section class="section section--deep" id="protocols" data-controller="reveal">
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label">Six named protocols · One philosophy · No menu pricing</span>
-      <h2><span class="ar" dir="rtl">البروتوكولات الستة</span>We work in protocols, not à-la-carte.</h2>
+      <span class="label"><%= t("protocols.eyebrow_tagline") %></span>
+      <h2 dir="<%= loc_dir %>"><%= t("home.protocols_title") %></h2>
     </div>
     <div class="protocols">
       <%= render partial: "protocols/card", collection: Protocol.all, as: :protocol %>
@@ -73,38 +98,27 @@
 <section class="section" id="voices" data-controller="reveal">
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label">Patient voice · بأصواتهنّ</span>
-      <h2>Quietly, in their own words.</h2>
+      <span class="label"><%= t("home.voice_label") %></span>
+      <h2 dir="<%= loc_dir %>"><%= t("home.voice_title") %></h2>
     </div>
     <div class="voices">
-      <div class="voice reveal" data-reveal-target="item">
-        <span class="mark">”</span>
-        <p class="q ar" dir="rtl">«لأول مرة شعرت أن أحدًا يخطّط لبشرتي، لا يبيع لي.»</p>
-        <p class="q">For the first time, someone was planning for my skin — not selling to me.</p>
-        <p class="by">— M.A. · Bride's 180 · 2025</p>
-      </div>
-      <div class="voice reveal" data-reveal-target="item">
-        <span class="mark">”</span>
-        <p class="q ar" dir="rtl">«قالت لي د. ميساء "لا" أكثر مما قالت "نعم". وثقت بها أكثر.»</p>
-        <p class="q">Dr. Maysa told me “no” more than she told me “yes.” I trusted her more for it.</p>
-        <p class="by">— R.K. · Maysa Method™ · 2025</p>
-      </div>
-      <div class="voice reveal" data-reveal-target="item">
-        <span class="mark">”</span>
-        <p class="q ar" dir="rtl">«بعد الولادة استعدت شعري بهدوء، دون وعود كبيرة.»</p>
-        <p class="q">After my pregnancy I got my hair back — quietly, with no big promises.</p>
-        <p class="by">— N.S. · Reset Crown · 2024</p>
-      </div>
+      <% t("home.voices").each do |v| %>
+        <div class="voice reveal" data-reveal-target="item">
+          <span class="mark">”</span>
+          <p class="q" dir="<%= loc_dir %>"><%= v[:q] %></p>
+          <p class="by">— <%= v[:by] %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
 
 <%# Section 6 — The invitation (closing CTA) %>
-<section class="section section--night invite" id="inquire">
+<section class="section section--night invite has-texture" id="inquire"
+         style="--band-photo: url('<%= asset_path('site/desert-atmosphere.jpg') %>')">
   <div class="wrap">
-    <span class="label">The invitation · الدعوة</span>
-    <p class="line-ar" dir="rtl">ابدئي بمحادثة هادئة.</p>
-    <p class="line-en">Begin a quiet conversation.</p>
+    <span class="label"><%= t("home.invite_label") %></span>
+    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= t("home.invite_line") %></p>
     <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
     <p class="signed" dir="rtl">— د. ميساء</p>
   </div>

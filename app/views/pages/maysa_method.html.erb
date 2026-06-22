@@ -4,10 +4,7 @@
 <section class="section method-hero" data-controller="reveal">
   <div class="wrap" style="text-align:center">
     <span class="label reveal" data-reveal-target="item"><%= t("method.eyebrow") %></span>
-    <h1 class="method-statement reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("method.statement_ar") %></span>
-      <span class="en"><%= t("method.statement_en") %></span>
-    </h1>
+    <h1 class="method-statement reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: t("method.statement_ar"), en: t("method.statement_en")) %></h1>
   </div>
 </section>
 
@@ -28,27 +25,18 @@
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("method.pillars_label") %></span>
-      <h2>
-        <span class="ar" dir="rtl"><%= t("method.pillars_title_ar") %></span>
-        <%= t("method.pillars_title_en") %>
-      </h2>
+      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars_title_ar"), en: t("method.pillars_title_en")) %></h2>
     </div>
     <div class="four-pillars">
       <% %w[skin hair body lifestyle].each_with_index do |pillar, i| %>
         <div class="four-pillar reveal" data-reveal-target="item">
           <span class="four-pillar-num"><%= format("%02d", i + 1) %></span>
-          <h3>
-            <span class="ar" dir="rtl"><%= t("method.pillars.#{pillar}.title_ar") %></span>
-            <span class="en"><%= t("method.pillars.#{pillar}.title_en") %></span>
-          </h3>
+          <h3 dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars.#{pillar}.title_ar"), en: t("method.pillars.#{pillar}.title_en")) %></h3>
           <p><%= t("method.pillars.#{pillar}.body") %></p>
         </div>
       <% end %>
     </div>
-    <p class="four-pillars-note reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("method.pillars_note_ar") %></span>
-      <%= t("method.pillars_note_en") %>
-    </p>
+    <p class="four-pillars-note reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars_note_ar"), en: t("method.pillars_note_en")) %></p>
   </div>
 </section>
 
@@ -60,10 +48,7 @@
     </div>
     <ul class="not-list">
       <% t("method.not_items").each do |item| %>
-        <li class="reveal" data-reveal-target="item">
-          <span class="ar" dir="rtl"><%= item[:ar] %></span>
-          <span class="en"><%= item[:en] %></span>
-        </li>
+        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
       <% end %>
     </ul>
   </div>
@@ -74,16 +59,13 @@
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("method.timeline_label") %></span>
-      <h2><span class="ar" dir="rtl"><%= t("method.timeline_title_ar") %></span><%= t("method.timeline_title_en") %></h2>
+      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("method.timeline_title_ar"), en: t("method.timeline_title_en")) %></h2>
     </div>
     <ol class="year-timeline">
       <% t("method.timeline").each do |phase| %>
         <li class="year-phase reveal" data-reveal-target="item">
           <span class="year-months"><%= phase[:months] %></span>
-          <h3>
-            <span class="ar" dir="rtl"><%= phase[:title_ar] %></span>
-            <span class="en"><%= phase[:title_en] %></span>
-          </h3>
+          <h3 dir="<%= loc_dir %>"><%= loc(ar: phase[:title_ar], en: phase[:title_en]) %></h3>
           <p><%= phase[:body] %></p>
         </li>
       <% end %>
@@ -101,8 +83,7 @@
       <% t("method.stories").each do |q| %>
         <div class="voice reveal" data-reveal-target="item">
           <span class="mark">”</span>
-          <p class="q ar" dir="rtl"><%= q[:ar] %></p>
-          <p class="q"><%= q[:en] %></p>
+          <p class="q" dir="<%= loc_dir %>"><%= loc(ar: q[:ar], en: q[:en]) %></p>
           <p class="by">— <%= q[:by] %></p>
         </div>
       <% end %>
@@ -114,8 +95,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("method.cta_label") %></span>
-    <p class="line-ar" dir="rtl">منهج ميساء<span class="tm">™</span></p>
-    <p class="line-en">The Maysa Method™</p>
+    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= t("method.brand_html").html_safe %></p>
     <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
     <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "METHOD")).html_safe %></p>
   </div>

@@ -15,6 +15,48 @@ ar:
     name: "نيو سكين"
     city: "الرياض"
     positioning: "عيادة الذكاء الجلدي بقيادة الطبيبة في الرياض — نتائج طبية هادئة، دون ضجيج."
+  doctor_note:
+    protocols:
+      ar: "«لا أبدأ من العلاج، بل من قراءة بشرتك. اختاري ما يقربك، وسنحدّد الباقي معًا.»"
+      en: "“I don't start from the treatment — I start from reading your skin. Choose what's closest; we'll decide the rest together.”"
+    team:
+      ar: "«أختار كل من يعمل معي بعناية، كما أختار كل خطة. الفريق امتدادٌ لطريقتي.»"
+      en: "“I choose everyone who works with me as carefully as I choose each plan. The team is an extension of my method.”"
+  home:
+    hero_h1: "بشرة تليق بجمالك<br>وثقة تليق بإطلالتك"
+    hero_sub: "عيادة الذكاء الجلدي بقيادة الطبيبة، للنساء في الرياض."
+    promise_label: "وعدنا"
+    promise_title: "ثلاثة مبادئ نلتزم بها."
+    founder_label: "المؤسِّسة"
+    founder_quote: "«البشرة بيانات. اقرأيها أولًا، ثم عالجيها.»"
+    founder_body: "أسّست نيو سكين لأنني سئمت القوائم. الوجه ليس قائمة خدمات. قبل أن أعالج أي شيء، أقرأه — بشرةً وشعرًا وجسمًا ونمط حياة — وأكتب لكِ خطة تحتفظين بها. الخطة هي العمل، وما بعدها صبر."
+    founder_link: "اقرئي فلسفتها"
+    protocols_title: "البروتوكولات الستة"
+    voice_label: "بأصواتهنّ"
+    voice_title: "بهدوء، بكلماتهنّ."
+    voices:
+      - { q: "«لأول مرة شعرت أن أحدًا يخطّط لبشرتي، لا يبيع لي.»", by: "M.A. · Bride's 180 · 2025" }
+      - { q: "«قالت لي د. ميساء \"لا\" أكثر مما قالت \"نعم\". وثقت بها أكثر.»", by: "R.K. · Maysa Method™ · 2025" }
+      - { q: "«بعد الولادة استعدت شعري بهدوء، دون وعود كبيرة.»", by: "N.S. · Reset Crown · 2024" }
+    invite_label: "الدعوة"
+    invite_line: "ابدئي بمحادثة هادئة."
+    credibility:
+      - { ar: "بقيادة طبيبة", en: "Doctor-led" }
+      - { ar: "مرخّصة · الهيئة العامة للغذاء والدواء ووزارة الصحة", en: "Licensed · SFDA & MOH" }
+      - { ar: "ملتزمة بحماية البيانات", en: "PDPL compliant" }
+      - { ar: "بالاستشارة، لا بقائمة أسعار", en: "By consultation, never a price list" }
+    concern:
+      label: "من أين تبدئين"
+
+      title_ar: "ابدئي من همّك."
+      title_en: "Begin with your concern."
+      items:
+        - { persona: "bride",    ar: "أنا عروس", en: "I'm a bride" }
+        - { persona: "tired",    ar: "بشرتي متعبة", en: "My skin feels tired" }
+        - { persona: "hair",     ar: "أريد شعري", en: "I want my hair back" }
+        - { persona: "maintain", ar: "أريد الحفاظ على نتائجي", en: "I want to maintain" }
+        - { persona: "fresh",    ar: "أريد بداية جديدة", en: "I want to start fresh" }
+        - { persona: "unsure",   ar: "لا أعرف بعد", en: "I don't know yet" }
   nav:
     clinic: "العيادة"
     doctor: "د. ميساء"
@@ -27,17 +69,35 @@ ar:
     assessment: "اطلبي تقييم منهج ميساء"
     private_inquiry: "ابدئي باستفسار خاص"
   protocols:
+    eyebrow_tagline: "ستة بروتوكولات · فلسفة واحدة · بلا قائمة أسعار"
+    hub_title: "ستة بروتوكولات. فلسفة واحدة. بلا قائمة أسعار."
+    hub_filter_lead: "أنا هنا لأنّني…"
+    hub_closing: "لا تعرفين من أين تبدئين؟ ابدئي بتقييم منهج ميساء."
+    hub_chips:
+      all: "اعرضي الكل"
+      bride: "أنا عروس"
+      tired: "بشرتي متعبة"
+      hair: "أريد شعري"
+      maintain: "أريد الحفاظ"
+      unsure: "لا أعرف بعد"
+    not_for_all: "هذا البروتوكول ليس للجميع — وهذا مقصود."
     label: "بروتوكول"
-    who_for: "لمن صُمّم · Who it's for"
-    inside: "ما يتضمّنه · What's inside"
-    excludes: "ما لا يشمله · What's not included"
-    faq: "الأسئلة الشائعة · Frequently asked"
-    begin: "الدعوة · The invitation"
+    who_for: "لمن صُمّم"
+
+    inside: "ما يتضمّنه"
+
+    excludes: "ما لا يشمله"
+
+    faq: "الأسئلة الشائعة"
+
+    begin: "الدعوة"
+
     request: "اطلبي خطة %{name}"
     scope_note: "يُحدَّد النطاق النهائي للبروتوكول خلال تقييم منهج ميساء. جميع العلاجات مُصمّمة فرديًا."
     codeword_html: "أرسلي %{word} على واتساب لاستفسار خاص."
   legal:
-    eyebrow: "القانونية والامتثال · Legal & Compliance"
+    eyebrow: "القانونية والامتثال"
+
     last_updated: "آخر تحديث: قيد النشر"
     draft_notice_ar: "هذه مسودّة. تخضع هذه السياسات لمراجعة مستشار قانوني سعودي قبل النشر."
     draft_notice_en: "This is a draft. These policies are subject to review by a Saudi legal advisor before publication."
@@ -88,14 +148,19 @@ ar:
     cookies:
       title_ar: "نستخدم ملفات تعريف الارتباط الأساسية لتشغيل الموقع، وملفات اختيارية لفهم الاستخدام."
       title_en: "We use essential cookies to run the site, and optional ones to understand usage."
-      accept: "أوافق · Accept"
-      decline: "الأساسية فقط · Essential only"
-      more: "الخصوصية · Privacy"
+      accept: "أوافق"
+
+      decline: "الأساسية فقط"
+
+      more: "الخصوصية"
+
   vip:
-    eyebrow: "العناية الخاصة · Private Care"
+    eyebrow: "العناية الخاصة"
+
     statement_ar: "العناية الخاصة بالدعوة. إن كنتِ تقرئين هذه الصفحة، فقد تكونين مؤهّلة بالفعل."
     statement_en: "Private Care is by invitation. If you are reading this page, you may already qualify."
-    includes_label: "ما تتضمّنه · What it includes"
+    includes_label: "ما تتضمّنه"
+
     includes:
       - { ar: "خط واتساب خاص ومسؤولة علاقات مخصّصة لكِ وحدك.", en: "A private WhatsApp line and a patient relations lead dedicated to you alone." }
       - { ar: "ساعات خاصة وجناح منفصل، وأولوية في المواعيد.", en: "Private hours, a separate suite, and priority scheduling." }
@@ -104,32 +169,43 @@ ar:
       - { ar: "باقات للمناسبات الخاصة والأعراس عند الطلب.", en: "Bridal and private-event packages on request." }
       - { ar: "استقبال ومغادرة بسرية، وخدمة ركن سيارة.", en: "Discreet check-in and check-out, with valet pickup." }
       - { ar: "التزام استجابة أقل من ساعتين، من ٩:٠٠ حتى ٢٢:٠٠.", en: "A concierge SLA — under two hours, 09:00–22:00." }
-    tiers_label: "العضوية · Membership"
+    tiers_label: "العضوية"
+
     tiers:
       - { name_ar: "المطّلعة", name_en: "Skin Insider", value: "عناية مستمرة، ومراجعات فصلية، وأولوية في المواعيد." }
       - { name_ar: "المطّلعة بلس", name_en: "Skin Insider+", value: "كل ما في «المطّلعة»، مع مسؤولة مخصّصة وساعات خاصة." }
       - { name_ar: "كونسيرج البشرة", name_en: "Skin Concierge", value: "المسار الخاص الكامل — خارطة طريق مفصّلة، ودخول الجناح، وباقات المناسبات." }
-    apply_label: "المدخل الوحيد · The only way in"
+    apply_label: "المدخل الوحيد"
+
     apply_title_ar: "طلب انضمام خاص"
     apply_title_en: "A private application"
     apply_button: "أرسلي طلبي بسرية"
     fields:
-      name: "الاسم · Your name"
-      contact: "وسيلة التواصل · Contact"
-      referral: "بدعوة من · Referred by"
-      note: "ملاحظة موجزة · A brief note"
-    discretion_label: "عن السرية · On discretion"
+      name: "الاسم"
+
+      contact: "وسيلة التواصل"
+
+      referral: "بدعوة من"
+
+      note: "ملاحظة موجزة"
+
+    discretion_label: "عن السرية"
+
     discretion_ar: "ما يُقال في هذه العيادة، يبقى فيها. لا أسماء، لا صور، لا استثناءات دون موافقتك الصريحة. الخصوصية ليست خدمة نقدّمها — إنها شرطٌ نعمل به."
     discretion_en: "What is said in this clinic stays in it. No names, no images, no exceptions without your explicit consent. Privacy is not a service we offer — it is a condition we work under."
   method:
-    eyebrow: "منهج ميساء · The Maysa Method™"
+    brand_html: "منهج ميساء<span class=\"tm\">™</span>"
+    eyebrow: "منهج ميساء"
+
     statement_ar: "البشرة بيانات. اقرأيها، ثم عالجيها."
     statement_en: "Skin is data. Read it, then treat it."
-    principle_label: "المبدأ · The principle"
+    principle_label: "المبدأ"
+
     principle:
       - "تبدأ معظم العيادات بعلاجٍ ثم تبحث عن وجهٍ تطبّقه عليه. منهج ميساء يبدأ بالعكس. يعامل البشرة كنظامٍ يمكن قراءته — يُقاس ويُرسَم ويُفهَم — قبل اتخاذ أي قرار."
       - "من تلك القراءة تأتي خطة، لا عملية بيع. المنهج ليس إجراءً تحجزينه؛ بل هو الانضباط الذي يقرّر أي الإجراءات يستحقّ الحجز، وبأي ترتيب، وعلى أي مدى. إنه الفرق بين نتيجة تبدو «مصنوعة» ونتيجة تبدو أنتِ."
-    pillars_label: "الركائز الأربع · The four pillars"
+    pillars_label: "الركائز الأربع"
+
     pillars_title_ar: "نظام واحد، أربع ركائز"
     pillars_title_en: "One system, four pillars"
     pillars:
@@ -139,13 +215,15 @@ ar:
       lifestyle: { title_ar: "نمط الحياة", title_en: "Lifestyle", body: "النوم والشمس والإجهاد والعادة — مدخلاتٌ لا يتجاوزها أي جهاز." }
     pillars_note_ar: "لا تُعالَج أيٌّ منها بمعزل عن الأخرى. هذا هو المنهج."
     pillars_note_en: "None is treated in isolation from the others. That is the method."
-    not_label: "ما ليس عليه · What it is not"
+    not_label: "ما ليس عليه"
+
     not_items:
       - { ar: "ليس علاجًا واحدًا.", en: "It is not a single treatment." }
       - { ar: "ليس حلًّا سريعًا.", en: "It is not a quick fix." }
       - { ar: "ليس قائمة أسعار.", en: "It is not a price list." }
       - { ar: "ليس وعدًا بنتيجة قبل قراءة بشرتك.", en: "It is not a promise made before your skin is read." }
-    timeline_label: "السنة · The year"
+    timeline_label: "السنة"
+
     timeline_title_ar: "اثنا عشر شهرًا، مرسومة."
     timeline_title_en: "Twelve months, mapped."
     timeline:
@@ -153,14 +231,17 @@ ar:
       - { months: "الأشهر ٤–٦", title_ar: "التأسيس", title_en: "Build the base", body: "تبدأ البروتوكولات الأساسية، متسلسلةً كي لا تُرهَق البشرة." }
       - { months: "الأشهر ٧–٩", title_ar: "التحسين", title_en: "Refine", body: "نقيس مقابل خط الأساس ونعدّل ما تطلبه البيانات." }
       - { months: "الأشهر ١٠–١٢", title_ar: "الحفاظ", title_en: "Hold the result", body: "يستقرّ الحفاظ على النتيجة، وتصبح المراجعة الفصلية إيقاعًا هادئًا." }
-    stories_label: "بأصواتهنّ · In their words"
+    stories_label: "بأصواتهنّ"
+
     stories:
       - { ar: "للمرة الأولى فهمت لماذا نفعل كل خطوة، لا فقط ماذا نفعل.", en: "For the first time I understood why we did each step — not just what.", by: "A.M. · 2025" }
       - { ar: "الخطة المكتوبة جعلتني أثق. كنت أعرف دائمًا ما يأتي بعد.", en: "The written plan made me trust it. I always knew what came next.", by: "L.S. · 2025" }
       - { ar: "النتيجة لم تبدُ كأنني فعلت شيئًا — بدت كأنني أنا.", en: "The result didn't look like I'd done something — it looked like me.", by: "R.A. · 2024" }
-    cta_label: "ابدئي · Begin"
+    cta_label: "ابدئي"
+
   journal:
-    eyebrow: "المجلّة · Journal"
+    eyebrow: "المجلّة"
+
     title_ar: "ملاحظات من العيادة."
     title_en: "Notes from the clinic."
     intro_ar: "ليست مدوّنة، بل مجلّة هادئة — صوت الطبيبة، وما يجري داخل العيادة، وطقوس الموسم."
@@ -179,23 +260,28 @@ ar:
       - { category: "طقوس", title_ar: "توهّج ما قبل العيد", title_en: "The pre-Eid glow", byline: "د. ميساء", reading_time: "٤ دقائق" }
       - { category: "داخل العيادة", title_ar: "كيف نقيس النتائج", title_en: "How we measure results", byline: "نيو سكين", reading_time: "٥ دقائق" }
   stories:
-    eyebrow: "قصص المريضات · Patient Stories"
+    eyebrow: "قصص المريضات"
+
     title_ar: "بأصواتهنّ، حين يأذنّ."
     title_en: "In their words, when they allow it."
     empty_ar: "لم ننشر قصصًا بعد. حين نفعل، ستكون حقيقية وبموافقة كاملة — لا صورًا من أرشيف، ولا كلامًا منسوبًا لأحد لم يقله."
     empty_en: "We have not published stories yet. When we do, they will be real and fully consented — no stock imagery, no words put in anyone's mouth."
     policy_ar: "كل قصة تبدأ بإذنٍ مكتوب. الصور، إن وُجدت، بإطار موحّد وموافقة منفصلة. ولكِ أن تسحبي إذنك في أي وقت."
     policy_en: "Every story begins with written consent. Photographs, where they exist, use a standardised framing and separate consent — and you may withdraw yours at any time."
-    cta_label: "بهدوء · Quietly"
+    cta_label: "بهدوء"
+
     cta_ar: "أفضل قصة هي قصّتك أنت."
     cta_en: "The best story is your own."
   faq:
-    eyebrow: "الأسئلة الشائعة · FAQ"
+    eyebrow: "الأسئلة الشائعة"
+
     title_ar: "الأسئلة التي تسبق القرار."
     title_en: "The questions that come before a decision."
-    search_ph: "ابحثي في الأسئلة… · Search the questions"
+    search_ph: "ابحثي في الأسئلة…"
+
     no_results: "لا يوجد سؤال مطابق. أرسليه لنا بسرية وستجيبك د. ميساء."
-    cta_label: "ما زال لديك سؤال؟ · Still wondering?"
+    cta_label: "ما زال لديك سؤال؟"
+
     cta_ar: "سؤال لم نُجب عنه؟ اسألينا بسرية."
     cta_en: "A question we didn't answer? Ask us privately."
     groups:
@@ -238,12 +324,14 @@ ar:
   clinic:
     hero_ar: "عيادة خاصة في الملقا، بُنيت حول سؤال واحد: كيف ستبدو بشرتك بعد خمس سنوات؟"
     hero_en: "A private clinic in Al Malqa, built around one question: what will your skin look like in five years?"
-    story_label: "القصة · The story"
+    story_label: "القصة"
+
     story:
       - "لم نشأ لنفتح عيادة تجميل أخرى. في الرياض كثيرٌ منها. شرعنا لنجيب عن سؤال نادرًا ما تطرحه العيادات: ليس ماذا تريدين أن نفعل اليوم، بل أين تريدين أن تكون بشرتك بعد خمس سنوات؟"
       - "بدأت نيو سكين بذلك السؤال وبقناعة — أن البشرة ليست سلسلة من الإصلاحات، بل نظامٌ يستحقّ أن يُقرأ قبل أن يُعالَج. فبنينا عيادةً حول القراءة. تقود الطبيبة كل خطة. لا شيء يُباع من قائمة. النتائج تُقاس، لا تُوعَد."
       - "اخترنا الملقا لهدوئها. أبقينا الغرف قليلة والأوقات غير مستعجلة. نعالج عددًا أقل من المريضات، بعناية أكبر — لأن العمل الذي نؤمن به لا يُنجَز بالكمّ. هذه عيادة للمرأة التي تريد نتائج تشبهها، تُبلَغ ببطء، وتبقى خاصة."
-    space_label: "المكان · The space"
+    space_label: "المكان"
+
     space_rooms:
       - "المدخل · The entrance"
       - "صالة الانتظار الخاصة · Private waiting lounge"
@@ -251,19 +339,22 @@ ar:
       - "غرفة العلاج · Treatment room"
       - "غرفة الأجهزة · Device room"
       - "الجناح الخاص · The private suite"
-    standard_label: "المعايير · The standard"
+    standard_label: "المعايير"
+
     standard:
       - { ar: "تعمل العيادة بترخيص الهيئة العامة للغذاء والدواء ووزارة الصحة، وأرقام التراخيص ظاهرة في تذييل كل صفحة.", en: "The clinic operates under SFDA and MOH licences, with licence numbers visible in the footer of every page." }
       - { ar: "يحمل كل ممارس ترخيصًا مهنيًا ساريًا ضمن مجال تخصّصه.", en: "Every practitioner holds a current professional licence within their scope of practice." }
       - { ar: "خصوصيتك محمية وفق نظام حماية البيانات الشخصية. لا يُطّلع على ملفّك إلا من يعالجك.", en: "Your privacy is protected under the Personal Data Protection Law. Only those treating you see your file." }
       - { ar: "لا نلتقط أي صورة دون موافقتك المكتوبة، وبإطار تصوير موحّد.", en: "We take no photograph without your written consent, under a standardised framing." }
       - { ar: "النتائج تختلف من شخص لآخر. هذا ليس بندًا قانونيًا — إنه صدقٌ نبدأ به كل خطة.", en: "Results vary from person to person. This isn't fine print — it's the honesty we begin every plan with." }
-    cta_label: "الدعوة · The invitation"
+    cta_label: "الدعوة"
+
     cta_ar: "ابدئي محادثة هادئة."
     cta_en: "Begin a quiet conversation."
     cta_note: "نردّ من السبت إلى الخميس، ١٠:٠٠–٢٢:٠٠."
   bridal:
-    eyebrow: "كونسيرج العرائس · Bridal Concierge"
+    eyebrow: "كونسيرج العرائس"
+
     title_ar: "بشرتك في يومك — مخطّطة منذ اليوم."
     title_en: "Your skin on your day — planned from today."
     date_ask_ar: "متى موعد زفافك؟"
@@ -274,8 +365,10 @@ ar:
       ideal: "النافذة المثالية. هذا تمامًا حين تؤتي عروس ١٨٠ أفضل ثمارها."
       soon: "الموعد قريب — لكننا نستطيع المساعدة. سنعطي الأولوية لما يهمّ قبل يومك."
       today: "لنتحدّث عن التوقيت. أرسلي لنا موعدك ونخطّط من حيث أنت."
-    timeline_label: "الخطة · The plan"
-    reassure_label: "ما هو مخطّط ومرن وثابت · What's planned, flexible & locked"
+    timeline_label: "الخطة"
+
+    reassure_label: "ما هو مخطّط ومرن وثابت"
+
     reassure:
       planned:  { title_ar: "مخطّط", title_en: "Planned", body: "كل شهر مرسوم مسبقًا — تعرفين دائمًا ما يأتي بعده." }
       flexible: { title_ar: "مرن", title_en: "Flexible", body: "الحياة تتغيّر. نعدّل التسلسل وفق جدولك واستجابة بشرتك." }
@@ -284,11 +377,13 @@ ar:
       - { ar: "وصلت إلى يومي وأنا مطمئنة، كل شيء كان مخطّطًا.", en: "I arrived at my day calm — everything had been planned.", by: "M.A. · Bride's 180 · 2025" }
       - { ar: "لم أُجرِ أي شيء جديد في الأسبوع الأخير، وهذا أراحني كثيرًا.", en: "Nothing new in the final week — that alone put me at ease.", by: "H.F. · Bride's 180 · 2025" }
       - { ar: "بدت بشرتي كأنها أنا، في أفضل حالاتها.", en: "My skin looked like me — at my best.", by: "S.A. · Bride's 180 · 2024" }
-    family_label: "لأم العروس وأختها · For mother & sister of the bride"
+    family_label: "لأم العروس وأختها"
+
     family_ar: "كثيرًا ما تبدأ الرحلة بسؤال من الأم أو الأخت. نرحّب بكنّ في التخطيط — بالخصوصية ذاتها."
     family_en: "Often the journey begins with a question from a mother or sister. You're welcome in the planning — with the same discretion."
     checklist:
-      label: "مجانًا · Free"
+      label: "مجانًا"
+
       title_ar: "قائمة العناية ببشرة العروس — ٦ أشهر"
       title_en: "The 6-month bridal skin checklist"
       email_ph: "بريدك الإلكتروني"
@@ -296,28 +391,33 @@ ar:
       note: "رسالة واحدة. القائمة، وملاحظة هادئة بين الحين والآخر. يمكنك إلغاء الاشتراك في أي وقت."
       sent: "تفقّدي بريدك — قائمتك في طريقها إليك. (آلية الإرسال قيد الإعداد.)"
       success: "قائمتك في طريقها إليك."
-    cta_label: "الدعوة · The invitation"
+    cta_label: "الدعوة"
+
     cta_ar: "اطلبي خطة عروس ١٨٠."
     cta_en: "Request your Bride's 180 plan."
     cta_button: "اطلبي خطة عروس ١٨٠"
   team:
-    eyebrow: "الفريق الطبي · The Medical Team"
+    eyebrow: "الفريق الطبي"
+
     title_ar: "أيدٍ قليلة، مدرَّبة جيدًا."
     title_en: "Few hands, well-trained."
     intro_ar: "تقود د. ميساء كل خطة، وينفّذها فريق صغير مختار — كل عضو بترخيصه ومجال تركيزه."
     intro_en: "Dr. Maysa leads every plan; a small, chosen team carries it out — each with their own licence and focus."
-    focus_label: "التركيز · Focus"
+    focus_label: "التركيز"
+
     members:
       - { name_ar: "د. ميساء", name_en: "Dr. Maysa", title_ar: "المؤسِّسة · استشارية الجلدية", title_en: "Founder · Consultant Dermatologist", certs: "استشارية أمراض جلدية · زمالة في الطب التجميلي والتجديدي", focus: "التشخيص، منهج ميساء، تجديد البشرة.", bio: "أسّست د. ميساء نيو سكين لتعامل البشرة كنظامٍ يُقرأ قبل أن يُعالَج. تُجري كل تقييم أول بنفسها، وتكتب خطة الاثني عشر شهرًا التي تحتفظ بها كل مريضة." }
       - { name_ar: "د. ليان [مؤقّت]", name_en: "Dr. Layan [placeholder]", title_ar: "طبيبة جلدية", title_en: "Dermatologist", certs: "دكتوراه في الطب · البورد السعودي للجلدية", focus: "التصبّغ، حبّ الشباب، ترميم الحاجز.", bio: "نص مؤقّت. تعمل د. ليان إلى جانب د. ميساء على بروتوكولات البشرة، مع تركيز خاص على التصبّغ وصحّة الحاجز. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "نورة [مؤقّت]", name_en: "Noura [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "أخصائية تجميل مرخّصة", focus: "الأجهزة، العناية بالوجه، بروتوكولات الجسم.", bio: "نص مؤقّت. تنفّذ نورة بروتوكولات الأجهزة والجسم تحت إشراف طبي. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "سارة [مؤقّت]", name_en: "Sara [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "أخصائية تجميل مرخّصة", focus: "الشعر وفروة الرأس، دعم الحقن.", bio: "نص مؤقّت. تركّز سارة على بروتوكولات الشعر وفروة الرأس وتدعم جلسات الحقن. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "ريم [مؤقّت]", name_en: "Reem [placeholder]", title_ar: "مسؤولة علاقات المريضات", title_en: "Patient Relations Lead", certs: "علاقات المريضات", focus: "نقطة تواصلك الأولى، المواعيد، السرية.", bio: "نص مؤقّت. تراجع ريم كل استفسار، وتنسّق المواعيد، وهي الخيط الهادئ الذي يُبقي تجربة كل مريضة خاصة وغير مستعجلة. يُؤكَّد الاسم والصورة." }
-    cta_label: "ابدئي · Begin"
+    cta_label: "ابدئي"
+
     cta_ar: "ابدئي محادثة هادئة."
     cta_en: "Begin a quiet conversation."
   maysa:
-    eyebrow: "د. ميساء · المؤسِّسة · The Founder"
+    eyebrow: "د. ميساء · المؤسِّسة"
+
     portrait_alt: "صورة تحريرية للدكتورة ميساء"
     philosophy_ar: "«لا أعالج وجهًا. أقرأ بشرةً، ثم أخطّط لها.»"
     philosophy_en: "“I don't treat a face. I read skin — then I plan for it.”"
@@ -326,7 +426,8 @@ ar:
       - "زمالة في الطب التجميلي والتجديدي"
       - "عضو الجمعية السعودية للأمراض الجلدية"
       - "خمسة عشر عامًا في الممارسة السريرية"
-    essay_label: "كيف أفكّر في العلاج · How I think about treatment"
+    essay_label: "كيف أفكّر في العلاج"
+
     essay:
       - "أسّست نيو سكين لأنني سئمت القوائم. كانت المريضة تأتي مشيرةً إلى علاج رأته على الإنترنت، تطلبه بالاسم. أتفهّم الدافع — لكنه مكان خاطئ للبدء. العلاج هو القرار الأخير، لا الأول."
       - { ar: "«قبل أن أقترح أي إجراء، أريد أن أعرف كيف ستبدو بشرتك بعد خمس سنوات.»", en: "“Before I suggest any procedure, I want to know what your skin will look like in five years.”" }
@@ -335,20 +436,24 @@ ar:
       - { ar: "«النتيجة الجيدة لا تُلاحَظ. يُلاحَظ الشخص.»", en: "“A good result is not noticed. The person is noticed.”" }
       - "ما أصرّ عليه هو الاعتدال والقياس والخصوصية. نوثّق النتائج كل ثلاثة أشهر، فلا نخمّن أبدًا. نعالج بالتسلسل، فلا تُرهَق البشرة. ونُبقي كل شيء هادئًا — استشارتك وعلاجك ونتائجك لكِ وحدك."
       - { ar: "«الهدوء ليس أسلوبًا في التسويق. إنه طريقة في الطب.»", en: "“Quiet is not a marketing style. It is a way of practising medicine.”" }
-    method_label: "المنهج · The method"
+    method_label: "المنهج"
+
     method:
       diagnose: { title_ar: "التشخيص", title_en: "Diagnostic mapping", body: "قراءة أساسية للبشرة والشعر والجسم — البيانات قبل أي قرار." }
       plan:     { title_ar: "الخطة المكتوبة", title_en: "The written plan", body: "خطة لاثني عشر شهرًا تشمل البشرة والشعر والجسم ونمط الحياة. لكِ أن تحتفظي بها." }
       review:   { title_ar: "المراجعة", title_en: "Quarterly review", body: "نقيس ثم نعدّل — لتستجيب الخطة لبشرتك، لا العكس." }
-    words_label: "بصوتها · In her words"
+    words_label: "بصوتها"
+
     coming_soon: "قريبًا"
     clips:
       - "ما الذي يستحق أموالك؟ · What is worth your money?"
       - "كيف أقول لا لمريضة · How I say no to a patient"
       - "ما أقوله لأقرب صديقاتي · What I would tell my best friend"
-    press_label: "في الإعلام · Press & media"
+    press_label: "في الإعلام"
+
     press: []
-    cta_label: "الدعوة · The invitation"
+    cta_label: "الدعوة"
+
     cta_ar: "استشارة خاصة مع د. ميساء."
     cta_en: "A private consultation with Dr. Maysa."
     cta_button: "اطلبي استشارة خاصة"
@@ -356,22 +461,32 @@ ar:
   whatsapp:
     prefill: "مرحبًا نيو سكين، أودّ تقديم استفسار خاص."
   inquire:
-    label: "تواصلي واستفسري · Contact & Inquiry"
+    title: "ابدئي بمحادثة هادئة."
+    path_a_lead: "الطريقة المفضّلة — تحدّثي معنا مباشرة وبسرية."
+    label: "تواصلي واستفسري"
+
     path_a: "الطريق الأول · واتساب"
     path_b: "الطريق الثاني · نموذج خاص"
     codeword_note: "سيُرفَق رمزك %{word} لنعرف البروتوكول الذي تستفسرين عنه."
     submit: "أرسلي استفساري"
-    next_label: "ماذا يحدث بعد ذلك · What happens next"
+    next_label: "ماذا يحدث بعد ذلك"
+
     privacy: "لا يطّلع على استفسارك سوى مسؤولة علاقات المريضات والدكتورة ميساء."
     lang: { ar: "العربية", en: "الإنجليزية · English" }
     fields:
-      name: "الاسم · Your name"
-      mobile: "الجوال · Mobile"
-      email: "البريد (اختياري) · Email"
-      preferred_locale: "اللغة المفضّلة · Preferred language"
-      persona: "ما الذي أتى بك · What brings you here"
+      name: "الاسم"
+
+      mobile: "الجوال"
+
+      email: "البريد (اختياري)"
+
+      preferred_locale: "اللغة المفضّلة"
+
+      persona: "ما الذي أتى بك"
+
       persona_blank: "اختاري…"
-      preferred_time: "وقت التواصل المفضّل · Preferred time"
+      preferred_time: "وقت التواصل المفضّل"
+
       preferred_time_ph: "مثلًا: مساءً"
     personas:
       bride: "أنا عروس"
@@ -385,7 +500,8 @@ ar:
       2: "نردّ خلال ساعتين في أوقات العمل (السبت–الخميس، ١٠:٠٠–٢٢:٠٠)."
       3: "إن كان مناسبًا، تُجري د. ميساء بنفسها تقييم منهج ميساء."
   journey:
-    label: "كيف نعمل · How we work"
+    label: "كيف نعمل"
+
     inquire: { title_ar: "استفسري", title_en: "Inquire", body: "رسالة واتساب خاصة أو نموذج، تُراجعه مسؤولة علاقات المريضات." }
     consult: { title_ar: "نستشير", title_en: "Consult", body: "تقييم منهج ميساء لمدة ٦٠ دقيقة، بقيادة الطبيبة، تشخيصي، دون أي علاج." }
     plan:    { title_ar: "نخطّط", title_en: "Plan", body: "خطة مكتوبة لاثني عشر شهرًا — بشرة وشعر وجسم ونمط حياة، لكِ أن تحتفظي بها." }
@@ -398,7 +514,8 @@ ar:
     team: "الفريق الطبي"
     method: "منهج ميساء"
     bridal: "كونسيرج العرائس"
-    private_care: "العناية الخاصة · VIP"
+    private_care: "العناية الخاصة"
+
     faq: "الأسئلة الشائعة"
     address: "حي الملقا، الرياض"
     hours: "السبت–الخميس · ١٠:٠٠–٢٢:٠٠"

@@ -3,13 +3,11 @@
 <section class="section journal-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
     <span class="label reveal" data-reveal-target="item"><%= t("journal.eyebrow") %></span>
-    <h1 class="journal-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("journal.title_ar") %></span>
-      <span class="en"><%= t("journal.title_en") %></span>
+    <h1 class="journal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("journal.title_ar"), en: t("journal.title_en")) %>
     </h1>
-    <p class="journal-intro reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("journal.intro_ar") %></span>
-      <span class="en"><%= t("journal.intro_en") %></span>
+    <p class="journal-intro reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("journal.intro_ar"), en: t("journal.intro_en")) %>
     </p>
   </div>
 </section>
@@ -29,9 +27,8 @@
           <div class="journal-image" aria-hidden="true"></div>
           <div class="journal-card-body">
             <span class="journal-card-cat"><%= article[:category] %></span>
-            <h2 class="journal-card-title">
-              <span class="ar" dir="rtl"><%= article[:title_ar] %></span>
-              <span class="en"><%= article[:title_en] %></span>
+            <h2 class="journal-card-title" dir="<%= loc_dir %>">
+              <%= loc(ar: article[:title_ar], en: article[:title_en]) %>
             </h2>
             <p class="journal-card-meta"><%= article[:byline] %> · <%= article[:reading_time] %></p>
           </div>

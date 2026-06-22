@@ -2,13 +2,10 @@
 
 <%# 1 · Editorial portrait + one-line philosophy (full-bleed) %>
 <section class="maysa-hero">
-  <div class="maysa-portrait" role="img" aria-label="<%= t('maysa.portrait_alt') %>"></div>
+  <div class="maysa-portrait has-photo" style="--portrait-photo: url('<%= asset_path('site/people/maysa.jpg') %>')" role="img" aria-label="<%= t('maysa.portrait_alt') %>"></div>
   <div class="maysa-hero-copy">
     <span class="label"><%= t("maysa.eyebrow") %></span>
-    <p class="maysa-philosophy">
-      <span class="ar" dir="rtl"><%= t("maysa.philosophy_ar") %></span>
-      <span class="en"><%= t("maysa.philosophy_en") %></span>
-    </p>
+    <p class="maysa-philosophy" dir="<%= loc_dir %>"><%= loc(ar: t("maysa.philosophy_ar"), en: t("maysa.philosophy_en")) %></p>
   </div>
 </section>
 
@@ -31,10 +28,7 @@
     </div>
     <% t("maysa.essay").each_with_index do |para, i| %>
       <% if para.is_a?(Hash) %>
-        <blockquote class="pull reveal" data-reveal-target="item">
-          <span class="ar" dir="rtl"><%= para[:ar] %></span>
-          <span class="en"><%= para[:en] %></span>
-        </blockquote>
+        <blockquote class="pull reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: para[:ar], en: para[:en]) %></blockquote>
       <% else %>
         <p class="reveal" data-reveal-target="item"><%= para %></p>
       <% end %>
@@ -48,19 +42,13 @@
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("maysa.method_label") %></span>
-      <h2>
-        <span class="ar" dir="rtl">منهج ميساء<span class="tm">™</span></span>
-        The Maysa Method™
-      </h2>
+      <h2 dir="<%= loc_dir %>"><%= t("method.brand_html").html_safe %></h2>
     </div>
     <ol class="method-steps">
       <% %w[diagnose plan review].each_with_index do |step, i| %>
         <li class="method-step reveal" data-reveal-target="item">
           <span class="num"><%= format("%02d", i + 1) %></span>
-          <h3>
-            <span class="ar" dir="rtl"><%= t("maysa.method.#{step}.title_ar") %></span>
-            <span class="en"><%= t("maysa.method.#{step}.title_en") %></span>
-          </h3>
+          <h3 dir="<%= loc_dir %>"><%= loc(ar: t("maysa.method.#{step}.title_ar"), en: t("maysa.method.#{step}.title_en")) %></h3>
           <p><%= t("maysa.method.#{step}.body") %></p>
         </li>
       <% end %>
@@ -107,8 +95,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("maysa.cta_label") %></span>
-    <p class="line-ar" dir="rtl"><%= t("maysa.cta_ar") %></p>
-    <p class="line-en"><%= t("maysa.cta_en") %></p>
+    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= loc(ar: t("maysa.cta_ar"), en: t("maysa.cta_en")) %></p>
     <%= link_to t("maysa.cta_button"), inquire_path(codeword: "METHOD"), class: "cta" %>
     <p class="codeword"><%= t("maysa.cta_note") %></p>
   </div>

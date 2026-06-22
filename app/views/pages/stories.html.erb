@@ -4,22 +4,19 @@
 <section class="section stories-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
     <span class="label reveal" data-reveal-target="item"><%= t("stories.eyebrow") %></span>
-    <h1 class="stories-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("stories.title_ar") %></span>
-      <span class="en"><%= t("stories.title_en") %></span>
+    <h1 class="stories-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("stories.title_ar"), en: t("stories.title_en")) %>
     </h1>
   </div>
 </section>
 
 <section class="section stories-empty" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <p class="stories-lead reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("stories.empty_ar") %></span>
-      <span class="en"><%= t("stories.empty_en") %></span>
+    <p class="stories-lead reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("stories.empty_ar"), en: t("stories.empty_en")) %>
     </p>
-    <p class="stories-policy reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("stories.policy_ar") %></span>
-      <span class="en"><%= t("stories.policy_en") %></span>
+    <p class="stories-policy reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("stories.policy_ar"), en: t("stories.policy_en")) %>
     </p>
     <p class="signed reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
   </div>
@@ -29,8 +26,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("stories.cta_label") %></span>
-    <p class="line-ar" dir="rtl"><%= t("stories.cta_ar") %></p>
-    <p class="line-en"><%= t("stories.cta_en") %></p>
+    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("stories.cta_ar"), en: t("stories.cta_en")) %></p>
     <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
   </div>
 </section>

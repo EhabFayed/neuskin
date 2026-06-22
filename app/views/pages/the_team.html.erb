@@ -3,32 +3,30 @@
 <section class="section team-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
     <span class="label reveal" data-reveal-target="item"><%= t("team.eyebrow") %></span>
-    <h1 class="team-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("team.title_ar") %></span>
-      <span class="en"><%= t("team.title_en") %></span>
+    <h1 class="team-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("team.title_ar"), en: t("team.title_en")) %>
     </h1>
-    <p class="team-intro reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("team.intro_ar") %></span>
-      <span class="en"><%= t("team.intro_en") %></span>
+    <p class="team-intro reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("team.intro_ar"), en: t("team.intro_en")) %>
     </p>
   </div>
 </section>
 
 <section class="section team-body" data-controller="reveal">
   <div class="wrap">
+    <% member_photos = ["site/people/maysa.jpg", "site/people/member-1.jpg", "site/people/member-2.jpg", "site/people/member-3.jpg", "site/people/member-4.jpg"] %>
     <div class="team-grid">
       <% t("team.members").each_with_index do |member, i| %>
         <article class="team-member reveal" data-reveal-target="item">
-          <div class="team-portrait team-portrait--<%= i % 4 %>" role="img"
+          <div class="team-portrait team-portrait--<%= i % 4 %><%= " has-photo" if member_photos[i] %>" role="img"
+               <%= "style=\"--portrait-photo: url('#{asset_path(member_photos[i])}')\"".html_safe if member_photos[i] %>
                aria-label="<%= "#{member[:name_en]}, #{member[:title_en]}" %>"></div>
           <div class="team-info">
-            <h2 class="team-name">
-              <span class="ar" dir="rtl"><%= member[:name_ar] %></span>
-              <span class="en"><%= member[:name_en] %></span>
+            <h2 class="team-name" dir="<%= loc_dir %>">
+              <%= loc(ar: member[:name_ar], en: member[:name_en]) %>
             </h2>
-            <p class="team-role">
-              <span class="ar" dir="rtl"><%= member[:title_ar] %></span>
-              <span class="en"><%= member[:title_en] %></span>
+            <p class="team-role" dir="<%= loc_dir %>">
+              <%= loc(ar: member[:title_ar], en: member[:title_en]) %>
             </p>
             <p class="team-certs"><%= member[:certs] %></p>
             <p class="team-focus">
@@ -40,6 +38,7 @@
         </article>
       <% end %>
     </div>
+    <%= render "shared/doctor_note", key: "team" %>
   </div>
 </section>
 
@@ -47,8 +46,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("team.cta_label") %></span>
-    <p class="line-ar" dir="rtl"><%= t("team.cta_ar") %></p>
-    <p class="line-en"><%= t("team.cta_en") %></p>
+    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("team.cta_ar"), en: t("team.cta_en")) %></p>
     <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
   </div>
 </section>

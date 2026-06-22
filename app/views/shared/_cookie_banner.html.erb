@@ -1,9 +1,8 @@
 <%# Site-wide cookie consent banner (§15), PDPL-aligned. Hidden until JS confirms
     no prior choice is stored, so it never flashes for returning visitors. %>
 <div class="cookie-banner" data-controller="cookie" data-cookie-target="banner" hidden>
-  <p class="cookie-text">
-    <span class="ar" dir="rtl"><%= t("legal.cookies.title_ar") %></span>
-    <span class="en"><%= t("legal.cookies.title_en") %></span>
+  <p class="cookie-text" dir="<%= loc_dir %>">
+    <%= loc(ar: t("legal.cookies.title_ar"), en: t("legal.cookies.title_en")) %>
   </p>
   <div class="cookie-actions">
     <%= link_to t("legal.cookies.more"), privacy_path, class: "cookie-link" %>

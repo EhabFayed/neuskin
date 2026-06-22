@@ -5,12 +5,11 @@
 <section class="section proto-hero" data-controller="reveal">
   <div class="wrap">
     <span class="label reveal" data-reveal-target="item"><%= t("protocols.label") %> · <%= p.duration %></span>
-    <h1 class="proto-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= p.name_ar %><% if p.trademark %><span class="tm">™</span><% end %></span>
-      <span class="en"><%= p.name_en %><% if p.trademark %><span class="tm">™</span><% end %></span>
+    <h1 class="proto-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= p.name %><% if p.trademark %><span class="tm">™</span><% end %>
     </h1>
     <p class="proto-promise reveal" data-reveal-target="item"><%= p.promise %></p>
-    <%= link_to t("protocols.request", name: p.name_en), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta reveal", data: { reveal_target: "item" } %>
+    <%= link_to t("protocols.request", name: p.name), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta reveal", data: { reveal_target: "item" } %>
   </div>
 </section>
 
@@ -21,9 +20,8 @@
       <span class="label"><%= t("protocols.who_for") %></span>
     </div>
     <p class="lead reveal" data-reveal-target="item"><%= p.who_for %></p>
-    <p class="honest reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl">هذا البروتوكول ليس للجميع — وهذا مقصود.</span>
-      This protocol is not for everyone — and that is intentional.
+    <p class="honest reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= t("protocols.not_for_all") %>
     </p>
   </div>
 </section>
@@ -69,9 +67,8 @@
     <div class="wrap narrow">
       <div class="voice reveal" data-reveal-target="item" style="text-align:center">
         <span class="mark">”</span>
-        <p class="q ar" dir="rtl"><%= p.loc(p.patient_story, "quote") %></p>
-        <p class="q"><%= p.patient_story["quote_en"] %></p>
-        <p class="by">— <%= p.patient_story["initials"] %> · <%= p.name_en %> · <%= p.patient_story["year"] %></p>
+        <p class="q" dir="<%= loc_dir %>"><%= p.loc(p.patient_story, "quote") %></p>
+        <p class="by">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
       </div>
     </div>
   </section>
@@ -86,13 +83,9 @@
       </div>
       <% p.faqs.each do |faq| %>
         <details class="faq reveal" data-reveal-target="item">
-          <summary>
-            <span class="ar" dir="rtl"><%= p.loc(faq, "q") %></span>
-            <span class="en"><%= faq["q_en"] %></span>
-          </summary>
+          <summary dir="<%= loc_dir %>"><%= p.loc(faq, "q") %></summary>
           <div class="faq-a">
-            <p class="ar" dir="rtl"><%= p.loc(faq, "a") %></p>
-            <p class="en"><%= faq["a_en"] %></p>
+            <p dir="<%= loc_dir %>"><%= p.loc(faq, "a") %></p>
             <p class="faq-sign" dir="rtl">— د. ميساء</p>
           </div>
         </details>
@@ -105,9 +98,8 @@
 <section class="section section--night invite" id="inquire">
   <div class="wrap">
     <span class="label"><%= t("protocols.begin") %></span>
-    <p class="line-ar" dir="rtl"><%= p.name_ar %></p>
-    <p class="line-en"><%= p.name_en %></p>
-    <%= link_to t("protocols.request", name: p.name_en), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta" %>
+    <p class="line" dir="<%= loc_dir %>"><%= p.name %></p>
+    <%= link_to t("protocols.request", name: p.name), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta" %>
     <p class="codeword">
       <%= t("protocols.codeword_html", word: content_tag(:strong, p.codeword)).html_safe %>
     </p>

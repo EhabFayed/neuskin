@@ -1,23 +1,23 @@
 <%# Bridal Concierge — the bride funnel (§10). %>
 
 <%# 1 · Hero + 2 · wedding-date picker (the number creates urgency) %>
-<section class="section bridal-hero" data-controller="countdown reveal"
+<section class="section bridal-hero has-photo" data-controller="countdown reveal"
+    style="--hero-photo: url('<%= asset_path('site/bridal-mood.jpg') %>')"
     data-countdown-ample-value="<%= t('bridal.windows.ample') %>"
     data-countdown-ideal-value="<%= t('bridal.windows.ideal') %>"
     data-countdown-soon-value="<%= t('bridal.windows.soon') %>"
     data-countdown-today-value="<%= t('bridal.windows.today') %>"
     data-countdown-days-label-value="<%= t('bridal.days_label') %>">
-  <div class="wrap narrow" style="text-align:center">
+  <div class="bridal-hero-bg reveal-img" data-reveal-target="item" aria-hidden="true"></div>
+  <div class="wrap narrow" style="text-align:center; position: relative; z-index: 1">
     <span class="label reveal" data-reveal-target="item"><%= t("bridal.eyebrow") %></span>
-    <h1 class="bridal-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl"><%= t("bridal.title_ar") %></span>
-      <span class="en"><%= t("bridal.title_en") %></span>
+    <h1 class="bridal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("bridal.title_ar"), en: t("bridal.title_en")) %>
     </h1>
 
     <div class="date-ask reveal" data-reveal-target="item">
-      <label for="wedding-date">
-        <span class="ar" dir="rtl"><%= t("bridal.date_ask_ar") %></span>
-        <span class="en"><%= t("bridal.date_ask_en") %></span>
+      <label for="wedding-date" dir="<%= loc_dir %>">
+        <%= loc(ar: t("bridal.date_ask_ar"), en: t("bridal.date_ask_en")) %>
       </label>
       <input type="date" id="wedding-date"
              data-countdown-target="input" data-action="change->countdown#change">
@@ -36,9 +36,8 @@
     <div class="wrap">
       <div class="sec-head reveal" data-reveal-target="item">
         <span class="label"><%= t("bridal.timeline_label") %></span>
-        <h2>
-          <span class="ar" dir="rtl"><%= @protocol.name_ar %></span>
-          <%= @protocol.name_en %>
+        <h2 dir="<%= loc_dir %>">
+          <%= loc(ar: @protocol.name_ar, en: @protocol.name_en) %>
         </h2>
       </div>
       <ol class="timeline">
@@ -63,9 +62,8 @@
     <div class="reassure-grid">
       <% %w[planned flexible locked].each do |kind| %>
         <div class="reassure reassure--<%= kind %> reveal" data-reveal-target="item">
-          <h3>
-            <span class="ar" dir="rtl"><%= t("bridal.reassure.#{kind}.title_ar") %></span>
-            <span class="en"><%= t("bridal.reassure.#{kind}.title_en") %></span>
+          <h3 dir="<%= loc_dir %>">
+            <%= loc(ar: t("bridal.reassure.#{kind}.title_ar"), en: t("bridal.reassure.#{kind}.title_en")) %>
           </h3>
           <p><%= t("bridal.reassure.#{kind}.body") %></p>
         </div>
@@ -81,8 +79,7 @@
       <% t("bridal.quotes").each do |q| %>
         <div class="voice reveal" data-reveal-target="item">
           <span class="mark">”</span>
-          <p class="q ar" dir="rtl"><%= q[:ar] %></p>
-          <p class="q"><%= q[:en] %></p>
+          <p class="q" dir="<%= loc_dir %>"><%= loc(ar: q[:ar], en: q[:en]) %></p>
           <p class="by">— <%= q[:by] %></p>
         </div>
       <% end %>
@@ -95,9 +92,8 @@
   <div class="wrap narrow">
     <div class="family-card reveal" data-reveal-target="item">
       <span class="label"><%= t("bridal.family_label") %></span>
-      <p>
-        <span class="ar" dir="rtl"><%= t("bridal.family_ar") %></span>
-        <span class="en"><%= t("bridal.family_en") %></span>
+      <p dir="<%= loc_dir %>">
+        <%= loc(ar: t("bridal.family_ar"), en: t("bridal.family_en")) %>
       </p>
     </div>
   </div>
@@ -108,9 +104,8 @@
   <div class="wrap narrow checklist">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("bridal.checklist.label") %></span>
-      <h2 class="checklist-title">
-        <span class="ar" dir="rtl"><%= t("bridal.checklist.title_ar") %></span>
-        <span class="en"><%= t("bridal.checklist.title_en") %></span>
+      <h2 class="checklist-title" dir="<%= loc_dir %>">
+        <%= loc(ar: t("bridal.checklist.title_ar"), en: t("bridal.checklist.title_en")) %>
       </h2>
     </div>
 
@@ -133,8 +128,7 @@
 <section class="section section--night invite">
   <div class="wrap">
     <span class="label"><%= t("bridal.cta_label") %></span>
-    <p class="line-ar" dir="rtl"><%= t("bridal.cta_ar") %></p>
-    <p class="line-en"><%= t("bridal.cta_en") %></p>
+    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("bridal.cta_ar"), en: t("bridal.cta_en")) %></p>
     <%= link_to t("bridal.cta_button"), inquire_path(codeword: "BRIDE", persona: "bride"), class: "cta" %>
     <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "BRIDE")).html_safe %></p>
   </div>

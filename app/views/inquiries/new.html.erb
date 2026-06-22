@@ -3,9 +3,8 @@
 <section class="section inquire-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
     <span class="label reveal" data-reveal-target="item"><%= t("inquire.label") %></span>
-    <h1 class="inquire-title reveal" data-reveal-target="item">
-      <span class="ar" dir="rtl">ابدئي بمحادثة هادئة.</span>
-      <span class="en">Begin a quiet conversation.</span>
+    <h1 class="inquire-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= t("inquire.title") %>
     </h1>
   </div>
 </section>
@@ -16,9 +15,8 @@
       <%# Path A — WhatsApp (preferred) %>
       <div class="path path--wa reveal" data-reveal-target="item">
         <span class="path-tag"><%= t("inquire.path_a") %></span>
-        <p class="path-lead">
-          <span class="ar" dir="rtl">الطريقة المفضّلة — تحدّثي معنا مباشرة وبسرية.</span>
-          The preferred way — speak with us directly and privately.
+        <p class="path-lead" dir="<%= loc_dir %>">
+          <%= t("inquire.path_a_lead") %>
         </p>
         <%= link_to whatsapp_url(codeword: @inquiry.source_codeword), class: "cta", target: "_blank", rel: "noopener" do %>
           <%= t("cta.whatsapp") %>

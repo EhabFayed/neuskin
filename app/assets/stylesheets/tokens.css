@@ -21,4 +21,12 @@
 
   /* Layout */
   --maxw: 1180px;
+
+  /* Spacing scale — consistent vertical rhythm (editorial restraint, Lutétia). */
+  --space-section: clamp(72px, 9vw, 130px);  /* between major sections */
+  --space-block:   clamp(32px, 4vw, 56px);   /* within a section */
+  --space-tight:   clamp(16px, 2vw, 24px);
+
+  /* Motion */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
