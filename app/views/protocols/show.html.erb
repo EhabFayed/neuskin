@@ -2,8 +2,14 @@
 <% p = @protocol %>
 
 <%# 1 · Hero — the protocol as an editorial proposition %>
-<section class="section proto-hero" data-controller="reveal">
-  <div class="wrap">
+<% proto_hero_imgs = { "maysa-method" => "site/protocols/skin.jpg", "90-day-glow-reset" => "site/protocols/skin.jpg",
+                       "brides-180" => "site/bridal-mood.jpg", "reset-crown" => "site/protocols/hair.jpg",
+                       "8-week-sculpt" => "site/lounge.jpg", "skin-insider" => "site/journal/j2.jpg" } %>
+<% hero_img = proto_hero_imgs[p.slug] %>
+<section class="section proto-hero<%= ' has-photo' if hero_img %>" data-controller="reveal"
+         <%= "style=\"--hero-photo: url('#{asset_path(hero_img)}')\"".html_safe if hero_img %>>
+  <% if hero_img %><div class="proto-hero-bg reveal-img hero-photo-kb" data-reveal-target="item" aria-hidden="true"></div><% end %>
+  <div class="wrap" style="position:relative;z-index:1">
     <span class="label reveal" data-reveal-target="item"><%= t("protocols.label") %> · <%= p.duration %></span>
     <h1 class="proto-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
       <%= p.name %><% if p.trademark %><span class="tm">™</span><% end %>

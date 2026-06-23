@@ -21,4 +21,19 @@ module ApplicationHelper
   def loc_dir
     ar? ? "rtl" : "ltr"
   end
+
+  # URL for the CURRENT page in the other locale — so the language toggle stays
+  # on the same page (and keeps query params like ?persona=) instead of jumping
+  # home. Arabic is the default, so it carries no /ar prefix.
+  def switch_locale_url
+    other = ar? ? :en : :ar
+    # Merge the resolved route params (controller/action/:id/:slug) + the query
+    # string, then override locale. Rebuilds the exact current page in the other
+    # locale. Arabic is default, so it carries no /ar prefix.
+    params = request.path_parameters.merge(request.query_parameters).symbolize_keys
+    params[:locale] = (other == I18n.default_locale ? nil : other)
+    url_for(params.merge(only_path: true))
+  rescue ActionController::UrlGenerationError
+    root_path(locale: (other == I18n.default_locale ? nil : other))
+  end
 end

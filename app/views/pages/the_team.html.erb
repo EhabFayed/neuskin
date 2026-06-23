@@ -42,11 +42,5 @@
   </div>
 </section>
 
-<%# CTA %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("team.cta_label") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("team.cta_ar"), en: t("team.cta_en")) %></p>
-    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
-  </div>
-</section>
+<%# CTA — shared booking band %>
+<%= render "shared/book_cta", key: "team" %>

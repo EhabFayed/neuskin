@@ -5,15 +5,15 @@
  * are the single source of truth; every color on the site derives from them.
  */
 :root {
-  /* Color /*— brand mauve over a soft parchment base */
-   --ground:       #F4EEE9; /* warm ivory — default background, cooled slightly toward rose */
-   --ground-deep:  #EBE0DC; /*deeper rose-ivory — alternating bands */
-   --text:         #2E2429; /* deep mauve-ink (near-black, rose undertone) */
-   --text-soft:    #7A6A70; /* muted mauve-grey — secondary copy */
-   --accent:       #8E6E76; /* brand mauve, deepened for legible CTAs — the one bold color */
-   --accent-2:     #A8909A; /* soft mauve-taupe — data, numerals, secondary accent */
-   --line:         #D8C8CC; /* dusty-rose hairline — rules, card borders */
-  --night:        #2B2126; /*warm near-black with rose undertone — footer, closing band */
+  /* Color — brand mauve over a soft parchment base */
+  --ground:       #F4EEE9; /* warm ivory — default background, cooled slightly toward rose */
+  --ground-deep:  #EBE0DC; /* deeper rose-ivory — alternating bands */
+  --text:         #2E2429; /* deep mauve-ink (near-black, rose undertone) */
+  --text-soft:    #7A6A70; /* muted mauve-grey — secondary copy */
+  --accent:       #8E6E76; /* brand mauve, deepened for legible CTAs — the one bold color */
+  --accent-2:     #A8909A; /* soft mauve-taupe — data, numerals, secondary accent */
+  --line:         #D8C8CC; /* dusty-rose hairline — rules, card borders */
+  --night:        #2B2126; /* warm near-black with rose undertone — footer, closing band */
   --brand-mauve:  #9C8484; /* the exact logo mauve, for the monogram + brand touches */
 
   /* Type roles */
@@ -30,13 +30,10 @@
   --space-tight:   clamp(16px, 2vw, 24px);
 
   /* Motion */
-  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
-/*  --ground:       #F2EBDD; /* bone-parchment — default background */
-/*  --ground-deep:  #E7DDC9; /* deeper parchment — alternating bands */
-/*  --text:         #2A211B; /* oud-brown ink */
-/*  --text-soft:    #6B5D50; /* muted ink — secondary copy */
-/*  --accent:       #9C5B4E; /* clay-rose — the one bold color */
-/*  --accent-2:     #B89B6E; /* warm sand-gold — data, numerals */
-/*  --line:         #CDBFA6; /* hairline rules, card borders */
-/*  --night:        #241C16; /* warm near-black — footer, closing band */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1); /* primary entrance/settle */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);     /* snappier out-quint for pops */
+  --dur-fast:  .25s;
+  --dur-mid:   .5s;
+  --dur-slow:  1.1s;
+  --dur-img:   1.6s;  /* image settle / Ken-Burns */
 }

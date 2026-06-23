@@ -1,0 +1,15 @@
+<%# Hero film media — renders a looping muted background video if a clip file
+    exists at app/assets/videos/<video>, otherwise the poster still with a slow
+    Ken-Burns. Swap-ready: drop a real .mp4 in and it plays automatically.
+    Locals: poster (image asset path), video (filename in app/assets/videos, optional). %>
+<% video ||= nil %>
+<% has_clip = video.present? && File.exist?(Rails.root.join("app/assets/videos", video)) %>
+<% if has_clip %>
+  <video class="hero-video" autoplay muted loop playsinline
+         poster="<%= asset_path(poster) %>" aria-hidden="true">
+    <source src="<%= asset_path(video) %>" type="video/mp4">
+  </video>
+<% else %>
+  <div class="hero-media-img reveal-img hero-photo-kb" data-reveal-target="item"
+       style="--hero-photo: url('<%= asset_path(poster) %>')" aria-hidden="true"></div>
+<% end %>

@@ -2,10 +2,29 @@
 
 <section class="section inquire-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("inquire.label") %></span>
-    <h1 class="inquire-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+    <span class="label reveal d1" data-reveal-target="item"><%= t("inquire.label") %></span>
+    <h1 class="inquire-title reveal d2" data-reveal-target="item" dir="<%= loc_dir %>">
       <%= t("inquire.title") %>
     </h1>
+    <p class="inquire-sub reveal d3" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("inquire.sub") %></p>
+  </div>
+</section>
+
+<%# How booking works — a 3-step mini-journey so the path is obvious. %>
+<section class="section booking-steps" data-controller="reveal">
+  <div class="wrap">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="label"><%= t("inquire.steps_label") %></span>
+    </div>
+    <ol class="booking-step-list reveal" data-reveal-target="item">
+      <% %w[choose tell confirm].each_with_index do |step, i| %>
+        <li class="booking-step reveal" data-reveal-target="item">
+          <span class="num"><%= format("%02d", i + 1) %></span>
+          <h3 dir="<%= loc_dir %>"><%= t("inquire.steps.#{step}.title") %></h3>
+          <p dir="<%= loc_dir %>"><%= t("inquire.steps.#{step}.body") %></p>
+        </li>
+      <% end %>
+    </ol>
   </div>
 </section>
 

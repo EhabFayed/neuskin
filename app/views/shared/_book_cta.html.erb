@@ -1,0 +1,17 @@
+<%# Shared closing booking band — one strong, animated invitation per page.
+    Optional locals: codeword, persona (carried into /inquire), and key
+    (an i18n namespace under book_cta.* for a tailored line; defaults to generic). %>
+<% key ||= "default" %>
+<% codeword ||= nil %>
+<% persona ||= nil %>
+<section class="section section--night invite book-cta has-texture" id="inquire"
+         style="--band-photo: url('<%= asset_path('site/desert-atmosphere.jpg') %>')"
+         data-controller="reveal">
+  <div class="wrap">
+    <span class="label reveal" data-reveal-target="item"><%= t("book_cta.#{key}.label") %></span>
+    <p class="line reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("book_cta.#{key}.line") %></p>
+    <%= link_to t("cta.private_inquiry"), inquire_path(codeword: codeword, persona: persona),
+          class: "cta reveal", data: { reveal_target: "item" } %>
+    <p class="book-cta-sla reveal" data-reveal-target="item"><%= t("book_cta.sla") %></p>
+  </div>
+</section>

@@ -4,7 +4,7 @@
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("journey.label") %></span>
     </div>
-    <ol class="journey-steps">
+    <ol class="journey-steps reveal" data-reveal-target="item">
       <% %w[inquire consult plan treat].each_with_index do |step, i| %>
         <li class="journey-step reveal" data-reveal-target="item">
           <span class="num"><%= format("%02d", i + 1) %></span>

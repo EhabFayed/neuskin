@@ -15,6 +15,26 @@ en:
     name: "NEU SKIN"
     city: "Riyadh"
     positioning: "Riyadh's doctor-led skin intelligence clinic — subtle, medically guided results, without the noise."
+  book_cta:
+    sla: "We reply within 2 hours · Saturday to Thursday, 10:00–22:00"
+    default:
+      label: "Begin"
+      line: "Book your experience with NeuSkin."
+    protocol:
+      label: "Your plan awaits"
+      line: "Book your assessment and let Dr. Maysa design your protocol."
+    clinic:
+      label: "Visit us"
+      line: "Book your visit to our clinic in Al Malqa, Riyadh."
+    method:
+      label: "Begin the method"
+      line: "Book the Maysa Method™ Assessment — where every plan begins."
+    team:
+      label: "In trusted hands"
+      line: "Book your consultation with our medical team."
+    bridal:
+      label: "Your day awaits"
+      line: "Book your Bride's 180 plan today."
   doctor_note:
     protocols:
       ar: "«لا أبدأ من العلاج، بل من قراءة بشرتك. اختاري ما يقربك، وسنحدّد الباقي معًا.»"
@@ -461,8 +481,14 @@ en:
   whatsapp:
     prefill: "Hello NeuSkin, I'd like to make a private inquiry."
   inquire:
-    title: "Begin a quiet conversation."
-    path_a_lead: "The preferred way — speak with us directly and privately."
+    title: "Book your appointment."
+    sub: "Two ways to book — whichever feels right. We confirm within two hours."
+    steps_label: "How booking works"
+    steps:
+      choose: { title: "Choose your way", body: "Message us on WhatsApp, or fill the private form below — both reach our patient relations lead directly." }
+      tell: { title: "Tell us a little", body: "Your name, your number, and what brings you in. A minute, no more." }
+      confirm: { title: "We confirm", body: "We reply within two hours during business hours to set your appointment with Dr. Maysa." }
+    path_a_lead: "The preferred way — book and speak with us directly and privately."
     label: "Contact & Inquiry"
 
     path_a: "Path A · WhatsApp"

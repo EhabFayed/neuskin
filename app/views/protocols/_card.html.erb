@@ -1,5 +1,10 @@
 <%# One protocol card. Used on the homepage grid and the Protocols Hub. %>
-<%= link_to protocol_path(protocol), class: "proto reveal", data: { reveal_target: "item" } do %>
+<% proto_imgs = { "maysa-method" => "site/protocols/skin.jpg", "90-day-glow-reset" => "site/protocols/skin.jpg",
+                  "brides-180" => "site/bridal-mood.jpg", "reset-crown" => "site/protocols/hair.jpg",
+                  "8-week-sculpt" => "site/lounge.jpg", "skin-insider" => "site/journal/j2.jpg" } %>
+<% img = proto_imgs[protocol.slug] %>
+<%= link_to protocol_path(protocol), class: "proto reveal#{' has-img' if img}", data: { reveal_target: "item" } do %>
+  <% if img %><span class="proto-img" style="--shot-photo: url('<%= asset_path(img) %>')" aria-hidden="true"></span><% end %>
   <span class="pname" dir="<%= loc_dir %>"><%= protocol.name %><% if protocol.trademark %><span class="tm">™</span><% end %></span>
   <p class="promise"><%= protocol.promise %></p>
   <span class="meta"><%= protocol.meta %></span>

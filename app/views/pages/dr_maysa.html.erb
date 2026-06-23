@@ -66,9 +66,12 @@
       <span class="label"><%= t("maysa.words_label") %></span>
     </div>
     <div class="clips">
-      <% t("maysa.clips").each do |clip| %>
+      <% clip_bgs = ["site/people/maysa.jpg", "site/protocols/skin.jpg", "site/journal/j2.jpg"] %>
+      <% t("maysa.clips").each_with_index do |clip, i| %>
         <div class="clip reveal" data-reveal-target="item">
-          <div class="clip-frame" aria-hidden="true"><span class="clip-soon"><%= t("maysa.coming_soon") %></span></div>
+          <div class="clip-frame has-photo" style="--shot-photo: url('<%= asset_path(clip_bgs[i % 3]) %>')" aria-hidden="true">
+            <span class="clip-soon"><%= t("maysa.coming_soon") %></span>
+          </div>
           <p class="clip-title"><%= clip %></p>
         </div>
       <% end %>

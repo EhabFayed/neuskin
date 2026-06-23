@@ -8,7 +8,14 @@
     data-countdown-soon-value="<%= t('bridal.windows.soon') %>"
     data-countdown-today-value="<%= t('bridal.windows.today') %>"
     data-countdown-days-label-value="<%= t('bridal.days_label') %>">
-  <div class="bridal-hero-bg reveal-img" data-reveal-target="item" aria-hidden="true"></div>
+  <% bridal_clip = "bridal-mood.mp4" %>
+  <% if File.exist?(Rails.root.join("app/assets/videos", bridal_clip)) %>
+    <video class="bridal-hero-bg hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/bridal-mood.jpg') %>" aria-hidden="true">
+      <source src="<%= asset_path(bridal_clip) %>" type="video/mp4">
+    </video>
+  <% else %>
+    <div class="bridal-hero-bg reveal-img hero-photo-kb" data-reveal-target="item" aria-hidden="true"></div>
+  <% end %>
   <div class="wrap narrow" style="text-align:center; position: relative; z-index: 1">
     <span class="label reveal" data-reveal-target="item"><%= t("bridal.eyebrow") %></span>
     <h1 class="bridal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">

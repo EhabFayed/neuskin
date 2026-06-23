@@ -310,6 +310,14 @@ img { max-width: 100%; }
   transition: transform .35s ease, box-shadow .35s ease, border-color .35s;
 }
 .proto:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(42, 33, 27, .45); border-color: var(--accent-2); }
+/* Photo strip at the top of a protocol card (flush to edges via negative margin). */
+.proto.has-img { padding-block-start: 0; overflow: hidden; }
+.proto-img {
+  display: block; margin: 0 -30px 24px; height: 170px;
+  background-image: var(--shot-photo); background-size: cover; background-position: center;
+  transition: transform .6s var(--ease-soft);
+}
+.proto.has-img:hover .proto-img { transform: scale(1.04); }
 .proto .pname-ar { font-family: var(--ar); font-size: 1.7rem; line-height: 1.2; }
 .proto .pname-en { font-size: 1.12rem; letter-spacing: .02em; margin-block-start: 6px; }
 /* Single-locale collapsed protocol name: Arabic styling in RTL, Latin in LTR. */
@@ -413,6 +421,10 @@ img { max-width: 100%; }
 
 /* ---------------- protocol show: hero + title ---------------- */
 .proto-hero { text-align: center; padding-block-start: 160px; background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(184,155,110,.16), transparent 70%), var(--ground); }
+/* Photo-backed protocol hero: image behind a parchment veil so dark copy stays legible. */
+.proto-hero.has-photo { position: relative; overflow: hidden; }
+.proto-hero-bg { position: absolute; inset: 0; z-index: 0; background-image: var(--hero-photo); background-size: cover; background-position: center; }
+.proto-hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(244,238,233,.74), rgba(244,238,233,.9) 60%, var(--ground) 100%); }
 .proto-title { margin: 18px 0 10px; font-weight: 400; }
 .proto-title .ar { display: block; font-family: var(--ar); font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1.3; }
 .proto-title .en { display: block; font-size: clamp(1.2rem, 2.4vw, 1.9rem); font-style: italic; color: var(--text-soft); margin-block-start: 6px; }
@@ -552,6 +564,11 @@ img { max-width: 100%; }
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
+/* Real image backdrop behind the play button + "coming soon" — darkened for contrast. */
+.clip-frame.has-photo { background-image: linear-gradient(rgba(43,33,38,.45), rgba(43,33,38,.55)), var(--shot-photo); background-size: cover; background-position: center top; }
+.clip:hover .clip-frame.has-photo { background-image: linear-gradient(rgba(43,33,38,.35), rgba(43,33,38,.45)), var(--shot-photo); }
+.clip-frame::after { transition: transform var(--dur-fast) var(--ease-out); }
+.clip:hover .clip-frame::after { transform: scale(1.15); }
 .clip-frame::after {
   content: ""; position: absolute; width: 0; height: 0;
   border-style: solid; border-width: 14px 0 14px 22px;
@@ -881,6 +898,7 @@ img { max-width: 100%; }
 .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px; }
 .journal-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
 .journal-image { aspect-ratio: 3 / 2; border-radius: 4px; margin-block-end: 18px; background: linear-gradient(155deg, #c9b2b9, #7e646b); }
+.journal-image.has-photo { background-image: var(--shot-photo); background-size: cover; background-position: center; }
 .journal-card--0 .journal-image { background: linear-gradient(155deg, #ccb7bd, #74585f); }
 .journal-card--1 .journal-image { background: linear-gradient(155deg, #c1aab2, #8a6d54); }
 .journal-card--2 .journal-image { background: linear-gradient(155deg, #b199a1, #6e565d); }
@@ -941,7 +959,113 @@ img { max-width: 100%; }
   line-height: 1.5;
 }
 
+/* ---------------- hero video (film loop, swap-ready) ---------------- */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+
+/* ---------------- floating book button ---------------- */
+.floating-book {
+  position: fixed; inset-block-end: 22px; inset-inline-end: 22px; z-index: 70;
+  opacity: 0; transform: translateY(14px); pointer-events: none;
+  transition: opacity .5s var(--ease-soft), transform .5s var(--ease-soft);
+}
+.floating-book.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.floating-book-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--accent); color: var(--ground); text-decoration: none;
+  font-family: var(--sans); font-size: .85rem; letter-spacing: .06em;
+  padding: 13px 22px; border-radius: 100px;
+  box-shadow: 0 12px 30px -10px rgba(43, 33, 38, .55);
+  transition: transform var(--dur-fast) var(--ease-soft), background var(--dur-fast);
+}
+.floating-book-btn:hover { transform: translateY(-2px); background: #7a5c63; }
+.floating-book-btn svg { width: 18px; height: 18px; }
+@media (max-width: 600px) { .floating-book-btn span { display: none; } .floating-book-btn { padding: 14px; } }
+
+/* ---------------- booking steps (/inquire 3-step) ---------------- */
+.inquire-sub { font-family: var(--sans); font-size: 1rem; color: var(--text-soft); max-width: 46ch; margin: 16px auto 0; }
+.booking-steps { padding-block: var(--space-block); }
+.booking-step-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: bstep; }
+.booking-step { padding-block-start: 18px; border-block-start: 2px solid var(--accent); }
+.booking-step .num { font-family: var(--sans); font-size: .8rem; letter-spacing: .2em; color: var(--accent-2); }
+.booking-step h3 { font-weight: 400; font-size: 1.3rem; margin: 10px 0 8px; }
+.booking-step p { color: var(--text-soft); margin: 0; font-size: .97rem; }
+@media (max-width: 760px) { .booking-step-list { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ---------------- book-cta SLA line ---------------- */
+.book-cta-sla { font-family: var(--sans); font-size: .8rem; letter-spacing: .04em; color: rgba(244, 238, 233, .6); margin-block-start: 22px; }
+
+/* ============================================================
+   RICH ANIMATION LAYER  (all gated by prefers-reduced-motion below)
+   ============================================================ */
+
+/* --- keyframes --- */
+@keyframes ns-pop      { 0% { transform: scale(.7); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes ns-bob      { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+@keyframes ns-kenburns { 0% { transform: scale(1.08); } 100% { transform: scale(1); } }
+@keyframes ns-cta-in   { 0% { transform: translateY(14px) scale(.96); opacity: 0; } 100% { transform: none; opacity: 1; } }
+@keyframes ns-draw-x   { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+
+/* --- scroll cue: gentle continuous bob --- */
+.scroll-cue { animation: ns-bob 2.4s var(--ease-soft) infinite; }
+
+/* --- sequence numerals pop in when their section reveals --- */
+.reveal-ready .reveal.in .num,
+.reveal-ready .reveal.in .pillar .num,
+.reveal-ready .reveal.in .journey-step .num { animation: ns-pop .7s var(--ease-out) both; animation-delay: .25s; }
+
+/* --- closing CTA / invite: the booking crescendo --- */
+.reveal-ready .invite.reveal.in .cta,
+.book-cta .cta { animation: ns-cta-in .9s var(--ease-out) both; animation-delay: .3s; }
+
+/* --- hero image Ken-Burns settle (paired with .reveal-img) --- */
+.hero-photo-kb.in { animation: ns-kenburns 9s var(--ease-soft) both; }
+
+/* --- timeline / journey connector draw-in (keys off .reveal.in, no extra JS) --- */
+.journey-steps, .timeline { position: relative; }
+.reveal-ready .journey-steps.reveal.in::before,
+.reveal-ready .timeline.reveal.in::before {
+  content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; height: 2px;
+  background: var(--accent-2); transform-origin: left center;
+  animation: ns-draw-x 1.1s var(--ease-soft) both; animation-delay: .2s;
+}
+[dir="rtl"] .reveal-ready .journey-steps.reveal.in::before,
+[dir="rtl"] .reveal-ready .timeline.reveal.in::before { transform-origin: right center; }
+
+/* --- FAQ accordion: animate the answer open --- */
+.faq-a { overflow: hidden; }
+.faq:not([open]) .faq-a { display: none; }
+.faq[open] .faq-a { animation: ns-accordion .45s var(--ease-soft) both; }
+@keyframes ns-accordion { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.faq summary { transition: color var(--dur-fast) var(--ease-soft); }
+
+/* --- form field focus lift --- */
+.inquiry-form input, .inquiry-form select, .inquiry-form textarea,
+.checklist-form input, .vip-form input, .vip-form textarea {
+  transition: border-color var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+.inquiry-form input:focus, .inquiry-form select:focus, .inquiry-form textarea:focus,
+.checklist-form input:focus, .vip-form input:focus, .vip-form textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -10px rgba(142, 110, 118, .5);
+}
+
+/* --- filter chip: pop on activation --- */
+.chip { transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
+.chip.is-active { animation: ns-pop .4s var(--ease-out); }
+
+/* --- bridal countdown number: scale-in when set --- */
+.countdown-days { display: inline-block; }
+.countdown:not([hidden]) .countdown-days { animation: ns-pop .6s var(--ease-out) both; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-img { opacity: 1; transform: none; transition: none; }
+  .scroll-cue,
+  .reveal-ready .reveal.in .num,
+  .invite.reveal.in .cta, .book-cta .cta,
+  .hero-photo-kb.in,
+  .journey-steps.in-connect::before, .timeline.in-connect::before,
+  .faq[open] .faq-a,
+  .chip.is-active,
+  .countdown:not([hidden]) .countdown-days { animation: none; }
   html { scroll-behavior: auto; }
 }

@@ -24,3 +24,9 @@ application.register("vipapply", VipapplyController)
 
 import CookieController from "controllers/cookie_controller"
 application.register("cookie", CookieController)
+
+import CounterController from "controllers/counter_controller"
+application.register("counter", CounterController)
+
+import BookingController from "controllers/booking_controller"
+application.register("booking", BookingController)
