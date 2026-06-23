@@ -23,6 +23,10 @@ class PagesController < ApplicationController
   def maysa_method
   end
 
+  # Treatments by Outcome (§08) — SEO pages that route to the owning protocol.
+  def treatments
+  end
+
   def private_care
   end
 

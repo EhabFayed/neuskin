@@ -43,6 +43,9 @@ Rails.application.routes.draw do
     # Protocols Hub (§06) + protocol template pages (§07a–f).
     resources :protocols, only: %i[index show]
 
+    # Treatments by Outcome (§08) — SEO pages that route to the owning protocol.
+    get "treatments", to: "pages#treatments", as: :treatments
+
     # Contact & Inquiry — the conversion page (§11).
     get  "inquire", to: "inquiries#new",    as: :inquire
     post "inquire", to: "inquiries#create"

@@ -1,0 +1,31 @@
+<%# Treatments by Outcome (§08) — SEO pages that route to the owning protocol. %>
+
+<section class="section treatments-hero" data-controller="reveal">
+  <div class="wrap" style="text-align:center">
+    <span class="label reveal" data-reveal-target="item"><%= t("treatments_page.eyebrow") %></span>
+    <h1 class="treatments-title reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("treatments_page.title") %></h1>
+    <p class="treatments-sub reveal" data-reveal-target="item"><%= t("treatments_page.sub") %></p>
+  </div>
+</section>
+
+<section class="section treatments-list-section" data-controller="reveal">
+  <div class="wrap" style="max-width:1100px">
+    <div class="treatments-list">
+      <% t("treatments_page.outcomes").each do |o| %>
+        <div class="outcome reveal" data-reveal-target="item">
+          <div class="outcome-head">
+            <h2 dir="<%= loc_dir %>"><%= o[:o] %></h2>
+            <p class="outcome-maysa" dir="<%= loc_dir %>"><%= o[:maysa] %></p>
+          </div>
+          <div class="outcome-how">
+            <p><%= o[:how] %></p>
+            <%= link_to "#{t('treatments_page.owns_label')}: #{o[:owns]} →", protocol_path(o[:view]), class: "textlink outcome-owner" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="treatments-cta reveal" data-reveal-target="item">
+      <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta cta--dark" %>
+    </div>
+  </div>
+</section>

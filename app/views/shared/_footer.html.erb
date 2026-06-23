@@ -2,10 +2,10 @@
   <div class="wrap">
     <div class="footer-cols">
       <div class="footer-brand">
-        <%= image_tag "site/logo-ns.png", class: "footer-logo", alt: t("brand.name") %>
+        <div class="mark"><%= t("brand.name") %></div>
         <p class="pos"><%= t("brand.positioning") %></p>
         <div class="socials">
-          <a href="#">IG</a><a href="#">SNAP</a><a href="#">TIKTOK</a><a href="#">YT</a>
+          <% t("footer.socials").each do |s| %><span><%= s %></span><% end %>
         </div>
       </div>
 
@@ -20,37 +20,29 @@
       </div>
 
       <div>
-        <h4><%= t("footer.care") %></h4>
+        <h4><%= t("nav.protocols") %></h4>
         <ul>
-          <li><%= link_to t("nav.protocols"),       protocols_path %></li>
-          <li><%= link_to t("footer.bridal"),       bridal_concierge_path %></li>
-          <li><%= link_to t("footer.private_care"), private_care_path %></li>
-          <li><%= link_to t("nav.journal"),         journal_path %></li>
-          <li><%= link_to t("nav.stories"),         stories_path %></li>
-          <li><%= link_to t("footer.faq"),          faq_path %></li>
+          <li><%= link_to t("footer.hub"),         protocols_path %></li>
+          <li><%= link_to t("footer.bridal"),      bridal_concierge_path %></li>
+          <li><%= link_to t("nav.treatments"),     treatments_path %></li>
+          <li><%= link_to t("nav.stories"),        stories_path %></li>
         </ul>
       </div>
 
       <div>
-        <h4><%= t("footer.contact") %></h4>
+        <h4><%= t("footer.care") %></h4>
         <ul>
-          <li><%= t("footer.address") %></li>
-          <li><%= t("footer.hours") %></li>
-          <li><%= link_to "WhatsApp", whatsapp_url, target: "_blank", rel: "noopener" %></li>
-          <li><%= link_to t("cta.inquire"), inquire_path %></li>
+          <li><%= link_to t("footer.private_care"), private_care_path %></li>
+          <li><%= link_to t("nav.journal"),         journal_path %></li>
+          <li><%= link_to t("footer.faq"),          faq_path %></li>
+          <li><%= link_to t("footer.contact"),      inquire_path %></li>
         </ul>
       </div>
     </div>
 
-    <nav class="footer-legal" aria-label="Legal">
-      <%= link_to t("footer.legal.privacy"),    privacy_path %>
-      <%= link_to t("footer.legal.disclaimer"), medical_disclaimer_path %>
-      <%= link_to t("footer.legal.terms"),      terms_path %>
-    </nav>
-
     <div class="subfoot">
       <span><%= t("footer.disclaimer") %></span>
-      <span><%= t("footer.license") %></span>
+      <%= link_to t("footer.license"), privacy_path %>
     </div>
   </div>
 </footer>

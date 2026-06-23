@@ -1,25 +1,23 @@
 <header class="site-header" data-controller="header">
   <%= link_to root_path, class: "brand", "aria-label": t("brand.name") do %>
-    <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: t("brand.name") %>
+    <span class="mark"><%= t("brand.name") %></span>
     <span class="sub"><%= t("brand.city") %></span>
   <% end %>
 
   <nav class="site-nav">
-    <%= link_to t("nav.clinic"),    the_clinic_path %>
-    <%= link_to t("nav.doctor"),    dr_maysa_path %>
-    <%= link_to t("nav.protocols"), protocols_path %>
-    <%= link_to t("nav.stories"),   stories_path %>
-    <%= link_to t("nav.journal"),   journal_path %>
+    <%= link_to t("nav.clinic"),     the_clinic_path %>
+    <%= link_to t("nav.doctor"),     dr_maysa_path %>
+    <%= link_to t("nav.protocols"),  protocols_path %>
+    <%= link_to t("nav.treatments"), treatments_path %>
+    <%= link_to t("nav.journal"),    journal_path %>
   </nav>
 
   <div class="header-actions">
     <a class="wa-icon" href="<%= whatsapp_url %>" target="_blank" rel="noopener" aria-label="WhatsApp" title="<%= t("cta.whatsapp") %>">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M3 21l1.6-4.5A8.4 8.4 0 1 1 8 19.4L3 21z"></path>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
     </a>
     <%# Language toggle: stay on the current page in the other locale. %>
-    <%= link_to "AR ⇄ EN", switch_locale_url, class: "lang-toggle" %>
+    <%= link_to (ar? ? "EN" : "ع"), switch_locale_url, class: "lang-toggle" %>
     <%= link_to t("cta.inquire"), inquire_path, class: "btn-inquire" %>
   </div>
 </header>

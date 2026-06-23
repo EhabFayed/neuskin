@@ -1,39 +1,46 @@
 /*
- * NeuSkin design tokens — palette matched to the official brand identity
- * (the NS monogram + brand deck, Milaknight June). The brand mark is a muted
- * mauve / dusty-rose (#9C8484); the palette below derives from it. These hexes
- * are the single source of truth; every color on the site derives from them.
+ * NeuSkin design tokens — bronze/parchment editorial palette.
+ * Matched verbatim to the NeuSkin.dc.html design prototype (Web Team, June).
+ * These hexes are the single source of truth; every color on the site derives
+ * from them.
  */
 :root {
-  /* Color — brand mauve over a soft parchment base */
-  --ground:       #F4EEE9; /* warm ivory — default background, cooled slightly toward rose */
-  --ground-deep:  #EBE0DC; /* deeper rose-ivory — alternating bands */
-  --text:         #2E2429; /* deep mauve-ink (near-black, rose undertone) */
-  --text-soft:    #7A6A70; /* muted mauve-grey — secondary copy */
-  --accent:       #8E6E76; /* brand mauve, deepened for legible CTAs — the one bold color */
-  --accent-2:     #A8909A; /* soft mauve-taupe — data, numerals, secondary accent */
-  --line:         #D8C8CC; /* dusty-rose hairline — rules, card borders */
-  --night:        #2B2126; /* warm near-black with rose undertone — footer, closing band */
-  --brand-mauve:  #9C8484; /* the exact logo mauve, for the monogram + brand touches */
+  /* Color — warm bone/parchment ground with a single bronze accent */
+  --ground:       #F4EFE7; /* warm bone — default page background */
+  --ground-deep:  #ECE5D8; /* deeper cream — alternating section bands */
+  --surface:      #FBF8F2; /* off-white card surface; light text on dark */
+  --text:         #2A231D; /* oud-brown ink — body + headlines, dark buttons */
+  --text-soft:    #6E6258; /* muted warm taupe — secondary copy */
+  --text-faint:   #9c8f80; /* lighter muted — meta labels, captions */
+  --accent:       #A8825A; /* bronze/camel — eyebrows, accent, numerals, hovers */
+  --accent-2:     #B89B6E; /* warm sand-gold — data labels, numerals, secondary accent */
+  --accent-deep:  #8a6c4c; /* deepened bronze — CTA hover, hero gradient top */
+  --line:         #E0D7C7; /* hairline grid gap + card borders on parchment */
+  --line-soft:    #D8CDB9; /* lighter divider — inputs, filter borders */
+  --night:        #221D18; /* warm near-black — dark section bands */
+  --footer:       #1B1611; /* darkest — footer ground */
+  --on-dark:      #E8E0D2; /* light text on dark sections */
+  --on-dark-soft: #9b9082; /* muted text on dark sections */
 
-  /* Type roles */
-  --ar:    "Amiri", "Scheherazade New", "Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", serif;
-  --serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua", "Times New Roman", serif;
-  --sans:  "Optima", "Gill Sans", "Gill Sans MT", -apple-system, "Segoe UI", sans-serif;
+  /* Type roles — Latin display lead, Tajawal carrying Arabic */
+  --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  --sans:  "Jost", -apple-system, "Segoe UI", sans-serif;
+  --ar:    "Tajawal", "Reem Kufi", "Geeza Pro", "Noto Naskh Arabic", sans-serif;
 
   /* Layout */
-  --maxw: 1180px;
+  --maxw:   1180px;
+  --gutter: 48px;
 
-  /* Spacing scale — consistent vertical rhythm (editorial restraint, Lutétia). */
-  --space-section: clamp(72px, 9vw, 130px);  /* between major sections */
-  --space-block:   clamp(32px, 4vw, 56px);   /* within a section */
-  --space-tight:   clamp(16px, 2vw, 24px);
+  /* Spacing scale — generous editorial rhythm */
+  --space-section: clamp(96px, 11vw, 140px);  /* between major sections */
+  --space-block:   clamp(40px, 5vw, 70px);    /* within a section */
+  --space-tight:   clamp(16px, 2vw, 26px);
 
   /* Motion */
-  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1); /* primary entrance/settle */
-  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);     /* snappier out-quint for pops */
-  --dur-fast:  .25s;
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);  /* primary entrance/settle */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:  .3s;
   --dur-mid:   .5s;
-  --dur-slow:  1.1s;
-  --dur-img:   1.6s;  /* image settle / Ken-Burns */
+  --dur-slow:  1s;
+  --dur-img:   1.4s;
 }
