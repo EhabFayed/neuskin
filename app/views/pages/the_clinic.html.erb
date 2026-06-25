@@ -3,9 +3,9 @@
 <%# 1 · Hero — clinic interior film (video if present, else photo) + overlay headline %>
 <% clinic_clip = "clinic-interior.mp4" %>
 <% clinic_has_clip = File.exist?(Rails.root.join("app/assets/videos", clinic_clip)) %>
-<section class="clinic-hero has-photo" style="--hero-photo: url('<%= asset_path('site/lounge.jpg') %>')">
+<section class="clinic-hero has-photo" style="--hero-photo: url('<%= asset_path('site/space/entrance.jpg') %>')">
   <% if clinic_has_clip %>
-    <video class="clinic-hero-media hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/lounge.jpg') %>" aria-hidden="true">
+    <video class="clinic-hero-media hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/space/entrance.jpg') %>" aria-hidden="true">
       <source src="<%= asset_path(clinic_clip) %>" type="video/mp4">
     </video>
   <% else %>
@@ -16,9 +16,10 @@
   </div>
 </section>
 
-<%# 2 · The Story — first-person-plural editorial, signed %>
-<section class="section" data-controller="reveal">
-  <div class="wrap narrow essay">
+<%# 2 · The Story — first-person-plural editorial, signed, with logo watermark %>
+<section class="section story-section" data-controller="reveal"
+         style="--story-logo: url('<%= asset_path('site/logo-ns.png') %>')">
+  <div class="wrap narrow essay" style="position:relative;z-index:1">
     <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
       <span class="label"><%= t("clinic.story_label") %></span>
     </div>

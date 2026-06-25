@@ -1,10 +1,13 @@
 <%# Private Care / VIP (§09) — gated, by invitation. Discretion is the entire offer. %>
 
 <%# Hero — a single sentence %>
-<section class="section vip-hero">
+<section class="section vip-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <span class="label"><%= t("vip.eyebrow") %></span>
-    <p class="vip-statement" dir="<%= loc_dir %>">
+    <div class="reveal d1" data-reveal-target="item">
+      <%= image_tag "site/icons/monogram.jpg", class: "icon-3d", alt: "" %>
+    </div>
+    <span class="label reveal d2" data-reveal-target="item"><%= t("vip.eyebrow") %></span>
+    <p class="vip-statement reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
       <%= loc(ar: t("vip.statement_ar"), en: t("vip.statement_en")) %>
     </p>
   </div>

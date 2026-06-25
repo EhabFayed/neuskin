@@ -1,19 +1,30 @@
-<%# The four-step patient journey — consistent language across the whole site. %>
+<%# The four-step patient journey — a flowing curved wave. Each numbered node is
+    anchored exactly on its crest/trough of the curve; its text stacks on the
+    outer side (crests: above · troughs: below) so the line is never crossed. %>
+<% steps = %w[inquire consult plan treat] %>
 <section class="section journey" data-controller="reveal">
   <div class="wrap">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="label"><%= t("journey.label") %></span>
     </div>
-    <ol class="journey-steps reveal" data-reveal-target="item">
-      <% %w[inquire consult plan treat].each_with_index do |step, i| %>
-        <li class="journey-step reveal" data-reveal-target="item">
-          <span class="num"><%= format("%02d", i + 1) %></span>
-          <h3 dir="<%= loc_dir %>">
-            <%= loc(ar: t("journey.#{step}.title_ar"), en: t("journey.#{step}.title_en")) %>
-          </h3>
-          <p><%= t("journey.#{step}.body") %></p>
-        </li>
+
+    <div class="journey-wave reveal" data-reveal-target="item">
+      <svg class="journey-wave-line" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 125 75 C 250 75, 250 225, 375 225 S 500 75, 625 75 S 750 225, 875 225" />
+      </svg>
+      <% steps.each_with_index do |step, i| %>
+        <% pos = [:up, :down, :up, :down][i] %>
+        <div class="journey-node-item is-<%= pos %> n<%= i + 1 %> reveal" data-reveal-target="item">
+          <div class="journey-step-text">
+            <span class="journey-cell-num"><%= format("%02d", i + 1) %></span>
+            <h3 dir="<%= loc_dir %>">
+              <%= loc(ar: t("journey.#{step}.title_ar"), en: t("journey.#{step}.title_en")) %>
+            </h3>
+            <p><%= t("journey.#{step}.body") %></p>
+          </div>
+          <span class="journey-node" aria-hidden="true"><span class="journey-num"><%= i + 1 %></span></span>
+        </div>
       <% end %>
-    </ol>
+    </div>
   </div>
 </section>

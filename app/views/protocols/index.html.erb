@@ -1,13 +1,19 @@
 <%# Protocols Hub (§06): hero · "I'm here because…" filter · card grid. %>
 
-<section class="section section--deep protocols-hub" data-controller="reveal filter">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.eyebrow_tagline") %></span>
-      <h2 dir="<%= loc_dir %>">
-        <%= t("protocols.hub_title") %>
-      </h2>
+<section class="section protocols-hero" data-controller="reveal">
+  <div class="wrap narrow" style="text-align:center">
+    <div class="reveal d1" data-reveal-target="item">
+      <%= image_tag "site/icons/machine.jpg", class: "icon-3d", alt: "" %>
     </div>
+    <span class="label reveal d2" data-reveal-target="item"><%= t("protocols.eyebrow_tagline") %></span>
+    <h1 class="protocols-title reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
+      <%= loc(ar: t("protocols.hub_title"), en: t("protocols.hub_title")) %>
+    </h1>
+  </div>
+</section>
+
+<section class="section section--deep protocols-hub" style="padding-block-start: 20px;" data-controller="reveal filter">
+  <div class="wrap">
 
     <%# Smart filter: visitor picks "I'm here because…" → cards filter by persona. %>
     <div class="filter reveal" data-reveal-target="item">

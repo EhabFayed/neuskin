@@ -2,8 +2,11 @@
 
 <section class="section faq-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("faq.eyebrow") %></span>
-    <h1 class="faq-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
+    <div class="reveal d1" data-reveal-target="item">
+      <%= image_tag "site/icons/faq-bubble.jpg", class: "icon-3d", alt: "" %>
+    </div>
+    <span class="label reveal d2" data-reveal-target="item"><%= t("faq.eyebrow") %></span>
+    <h1 class="faq-title reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
       <%= loc(ar: t("faq.title_ar"), en: t("faq.title_en")) %>
     </h1>
   </div>

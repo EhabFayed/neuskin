@@ -32,13 +32,13 @@
       <h2 dir="<%= loc_dir %>"><%= t("home.promise_title") %></h2>
     </div>
     <div class="pillars">
-      <%= render "pages/pillar", num: "01", ar_title: "بقيادة الطبيبة", en_title: "Doctor-led",
+      <%= render "pages/pillar", extra: "from-left", num: "01", ar_title: "بقيادة الطبيبة", en_title: "Doctor-led",
             ar_body: "كل خطة تضعها د. ميساء بنفسها — لا قائمة خدمات.",
             en_body: "Every plan is built by Dr. Maysa — not chosen from a menu." %>
-      <%= render "pages/pillar", num: "02", ar_title: "بسريّة تامة", en_title: "Discreet",
+      <%= render "pages/pillar", extra: "from-bottom", num: "02", ar_title: "بسريّة تامة", en_title: "Discreet",
             ar_body: "استشارة خاصة. علاج خاص. نتائج خاصة.",
             en_body: "Private consultation. Private treatment. Private results." %>
-      <%= render "pages/pillar", num: "03", ar_title: "مقاسة بدقّة", en_title: "Measured",
+      <%= render "pages/pillar", extra: "from-right", num: "03", ar_title: "مقاسة بدقّة", en_title: "Measured",
             ar_body: "نتائج موثّقة كل ثلاثة أشهر. بلا تخمين، بلا ضجيج.",
             en_body: "Outcomes documented quarterly. No guesswork, no drama." %>
     </div>

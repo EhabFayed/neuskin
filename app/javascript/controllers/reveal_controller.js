@@ -12,16 +12,24 @@ export default class extends Controller {
 
     this.element.classList.add("reveal-ready")
 
+    // Small base delay so the motion begins a beat AFTER the section settles
+    // into view, rather than the instant its edge appears. Feels intentional.
+    const BASE_DELAY = 180 // ms
+
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("in")
-            this.observer.unobserve(entry.target)
+            const el = entry.target
+            setTimeout(() => el.classList.add("in"), BASE_DELAY)
+            this.observer.unobserve(el)
           }
         })
       },
-      { threshold: 0.12 }
+      // threshold .25 + a negative bottom rootMargin => fires once the element
+      // is genuinely within the viewport (the section has "appeared"), not while
+      // it's still peeking in at the very bottom edge.
+      { threshold: 0.25, rootMargin: "0px 0px -12% 0px" }
     )
 
     this.itemTargets.forEach((el) => this.observer.observe(el))

@@ -2,11 +2,14 @@
 
 <section class="section inquire-hero" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal d1" data-reveal-target="item"><%= t("inquire.label") %></span>
-    <h1 class="inquire-title reveal d2" data-reveal-target="item" dir="<%= loc_dir %>">
+    <div class="reveal d1" data-reveal-target="item">
+      <%= image_tag "site/icons/calendar.jpg", class: "icon-3d", alt: "" %>
+    </div>
+    <span class="label reveal d2" data-reveal-target="item"><%= t("inquire.label") %></span>
+    <h1 class="inquire-title reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
       <%= t("inquire.title") %>
     </h1>
-    <p class="inquire-sub reveal d3" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("inquire.sub") %></p>
+    <p class="inquire-sub reveal d4" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("inquire.sub") %></p>
   </div>
 </section>
 
@@ -122,10 +125,13 @@
 <%# Location, hours, privacy %>
 <section class="section section--deep" data-controller="reveal">
   <div class="wrap narrow" style="text-align:center">
-    <p class="location reveal" data-reveal-target="item">
+    <div class="reveal d1" data-reveal-target="item" style="margin-block-end: 16px;">
+      <%= image_tag "site/icons/pin.jpg", class: "icon-3d", style: "width: 70px; height: 70px; margin: 0;", alt: "" %>
+    </div>
+    <p class="location reveal d2" data-reveal-target="item">
       <strong><%= t("footer.address") %></strong><br>
       <%= t("footer.hours") %>
     </p>
-    <p class="privacy reveal" data-reveal-target="item"><%= t("inquire.privacy") %></p>
+    <p class="privacy reveal d3" data-reveal-target="item"><%= t("inquire.privacy") %></p>
   </div>
 </section>
