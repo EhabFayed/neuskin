@@ -1,69 +1,114 @@
-<%# About — The Clinic (§02). %>
+<%# The Clinic — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# 1 · Hero — clinic interior film (video if present, else photo) + overlay headline %>
-<% clinic_clip = "clinic-interior.mp4" %>
-<% clinic_has_clip = File.exist?(Rails.root.join("app/assets/videos", clinic_clip)) %>
-<section class="clinic-hero has-photo" style="--hero-photo: url('<%= asset_path('site/lounge.jpg') %>')">
-  <% if clinic_has_clip %>
-    <video class="clinic-hero-media hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/lounge.jpg') %>" aria-hidden="true">
-      <source src="<%= asset_path(clinic_clip) %>" type="video/mp4">
-    </video>
-  <% else %>
-    <div class="clinic-hero-media" aria-hidden="true"></div>
-  <% end %>
-  <div class="clinic-hero-overlay">
-    <p class="clinic-overline" dir="<%= loc_dir %>"><%= loc(ar: t("clinic.hero_ar"), en: t("clinic.hero_en")) %></p>
+<%# ---- Hero (split with the entrance image) ---- %>
+<section class="split-hero" data-controller="reveal parallax">
+  <div class="split-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= ns_image_tag :interior_ext, alt: "The entrance to NeuSkin, Al Malqa", class: "kb" %>
+  </div>
+  <div class="split-hero-copy">
+    <span class="eyebrow" data-reveal="fade">About · The Clinic</span>
+    <h1>
+      <span data-reveal="mask" data-reveal-delay="120"><span>A private clinic in Al Malqa, built around one question:</span></span>
+      <span class="em" data-reveal="mask" data-reveal-delay="240"><span>what will your skin look like in five years?</span></span>
+    </h1>
   </div>
 </section>
 
-<%# 2 · The Story — first-person-plural editorial, signed %>
+<%# ---- Philosophy (design copy) — 50/50 split ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split" style="align-items:start">
+    <h2 class="clinic-statement" style="position:sticky;top:300px">
+      <span data-reveal="mask" data-reveal-delay="80"><span>We believe a clinic should be measured</span></span>
+      <span data-reveal="mask" data-reveal-delay="200"><span>by <span class="em">what it refuses to do.</span></span></span>
+    </h2>
+    <div>
+      <div class="body-copy" style="font-size:clamp(1.05rem,1.5vw,1.3rem)">
+        <p data-reveal="up" data-reveal-delay="160">NeuSkin began with a frustration: skin care in Riyadh had become a list of treatments and a public price grid, sold the way a menu is sold. We wanted the opposite — a quiet room, a doctor who looks properly, and a plan written for one person at a time.</p>
+        <p data-reveal="up" data-reveal-delay="240">So we built a clinic around diagnosis, not display. Every patient begins with the Maysa Method™ — a full reading of skin, hair and body — before anything is recommended, let alone performed. We chose Al Malqa for its discretion, and we chose women as our focus because they have been sold to longest, and listened to least.</p>
+        <p data-reveal="up" data-reveal-delay="320">We are not the loudest clinic in the city. We intend to be the one you keep.</p>
+      </div>
+      <p class="sign" data-reveal="up" data-reveal-delay="400" style="margin-top:32px">— Dr. Maysa, Founder</p>
+    </div>
+  </div>
+</section>
+
+<%# ---- The Space ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <span class="eyebrow reveal" data-reveal-target="item">The Space</span>
+    <div class="shot-grid reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
+      <figure class="shot w4"><%= ns_image_tag :lounge, alt: "Waiting lounge" %><figcaption>The lounge</figcaption></figure>
+      <figure class="shot w2"><%= ns_image_tag :diptyque, alt: "In the detail" %><figcaption>In the detail</figcaption></figure>
+      <figure class="shot w2"><%= ns_image_tag :device_table, alt: "Device room" %><figcaption>Device room</figcaption></figure>
+      <figure class="shot w3"><%= ns_image_tag :treatment_room, alt: "Treatment room" %><figcaption>Treatment room</figcaption></figure>
+      <figure class="shot w3"><%= ns_image_tag :interior_ext, alt: "The entrance at dusk" %><figcaption>The entrance</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<%# ---- Four-step patient journey ---- %>
 <section class="section" data-controller="reveal">
-  <div class="wrap narrow essay">
-    <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
-      <span class="label"><%= t("clinic.story_label") %></span>
-    </div>
-    <% t("clinic.story").each do |para| %>
-      <p class="reveal" data-reveal-target="item"><%= para %></p>
-    <% end %>
-    <p class="essay-sign reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
-  </div>
-</section>
-
-<%# 3 · The Space — photographic essay (placeholders, no people) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
+  <div class="section-inner">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("clinic.space_label") %></span>
+      <span class="eyebrow">How we work</span>
+      <h2 style="margin-top:22px">The four-step patient journey</h2>
     </div>
-    <% space_photos = { 0 => "site/lounge.jpg", 1 => "site/protocols/skin.jpg", 2 => "site/plaster-texture.jpg",
-                        3 => "site/journal/j2.jpg", 4 => "site/protocols/hair.jpg", 5 => "site/desert-atmosphere.jpg" } %>
-    <div class="space-grid">
-      <% t("clinic.space_rooms").each_with_index do |room, i| %>
-        <figure class="space-shot space-shot--<%= i % 5 %><%= " has-photo" if space_photos[i] %> reveal-img" data-reveal-target="item"
-                <%= "style=\"--shot-photo: url('#{asset_path(space_photos[i])}')\"".html_safe if space_photos[i] %>>
-          <figcaption><%= room %></figcaption>
-        </figure>
-      <% end %>
+    <div class="journey reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
+      <div class="step">
+        <span class="n">01</span>
+        <h3>Inquire</h3>
+        <p>A private WhatsApp message or form, reviewed personally by our patient relations lead.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h3>Consult</h3>
+        <p>A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h3>Plan</h3>
+        <p>A written 12-month roadmap — skin, hair, body, lifestyle. Yours to keep, whatever you decide.</p>
+      </div>
+      <div class="step">
+        <span class="n">04</span>
+        <h3>Treat</h3>
+        <p>Sequenced sessions with quarterly review, adjusted as your skin responds.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<%# 4 · How we work — the four-step patient journey (shared partial) %>
-<%= render "shared/patient_journey" %>
-
-<%# 5 · The Standard — compliance + credentials %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("clinic.standard_label") %></span>
+<%# ---- Credentials, in plain language ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <span class="eyebrow">The standard</span>
+      <h2 style="margin-top:22px">Credentials, in plain language.</h2>
+      <div class="body-copy">
+        <p>We keep our compliance visible because trust should not be a leap of faith. Our licenses, our consent policy, and our honest limits are stated plainly — here, not buried.</p>
+      </div>
     </div>
-    <ul class="standard-list">
-      <% t("clinic.standard").each do |item| %>
-        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
-      <% end %>
-    </ul>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <ul class="specs">
+        <li><span class="k">SFDA / MOH license</span><span class="v">No. 0000000000</span></li>
+        <li><span class="k">Practitioner licenses</span><span class="v">On file · verifiable</span></li>
+        <li><span class="k">Patient privacy</span><span class="v">PDPL compliant</span></li>
+        <li><span class="k">Photographic consent</span><span class="v">Explicit · withdrawable</span></li>
+      </ul>
+      <div class="body-copy" style="margin-top:24px">
+        <p>Results vary. Everything we do is subject to medical consultation and individual assessment — and we would rather tell you "no" than sell you a "yes".</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<%# 6 · CTA — shared booking band %>
-<%= render "shared/book_cta", key: "clinic" %>
+<%# ---- Closing CTA ---- %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="cta-center reveal" data-reveal-target="item">
+      <h2>Begin a quiet conversation.</h2>
+      <p>We reply, personally, Saturday to Thursday, 10:00–22:00.</p>
+      <%= link_to "Speak with us", inquire_path, class: "btn" %>
+    </div>
+  </div>
+</section>

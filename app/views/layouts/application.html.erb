@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" dir="<%= I18n.locale == :ar ? "rtl" : "ltr" %>">
+<html lang="en" dir="ltr">
   <head>
-    <title>NeuSkin · Riyadh</title>
+    <title>NeuSkin Clinic — Doctor-led skin intelligence, Riyadh</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by Dr. Maysa.">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <%# Intro splash — NS monogram, fades out on first load (intro_controller). %>
+    <div class="intro-splash" data-controller="intro">
+      <%= image_tag "site/logo-ns.png", class: "mark", alt: "" %>
+      <span class="line" style="width:170px"></span>
+      <span class="wordmark">NeuSkin<span class="sub">Clinic · Riyadh</span></span>
+    </div>
     <%= render "shared/header" %>
     <%= yield %>
     <%= render "shared/footer" %>

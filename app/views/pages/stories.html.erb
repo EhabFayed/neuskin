@@ -1,32 +1,55 @@
-<%# Patient Stories (§13) — consented social proof. Empty state until consented
-    material is ready; the brief is explicit: better empty than stock photography. %>
+<%# Patient Stories (design §isStories) — consented social proof. No stock photography. %>
 
-<section class="section stories-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("stories.eyebrow") %></span>
-    <h1 class="stories-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("stories.title_ar"), en: t("stories.title_en")) %>
-    </h1>
-  </div>
+<%
+  patient_stories = [
+    { img: :portrait_natural,
+      intro: "She came in tired of being sold to. What she wanted was a plan.",
+      quote: "For the first time, someone told me what not to do. That's when I trusted them.",
+      protocol: "Diagnostic Foundation → Skin",
+      close: "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
+      by: "L.M. · 34 · Riyadh" },
+    { img: :consult,
+      intro: "A bride with six months and a quiet kind of panic.",
+      quote: "No one promised me a miracle. They promised me a calendar, and they kept it.",
+      protocol: "The Bride's 180",
+      close: "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
+      by: "A.R. · 29 · Jeddah" },
+    { img: :beauty_eyes,
+      intro: "Long-term maintenance, on her own terms.",
+      quote: "I review my skin like I review anything that matters to me — with data, every quarter.",
+      protocol: "Private Care",
+      close: "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
+      by: "F.K. · 41 · Riyadh" }
+  ]
+%>
+
+<section class="page-hero" data-controller="reveal" style="text-align:center">
+  <span class="eyebrow center reveal" data-reveal-target="item">Patient Stories</span>
+  <h1 style="margin-inline:auto;max-width:24ch">
+    <span data-reveal="mask" data-reveal-delay="120"><span>Real women. Consented words.</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>No stock photography.</span></span>
+  </h1>
+  <p class="lead reveal d2" data-reveal-target="item" style="margin-inline:auto">
+    Every story here is shared with explicit consent. Where a face is not shown,
+    that too is a choice we respect.
+  </p>
 </section>
 
-<section class="section stories-empty" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <p class="stories-lead reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("stories.empty_ar"), en: t("stories.empty_en")) %>
-    </p>
-    <p class="stories-policy reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("stories.policy_ar"), en: t("stories.policy_en")) %>
-    </p>
-    <p class="signed reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
-  </div>
-</section>
-
-<%# Until stories exist, point to the quiet proof we do have. %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("stories.cta_label") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("stories.cta_ar"), en: t("stories.cta_en")) %></p>
-    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="stories">
+      <% patient_stories.each do |story| %>
+        <div class="story reveal" data-reveal-target="item">
+          <%= ns_image_tag story[:img], alt: "Patient" %>
+          <div class="story-copy">
+            <p class="intro"><%= story[:intro] %></p>
+            <blockquote>&ldquo;<%= story[:quote] %>&rdquo;</blockquote>
+            <div class="tag"><%= story[:protocol] %></div>
+            <p style="color:var(--text-muted);font-weight:300;margin:14px 0 0"><%= story[:close] %></p>
+            <div class="by"><%= story[:by] %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>

@@ -1,56 +1,61 @@
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-cols">
+  <div class="footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <%= image_tag "site/logo-ns.png", class: "footer-logo", alt: t("brand.name") %>
-        <p class="pos"><%= t("brand.positioning") %></p>
-        <div class="socials">
-          <a href="#">IG</a><a href="#">SNAP</a><a href="#">TIKTOK</a><a href="#">YT</a>
+        <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: "NeuSkin Clinic" %>
+        <p class="blurb">Doctor-led skin intelligence for women, in the quiet of Al Malqa, Riyadh.</p>
+        <div class="footer-socials">
+          <a href="#">Instagram</a>
+          <a href="<%= whatsapp_url %>" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
 
       <div>
-        <h4><%= t("footer.clinic") %></h4>
+        <h4>The Clinic</h4>
         <ul>
-          <li><%= link_to t("footer.about"),  the_clinic_path %></li>
-          <li><%= link_to t("nav.doctor"),    dr_maysa_path %></li>
-          <li><%= link_to t("footer.team"),   the_team_path %></li>
-          <li><%= link_to t("footer.method"), maysa_method_path %></li>
+          <li><%= link_to "About", the_clinic_path %></li>
+          <li><%= link_to "Dr. Maysa", dr_maysa_path %></li>
+          <li><%= link_to "The Medical Team", the_team_path %></li>
+          <li><%= link_to "The Maysa Method™", maysa_method_path %></li>
         </ul>
       </div>
 
       <div>
-        <h4><%= t("footer.care") %></h4>
+        <h4>Protocols</h4>
         <ul>
-          <li><%= link_to t("nav.protocols"),       protocols_path %></li>
-          <li><%= link_to t("footer.bridal"),       bridal_concierge_path %></li>
-          <li><%= link_to t("footer.private_care"), private_care_path %></li>
-          <li><%= link_to t("nav.journal"),         journal_path %></li>
-          <li><%= link_to t("nav.stories"),         stories_path %></li>
-          <li><%= link_to t("footer.faq"),          faq_path %></li>
+          <li><%= link_to "All Protocols", protocols_path %></li>
+          <li><%= link_to "Treatments", treatments_path %></li>
+          <li><%= link_to "Bridal Concierge", bridal_concierge_path %></li>
+          <li><%= link_to "Private Care", private_care_path %></li>
         </ul>
       </div>
 
       <div>
-        <h4><%= t("footer.contact") %></h4>
+        <h4>Care</h4>
         <ul>
-          <li><%= t("footer.address") %></li>
-          <li><%= t("footer.hours") %></li>
-          <li><%= link_to "WhatsApp", whatsapp_url, target: "_blank", rel: "noopener" %></li>
-          <li><%= link_to t("cta.inquire"), inquire_path %></li>
+          <li><%= link_to "Journal", journal_path %></li>
+          <li><%= link_to "Patient Stories", stories_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
+          <li><%= link_to "Contact", inquire_path %></li>
         </ul>
+      </div>
+
+      <div class="footer-visit">
+        <h4>Visit</h4>
+        <p>Al Malqa, Riyadh<br>Kingdom of Saudi Arabia</p>
+        <p>Sat–Thu · 10:00–22:00<br>Friday · Closed</p>
+        <p><%= link_to "WhatsApp", whatsapp_url, target: "_blank", rel: "noopener" %><br>
+           <a href="mailto:hello@neuskin.sa">hello@neuskin.sa</a></p>
       </div>
     </div>
 
-    <nav class="footer-legal" aria-label="Legal">
-      <%= link_to t("footer.legal.privacy"),    privacy_path %>
-      <%= link_to t("footer.legal.disclaimer"), medical_disclaimer_path %>
-      <%= link_to t("footer.legal.terms"),      terms_path %>
-    </nav>
-
-    <div class="subfoot">
-      <span><%= t("footer.disclaimer") %></span>
-      <span><%= t("footer.license") %></span>
+    <div class="footer-bottom">
+      <span>© <%= Time.current.year %> NeuSkin Clinic · SFDA / MOH licensed</span>
+      <nav class="footer-bottom-nav" aria-label="Legal">
+        <%= link_to "Privacy & PDPL", privacy_path %>
+        <%= link_to "Consent", medical_disclaimer_path %>
+        <%= link_to "Terms", terms_path %>
+      </nav>
     </div>
   </div>
 </footer>

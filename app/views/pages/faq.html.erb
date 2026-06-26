@@ -1,49 +1,58 @@
-<%# FAQ (§14) — 20 questions, 4 groups of 5, search + accordion. %>
+<%# FAQ (design §isFaq) — search + accordion, grouped questions. %>
 
-<section class="section faq-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("faq.eyebrow") %></span>
-    <h1 class="faq-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("faq.title_ar"), en: t("faq.title_en")) %>
-    </h1>
-  </div>
-</section>
+<%
+  faq_groups = [
+    { title: "Before you come in", qs: [
+      { q: "Do you publish a price list?",
+        a: "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs." },
+      { q: "How do I start?",
+        a: "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally." },
+      { q: "Is the first visit a treatment?",
+        a: "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan." }
+    ] },
+    { title: "How care works", qs: [
+      { q: "Why a twelve-month plan?",
+        a: "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months." },
+      { q: "Will I see Dr. Maysa herself?",
+        a: "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction." },
+      { q: "What if a treatment isn't right for me?",
+        a: "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session." }
+    ] },
+    { title: "Privacy & practicalities", qs: [
+      { q: "How private is my information?",
+        a: "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely." },
+      { q: "Do you photograph patients?",
+        a: "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time." },
+      { q: "Where are you, and when are you open?",
+        a: "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule." }
+    ] }
+  ]
+%>
 
-<section class="section faq-body" data-controller="faqsearch">
-  <div class="wrap narrow">
-    <div class="faq-search">
-      <input type="search" data-faqsearch-target="query" data-action="input->faqsearch#filter"
-             placeholder="<%= t('faq.search_ph') %>" aria-label="<%= t('faq.search_ph') %>">
-    </div>
+<section class="page-hero" data-controller="reveal faqsearch">
+  <span class="eyebrow reveal" data-reveal-target="item">Frequently Asked</span>
+  <h1>
+    <span data-reveal="mask" data-reveal-delay="120"><span>The questions</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>before the question.</span></span>
+  </h1>
+  <input class="faq-search reveal d2" data-reveal-target="item"
+         data-faqsearch-target="query"
+         data-action="input->faqsearch#filter"
+         placeholder="Search the questions">
 
-    <% %w[clinic treatments protocols privacy].each do |group| %>
+  <div class="section-inner" style="padding-block-start:clamp(40px,5vw,64px)">
+    <% faq_groups.each do |group| %>
       <div class="faq-group" data-faqsearch-target="group">
-        <h2 class="faq-group-title" data-faqsearch-target="groupTitle" dir="<%= loc_dir %>">
-          <%= loc(ar: t("faq.groups.#{group}.title_ar"), en: t("faq.groups.#{group}.title_en")) %>
-        </h2>
-
-        <% t("faq.groups.#{group}.items").each do |item| %>
+        <h2><%= group[:title] %></h2>
+        <% group[:qs].each do |item| %>
           <details class="faq" data-faqsearch-target="item"
-                   data-search="<%= "#{item[:q_ar]} #{item[:q_en]} #{item[:a_ar]} #{item[:a_en]}".downcase %>">
-            <summary dir="<%= loc_dir %>"><%= loc(ar: item[:q_ar], en: item[:q_en]) %></summary>
-            <div class="faq-a">
-              <p dir="<%= loc_dir %>"><%= loc(ar: item[:a_ar], en: item[:a_en]) %></p>
-              <p class="faq-sign" dir="rtl">— د. ميساء</p>
-            </div>
+                   data-search="<%= "#{item[:q]} #{item[:a]}".downcase %>">
+            <summary><%= item[:q] %> <span class="sign">+</span></summary>
+            <div class="faq-a"><%= item[:a] %></div>
           </details>
         <% end %>
       </div>
     <% end %>
-
-    <p class="faq-empty" data-faqsearch-target="empty" hidden><%= t("faq.no_results") %></p>
-  </div>
-</section>
-
-<%# CTA — a question we didn't answer? %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("faq.cta_label") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("faq.cta_ar"), en: t("faq.cta_en")) %></p>
-    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
+    <p class="faq-empty" data-faqsearch-target="empty" hidden>No questions match.</p>
   </div>
 </section>

@@ -5,6 +5,33 @@ module ApplicationHelper
     Clinic.whatsapp_url(text: t("whatsapp.prefill"), codeword: codeword)
   end
 
+  # Design image keys → real asset paths. The "NeuSkin Clinic (standalone)"
+  # design references images by semantic key (img.portraitNatural, img.lounge…);
+  # this maps each to an asset on disk so every page references the same files.
+  NS_IMAGES = {
+    portrait_natural: "site/people/maysa.jpg",
+    doctor_coat:      "site/people/maysa.jpg",
+    treatment_room:   "site/space/treatment.jpg",
+    lounge:           "site/space/waiting-lounge.jpg",
+    device_table:     "site/space/device-room.jpg",
+    diptyque:         "site/space/private-suite.jpg",
+    interior_ext:     "site/space/entrance.jpg",
+    consult:          "site/space/consultation.jpg",
+    beauty_eyes:      "site/protocols/skin.jpg",
+    bride_bouquet:    "site/bridal-mood.jpg",
+    resort:           "site/desert-atmosphere.jpg"
+  }.freeze
+
+  # Asset path for a design image key (symbol). Falls back to the brand mark.
+  def ns_image(key)
+    asset_path(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.png"))
+  end
+
+  # <img> tag for a design image key, with object-fit handled by the CSS class.
+  def ns_image_tag(key, alt: "", **opts)
+    image_tag(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.png"), alt: alt, **opts)
+  end
+
   # Returns the string for the active locale. The whole site renders one
   # language at a time (Arabic when locale == :ar, English otherwise).
   def loc(ar:, en:)

@@ -37,6 +37,9 @@ Rails.application.routes.draw do
     # The Maysa Method™ — the philosophy page (§05), not the protocol page.
     get "maysa-method", to: "pages#maysa_method", as: :maysa_method
 
+    # Treatments — by outcome (design §08). A curated outcome list.
+    get "treatments", to: "pages#treatments", as: :treatments
+
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
 

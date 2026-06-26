@@ -1,46 +1,68 @@
-<%# The Medical Team (§04) — the credibility layer. %>
+<%# The Medical Team — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<section class="section team-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("team.eyebrow") %></span>
-    <h1 class="team-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("team.title_ar"), en: t("team.title_en")) %>
-    </h1>
-    <p class="team-intro reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("team.intro_ar"), en: t("team.intro_en")) %>
-    </p>
-  </div>
+<%
+  team = [
+    {
+      name:  "Dr. Maysa Al-Rashid",
+      role:  "Founder · Medical Director",
+      cred:  "MBBS · Dermatology · Aesthetic Medicine Fellowship",
+      focus: "Diagnosis & the 12-month plan",
+      bio:   "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+      img:   :portrait_natural
+    },
+    {
+      name:  "Dr. Lina Haddad",
+      role:  "Senior Aesthetic Physician",
+      cred:  "MBBS · Diploma in Aesthetic Medicine",
+      focus: "Injectables & restraint",
+      bio:   "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
+      img:   :consult
+    },
+    {
+      name:  "Dr. Sara Othman",
+      role:  "Dermatology Associate",
+      cred:  "MBBS · Clinical Dermatology",
+      focus: "Skin barrier & pigment",
+      bio:   "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
+      img:   :doctor_coat
+    },
+    {
+      name:  "Noor Al-Fahad",
+      role:  "Patient Relations Lead",
+      cred:  "First point of contact · privacy-trained",
+      focus: "Discretion & continuity",
+      bio:   "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
+      img:   :beauty_eyes
+    }
+  ]
+%>
+
+<%# ---- Hero ---- %>
+<section class="page-hero" data-controller="reveal">
+  <span class="eyebrow center reveal" data-reveal-target="item">The Medical Team</span>
+  <h1>
+    <span data-reveal="mask" data-reveal-delay="120"><span>The people behind</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>the plan.</span></span>
+  </h1>
+  <p class="lead reveal d2" data-reveal-target="item">
+    A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.
+  </p>
 </section>
 
-<section class="section team-body" data-controller="reveal">
-  <div class="wrap">
-    <% member_photos = ["site/people/maysa.jpg", "site/people/member-1.jpg", "site/people/member-2.jpg", "site/people/member-3.jpg", "site/people/member-4.jpg"] %>
-    <div class="team-grid">
-      <% t("team.members").each_with_index do |member, i| %>
-        <article class="team-member reveal" data-reveal-target="item">
-          <div class="team-portrait team-portrait--<%= i % 4 %><%= " has-photo" if member_photos[i] %>" role="img"
-               <%= "style=\"--portrait-photo: url('#{asset_path(member_photos[i])}')\"".html_safe if member_photos[i] %>
-               aria-label="<%= "#{member[:name_en]}, #{member[:title_en]}" %>"></div>
-          <div class="team-info">
-            <h2 class="team-name" dir="<%= loc_dir %>">
-              <%= loc(ar: member[:name_ar], en: member[:name_en]) %>
-            </h2>
-            <p class="team-role" dir="<%= loc_dir %>">
-              <%= loc(ar: member[:title_ar], en: member[:title_en]) %>
-            </p>
-            <p class="team-certs"><%= member[:certs] %></p>
-            <p class="team-focus">
-              <span class="team-focus-label"><%= t("team.focus_label") %></span>
-              <%= member[:focus] %>
-            </p>
-            <p class="team-bio"><%= member[:bio] %></p>
-          </div>
-        </article>
+<%# ---- Team grid ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="team-grid reveal d1" data-reveal-target="item">
+      <% team.each do |m| %>
+        <div class="member">
+          <div class="member-photo"><%= ns_image_tag m[:img], alt: m[:name] %></div>
+          <h3><%= m[:name] %></h3>
+          <div class="role"><%= m[:role] %></div>
+          <div class="cred"><%= m[:cred] %></div>
+          <div class="focus">Focus · <%= m[:focus] %></div>
+          <p class="bio"><%= m[:bio] %></p>
+        </div>
       <% end %>
     </div>
-    <%= render "shared/doctor_note", key: "team" %>
   </div>
 </section>
-
-<%# CTA — shared booking band %>
-<%= render "shared/book_cta", key: "team" %>

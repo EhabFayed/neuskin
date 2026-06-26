@@ -1,36 +1,54 @@
-<%# Protocols Hub (§06): hero · "I'm here because…" filter · card grid. %>
+<%# Protocols Hub — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<section class="section section--deep protocols-hub" data-controller="reveal filter">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.eyebrow_tagline") %></span>
-      <h2 dir="<%= loc_dir %>">
-        <%= t("protocols.hub_title") %>
-      </h2>
-    </div>
+<%# ---- Hero ---- %>
+<section class="page-hero" data-controller="reveal">
+  <span class="eyebrow reveal" data-reveal-target="item">The Protocols</span>
+  <h1>
+    <span data-reveal="mask" data-reveal-delay="120"><span>Six named protocols.</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>One philosophy. Zero menu pricing.</span></span>
+  </h1>
+  <p class="lead reveal d2" data-reveal-target="item">
+    NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list.
+  </p>
+</section>
 
-    <%# Smart filter: visitor picks "I'm here because…" → cards filter by persona. %>
-    <div class="filter reveal" data-reveal-target="item">
-      <span class="filter-lead" dir="<%= loc_dir %>"><%= t("protocols.hub_filter_lead") %></span>
-      <div class="filter-chips" role="group" aria-label="Filter protocols">
-        <% %w[all bride tired hair maintain unsure].each do |persona| %>
-          <button type="button" class="chip<%= " is-active" if persona == "all" %>" data-action="filter#select" data-filter-persona-param="<%= persona %>" dir="<%= loc_dir %>"><%= t("protocols.hub_chips.#{persona}") %></button>
+<%# ---- "I'm here because…" filter + card grid ---- %>
+<section class="section section--surface" data-controller="reveal filter">
+  <div class="section-inner">
+    <div class="reveal" data-reveal-target="item">
+      <span class="eyebrow">I'm here because…</span>
+      <div class="chips" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:24px">
+        <% chips = [
+             ["all",      "Show me everything"],
+             ["bride",    "I have a wedding ahead"],
+             ["tired",    "My skin looks tired"],
+             ["hair",     "I'm losing hair"],
+             ["maintain", "I want to maintain"],
+             ["fresh",    "I want to start fresh"],
+             ["unsure",   "I'm not sure yet"]
+           ] %>
+        <% chips.each do |persona, label| %>
+          <button type="button"
+                  class="chip<%= " is-active" if persona == "all" %>"
+                  data-action="filter#select"
+                  data-filter-persona-param="<%= persona %>"><%= label %></button>
         <% end %>
       </div>
     </div>
 
-    <div class="protocols">
+    <div class="proto-grid" style="margin-top:var(--space-block)">
       <% @protocols.each do |protocol| %>
         <div class="filter-item" data-filter-target="item" data-persona="<%= protocol.persona %>">
           <%= render "protocols/card", protocol: protocol %>
         </div>
       <% end %>
     </div>
-
-    <p class="hub-closing reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= t("protocols.hub_closing") %>
-    </p>
-
-    <%= render "shared/doctor_note", key: "protocols" %>
   </div>
+</section>
+
+<%# ---- Closing CTA ---- %>
+<section class="cta-center" data-controller="reveal">
+  <p class="reveal" data-reveal-target="item" style="font-family:var(--serif);font-style:italic">Not sure where to start?</p>
+  <h2 class="reveal d1" data-reveal-target="item">Begin with the <span class="em">Maysa Method™</span></h2>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to "Begin with the Maysa Method™", maysa_method_path, class: "btn" %></p>
 </section>

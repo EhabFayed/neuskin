@@ -27,8 +27,9 @@ module App
     # Full-stack Hotwire monolith (not API-only): server-rendered ERB/ViewComponent
     # views, Turbo + Stimulus, sessions/flash/cookies. See docs/DESIGN-AND-TECH-DIRECTION.md.
 
-    # Arabic-first, bilingual. Arabic is the default locale; English is the alternate.
+    # English-first for the NeuSkin Clinic (standalone) reskin. English is the
+    # default locale (unprefixed root serves English); Arabic remains available.
     config.i18n.available_locales = [:ar, :en]
-    config.i18n.default_locale = :ar
+    config.i18n.default_locale = :en
   end
 end

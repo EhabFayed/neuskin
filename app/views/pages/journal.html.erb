@@ -1,42 +1,65 @@
-<%# Journal (§12) — editorial magazine grid, not a blog feed. %>
+<%# Journal (design §isJournal) — editorial magazine grid, not a blog feed. %>
 
-<section class="section journal-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("journal.eyebrow") %></span>
-    <h1 class="journal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("journal.title_ar"), en: t("journal.title_en")) %>
-    </h1>
-    <p class="journal-intro reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("journal.intro_ar"), en: t("journal.intro_en")) %>
-    </p>
+<%
+  journal_articles = [
+    { cat: "Dr. Maysa Writes", read: "6 min read",
+      title: "Why I read skin before I treat it",
+      excerpt: "The first appointment is diagnostic, never cosmetic. Here is what we are actually measuring, and why the order matters." },
+    { cat: "Inside the Clinic", read: "4 min read",
+      title: "A quiet room, by design",
+      excerpt: "We built Al Malqa around discretion — separate entries, no waiting room theatre, one patient at a time." },
+    { cat: "Ritual", read: "5 min read",
+      title: "The three products most skin actually needs",
+      excerpt: "Restraint is the most underrated skill in skincare. A short list, and the reasoning behind each choice." },
+    { cat: "Dr. Maysa Writes", read: "7 min read",
+      title: "Sequencing: the year, not the session",
+      excerpt: "Good skin is built across quarters. How we plan twelve months so nothing is ever overwhelmed." },
+    { cat: "Notes from Patients", read: "3 min read",
+      title: "What changed was how I felt walking in",
+      excerpt: "A patient on the difference between being sold to and being cared for — shared, with consent." },
+    { cat: "Inside the Clinic", read: "5 min read",
+      title: "How we say no",
+      excerpt: "Turning a treatment down is part of the practice. The conversations we have when something isn't right for you." }
+  ]
+  journal_images = ["site/journal/j1.jpg", "site/journal/j2.jpg", "site/journal/j3.jpg"]
+%>
+
+<section class="page-hero" data-controller="reveal">
+  <span class="eyebrow reveal" data-reveal-target="item">The Journal</span>
+  <h1>
+    <span data-reveal="mask" data-reveal-delay="120"><span>Notes, quietly</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>kept.</span></span>
+  </h1>
+  <p class="lead reveal d2" data-reveal-target="item">
+    A doctor&rsquo;s writing, the clinic from the inside, and the rituals in
+    between &mdash; read at your own pace. Nothing trending, nothing rushed.
+  </p>
+  <div class="chips reveal d3" data-reveal-target="item" style="margin-block-start:40px">
+    <button class="chip is-active">All</button>
+    <button class="chip">Dr. Maysa Writes</button>
+    <button class="chip">Inside the Clinic</button>
+    <button class="chip">Ritual</button>
+    <button class="chip">Notes from Patients</button>
   </div>
 </section>
 
-<section class="section journal-body" data-controller="reveal">
-  <div class="wrap">
-    <%# Category labels — the strategy deck's content pillars. Static for now. %>
-    <div class="journal-cats reveal" data-reveal-target="item">
-      <% t("journal.categories").each do |cat| %>
-        <span class="journal-cat"><%= cat %></span>
-      <% end %>
-    </div>
-
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
     <div class="journal-grid">
-      <% journal_imgs = %w[site/journal/j1.jpg site/journal/j2.jpg site/journal/j3.jpg] %>
-      <% t("journal.articles").each_with_index do |article, i| %>
-        <article class="journal-card journal-card--<%= i % 3 %> reveal" data-reveal-target="item">
-          <div class="journal-image has-photo" style="--shot-photo: url('<%= asset_path(journal_imgs[i % 3]) %>')" aria-hidden="true"></div>
-          <div class="journal-card-body">
-            <span class="journal-card-cat"><%= article[:category] %></span>
-            <h2 class="journal-card-title" dir="<%= loc_dir %>">
-              <%= loc(ar: article[:title_ar], en: article[:title_en]) %>
-            </h2>
-            <p class="journal-card-meta"><%= article[:byline] %> · <%= article[:reading_time] %></p>
+      <% journal_articles.each_with_index do |article, i| %>
+        <a class="article reveal d<%= (i % 3) + 1 %>" data-reveal-target="item" href="<%= journal_path %>">
+          <div class="article-img">
+            <%= image_tag journal_images[i % journal_images.size], alt: article[:title] %>
           </div>
-        </article>
+          <div class="meta">
+            <span><%= article[:cat] %></span>
+            <span class="dot">&middot;</span>
+            <span><%= article[:read] %></span>
+          </div>
+          <h3><%= article[:title] %></h3>
+          <p><%= article[:excerpt] %></p>
+        </a>
       <% end %>
     </div>
-
-    <p class="journal-note reveal" data-reveal-target="item"><%= t("journal.placeholder_note") %></p>
   </div>
 </section>

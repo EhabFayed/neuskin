@@ -1,124 +1,190 @@
-<%# Homepage — 6 sections per the Website Architecture. Bilingual side-by-side. %>
+<%# Homepage — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<section class="hero" data-controller="reveal">
-  <span class="seam"></span>
-  <h1 class="<%= ar? ? "hero-ar" : "hero-en" %> reveal d2" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("home.hero_h1").html_safe %></h1>
-  <p class="hero-sub reveal d3" data-reveal-target="item" dir="<%= loc_dir %>">
-    <%= t("home.hero_sub") %>
-  </p>
-  <div class="cta-row reveal d4" data-reveal-target="item">
-    <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
-    <%= link_to t("cta.whatsapp"), whatsapp_url, class: "micro-cta", target: "_blank", rel: "noopener" %>
+<%# ---- Hero (split: copy + portrait) ---- %>
+<section class="hero" data-controller="reveal parallax">
+  <div class="hero-copy">
+    <span class="eyebrow" data-reveal="fade">Doctor-led · Riyadh</span>
+    <h1>
+      <span class="ln" data-reveal="mask" data-reveal-delay="150"><span>Skin,</span></span>
+      <span class="ln" data-reveal="mask" data-reveal-delay="260"><span>measured.</span></span>
+      <span class="ln em" data-reveal="mask" data-reveal-delay="410"><span>Confidence, quiet.</span></span>
+    </h1>
+    <p class="hero-sub" data-reveal="up" data-reveal-delay="560">
+      The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.
+    </p>
+    <div class="hero-cta" data-reveal="up" data-reveal-delay="680">
+      <%= link_to "Request an assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %>
+      <a class="wa-link" href="<%= whatsapp_url %>" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#6fb98a" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+        Speak privately on WhatsApp
+      </a>
+    </div>
+    <div class="hero-foot" data-reveal="fade" data-reveal-delay="820">
+      <span>Est. Al Malqa · Riyadh</span>
+      <span>Six protocols · one philosophy</span>
+    </div>
+  </div>
+  <div class="hero-media">
+    <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "hero-media-img kb" %>
+    <div class="hero-media-cap">
+      <span class="nm">Dr. Maysa Al-Rashid</span>
+      <span class="rl">Founder · Medical Director</span>
+    </div>
   </div>
   <span class="scroll-cue">Scroll</span>
 </section>
 
-<%# Quiet credibility strip — copy-woven trust, never a badge wall (Lutétia/Hortman). %>
-<section class="cred-strip" data-controller="reveal">
-  <div class="wrap">
-    <ul class="cred-strip-items reveal" data-reveal-target="item">
-      <% t("home.credibility").each do |item| %>
-        <li dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
-      <% end %>
-    </ul>
-  </div>
-</section>
-
-<%# Section 2 — The Promise (three pillars) %>
-<section class="section section--deep" id="clinic" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("home.promise_label") %></span>
-      <h2 dir="<%= loc_dir %>"><%= t("home.promise_title") %></h2>
+<%# ---- Three principles ---- %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head center reveal" data-reveal-target="item">
+      <span class="eyebrow center">The Promise</span>
+      <h2>Three commitments, quietly kept.</h2>
     </div>
-    <div class="pillars">
-      <%= render "pages/pillar", num: "01", ar_title: "بقيادة الطبيبة", en_title: "Doctor-led",
-            ar_body: "كل خطة تضعها د. ميساء بنفسها — لا قائمة خدمات.",
-            en_body: "Every plan is built by Dr. Maysa — not chosen from a menu." %>
-      <%= render "pages/pillar", num: "02", ar_title: "بسريّة تامة", en_title: "Discreet",
-            ar_body: "استشارة خاصة. علاج خاص. نتائج خاصة.",
-            en_body: "Private consultation. Private treatment. Private results." %>
-      <%= render "pages/pillar", num: "03", ar_title: "مقاسة بدقّة", en_title: "Measured",
-            ar_body: "نتائج موثّقة كل ثلاثة أشهر. بلا تخمين، بلا ضجيج.",
-            en_body: "Outcomes documented quarterly. No guesswork, no drama." %>
-    </div>
-  </div>
-</section>
-
-<%# Section 3 — Meet Dr. Maysa (preview) %>
-<section class="section" id="doctor" data-controller="reveal">
-  <div class="wrap">
-    <div class="doctor">
-      <div class="portrait has-photo reveal-img" data-reveal-target="item" style="--portrait-photo: url('<%= asset_path('site/people/maysa.jpg') %>')" role="img" aria-label="Editorial portrait of Dr. Maysa"></div>
-      <div class="doctor-copy reveal" data-reveal-target="item">
-        <span class="label"><%= t("home.founder_label") %></span>
-        <blockquote dir="<%= loc_dir %>">
-          <%= t("home.founder_quote") %>
-        </blockquote>
-        <p dir="<%= loc_dir %>"><%= t("home.founder_body") %></p>
-        <p class="signed" dir="rtl">— د. ميساء</p>
-        <%= link_to t("home.founder_link"), dr_maysa_path, class: "textlink" %>
+    <div class="cols cols-3 reveal d1" data-reveal-target="item">
+      <div class="col">
+        <span class="num">01 — Principle</span>
+        <h3>Doctor-led</h3>
+        <p>Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year.</p>
+      </div>
+      <div class="col">
+        <span class="num">02 — Principle</span>
+        <h3>Discreet</h3>
+        <p>Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it.</p>
+      </div>
+      <div class="col">
+        <span class="num">03 — Principle</span>
+        <h3>Measured</h3>
+        <p>Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed.</p>
       </div>
     </div>
   </div>
 </section>
 
-<%# Concern-led discovery (dual-axis, Lutétia "vos besoins"). Routes into the hub by persona. %>
-<section class="section concern-strip" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("home.concern.label") %></span>
-      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("home.concern.title_ar"), en: t("home.concern.title_en")) %></h2>
+<%# ---- Meet the founder ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split media-left">
+    <div class="split-media reveal" data-reveal-target="item">
+      <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid" %>
+      <div class="cap"><span class="nm">Dr. Maysa Al-Rashid</span><span class="rl">Founder · Medical Director</span></div>
     </div>
-    <div class="concern-grid">
-      <% t("home.concern.items").each do |c| %>
-        <%= link_to protocols_path(persona: c[:persona]), class: "concern reveal", data: { reveal_target: "item" }, dir: loc_dir do %>
-          <%= loc(ar: c[:ar], en: c[:en]) %>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <span class="eyebrow">Meet the founder</span>
+      <div class="body-copy">
+        <p>I opened NeuSkin because I was tired of watching women sold ten treatments to fill a calendar. Skin is data — it can be read, and once read, it can be treated honestly.</p>
+        <p>Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed.</p>
+      </div>
+      <p class="sign">— Maysa</p>
+      <p style="margin-top:20px"><%= link_to "Read her philosophy →", dr_maysa_path, class: "arrowlink" %></p>
+    </div>
+  </div>
+</section>
+
+<%# ---- Six protocols — row list + sticky swapping image (design §isHome) ---- %>
+<% proto_imgs = { "maysa-method" => "site/protocols/maysa-method.jpg", "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
+                  "brides-180" => "site/protocols/bridal.jpg", "reset-crown" => "site/protocols/hair.jpg",
+                  "8-week-sculpt" => "site/protocols/sculpt.jpg", "skin-insider" => "site/protocols/insider.jpg" } %>
+<% protocols = Protocol.all.to_a %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head-row" data-reveal="up">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">The Six Protocols</span>
+        <h2 style="margin-top:22px">Six named protocols. <span class="em">One philosophy. Zero menu pricing.</span></h2>
+      </div>
+      <%= link_to "View all protocols →", protocols_path, class: "arrowlink" %>
+    </div>
+
+    <div class="proto-index" data-controller="protoindex" data-reveal="up" data-reveal-delay="120">
+      <div class="proto-list">
+        <% protocols.each_with_index do |p, i| %>
+          <%= link_to protocol_path(p),
+                class: "proto-row",
+                data: { protoindex_target: "row", index: i,
+                        action: "mouseenter->protoindex#show focus->protoindex#show",
+                        tag: p.meta, promise: p.promise, href: protocol_path(p) } do %>
+            <span class="ix"><%= format("%02d", i + 1) %></span>
+            <h3><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></h3>
+            <span class="dur"><%= p.duration %></span>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
+      </div>
 
-<%# Section 4 — The six protocols %>
-<section class="section section--deep" id="protocols" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.eyebrow_tagline") %></span>
-      <h2 dir="<%= loc_dir %>"><%= t("home.protocols_title") %></h2>
-    </div>
-    <div class="protocols">
-      <%= render partial: "protocols/card", collection: Protocol.all, as: :protocol %>
-    </div>
-  </div>
-</section>
-
-<%# Section 5 — Patient voice %>
-<section class="section" id="voices" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("home.voice_label") %></span>
-      <h2 dir="<%= loc_dir %>"><%= t("home.voice_title") %></h2>
-    </div>
-    <div class="voices">
-      <% t("home.voices").each do |v| %>
-        <div class="voice reveal" data-reveal-target="item">
-          <span class="mark">”</span>
-          <p class="q" dir="<%= loc_dir %>"><%= v[:q] %></p>
-          <p class="by">— <%= v[:by] %></p>
+      <div class="proto-stage">
+        <% protocols.each_with_index do |p, i| %>
+          <%= image_tag (proto_imgs[p.slug] || "site/protocols/skin.jpg"),
+                class: "proto-stage-img#{' is-shown' if i.zero?}",
+                alt: p.name, data: { protoindex_target: "img", index: i } %>
+        <% end %>
+        <div class="proto-stage-cap">
+          <div class="cap-tag" data-protoindex-target="tag"><%= protocols.first&.meta %></div>
+          <p class="cap-promise" data-protoindex-target="promise"><%= protocols.first&.promise %></p>
+          <a class="cap-cta" data-protoindex-target="cta" href="<%= protocols.first ? protocol_path(protocols.first) : protocols_path %>">Explore this protocol →</a>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </section>
 
-<%# Section 6 — The invitation (closing CTA) %>
-<section class="section section--night invite has-texture" id="inquire"
-         style="--band-photo: url('<%= asset_path('site/desert-atmosphere.jpg') %>')">
-  <div class="wrap">
-    <span class="label"><%= t("home.invite_label") %></span>
-    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= t("home.invite_line") %></p>
-    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
-    <p class="signed" dir="rtl">— د. ميساء</p>
+<%# ---- Inside the clinic — pinned horizontal scroll (design data-hscroll) ---- %>
+<%# Scroll down through this tall section and the gallery tracks sideways. %>
+<section class="hscroll" data-controller="hscroll">
+  <div class="hscroll-pin">
+    <div class="hscroll-track" data-hscroll-target="track">
+      <div class="hscroll-intro">
+        <span class="eyebrow">Inside NeuSkin</span>
+        <h2>The space, <span class="em">in passing.</span></h2>
+        <p>A private clinic in Al Malqa — designed for quiet. Scroll on, and move through it.</p>
+        <div class="cue">Scroll →</div>
+      </div>
+      <figure class="hshot"><%= ns_image_tag :treatment_room, alt: "Treatment room" %><figcaption>01 · Treatment room</figcaption></figure>
+      <figure class="hshot narrow"><%= ns_image_tag :lounge, alt: "The lounge" %><figcaption>02 · The lounge</figcaption></figure>
+      <figure class="hshot"><%= ns_image_tag :device_table, alt: "Device room" %><figcaption>03 · Device room</figcaption></figure>
+      <figure class="hshot narrow"><%= ns_image_tag :diptyque, alt: "In the detail" %><figcaption>04 · In the detail</figcaption></figure>
+      <figure class="hshot"><%= ns_image_tag :interior_ext, alt: "The entrance" %><figcaption>05 · The entrance</figcaption></figure>
+      <div class="hshot-outro">
+        <blockquote>“A clinic should be measured by what it refuses to do.”</blockquote>
+        <%= link_to "Tour the clinic →", the_clinic_path, class: "arrowlink" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ---- Testimonials ---- %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head center reveal" data-reveal-target="item">
+      <span class="eyebrow center">In their words</span>
+    </div>
+    <div class="quotes reveal d1" data-reveal-target="item">
+      <div class="quote">
+        <span class="mark">“</span>
+        <p>She told me what I didn't need before she told me what I did. I'd never had a doctor do that.</p>
+        <p class="by">L.M. · Riyadh</p>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p>Six months, one plan, reviewed every quarter. My skin looks like mine — only rested.</p>
+        <p class="by">A.R. · Riyadh</p>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p>Discreet from the first message to the last review. I never felt like a number on a calendar.</p>
+        <p class="by">F.K. · Riyadh</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ---- Closing CTA band ---- %>
+<section class="cta-band" data-controller="reveal">
+  <div class="cta-band-media reveal" data-reveal-target="item">
+    <%= ns_image_tag :lounge, alt: "The lounge at NeuSkin" %>
+  </div>
+  <div class="cta-band-copy reveal d1" data-reveal-target="item">
+    <h2>There is no rush here. <span class="em">Begin with a quiet conversation.</span></h2>
+    <p>A private message, reviewed personally by the clinic — Saturday to Thursday, 10:00–22:00.</p>
+    <p><%= link_to "Begin a private inquiry", inquire_path, class: "btn" %></p>
+    <p class="sign">— Dr. Maysa</p>
   </div>
 </section>

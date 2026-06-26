@@ -23,6 +23,10 @@ class PagesController < ApplicationController
   def maysa_method
   end
 
+  # Treatments — browse by outcome (design §08).
+  def treatments
+  end
+
   def private_care
   end
 

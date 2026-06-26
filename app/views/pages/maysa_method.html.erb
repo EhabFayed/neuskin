@@ -1,102 +1,73 @@
-<%# The Maysa Method™ — the philosophy page (§05). Turns the framework into a category. %>
+<%# The Maysa Method™ — the philosophy page. NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# Hero — bold typographic statement %>
-<section class="section method-hero" data-controller="reveal">
-  <div class="wrap" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("method.eyebrow") %></span>
-    <h1 class="method-statement reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: t("method.statement_ar"), en: t("method.statement_en")) %></h1>
+<%# ---- Hero (stacked: eyebrow → h2 → h1) ---- %>
+<section class="page-hero mm-hero" data-controller="reveal">
+  <span class="eyebrow" data-reveal="fade">The Philosophy</span>
+  <h2 class="mm-hero-sub" data-reveal="mask" data-reveal-delay="160"><span>Skin is data.</span></h2>
+  <h1 class="mm-hero-main" data-reveal="mask" data-reveal-delay="320"><span>Read it, then treat it.</span></h1>
+</section>
+
+<%# ---- The principle (2-col) ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split" style="align-items:start">
+    <h2 data-reveal="up" style="font-size:clamp(1.6rem,2.6vw,2.4rem); color:var(--text-bright)">The principle</h2>
+    <p class="lead" data-reveal="up" data-reveal-delay="120">The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.</p>
   </div>
 </section>
 
-<%# 1 · The principle (~150-word essay) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow essay">
-    <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
-      <span class="label"><%= t("method.principle_label") %></span>
+<%# ---- Four pillars ---- %>
+<section class="section section--surface" data-controller="reveal" style="padding-top:0">
+  <div class="section-inner">
+    <div class="cols cols-4" data-reveal="up">
+      <div class="col"><span class="num">Pillar 01</span><h3>Skin</h3><p>Barrier, tone, texture and pigment — read, then restored in order.</p></div>
+      <div class="col"><span class="num">Pillar 02</span><h3>Hair</h3><p>Scalp health and density, assessed clinically and supported over weeks.</p></div>
+      <div class="col"><span class="num">Pillar 03</span><h3>Body</h3><p>Tone, contour and posture — measured, not guessed, and supported clinically.</p></div>
+      <div class="col"><span class="num">Pillar 04</span><h3>Lifestyle</h3><p>Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds.</p></div>
     </div>
-    <% t("method.principle").each do |para| %>
-      <p class="reveal" data-reveal-target="item"><%= para %></p>
-    <% end %>
   </div>
 </section>
 
-<%# 2 · The four pillars as one connected system %>
-<section class="section" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("method.pillars_label") %></span>
-      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars_title_ar"), en: t("method.pillars_title_en")) %></h2>
+<%# ---- What it is not (LIGHT contrast band, 2-col) ---- %>
+<section class="section section--light" data-controller="reveal">
+  <div class="section-inner split" style="align-items:start">
+    <div data-reveal="up">
+      <span class="eyebrow">What it is not</span>
+      <h2 style="margin-top:22px; font-size:clamp(1.9rem,3.4vw,3rem)">Discipline is mostly <span class="em">restraint.</span></h2>
     </div>
-    <div class="four-pillars">
-      <% %w[skin hair body lifestyle].each_with_index do |pillar, i| %>
-        <div class="four-pillar reveal" data-reveal-target="item">
-          <span class="four-pillar-num"><%= format("%02d", i + 1) %></span>
-          <h3 dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars.#{pillar}.title_ar"), en: t("method.pillars.#{pillar}.title_en")) %></h3>
-          <p><%= t("method.pillars.#{pillar}.body") %></p>
-        </div>
-      <% end %>
-    </div>
-    <p class="four-pillars-note reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: t("method.pillars_note_ar"), en: t("method.pillars_note_en")) %></p>
-  </div>
-</section>
-
-<%# 3 · What the Maysa Method is NOT (discipline + restraint) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("method.not_label") %></span>
-    </div>
-    <ul class="not-list">
-      <% t("method.not_items").each do |item| %>
-        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
-      <% end %>
+    <ul class="exclude" data-reveal="up" data-reveal-delay="120">
+      <li>It is not a treatment, and nothing is performed during it.</li>
+      <li>It is not a quick fix; good skin is sequenced over time.</li>
+      <li>It is not a price list, and it is never sold from a menu.</li>
+      <li>It is not for everyone — and that is entirely intentional.</li>
     </ul>
   </div>
 </section>
 
-<%# 4 · The 12-month timeline as a visual graphic %>
-<section class="section" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("method.timeline_label") %></span>
-      <h2 dir="<%= loc_dir %>"><%= loc(ar: t("method.timeline_title_ar"), en: t("method.timeline_title_en")) %></h2>
-    </div>
-    <ol class="year-timeline">
-      <% t("method.timeline").each do |phase| %>
-        <li class="year-phase reveal" data-reveal-target="item">
-          <span class="year-months"><%= phase[:months] %></span>
-          <h3 dir="<%= loc_dir %>"><%= loc(ar: phase[:title_ar], en: phase[:title_en]) %></h3>
-          <p><%= phase[:body] %></p>
-        </li>
-      <% end %>
-    </ol>
-  </div>
-</section>
-
-<%# 5 · Three patient stories (anonymous, consented) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("method.stories_label") %></span>
-    </div>
-    <div class="voices">
-      <% t("method.stories").each do |q| %>
-        <div class="voice reveal" data-reveal-target="item">
-          <span class="mark">”</span>
-          <p class="q" dir="<%= loc_dir %>"><%= loc(ar: q[:ar], en: q[:en]) %></p>
-          <p class="by">— <%= q[:by] %></p>
-        </div>
-      <% end %>
+<%# ---- A year, in four movements — pinned horizontal scroller ---- %>
+<section class="hscroll" data-controller="hscroll">
+  <div class="hscroll-pin">
+    <div class="hscroll-track" data-hscroll-target="track">
+      <div class="hscroll-intro">
+        <span class="eyebrow">The 12-month timeline</span>
+        <h2>A year, in <span class="em">four movements.</span></h2>
+        <p>The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.</p>
+        <div class="cue">Scroll →</div>
+      </div>
+      <div class="hpanel"><h4 class="q">Q1</h4><h3>Diagnose</h3><p>Baseline captured, the plan written. The slow, invisible work begins.</p></div>
+      <div class="hpanel"><h4 class="q">Q2</h4><h3>Restore</h3><p>Targeted correction across the four pillars, reviewed against baseline.</p></div>
+      <div class="hpanel"><h4 class="q">Q3</h4><h3>Build</h3><p>Results compounded; the plan adjusted to how your skin responded.</p></div>
+      <div class="hpanel"><h4 class="q">Q4</h4><h3>Maintain</h3><p>A maintenance rhythm set, and a record you keep for the years ahead.</p></div>
+      <div class="hshot-outro">
+        <blockquote>“Skin is data. Read it across a year, and it stops surprising you.”</blockquote>
+        <%= link_to "Request the Assessment", inquire_path(codeword: "METHOD"), class: "btn", style: "align-self:flex-start" %>
+      </div>
     </div>
   </div>
 </section>
 
-<%# 6 · CTA %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("method.cta_label") %></span>
-    <p class="<%= ar? ? "line-ar" : "line-en" %>" dir="<%= loc_dir %>"><%= t("method.brand_html").html_safe %></p>
-    <%= link_to t("cta.assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "cta" %>
-    <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "METHOD")).html_safe %></p>
-  </div>
+<%# ---- Closing CTA ---- %>
+<section class="cta-center" data-controller="reveal">
+  <h2 class="reveal" data-reveal-target="item">Begin with the <span class="em">Maysa Method™.</span></h2>
+  <p class="reveal d1" data-reveal-target="item">One reading, one written plan, reviewed every quarter. It begins with a private inquiry.</p>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to "Request the Assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %></p>
 </section>
