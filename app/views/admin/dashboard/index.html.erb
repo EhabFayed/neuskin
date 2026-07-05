@@ -1,1 +1,12 @@
 <h1>Dashboard</h1>
+
+<div class="tiles">
+  <div class="section-card"><strong><%= @inquiries_count %></strong><br>Inquiries</div>
+  <div class="section-card"><strong><%= @bridal_leads_count %></strong><br>Bridal leads</div>
+  <div class="section-card"><strong><%= @protocols_count %></strong><br>Protocols</div>
+  <div class="section-card"><strong><%= @sections_count %></strong><br>Editable sections</div>
+</div>
+
+<% if respond_to?(:admin_pages_path) %>
+  <p style="margin-top:24px"><%= link_to "Edit site pages →", admin_pages_path %></p>
+<% end %>
