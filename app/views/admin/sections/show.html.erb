@@ -69,13 +69,37 @@
           <span class="dot"></span> Live preview
           <span class="lp-loading" data-livepreview-target="loading">updating…</span>
         </div>
+
+        <%# device toolbar: presets + live width readout %>
+        <div class="lp-devices">
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="390" title="Mobile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </button>
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="820" title="Tablet">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg>
+          </button>
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="1280" title="Laptop">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M2 20h20"/></svg>
+          </button>
+          <span class="lp-width" data-livepreview-target="widthLabel">390px</span>
+        </div>
+
         <%# just-picked image thumbnail (client-side, before upload) %>
         <div class="lp-picked" data-livepreview-target="pickedwrap" hidden>
           <img data-livepreview-target="pickedimg" alt="">
           <span>New image — saves when you publish</span>
         </div>
-        <iframe class="ns-preview-frame" title="Live preview of this page"
-                data-livepreview-target="frame"></iframe>
+
+        <%# stage scales the iframe (rendered at its real CSS width) to fit %>
+        <div class="lp-stage" data-livepreview-target="stage">
+          <div class="lp-viewport" data-livepreview-target="viewport">
+            <iframe class="ns-preview-frame" title="Live preview of this page"
+                    data-livepreview-target="frame"></iframe>
+          </div>
+          <span class="lp-handle" data-livepreview-target="handle"
+                data-action="mousedown->livepreview#startDrag" title="Drag to resize"></span>
+        </div>
+
         <div class="ns-preview-foot">Exactly how the page will look · not yet saved</div>
       </div>
     </aside>
