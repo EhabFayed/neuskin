@@ -270,3 +270,34 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
   .ns-auth { grid-template-columns: 1fr; }
   .ns-auth-brandside { display: none; }
 }
+
+/* ============================================================
+   Section editor — two columns with sticky live preview
+   ============================================================ */
+.ns-editor { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: 26px; align-items: start; }
+.ns-editor-fields { min-width: 0; }
+.ns-editor-preview { position: sticky; top: 96px; }
+
+.ns-preview-card { background: var(--ns-surface); border: 1px solid var(--ns-border-soft); border-radius: 10px; overflow: hidden; }
+.ns-preview-head {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ns-muted);
+  border-bottom: 1px solid var(--ns-border-soft); background: rgba(159,132,136,.07);
+}
+.ns-preview-head .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ns-green); box-shadow: 0 0 0 3px rgba(111,185,138,.18); }
+.ns-preview-body { padding: 20px 18px; min-height: 120px; max-height: calc(100vh - 220px); overflow: auto; }
+.ns-preview-foot { padding: 10px 16px; border-top: 1px solid var(--ns-border-soft); font-size: 10.5px; color: var(--ns-muted-2); }
+
+.ns-preview-body .lp-block { margin-bottom: 18px; }
+.ns-preview-body .lp-block:last-child { margin-bottom: 0; }
+.ns-preview-body .lp-lbl { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--ns-muted-2); margin-bottom: 6px; }
+.ns-preview-body .lp-heading { font-family: 'Bodoni Moda', serif; font-weight: 300; font-size: 22px; line-height: 1.15; color: var(--ns-text-hi); }
+.ns-preview-body .lp-text { font-size: 14px; line-height: 1.55; color: var(--ns-text); white-space: pre-wrap; }
+.ns-preview-body .lp-ar { margin-top: 6px; color: var(--ns-rose); }
+.ns-preview-body .lp-empty { font-size: 12.5px; color: var(--ns-muted-2); font-style: italic; }
+
+@media (max-width: 1000px) {
+  .ns-editor { grid-template-columns: 1fr; }
+  .ns-editor-preview { position: static; order: -1; }
+  .ns-preview-body { max-height: 300px; }
+}

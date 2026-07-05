@@ -42,3 +42,6 @@ application.register("protoindex", ProtoindexController)
 
 import HscrollController from "controllers/hscroll_controller"
 application.register("hscroll", HscrollController)
+
+import LivepreviewController from "controllers/livepreview_controller"
+application.register("livepreview", LivepreviewController)
