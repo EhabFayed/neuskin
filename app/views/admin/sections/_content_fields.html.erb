@@ -6,15 +6,15 @@
   <%= form.hidden_field :position %>
 
   <div class="field">
-    <label><%= form.object.label.presence || form.object.key.titleize %></label>
+    <span class="field-title"><%= form.object.label.presence || form.object.key.titleize %></span>
     <% if form.object.hint.present? %><p class="hint"><%= form.object.hint %></p><% end %>
     <div class="field-pair">
       <div class="en">
-        <label>English</label>
+        <%= form.label :value_en, "English" %>
         <%= form.text_area :value_en, rows: 2 %>
       </div>
       <div class="ar">
-        <label>العربية (Arabic)</label>
+        <%= form.label :value_ar, "العربية (Arabic)" %>
         <%= form.text_area :value_ar, rows: 2, dir: "rtl" %>
       </div>
     </div>
