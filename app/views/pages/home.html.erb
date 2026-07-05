@@ -38,24 +38,24 @@
 <section class="section" data-controller="reveal">
   <div class="section-inner">
     <div class="sec-head center reveal" data-reveal-target="item">
-      <span class="eyebrow center">The Promise</span>
-      <h2>Three commitments, quietly kept.</h2>
+      <span class="eyebrow center"><%= sec_text("home", "home_principles", "eyebrow").presence || "The Promise" %></span>
+      <h2><%= sec_text("home", "home_principles", "title").presence || "Three commitments, quietly kept." %></h2>
     </div>
     <div class="cols cols-3 reveal d1" data-reveal-target="item">
       <div class="col">
-        <span class="num">01 — Principle</span>
-        <h3>Doctor-led</h3>
-        <p>Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year.</p>
+        <span class="num"><%= sec_text("home", "home_principles", "p1_num").presence || "01 — Principle" %></span>
+        <h3><%= sec_text("home", "home_principles", "p1_title").presence || "Doctor-led" %></h3>
+        <p><%= sec_text("home", "home_principles", "p1_body").presence || "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year." %></p>
       </div>
       <div class="col">
-        <span class="num">02 — Principle</span>
-        <h3>Discreet</h3>
-        <p>Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it.</p>
+        <span class="num"><%= sec_text("home", "home_principles", "p2_num").presence || "02 — Principle" %></span>
+        <h3><%= sec_text("home", "home_principles", "p2_title").presence || "Discreet" %></h3>
+        <p><%= sec_text("home", "home_principles", "p2_body").presence || "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it." %></p>
       </div>
       <div class="col">
-        <span class="num">03 — Principle</span>
-        <h3>Measured</h3>
-        <p>Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed.</p>
+        <span class="num"><%= sec_text("home", "home_principles", "p3_num").presence || "03 — Principle" %></span>
+        <h3><%= sec_text("home", "home_principles", "p3_title").presence || "Measured" %></h3>
+        <p><%= sec_text("home", "home_principles", "p3_body").presence || "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed." %></p>
       </div>
     </div>
   </div>
@@ -89,10 +89,10 @@
   <div class="section-inner">
     <div class="sec-head-row" data-reveal="up">
       <div class="sec-head" style="margin:0">
-        <span class="eyebrow">The Six Protocols</span>
-        <h2 style="margin-top:22px">Six named protocols. <span class="em">One philosophy. Zero menu pricing.</span></h2>
+        <span class="eyebrow"><%= sec_text("home", "home_protocols", "eyebrow").presence || "The Six Protocols" %></span>
+        <h2 style="margin-top:22px"><%= sec_text("home", "home_protocols", "title").presence || "Six named protocols." %> <span class="em"><%= sec_text("home", "home_protocols", "title_em").presence || "One philosophy. Zero menu pricing." %></span></h2>
       </div>
-      <%= link_to "View all protocols →", protocols_path, class: "arrowlink" %>
+      <%= link_to (sec_text("home", "home_protocols", "link").presence || "View all protocols →"), protocols_path, class: "arrowlink" %>
     </div>
 
     <div class="proto-index" data-controller="protoindex" data-reveal="up" data-reveal-delay="120">
@@ -132,19 +132,19 @@
   <div class="hscroll-pin">
     <div class="hscroll-track" data-hscroll-target="track">
       <div class="hscroll-intro">
-        <span class="eyebrow">Inside NeuSkin</span>
-        <h2>The space, <span class="em">in passing.</span></h2>
-        <p>A private clinic in Al Malqa — designed for quiet. Scroll on, and move through it.</p>
-        <div class="cue">Scroll →</div>
+        <span class="eyebrow"><%= sec_text("home", "home_clinic", "eyebrow").presence || "Inside NeuSkin" %></span>
+        <h2><%= sec_text("home", "home_clinic", "title").presence || "The space," %> <span class="em"><%= sec_text("home", "home_clinic", "title_em").presence || "in passing." %></span></h2>
+        <p><%= sec_text("home", "home_clinic", "lead").presence || "A private clinic in Al Malqa — designed for quiet. Scroll on, and move through it." %></p>
+        <div class="cue"><%= sec_text("home", "home_clinic", "cue").presence || "Scroll →" %></div>
       </div>
-      <figure class="hshot"><%= ns_image_tag :treatment_room, alt: "Treatment room" %><figcaption>01 · Treatment room</figcaption></figure>
-      <figure class="hshot narrow"><%= ns_image_tag :lounge, alt: "The lounge" %><figcaption>02 · The lounge</figcaption></figure>
-      <figure class="hshot"><%= ns_image_tag :device_table, alt: "Device room" %><figcaption>03 · Device room</figcaption></figure>
-      <figure class="hshot narrow"><%= ns_image_tag :diptyque, alt: "In the detail" %><figcaption>04 · In the detail</figcaption></figure>
-      <figure class="hshot"><%= ns_image_tag :interior_ext, alt: "The entrance" %><figcaption>05 · The entrance</figcaption></figure>
+      <figure class="hshot"><%= ns_image_tag :treatment_room, alt: "Treatment room" %><figcaption><%= sec_text("home", "home_clinic", "cap_1").presence || "01 · Treatment room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= ns_image_tag :lounge, alt: "The lounge" %><figcaption><%= sec_text("home", "home_clinic", "cap_2").presence || "02 · The lounge" %></figcaption></figure>
+      <figure class="hshot"><%= ns_image_tag :device_table, alt: "Device room" %><figcaption><%= sec_text("home", "home_clinic", "cap_3").presence || "03 · Device room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= ns_image_tag :diptyque, alt: "In the detail" %><figcaption><%= sec_text("home", "home_clinic", "cap_4").presence || "04 · In the detail" %></figcaption></figure>
+      <figure class="hshot"><%= ns_image_tag :interior_ext, alt: "The entrance" %><figcaption><%= sec_text("home", "home_clinic", "cap_5").presence || "05 · The entrance" %></figcaption></figure>
       <div class="hshot-outro">
-        <blockquote>“A clinic should be measured by what it refuses to do.”</blockquote>
-        <%= link_to "Tour the clinic →", the_clinic_path, class: "arrowlink" %>
+        <blockquote><%= sec_text("home", "home_clinic", "quote").presence || "“A clinic should be measured by what it refuses to do.”" %></blockquote>
+        <%= link_to (sec_text("home", "home_clinic", "outro_link").presence || "Tour the clinic →"), the_clinic_path, class: "arrowlink" %>
       </div>
     </div>
   </div>
@@ -154,23 +154,23 @@
 <section class="section section--light" data-controller="reveal">
   <div class="section-inner">
     <div class="sec-head center reveal" data-reveal-target="item">
-      <span class="eyebrow center">In their words</span>
+      <span class="eyebrow center"><%= sec_text("home", "home_quotes", "eyebrow").presence || "In their words" %></span>
     </div>
     <div class="quotes reveal d1" data-reveal-target="item">
       <div class="quote">
         <span class="mark">“</span>
-        <p>She told me what I didn't need before she told me what I did. I'd never had a doctor do that.</p>
-        <p class="by">L.M. · Riyadh</p>
+        <p><%= sec_text("home", "home_quotes", "quote_1").presence || "She told me what I didn't need before she told me what I did. I'd never had a doctor do that." %></p>
+        <p class="by"><%= sec_text("home", "home_quotes", "by_1").presence || "L.M. · Riyadh" %></p>
       </div>
       <div class="quote">
         <span class="mark">“</span>
-        <p>Six months, one plan, reviewed every quarter. My skin looks like mine — only rested.</p>
-        <p class="by">A.R. · Riyadh</p>
+        <p><%= sec_text("home", "home_quotes", "quote_2").presence || "Six months, one plan, reviewed every quarter. My skin looks like mine — only rested." %></p>
+        <p class="by"><%= sec_text("home", "home_quotes", "by_2").presence || "A.R. · Riyadh" %></p>
       </div>
       <div class="quote">
         <span class="mark">“</span>
-        <p>Discreet from the first message to the last review. I never felt like a number on a calendar.</p>
-        <p class="by">F.K. · Riyadh</p>
+        <p><%= sec_text("home", "home_quotes", "quote_3").presence || "Discreet from the first message to the last review. I never felt like a number on a calendar." %></p>
+        <p class="by"><%= sec_text("home", "home_quotes", "by_3").presence || "F.K. · Riyadh" %></p>
       </div>
     </div>
   </div>
@@ -182,9 +182,9 @@
     <%= ns_image_tag :lounge, alt: "The lounge at NeuSkin" %>
   </div>
   <div class="cta-band-copy reveal d1" data-reveal-target="item">
-    <h2>There is no rush here. <span class="em">Begin with a quiet conversation.</span></h2>
-    <p>A private message, reviewed personally by the clinic — Saturday to Thursday, 10:00–22:00.</p>
-    <p><%= link_to "Begin a private inquiry", inquire_path, class: "btn" %></p>
-    <p class="sign">— Dr. Maysa</p>
+    <h2><%= sec_text("home", "home_cta", "title").presence || "There is no rush here." %> <span class="em"><%= sec_text("home", "home_cta", "title_em").presence || "Begin with a quiet conversation." %></span></h2>
+    <p><%= sec_text("home", "home_cta", "body").presence || "A private message, reviewed personally by the clinic — Saturday to Thursday, 10:00–22:00." %></p>
+    <p><%= link_to (sec_text("home", "home_cta", "cta").presence || "Begin a private inquiry"), inquire_path, class: "btn" %></p>
+    <p class="sign"><%= sec_text("home", "home_cta", "sign").presence || "— Dr. Maysa" %></p>
   </div>
 </section>
