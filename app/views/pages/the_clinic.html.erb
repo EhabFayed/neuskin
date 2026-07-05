@@ -1,16 +1,13 @@
 <%# The Clinic — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# ---- Hero (split with the entrance image) ---- %>
-<section class="split-hero" data-controller="reveal parallax">
-  <div class="split-hero-media" data-parallax data-parallax-speed="0.08">
-    <%= ns_image_tag :interior_ext, alt: "The entrance to NeuSkin, Al Malqa", class: "kb" %>
+<%# ---- Full-bleed hero, text overlaid (1:1 port of design §isClinic) ---- %>
+<section class="over-hero over-hero--clinic" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= ns_image_tag :treatment_room, alt: "NeuSkin interior", class: "kb" %>
   </div>
-  <div class="split-hero-copy">
-    <span class="eyebrow" data-reveal="fade">About · The Clinic</span>
-    <h1>
-      <span data-reveal="mask" data-reveal-delay="120"><span>A private clinic in Al Malqa, built around one question:</span></span>
-      <span class="em" data-reveal="mask" data-reveal-delay="240"><span>what will your skin look like in five years?</span></span>
-    </h1>
+  <div class="over-hero-copy over-hero-copy--wide">
+    <div class="clinic-hero-eyebrow reveal" data-reveal-target="item">About · The Clinic</div>
+    <h1 class="clinic-hero-title" data-reveal="up">A private clinic in Al Malqa, built around one question: <span class="em">what will your skin look like in five years?</span></h1>
   </div>
 </section>
 

@@ -263,6 +263,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 }
 .over-hero-copy .mysa-hero-sign { margin-top: 26px; font-family: var(--serif); font-style: italic; font-size: 24px; color: #d8b9b6; }
 
+/* ==================== The Clinic hero — 1:1 port of design §isClinic ==================== */
+.over-hero--clinic { min-height: 78vh; }
+.over-hero-copy .clinic-hero-eyebrow { font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: #cda9a6; margin-bottom: 26px; }
+.over-hero-copy h1.clinic-hero-title {
+  margin: 0; font-family: var(--serif); font-weight: 300;
+  font-size: clamp(30px, 4.4vw, 58px); line-height: 1.18; letter-spacing: normal;
+  font-style: normal; color: #f6efeb; max-width: 980px;
+}
+.over-hero-copy h1.clinic-hero-title .em { font-style: italic; font-weight: 300; color: #d8b9b6; }
+
 /* credentials thin band under the hero */
 .creds-band { background: rgba(13,10,11,0.7); padding: 46px 8vw; border-bottom: 1px solid rgba(236,226,223,.08); }
 .creds-row { display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: center; }
