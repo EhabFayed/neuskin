@@ -7,8 +7,9 @@
 # only, and editors will add Arabic copy later via the CMS.
 #
 # Idempotent: upserts by (page, kind) and (section, key).
-module SeedContent
-  HOME = [
+require_relative "_registry"
+
+SeedContent.register("home", [
     {
       kind: "home_hero", label: "Hero — top of page", position: 0,
       contents: [
@@ -46,5 +47,4 @@ module SeedContent
           en: "Read her philosophy →", ar: "" }
       ]
     }
-  ].freeze
-end
+  ])
