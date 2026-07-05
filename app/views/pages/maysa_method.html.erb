@@ -2,16 +2,16 @@
 
 <%# ---- Hero (stacked: eyebrow → h2 → h1) ---- %>
 <section class="page-hero mm-hero" data-controller="reveal">
-  <span class="eyebrow" data-reveal="fade">The Philosophy</span>
-  <h2 class="mm-hero-sub" data-reveal="mask" data-reveal-delay="160"><span>Skin is data.</span></h2>
-  <h1 class="mm-hero-main" data-reveal="mask" data-reveal-delay="320"><span>Read it, then treat it.</span></h1>
+  <span class="eyebrow" data-reveal="fade"><%= sec_text("maysa_method", "method_hero", "eyebrow").presence || "The Philosophy" %></span>
+  <h2 class="mm-hero-sub" data-reveal="mask" data-reveal-delay="160"><span><%= sec_text("maysa_method", "method_hero", "sub").presence || "Skin is data." %></span></h2>
+  <h1 class="mm-hero-main" data-reveal="mask" data-reveal-delay="320"><span><%= sec_text("maysa_method", "method_hero", "main").presence || "Read it, then treat it." %></span></h1>
 </section>
 
 <%# ---- The principle (2-col) ---- %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner split" style="align-items:start">
-    <h2 data-reveal="up" style="font-size:clamp(1.6rem,2.6vw,2.4rem); color:var(--text-bright)">The principle</h2>
-    <p class="lead" data-reveal="up" data-reveal-delay="120">The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.</p>
+    <h2 data-reveal="up" style="font-size:clamp(1.6rem,2.6vw,2.4rem); color:var(--text-bright)"><%= sec_text("maysa_method", "method_principle", "title").presence || "The principle" %></h2>
+    <p class="lead" data-reveal="up" data-reveal-delay="120"><%= sec_text("maysa_method", "method_principle", "lead").presence || "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next." %></p>
   </div>
 </section>
 
@@ -19,10 +19,10 @@
 <section class="section section--surface" data-controller="reveal" style="padding-top:0">
   <div class="section-inner">
     <div class="cols cols-4" data-reveal="up">
-      <div class="col"><span class="num">Pillar 01</span><h3>Skin</h3><p>Barrier, tone, texture and pigment — read, then restored in order.</p></div>
-      <div class="col"><span class="num">Pillar 02</span><h3>Hair</h3><p>Scalp health and density, assessed clinically and supported over weeks.</p></div>
-      <div class="col"><span class="num">Pillar 03</span><h3>Body</h3><p>Tone, contour and posture — measured, not guessed, and supported clinically.</p></div>
-      <div class="col"><span class="num">Pillar 04</span><h3>Lifestyle</h3><p>Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds.</p></div>
+      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_1_num").presence || "Pillar 01" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_1_title").presence || "Skin" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_1_body").presence || "Barrier, tone, texture and pigment — read, then restored in order." %></p></div>
+      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_2_num").presence || "Pillar 02" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_2_title").presence || "Hair" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_2_body").presence || "Scalp health and density, assessed clinically and supported over weeks." %></p></div>
+      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_3_num").presence || "Pillar 03" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_3_title").presence || "Body" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_3_body").presence || "Tone, contour and posture — measured, not guessed, and supported clinically." %></p></div>
+      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_4_num").presence || "Pillar 04" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_4_title").presence || "Lifestyle" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_4_body").presence || "Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds." %></p></div>
     </div>
   </div>
 </section>
@@ -31,14 +31,14 @@
 <section class="section section--light" data-controller="reveal">
   <div class="section-inner split" style="align-items:start">
     <div data-reveal="up">
-      <span class="eyebrow">What it is not</span>
-      <h2 style="margin-top:22px; font-size:clamp(1.9rem,3.4vw,3rem)">Discipline is mostly <span class="em">restraint.</span></h2>
+      <span class="eyebrow"><%= sec_text("maysa_method", "method_not", "eyebrow").presence || "What it is not" %></span>
+      <h2 style="margin-top:22px; font-size:clamp(1.9rem,3.4vw,3rem)"><%= sec_text("maysa_method", "method_not", "title_1").presence || "Discipline is mostly" %> <span class="em"><%= sec_text("maysa_method", "method_not", "title_em").presence || "restraint." %></span></h2>
     </div>
     <ul class="exclude" data-reveal="up" data-reveal-delay="120">
-      <li>It is not a treatment, and nothing is performed during it.</li>
-      <li>It is not a quick fix; good skin is sequenced over time.</li>
-      <li>It is not a price list, and it is never sold from a menu.</li>
-      <li>It is not for everyone — and that is entirely intentional.</li>
+      <li><%= sec_text("maysa_method", "method_not", "item_1").presence || "It is not a treatment, and nothing is performed during it." %></li>
+      <li><%= sec_text("maysa_method", "method_not", "item_2").presence || "It is not a quick fix; good skin is sequenced over time." %></li>
+      <li><%= sec_text("maysa_method", "method_not", "item_3").presence || "It is not a price list, and it is never sold from a menu." %></li>
+      <li><%= sec_text("maysa_method", "method_not", "item_4").presence || "It is not for everyone — and that is entirely intentional." %></li>
     </ul>
   </div>
 </section>
@@ -48,18 +48,18 @@
   <div class="hscroll-pin">
     <div class="hscroll-track" data-hscroll-target="track">
       <div class="hscroll-intro">
-        <span class="eyebrow">The 12-month timeline</span>
-        <h2>A year, in <span class="em">four movements.</span></h2>
-        <p>The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.</p>
-        <div class="cue">Scroll →</div>
+        <span class="eyebrow"><%= sec_text("maysa_method", "method_timeline", "eyebrow").presence || "The 12-month timeline" %></span>
+        <h2><%= sec_text("maysa_method", "method_timeline", "title_1").presence || "A year, in" %> <span class="em"><%= sec_text("maysa_method", "method_timeline", "title_em").presence || "four movements." %></span></h2>
+        <p><%= sec_text("maysa_method", "method_timeline", "intro_body").presence || "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year." %></p>
+        <div class="cue"><%= sec_text("maysa_method", "method_timeline", "cue").presence || "Scroll →" %></div>
       </div>
-      <div class="hpanel"><h4 class="q">Q1</h4><h3>Diagnose</h3><p>Baseline captured, the plan written. The slow, invisible work begins.</p></div>
-      <div class="hpanel"><h4 class="q">Q2</h4><h3>Restore</h3><p>Targeted correction across the four pillars, reviewed against baseline.</p></div>
-      <div class="hpanel"><h4 class="q">Q3</h4><h3>Build</h3><p>Results compounded; the plan adjusted to how your skin responded.</p></div>
-      <div class="hpanel"><h4 class="q">Q4</h4><h3>Maintain</h3><p>A maintenance rhythm set, and a record you keep for the years ahead.</p></div>
+      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_1_q").presence || "Q1" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_1_title").presence || "Diagnose" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_1_body").presence || "Baseline captured, the plan written. The slow, invisible work begins." %></p></div>
+      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_2_q").presence || "Q2" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_2_title").presence || "Restore" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_2_body").presence || "Targeted correction across the four pillars, reviewed against baseline." %></p></div>
+      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_3_q").presence || "Q3" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_3_title").presence || "Build" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_3_body").presence || "Results compounded; the plan adjusted to how your skin responded." %></p></div>
+      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_4_q").presence || "Q4" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_4_title").presence || "Maintain" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_4_body").presence || "A maintenance rhythm set, and a record you keep for the years ahead." %></p></div>
       <div class="hshot-outro">
-        <blockquote>“Skin is data. Read it across a year, and it stops surprising you.”</blockquote>
-        <%= link_to "Request the Assessment", inquire_path(codeword: "METHOD"), class: "btn", style: "align-self:flex-start" %>
+        <blockquote><%= sec_text("maysa_method", "method_timeline", "quote").presence || "“Skin is data. Read it across a year, and it stops surprising you.”" %></blockquote>
+        <%= link_to (sec_text("maysa_method", "method_timeline", "cta_label").presence || "Request the Assessment"), inquire_path(codeword: "METHOD"), class: "btn", style: "align-self:flex-start" %>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@
 
 <%# ---- Closing CTA ---- %>
 <section class="cta-center" data-controller="reveal">
-  <h2 class="reveal" data-reveal-target="item">Begin with the <span class="em">Maysa Method™.</span></h2>
-  <p class="reveal d1" data-reveal-target="item">One reading, one written plan, reviewed every quarter. It begins with a private inquiry.</p>
-  <p class="reveal d2" data-reveal-target="item"><%= link_to "Request the Assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %></p>
+  <h2 class="reveal" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "title_1").presence || "Begin with the" %> <span class="em"><%= sec_text("maysa_method", "method_cta", "title_em").presence || "Maysa Method™." %></span></h2>
+  <p class="reveal d1" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "body").presence || "One reading, one written plan, reviewed every quarter. It begins with a private inquiry." %></p>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("maysa_method", "method_cta", "cta_label").presence || "Request the Assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %></p>
 </section>
