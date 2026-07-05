@@ -1,21 +1,26 @@
 <%# Bridal Concierge — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# 1 · Split hero + wedding-date countdown ---- %>
-<section class="split-hero" data-controller="countdown reveal parallax"
+<%# 1 · Landscape hero (overlay) + wedding-date countdown ---- %>
+<section class="over-hero" data-controller="countdown reveal parallax"
          data-countdown-ample-value="There is ample time to plan calmly, in the right order."
          data-countdown-ideal-value="An ideal window — the Bride's 180 fits beautifully."
          data-countdown-soon-value="Close, but workable — we'll prioritise what matters most."
          data-countdown-today-value="Let's speak today — we'll make the most of every week."
          data-countdown-days-label-value="days to plan, calmly.">
-  <div class="split-hero-media reveal" data-reveal-target="item" data-parallax data-parallax-speed="0.08">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
     <%= ns_image_tag :bride_bouquet, alt: "Bridal", class: "kb" %>
   </div>
-  <div class="split-hero-copy">
-    <span class="eyebrow reveal" data-reveal-target="item">Bridal Concierge</span>
+  <div class="over-hero-copy">
+    <div class="over-hero-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="eyebrow no-rule">Bridal Concierge · Riyadh</span>
+    </div>
     <h1>
-      <span data-reveal="mask" data-reveal-delay="120"><span>Your skin, six months</span></span>
-      <span class="em" data-reveal="mask" data-reveal-delay="240"><span>before you say yes.</span></span>
+      <span class="line" data-reveal="mask" data-reveal-delay="150"><span>Skin,</span></span>
+      <span class="line" data-reveal="mask" data-reveal-delay="260"><span>measured.</span></span>
+      <span class="line em" data-reveal="mask" data-reveal-delay="410"><span>Confidence, quiet.</span></span>
     </h1>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560">The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.</p>
     <div class="date-ask reveal d2" data-reveal-target="item">
       <label for="wedding-date">Tell us your wedding date</label>
       <input type="date" id="wedding-date"
@@ -101,7 +106,7 @@
 <%# 5 · For the mother & sister of the bride ---- %>
 <section class="section" data-controller="reveal">
   <div class="section-inner">
-    <div class="sec-head-row reveal" data-reveal-target="item">
+    <div class="concierge-card sec-head-row reveal" data-reveal-target="item">
       <div class="sec-head" style="margin:0">
         <span class="eyebrow no-rule" style="font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-size:24px">For the mother &amp; sister of the bride.</span>
         <p class="body-copy" style="margin-top:16px;max-width:520px"><span>A quiet parallel plan, arranged with the same discretion. Ask us during your consultation.</span></p>

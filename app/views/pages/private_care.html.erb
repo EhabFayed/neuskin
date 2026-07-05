@@ -20,13 +20,23 @@
   ]
 %>
 
-<%# Hero %>
-<section class="page-hero has-bg center-inner" data-controller="reveal" style="text-align:center; --hero-bg: url('<%= ns_image(:resort) %>')">
-  <span class="eyebrow center reveal" data-reveal-target="item">Private Care &middot; By invitation</span>
-  <h1 style="margin-inline:auto">
-    <span data-reveal="mask" data-reveal-delay="120"><span>Private Care is by invitation.</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>If you are reading this page, you may already qualify.</span></span>
-  </h1>
+<%# Hero — landscape overlay (matches bridal-concierge) %>
+<section class="over-hero" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= ns_image_tag :resort, alt: "Private Care", class: "kb" %>
+  </div>
+  <div class="over-hero-copy">
+    <div class="over-hero-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="eyebrow no-rule">Private Care &middot; By invitation</span>
+    </div>
+    <h1>
+      <span class="line" data-reveal="mask" data-reveal-delay="150"><span>Private Care</span></span>
+      <span class="line" data-reveal="mask" data-reveal-delay="260"><span>is by invitation.</span></span>
+      <span class="line em" data-reveal="mask" data-reveal-delay="410"><span>You may already qualify.</span></span>
+    </h1>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560">A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.</p>
+  </div>
 </section>
 
 <%# What Private Care includes %>
@@ -35,7 +45,7 @@
     <div class="sec-head">
       <span class="eyebrow reveal" data-reveal-target="item">What Private Care includes</span>
     </div>
-    <ul class="vip-rows reveal d1" data-reveal-target="item">
+    <ul class="vip-rows vip-rows--2col reveal d1" data-reveal-target="item">
       <% vip_includes.each do |item| %>
         <li><%= item %></li>
       <% end %>
@@ -62,53 +72,48 @@
   </div>
 </section>
 
-<%# Application — composes a private WhatsApp message via the vipapply controller %>
+<%# Application — quote (left) + form (right); composes a private WhatsApp message via the vipapply controller %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner" data-controller="vipapply">
-    <div class="sec-head">
-      <span class="eyebrow reveal" data-reveal-target="item">Application</span>
-      <h2 class="reveal d1" data-reveal-target="item">There is no other way <span class="em">in.</span></h2>
-    </div>
-    <p class="lead reveal d2" data-reveal-target="item">
-      Private Care has no public booking. Tell us a little, and if it is the right
-      fit, we will reach out personally and privately.
-    </p>
+    <div class="split apply-split">
+      <%# Left — quote %>
+      <div class="apply-quote reveal" data-reveal-target="item">
+        <span class="eyebrow">Application</span>
+        <blockquote>
+          &ldquo;Discretion is not a feature here. It is the entire promise &mdash; and I keep it personally.&rdquo;
+        </blockquote>
+        <cite>&mdash; Dr. Maysa</cite>
+        <p class="apply-note">
+          Private Care has no public booking. Tell us a little, and if it is the right
+          fit, we will reach out personally and privately.
+        </p>
+      </div>
 
-    <div class="form reveal d2" data-reveal-target="item">
-      <div class="field">
-        <label for="vip_name">Name</label>
-        <input id="vip_name" type="text" placeholder="Your name" data-vipapply-target="name">
+      <%# Right — form %>
+      <div class="form reveal d1" data-reveal-target="item">
+        <div class="field">
+          <label for="vip_name">Name</label>
+          <input id="vip_name" type="text" placeholder="Your name" data-vipapply-target="name">
+        </div>
+        <div class="field">
+          <label for="vip_contact">Contact</label>
+          <input id="vip_contact" type="text" placeholder="Mobile or email" data-vipapply-target="contact">
+        </div>
+        <div class="field">
+          <label for="vip_referral">Referral source</label>
+          <input id="vip_referral" type="text" placeholder="How did you hear of us?" data-vipapply-target="referral">
+        </div>
+        <div class="field">
+          <label for="vip_note">A brief note</label>
+          <textarea id="vip_note" placeholder="Anything you'd like us to know" data-vipapply-target="note"></textarea>
+        </div>
+        <a class="btn" target="_blank" rel="noopener"
+           href="<%= whatsapp_url(codeword: "PRIVATE") %>"
+           data-vipapply-target="submit"
+           data-action="vipapply#compose">
+          Submit application
+        </a>
       </div>
-      <div class="field">
-        <label for="vip_contact">Contact</label>
-        <input id="vip_contact" type="text" placeholder="Mobile or email" data-vipapply-target="contact">
-      </div>
-      <div class="field">
-        <label for="vip_referral">Referral source</label>
-        <input id="vip_referral" type="text" placeholder="How did you hear of us?" data-vipapply-target="referral">
-      </div>
-      <div class="field">
-        <label for="vip_note">A brief note</label>
-        <textarea id="vip_note" placeholder="Anything you'd like us to know" data-vipapply-target="note"></textarea>
-      </div>
-      <a class="btn" target="_blank" rel="noopener"
-         href="<%= whatsapp_url(codeword: "PRIVATE") %>"
-         data-vipapply-target="submit"
-         data-action="vipapply#compose">
-        Submit application
-      </a>
     </div>
-  </div>
-</section>
-
-<%# Closing note %>
-<section class="section" data-controller="reveal">
-  <div class="section-inner" style="text-align:center">
-    <p class="lead reveal" data-reveal-target="item" style="margin-inline:auto;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--text-bright)">
-      &ldquo;Discretion is not a feature here. It is the entire promise &mdash; and I keep it personally.&rdquo;
-    </p>
-    <p class="reveal d1" data-reveal-target="item" style="font-family:var(--serif);font-size:1.4rem;color:var(--accent);margin-block-start:18px">
-      &mdash; Dr. Maysa
-    </p>
   </div>
 </section>

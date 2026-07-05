@@ -29,30 +29,38 @@
   ]
 %>
 
-<section class="page-hero" data-controller="reveal faqsearch">
-  <span class="eyebrow reveal" data-reveal-target="item">Frequently Asked</span>
-  <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span>The questions</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>before the question.</span></span>
-  </h1>
-  <input class="faq-search reveal d2" data-reveal-target="item"
-         data-faqsearch-target="query"
-         data-action="input->faqsearch#filter"
-         placeholder="Search the questions">
+<div class="faq-page" data-controller="reveal faqsearch">
+  <%# FAQ hero — 1:1 port of design §isFaq %>
+  <section class="fq-hero">
+    <div class="fq-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="lbl">Frequently Asked</span>
+    </div>
+    <h1 class="fq-title" data-reveal="up">The questions<br><span class="em">before the question.</span></h1>
+    <div class="fq-search" data-reveal="up" data-reveal-delay="140">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a7c79" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+      <input placeholder="Search the questions"
+             data-faqsearch-target="query"
+             data-action="input->faqsearch#filter">
+    </div>
+  </section>
 
-  <div class="section-inner" style="padding-block-start:clamp(40px,5vw,64px)">
+  <%# FAQ groups — sticky title left, accordion right %>
+  <section class="fq-groups">
     <% faq_groups.each do |group| %>
-      <div class="faq-group" data-faqsearch-target="group">
-        <h2><%= group[:title] %></h2>
-        <% group[:qs].each do |item| %>
-          <details class="faq" data-faqsearch-target="item"
-                   data-search="<%= "#{item[:q]} #{item[:a]}".downcase %>">
-            <summary><%= item[:q] %> <span class="sign">+</span></summary>
-            <div class="faq-a"><%= item[:a] %></div>
-          </details>
-        <% end %>
+      <div class="fq-group" data-reveal="up" data-faqsearch-target="group">
+        <h2 class="fq-group-title"><%= group[:title] %></h2>
+        <div class="fq-list">
+          <% group[:qs].each do |item| %>
+            <details class="fq-item" data-faqsearch-target="item"
+                     data-search="<%= "#{item[:q]} #{item[:a]}".downcase %>">
+              <summary><span class="fq-q"><%= item[:q] %></span><span class="fq-sign">+</span></summary>
+              <p class="fq-a"><%= item[:a] %></p>
+            </details>
+          <% end %>
+        </div>
       </div>
     <% end %>
     <p class="faq-empty" data-faqsearch-target="empty" hidden>No questions match.</p>
-  </div>
-</section>
+  </section>
+</div>

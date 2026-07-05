@@ -24,42 +24,43 @@
   journal_images = ["site/journal/j1.jpg", "site/journal/j2.jpg", "site/journal/j3.jpg"]
 %>
 
-<section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item">The Journal</span>
-  <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span>Notes, quietly</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>kept.</span></span>
-  </h1>
-  <p class="lead reveal d2" data-reveal-target="item">
-    A doctor&rsquo;s writing, the clinic from the inside, and the rituals in
-    between &mdash; read at your own pace. Nothing trending, nothing rushed.
-  </p>
-  <div class="chips reveal d3" data-reveal-target="item" style="margin-block-start:40px">
-    <button class="chip is-active">All</button>
-    <button class="chip">Dr. Maysa Writes</button>
-    <button class="chip">Inside the Clinic</button>
-    <button class="chip">Ritual</button>
-    <button class="chip">Notes from Patients</button>
-  </div>
-</section>
+<div class="journal-page">
+  <%# Journal hero — ported 1:1 from design §isJournal %>
+  <section class="jr-hero" data-controller="reveal" data-screen-label="Journal">
+    <div class="jr-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="lbl">The Journal</span>
+    </div>
+    <h1 class="jr-title" data-reveal="up">Notes, quietly<br><span class="em">kept.</span></h1>
+    <p class="jr-lead" data-reveal="up" data-reveal-delay="120">
+      A doctor&rsquo;s writing, the clinic from the inside, and the rituals in
+      between &mdash; read at your own pace. Nothing trending, nothing rushed.
+    </p>
+    <div class="jr-filters" data-reveal="up" data-reveal-delay="200">
+      <span class="jr-filter is-active">All</span>
+      <span class="jr-filter">Dr. Maysa Writes</span>
+      <span class="jr-filter">Inside the Clinic</span>
+      <span class="jr-filter">Ritual</span>
+      <span class="jr-filter">Notes from Patients</span>
+    </div>
+  </section>
 
-<section class="section" data-controller="reveal">
-  <div class="section-inner">
-    <div class="journal-grid">
+  <%# Journal grid — repeat(3,1fr), 300px imagery %>
+  <section class="jr-grid-wrap" data-controller="reveal">
+    <div class="jr-grid">
       <% journal_articles.each_with_index do |article, i| %>
-        <a class="article reveal d<%= (i % 3) + 1 %>" data-reveal-target="item" href="<%= journal_path %>">
-          <div class="article-img">
+        <a class="jr-card reveal d<%= (i % 3) + 1 %>" data-reveal-target="item" href="<%= journal_path %>">
+          <div class="jr-card-img">
             <%= image_tag journal_images[i % journal_images.size], alt: article[:title] %>
           </div>
-          <div class="meta">
-            <span><%= article[:cat] %></span>
-            <span class="dot">&middot;</span>
-            <span><%= article[:read] %></span>
+          <div class="jr-card-meta">
+            <span class="cat"><%= article[:cat] %></span>
+            <span class="read"><%= article[:read] %></span>
           </div>
           <h3><%= article[:title] %></h3>
           <p><%= article[:excerpt] %></p>
         </a>
       <% end %>
     </div>
-  </div>
-</section>
+  </section>
+</div>

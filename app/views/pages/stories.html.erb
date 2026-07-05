@@ -23,33 +23,32 @@
   ]
 %>
 
-<section class="page-hero" data-controller="reveal" style="text-align:center">
-  <span class="eyebrow center reveal" data-reveal-target="item">Patient Stories</span>
-  <h1 style="margin-inline:auto;max-width:24ch">
-    <span data-reveal="mask" data-reveal-delay="120"><span>Real women. Consented words.</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>No stock photography.</span></span>
-  </h1>
-  <p class="lead reveal d2" data-reveal-target="item" style="margin-inline:auto">
-    Every story here is shared with explicit consent. Where a face is not shown,
-    that too is a choice we respect.
-  </p>
-</section>
+<div class="stories-page">
+  <%# Patient Stories hero — 1:1 port of design §isStories %>
+  <section class="st-hero" data-controller="reveal" data-screen-label="Patient Stories">
+    <div class="st-eyebrow reveal" data-reveal-target="item">Patient Stories</div>
+    <h1 class="st-title" data-reveal="up">Real women. Consented words.<br><span class="em">No stock photography.</span></h1>
+    <p class="st-lead" data-reveal="up" data-reveal-delay="120">
+      Every story here is shared with explicit consent. Where a face is not shown,
+      that too is a choice we respect.
+    </p>
+  </section>
 
-<section class="section" data-controller="reveal">
-  <div class="section-inner">
-    <div class="stories">
-      <% patient_stories.each do |story| %>
-        <div class="story reveal" data-reveal-target="item">
+  <%# Story rows — image left, copy right, top-border dividers %>
+  <section class="st-rows" data-controller="reveal">
+    <% patient_stories.each do |story| %>
+      <div class="st-row reveal" data-reveal-target="item">
+        <div class="st-row-img">
           <%= ns_image_tag story[:img], alt: "Patient" %>
-          <div class="story-copy">
-            <p class="intro"><%= story[:intro] %></p>
-            <blockquote>&ldquo;<%= story[:quote] %>&rdquo;</blockquote>
-            <div class="tag"><%= story[:protocol] %></div>
-            <p style="color:var(--text-muted);font-weight:300;margin:14px 0 0"><%= story[:close] %></p>
-            <div class="by"><%= story[:by] %></div>
-          </div>
         </div>
-      <% end %>
-    </div>
-  </div>
-</section>
+        <div class="st-row-copy">
+          <p class="st-intro"><%= story[:intro] %></p>
+          <p class="st-quote">&ldquo;<%= story[:quote] %>&rdquo;</p>
+          <div class="st-protocol"><%= story[:protocol] %></div>
+          <p class="st-close"><%= story[:close] %></p>
+          <div class="st-by"><%= story[:by] %></div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</div>

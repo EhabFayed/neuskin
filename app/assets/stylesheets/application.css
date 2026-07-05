@@ -193,6 +193,35 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 
 /* split hero with image for detail pages */
 .split-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 92vh; }
+/* ============================ landscape overlay hero ============================ */
+.over-hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; overflow: hidden; background: var(--card-2); }
+.over-hero-media { position: absolute; inset: 0; z-index: 0; }
+.over-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+/* darken for legible overlaid text: bottom-weighted + soft left gradient */
+.over-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(20,16,17,.28) 0%, rgba(20,16,17,0) 32%, rgba(20,16,17,.55) 72%, rgba(20,16,17,.86) 100%),
+    linear-gradient(90deg, rgba(20,16,17,.6) 0%, rgba(20,16,17,.12) 46%, rgba(20,16,17,0) 72%);
+}
+.over-hero-copy { position: relative; z-index: 2; width: 100%; max-width: 760px; padding: 0 clamp(28px, 8vw, 120px) clamp(52px, 8vh, 92px); }
+.over-hero-eyebrow { display: flex; align-items: center; gap: 18px; margin-block-end: clamp(20px, 3vh, 34px); }
+.over-hero-eyebrow .rule { width: 40px; height: 1px; background: var(--accent-dusty); }
+.over-hero-copy h1 {
+  margin: 0; font-family: var(--serif); font-weight: 300;
+  font-size: clamp(52px, 6.8vw, 122px); line-height: .88; letter-spacing: -.022em;
+  color: var(--text-bright);
+}
+.over-hero-copy h1 .line { display: block; overflow: hidden; padding-block-end: .02em; }
+.over-hero-copy h1 .line.em { font-style: italic; font-weight: 400; color: var(--accent-soft); margin-block-start: .04em; padding-block-end: .06em; }
+.over-hero-lead { margin: clamp(28px, 4vh, 42px) 0 0; font-weight: 300; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.78; color: var(--text-soft); max-width: 440px; }
+.over-hero .date-ask { margin-block-start: clamp(28px, 4vh, 42px); }
+@media (max-width: 880px) {
+  .over-hero { min-height: 88vh; }
+  .over-hero-media img { object-position: center 30%; }
+  .over-hero-copy { max-width: 100%; }
+}
+
 /* soft mauve "cloud" glow behind the copy side, matching the design's atmosphere */
 .split-hero-copy { position: relative; }
 .split-hero-copy::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(60% 60% at 50% 35%, rgba(159,132,136,.16), transparent 70%); }
@@ -240,6 +269,13 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .split-text .eyebrow { margin-block-end: 26px; }
 .split-text .sign { font-size: 1.3rem; margin: 26px 0 0; }
 @media (max-width: 880px) { .split, .split.media-left { grid-template-columns: 1fr; gap: 40px; } }
+
+/* application: quote (left) + form (right) */
+.apply-split { align-items: start; }
+.apply-quote .eyebrow { margin-block-end: 28px; }
+.apply-quote blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2.3rem); line-height: 1.32; letter-spacing: -.01em; color: var(--text-bright); }
+.apply-quote cite { display: block; font-style: normal; font-family: var(--serif); font-size: 1.3rem; color: var(--accent); margin-block-start: 22px; }
+.apply-quote .apply-note { margin-block-start: 34px; color: var(--text-muted); font-weight: 300; line-height: 1.8; max-width: 42ch; }
 
 /* ============================ protocol cards ============================ */
 .proto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -416,6 +452,19 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .stage h3 { font-size: 1.4rem; font-weight: 400; margin: 12px 0 10px; color: var(--text-bright); }
 .stage p { color: var(--text-muted); font-weight: 300; margin: 0; }
 
+/* mother & sister concierge card */
+.concierge-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 38px 40px;
+  align-items: center;
+  transition: border-color .4s var(--ease-soft);
+}
+.concierge-card:hover { border-color: var(--line-strong); }
+@media (max-width: 700px) {
+  .concierge-card { padding: 30px 26px; }
+}
+
 /* exclusions */
 .exclude { list-style: none; margin: 0; padding: 0; }
 .exclude li { display: flex; gap: 18px; align-items: baseline; padding: 18px 0; border-block-end: 1px solid var(--line); color: var(--text-muted); font-weight: 300; }
@@ -448,6 +497,39 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .faq-search::placeholder { color: var(--text-faint); }
 .faq-search:focus { outline: none; border-color: var(--accent); }
 .faq-empty { color: var(--text-faint); font-style: italic; padding: 20px 0; }
+
+/* ==================== FAQ — 1:1 port of design §isFaq ==================== */
+.fq-hero { padding: 170px 8vw 60px; }
+.fq-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+.fq-eyebrow .rule { width: 40px; height: 1px; background: #9f8488; }
+.fq-eyebrow .lbl { font-size: 10.5px; letter-spacing: .34em; text-transform: uppercase; color: #a98e92; }
+.fq-title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 100px); line-height: .98; color: #f4ece8; }
+.fq-title .em { font-style: italic; color: #c9a6a9; }
+.fq-search { margin-top: 42px; max-width: 520px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid rgba(236,226,223,.2); padding-bottom: 14px; }
+.fq-search svg { flex: none; }
+.fq-search input { flex: 1; background: transparent; border: none; color: #ece2df; font-family: var(--sans); font-size: 15px; outline: none; }
+.fq-search input::placeholder { color: #8a7c79; }
+
+.fq-groups { padding: 40px 8vw 130px; }
+.fq-group { display: grid; grid-template-columns: 0.5fr 1.5fr; gap: 4vw; padding: 56px 0; border-top: 1px solid rgba(236,226,223,.12); }
+.fq-group[hidden] { display: none; }
+.fq-group-title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.4vw, 32px); color: #c9a6a9; align-self: start; position: sticky; top: 120px; }
+.fq-item { border-bottom: 1px solid rgba(236,226,223,.1); }
+.fq-item[hidden] { display: none; }
+.fq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; align-items: center; padding: 24px 0; }
+.fq-item summary::-webkit-details-marker { display: none; }
+.fq-item .fq-q { font-family: var(--serif); font-weight: 400; font-size: clamp(17px, 1.7vw, 22px); color: #ece2df; }
+.fq-item .fq-sign { font-size: 22px; color: #9f8488; line-height: 1; flex: none; transition: transform .3s; }
+.fq-item[open] .fq-sign { transform: rotate(45deg); }
+.fq-item .fq-a { margin: 0 0 24px; font-weight: 300; font-size: 15px; line-height: 1.8; color: #a99c98; max-width: 640px; }
+.fq-item:not([open]) .fq-a { display: none; }
+
+@media (max-width: 760px) {
+  .fq-hero { padding: 130px 6vw 50px; }
+  .fq-groups { padding: 20px 6vw 90px; }
+  .fq-group { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
+  .fq-group-title { position: static; top: auto; }
+}
 
 /* ============================ team grid ============================ */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(26px, 3vw, 44px); }
@@ -485,6 +567,34 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 @media (max-width: 880px) { .journal-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .journal-grid { grid-template-columns: 1fr; } }
 
+/* ==================== Journal — 1:1 port of design §isJournal ==================== */
+.jr-hero { padding: 170px 8vw 70px; }
+.jr-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+.jr-eyebrow .rule { width: 40px; height: 1px; background: #9f8488; }
+.jr-eyebrow .lbl { font-size: 10.5px; letter-spacing: .34em; text-transform: uppercase; color: #a98e92; }
+.jr-title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 104px); line-height: .98; color: #f4ece8; }
+.jr-title .em { font-style: italic; color: #c9a6a9; }
+.jr-lead { margin: 34px 0 0; font-weight: 300; font-size: 17px; line-height: 1.8; color: #a99c98; max-width: 560px; }
+.jr-filters { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; }
+.jr-filter { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a7c79; cursor: pointer; padding-bottom: 6px; transition: color .3s; }
+.jr-filter:hover { color: #cdbfbb; }
+.jr-filter.is-active { color: #cdbfbb; border-bottom: 1px solid #9f8488; }
+
+.jr-grid-wrap { padding: 20px 8vw 140px; }
+.jr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px 30px; }
+.jr-card { display: block; cursor: pointer; text-decoration: none; }
+.jr-card-img { position: relative; height: 300px; overflow: hidden; background: linear-gradient(135deg, #2a2024, #6d565b); margin-bottom: 24px; }
+.jr-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.19,1,.22,1); }
+.jr-card:hover .jr-card-img img { transform: scale(1.06); }
+.jr-card-meta { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+.jr-card-meta .cat { color: #b5827f; }
+.jr-card-meta .read { color: #8a7c79; }
+.jr-card h3 { margin: 0 0 12px; font-family: var(--serif); font-weight: 400; font-size: 25px; line-height: 1.15; color: #ece2df; }
+.jr-card p { margin: 0; font-weight: 300; font-size: 14.5px; line-height: 1.7; color: #a99c98; }
+
+@media (max-width: 880px) { .jr-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .jr-grid { grid-template-columns: 1fr; } .jr-hero { padding: 130px 6vw 50px; } .jr-grid-wrap { padding: 20px 6vw 90px; } }
+
 /* ============================ patient stories (text over image) ============================ */
 .stories { display: grid; gap: 26px; }
 .story { position: relative; min-height: 420px; display: flex; align-items: flex-end; overflow: hidden; background: var(--card-2); }
@@ -496,10 +606,35 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .story-copy .tag { font-family: var(--sans); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
 .story-copy .by { font-family: var(--sans); font-size: 12px; color: var(--text-muted); margin-block-start: 10px; }
 
+/* ==================== Patient Stories — 1:1 port of design §isStories ==================== */
+.st-hero { padding: 170px 8vw 80px; text-align: center; }
+.st-eyebrow { font-size: 10.5px; letter-spacing: .4em; text-transform: uppercase; color: #9f8488; margin-bottom: 28px; }
+.st-title { margin: 0 auto; max-width: 980px; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 76px); line-height: 1.06; color: #f4ece8; }
+.st-title .em { font-style: italic; color: #c9a6a9; }
+.st-lead { margin: 32px auto 0; font-weight: 300; font-size: 16px; line-height: 1.8; color: #a99c98; max-width: 560px; }
+
+.st-rows { padding: 40px 8vw 130px; }
+.st-row { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 5vw; align-items: center; padding: 60px 0; border-top: 1px solid rgba(236,226,223,.12); }
+.st-row-img { aspect-ratio: 4/5; overflow: hidden; background: linear-gradient(135deg, #2a2024, #6d565b); }
+.st-row-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.st-intro { margin: 0 0 26px; font-weight: 300; font-size: 15px; line-height: 1.85; color: #8a7c79; font-style: italic; }
+.st-quote { margin: 0 0 26px; font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.4; color: #ece2df; }
+.st-protocol { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #b5827f; margin-bottom: 22px; }
+.st-close { margin: 0 0 20px; font-weight: 300; font-size: 15px; line-height: 1.8; color: #a99c98; }
+.st-by { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9f8488; }
+
+@media (max-width: 760px) {
+  .st-hero { padding: 130px 6vw 50px; }
+  .st-rows { padding: 20px 6vw 90px; }
+  .st-row { grid-template-columns: 1fr; gap: 32px; padding: 44px 0; }
+}
+
 /* ============================ VIP / private care ============================ */
 .vip-rows { list-style: none; margin: 0; padding: 0; }
 .vip-rows li { display: flex; gap: 18px; align-items: baseline; padding: 20px 0; border-block-end: 1px solid var(--line); color: var(--text-soft); font-weight: 300; }
 .vip-rows li::before { content: "✦"; color: var(--accent); flex: none; font-size: .9em; }
+.vip-rows--2col { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 5vw, 72px); }
+@media (max-width: 700px) { .vip-rows--2col { grid-template-columns: 1fr; } }
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .tier { background: var(--card); border: 1px solid var(--line); padding: 38px 32px; }
 .tier .badge { font-family: var(--sans); font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
