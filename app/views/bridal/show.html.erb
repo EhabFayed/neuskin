@@ -8,7 +8,7 @@
          data-countdown-today-value="<%= sec_text("bridal", "bridal_countdown", "today").presence || "Let's speak today — we'll make the most of every week." %>"
          data-countdown-days-label-value="<%= sec_text("bridal", "bridal_countdown", "days_label").presence || "days to plan, calmly." %>">
   <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
-    <%= ns_image_tag :bride_bouquet, alt: "Bridal", class: "kb" %>
+    <%= sec_image_tag("bridal", "bridal_hero", :bride_bouquet, alt: "Bridal", class: "kb") %>
   </div>
   <div class="over-hero-copy">
     <div class="over-hero-eyebrow reveal" data-reveal-target="item">

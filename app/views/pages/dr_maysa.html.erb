@@ -3,7 +3,7 @@
 <%# ---- Full-bleed portrait hero, quote overlaid (1:1 port of design §isMaysa) ---- %>
 <section class="over-hero over-hero--maysa" data-controller="reveal parallax">
   <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
-    <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "kb" %>
+    <%= sec_image_tag("dr_maysa", "drmaysa_hero", :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "kb") %>
   </div>
   <div class="over-hero-copy over-hero-copy--wide">
     <div class="mysa-hero-eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_hero", "eyebrow").presence || "The Founder · Medical Director" %></div>
@@ -73,17 +73,18 @@
     <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_clips", "eyebrow").presence || "In her words" %></span>
     <div class="clips reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
       <div class="clip">
-        <%= ns_image_tag :doctor_coat, alt: "What is worth your money?" %>
+        <% clips_imgs = sec_gallery_urls("dr_maysa", "drmaysa_clips", [:doctor_coat, :consult, :beauty_eyes]) %>
+        <%= image_tag clips_imgs[0], alt: "What is worth your money?" %>
         <span class="play">▶</span>
         <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_1_title").presence || "What is worth your money?" %></span>
       </div>
       <div class="clip">
-        <%= ns_image_tag :consult, alt: "How I say no to a patient" %>
+        <%= image_tag clips_imgs[1], alt: "How I say no to a patient" %>
         <span class="play">▶</span>
         <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_2_title").presence || "How I say no to a patient" %></span>
       </div>
       <div class="clip">
-        <%= ns_image_tag :beauty_eyes, alt: "What I'd tell my best friend" %>
+        <%= image_tag clips_imgs[2], alt: "What I'd tell my best friend" %>
         <span class="play">▶</span>
         <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_3_title").presence || "What I'd tell my best friend" %></span>
       </div>

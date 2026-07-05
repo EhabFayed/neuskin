@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="hero-media">
-    <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "hero-media-img kb" %>
+    <%= sec_image_tag("home", "home_hero", :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "hero-media-img kb") %>
     <div class="hero-media-cap">
       <span class="nm">Dr. Maysa Al-Rashid</span>
       <span class="rl">Founder · Medical Director</span>
@@ -65,7 +65,7 @@
 <section class="section section--light" data-controller="reveal">
   <div class="section-inner split media-left">
     <div class="split-media reveal" data-reveal-target="item">
-      <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid" %>
+      <%= sec_image_tag("home", "home_founder", :portrait_natural, alt: "Dr. Maysa Al-Rashid") %>
       <div class="cap"><span class="nm">Dr. Maysa Al-Rashid</span><span class="rl">Founder · Medical Director</span></div>
     </div>
     <div class="split-text reveal d1" data-reveal-target="item">
@@ -137,11 +137,12 @@
         <p><%= sec_text("home", "home_clinic", "lead").presence || "A private clinic in Al Malqa — designed for quiet. Scroll on, and move through it." %></p>
         <div class="cue"><%= sec_text("home", "home_clinic", "cue").presence || "Scroll →" %></div>
       </div>
-      <figure class="hshot"><%= ns_image_tag :treatment_room, alt: "Treatment room" %><figcaption><%= sec_text("home", "home_clinic", "cap_1").presence || "01 · Treatment room" %></figcaption></figure>
-      <figure class="hshot narrow"><%= ns_image_tag :lounge, alt: "The lounge" %><figcaption><%= sec_text("home", "home_clinic", "cap_2").presence || "02 · The lounge" %></figcaption></figure>
-      <figure class="hshot"><%= ns_image_tag :device_table, alt: "Device room" %><figcaption><%= sec_text("home", "home_clinic", "cap_3").presence || "03 · Device room" %></figcaption></figure>
-      <figure class="hshot narrow"><%= ns_image_tag :diptyque, alt: "In the detail" %><figcaption><%= sec_text("home", "home_clinic", "cap_4").presence || "04 · In the detail" %></figcaption></figure>
-      <figure class="hshot"><%= ns_image_tag :interior_ext, alt: "The entrance" %><figcaption><%= sec_text("home", "home_clinic", "cap_5").presence || "05 · The entrance" %></figcaption></figure>
+      <% home_clinic_imgs = sec_gallery_urls("home", "home_clinic", [:treatment_room, :lounge, :device_table, :diptyque, :interior_ext]) %>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[0], alt: "Treatment room" %><figcaption><%= sec_text("home", "home_clinic", "cap_1").presence || "01 · Treatment room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[1], alt: "The lounge" %><figcaption><%= sec_text("home", "home_clinic", "cap_2").presence || "02 · The lounge" %></figcaption></figure>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[2], alt: "Device room" %><figcaption><%= sec_text("home", "home_clinic", "cap_3").presence || "03 · Device room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[3], alt: "In the detail" %><figcaption><%= sec_text("home", "home_clinic", "cap_4").presence || "04 · In the detail" %></figcaption></figure>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[4], alt: "The entrance" %><figcaption><%= sec_text("home", "home_clinic", "cap_5").presence || "05 · The entrance" %></figcaption></figure>
       <div class="hshot-outro">
         <blockquote><%= sec_text("home", "home_clinic", "quote").presence || "“A clinic should be measured by what it refuses to do.”" %></blockquote>
         <%= link_to (sec_text("home", "home_clinic", "outro_link").presence || "Tour the clinic →"), the_clinic_path, class: "arrowlink" %>
@@ -179,7 +180,7 @@
 <%# ---- Closing CTA band ---- %>
 <section class="cta-band" data-controller="reveal">
   <div class="cta-band-media reveal" data-reveal-target="item">
-    <%= ns_image_tag :lounge, alt: "The lounge at NeuSkin" %>
+    <%= sec_image_tag("home", "home_cta", :lounge, alt: "The lounge at NeuSkin") %>
   </div>
   <div class="cta-band-copy reveal d1" data-reveal-target="item">
     <h2><%= sec_text("home", "home_cta", "title").presence || "There is no rush here." %> <span class="em"><%= sec_text("home", "home_cta", "title_em").presence || "Begin with a quiet conversation." %></span></h2>

@@ -24,4 +24,29 @@ module ContentHelper
       ns_image(fallback_key)
     end
   end
+
+  # <img> tag sourced from the section's attached image, falling back to the
+  # static NS_IMAGES asset. Drop-in replacement for ns_image_tag so views can
+  # become image-editable without changing their markup. Extra opts (alt,
+  # class, …) pass straight through, exactly like ns_image_tag.
+  def sec_image_tag(page, kind, fallback_key, alt: "", **opts)
+    section = sec(page, kind)
+    if section.persisted? && section.image.attached?
+      image_tag(section.image, alt: alt, **opts)
+    else
+      ns_image_tag(fallback_key, alt: alt, **opts)
+    end
+  end
+
+  # Ordered list of gallery image URLs for a section (has_many_attached
+  # :gallery). Falls back to the given static keys (array) when nothing is
+  # attached, so galleries render unchanged before migration.
+  def sec_gallery_urls(page, kind, fallback_keys = [])
+    section = sec(page, kind)
+    if section.persisted? && section.gallery.attached?
+      section.gallery.map { |img| url_for(img) }
+    else
+      Array(fallback_keys).map { |k| ns_image(k) }
+    end
+  end
 end

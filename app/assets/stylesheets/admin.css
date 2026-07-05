@@ -301,3 +301,7 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
   .ns-editor-preview { position: static; order: -1; }
   .ns-preview-body { max-height: 300px; }
 }
+
+/* live preview image */
+.ns-preview-body .lp-imgwrap { margin-bottom: 16px; }
+.ns-preview-body .lp-img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid var(--ns-border); display: block; }
