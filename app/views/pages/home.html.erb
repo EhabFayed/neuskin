@@ -3,14 +3,14 @@
 <%# ---- Hero (split: copy + portrait) ---- %>
 <section class="hero" data-controller="reveal parallax">
   <div class="hero-copy">
-    <span class="eyebrow" data-reveal="fade">Doctor-led · Riyadh</span>
+    <span class="eyebrow" data-reveal="fade"><%= sec_text("home", "home_hero", "eyebrow").presence || "Doctor-led · Riyadh" %></span>
     <h1>
-      <span class="ln" data-reveal="mask" data-reveal-delay="150"><span>Skin,</span></span>
-      <span class="ln" data-reveal="mask" data-reveal-delay="260"><span>measured.</span></span>
-      <span class="ln em" data-reveal="mask" data-reveal-delay="410"><span>Confidence, quiet.</span></span>
+      <span class="ln" data-reveal="mask" data-reveal-delay="150"><span><%= sec_text("home", "home_hero", "headline_1").presence || "Skin," %></span></span>
+      <span class="ln" data-reveal="mask" data-reveal-delay="260"><span><%= sec_text("home", "home_hero", "headline_2").presence || "measured." %></span></span>
+      <span class="ln em" data-reveal="mask" data-reveal-delay="410"><span><%= sec_text("home", "home_hero", "headline_3").presence || "Confidence, quiet." %></span></span>
     </h1>
     <p class="hero-sub" data-reveal="up" data-reveal-delay="560">
-      The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.
+      <%= sec_text("home", "home_hero", "sub").presence || "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa." %>
     </p>
     <div class="hero-cta" data-reveal="up" data-reveal-delay="680">
       <%= link_to "Request an assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %>
@@ -20,8 +20,8 @@
       </a>
     </div>
     <div class="hero-foot" data-reveal="fade" data-reveal-delay="820">
-      <span>Est. Al Malqa · Riyadh</span>
-      <span>Six protocols · one philosophy</span>
+      <span><%= sec_text("home", "home_hero", "foot_1").presence || "Est. Al Malqa · Riyadh" %></span>
+      <span><%= sec_text("home", "home_hero", "foot_2").presence || "Six protocols · one philosophy" %></span>
     </div>
   </div>
   <div class="hero-media">
@@ -69,13 +69,13 @@
       <div class="cap"><span class="nm">Dr. Maysa Al-Rashid</span><span class="rl">Founder · Medical Director</span></div>
     </div>
     <div class="split-text reveal d1" data-reveal-target="item">
-      <span class="eyebrow">Meet the founder</span>
+      <span class="eyebrow"><%= sec_text("home", "home_founder", "eyebrow").presence || "Meet the founder" %></span>
       <div class="body-copy">
-        <p>I opened NeuSkin because I was tired of watching women sold ten treatments to fill a calendar. Skin is data — it can be read, and once read, it can be treated honestly.</p>
-        <p>Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed.</p>
+        <p><%= sec_text("home", "home_founder", "body_1").presence || "I opened NeuSkin because I was tired of watching women sold ten treatments to fill a calendar. Skin is data — it can be read, and once read, it can be treated honestly." %></p>
+        <p><%= sec_text("home", "home_founder", "body_2").presence || "Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed." %></p>
       </div>
-      <p class="sign">— Maysa</p>
-      <p style="margin-top:20px"><%= link_to "Read her philosophy →", dr_maysa_path, class: "arrowlink" %></p>
+      <p class="sign"><%= sec_text("home", "home_founder", "sign").presence || "— Maysa" %></p>
+      <p style="margin-top:20px"><%= link_to (sec_text("home", "home_founder", "link").presence || "Read her philosophy →"), dr_maysa_path, class: "arrowlink" %></p>
     </div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
   end
 
   def dr_maysa
