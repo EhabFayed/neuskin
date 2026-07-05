@@ -2,29 +2,29 @@
 
 <%
   faq_groups = [
-    { title: "Before you come in", qs: [
-      { q: "Do you publish a price list?",
-        a: "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs." },
-      { q: "How do I start?",
-        a: "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally." },
-      { q: "Is the first visit a treatment?",
-        a: "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan." }
+    { title: sec_text("faq", "faq_items", "group_1_title").presence || "Before you come in", qs: [
+      { q: sec_text("faq", "faq_items", "q_1_question").presence || "Do you publish a price list?",
+        a: sec_text("faq", "faq_items", "q_1_answer").presence || "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs." },
+      { q: sec_text("faq", "faq_items", "q_2_question").presence || "How do I start?",
+        a: sec_text("faq", "faq_items", "q_2_answer").presence || "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally." },
+      { q: sec_text("faq", "faq_items", "q_3_question").presence || "Is the first visit a treatment?",
+        a: sec_text("faq", "faq_items", "q_3_answer").presence || "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan." }
     ] },
-    { title: "How care works", qs: [
-      { q: "Why a twelve-month plan?",
-        a: "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months." },
-      { q: "Will I see Dr. Maysa herself?",
-        a: "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction." },
-      { q: "What if a treatment isn't right for me?",
-        a: "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session." }
+    { title: sec_text("faq", "faq_items", "group_2_title").presence || "How care works", qs: [
+      { q: sec_text("faq", "faq_items", "q_4_question").presence || "Why a twelve-month plan?",
+        a: sec_text("faq", "faq_items", "q_4_answer").presence || "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months." },
+      { q: sec_text("faq", "faq_items", "q_5_question").presence || "Will I see Dr. Maysa herself?",
+        a: sec_text("faq", "faq_items", "q_5_answer").presence || "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction." },
+      { q: sec_text("faq", "faq_items", "q_6_question").presence || "What if a treatment isn't right for me?",
+        a: sec_text("faq", "faq_items", "q_6_answer").presence || "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session." }
     ] },
-    { title: "Privacy & practicalities", qs: [
-      { q: "How private is my information?",
-        a: "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely." },
-      { q: "Do you photograph patients?",
-        a: "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time." },
-      { q: "Where are you, and when are you open?",
-        a: "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule." }
+    { title: sec_text("faq", "faq_items", "group_3_title").presence || "Privacy & practicalities", qs: [
+      { q: sec_text("faq", "faq_items", "q_7_question").presence || "How private is my information?",
+        a: sec_text("faq", "faq_items", "q_7_answer").presence || "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely." },
+      { q: sec_text("faq", "faq_items", "q_8_question").presence || "Do you photograph patients?",
+        a: sec_text("faq", "faq_items", "q_8_answer").presence || "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time." },
+      { q: sec_text("faq", "faq_items", "q_9_question").presence || "Where are you, and when are you open?",
+        a: sec_text("faq", "faq_items", "q_9_answer").presence || "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule." }
     ] }
   ]
 %>
@@ -34,12 +34,12 @@
   <section class="fq-hero">
     <div class="fq-eyebrow reveal" data-reveal-target="item">
       <span class="rule"></span>
-      <span class="lbl">Frequently Asked</span>
+      <span class="lbl"><%= sec_text("faq", "faq_hero", "eyebrow").presence || "Frequently Asked" %></span>
     </div>
-    <h1 class="fq-title" data-reveal="up">The questions<br><span class="em">before the question.</span></h1>
+    <h1 class="fq-title" data-reveal="up"><%= sec_text("faq", "faq_hero", "title_1").presence || "The questions" %><br><span class="em"><%= sec_text("faq", "faq_hero", "title_em").presence || "before the question." %></span></h1>
     <div class="fq-search" data-reveal="up" data-reveal-delay="140">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a7c79" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
-      <input placeholder="Search the questions"
+      <input placeholder="<%= sec_text("faq", "faq_hero", "search_placeholder").presence || "Search the questions" %>"
              data-faqsearch-target="query"
              data-action="input->faqsearch#filter">
     </div>
@@ -61,6 +61,6 @@
         </div>
       </div>
     <% end %>
-    <p class="faq-empty" data-faqsearch-target="empty" hidden>No questions match.</p>
+    <p class="faq-empty" data-faqsearch-target="empty" hidden><%= sec_text("faq", "faq_hero", "empty_state").presence || "No questions match." %></p>
   </section>
 </div>

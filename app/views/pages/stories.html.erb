@@ -3,34 +3,33 @@
 <%
   patient_stories = [
     { img: :portrait_natural,
-      intro: "She came in tired of being sold to. What she wanted was a plan.",
-      quote: "For the first time, someone told me what not to do. That's when I trusted them.",
-      protocol: "Diagnostic Foundation → Skin",
-      close: "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
-      by: "L.M. · 34 · Riyadh" },
+      intro: sec_text("stories", "story_items", "story_1_intro").presence || "She came in tired of being sold to. What she wanted was a plan.",
+      quote: sec_text("stories", "story_items", "story_1_quote").presence || "For the first time, someone told me what not to do. That's when I trusted them.",
+      protocol: sec_text("stories", "story_items", "story_1_protocol").presence || "Diagnostic Foundation → Skin",
+      close: sec_text("stories", "story_items", "story_1_close").presence || "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
+      by: sec_text("stories", "story_items", "story_1_by").presence || "L.M. · 34 · Riyadh" },
     { img: :consult,
-      intro: "A bride with six months and a quiet kind of panic.",
-      quote: "No one promised me a miracle. They promised me a calendar, and they kept it.",
-      protocol: "The Bride's 180",
-      close: "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
-      by: "A.R. · 29 · Jeddah" },
+      intro: sec_text("stories", "story_items", "story_2_intro").presence || "A bride with six months and a quiet kind of panic.",
+      quote: sec_text("stories", "story_items", "story_2_quote").presence || "No one promised me a miracle. They promised me a calendar, and they kept it.",
+      protocol: sec_text("stories", "story_items", "story_2_protocol").presence || "The Bride's 180",
+      close: sec_text("stories", "story_items", "story_2_close").presence || "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
+      by: sec_text("stories", "story_items", "story_2_by").presence || "A.R. · 29 · Jeddah" },
     { img: :beauty_eyes,
-      intro: "Long-term maintenance, on her own terms.",
-      quote: "I review my skin like I review anything that matters to me — with data, every quarter.",
-      protocol: "Private Care",
-      close: "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
-      by: "F.K. · 41 · Riyadh" }
+      intro: sec_text("stories", "story_items", "story_3_intro").presence || "Long-term maintenance, on her own terms.",
+      quote: sec_text("stories", "story_items", "story_3_quote").presence || "I review my skin like I review anything that matters to me — with data, every quarter.",
+      protocol: sec_text("stories", "story_items", "story_3_protocol").presence || "Private Care",
+      close: sec_text("stories", "story_items", "story_3_close").presence || "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
+      by: sec_text("stories", "story_items", "story_3_by").presence || "F.K. · 41 · Riyadh" }
   ]
 %>
 
 <div class="stories-page">
   <%# Patient Stories hero — 1:1 port of design §isStories %>
   <section class="st-hero" data-controller="reveal" data-screen-label="Patient Stories">
-    <div class="st-eyebrow reveal" data-reveal-target="item">Patient Stories</div>
-    <h1 class="st-title" data-reveal="up">Real women. Consented words.<br><span class="em">No stock photography.</span></h1>
+    <div class="st-eyebrow reveal" data-reveal-target="item"><%= sec_text("stories", "story_hero", "eyebrow").presence || "Patient Stories" %></div>
+    <h1 class="st-title" data-reveal="up"><%= sec_text("stories", "story_hero", "title_1").presence || "Real women. Consented words." %><br><span class="em"><%= sec_text("stories", "story_hero", "title_em").presence || "No stock photography." %></span></h1>
     <p class="st-lead" data-reveal="up" data-reveal-delay="120">
-      Every story here is shared with explicit consent. Where a face is not shown,
-      that too is a choice we respect.
+      <%= sec_text("stories", "story_hero", "lead").presence || "Every story here is shared with explicit consent. Where a face is not shown, that too is a choice we respect." %>
     </p>
   </section>
 
