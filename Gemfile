@@ -21,6 +21,7 @@ gem "propshaft"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
+gem "devise"
 
 # Reusable, testable view units (protocol card, pillar, section header, etc.)
 gem "view_component"
