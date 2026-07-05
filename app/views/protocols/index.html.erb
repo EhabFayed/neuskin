@@ -2,13 +2,13 @@
 
 <%# ---- Hero ---- %>
 <section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item">The Protocols</span>
+  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("protocols_index", "protocols_hero", "eyebrow").presence || "The Protocols" %></span>
   <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span>Six named protocols.</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>One philosophy. Zero menu pricing.</span></span>
+    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("protocols_index", "protocols_hero", "title_1").presence || "Six named protocols." %></span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("protocols_index", "protocols_hero", "title_em").presence || "One philosophy. Zero menu pricing." %></span></span>
   </h1>
   <p class="lead reveal d2" data-reveal-target="item">
-    NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list.
+    <%= sec_text("protocols_index", "protocols_hero", "lead").presence || "NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list." %>
   </p>
 </section>
 
@@ -16,7 +16,7 @@
 <section class="section section--surface" data-controller="reveal filter">
   <div class="section-inner">
     <div class="reveal" data-reveal-target="item">
-      <span class="eyebrow">I'm here because…</span>
+      <span class="eyebrow"><%= sec_text("protocols_index", "protocols_filter", "eyebrow").presence || "I'm here because…" %></span>
       <div class="chips" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:24px">
         <% chips = [
              ["all",      "Show me everything"],
@@ -48,7 +48,7 @@
 
 <%# ---- Closing CTA ---- %>
 <section class="cta-center" data-controller="reveal">
-  <p class="reveal" data-reveal-target="item" style="font-family:var(--serif);font-style:italic">Not sure where to start?</p>
-  <h2 class="reveal d1" data-reveal-target="item">Begin with the <span class="em">Maysa Method™</span></h2>
-  <p class="reveal d2" data-reveal-target="item"><%= link_to "Begin with the Maysa Method™", maysa_method_path, class: "btn" %></p>
+  <p class="reveal" data-reveal-target="item" style="font-family:var(--serif);font-style:italic"><%= sec_text("protocols_index", "protocols_cta", "kicker").presence || "Not sure where to start?" %></p>
+  <h2 class="reveal d1" data-reveal-target="item"><%= sec_text("protocols_index", "protocols_cta", "title").presence || "Begin with the" %> <span class="em"><%= sec_text("protocols_index", "protocols_cta", "title_em").presence || "Maysa Method™" %></span></h2>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("protocols_index", "protocols_cta", "button").presence || "Begin with the Maysa Method™"), maysa_method_path, class: "btn" %></p>
 </section>

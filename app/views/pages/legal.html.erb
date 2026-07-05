@@ -3,11 +3,10 @@
     regardless of the `doc` local. %>
 
 <section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item">Legal &amp; Compliance</span>
-  <h1><span data-reveal="mask" data-reveal-delay="120"><span>Plainly stated.</span></span></h1>
+  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("legal", "legal_hero", "eyebrow").presence || "Legal & Compliance" %></span>
+  <h1><span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("legal", "legal_hero", "title_1").presence || "Plainly stated." %></span></span></h1>
   <p class="lead reveal d2" data-reveal-target="item">
-    We keep our terms in human language. This is a demonstration page &mdash;
-    final legal copy is prepared with counsel for KSA / PDPL compliance.
+    <%= sec_text("legal", "legal_hero", "lead").presence || "We keep our terms in human language. This is a demonstration page — final legal copy is prepared with counsel for KSA / PDPL compliance." %>
   </p>
 </section>
 
@@ -15,57 +14,45 @@
   <div class="section-inner">
 
     <div class="legal-block reveal" data-reveal-target="item">
-      <h2>Privacy &amp; PDPL</h2>
+      <h2><%= sec_text("legal", "legal_blocks", "privacy_title").presence || "Privacy & PDPL" %></h2>
       <p>
-        We collect only what we need to care for you and to reply to your inquiry.
-        Your personal data is stored securely, used solely for your care and
-        communication with you, and never sold or shared for marketing.
+        <%= sec_text("legal", "legal_blocks", "privacy_p1").presence || "We collect only what we need to care for you and to reply to your inquiry. Your personal data is stored securely, used solely for your care and communication with you, and never sold or shared for marketing." %>
       </p>
       <p>
-        You may ask to see, correct, or delete the information we hold at any time.
-        Our handling of personal data follows Saudi Arabia&rsquo;s Personal Data
-        Protection Law (PDPL).
+        <%= sec_text("legal", "legal_blocks", "privacy_p2").presence || "You may ask to see, correct, or delete the information we hold at any time. Our handling of personal data follows Saudi Arabia’s Personal Data Protection Law (PDPL)." %>
       </p>
     </div>
 
     <div class="legal-block reveal d1" data-reveal-target="item">
-      <h2>Medical advertising disclaimer</h2>
+      <h2><%= sec_text("legal", "legal_blocks", "medical_title").presence || "Medical advertising disclaimer" %></h2>
       <p>
-        Results vary from person to person and depend on individual factors. Every
-        treatment is subject to medical consultation and individual assessment, and
-        no specific outcome is guaranteed.
+        <%= sec_text("legal", "legal_blocks", "medical_p1").presence || "Results vary from person to person and depend on individual factors. Every treatment is subject to medical consultation and individual assessment, and no specific outcome is guaranteed." %>
       </p>
       <p>
-        Nothing on this site is medical advice or a substitute for an in-person
-        consultation with a licensed practitioner.
+        <%= sec_text("legal", "legal_blocks", "medical_p2").presence || "Nothing on this site is medical advice or a substitute for an in-person consultation with a licensed practitioner." %>
       </p>
     </div>
 
     <div class="legal-block reveal d2" data-reveal-target="item">
-      <h2>Consent policy</h2>
+      <h2><%= sec_text("legal", "legal_blocks", "consent_title").presence || "Consent policy" %></h2>
       <p>
-        Photography and the use of any patient material require separate, specific,
-        written consent. Consent is never assumed, is given freely, and may be
-        withdrawn at any time without affecting your care.
+        <%= sec_text("legal", "legal_blocks", "consent_p1").presence || "Photography and the use of any patient material require separate, specific, written consent. Consent is never assumed, is given freely, and may be withdrawn at any time without affecting your care." %>
       </p>
     </div>
 
     <div class="legal-block reveal d3" data-reveal-target="item">
-      <h2>Terms of inquiry</h2>
+      <h2><%= sec_text("legal", "legal_blocks", "terms_title").presence || "Terms of inquiry" %></h2>
       <p>
-        Submitting an inquiry begins a private conversation, not a booking or a
-        contract. All care is arranged after a medical consultation and individual
-        assessment.
+        <%= sec_text("legal", "legal_blocks", "terms_p1").presence || "Submitting an inquiry begins a private conversation, not a booking or a contract. All care is arranged after a medical consultation and individual assessment." %>
       </p>
       <p>
-        We reply personally, Saturday to Thursday. By contacting us you agree only
-        to be contacted back &mdash; nothing more.
+        <%= sec_text("legal", "legal_blocks", "terms_p2").presence || "We reply personally, Saturday to Thursday. By contacting us you agree only to be contacted back — nothing more." %>
       </p>
     </div>
 
     <div class="license-line reveal d4" data-reveal-target="item">
-      <span>SFDA / MOH license</span>
-      <span>No. 0000000000</span>
+      <span><%= sec_text("legal", "legal_license", "label").presence || "SFDA / MOH license" %></span>
+      <span><%= sec_text("legal", "legal_license", "number").presence || "No. 0000000000" %></span>
     </div>
 
   </div>
