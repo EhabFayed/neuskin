@@ -3,35 +3,35 @@
 <%
   team = [
     {
-      name:  "Dr. Maysa Al-Rashid",
-      role:  "Founder · Medical Director",
-      cred:  "MBBS · Dermatology · Aesthetic Medicine Fellowship",
-      focus: "Diagnosis & the 12-month plan",
-      bio:   "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+      name:  sec_text("the_team", "team_members", "member_1_name").presence || "Dr. Maysa Al-Rashid",
+      role:  sec_text("the_team", "team_members", "member_1_role").presence || "Founder · Medical Director",
+      cred:  sec_text("the_team", "team_members", "member_1_cred").presence || "MBBS · Dermatology · Aesthetic Medicine Fellowship",
+      focus: sec_text("the_team", "team_members", "member_1_focus").presence || "Diagnosis & the 12-month plan",
+      bio:   sec_text("the_team", "team_members", "member_1_bio").presence || "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
       img:   :portrait_natural
     },
     {
-      name:  "Dr. Lina Haddad",
-      role:  "Senior Aesthetic Physician",
-      cred:  "MBBS · Diploma in Aesthetic Medicine",
-      focus: "Injectables & restraint",
-      bio:   "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
+      name:  sec_text("the_team", "team_members", "member_2_name").presence || "Dr. Lina Haddad",
+      role:  sec_text("the_team", "team_members", "member_2_role").presence || "Senior Aesthetic Physician",
+      cred:  sec_text("the_team", "team_members", "member_2_cred").presence || "MBBS · Diploma in Aesthetic Medicine",
+      focus: sec_text("the_team", "team_members", "member_2_focus").presence || "Injectables & restraint",
+      bio:   sec_text("the_team", "team_members", "member_2_bio").presence || "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
       img:   :consult
     },
     {
-      name:  "Dr. Sara Othman",
-      role:  "Dermatology Associate",
-      cred:  "MBBS · Clinical Dermatology",
-      focus: "Skin barrier & pigment",
-      bio:   "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
+      name:  sec_text("the_team", "team_members", "member_3_name").presence || "Dr. Sara Othman",
+      role:  sec_text("the_team", "team_members", "member_3_role").presence || "Dermatology Associate",
+      cred:  sec_text("the_team", "team_members", "member_3_cred").presence || "MBBS · Clinical Dermatology",
+      focus: sec_text("the_team", "team_members", "member_3_focus").presence || "Skin barrier & pigment",
+      bio:   sec_text("the_team", "team_members", "member_3_bio").presence || "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
       img:   :doctor_coat
     },
     {
-      name:  "Noor Al-Fahad",
-      role:  "Patient Relations Lead",
-      cred:  "First point of contact · privacy-trained",
-      focus: "Discretion & continuity",
-      bio:   "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
+      name:  sec_text("the_team", "team_members", "member_4_name").presence || "Noor Al-Fahad",
+      role:  sec_text("the_team", "team_members", "member_4_role").presence || "Patient Relations Lead",
+      cred:  sec_text("the_team", "team_members", "member_4_cred").presence || "First point of contact · privacy-trained",
+      focus: sec_text("the_team", "team_members", "member_4_focus").presence || "Discretion & continuity",
+      bio:   sec_text("the_team", "team_members", "member_4_bio").presence || "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
       img:   :beauty_eyes
     }
   ]
@@ -39,13 +39,13 @@
 
 <%# ---- Hero ---- %>
 <section class="page-hero" data-controller="reveal">
-  <span class="eyebrow center reveal" data-reveal-target="item">The Medical Team</span>
+  <span class="eyebrow center reveal" data-reveal-target="item"><%= sec_text("the_team", "team_hero", "eyebrow").presence || "The Medical Team" %></span>
   <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span>The people behind</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>the plan.</span></span>
+    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("the_team", "team_hero", "title_1").presence || "The people behind" %></span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("the_team", "team_hero", "title_em").presence || "the plan." %></span></span>
   </h1>
   <p class="lead reveal d2" data-reveal-target="item">
-    A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.
+    <%= sec_text("the_team", "team_hero", "lead").presence || "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill." %>
   </p>
 </section>
 
