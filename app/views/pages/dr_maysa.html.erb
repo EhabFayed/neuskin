@@ -6,63 +6,63 @@
     <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "kb" %>
   </div>
   <div class="over-hero-copy over-hero-copy--wide">
-    <div class="mysa-hero-eyebrow reveal" data-reveal-target="item">The Founder · Medical Director</div>
-    <h1 class="mysa-hero-quote" data-reveal="up">“I would rather treat one thing well than ten things to fill a calendar.”</h1>
-    <div class="mysa-hero-sign" data-reveal="up" data-reveal-delay="160">— Dr. Maysa Al-Rashid</div>
+    <div class="mysa-hero-eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_hero", "eyebrow").presence || "The Founder · Medical Director" %></div>
+    <h1 class="mysa-hero-quote" data-reveal="up"><%= sec_text("dr_maysa", "drmaysa_hero", "quote").presence || "“I would rather treat one thing well than ten things to fill a calendar.”" %></h1>
+    <div class="mysa-hero-sign" data-reveal="up" data-reveal-delay="160"><%= sec_text("dr_maysa", "drmaysa_hero", "sign").presence || "— Dr. Maysa Al-Rashid" %></div>
   </div>
 </section>
 
 <%# ---- Credentials line (thin band, 1:1 port of design §isMaysa) ---- %>
 <section class="creds-band" data-controller="reveal">
   <div class="creds-row reveal" data-reveal-target="item">
-    <div>MBBS &middot; Dermatology</div>
-    <div>Aesthetic Medicine Fellowship</div>
-    <div>Regenerative Aesthetics</div>
-    <div>SFDA / MOH Licensed</div>
-    <div>Member &middot; Saudi Society of Dermatology</div>
+    <div><%= sec_text("dr_maysa", "drmaysa_creds", "cred_1").presence || "MBBS · Dermatology" %></div>
+    <div><%= sec_text("dr_maysa", "drmaysa_creds", "cred_2").presence || "Aesthetic Medicine Fellowship" %></div>
+    <div><%= sec_text("dr_maysa", "drmaysa_creds", "cred_3").presence || "Regenerative Aesthetics" %></div>
+    <div><%= sec_text("dr_maysa", "drmaysa_creds", "cred_4").presence || "SFDA / MOH Licensed" %></div>
+    <div><%= sec_text("dr_maysa", "drmaysa_creds", "cred_5").presence || "Member · Saudi Society of Dermatology" %></div>
   </div>
 </section>
 
 <%# ---- How I think about treatment ---- %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner" style="max-width:780px;margin-inline:auto">
-    <span class="eyebrow reveal" data-reveal-target="item">How I think about treatment</span>
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_philosophy", "eyebrow").presence || "How I think about treatment" %></span>
     <div class="body-copy reveal d1" data-reveal-target="item">
-      <p>I trained in dermatology expecting to spend my life treating disease. What I found, in practice, was something quieter and more interesting — women who did not need fixing, only reading. The face in front of me was rarely the problem. The plan around it usually was.</p>
-      <blockquote class="pull-quote reveal" data-reveal-target="item">“Skin is data. My job is to read it before anyone touches it.”</blockquote>
-      <p>So I built NeuSkin around the assessment, not the treatment. Every patient begins by being read — skin, hair, body — as a baseline, and only then is anything proposed. The plan is written down, sequenced, and reviewed every quarter against where we began.</p>
-      <p>There are things I will not do. I will not chase a trend onto a healthy face. I will not perform a procedure a patient does not understand. And I will not sell a year of sessions when three honest months would do.</p>
-      <blockquote class="pull-quote reveal" data-reveal-target="item">“The best result I can give you is the one no one can name.”</blockquote>
-      <p>What I insist on is measurement. We document where you begin and we compare honestly as we go, so progress is never left to memory or to flattery. That is the whole method, and it is the only promise I make.</p>
+      <p><%= sec_text("dr_maysa", "drmaysa_philosophy", "body_1").presence || "I trained in dermatology expecting to spend my life treating disease. What I found, in practice, was something quieter and more interesting — women who did not need fixing, only reading. The face in front of me was rarely the problem. The plan around it usually was." %></p>
+      <blockquote class="pull-quote reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_philosophy", "pull_1").presence || "“Skin is data. My job is to read it before anyone touches it.”" %></blockquote>
+      <p><%= sec_text("dr_maysa", "drmaysa_philosophy", "body_2").presence || "So I built NeuSkin around the assessment, not the treatment. Every patient begins by being read — skin, hair, body — as a baseline, and only then is anything proposed. The plan is written down, sequenced, and reviewed every quarter against where we began." %></p>
+      <p><%= sec_text("dr_maysa", "drmaysa_philosophy", "body_3").presence || "There are things I will not do. I will not chase a trend onto a healthy face. I will not perform a procedure a patient does not understand. And I will not sell a year of sessions when three honest months would do." %></p>
+      <blockquote class="pull-quote reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_philosophy", "pull_2").presence || "“The best result I can give you is the one no one can name.”" %></blockquote>
+      <p><%= sec_text("dr_maysa", "drmaysa_philosophy", "body_4").presence || "What I insist on is measurement. We document where you begin and we compare honestly as we go, so progress is never left to memory or to flattery. That is the whole method, and it is the only promise I make." %></p>
     </div>
-    <p class="sign center reveal d2" data-reveal-target="item" style="text-align:center">— Maysa</p>
+    <p class="sign center reveal d2" data-reveal-target="item" style="text-align:center"><%= sec_text("dr_maysa", "drmaysa_philosophy", "sign").presence || "— Maysa" %></p>
   </div>
 </section>
 
 <%# ---- The Maysa Method™ — three steps (light contrast band) ---- %>
 <section class="section section--light mysa-method" data-controller="reveal">
   <div class="section-inner">
-    <div class="mysa-method-eyebrow reveal" data-reveal-target="item">The Maysa Method™</div>
-    <h2 class="mysa-method-title reveal" data-reveal-target="item">Three steps. One connected system.</h2>
+    <div class="mysa-method-eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_method", "eyebrow").presence || "The Maysa Method™" %></div>
+    <h2 class="mysa-method-title reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_method", "title").presence || "Three steps. One connected system." %></h2>
     <div class="mysa-steps reveal d1" data-reveal-target="item">
       <div class="mysa-step">
-        <div class="n">01</div>
-        <h3>Diagnostic mapping</h3>
-        <p>Skin, hair and body baseline — captured with imaging and a doctor-led examination.</p>
+        <div class="n"><%= sec_text("dr_maysa", "drmaysa_method", "step_1_n").presence || "01" %></div>
+        <h3><%= sec_text("dr_maysa", "drmaysa_method", "step_1_title").presence || "Diagnostic mapping" %></h3>
+        <p><%= sec_text("dr_maysa", "drmaysa_method", "step_1_body").presence || "Skin, hair and body baseline — captured with imaging and a doctor-led examination." %></p>
       </div>
       <div class="mysa-step">
-        <div class="n">02</div>
-        <h3>The 12-month plan</h3>
-        <p>A written roadmap across skin, hair, body and lifestyle — yours to keep.</p>
+        <div class="n"><%= sec_text("dr_maysa", "drmaysa_method", "step_2_n").presence || "02" %></div>
+        <h3><%= sec_text("dr_maysa", "drmaysa_method", "step_2_title").presence || "The 12-month plan" %></h3>
+        <p><%= sec_text("dr_maysa", "drmaysa_method", "step_2_body").presence || "A written roadmap across skin, hair, body and lifestyle — yours to keep." %></p>
       </div>
       <div class="mysa-step">
-        <div class="n">03</div>
-        <h3>Quarterly review</h3>
-        <p>We measure, compare and adjust as your skin responds over time.</p>
+        <div class="n"><%= sec_text("dr_maysa", "drmaysa_method", "step_3_n").presence || "03" %></div>
+        <h3><%= sec_text("dr_maysa", "drmaysa_method", "step_3_title").presence || "Quarterly review" %></h3>
+        <p><%= sec_text("dr_maysa", "drmaysa_method", "step_3_body").presence || "We measure, compare and adjust as your skin responds over time." %></p>
       </div>
     </div>
     <div class="mysa-method-cta reveal d2" data-reveal-target="item">
-      <%= link_to "Request the Maysa Method™ Assessment", inquire_path(codeword: "METHOD"), class: "btn btn--rose" %>
+      <%= link_to (sec_text("dr_maysa", "drmaysa_method", "cta_label").presence || "Request the Maysa Method™ Assessment"), inquire_path(codeword: "METHOD"), class: "btn btn--rose" %>
     </div>
   </div>
 </section>
@@ -70,22 +70,22 @@
 <%# ---- In her words — three clips ---- %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner">
-    <span class="eyebrow reveal" data-reveal-target="item">In her words</span>
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("dr_maysa", "drmaysa_clips", "eyebrow").presence || "In her words" %></span>
     <div class="clips reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
       <div class="clip">
         <%= ns_image_tag :doctor_coat, alt: "What is worth your money?" %>
         <span class="play">▶</span>
-        <span class="ctitle">What is worth your money?</span>
+        <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_1_title").presence || "What is worth your money?" %></span>
       </div>
       <div class="clip">
         <%= ns_image_tag :consult, alt: "How I say no to a patient" %>
         <span class="play">▶</span>
-        <span class="ctitle">How I say no to a patient</span>
+        <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_2_title").presence || "How I say no to a patient" %></span>
       </div>
       <div class="clip">
         <%= ns_image_tag :beauty_eyes, alt: "What I'd tell my best friend" %>
         <span class="play">▶</span>
-        <span class="ctitle">What I'd tell my best friend</span>
+        <span class="ctitle"><%= sec_text("dr_maysa", "drmaysa_clips", "clip_3_title").presence || "What I'd tell my best friend" %></span>
       </div>
     </div>
   </div>
@@ -95,9 +95,9 @@
 <section class="section" data-controller="reveal">
   <div class="section-inner">
     <div class="cta-center reveal" data-reveal-target="item">
-      <h2>Request a private consultation with <span class="em">Dr. Maysa.</span></h2>
-      <p>All initial consultations are conducted personally by Dr. Maysa.</p>
-      <%= link_to "Begin a private inquiry", inquire_path, class: "btn" %>
+      <h2><%= sec_text("dr_maysa", "drmaysa_cta", "title_1").presence || "Request a private consultation with" %> <span class="em"><%= sec_text("dr_maysa", "drmaysa_cta", "title_em").presence || "Dr. Maysa." %></span></h2>
+      <p><%= sec_text("dr_maysa", "drmaysa_cta", "body").presence || "All initial consultations are conducted personally by Dr. Maysa." %></p>
+      <%= link_to (sec_text("dr_maysa", "drmaysa_cta", "cta_label").presence || "Begin a private inquiry"), inquire_path, class: "btn" %>
     </div>
   </div>
 </section>
