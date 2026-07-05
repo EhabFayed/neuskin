@@ -175,9 +175,19 @@ end
 puts "Seeded #{Protocol.count} protocols."
 
 # First admin. Override with ADMIN_EMAIL / ADMIN_PASSWORD env vars.
+# In production the password MUST be supplied via ENV — never fall back to a
+# known default, which would create a publicly-guessable live admin account.
 admin_email = ENV.fetch("ADMIN_EMAIL", "admin@neuskin.test")
+admin_password =
+  if Rails.env.production?
+    ENV.fetch("ADMIN_PASSWORD") do
+      raise "Set ADMIN_PASSWORD (and ideally ADMIN_EMAIL) before seeding in production."
+    end
+  else
+    ENV.fetch("ADMIN_PASSWORD", "changeme123")
+  end
 User.find_or_create_by!(email: admin_email) do |u|
-  u.password = ENV.fetch("ADMIN_PASSWORD", "changeme123")
+  u.password = admin_password
   u.role     = "admin"
 end
 
