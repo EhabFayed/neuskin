@@ -1,23 +1,23 @@
 <%# Treatments · by outcome — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
 <% outcomes = [
-     { title: "Tired, dull skin",      headline: "Skin that looks rested, not redone.",   image: :beauty_eyes,    persona: "tired",    codeword: "GLOW" },
-     { title: "Hair & shedding",       headline: "Density, returned quietly.",            image: :portrait_natural, persona: "hair",   codeword: "CROWN" },
-     { title: "Body, tone & contour",  headline: "Definition that reads as discipline.",  image: :device_table,   persona: "maintain", codeword: "SCULPT" },
-     { title: "A wedding ahead",       headline: "Six months, planned to the day.",       image: :bride_bouquet,  persona: "bride",    codeword: "BRIDE" },
-     { title: "Long-term maintenance", headline: "A year, kept on quiet review.",         image: :lounge,         persona: "maintain", codeword: "INSIDER" },
-     { title: "Not sure yet",          headline: "Start by reading the skin.",            image: :consult,        persona: "unsure",   codeword: "METHOD" }
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_1_title").presence || "Tired, dull skin",      headline: sec_text("treatments", "treatments_outcomes", "outcome_1_headline").presence || "Skin that looks rested, not redone.",   image: :beauty_eyes,    persona: "tired",    codeword: "GLOW" },
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_2_title").presence || "Hair & shedding",       headline: sec_text("treatments", "treatments_outcomes", "outcome_2_headline").presence || "Density, returned quietly.",            image: :portrait_natural, persona: "hair",   codeword: "CROWN" },
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_3_title").presence || "Body, tone & contour",  headline: sec_text("treatments", "treatments_outcomes", "outcome_3_headline").presence || "Definition that reads as discipline.",  image: :device_table,   persona: "maintain", codeword: "SCULPT" },
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_4_title").presence || "A wedding ahead",       headline: sec_text("treatments", "treatments_outcomes", "outcome_4_headline").presence || "Six months, planned to the day.",       image: :bride_bouquet,  persona: "bride",    codeword: "BRIDE" },
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_5_title").presence || "Long-term maintenance", headline: sec_text("treatments", "treatments_outcomes", "outcome_5_headline").presence || "A year, kept on quiet review.",         image: :lounge,         persona: "maintain", codeword: "INSIDER" },
+     { title: sec_text("treatments", "treatments_outcomes", "outcome_6_title").presence || "Not sure yet",          headline: sec_text("treatments", "treatments_outcomes", "outcome_6_headline").presence || "Start by reading the skin.",            image: :consult,        persona: "unsure",   codeword: "METHOD" }
    ] %>
 
 <%# ---- Hero ---- %>
 <section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item">Treatments · by outcome</span>
+  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("treatments", "treatments_hero", "eyebrow").presence || "Treatments · by outcome" %></span>
   <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span>We don't treat machines.</span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>We treat outcomes.</span></span>
+    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("treatments", "treatments_hero", "title_1").presence || "We don't treat machines." %></span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("treatments", "treatments_hero", "title_em").presence || "We treat outcomes." %></span></span>
   </h1>
   <p class="lead reveal d2" data-reveal-target="item">
-    Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to.
+    <%= sec_text("treatments", "treatments_hero", "lead").presence || "Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to." %>
   </p>
 </section>
 
@@ -37,7 +37,7 @@
       <% end %>
     </div>
     <p class="reveal" data-reveal-target="item" style="margin-top:var(--space-block);text-align:center">
-      <%= link_to "View all six protocols →", protocols_path, class: "arrowlink" %>
+      <%= link_to sec_text("treatments", "treatments_footer", "protocols_link").presence || "View all six protocols →", protocols_path, class: "arrowlink" %>
     </p>
   </div>
 </section>
