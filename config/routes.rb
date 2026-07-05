@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     resources :pages, only: [:index, :show]
+    resources :sections, only: [:show, :update]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

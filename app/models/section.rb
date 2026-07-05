@@ -22,4 +22,9 @@ class Section < ApplicationRecord
   def text(key)
     contents.detect { |c| c.key == key.to_s }&.value.to_s
   end
+
+  # Friendly admin-facing label; falls back to a humanized kind when unset.
+  def display_label
+    label.presence || kind.titleize
+  end
 end

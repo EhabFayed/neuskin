@@ -6,12 +6,7 @@
   <ul class="page-list">
     <% @sections.each do |section| %>
       <li class="section-card">
-        <% label = section.label.presence || section.kind.titleize %>
-        <% if respond_to?(:admin_section_path) %>
-          <%= link_to label, admin_section_path(section) %>
-        <% else %>
-          <%= label %>
-        <% end %>
+        <%= link_to section.display_label, admin_section_path(section) %>
       </li>
     <% end %>
   </ul>

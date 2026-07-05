@@ -1,0 +1,8 @@
+<%# Repeating groups are edited as JSON here; a card-based editor is a later
+    refinement. Shows current items so the editor can copy the shape. %>
+<div class="field">
+  <label>Repeating items (advanced)</label>
+  <p class="hint">Each item is one card/quote/entry. Edit as JSON; keep the
+    <code>{"key": {"en": "...", "ar": "..."}}</code> shape.</p>
+  <%= text_area_tag "section[items_json]", JSON.pretty_generate(@section.items || []), rows: 10 %>
+</div>

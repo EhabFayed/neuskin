@@ -19,6 +19,18 @@ RSpec.describe Section, type: :model do
     expect(build(:section, page: "dr_maysa", kind: "hero")).to be_valid
   end
 
+  describe "#display_label" do
+    it "returns the label when present" do
+      s = build(:section, label: "Hero", kind: "home_hero")
+      expect(s.display_label).to eq("Hero")
+    end
+
+    it "falls back to the titleized kind when label is blank" do
+      s = build(:section, label: nil, kind: "home_hero")
+      expect(s.display_label).to eq("Home Hero")
+    end
+  end
+
   describe ".for" do
     it "returns the matching section" do
       s = create(:section, page: "home", kind: "home_hero")

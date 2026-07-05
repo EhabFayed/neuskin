@@ -1,0 +1,37 @@
+<p><%= link_to "← #{SitePages.name_for(@section.page)}", admin_page_path(@section.page) %></p>
+<h1><%= @section.display_label %></h1>
+
+<p><%= link_to "View this page ↗", main_app.root_path, target: "_blank" if @section.page == "home" %></p>
+
+<%= form_with model: @section, url: admin_section_path(@section), method: :patch do |form| %>
+  <% if @section.errors.any? %>
+    <div class="flash flash-alert">
+      <%= @section.errors.full_messages.to_sentence %>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :label %>
+
+  <% if @section.image.attached? %>
+    <div class="field">
+      <label>Current image</label><br>
+      <%= image_tag url_for(@section.image), style: "max-width:220px;border-radius:6px" %>
+    </div>
+  <% end %>
+  <div class="field">
+    <label>Replace image</label>
+    <%= form.file_field :image %>
+  </div>
+
+  <h2>Text</h2>
+  <%= form.fields_for :contents do |content_form| %>
+    <%= render "content_fields", form: content_form %>
+  <% end %>
+
+  <% if @section.items.present? %>
+    <h2>Repeating items</h2>
+    <%= render "item_fields" %>
+  <% end %>
+
+  <p style="margin-top:20px"><%= form.submit "Save", class: "btn-primary" %></p>
+<% end %>

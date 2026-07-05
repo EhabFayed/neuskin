@@ -1,0 +1,22 @@
+<%# Renders one Content row: friendly label + EN/AR inputs side by side. %>
+<div class="section-card">
+  <%= form.hidden_field :id %>
+  <%= form.hidden_field :key %>
+  <%= form.hidden_field :content_type %>
+  <%= form.hidden_field :position %>
+
+  <div class="field">
+    <label><%= form.object.label.presence || form.object.key.titleize %></label>
+    <% if form.object.hint.present? %><p class="hint"><%= form.object.hint %></p><% end %>
+    <div class="field-pair">
+      <div class="en">
+        <label>English</label>
+        <%= form.text_area :value_en, rows: 2 %>
+      </div>
+      <div class="ar">
+        <label>العربية (Arabic)</label>
+        <%= form.text_area :value_ar, rows: 2, dir: "rtl" %>
+      </div>
+    </div>
+  </div>
+</div>
