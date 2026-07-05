@@ -440,6 +440,25 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .hpanel p { color: var(--text-muted); font-weight: 300; line-height: 1.7; margin: 0; font-size: 1.05rem; }
 .hshot-outro { flex: none; width: 30vw; min-width: 320px; display: flex; flex-direction: column; justify-content: center; padding-inline: 20px; }
 .hshot-outro blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.4; color: var(--text-bright); margin: 0 0 24px; }
+/* Static variant: no pinned scroll-jack, no sideways track — a normal section
+   on ALL widths. Photos flow in a responsive grid; intro + outro read as plain
+   blocks. Used by the home "Inside the clinic" section. */
+.hscroll--static { height: auto; }
+.hscroll--static .hscroll-pin { position: static; height: auto; display: block; overflow: visible; }
+.hscroll--static .hscroll-track {
+  transform: none !important; will-change: auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  padding: var(--space-block, 60px) var(--gutter);
+}
+.hscroll--static .hscroll-intro,
+.hscroll--static .hshot-outro { width: auto; min-width: 0; padding: 0; grid-column: 1 / -1; }
+.hscroll--static .hshot,
+.hscroll--static .hshot.narrow { width: auto; min-width: 0; height: 300px; }
+@media (max-width: 880px) {
+  .hscroll--static .hscroll-track { grid-template-columns: 1fr; gap: 16px; }
+  .hscroll--static .hshot, .hscroll--static .hshot.narrow { height: 60vw; }
+}
+
 /* Mobile: drop the pinned scroll-jack AND the sideways carousel — stack every
    panel vertically as a normal column. Keeping text (intro + outro quote) in a
    horizontal scroller pushed the outro off-screen and made it "move" on swipe. */

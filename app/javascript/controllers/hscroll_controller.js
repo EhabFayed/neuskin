@@ -1,17 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 
 // Pinned horizontal gallery: as the user scrolls vertically through this tall
-// section, translate the inner track sideways so the photos move past. The
-// scroll distance available = section height − viewport; the track travels its
-// full overflow width across that distance. On mobile the CSS disables pinning
-// and this controller no-ops (track has no transform to set).
+// section, translate the inner track sideways so the photos move past.
+//
+// On mobile (<=880px, matching the CSS breakpoint) the section is stacked
+// vertically by CSS and this effect MUST NOT run — otherwise a stale transform
+// makes the section jump/move on scroll. We therefore check the breakpoint
+// LIVE on every update (not once at connect), and actively clear the transform
+// whenever we're at mobile width, so rotation / responsive-mode / late layout
+// can never leave a lingering transform.
 export default class extends Controller {
   static targets = ["track"]
 
   connect() {
-    this.mobile = window.matchMedia("(max-width: 880px)").matches
-    if (this.mobile || !this.hasTrackTarget) return
-
+    if (!this.hasTrackTarget) return
+    this.mq = window.matchMedia("(max-width: 880px)")
     this.onScroll = this.onScroll.bind(this)
     this.onResize = this.onResize.bind(this)
     this.measure()
@@ -20,16 +23,20 @@ export default class extends Controller {
     this.update()
   }
 
+  get isMobile() {
+    return this.mq ? this.mq.matches : window.innerWidth <= 880
+  }
+
+  clear() {
+    if (this.trackTarget.style.transform) this.trackTarget.style.transform = ""
+  }
+
   measure() {
-    // How far the track must travel so its end aligns with the viewport's right edge.
     this.maxX = Math.max(0, this.trackTarget.scrollWidth - window.innerWidth)
   }
 
   onResize() {
-    if (window.matchMedia("(max-width: 880px)").matches) {
-      this.trackTarget.style.transform = ""
-      return
-    }
+    if (this.isMobile) { this.clear(); return }
     this.measure()
     this.update()
   }
@@ -41,10 +48,12 @@ export default class extends Controller {
   }
 
   update() {
+    // Live breakpoint check every frame — never trust a latched value.
+    if (this.isMobile) { this.clear(); return }
+
     const rect = this.element.getBoundingClientRect()
     const scrollable = this.element.offsetHeight - window.innerHeight
     if (scrollable <= 0) return
-    // Progress 0→1 across the time the section is pinned.
     const progress = Math.min(1, Math.max(0, -rect.top / scrollable))
     this.trackTarget.style.transform = `translate3d(${-(progress * this.maxX).toFixed(1)}px,0,0)`
   }
