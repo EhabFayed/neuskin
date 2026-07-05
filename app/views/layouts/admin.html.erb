@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NeuSkin Admin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="admin">
+    <header class="admin-bar">
+      <a href="<%= admin_root_path %>" class="admin-brand">NeuSkin Admin</a>
+      <nav class="admin-nav">
+        <%= link_to "Pages", admin_pages_path if respond_to?(:admin_pages_path) %>
+        <% if user_signed_in? %>
+          <span class="admin-user"><%= current_user.email %></span>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "admin-signout" %>
+        <% end %>
+      </nav>
+    </header>
+
+    <% if notice %><p class="flash flash-notice"><%= notice %></p><% end %>
+    <% if alert %><p class="flash flash-alert"><%= alert %></p><% end %>
+
+    <main class="admin-main">
+      <%= yield %>
+    </main>
+  </body>
+</html>

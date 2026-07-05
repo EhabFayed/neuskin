@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   # Devise session/auth routes — must stay outside the locale scope.
   devise_for :users
 
+  # Admin area — English-only chrome, outside the locale scope.
+  namespace :admin do
+    root to: "dashboard#index"
+  end
+
   # Locale-scoped pages. Arabic is the default; English is /en.
   # See docs/DESIGN-AND-TECH-DIRECTION.md §2.7 (path-prefix locales for SEO).
   scope "(:locale)", locale: /ar|en/ do
