@@ -9,7 +9,8 @@
 
 <%= form_with model: @section, url: admin_section_path(@section), method: :patch,
       data: { controller: "livepreview",
-              "livepreview-url-value": preview_admin_section_path(@section) } do |form| %>
+              "livepreview-url-value": preview_admin_section_path(@section),
+              "livepreview-sec-value": "#{@section.page}/#{@section.kind}" } do |form| %>
   <% if @section.errors.any? %>
     <div class="ns-flash alert" style="margin:0 0 20px"><%= @section.errors.full_messages.to_sentence %></div>
   <% end %>

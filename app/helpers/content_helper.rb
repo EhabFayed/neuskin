@@ -42,6 +42,9 @@ module ContentHelper
   # class, …) pass straight through, exactly like ns_image_tag.
   def sec_image_tag(page, kind, fallback_key, alt: "", **opts)
     section = sec(page, kind)
+    # Tag the img so the editor's live preview can swap in a just-picked
+    # (not-yet-uploaded) image before saving. Harmless on the public site.
+    opts = opts.merge(data: (opts[:data] || {}).merge("sec-image": "#{page}/#{kind}"))
     if section.persisted? && section.image.attached?
       image_tag(section.image, alt: alt, **opts)
     else

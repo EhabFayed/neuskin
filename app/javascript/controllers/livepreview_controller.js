@@ -11,7 +11,7 @@ export default class extends Controller {
     "frame", "loading", "pickedwrap", "pickedimg",
     "stage", "viewport", "handle", "widthLabel",
   ]
-  static values = { url: String }
+  static values = { url: String, sec: String }
 
   connect() {
     this.form = this.element
@@ -103,8 +103,11 @@ export default class extends Controller {
       })
       if (res.ok) {
         this.frameTarget.srcdoc = await res.text()
-        // re-fit after the new document lays out
-        this.frameTarget.addEventListener("load", () => this.applyWidth(), { once: true })
+        // re-fit + inject any just-picked image after the new doc lays out
+        this.frameTarget.addEventListener("load", () => {
+          this.applyWidth()
+          this.injectPickedImage()
+        }, { once: true })
       }
     } catch (e) {
       // keep the last good preview
@@ -115,12 +118,34 @@ export default class extends Controller {
 
   pickImage(event) {
     const file = event.target.files && event.target.files[0]
-    if (!file || !this.hasPickedwrapTarget) return
+    if (!file) return
     const reader = new FileReader()
     reader.onload = (e) => {
-      this.pickedimgTarget.src = e.target.result
-      this.pickedwrapTarget.hidden = false
+      this.pickedImageUrl = e.target.result
+      if (this.hasPickedwrapTarget) {
+        this.pickedimgTarget.src = this.pickedImageUrl
+        this.pickedwrapTarget.hidden = false
+      }
+      // swap it straight into the live preview iframe
+      this.injectPickedImage()
     }
     reader.readAsDataURL(file)
+  }
+
+  // Replace this section's <img> inside the iframe with the just-picked image
+  // (data URL) so the preview shows the new image before it's uploaded.
+  injectPickedImage() {
+    if (!this.pickedImageUrl || !this.hasFrameTarget || !this.hasSecValue) return
+    const doc = this.frameTarget.contentDocument
+    if (!doc) return
+    const sel = `img[data-sec-image="${this.secValue}"]`
+    doc.querySelectorAll(sel).forEach((img) => {
+      img.src = this.pickedImageUrl
+      img.removeAttribute("srcset")
+    })
+    // section hero images are sometimes CSS background-images; also cover those
+    doc.querySelectorAll(`[data-sec-bg="${this.secValue}"]`).forEach((el) => {
+      el.style.backgroundImage = `url(${this.pickedImageUrl})`
+    })
   }
 }
