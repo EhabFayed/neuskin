@@ -173,3 +173,13 @@ protocols.each do |attrs|
 end
 
 puts "Seeded #{Protocol.count} protocols."
+
+# First admin. Override with ADMIN_EMAIL / ADMIN_PASSWORD env vars.
+admin_email = ENV.fetch("ADMIN_EMAIL", "admin@neuskin.test")
+User.find_or_create_by!(email: admin_email) do |u|
+  u.password = ENV.fetch("ADMIN_PASSWORD", "changeme123")
+  u.role     = "admin"
+end
+
+# Content sections.
+Rake::Task["content:seed"].invoke if Rake::Task.task_defined?("content:seed")
