@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NeuSkin Studio — Sign in</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="admin ns-auth-body">
+    <div class="ns-auth">
+      <%# Left: the login card %>
+      <section class="ns-auth-panel">
+        <span class="ns-glow tl"></span>
+        <div class="ns-auth-card">
+          <a href="<%= root_path %>" class="ns-auth-brand">
+            <span class="mark">N</span>
+            <span>
+              <span class="name">NeuSkin</span>
+              <span class="kicker">Studio · Content</span>
+            </span>
+          </a>
+
+          <% if notice %><p class="ns-flash notice" style="margin:0 0 18px"><%= notice %></p><% end %>
+          <% if alert %><p class="ns-flash alert" style="margin:0 0 18px"><%= alert %></p><% end %>
+
+          <%= yield %>
+        </div>
+      </section>
+
+      <%# Right: brand panel %>
+      <aside class="ns-auth-brandside">
+        <span class="ns-glow br"></span>
+        <div class="ns-auth-brandcopy">
+          <div class="eyebrow">The Content Back-office</div>
+          <h2>Skin, measured.<br><em>Words, tended.</em></h2>
+          <p>Every line on the NeuSkin site — read, written and refined from one quiet place.</p>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
