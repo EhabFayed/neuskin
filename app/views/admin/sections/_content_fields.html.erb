@@ -1,22 +1,21 @@
-<%# Renders one Content row: friendly label + EN/AR inputs side by side. %>
-<div class="section-card">
+<%# One editable content row: friendly label + English / Arabic side by side. %>
+<div class="ns-card" style="margin-bottom:14px">
   <%= form.hidden_field :id %>
   <%= form.hidden_field :key %>
   <%= form.hidden_field :content_type %>
   <%= form.hidden_field :position %>
 
-  <div class="field">
-    <span class="field-title"><%= form.object.label.presence || form.object.key.titleize %></span>
-    <% if form.object.hint.present? %><p class="hint"><%= form.object.hint %></p><% end %>
-    <div class="field-pair">
-      <div class="en">
-        <%= form.label :value_en, "English" %>
-        <%= form.text_area :value_en, rows: 2 %>
-      </div>
-      <div class="ar">
-        <%= form.label :value_ar, "العربية (Arabic)" %>
-        <%= form.text_area :value_ar, rows: 2, dir: "rtl" %>
-      </div>
+  <span class="ns-field-title"><%= form.object.display_label %></span>
+  <% if form.object.hint.present? %><p class="hint"><%= form.object.hint %></p><% end %>
+
+  <div class="ns-pair">
+    <div class="en">
+      <span class="lang-lbl">English</span>
+      <%= form.text_area :value_en, rows: 2, class: "ns-textarea" %>
+    </div>
+    <div class="ar">
+      <span class="lang-lbl">العربية · Arabic</span>
+      <%= form.text_area :value_ar, rows: 2, dir: "rtl", class: "ns-textarea" %>
     </div>
   </div>
 </div>

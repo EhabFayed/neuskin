@@ -1,37 +1,48 @@
-<p><%= link_to "← #{SitePages.name_for(@section.page)}", admin_page_path(@section.page) %></p>
-<h1><%= @section.display_label %></h1>
+<% content_for :crumb, SitePages.name_for(@section.page) %>
+<% content_for :heading, @section.display_label %>
+<% content_for :title, "Editing #{@section.display_label}" %>
 
-<p><%= link_to "View this page ↗", main_app.root_path, target: "_blank" if @section.page == "home" %></p>
+<%= link_to admin_page_path(@section.page), class: "ns-back" do %>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+  <%= SitePages.name_for(@section.page) %>
+<% end %>
 
 <%= form_with model: @section, url: admin_section_path(@section), method: :patch do |form| %>
   <% if @section.errors.any? %>
-    <div class="flash flash-alert">
-      <%= @section.errors.full_messages.to_sentence %>
-    </div>
+    <div class="ns-flash alert" style="margin:0 0 20px"><%= @section.errors.full_messages.to_sentence %></div>
   <% end %>
 
   <%= form.hidden_field :label %>
 
-  <% if @section.image.attached? %>
-    <div class="field">
-      <label>Current image</label><br>
-      <%= image_tag url_for(@section.image), style: "max-width:220px;border-radius:6px" %>
+  <div class="ns-card" style="margin-bottom:22px">
+    <div class="ns-eyebrow" style="margin-bottom:14px">Image</div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <% if @section.image.attached? %>
+        <%= image_tag url_for(@section.image), style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
+      <% else %>
+        <div style="width:180px;height:120px;border-radius:8px;border:1px dashed var(--ns-border);display:grid;place-items:center;color:var(--ns-muted-2);font-size:12px">No image</div>
+      <% end %>
+      <div>
+        <%= form.label :image, "Replace image", class: "ns-field-title" %>
+        <%= form.file_field :image %>
+      </div>
     </div>
-  <% end %>
-  <div class="field">
-    <label>Replace image</label>
-    <%= form.file_field :image %>
   </div>
 
-  <h2>Text</h2>
+  <h2 class="ns-section-title">Text</h2>
   <%= form.fields_for :contents do |content_form| %>
     <%= render "content_fields", form: content_form %>
   <% end %>
 
   <% if @section.items.present? %>
-    <h2>Repeating items</h2>
+    <h2 class="ns-section-title">Repeating items</h2>
     <%= render "item_fields" %>
   <% end %>
 
-  <p style="margin-top:20px"><%= form.submit "Save", class: "btn-primary" %></p>
+  <div class="ns-savebar">
+    <span style="font-size:12.5px;color:var(--ns-muted)">Changes go live on the site immediately.</span>
+    <span class="spacer"></span>
+    <a href="<%= root_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View this page</a>
+    <%= form.submit "Save & publish", class: "ns-btn primary" %>
+  </div>
 <% end %>

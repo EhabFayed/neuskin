@@ -1,10 +1,33 @@
-<h1>Site pages</h1>
-<p>Choose a page to edit its content.</p>
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Pages" %>
+<% content_for :title, "Pages" %>
 
-<ul class="page-list">
+<p style="color:var(--ns-muted);font-size:13.5px;margin:0 0 22px">Every public page. Choose one to edit its copy and images.</p>
+
+<div class="ns-thead">
+  <span class="r-title">Page</span>
+  <span style="width:90px">Sections</span>
+  <span style="width:150px">Last edited</span>
+  <span style="width:110px">Status</span>
+  <span style="width:16px"></span>
+</div>
+
+<ul class="ns-list">
   <% @pages.each do |page| %>
-    <li class="section-card">
-      <%= link_to page[:name], admin_page_path(page[:slug]) %>
+    <li>
+      <%= link_to admin_page_path(page[:slug]), class: "ns-row" do %>
+        <span class="r-title"><%= page[:name] %></span>
+        <span class="r-meta" style="width:90px"><%= page[:sections] %> section<%= 's' unless page[:sections] == 1 %></span>
+        <span class="r-meta" style="width:150px"><%= page[:last_edited] ? time_ago_in_words(page[:last_edited]) + " ago" : "—" %></span>
+        <span style="width:110px">
+          <% if page[:sections] > 0 %>
+            <span class="ns-status published">Live</span>
+          <% else %>
+            <span class="ns-status draft">Not set up</span>
+          <% end %>
+        </span>
+        <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+      <% end %>
     </li>
   <% end %>
 </ul>

@@ -12,4 +12,9 @@ class Content < ApplicationRecord
   def value
     localized(value_ar, value_en)
   end
+
+  # Human-friendly field name for the admin. Falls back to a titleized key.
+  def display_label
+    label.presence || key.to_s.titleize
+  end
 end

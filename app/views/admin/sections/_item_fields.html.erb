@@ -1,8 +1,7 @@
-<%# Repeating groups are edited as JSON here; a card-based editor is a later
-    refinement. Shows current items so the editor can copy the shape. %>
-<div class="field">
-  <label>Repeating items (advanced)</label>
-  <p class="hint">Each item is one card/quote/entry. Edit as JSON; keep the
-    <code>{"key": {"en": "...", "ar": "..."}}</code> shape.</p>
-  <%= text_area_tag "section[items_json]", JSON.pretty_generate(@section.items || []), rows: 10 %>
+<%# Repeating groups edited as JSON for now; a card editor is a later refinement. %>
+<div class="ns-card">
+  <span class="ns-field-title">Repeating items (advanced)</span>
+  <p class="hint">Each item is one card / quote / entry. Edit as JSON; keep the
+    <code style="color:var(--ns-accent-2)">{"key": {"en": "…", "ar": "…"}}</code> shape.</p>
+  <%= text_area_tag "section[items_json]", JSON.pretty_generate(@section.items || []), rows: 10, class: "ns-textarea", style: "font-family:ui-monospace,monospace;font-size:12.5px" %>
 </div>

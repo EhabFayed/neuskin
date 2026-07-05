@@ -6,6 +6,8 @@ RSpec.describe "Admin dashboard", type: :request do
     sign_in user
     get "/admin"
     expect(response).to have_http_status(:ok)
-    expect(response.body).to include("Dashboard")
+    # "Overview" is the Studio design's name for the dashboard heading.
+    expect(response.body).to include("Overview")
+    expect(response.body).to include("Editable sections")
   end
 end
