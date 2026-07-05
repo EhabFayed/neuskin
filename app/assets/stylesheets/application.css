@@ -126,11 +126,39 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .section--light { background: #f4efea; color: #2a2224; }
 .section--light .eyebrow { color: #8a6e72; }
 .section--light .eyebrow::before { background: #8a6e72; }
-.section--light h2, .section--light h3 { color: #2a2224; }
-.section--light .em { color: #8a6e72; }
+.section--light h2, .section--light h3,
+.section--light .sec-head h2, .section--light .sec-head h3 { color: #2a2224; }
+.section--light .em, .section--light .sec-head .em { color: #8a6e72; }
 .section--light .exclude li { color: #5c4f52; border-block-end-color: rgba(42,34,36,.14); }
 .section--light .exclude li::before { color: #8a6e72; }
-.section--light .lead, .section--light p { color: #5c4f52; }
+.section--light .lead, .section--light p,
+.section--light .sec-head .lead, .section--light .sec-head p { color: #5c4f52; }
+/* child components on the cream band (design: rose headings #9f8488, ink body #5a4d4f) */
+.section--light .cols { background: rgba(42,34,36,.14); border-block-color: rgba(42,34,36,.14); }
+.section--light .col { background: #f4efea; }
+.section--light .col .num { color: #9f8488; }
+.section--light .col h3 { color: #2a2224; }
+.section--light .col p { color: #5a4d4f; }
+.section--light .feature .num { color: #9f8488; }
+.section--light .feature h3 { color: #2a2224; }
+.section--light .feature p { color: #5a4d4f; }
+.section--light .tier { background: #efe7e1; border-color: rgba(42,34,36,.14); }
+.section--light .tier .badge { color: #9f8488; }
+.section--light .tier h3 { color: #2a2224; }
+.section--light .tier .line { color: #8a6e72; }
+.section--light .tier p { color: #5a4d4f; }
+.section--light .arrowlink { color: #8a6e72; }
+.section--light .arrowlink:hover { color: #2a2224; }
+.section--light a:not(.btn) { color: #8a6e72; }
+.section--light .note, .section--light .by { color: #7a6d6f; }
+/* testimonials on the cream band */
+.section--light .quote .mark { color: #9f8488; }
+.section--light .quote p { color: #4a3f41; }
+.section--light .quote .by { color: #8a6e72; }
+/* founder split-media caption + signature on cream */
+.section--light .split-text .sign { color: #8a6e72; }
+.section--light .split-media .cap .nm { color: #f4ece8; }
+.section--light .split-media .cap .rl { color: var(--accent-rose); }
 .section-inner { max-width: var(--maxw); margin-inline: auto; }
 
 .sec-head { margin-block-end: var(--space-block); }
@@ -221,6 +249,37 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
   .over-hero-media img { object-position: center 30%; }
   .over-hero-copy { max-width: 100%; }
 }
+
+/* ==================== Dr. Maysa — 1:1 port of design §isMaysa ==================== */
+/* hero: full-bleed portrait, quote overlaid at bottom */
+.over-hero--maysa { min-height: 96vh; }
+.over-hero--maysa .over-hero-media img { object-position: center 25%; }
+.over-hero-copy--wide { max-width: 1040px; }
+.over-hero-copy .mysa-hero-eyebrow { font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: #cda9a6; margin-bottom: 26px; }
+.over-hero-copy h1.mysa-hero-quote {
+  margin: 0; font-family: var(--serif); font-weight: 300;
+  font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: normal;
+  font-style: normal; color: #f6efeb; max-width: 1000px;
+}
+.over-hero-copy .mysa-hero-sign { margin-top: 26px; font-family: var(--serif); font-style: italic; font-size: 24px; color: #d8b9b6; }
+
+/* credentials thin band under the hero */
+.creds-band { background: rgba(13,10,11,0.7); padding: 46px 8vw; border-bottom: 1px solid rgba(236,226,223,.08); }
+.creds-row { display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: center; }
+.creds-row div { font-size: 13px; letter-spacing: .04em; color: #a99c98; }
+
+/* Maysa Method light band: centered columns, 48px serif numbers, rose button */
+.mysa-method .mysa-method-eyebrow { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #9f8488; margin-bottom: 14px; text-align: center; }
+.mysa-method .mysa-method-title { margin: 0 0 70px; font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 3.6vw, 46px); color: #2a2224; text-align: center; }
+.mysa-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; max-width: 1100px; margin: 0 auto; }
+.mysa-step { text-align: center; }
+.mysa-step .n { font-family: var(--serif); font-size: 48px; color: #9f8488; margin-bottom: 18px; }
+.mysa-step h3 { margin: 0 0 12px; font-family: var(--serif); font-weight: 500; font-size: 25px; color: #2a2224; }
+.mysa-step p { margin: 0; font-weight: 300; font-size: 15px; line-height: 1.75; color: #6a5b5d; }
+.mysa-method-cta { text-align: center; margin-top: 64px; }
+.btn--rose { color: #fff; background: #9f8488; border-color: #9f8488; }
+.btn--rose:hover { background: #7d6469; border-color: #7d6469; color: #fff; }
+@media (max-width: 760px) { .mysa-steps { grid-template-columns: 1fr; gap: 40px; } }
 
 /* soft mauve "cloud" glow behind the copy side, matching the design's atmosphere */
 .split-hero-copy { position: relative; }
@@ -407,7 +466,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 @media (max-width: 880px) { .quotes { grid-template-columns: 1fr; } }
 
 /* inline pull-quote inside body copy — bold, h2-scale Bodoni accent */
-.pull-quote { font-family: var(--serif); font-weight: 600; font-style: normal; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.18; letter-spacing: -.01em; color: var(--text-bright); margin: clamp(36px, 5vw, 56px) 0; padding-inline-start: 26px; border-inline-start: 2px solid var(--accent); }
+/* pull-quotes in Dr. Maysa's essay — centered pink italic (design §isMaysa) */
+.pull-quote { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.4; color: #d8b9b6; margin: 34px 0; text-align: center; }
 
 /* big single pull-quote band */
 .pull-band { text-align: center; padding: var(--space-section) var(--gutter); }
@@ -471,13 +531,25 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .exclude li::before { content: "—"; color: var(--accent); flex: none; }
 
 /* ============================ patient journey (4 steps) ============================ */
-.journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border-block: 1px solid var(--line); }
-.journey .step { background: var(--ground); padding: 40px 30px; }
-.journey .step .n { font-family: var(--sans); font-size: 11px; letter-spacing: .26em; color: var(--accent); }
-.journey .step h3 { font-size: 1.4rem; font-weight: 400; margin: 16px 0 12px; color: var(--text-bright); }
-.journey .step p { color: var(--text-muted); font-weight: 300; margin: 0; font-size: .94rem; }
-@media (max-width: 880px) { .journey { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .journey { grid-template-columns: 1fr; } }
+/* four-step patient journey — 1:1 port of design §isClinic light band */
+.journey-eyebrow { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #9f8488; margin-bottom: 14px; }
+.journey-title { margin: 0 0 70px; font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 50px); color: #2a2224; }
+.journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(42,34,36,.15); }
+.journey .step { padding: 42px 30px 0 30px; border-right: 1px solid rgba(42,34,36,.12); }
+.journey .step:first-child { padding-left: 0; }
+.journey .step:last-child { padding-right: 0; border-right: none; }
+.journey .step .n { display: block; font-family: var(--serif); font-size: 34px; color: #9f8488; margin-bottom: 22px; letter-spacing: 0; text-transform: none; }
+.journey .step h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0 0 14px; color: #2a2224; }
+.journey .step p { font-weight: 300; font-size: 14.5px; line-height: 1.75; color: #6a5b5d; margin: 0; }
+@media (max-width: 880px) {
+  .journey { grid-template-columns: 1fr 1fr; }
+  .journey .step { padding: 42px 24px 0 24px !important; border-right: none; }
+  .journey .step:nth-child(odd) { padding-left: 0 !important; border-right: 1px solid rgba(42,34,36,.12); }
+}
+@media (max-width: 520px) {
+  .journey { grid-template-columns: 1fr; }
+  .journey .step, .journey .step:nth-child(odd) { padding: 36px 0 0 !important; border-right: none; }
+}
 
 /* ============================ FAQ accordion ============================ */
 .faq-group { margin-block-end: clamp(40px, 5vw, 64px); }

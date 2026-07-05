@@ -1,29 +1,25 @@
 <%# Dr. Maysa — the founder. NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# ---- Split hero with portrait ---- %>
-<section class="split-hero" data-controller="reveal parallax">
-  <div class="split-hero-media reveal" data-reveal-target="item" data-parallax data-parallax-speed="0.08">
+<%# ---- Full-bleed portrait hero, quote overlaid (1:1 port of design §isMaysa) ---- %>
+<section class="over-hero over-hero--maysa" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
     <%= ns_image_tag :portrait_natural, alt: "Dr. Maysa Al-Rashid", class: "kb" %>
   </div>
-  <div class="split-hero-copy">
-    <span class="eyebrow reveal" data-reveal-target="item">The Founder · Medical Director</span>
-    <h1>
-      <span class="em" data-reveal="mask" data-reveal-delay="120"><span>“I would rather treat one thing well than ten things to fill a calendar.”</span></span>
-    </h1>
-    <p class="sign reveal d2" data-reveal-target="item">— Dr. Maysa Al-Rashid</p>
+  <div class="over-hero-copy over-hero-copy--wide">
+    <div class="mysa-hero-eyebrow reveal" data-reveal-target="item">The Founder · Medical Director</div>
+    <h1 class="mysa-hero-quote" data-reveal="up">“I would rather treat one thing well than ten things to fill a calendar.”</h1>
+    <div class="mysa-hero-sign" data-reveal="up" data-reveal-delay="160">— Dr. Maysa Al-Rashid</div>
   </div>
 </section>
 
-<%# ---- Credentials line ---- %>
-<section class="section section--tight section--surface" data-controller="reveal">
-  <div class="section-inner">
-    <div class="specs-row reveal" data-reveal-target="item" style="display:flex;flex-wrap:wrap;gap:48px;justify-content:space-between">
-      <span>MBBS · Dermatology</span>
-      <span>Aesthetic Medicine Fellowship</span>
-      <span>Regenerative Aesthetics</span>
-      <span>SFDA / MOH Licensed</span>
-      <span>Member · Saudi Society of Dermatology</span>
-    </div>
+<%# ---- Credentials line (thin band, 1:1 port of design §isMaysa) ---- %>
+<section class="creds-band" data-controller="reveal">
+  <div class="creds-row reveal" data-reveal-target="item">
+    <div>MBBS &middot; Dermatology</div>
+    <div>Aesthetic Medicine Fellowship</div>
+    <div>Regenerative Aesthetics</div>
+    <div>SFDA / MOH Licensed</div>
+    <div>Member &middot; Saudi Society of Dermatology</div>
   </div>
 </section>
 
@@ -43,32 +39,30 @@
   </div>
 </section>
 
-<%# ---- The Maysa Method™ — three steps ---- %>
-<section class="section" data-controller="reveal">
+<%# ---- The Maysa Method™ — three steps (light contrast band) ---- %>
+<section class="section section--light mysa-method" data-controller="reveal">
   <div class="section-inner">
-    <div class="sec-head center reveal" data-reveal-target="item">
-      <span class="eyebrow center">The Maysa Method™</span>
-      <h2>Three steps. <span class="em">One connected system.</span></h2>
-    </div>
-    <div class="cols cols-3 reveal d1" data-reveal-target="item">
-      <div class="col">
-        <span class="num">01</span>
+    <div class="mysa-method-eyebrow reveal" data-reveal-target="item">The Maysa Method™</div>
+    <h2 class="mysa-method-title reveal" data-reveal-target="item">Three steps. One connected system.</h2>
+    <div class="mysa-steps reveal d1" data-reveal-target="item">
+      <div class="mysa-step">
+        <div class="n">01</div>
         <h3>Diagnostic mapping</h3>
         <p>Skin, hair and body baseline — captured with imaging and a doctor-led examination.</p>
       </div>
-      <div class="col">
-        <span class="num">02</span>
+      <div class="mysa-step">
+        <div class="n">02</div>
         <h3>The 12-month plan</h3>
         <p>A written roadmap across skin, hair, body and lifestyle — yours to keep.</p>
       </div>
-      <div class="col">
-        <span class="num">03</span>
+      <div class="mysa-step">
+        <div class="n">03</div>
         <h3>Quarterly review</h3>
         <p>We measure, compare and adjust as your skin responds over time.</p>
       </div>
     </div>
-    <div class="cta-center reveal d2" data-reveal-target="item" style="margin-top:var(--space-block)">
-      <%= link_to "Request the Maysa Method™ Assessment", inquire_path(codeword: "METHOD"), class: "btn" %>
+    <div class="mysa-method-cta reveal d2" data-reveal-target="item">
+      <%= link_to "Request the Maysa Method™ Assessment", inquire_path(codeword: "METHOD"), class: "btn btn--rose" %>
     </div>
   </div>
 </section>
