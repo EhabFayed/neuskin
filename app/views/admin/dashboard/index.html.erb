@@ -7,6 +7,4 @@
   <div class="section-card"><strong><%= @sections_count %></strong><br>Editable sections</div>
 </div>
 
-<% if respond_to?(:admin_pages_path) %>
-  <p style="margin-top:24px"><%= link_to "Edit site pages →", admin_pages_path %></p>
-<% end %>
+<p style="margin-top:24px"><%= link_to "Edit site pages →", admin_pages_path %></p>

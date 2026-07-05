@@ -1,0 +1,10 @@
+<h1>Site pages</h1>
+<p>Choose a page to edit its content.</p>
+
+<ul class="page-list">
+  <% @pages.each do |page| %>
+    <li class="section-card">
+      <%= link_to page[:name], admin_page_path(page[:slug]) %>
+    </li>
+  <% end %>
+</ul>

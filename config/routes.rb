@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # Admin area — English-only chrome, outside the locale scope.
   namespace :admin do
     root to: "dashboard#index"
+    resources :pages, only: [:index, :show]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

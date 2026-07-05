@@ -31,5 +31,7 @@ module App
     # default locale (unprefixed root serves English); Arabic remains available.
     config.i18n.available_locales = [:ar, :en]
     config.i18n.default_locale = :en
+
+    require_relative "pages"
   end
 end

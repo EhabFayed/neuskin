@@ -1,0 +1,20 @@
+<p><%= link_to "← All pages", admin_pages_path %></p>
+<h1><%= @name %></h1>
+
+<% if @sections.any? %>
+  <p>Sections appear in the same order as on the live page.</p>
+  <ul class="page-list">
+    <% @sections.each do |section| %>
+      <li class="section-card">
+        <% label = section.label.presence || section.kind.titleize %>
+        <% if respond_to?(:admin_section_path) %>
+          <%= link_to label, admin_section_path(section) %>
+        <% else %>
+          <%= label %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No editable sections yet for this page. Run <code>rails content:seed</code>.</p>
+<% end %>
