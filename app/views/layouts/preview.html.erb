@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Preview</title>
+    <base target="_parent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <%# Real public stylesheets so the preview matches the live site exactly. %>
+    <%= stylesheet_link_tag "tokens" %>
+    <%= stylesheet_link_tag "application" %>
+    <style>
+      /* Preview is a static snapshot: no reveal JS runs, so nothing is hidden
+         (hiding is gated behind .reveal-ready). Belt-and-braces: force any
+         animated content to its settled/visible state, and make it inert. */
+      .reveal, [data-reveal], [data-reveal="mask"] > * { opacity: 1 !important; transform: none !important; }
+      a { pointer-events: none; cursor: default; }
+      html, body { overflow-x: hidden; }
+    </style>
+  </head>
+  <body class="preview-mode">
+    <%= yield %>
+  </body>
+</html>

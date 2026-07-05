@@ -1,8 +1,41 @@
 module Admin
   class SectionsController < BaseController
-    before_action :set_section, only: [:show, :update]
+    before_action :set_section, only: [:show, :update, :preview]
 
     def show; end
+
+    # Renders the REAL public page for this section, styled with the live site
+    # CSS, but with the editor's UNSAVED values applied — shown in an iframe on
+    # the edit screen. See app/views/layouts/preview.html.erb.
+    PAGE_TEMPLATES = {
+      "home"            => "pages/home",
+      "dr_maysa"        => "pages/dr_maysa",
+      "the_clinic"      => "pages/the_clinic",
+      "maysa_method"    => "pages/maysa_method",
+      "the_team"        => "pages/the_team",
+      "treatments"      => "pages/treatments",
+      "private_care"    => "pages/private_care",
+      "stories"         => "pages/stories",
+      "faq"             => "pages/faq",
+      "legal"           => "pages/legal",
+      "protocols_index" => "protocols/index",
+      "bridal"          => "bridal/show",
+    }.freeze
+
+    def preview
+      # Build an unsaved copy carrying the submitted (unsaved) values, keyed to
+      # the same content records so each value maps to the right key.
+      @__preview_section = @section
+      assign_items
+      @section.assign_attributes(section_params.except(:image))
+
+      template = PAGE_TEMPLATES[@section.page]
+      return head(:not_found) unless template
+
+      prepare_page_vars(@section.page)
+      render template: template, layout: "preview",
+             locals: preview_locals(@section.page)
+    end
 
     def update
       # assign_items returns false (and records an error) on invalid JSON;
@@ -18,6 +51,24 @@ module Admin
 
     def set_section
       @section = Section.find(params[:id])
+    end
+
+    # Replicate the instance variables the public controllers set, so the
+    # real page template renders correctly inside the preview.
+    def prepare_page_vars(page)
+      case page
+      when "home"
+        @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
+      when "protocols_index"
+        @protocols = Protocol.all
+      when "bridal"
+        @protocol = Protocol.find_by(slug: "brides-180")
+        @lead = BridalLead.new
+      end
+    end
+
+    def preview_locals(page)
+      page == "legal" ? { doc: "privacy" } : {}
     end
 
     # `items` is edited as a JSON text field for now (repeating-group UI is a

@@ -8,7 +8,8 @@
 <% end %>
 
 <%= form_with model: @section, url: admin_section_path(@section), method: :patch,
-      data: { controller: "livepreview" } do |form| %>
+      data: { controller: "livepreview",
+              "livepreview-url-value": preview_admin_section_path(@section) } do |form| %>
   <% if @section.errors.any? %>
     <div class="ns-flash alert" style="margin:0 0 20px"><%= @section.errors.full_messages.to_sentence %></div>
   <% end %>
@@ -61,14 +62,21 @@
       <% end %>
     </div>
 
-    <%# ---- right: sticky live preview ---- %>
+    <%# ---- right: sticky live preview (real page, styled, in an iframe) ---- %>
     <aside class="ns-editor-preview">
       <div class="ns-preview-card">
         <div class="ns-preview-head">
           <span class="dot"></span> Live preview
+          <span class="lp-loading" data-livepreview-target="loading">updating…</span>
         </div>
-        <div class="ns-preview-body" data-livepreview-target="out"></div>
-        <div class="ns-preview-foot">Updates as you type · not yet saved</div>
+        <%# just-picked image thumbnail (client-side, before upload) %>
+        <div class="lp-picked" data-livepreview-target="pickedwrap" hidden>
+          <img data-livepreview-target="pickedimg" alt="">
+          <span>New image — saves when you publish</span>
+        </div>
+        <iframe class="ns-preview-frame" title="Live preview of this page"
+                data-livepreview-target="frame"></iframe>
+        <div class="ns-preview-foot">Exactly how the page will look · not yet saved</div>
       </div>
     </aside>
   </div>

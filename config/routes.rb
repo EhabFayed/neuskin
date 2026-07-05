@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     resources :pages, only: [:index, :show]
-    resources :sections, only: [:show, :update]
+    resources :sections, only: [:show, :update] do
+      member { match :preview, via: %i[get post] }
+    end
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

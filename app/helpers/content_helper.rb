@@ -1,6 +1,17 @@
 module ContentHelper
   # Memoized per request. Never nil (Section.for returns a blank when missing).
+  #
+  # In the admin section preview (Admin::SectionsController#preview), the
+  # controller sets @__preview_section to an UNSAVED Section carrying the
+  # editor's in-progress values. When the page renders the block being edited,
+  # we return that instead of the DB record — so the iframe shows unsaved edits.
   def sec(page, kind)
+    if @__preview_section &&
+       @__preview_section.page == page.to_s &&
+       @__preview_section.kind == kind.to_s
+      return @__preview_section
+    end
+
     @__sections ||= {}
     @__sections[[page.to_s, kind.to_s]] ||= Section.for(page, kind)
   end
