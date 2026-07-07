@@ -52,6 +52,10 @@ Rails.application.routes.draw do
     # Treatments — by outcome (design §08). A curated outcome list.
     get "treatments", to: "pages#treatments", as: :treatments
 
+    # Per-outcome treatment pages (design §08 "Outcome" screen).
+    get "treatments/:outcome", to: "pages#treatment_outcome", as: :treatment_outcome,
+        constraints: { outcome: /skin|hair|body|injectables|devices/ }
+
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
 

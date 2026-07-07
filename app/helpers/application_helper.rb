@@ -19,7 +19,14 @@ module ApplicationHelper
     consult:          "site/space/consultation.jpg",
     beauty_eyes:      "site/protocols/skin.jpg",
     bride_bouquet:    "site/bridal-mood.jpg",
-    resort:           "site/desert-atmosphere.jpg"
+    resort:           "site/desert-atmosphere.jpg",
+    # Treatment outcome heroes (design keys facialBrush/salon/fitness1/
+    # injectable/devices2), mapped to the closest assets on disk.
+    outcome_skin:        "site/protocols/skin.jpg",
+    outcome_hair:        "site/protocols/hair.jpg",
+    outcome_body:        "site/protocols/sculpt.jpg",
+    outcome_injectables: "site/space/treatment.jpg",
+    outcome_devices:     "site/space/device-room.jpg"
   }.freeze
 
   # Asset path for a design image key (symbol). Falls back to the brand mark.

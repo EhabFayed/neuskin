@@ -8,6 +8,7 @@ module SitePages
     { slug: "maysa_method",   name: "The Maysa Method" },
     { slug: "the_team",       name: "The Medical Team" },
     { slug: "treatments",     name: "Treatments" },
+    { slug: "treatment_outcomes", name: "Treatment Outcomes" },
     { slug: "private_care",   name: "Private Care" },
     { slug: "journal",        name: "Journal" },
     { slug: "stories",        name: "Patient Stories" },

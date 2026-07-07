@@ -14,6 +14,7 @@ module Admin
       "maysa_method"    => "pages/maysa_method",
       "the_team"        => "pages/the_team",
       "treatments"      => "pages/treatments",
+      "treatment_outcomes" => "pages/treatment_outcome",
       "private_care"    => "pages/private_care",
       "stories"         => "pages/stories",
       "faq"             => "pages/faq",
@@ -64,6 +65,12 @@ module Admin
       when "bridal"
         @protocol = Protocol.find_by(slug: "brides-180")
         @lead = BridalLead.new
+      when "treatment_outcomes"
+        # Section kinds are outcome_<slug>; fall back to skin for safety.
+        slug = @section.kind.delete_prefix("outcome_")
+        slug = "skin" unless PagesController::TREATMENT_OUTCOME_OWNERS.key?(slug)
+        @outcome  = slug
+        @protocol = Protocol.find_by(slug: PagesController::TREATMENT_OUTCOME_OWNERS[slug])
       end
     end
 

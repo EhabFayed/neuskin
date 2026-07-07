@@ -126,10 +126,11 @@
   </div>
 </section>
 
-<%# ---- Inside the clinic — static gallery (no scroll-jack). ---- %>
-<section class="hscroll hscroll--static">
+<%# ---- Inside the clinic — pinned horizontal scroll (design data-hscroll) ---- %>
+<%# Scroll down through this tall section and the gallery tracks sideways. %>
+<section class="hscroll" data-controller="hscroll">
   <div class="hscroll-pin">
-    <div class="hscroll-track">
+    <div class="hscroll-track" data-hscroll-target="track">
       <div class="hscroll-intro">
         <span class="eyebrow"><%= sec_text("home", "home_clinic", "eyebrow").presence || "Inside NeuSkin" %></span>
         <h2><%= sec_text("home", "home_clinic", "title").presence || "The space," %> <span class="em"><%= sec_text("home", "home_clinic", "title_em").presence || "in passing." %></span></h2>

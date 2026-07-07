@@ -265,6 +265,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 
 /* ==================== The Clinic hero — 1:1 port of design §isClinic ==================== */
 .over-hero--clinic { min-height: 78vh; }
+.over-hero--outcome { min-height: 72vh; }
 .over-hero-copy .clinic-hero-eyebrow { font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: #cda9a6; margin-bottom: 26px; }
 .over-hero-copy h1.clinic-hero-title {
   margin: 0; font-family: var(--serif); font-weight: 300;

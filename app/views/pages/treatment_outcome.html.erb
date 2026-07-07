@@ -1,0 +1,94 @@
+<%# Treatment outcome — NeuSkin Clinic (standalone) design port. English / LTR.
+    One template, five outcomes (design §08 "Outcome" screen). Copy defaults are
+    verbatim from the design's OUT data; every field is CMS-overridable under
+    the "Treatment Outcomes" admin page (section kind = outcome_<slug>). %>
+
+<% outcome_defaults = {
+     "skin" => {
+       image: :outcome_skin,
+       title: "Tired, dull skin", headline: "What we do for tired skin",
+       look: "Skin that has gone flat — dull where it used to catch the light, uneven in tone, slow to recover after a late week. Not damaged. Just tired.",
+       how:  "We start by reading why, not reaching for a device. Most dullness is a barrier, hydration and turnover story before it is anything else. From there, a sequenced plan rebuilds clarity over weeks, measured against where your skin began.",
+       view: "Tired skin is rarely one problem; it’s usually three small ones compounding. Treat the cause in order and the glow returns on its own — chasing it with a single facial almost never holds."
+     },
+     "hair" => {
+       image: :outcome_hair,
+       title: "Thinning & shedding", headline: "What we do for hair that’s shedding",
+       look: "A part that widens. A ponytail that feels thinner in the hand. More strands than you remember on the pillow — often after a baby or a stretch of stress.",
+       how:  "We assess the scalp clinically, look for treatable causes, and build a regenerative protocol to slow shedding and support density — reviewed against a baseline so progress is real, not hopeful.",
+       view: "The earlier we see shedding, the more we can do. The follicle is patient, but it isn’t infinitely so — measured intervention beats another year of waiting for a shampoo to work."
+     },
+     "body" => {
+       image: :outcome_body,
+       title: "Tone & contour", headline: "What we do for tone and contour",
+       look: "You train, you eat well — and still there’s a gap between the effort and the outline. Softness where you’d like definition; posture that’s slipped.",
+       how:  "A device-led, eight-week protocol supports muscle tone, contour and posture, with standardised measurements at the start and finish so the change is documented, not assumed.",
+       view: "Body work should support your effort, never replace it. We measure posture and definition — not the scale — because that’s what actually changes how clothes sit and how you stand."
+     },
+     "injectables" => {
+       image: :outcome_injectables,
+       title: "Lines & volume", headline: "What we do before we reach for a needle",
+       look: "Early lines, a little lost volume, a face that reads tired before you feel it. The instinct is to ask for a syringe — ours is to ask why first.",
+       how:  "Every injectable decision at NeuSkin follows a diagnosis, not a request. When it’s right, it’s precise and conservative. When it isn’t, we say so — and treat the cause instead.",
+       view: "The best injectable result is the one nobody can name. Restraint is a clinical skill; the goal is you, rested — never you, edited."
+     },
+     "devices" => {
+       image: :outcome_devices,
+       title: "Advanced devices", headline: "What our devices are actually for",
+       look: "EmFace, EmSculpt Neo, lasers, exosomes, polynucleotides — a vocabulary the industry loves and patients rarely need explained by name.",
+       how:  "We choose the device to fit the outcome, never the other way around. Each is one tool inside a doctor-written plan — sequenced, measured, and only used when it earns its place.",
+       view: "A device is a means, not a headline. If a clinic is selling you the machine before the diagnosis, you’re being sold to — not treated."
+     }
+   } %>
+<% o    = outcome_defaults.fetch(@outcome) %>
+<% kind = "outcome_#{@outcome}" %>
+
+<%# ---- 1 · Full-bleed hero, text bottom-left (design 72vh) ---- %>
+<section class="over-hero over-hero--outcome" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= sec_image_tag("treatment_outcomes", kind, o[:image],
+                      alt: sec_text("treatment_outcomes", kind, "headline").presence || o[:headline], class: "kb") %>
+  </div>
+  <div class="over-hero-copy over-hero-copy--wide">
+    <div class="clinic-hero-eyebrow reveal" data-reveal-target="item"><%= sec_text("treatment_outcomes", kind, "title").presence || o[:title] %></div>
+    <h1 class="clinic-hero-title" data-reveal="up"><%= sec_text("treatment_outcomes", kind, "headline").presence || o[:headline] %></h1>
+  </div>
+</section>
+
+<%# ---- 2 · What it looks like / how NeuSkin treats it ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <span class="eyebrow">What it looks like</span>
+      <p class="lead"><%= sec_text("treatment_outcomes", kind, "look").presence || o[:look] %></p>
+    </div>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <span class="eyebrow">How NeuSkin treats it</span>
+      <p><%= sec_text("treatment_outcomes", kind, "how").presence || o[:how] %></p>
+    </div>
+  </div>
+</section>
+
+<%# ---- 3 · The protocol that owns this (light band) ---- %>
+<% if @protocol %>
+  <section class="section section--light" data-controller="reveal">
+    <div class="section-inner" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:30px">
+      <div class="reveal" data-reveal-target="item">
+        <span class="eyebrow">The protocol that owns this</span>
+        <h2 style="margin:14px 0 0"><%= @protocol.name %><% if @protocol.trademark %><span class="tm">™</span><% end %></h2>
+      </div>
+      <%= link_to "View the protocol →", protocol_path(@protocol),
+                  class: "btn btn--rose reveal d1", data: { reveal_target: "item" } %>
+    </div>
+  </section>
+<% end %>
+
+<%# ---- 4 · Dr. Maysa's view + closing CTA ---- %>
+<section class="pull-band" data-controller="reveal">
+  <span class="eyebrow center no-rule reveal" data-reveal-target="item" style="margin-block-end:34px">Dr. Maysa's view</span>
+  <blockquote class="reveal d1" data-reveal-target="item">“<%= sec_text("treatment_outcomes", kind, "view").presence || o[:view] %>”</blockquote>
+  <p class="by reveal d2" data-reveal-target="item">— Maysa</p>
+  <p class="reveal d3" data-reveal-target="item" style="margin-block-start:50px">
+    <%= link_to "Begin with a private inquiry", inquire_path, class: "btn btn--ghost" %>
+  </p>
+</section>
