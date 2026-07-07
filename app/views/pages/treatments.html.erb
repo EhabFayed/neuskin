@@ -1,12 +1,14 @@
 <%# Treatments · by outcome — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
+<%# Five outcome cards, one per sub-page (design §08). Copy and image come
+    from the same "Treatment Outcomes" dashboard sections that drive each
+    sub-page's hero, so editing one section updates both. %>
 <% outcomes = [
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_1_title").presence || "Tired, dull skin",      headline: sec_text("treatments", "treatments_outcomes", "outcome_1_headline").presence || "Skin that looks rested, not redone.",   image: :beauty_eyes,    persona: "tired",    codeword: "GLOW" },
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_2_title").presence || "Hair & shedding",       headline: sec_text("treatments", "treatments_outcomes", "outcome_2_headline").presence || "Density, returned quietly.",            image: :portrait_natural, persona: "hair",   codeword: "CROWN" },
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_3_title").presence || "Body, tone & contour",  headline: sec_text("treatments", "treatments_outcomes", "outcome_3_headline").presence || "Definition that reads as discipline.",  image: :device_table,   persona: "maintain", codeword: "SCULPT" },
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_4_title").presence || "A wedding ahead",       headline: sec_text("treatments", "treatments_outcomes", "outcome_4_headline").presence || "Six months, planned to the day.",       image: :bride_bouquet,  persona: "bride",    codeword: "BRIDE" },
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_5_title").presence || "Long-term maintenance", headline: sec_text("treatments", "treatments_outcomes", "outcome_5_headline").presence || "A year, kept on quiet review.",         image: :lounge,         persona: "maintain", codeword: "INSIDER" },
-     { title: sec_text("treatments", "treatments_outcomes", "outcome_6_title").presence || "Not sure yet",          headline: sec_text("treatments", "treatments_outcomes", "outcome_6_headline").presence || "Start by reading the skin.",            image: :consult,        persona: "unsure",   codeword: "METHOD" }
+     { slug: "skin",        image: :outcome_skin,        title: "Tired, dull skin",    headline: "Restoring vitality to tired, dull skin" },
+     { slug: "hair",        image: :outcome_hair,        title: "Thinning & shedding", headline: "Comprehensive care for thinning hair" },
+     { slug: "body",        image: :outcome_body,        title: "Tone & contour",      headline: "Sculpting and toning your natural silhouette" },
+     { slug: "injectables", image: :outcome_injectables, title: "Lines & volume",      headline: "Preserving natural contours before any intervention" },
+     { slug: "devices",     image: :outcome_devices,     title: "Advanced devices",    headline: "Our devices: True purpose, visible results" }
    ] %>
 
 <%# ---- Hero ---- %>
@@ -26,12 +28,14 @@
   <div class="section-inner">
     <div class="outcome-grid">
       <% outcomes.each_with_index do |o, i| %>
-        <%= link_to inquire_path(codeword: o[:codeword], persona: o[:persona]),
+        <% kind = "outcome_#{o[:slug]}" %>
+        <%= link_to treatment_outcome_path(outcome: o[:slug]),
                     class: "proto-card reveal#{" d#{i + 1}" if i < 6}", data: { reveal_target: "item" } do %>
-          <span class="proto-card-img"><%= ns_image_tag o[:image], alt: o[:headline] %></span>
+          <span class="proto-card-img"><%= sec_image_tag("treatment_outcomes", kind, o[:image],
+                                                         alt: sec_text("treatment_outcomes", kind, "headline").presence || o[:headline]) %></span>
           <span class="proto-card-body">
-            <span class="tag"><%= o[:title] %></span>
-            <h3><%= o[:headline] %></h3>
+            <span class="tag"><%= sec_text("treatment_outcomes", kind, "title").presence || o[:title] %></span>
+            <h3><%= sec_text("treatment_outcomes", kind, "headline").presence || o[:headline] %></h3>
           </span>
         <% end %>
       <% end %>

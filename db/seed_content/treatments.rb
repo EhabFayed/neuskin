@@ -1,14 +1,12 @@
 # Treatments (by outcome) page content seed.
 #
-# EN values are copied verbatim from the hardcoded literals in
-# app/views/pages/treatments.html.erb (sec_text(...).presence || "<literal>"
-# fallbacks), so seeding this data does not change the rendered page.
-# AR values are intentionally left blank; the site currently renders English
-# only, and editors will add Arabic copy later via the CMS.
+# EN/AR values reflect the content team's approved copy
+# ("NeuSkin Website content.pdf", July 2026).
 #
-# Note: each outcome's image symbol, persona, and codeword drive routing/
-# asset lookup (not display copy), so they remain Ruby-side data and are not
-# exposed as editable text fields.
+# Note: the outcome CARDS on this page are driven by the "treatment_outcomes"
+# page sections (see db/seed_content/treatment_outcomes.rb) — the same
+# sections that drive each /treatments/<outcome> sub-page hero — so this file
+# only seeds the page's own hero and footer chrome.
 #
 # Idempotent: upserts by (page, kind) and (section, key).
 require_relative "_registry"
@@ -20,50 +18,16 @@ SeedContent.register("treatments", [
       { key: "eyebrow",  label: "Eyebrow",
         en: "Treatments · by outcome", ar: "" },
       { key: "title_1",  label: "Title part 1 (before emphasis)",
-        en: "We don't treat machines.", ar: "" },
+        en: "We begin with", ar: "نبدأُ من" },
       { key: "title_em", label: "Title emphasis span",
-        en: "We treat outcomes.", ar: "" },
+        en: "the outcome you desire.", ar: "النتيجةِ التي تطمحين إليها." },
       { key: "lead",     label: "Lead paragraph", content_type: "richtext",
-        en: "Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to.",
-        ar: "" }
+        en: "Searching for a specific procedure? Instead, look toward the change you wish to see. We guide your journey, connecting your goals to the precise protocol that delivers them.",
+        ar: "تبحثين عن إجراءٍ بعينه؟ وجهي تركيزكِ نحو التغيير الذي تطمحين إليه. نحن هنا لنرسم معكِ خارطة الطريق، ونربط طموحاتكِ بالبروتوكول الدقيقِ الذي يُحقق لكِ النتيجةَ المرجوة." }
     ]
   },
   {
-    kind: "treatments_outcomes", label: "Outcomes grid", position: 1,
-    contents: [
-      { key: "outcome_1_title",    label: "Outcome 1 tag",
-        en: "Tired, dull skin", ar: "" },
-      { key: "outcome_1_headline", label: "Outcome 1 headline",
-        en: "Skin that looks rested, not redone.", ar: "" },
-
-      { key: "outcome_2_title",    label: "Outcome 2 tag",
-        en: "Hair & shedding", ar: "" },
-      { key: "outcome_2_headline", label: "Outcome 2 headline",
-        en: "Density, returned quietly.", ar: "" },
-
-      { key: "outcome_3_title",    label: "Outcome 3 tag",
-        en: "Body, tone & contour", ar: "" },
-      { key: "outcome_3_headline", label: "Outcome 3 headline",
-        en: "Definition that reads as discipline.", ar: "" },
-
-      { key: "outcome_4_title",    label: "Outcome 4 tag",
-        en: "A wedding ahead", ar: "" },
-      { key: "outcome_4_headline", label: "Outcome 4 headline",
-        en: "Six months, planned to the day.", ar: "" },
-
-      { key: "outcome_5_title",    label: "Outcome 5 tag",
-        en: "Long-term maintenance", ar: "" },
-      { key: "outcome_5_headline", label: "Outcome 5 headline",
-        en: "A year, kept on quiet review.", ar: "" },
-
-      { key: "outcome_6_title",    label: "Outcome 6 tag",
-        en: "Not sure yet", ar: "" },
-      { key: "outcome_6_headline", label: "Outcome 6 headline",
-        en: "Start by reading the skin.", ar: "" }
-    ]
-  },
-  {
-    kind: "treatments_footer", label: "Footer link", position: 2,
+    kind: "treatments_footer", label: "Footer link", position: 1,
     contents: [
       { key: "protocols_link", label: "\"View all protocols\" link text",
         en: "View all six protocols →", ar: "" }

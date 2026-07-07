@@ -20,12 +20,12 @@ SeedContent.register("protocols_index", [
       { key: "eyebrow", label: "Eyebrow",
         en: "The Protocols", ar: "" },
       { key: "title_1", label: "Title line 1",
-        en: "Six named protocols.", ar: "" },
+        en: "Six protocols.", ar: "ستةُ بروتوكولات." },
       { key: "title_em", label: "Title line 2 (emphasis)",
-        en: "One philosophy. Zero menu pricing.", ar: "" },
+        en: "One philosophy.", ar: "فلسفةٌ واحدة." },
       { key: "lead", label: "Lead paragraph", content_type: "richtext",
-        en: "NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list.",
-        ar: "" }
+        en: "NeuSkin works through dedicated protocols, not à-la-carte treatments — these are sequenced plans with a clear start, a measured journey, and a review. Share your goals with us, and we will guide you to the right one.",
+        ar: "في \"نيوسكن\"، نحن نعتمدُ على بروتوكولاتٍ مُخصصة لا مجرد علاجاتٍ متفرقة؛ فهي خططٌ مُرتّبة، تبدأُ بوضوح، وتمرُّ برحلةِ قياسٍ دقيقة، وتنتهي بمراجعةٍ للنتائج. أخبرينا بما تطمحين إليه، وسنرشدك إلى البروتوكول الأنسبِ لكِ." }
     ]
   },
   {

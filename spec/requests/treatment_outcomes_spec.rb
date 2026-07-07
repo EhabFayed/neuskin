@@ -25,6 +25,14 @@ RSpec.describe "Treatment outcome pages", type: :request do
     end
   end
 
+  it "links every outcome card on the treatments index to its sub-page" do
+    get "/en/treatments"
+    expect(response).to have_http_status(:ok)
+    %w[skin hair body injectables devices].each do |outcome|
+      expect(response.body).to match(%r{href="(/en)?/treatments/#{outcome}"})
+    end
+  end
+
   it "does not route an unknown outcome" do
     expect {
       Rails.application.routes.recognize_path("/en/treatments/unknown", method: :get)
