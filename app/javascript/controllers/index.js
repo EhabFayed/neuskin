@@ -30,3 +30,18 @@ application.register("counter", CounterController)
 
 import BookingController from "controllers/booking_controller"
 application.register("booking", BookingController)
+
+import IntroController from "controllers/intro_controller"
+application.register("intro", IntroController)
+
+import ParallaxController from "controllers/parallax_controller"
+application.register("parallax", ParallaxController)
+
+import ProtoindexController from "controllers/protoindex_controller"
+application.register("protoindex", ProtoindexController)
+
+import HscrollController from "controllers/hscroll_controller"
+application.register("hscroll", HscrollController)
+
+import LivepreviewController from "controllers/livepreview_controller"
+application.register("livepreview", LivepreviewController)

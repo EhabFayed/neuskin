@@ -1,0 +1,115 @@
+<% content_for :crumb, SitePages.name_for(@section.page) %>
+<% content_for :heading, @section.display_label %>
+<% content_for :title, "Editing #{@section.display_label}" %>
+
+<%= link_to admin_page_path(@section.page), class: "ns-back" do %>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+  <%= SitePages.name_for(@section.page) %>
+<% end %>
+
+<%= form_with model: @section, url: admin_section_path(@section), method: :patch,
+      data: { controller: "livepreview",
+              "livepreview-url-value": preview_admin_section_path(@section),
+              "livepreview-sec-value": "#{@section.page}/#{@section.kind}" } do |form| %>
+  <% if @section.errors.any? %>
+    <div class="ns-flash alert" style="margin:0 0 20px"><%= @section.errors.full_messages.to_sentence %></div>
+  <% end %>
+
+  <%= form.hidden_field :label %>
+
+  <div class="ns-editor">
+    <%# ---- left: the fields ---- %>
+    <div class="ns-editor-fields">
+      <% if @section.image.attached? || @section.gallery.attached? %>
+        <div class="ns-card" style="margin-bottom:22px">
+          <div class="ns-eyebrow" style="margin-bottom:14px">Image</div>
+          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+            <% if @section.image.attached? %>
+              <%# seeds the live preview with the current image url %>
+              <%= image_tag url_for(@section.image),
+                    data: { "livepreview-target": "img", url: url_for(@section.image) },
+                    style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
+            <% else %>
+              <div style="width:180px;height:120px;border-radius:8px;border:1px dashed var(--ns-border);display:grid;place-items:center;color:var(--ns-muted-2);font-size:12px">No single image</div>
+            <% end %>
+            <div>
+              <%= form.label :image, "Replace image", class: "ns-field-title" %>
+              <%= form.file_field :image,
+                    data: { "livepreview-target": "file", action: "livepreview#pickImage" } %>
+              <p class="hint" style="margin-top:6px">Pick a file to preview it before saving.</p>
+            </div>
+          </div>
+          <% if @section.gallery.attached? %>
+            <div style="margin-top:16px">
+              <div class="ns-eyebrow" style="margin-bottom:10px">Gallery (<%= @section.gallery.count %> images)</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <% @section.gallery.each do |img| %>
+                  <%= image_tag url_for(img), style: "width:84px;height:60px;object-fit:cover;border-radius:6px;border:1px solid var(--ns-border)" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <h2 class="ns-section-title">Text</h2>
+      <%= form.fields_for :contents do |content_form| %>
+        <%= render "content_fields", form: content_form %>
+      <% end %>
+
+      <% if @section.items.present? %>
+        <h2 class="ns-section-title">Repeating items</h2>
+        <%= render "item_fields" %>
+      <% end %>
+    </div>
+
+    <%# ---- right: sticky live preview (real page, styled, in an iframe) ---- %>
+    <aside class="ns-editor-preview">
+      <div class="ns-preview-card">
+        <div class="ns-preview-head">
+          <span class="dot"></span> Live preview
+          <span class="lp-loading" data-livepreview-target="loading">updating…</span>
+        </div>
+
+        <%# device toolbar: presets + live width readout %>
+        <div class="lp-devices">
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="390" title="Mobile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </button>
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="820" title="Tablet">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg>
+          </button>
+          <button type="button" class="lp-dev" data-action="livepreview#setDevice" data-width="1280" title="Laptop">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M2 20h20"/></svg>
+          </button>
+          <span class="lp-width" data-livepreview-target="widthLabel">390px</span>
+        </div>
+
+        <%# just-picked image thumbnail (client-side, before upload) %>
+        <div class="lp-picked" data-livepreview-target="pickedwrap" hidden>
+          <img data-livepreview-target="pickedimg" alt="">
+          <span>New image — saves when you publish</span>
+        </div>
+
+        <%# stage scales the iframe (rendered at its real CSS width) to fit %>
+        <div class="lp-stage" data-livepreview-target="stage">
+          <div class="lp-viewport" data-livepreview-target="viewport">
+            <iframe class="ns-preview-frame" title="Live preview of this page"
+                    data-livepreview-target="frame"></iframe>
+          </div>
+          <span class="lp-handle" data-livepreview-target="handle"
+                data-action="mousedown->livepreview#startDrag" title="Drag to resize"></span>
+        </div>
+
+        <div class="ns-preview-foot">Exactly how the page will look · not yet saved</div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="ns-savebar">
+    <span style="font-size:12.5px;color:var(--ns-muted)">Changes go live on the site immediately.</span>
+    <span class="spacer"></span>
+    <a href="<%= root_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View this page</a>
+    <%= form.submit "Save & publish", class: "ns-btn primary" %>
+  </div>
+<% end %>

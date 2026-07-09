@@ -1,0 +1,28 @@
+<% content_for :crumb, "Pages" %>
+<% content_for :heading, @name %>
+<% content_for :title, @name %>
+
+<%= link_to admin_pages_path, class: "ns-back" do %>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+  All pages
+<% end %>
+
+<% if @sections.any? %>
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0 0 22px">Sections appear in the same order as on the live page.</p>
+  <ul class="ns-list">
+    <% @sections.each do |section| %>
+      <li>
+        <%= link_to admin_section_path(section), class: "ns-row" do %>
+          <span class="r-title"><%= section.display_label %></span>
+          <span class="r-meta"><%= section.contents.size %> field<%= 's' unless section.contents.size == 1 %></span>
+          <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="ns-empty">
+    No editable sections yet for this page.<br>
+    <span style="font-size:12.5px">Run <code style="color:var(--ns-accent-2)">rails content:seed</code> to load its content.</span>
+  </div>
+<% end %>

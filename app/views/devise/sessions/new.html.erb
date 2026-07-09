@@ -1,0 +1,32 @@
+<div class="ns-auth-head">
+  <div class="crumb">Welcome back</div>
+  <h1>Sign in</h1>
+  <p class="sub">Access the NeuSkin Studio to edit your site.</p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="ns-field">
+    <%= f.label :email, "Email", class: "ns-field-title" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+          placeholder: "you@neuskin.com", class: "ns-input" %>
+  </div>
+
+  <div class="ns-field">
+    <%= f.label :password, "Password", class: "ns-field-title" %>
+    <%= f.password_field :password, autocomplete: "current-password",
+          placeholder: "••••••••", class: "ns-input" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <label class="ns-remember">
+      <%= f.check_box :remember_me %>
+      <span>Keep me signed in</span>
+    </label>
+  <% end %>
+
+  <%= f.submit "Sign in", class: "ns-btn primary ns-auth-submit" %>
+<% end %>
+
+<% if devise_mapping.recoverable? %>
+  <p class="ns-auth-alt"><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+<% end %>

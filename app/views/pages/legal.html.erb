@@ -1,33 +1,59 @@
-<%# Shared legal page (§15). `doc` selects the i18n namespace: privacy / medical_disclaimer / terms. %>
+<%# Legal & Compliance (design §isLegal) — one plainly-stated page covering all
+    legal routes (privacy / medical_disclaimer / terms). Renders every block
+    regardless of the `doc` local. %>
 
-<section class="section legal-hero" data-controller="reveal">
-  <div class="wrap narrow">
-    <span class="label reveal" data-reveal-target="item"><%= t("legal.eyebrow") %></span>
-    <h1 class="legal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("legal.#{doc}.title_ar"), en: t("legal.#{doc}.title_en")) %>
-    </h1>
-    <p class="legal-meta reveal" data-reveal-target="item"><%= t("legal.last_updated") %></p>
-  </div>
+<section class="page-hero" data-controller="reveal">
+  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("legal", "legal_hero", "eyebrow").presence || "Legal & Compliance" %></span>
+  <h1><span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("legal", "legal_hero", "title_1").presence || "Plainly stated." %></span></span></h1>
+  <p class="lead reveal d2" data-reveal-target="item">
+    <%= sec_text("legal", "legal_hero", "lead").presence || "We keep our terms in human language. This is a demonstration page — final legal copy is prepared with counsel for KSA / PDPL compliance." %>
+  </p>
 </section>
 
-<section class="section legal-body" data-controller="reveal">
-  <div class="wrap narrow">
-    <%# Draft notice — these policies must be reviewed by a Saudi legal advisor before launch. %>
-    <aside class="legal-notice reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("legal.draft_notice_ar"), en: t("legal.draft_notice_en")) %>
-    </aside>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
 
-    <% t("legal.#{doc}.sections").each do |sec| %>
-      <div class="legal-section reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-        <h2>
-          <%= loc(ar: sec[:heading_ar], en: sec[:heading_en]) %>
-        </h2>
-        <p><%= loc(ar: sec[:body_ar], en: sec[:body_en]) %></p>
-      </div>
-    <% end %>
+    <div class="legal-block reveal" data-reveal-target="item">
+      <h2><%= sec_text("legal", "legal_blocks", "privacy_title").presence || "Privacy & PDPL" %></h2>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "privacy_p1").presence || "We collect only what we need to care for you and to reply to your inquiry. Your personal data is stored securely, used solely for your care and communication with you, and never sold or shared for marketing." %>
+      </p>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "privacy_p2").presence || "You may ask to see, correct, or delete the information we hold at any time. Our handling of personal data follows Saudi Arabia’s Personal Data Protection Law (PDPL)." %>
+      </p>
+    </div>
 
-    <p class="legal-contact reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("legal.contact_ar"), en: t("legal.contact_en")) %>
-    </p>
+    <div class="legal-block reveal d1" data-reveal-target="item">
+      <h2><%= sec_text("legal", "legal_blocks", "medical_title").presence || "Medical advertising disclaimer" %></h2>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "medical_p1").presence || "Results vary from person to person and depend on individual factors. Every treatment is subject to medical consultation and individual assessment, and no specific outcome is guaranteed." %>
+      </p>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "medical_p2").presence || "Nothing on this site is medical advice or a substitute for an in-person consultation with a licensed practitioner." %>
+      </p>
+    </div>
+
+    <div class="legal-block reveal d2" data-reveal-target="item">
+      <h2><%= sec_text("legal", "legal_blocks", "consent_title").presence || "Consent policy" %></h2>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "consent_p1").presence || "Photography and the use of any patient material require separate, specific, written consent. Consent is never assumed, is given freely, and may be withdrawn at any time without affecting your care." %>
+      </p>
+    </div>
+
+    <div class="legal-block reveal d3" data-reveal-target="item">
+      <h2><%= sec_text("legal", "legal_blocks", "terms_title").presence || "Terms of inquiry" %></h2>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "terms_p1").presence || "Submitting an inquiry begins a private conversation, not a booking or a contract. All care is arranged after a medical consultation and individual assessment." %>
+      </p>
+      <p>
+        <%= sec_text("legal", "legal_blocks", "terms_p2").presence || "We reply personally, Saturday to Thursday. By contacting us you agree only to be contacted back — nothing more." %>
+      </p>
+    </div>
+
+    <div class="license-line reveal d4" data-reveal-target="item">
+      <span><%= sec_text("legal", "legal_license", "label").presence || "SFDA / MOH license" %></span>
+      <span><%= sec_text("legal", "legal_license", "number").presence || "No. 0000000000" %></span>
+    </div>
+
   </div>
 </section>

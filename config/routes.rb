@@ -6,6 +6,18 @@ Rails.application.routes.draw do
   # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  # Devise session/auth routes — must stay outside the locale scope.
+  devise_for :users
+
+  # Admin area — English-only chrome, outside the locale scope.
+  namespace :admin do
+    root to: "dashboard#index"
+    resources :pages, only: [:index, :show]
+    resources :sections, only: [:show, :update] do
+      member { match :preview, via: %i[get post] }
+    end
+  end
+
   # Locale-scoped pages. Arabic is the default; English is /en.
   # See docs/DESIGN-AND-TECH-DIRECTION.md §2.7 (path-prefix locales for SEO).
   scope "(:locale)", locale: /ar|en/ do
@@ -36,6 +48,13 @@ Rails.application.routes.draw do
 
     # The Maysa Method™ — the philosophy page (§05), not the protocol page.
     get "maysa-method", to: "pages#maysa_method", as: :maysa_method
+
+    # Treatments — by outcome (design §08). A curated outcome list.
+    get "treatments", to: "pages#treatments", as: :treatments
+
+    # Per-outcome treatment pages (design §08 "Outcome" screen).
+    get "treatments/:outcome", to: "pages#treatment_outcome", as: :treatment_outcome,
+        constraints: { outcome: /skin|hair|body|injectables|devices/ }
 
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care

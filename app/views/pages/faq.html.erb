@@ -1,49 +1,66 @@
-<%# FAQ (§14) — 20 questions, 4 groups of 5, search + accordion. %>
+<%# FAQ (design §isFaq) — search + accordion, grouped questions. %>
 
-<section class="section faq-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("faq.eyebrow") %></span>
-    <h1 class="faq-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("faq.title_ar"), en: t("faq.title_en")) %>
-    </h1>
-  </div>
-</section>
+<%
+  faq_groups = [
+    { title: sec_text("faq", "faq_items", "group_1_title").presence || "Before you come in", qs: [
+      { q: sec_text("faq", "faq_items", "q_1_question").presence || "Do you publish a price list?",
+        a: sec_text("faq", "faq_items", "q_1_answer").presence || "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs." },
+      { q: sec_text("faq", "faq_items", "q_2_question").presence || "How do I start?",
+        a: sec_text("faq", "faq_items", "q_2_answer").presence || "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally." },
+      { q: sec_text("faq", "faq_items", "q_3_question").presence || "Is the first visit a treatment?",
+        a: sec_text("faq", "faq_items", "q_3_answer").presence || "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan." }
+    ] },
+    { title: sec_text("faq", "faq_items", "group_2_title").presence || "How care works", qs: [
+      { q: sec_text("faq", "faq_items", "q_4_question").presence || "Why a twelve-month plan?",
+        a: sec_text("faq", "faq_items", "q_4_answer").presence || "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months." },
+      { q: sec_text("faq", "faq_items", "q_5_question").presence || "Will I see Dr. Maysa herself?",
+        a: sec_text("faq", "faq_items", "q_5_answer").presence || "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction." },
+      { q: sec_text("faq", "faq_items", "q_6_question").presence || "What if a treatment isn't right for me?",
+        a: sec_text("faq", "faq_items", "q_6_answer").presence || "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session." }
+    ] },
+    { title: sec_text("faq", "faq_items", "group_3_title").presence || "Privacy & practicalities", qs: [
+      { q: sec_text("faq", "faq_items", "q_7_question").presence || "How private is my information?",
+        a: sec_text("faq", "faq_items", "q_7_answer").presence || "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely." },
+      { q: sec_text("faq", "faq_items", "q_8_question").presence || "Do you photograph patients?",
+        a: sec_text("faq", "faq_items", "q_8_answer").presence || "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time." },
+      { q: sec_text("faq", "faq_items", "q_9_question").presence || "Where are you, and when are you open?",
+        a: sec_text("faq", "faq_items", "q_9_answer").presence || "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule." }
+    ] }
+  ]
+%>
 
-<section class="section faq-body" data-controller="faqsearch">
-  <div class="wrap narrow">
-    <div class="faq-search">
-      <input type="search" data-faqsearch-target="query" data-action="input->faqsearch#filter"
-             placeholder="<%= t('faq.search_ph') %>" aria-label="<%= t('faq.search_ph') %>">
+<div class="faq-page" data-controller="reveal faqsearch">
+  <%# FAQ hero — 1:1 port of design §isFaq %>
+  <section class="fq-hero">
+    <div class="fq-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="lbl"><%= sec_text("faq", "faq_hero", "eyebrow").presence || "Frequently Asked" %></span>
     </div>
+    <h1 class="fq-title" data-reveal="up"><%= sec_text("faq", "faq_hero", "title_1").presence || "The questions" %><br><span class="em"><%= sec_text("faq", "faq_hero", "title_em").presence || "before the question." %></span></h1>
+    <div class="fq-search" data-reveal="up" data-reveal-delay="140">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a7c79" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+      <input placeholder="<%= sec_text("faq", "faq_hero", "search_placeholder").presence || "Search the questions" %>"
+             data-faqsearch-target="query"
+             data-action="input->faqsearch#filter">
+    </div>
+  </section>
 
-    <% %w[clinic treatments protocols privacy].each do |group| %>
-      <div class="faq-group" data-faqsearch-target="group">
-        <h2 class="faq-group-title" data-faqsearch-target="groupTitle" dir="<%= loc_dir %>">
-          <%= loc(ar: t("faq.groups.#{group}.title_ar"), en: t("faq.groups.#{group}.title_en")) %>
-        </h2>
-
-        <% t("faq.groups.#{group}.items").each do |item| %>
-          <details class="faq" data-faqsearch-target="item"
-                   data-search="<%= "#{item[:q_ar]} #{item[:q_en]} #{item[:a_ar]} #{item[:a_en]}".downcase %>">
-            <summary dir="<%= loc_dir %>"><%= loc(ar: item[:q_ar], en: item[:q_en]) %></summary>
-            <div class="faq-a">
-              <p dir="<%= loc_dir %>"><%= loc(ar: item[:a_ar], en: item[:a_en]) %></p>
-              <p class="faq-sign" dir="rtl">— د. ميساء</p>
-            </div>
-          </details>
-        <% end %>
+  <%# FAQ groups — sticky title left, accordion right %>
+  <section class="fq-groups">
+    <% faq_groups.each do |group| %>
+      <div class="fq-group" data-reveal="up" data-faqsearch-target="group">
+        <h2 class="fq-group-title"><%= group[:title] %></h2>
+        <div class="fq-list">
+          <% group[:qs].each do |item| %>
+            <details class="fq-item" data-faqsearch-target="item"
+                     data-search="<%= "#{item[:q]} #{item[:a]}".downcase %>">
+              <summary><span class="fq-q"><%= item[:q] %></span><span class="fq-sign">+</span></summary>
+              <p class="fq-a"><%= item[:a] %></p>
+            </details>
+          <% end %>
+        </div>
       </div>
     <% end %>
-
-    <p class="faq-empty" data-faqsearch-target="empty" hidden><%= t("faq.no_results") %></p>
-  </div>
-</section>
-
-<%# CTA — a question we didn't answer? %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("faq.cta_label") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("faq.cta_ar"), en: t("faq.cta_en")) %></p>
-    <%= link_to t("cta.private_inquiry"), inquire_path, class: "cta" %>
-  </div>
-</section>
+    <p class="faq-empty" data-faqsearch-target="empty" hidden><%= sec_text("faq", "faq_hero", "empty_state").presence || "No questions match." %></p>
+  </section>
+</div>

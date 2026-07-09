@@ -1,69 +1,112 @@
-<%# About — The Clinic (§02). %>
+<%# The Clinic — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# 1 · Hero — clinic interior film (video if present, else photo) + overlay headline %>
-<% clinic_clip = "clinic-interior.mp4" %>
-<% clinic_has_clip = File.exist?(Rails.root.join("app/assets/videos", clinic_clip)) %>
-<section class="clinic-hero has-photo" style="--hero-photo: url('<%= asset_path('site/lounge.jpg') %>')">
-  <% if clinic_has_clip %>
-    <video class="clinic-hero-media hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/lounge.jpg') %>" aria-hidden="true">
-      <source src="<%= asset_path(clinic_clip) %>" type="video/mp4">
-    </video>
-  <% else %>
-    <div class="clinic-hero-media" aria-hidden="true"></div>
-  <% end %>
-  <div class="clinic-hero-overlay">
-    <p class="clinic-overline" dir="<%= loc_dir %>"><%= loc(ar: t("clinic.hero_ar"), en: t("clinic.hero_en")) %></p>
+<%# ---- Full-bleed hero, text overlaid (1:1 port of design §isClinic) ---- %>
+<section class="over-hero over-hero--clinic" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= sec_image_tag("the_clinic", "clinic_hero", :clinic_hero, alt: "NeuSkin interior", class: "kb") %>
+  </div>
+  <div class="over-hero-copy over-hero-copy--wide">
+    <div class="clinic-hero-eyebrow reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_hero", "eyebrow").presence || "About · The Clinic" %></div>
+    <h1 class="clinic-hero-title" data-reveal="up"><%= sec_text("the_clinic", "clinic_hero", "title_1").presence || "A private clinic in Al Malqa, built around one question:" %> <span class="em"><%= sec_text("the_clinic", "clinic_hero", "title_em").presence || "what will your skin look like in five years?" %></span></h1>
   </div>
 </section>
 
-<%# 2 · The Story — first-person-plural editorial, signed %>
+<%# ---- Philosophy (design copy) — 50/50 split ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split" style="align-items:start">
+    <h2 class="clinic-statement" style="position:sticky;>
+      <span data-reveal="mask" data-reveal-delay="80"><span><%= sec_text("the_clinic", "clinic_philosophy", "statement_1").presence || "We believe a clinic should be measured" %></span></span>
+      <span data-reveal="mask" data-reveal-delay="200"><span><%= sec_text("the_clinic", "clinic_philosophy", "statement_2").presence || "by" %> <span class="em"><%= sec_text("the_clinic", "clinic_philosophy", "statement_2_em").presence || "what it refuses to do." %></span></span></span>
+    </h2>
+    <div>
+      <div class="body-copy" style="font-size:clamp(1.05rem,1.5vw,1.3rem)">
+        <p data-reveal="up" data-reveal-delay="160"><%= sec_text("the_clinic", "clinic_philosophy", "body_1").presence || "NeuSkin began with a frustration: skin care in Riyadh had become a list of treatments and a public price grid, sold the way a menu is sold. We wanted the opposite — a quiet room, a doctor who looks properly, and a plan written for one person at a time." %></p>
+        <p data-reveal="up" data-reveal-delay="240"><%= sec_text("the_clinic", "clinic_philosophy", "body_2").presence || "So we built a clinic around diagnosis, not display. Every patient begins with the Maysa Method™ — a full reading of skin, hair and body — before anything is recommended, let alone performed. We chose Al Malqa for its discretion, and we chose women as our focus because they have been sold to longest, and listened to least." %></p>
+        <p data-reveal="up" data-reveal-delay="320"><%= sec_text("the_clinic", "clinic_philosophy", "body_3").presence || "We are not the loudest clinic in the city. We intend to be the one you keep." %></p>
+      </div>
+      <p class="sign" data-reveal="up" data-reveal-delay="400" style="margin-top:32px"><%= sec_text("the_clinic", "clinic_philosophy", "sign").presence || "— Dr. Maysa, Founder" %></p>
+    </div>
+  </div>
+</section>
+
+<%# ---- The Space ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_space", "eyebrow").presence || "The Space" %></span>
+    <div class="shot-grid reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
+      <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5]) %>
+      <figure class="shot w4"><%= image_tag clinic_space_imgs[0], alt: "Waiting lounge" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_1_caption").presence || "The lounge" %></figcaption></figure>
+      <figure class="shot w2"><%= image_tag clinic_space_imgs[1], alt: "In the detail" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_2_caption").presence || "In the detail" %></figcaption></figure>
+      <figure class="shot w2"><%= image_tag clinic_space_imgs[2], alt: "Device room" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_3_caption").presence || "Device room" %></figcaption></figure>
+      <figure class="shot w3"><%= image_tag clinic_space_imgs[3], alt: "Treatment room" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_4_caption").presence || "Treatment room" %></figcaption></figure>
+      <figure class="shot w3"><%= image_tag clinic_space_imgs[4], alt: "The entrance at dusk" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_5_caption").presence || "The entrance" %></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<%# ---- Four-step patient journey (light contrast band) ---- %>
+<section class="section section--light" data-controller="reveal">
+  <div class="section-inner">
+    <div class="reveal" data-reveal-target="item">
+      <div class="journey-eyebrow"><%= sec_text("the_clinic", "clinic_journey", "eyebrow").presence || "How we work" %></div>
+      <h2 class="journey-title"><%= sec_text("the_clinic", "clinic_journey", "title").presence || "The four-step patient journey" %></h2>
+    </div>
+    <div class="journey reveal d1" data-reveal-target="item">
+      <div class="step">
+        <span class="n"><%= sec_text("the_clinic", "clinic_journey", "step_1_n").presence || "01" %></span>
+        <h3><%= sec_text("the_clinic", "clinic_journey", "step_1_title").presence || "Inquire" %></h3>
+        <p><%= sec_text("the_clinic", "clinic_journey", "step_1_body").presence || "A private WhatsApp message or form, reviewed personally by our patient relations lead." %></p>
+      </div>
+      <div class="step">
+        <span class="n"><%= sec_text("the_clinic", "clinic_journey", "step_2_n").presence || "02" %></span>
+        <h3><%= sec_text("the_clinic", "clinic_journey", "step_2_title").presence || "Consult" %></h3>
+        <p><%= sec_text("the_clinic", "clinic_journey", "step_2_body").presence || "A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed." %></p>
+      </div>
+      <div class="step">
+        <span class="n"><%= sec_text("the_clinic", "clinic_journey", "step_3_n").presence || "03" %></span>
+        <h3><%= sec_text("the_clinic", "clinic_journey", "step_3_title").presence || "Plan" %></h3>
+        <p><%= sec_text("the_clinic", "clinic_journey", "step_3_body").presence || "A written 12-month roadmap — skin, hair, body, lifestyle. Yours to keep, whatever you decide." %></p>
+      </div>
+      <div class="step">
+        <span class="n"><%= sec_text("the_clinic", "clinic_journey", "step_4_n").presence || "04" %></span>
+        <h3><%= sec_text("the_clinic", "clinic_journey", "step_4_title").presence || "Treat" %></h3>
+        <p><%= sec_text("the_clinic", "clinic_journey", "step_4_body").presence || "Sequenced sessions with quarterly review, adjusted as your skin responds." %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ---- Credentials, in plain language ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <span class="eyebrow"><%= sec_text("the_clinic", "clinic_credentials", "eyebrow").presence || "The standard" %></span>
+      <h2 style="margin-top:22px"><%= sec_text("the_clinic", "clinic_credentials", "title").presence || "Credentials, in plain language." %></h2>
+      <div class="body-copy">
+        <p><%= sec_text("the_clinic", "clinic_credentials", "body_1").presence || "We keep our compliance visible because trust should not be a leap of faith. Our licenses, our consent policy, and our honest limits are stated plainly — here, not buried." %></p>
+      </div>
+    </div>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <ul class="specs">
+        <li><span class="k"><%= sec_text("the_clinic", "clinic_credentials", "spec_1_k").presence || "SFDA / MOH license" %></span><span class="v"><%= sec_text("the_clinic", "clinic_credentials", "spec_1_v").presence || "No. 0000000000" %></span></li>
+        <li><span class="k"><%= sec_text("the_clinic", "clinic_credentials", "spec_2_k").presence || "Practitioner licenses" %></span><span class="v"><%= sec_text("the_clinic", "clinic_credentials", "spec_2_v").presence || "On file · verifiable" %></span></li>
+        <li><span class="k"><%= sec_text("the_clinic", "clinic_credentials", "spec_3_k").presence || "Patient privacy" %></span><span class="v"><%= sec_text("the_clinic", "clinic_credentials", "spec_3_v").presence || "PDPL compliant" %></span></li>
+        <li><span class="k"><%= sec_text("the_clinic", "clinic_credentials", "spec_4_k").presence || "Photographic consent" %></span><span class="v"><%= sec_text("the_clinic", "clinic_credentials", "spec_4_v").presence || "Explicit · withdrawable" %></span></li>
+      </ul>
+      <div class="body-copy" style="margin-top:24px">
+        <p><%= sec_text("the_clinic", "clinic_credentials", "body_2").presence || "Results vary. Everything we do is subject to medical consultation and individual assessment — and we would rather tell you \"no\" than sell you a \"yes\"." %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ---- Closing CTA ---- %>
 <section class="section" data-controller="reveal">
-  <div class="wrap narrow essay">
-    <div class="sec-head reveal" data-reveal-target="item" style="text-align:start">
-      <span class="label"><%= t("clinic.story_label") %></span>
-    </div>
-    <% t("clinic.story").each do |para| %>
-      <p class="reveal" data-reveal-target="item"><%= para %></p>
-    <% end %>
-    <p class="essay-sign reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
-  </div>
-</section>
-
-<%# 3 · The Space — photographic essay (placeholders, no people) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("clinic.space_label") %></span>
-    </div>
-    <% space_photos = { 0 => "site/lounge.jpg", 1 => "site/protocols/skin.jpg", 2 => "site/plaster-texture.jpg",
-                        3 => "site/journal/j2.jpg", 4 => "site/protocols/hair.jpg", 5 => "site/desert-atmosphere.jpg" } %>
-    <div class="space-grid">
-      <% t("clinic.space_rooms").each_with_index do |room, i| %>
-        <figure class="space-shot space-shot--<%= i % 5 %><%= " has-photo" if space_photos[i] %> reveal-img" data-reveal-target="item"
-                <%= "style=\"--shot-photo: url('#{asset_path(space_photos[i])}')\"".html_safe if space_photos[i] %>>
-          <figcaption><%= room %></figcaption>
-        </figure>
-      <% end %>
+  <div class="section-inner">
+    <div class="cta-center reveal" data-reveal-target="item">
+      <h2><%= sec_text("the_clinic", "clinic_cta", "title").presence || "Begin a quiet conversation." %></h2>
+      <p><%= sec_text("the_clinic", "clinic_cta", "body").presence || "We reply, personally, Saturday to Thursday, 10:00–22:00." %></p>
+      <%= link_to (sec_text("the_clinic", "clinic_cta", "cta_label").presence || "Speak with us"), inquire_path, class: "btn" %>
     </div>
   </div>
 </section>
-
-<%# 4 · How we work — the four-step patient journey (shared partial) %>
-<%= render "shared/patient_journey" %>
-
-<%# 5 · The Standard — compliance + credentials %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("clinic.standard_label") %></span>
-    </div>
-    <ul class="standard-list">
-      <% t("clinic.standard").each do |item| %>
-        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>"><%= loc(ar: item[:ar], en: item[:en]) %></li>
-      <% end %>
-    </ul>
-  </div>
-</section>
-
-<%# 6 · CTA — shared booking band %>
-<%= render "shared/book_cta", key: "clinic" %>

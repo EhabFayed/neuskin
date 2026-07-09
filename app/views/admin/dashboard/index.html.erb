@@ -1,0 +1,54 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Overview" %>
+<% content_for :title, "Overview" %>
+
+<div class="ns-grid cols-4">
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Inbox</div>
+    <div class="n"><%= @inquiries_count %></div>
+    <div class="lbl">Inquiries</div>
+  </div>
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Bridal</div>
+    <div class="n"><%= @bridal_leads_count %></div>
+    <div class="lbl">Bridal leads</div>
+  </div>
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Care</div>
+    <div class="n"><%= @protocols_count %></div>
+    <div class="lbl">Protocols</div>
+  </div>
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Content</div>
+    <div class="n"><%= @sections_count %></div>
+    <div class="lbl">Editable sections</div>
+  </div>
+</div>
+
+<h2 class="ns-section-title">Quick actions</h2>
+<div class="ns-grid cols-3">
+  <%= link_to admin_pages_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
+    <div class="ns-eyebrow">Content</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Edit page copy</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Update the words and images on every public page.</div>
+  <% end %>
+  <div class="ns-card" style="opacity:.6">
+    <div class="ns-eyebrow">Journal</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Write a Journal post</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Coming soon.</div>
+  </div>
+  <div class="ns-card" style="opacity:.6">
+    <div class="ns-eyebrow">Protocols</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Update protocol content</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Coming soon.</div>
+  </div>
+</div>
+
+<h2 class="ns-section-title">Needs attention</h2>
+<div class="ns-card">
+  <% if @inquiries_count.to_i > 0 %>
+    <div style="font-size:14px;color:var(--ns-text)"><strong style="color:var(--ns-accent-2)"><%= @inquiries_count %></strong> new inquiries waiting in the inbox.</div>
+  <% else %>
+    <div class="ns-empty" style="padding:8px 0">Nothing needs your attention right now.</div>
+  <% end %>
+</div>

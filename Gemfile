@@ -21,6 +21,7 @@ gem "propshaft"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
+gem "devise"
 
 # Reusable, testable view units (protocol card, pillar, section header, etc.)
 gem "view_component"
@@ -48,6 +49,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false

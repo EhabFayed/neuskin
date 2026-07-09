@@ -1,0 +1,24 @@
+<%# One editable content row: friendly label + English / Arabic side by side.
+    Carries livepreview targets so the right-hand panel mirrors it live. %>
+<div class="ns-card" style="margin-bottom:14px"
+     data-livepreview-target="row"
+     data-field-label="<%= form.object.display_label %>">
+  <%= form.hidden_field :id %>
+  <%= form.hidden_field :key %>
+  <%= form.hidden_field :content_type %>
+  <%= form.hidden_field :position %>
+
+  <span class="ns-field-title"><%= form.object.display_label %></span>
+  <% if form.object.hint.present? %><p class="hint"><%= form.object.hint %></p><% end %>
+
+  <div class="ns-pair">
+    <div class="en">
+      <span class="lang-lbl">English</span>
+      <%= form.text_area :value_en, rows: 2, class: "ns-textarea", data: { lang: "en" } %>
+    </div>
+    <div class="ar">
+      <span class="lang-lbl">العربية · Arabic</span>
+      <%= form.text_area :value_ar, rows: 2, dir: "rtl", class: "ns-textarea", data: { lang: "ar" } %>
+    </div>
+  </div>
+</div>

@@ -1,131 +1,112 @@
-<%# Contact & Inquiry — the conversion page (§11). Two parallel paths. %>
+<%# Contact & Inquiry (design §isContact) — two-path layout + private form. %>
 
-<section class="section inquire-hero" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal d1" data-reveal-target="item"><%= t("inquire.label") %></span>
-    <h1 class="inquire-title reveal d2" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= t("inquire.title") %>
-    </h1>
-    <p class="inquire-sub reveal d3" data-reveal-target="item" dir="<%= loc_dir %>"><%= t("inquire.sub") %></p>
-  </div>
+<section class="page-hero" data-controller="reveal" style="text-align:center">
+  <span class="eyebrow center reveal" data-reveal-target="item">Contact &middot; Inquiry</span>
+  <h1 style="margin-inline:auto">
+    <span data-reveal="mask" data-reveal-delay="120"><span>Begin a quiet</span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span>conversation.</span></span>
+  </h1>
 </section>
 
-<%# How booking works — a 3-step mini-journey so the path is obvious. %>
-<section class="section booking-steps" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("inquire.steps_label") %></span>
-    </div>
-    <ol class="booking-step-list reveal" data-reveal-target="item">
-      <% %w[choose tell confirm].each_with_index do |step, i| %>
-        <li class="booking-step reveal" data-reveal-target="item">
-          <span class="num"><%= format("%02d", i + 1) %></span>
-          <h3 dir="<%= loc_dir %>"><%= t("inquire.steps.#{step}.title") %></h3>
-          <p dir="<%= loc_dir %>"><%= t("inquire.steps.#{step}.body") %></p>
-        </li>
-      <% end %>
-    </ol>
-  </div>
-</section>
-
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
     <div class="paths">
-      <%# Path A — WhatsApp (preferred) %>
-      <div class="path path--wa reveal" data-reveal-target="item">
-        <span class="path-tag"><%= t("inquire.path_a") %></span>
-        <p class="path-lead" dir="<%= loc_dir %>">
-          <%= t("inquire.path_a_lead") %>
+
+      <%# Path A — WhatsApp %>
+      <div class="path reveal" data-reveal-target="item">
+        <span class="ptag">Path A &middot; Preferred</span>
+        <h3>Speak privately on WhatsApp</h3>
+        <p>
+          The fastest, quietest way to reach us. Send the codeword for the
+          protocol you&rsquo;re curious about &mdash; or simply say hello.
         </p>
-        <%= link_to whatsapp_url(codeword: @inquiry.source_codeword), class: "cta", target: "_blank", rel: "noopener" do %>
-          <%= t("cta.whatsapp") %>
-        <% end %>
-        <% if @inquiry.source_codeword.present? %>
-          <p class="codeword-note"><%= t("inquire.codeword_note", word: @inquiry.source_codeword) %></p>
-        <% end %>
+        <a class="btn" href="<%= whatsapp_url(codeword: @inquiry.source_codeword) %>" target="_blank" rel="noopener">
+          Speak privately on WhatsApp
+        </a>
+        <p class="path-phone">+966 50 000 0000</p>
       </div>
 
       <%# Path B — private form %>
-      <div class="path path--form reveal" data-reveal-target="item">
-        <span class="path-tag"><%= t("inquire.path_b") %></span>
+      <div class="path reveal d1" data-reveal-target="item">
+        <span class="ptag">Path B &middot; Private form</span>
 
-        <%= form_with model: @inquiry, url: inquire_path, method: :post,
-              data: { controller: "phone" }, class: "inquiry-form" do |f| %>
-          <% if @inquiry.errors.any? %>
-            <div class="form-errors">
-              <% @inquiry.errors.full_messages.each do |msg| %><p><%= msg %></p><% end %>
-            </div>
-          <% end %>
+        <% if @inquiry.errors.any? %>
+          <div class="form-errors" style="margin-block:18px 0">
+            <% @inquiry.errors.full_messages.each do |message| %>
+              <p><%= message %></p>
+            <% end %>
+          </div>
+        <% end %>
 
+        <%= form_with model: @inquiry, url: inquire_path, method: :post, class: "form" do |f| %>
           <%= f.hidden_field :source_codeword %>
+          <%= f.hidden_field :persona %>
 
-          <label>
-            <span><%= t("inquire.fields.name") %></span>
-            <%= f.text_field :name, required: true, autocomplete: "name" %>
-          </label>
-
-          <label>
-            <span><%= t("inquire.fields.mobile") %></span>
-            <div class="mobile-field" data-phone-target="wrap">
-              <span class="prefix">+966</span>
-              <%= f.text_field :mobile, required: true, inputmode: "numeric",
-                    placeholder: "5X XXX XXXX", autocomplete: "tel",
-                    data: { phone_target: "input", action: "input->phone#format" } %>
+          <div class="form-row">
+            <div class="field">
+              <%= f.label :name, "Name" %>
+              <%= f.text_field :name, placeholder: "Your name" %>
             </div>
-          </label>
+            <div class="field" data-controller="phone">
+              <%= f.label :mobile, "Mobile" %>
+              <div class="mobile-field">
+                <span class="prefix">+966</span>
+                <%= f.text_field :mobile, placeholder: "5X XXX XXXX", inputmode: "tel",
+                      data: { phone_target: "input", action: "input->phone#format" } %>
+              </div>
+            </div>
+          </div>
 
-          <label>
-            <span><%= t("inquire.fields.email") %></span>
-            <%= f.email_field :email, autocomplete: "email" %>
-          </label>
+          <div class="field">
+            <%= f.label :email, "Email" %>
+            <%= f.email_field :email, placeholder: "you@example.com" %>
+          </div>
 
-          <label>
-            <span><%= t("inquire.fields.preferred_locale") %></span>
-            <%= f.select :preferred_locale,
-                  [[t("inquire.lang.ar"), "ar"], [t("inquire.lang.en"), "en"]],
-                  { selected: I18n.locale.to_s } %>
-          </label>
-
-          <label>
-            <span><%= t("inquire.fields.persona") %></span>
+          <div class="field">
+            <%= f.label :persona, "What brings you here?" %>
             <%= f.select :persona,
-                  Inquiry.persona.values.map { |v| [t("inquire.personas.#{v}"), v] },
-                  { include_blank: t("inquire.fields.persona_blank") } %>
-          </label>
+                  options_for_select([
+                    ["Tired, dull skin", "tired"],
+                    ["Hair & shedding", "hair"],
+                    ["Bridal — a wedding ahead", "bride"],
+                    ["Body, tone & contour", "maintain"],
+                    ["Long-term maintenance", "maintain"],
+                    ["I'm not sure yet", "unsure"]
+                  ], @inquiry.persona),
+                  { include_blank: "What brings you here?" } %>
+          </div>
 
-          <label>
-            <span><%= t("inquire.fields.preferred_time") %></span>
-            <%= f.text_field :preferred_time, placeholder: t("inquire.fields.preferred_time_ph") %>
-          </label>
+          <div class="field">
+            <%= f.label :preferred_time, "Preferred contact time" %>
+            <%= f.select :preferred_time,
+                  options_for_select(%w[Morning Afternoon Evening], @inquiry.preferred_time),
+                  { include_blank: "Preferred contact time" } %>
+          </div>
 
-          <%= f.submit t("inquire.submit"), class: "cta" %>
+          <%= f.submit "Send inquiry", class: "btn" %>
         <% end %>
       </div>
+
     </div>
   </div>
 </section>
 
-<%# What happens next — the SLA %>
+<%# Trust strip %>
 <section class="section" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("inquire.next_label") %></span>
+  <div class="section-inner">
+    <div class="trust">
+      <div class="reveal" data-reveal-target="item">
+        <h4>Within 2 hours</h4>
+        <p>Every inquiry is reviewed by our patient relations lead within two hours during business hours.</p>
+      </div>
+      <div class="reveal d1" data-reveal-target="item">
+        <h4>Al Malqa, Riyadh</h4>
+        <p>Saturday&ndash;Thursday &middot; 10:00&ndash;22:00. Friday closed. Exact address shared on scheduling.</p>
+      </div>
+      <div class="reveal d2" data-reveal-target="item">
+        <h4>Seen by two</h4>
+        <p>Your inquiry is reviewed only by our patient relations lead and Dr. Maysa. Nowhere else.</p>
+      </div>
     </div>
-    <ol class="next-steps">
-      <li class="reveal" data-reveal-target="item"><%= t("inquire.next.1") %></li>
-      <li class="reveal" data-reveal-target="item"><%= t("inquire.next.2") %></li>
-      <li class="reveal" data-reveal-target="item"><%= t("inquire.next.3") %></li>
-    </ol>
-  </div>
-</section>
-
-<%# Location, hours, privacy %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <p class="location reveal" data-reveal-target="item">
-      <strong><%= t("footer.address") %></strong><br>
-      <%= t("footer.hours") %>
-    </p>
-    <p class="privacy reveal" data-reveal-target="item"><%= t("inquire.privacy") %></p>
   </div>
 </section>

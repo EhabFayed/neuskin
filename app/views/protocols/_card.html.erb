@@ -1,11 +1,22 @@
-<%# One protocol card. Used on the homepage grid and the Protocols Hub. %>
-<% proto_imgs = { "maysa-method" => "site/protocols/skin.jpg", "90-day-glow-reset" => "site/protocols/skin.jpg",
-                  "brides-180" => "site/bridal-mood.jpg", "reset-crown" => "site/protocols/hair.jpg",
-                  "8-week-sculpt" => "site/lounge.jpg", "skin-insider" => "site/journal/j2.jpg" } %>
-<% img = proto_imgs[protocol.slug] %>
-<%= link_to protocol_path(protocol), class: "proto reveal#{' has-img' if img}", data: { reveal_target: "item" } do %>
-  <% if img %><span class="proto-img" style="--shot-photo: url('<%= asset_path(img) %>')" aria-hidden="true"></span><% end %>
-  <span class="pname" dir="<%= loc_dir %>"><%= protocol.name %><% if protocol.trademark %><span class="tm">™</span><% end %></span>
-  <p class="promise"><%= protocol.promise %></p>
-  <span class="meta"><%= protocol.meta %></span>
+<%# One protocol card — matches design (tag chip over image, Duration / For meta row). %>
+<% proto_imgs = { "maysa-method" => "site/protocols/maysa-method.jpg", "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
+                  "brides-180" => "site/protocols/bridal.jpg", "reset-crown" => "site/protocols/hair.jpg",
+                  "8-week-sculpt" => "site/protocols/sculpt.jpg", "skin-insider" => "site/protocols/insider.jpg" } %>
+<% img = proto_imgs[protocol.slug] || "site/protocols/skin.jpg" %>
+<% for_who = protocol.who_for.to_s.split(/[.\n]/).first.to_s.strip.truncate(26, omission: "…").presence || "By assessment" %>
+<%# Chip = category only (meta is "duration · category"); drop the duration part. %>
+<% chip = protocol.meta.to_s.split("·").last.to_s.strip.presence || protocol.meta %>
+<%= link_to protocol_path(protocol), class: "proto-card filter-item reveal", data: { reveal_target: "item", persona: protocol.persona } do %>
+  <span class="proto-card-img">
+    <%= image_tag img, alt: protocol.name %>
+    <span class="proto-card-tag"><%= chip %></span>
+  </span>
+  <span class="proto-card-body">
+    <h3><%= protocol.name %><% if protocol.trademark %><span class="tm">™</span><% end %></h3>
+    <p class="promise"><%= protocol.promise %></p>
+    <span class="proto-card-meta">
+      <span class="dur"><%= protocol.duration %></span>
+      <span class="for"><%= for_who %></span>
+    </span>
+  </span>
 <% end %>

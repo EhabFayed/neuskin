@@ -1,113 +1,148 @@
-<%# Protocol template (§07a–f) — identical structure across all six protocols. %>
+<%# Protocol detail — NeuSkin Clinic (standalone) design port. English / LTR. %>
 <% p = @protocol %>
 
-<%# 1 · Hero — the protocol as an editorial proposition %>
-<% proto_hero_imgs = { "maysa-method" => "site/protocols/skin.jpg", "90-day-glow-reset" => "site/protocols/skin.jpg",
-                       "brides-180" => "site/bridal-mood.jpg", "reset-crown" => "site/protocols/hair.jpg",
-                       "8-week-sculpt" => "site/lounge.jpg", "skin-insider" => "site/journal/j2.jpg" } %>
+<%# Hero image: map by slug like the _card partial, fallback treatment_room. %>
+<% proto_hero_imgs = { "maysa-method" => "site/protocols/maysa-method.jpg", "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
+                       "brides-180" => "site/protocols/bridal.jpg", "reset-crown" => "site/protocols/hair.jpg",
+                       "8-week-sculpt" => "site/protocols/sculpt.jpg", "skin-insider" => "site/protocols/insider.jpg" } %>
 <% hero_img = proto_hero_imgs[p.slug] %>
-<section class="section proto-hero<%= ' has-photo' if hero_img %>" data-controller="reveal"
-         <%= "style=\"--hero-photo: url('#{asset_path(hero_img)}')\"".html_safe if hero_img %>>
-  <% if hero_img %><div class="proto-hero-bg reveal-img hero-photo-kb" data-reveal-target="item" aria-hidden="true"></div><% end %>
-  <div class="wrap" style="position:relative;z-index:1">
-    <span class="label reveal" data-reveal-target="item"><%= t("protocols.label") %> · <%= p.duration %></span>
-    <h1 class="proto-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= p.name %><% if p.trademark %><span class="tm">™</span><% end %>
-    </h1>
-    <p class="proto-promise reveal" data-reveal-target="item"><%= p.promise %></p>
-    <%= link_to t("protocols.request", name: p.name), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta reveal", data: { reveal_target: "item" } %>
+<% for_who = p.who_for.to_s.split(/[.\n]/).first.to_s.strip.presence || "By assessment" %>
+
+<%# 1 · Split hero ---- %>
+<section class="split-hero" data-controller="reveal parallax">
+  <div class="split-hero-media reveal" data-reveal-target="item" data-parallax data-parallax-speed="0.08">
+    <% if hero_img %>
+      <%= image_tag hero_img, alt: p.name, class: "kb" %>
+    <% else %>
+      <%= ns_image_tag :treatment_room, alt: p.name, class: "kb" %>
+    <% end %>
+  </div>
+  <div class="split-hero-copy">
+    <span class="eyebrow reveal" data-reveal-target="item"><%= p.meta %></span>
+    <h1><span data-reveal="mask" data-reveal-delay="120"><span><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></span></span></h1>
+    <p class="lead reveal d2" data-reveal-target="item"><%= p.promise %></p>
+    <ul class="specs reveal d3" data-reveal-target="item">
+      <li><span class="k">Duration</span><span class="v"><%= p.duration %></span></li>
+      <li><span class="k">Format</span><span class="v">Doctor-led · personalised</span></li>
+      <li><span class="k">For</span><span class="v"><%= for_who %></span></li>
+    </ul>
+    <p class="reveal d4" data-reveal-target="item"><%= link_to "Request your plan", inquire_path(codeword: p.codeword, persona: p.persona), class: "btn" %></p>
   </div>
 </section>
 
-<%# 2 · Who it's for %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.who_for") %></span>
+<%# 2 · Who it's for ---- %>
+<% signs = [
+     ["01", "You want to know what your skin actually needs — measured, not guessed."],
+     ["02", "You'd rather follow one sequenced plan than collect single treatments."],
+     ["03", "You value discretion, and a doctor who will tell you what to skip."]
+   ] %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <span class="eyebrow">Who it's for</span>
+      <p class="lead"><%= p.who_for %></p>
     </div>
-    <p class="lead reveal" data-reveal-target="item"><%= p.who_for %></p>
-    <p class="honest reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= t("protocols.not_for_all") %>
-    </p>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <ul class="rows">
+        <% signs.each do |n, t| %>
+          <li><span class="n"><%= n %></span><span class="t"><%= t %></span></li>
+        <% end %>
+      </ul>
+      <p class="sign" style="font-style:italic;margin-top:24px">This protocol is not for everyone — and that is intentional.</p>
+    </div>
   </div>
 </section>
 
-<%# 3 · What's inside (clinical scope + staged timeline) %>
+<%# 3 · What's inside (staged timeline) ---- %>
 <section class="section" data-controller="reveal">
-  <div class="wrap">
+  <div class="section-inner">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.inside") %></span>
+      <span class="eyebrow">What's inside</span>
+      <h2><%= p.scope %></h2>
     </div>
-    <p class="lead reveal" data-reveal-target="item"><%= p.scope %></p>
-    <ol class="timeline">
+    <div class="stages reveal d1" data-reveal-target="item">
       <% p.stages.each do |stage| %>
-        <li class="stage reveal" data-reveal-target="item">
-          <span class="stage-week"><%= p.loc(stage, "week") %></span>
-          <h3 class="stage-title"><%= p.loc(stage, "title") %></h3>
-          <p class="stage-body"><%= p.loc(stage, "body") %></p>
-        </li>
+        <div class="stage">
+          <span class="wk"><%= p.loc(stage, "week") %></span>
+          <h3><%= p.loc(stage, "title") %></h3>
+          <p><%= p.loc(stage, "body") %></p>
+        </div>
       <% end %>
-    </ol>
-    <p class="note reveal" data-reveal-target="item">
-      <%= t("protocols.scope_note") %>
-    </p>
-  </div>
-</section>
-
-<%# 4 · What's not included %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("protocols.excludes") %></span>
     </div>
-    <p class="lead reveal" data-reveal-target="item"><%= p.excludes %></p>
+    <p class="note reveal" data-reveal-target="item" style="margin-top:46px">Final protocol scope is confirmed during your Maysa Method™ assessment. All treatments are personalised.</p>
   </div>
 </section>
 
-<%# 5 · The patient journey (shared 4-step, consistent across the site) %>
-<%= render "shared/patient_journey" %>
+<%# 4 · What's not included ---- %>
+<% exclusions = p.excludes.to_s.split(/[.;\n]/).map(&:strip).reject(&:blank?) %>
+<% exclusions = [p.excludes.to_s.strip] if exclusions.empty? %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <span class="eyebrow">What's not included</span>
+      <h2>Honesty, set early.</h2>
+    </div>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <ul class="exclude">
+        <% exclusions.each do |item| %>
+          <li><%= item %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<%# 6 · One consented patient story %>
-<% if p.patient_story.present? %>
-  <section class="section" data-controller="reveal">
-    <div class="wrap narrow">
-      <div class="voice reveal" data-reveal-target="item" style="text-align:center">
-        <span class="mark">”</span>
-        <p class="q" dir="<%= loc_dir %>"><%= p.loc(p.patient_story, "quote") %></p>
+<%# 5 · The patient journey (light contrast band, matching the-clinic) ---- %>
+<section class="section section--light" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="eyebrow">The patient journey</span>
+    </div>
+    <div class="journey reveal d1" data-reveal-target="item">
+      <div class="step"><span class="n">01</span><h3>Inquire</h3><p>A private message, reviewed personally.</p></div>
+      <div class="step"><span class="n">02</span><h3>Consult</h3><p>A doctor-led diagnostic assessment.</p></div>
+      <div class="step"><span class="n">03</span><h3>Plan</h3><p>A written, sequenced roadmap.</p></div>
+      <div class="step"><span class="n">04</span><h3>Treat</h3><p>Sessions, reviewed each quarter.</p></div>
+    </div>
+  </div>
+</section>
+
+<%# 6 · One consented patient story ---- %>
+<% if p.patient_story.present? && p.patient_story["quote_en"].present? %>
+  <section class="section section--surface" data-controller="reveal">
+    <div class="section-inner">
+      <div class="pull-band reveal" data-reveal-target="item">
+        <blockquote><%= p.patient_story["quote_en"] %></blockquote>
         <p class="by">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
       </div>
     </div>
   </section>
 <% end %>
 
-<%# 7 · Frequently asked (top 5) — accordion %>
+<%# 7 · Frequently asked ---- %>
 <% if p.faqs.present? %>
-  <section class="section section--deep" data-controller="reveal">
-    <div class="wrap narrow">
+  <section class="section" data-controller="reveal">
+    <div class="section-inner">
       <div class="sec-head reveal" data-reveal-target="item">
-        <span class="label"><%= t("protocols.faq") %></span>
+        <span class="eyebrow">Frequently asked</span>
       </div>
-      <% p.faqs.each do |faq| %>
-        <details class="faq reveal" data-reveal-target="item">
-          <summary dir="<%= loc_dir %>"><%= p.loc(faq, "q") %></summary>
-          <div class="faq-a">
-            <p dir="<%= loc_dir %>"><%= p.loc(faq, "a") %></p>
-            <p class="faq-sign" dir="rtl">— د. ميساء</p>
-          </div>
-        </details>
-      <% end %>
+      <div class="faq-group reveal d1" data-reveal-target="item">
+        <% p.faqs.each do |faq| %>
+          <details class="faq">
+            <summary><%= p.loc(faq, "q") %> <span class="sign">+</span></summary>
+            <div class="faq-a"><%= p.loc(faq, "a") %></div>
+          </details>
+        <% end %>
+      </div>
     </div>
   </section>
 <% end %>
 
-<%# 8 · CTA + WhatsApp codeword %>
-<section class="section section--night invite" id="inquire">
-  <div class="wrap">
-    <span class="label"><%= t("protocols.begin") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= p.name %></p>
-    <%= link_to t("protocols.request", name: p.name), inquire_path(codeword: p.codeword, persona: p.persona), class: "cta" %>
-    <p class="codeword">
-      <%= t("protocols.codeword_html", word: content_tag(:strong, p.codeword)).html_safe %>
-    </p>
-  </div>
+<%# 8 · Final CTA + WhatsApp codeword ---- %>
+<section class="cta-center" data-controller="reveal">
+  <h2 class="reveal" data-reveal-target="item">Begin <%= p.name %>.</h2>
+  <p class="reveal d1" data-reveal-target="item">Send the codeword <strong><%= p.codeword %></strong> on WhatsApp for a private inquiry.</p>
+  <p class="reveal d2" data-reveal-target="item">
+    <a class="btn" href="<%= whatsapp_url(codeword: p.codeword) %>" target="_blank" rel="noopener">Send "<%= p.codeword %>"</a>
+  </p>
 </section>

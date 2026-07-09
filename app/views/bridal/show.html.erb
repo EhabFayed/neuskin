@@ -1,34 +1,30 @@
-<%# Bridal Concierge — the bride funnel (§10). %>
+<%# Bridal Concierge — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# 1 · Hero + 2 · wedding-date picker (the number creates urgency) %>
-<section class="section bridal-hero has-photo" data-controller="countdown reveal"
-    style="--hero-photo: url('<%= asset_path('site/bridal-mood.jpg') %>')"
-    data-countdown-ample-value="<%= t('bridal.windows.ample') %>"
-    data-countdown-ideal-value="<%= t('bridal.windows.ideal') %>"
-    data-countdown-soon-value="<%= t('bridal.windows.soon') %>"
-    data-countdown-today-value="<%= t('bridal.windows.today') %>"
-    data-countdown-days-label-value="<%= t('bridal.days_label') %>">
-  <% bridal_clip = "bridal-mood.mp4" %>
-  <% if File.exist?(Rails.root.join("app/assets/videos", bridal_clip)) %>
-    <video class="bridal-hero-bg hero-video" autoplay muted loop playsinline poster="<%= asset_path('site/bridal-mood.jpg') %>" aria-hidden="true">
-      <source src="<%= asset_path(bridal_clip) %>" type="video/mp4">
-    </video>
-  <% else %>
-    <div class="bridal-hero-bg reveal-img hero-photo-kb" data-reveal-target="item" aria-hidden="true"></div>
-  <% end %>
-  <div class="wrap narrow" style="text-align:center; position: relative; z-index: 1">
-    <span class="label reveal" data-reveal-target="item"><%= t("bridal.eyebrow") %></span>
-    <h1 class="bridal-title reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("bridal.title_ar"), en: t("bridal.title_en")) %>
+<%# 1 · Landscape hero (overlay) + wedding-date countdown ---- %>
+<section class="over-hero" data-controller="countdown reveal parallax"
+         data-countdown-ample-value="<%= sec_text("bridal", "bridal_countdown", "ample").presence || "There is ample time to plan calmly, in the right order." %>"
+         data-countdown-ideal-value="<%= sec_text("bridal", "bridal_countdown", "ideal").presence || "An ideal window — the Bride's 180 fits beautifully." %>"
+         data-countdown-soon-value="<%= sec_text("bridal", "bridal_countdown", "soon").presence || "Close, but workable — we'll prioritise what matters most." %>"
+         data-countdown-today-value="<%= sec_text("bridal", "bridal_countdown", "today").presence || "Let's speak today — we'll make the most of every week." %>"
+         data-countdown-days-label-value="<%= sec_text("bridal", "bridal_countdown", "days_label").presence || "days to plan, calmly." %>">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= sec_image_tag("bridal", "bridal_hero", :bride_bouquet, alt: "Bridal", class: "kb") %>
+  </div>
+  <div class="over-hero-copy">
+    <div class="over-hero-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="eyebrow no-rule"><%= sec_text("bridal", "bridal_hero", "eyebrow").presence || "Bridal Concierge · Riyadh" %></span>
+    </div>
+    <h1>
+      <span class="line" data-reveal="mask" data-reveal-delay="150"><span><%= sec_text("bridal", "bridal_hero", "title_1").presence || "Skin," %></span></span>
+      <span class="line" data-reveal="mask" data-reveal-delay="260"><span><%= sec_text("bridal", "bridal_hero", "title_2").presence || "measured." %></span></span>
+      <span class="line em" data-reveal="mask" data-reveal-delay="410"><span><%= sec_text("bridal", "bridal_hero", "title_em").presence || "Confidence, quiet." %></span></span>
     </h1>
-
-    <div class="date-ask reveal" data-reveal-target="item">
-      <label for="wedding-date" dir="<%= loc_dir %>">
-        <%= loc(ar: t("bridal.date_ask_ar"), en: t("bridal.date_ask_en")) %>
-      </label>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560"><%= sec_text("bridal", "bridal_hero", "lead").presence || "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa." %></p>
+    <div class="date-ask reveal d2" data-reveal-target="item">
+      <label for="wedding-date"><%= sec_text("bridal", "bridal_hero", "date_label").presence || "Tell us your wedding date" %></label>
       <input type="date" id="wedding-date"
              data-countdown-target="input" data-action="change->countdown#change">
-
       <div class="countdown" data-countdown-target="output" hidden>
         <span class="countdown-days" data-countdown-target="days"></span>
         <span class="countdown-msg" data-countdown-target="message"></span>
@@ -37,106 +33,121 @@
   </div>
 </section>
 
-<%# 3 · The Bride's 180 timeline, month by month (reuses the protocol record) %>
-<% if @protocol %>
-  <section class="section section--deep" data-controller="reveal">
-    <div class="wrap">
-      <div class="sec-head reveal" data-reveal-target="item">
-        <span class="label"><%= t("bridal.timeline_label") %></span>
-        <h2 dir="<%= loc_dir %>">
-          <%= loc(ar: @protocol.name_ar, en: @protocol.name_en) %>
-        </h2>
+<%# 2 · The Bride's 180 — three-stage timeline ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <span class="eyebrow"><%= sec_text("bridal", "bridal_timeline", "eyebrow").presence || "The Bride's 180" %></span>
+      <h2><%= sec_text("bridal", "bridal_timeline", "title").presence || "Six months, planned in the right order — so nothing is rushed at the end." %></h2>
+    </div>
+    <div class="cols cols-3 reveal d1" data-reveal-target="item">
+      <div class="col">
+        <span class="num"><%= sec_text("bridal", "bridal_timeline", "stage_1_num").presence || "Months 1–2" %></span>
+        <h3><%= sec_text("bridal", "bridal_timeline", "stage_1_title").presence || "Foundation" %></h3>
+        <p><%= sec_text("bridal", "bridal_timeline", "stage_1_body").presence || "Diagnose, calm and correct. The slow, invisible work that everything later depends on." %></p>
       </div>
-      <ol class="timeline">
-        <% @protocol.stages.each do |stage| %>
-          <li class="stage reveal" data-reveal-target="item">
-            <span class="stage-week"><%= @protocol.loc(stage, "week") %></span>
-            <h3 class="stage-title"><%= @protocol.loc(stage, "title") %></h3>
-            <p class="stage-body"><%= @protocol.loc(stage, "body") %></p>
-          </li>
-        <% end %>
-      </ol>
+      <div class="col">
+        <span class="num"><%= sec_text("bridal", "bridal_timeline", "stage_2_num").presence || "Months 3–4" %></span>
+        <h3><%= sec_text("bridal", "bridal_timeline", "stage_2_title").presence || "Build" %></h3>
+        <p><%= sec_text("bridal", "bridal_timeline", "stage_2_body").presence || "Glow, contour and hair density — sequenced, then reviewed against where you began." %></p>
+      </div>
+      <div class="col">
+        <span class="num"><%= sec_text("bridal", "bridal_timeline", "stage_3_num").presence || "Months 5–6" %></span>
+        <h3><%= sec_text("bridal", "bridal_timeline", "stage_3_title").presence || "Polish & lock" %></h3>
+        <p><%= sec_text("bridal", "bridal_timeline", "stage_3_body").presence || "Refinement, then a no-experiments rule. The last fortnight is for rest, not risk." %></p>
+      </div>
     </div>
-  </section>
-<% end %>
+  </div>
+</section>
 
-<%# 4 · What's planned, what's flexible, what's locked (reassurance) %>
+<%# 3 · Planned / Flexible / Locked (light contrast band) ---- %>
+<section class="section section--light" data-controller="reveal">
+  <div class="section-inner">
+    <div class="cols cols-3 reveal" data-reveal-target="item">
+      <div class="col">
+        <h3><%= sec_text("bridal", "bridal_pillars", "pillar_1_title").presence || "Planned" %></h3>
+        <p><%= sec_text("bridal", "bridal_pillars", "pillar_1_body").presence || "Every step mapped to your date, so the work happens early and gently." %></p>
+      </div>
+      <div class="col">
+        <h3><%= sec_text("bridal", "bridal_pillars", "pillar_2_title").presence || "Flexible" %></h3>
+        <p><%= sec_text("bridal", "bridal_pillars", "pillar_2_body").presence || "Room to adjust as your skin responds — reviewed, never improvised." %></p>
+      </div>
+      <div class="col">
+        <h3><%= sec_text("bridal", "bridal_pillars", "pillar_3_title").presence || "Locked" %></h3>
+        <p><%= sec_text("bridal", "bridal_pillars", "pillar_3_body").presence || "No new treatments in the final two weeks. The plan closes, and you simply arrive." %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 4 · Three bride quotes ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="quotes reveal" data-reveal-target="item">
+      <div class="quote">
+        <span class="mark">“</span>
+        <p><%= sec_text("bridal", "bridal_quotes", "quote_1_text").presence || "Everything was decided months before. The last week, I just slept." %></p>
+        <p class="by"><%= sec_text("bridal", "bridal_quotes", "quote_1_by").presence || "L.M. · 2024" %></p>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p><%= sec_text("bridal", "bridal_quotes", "quote_2_text").presence || "No one could point to one thing. I just looked like myself, rested." %></p>
+        <p class="by"><%= sec_text("bridal", "bridal_quotes", "quote_2_by").presence || "A.R. · 2025" %></p>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p><%= sec_text("bridal", "bridal_quotes", "quote_3_text").presence || "My mother started her own quiet plan beside mine. We came together." %></p>
+        <p class="by"><%= sec_text("bridal", "bridal_quotes", "quote_3_by").presence || "F.K. · 2025" %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 5 · For the mother & sister of the bride ---- %>
 <section class="section" data-controller="reveal">
-  <div class="wrap">
+  <div class="section-inner">
+    <div class="concierge-card sec-head-row reveal" data-reveal-target="item">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow no-rule" style="font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-size:24px"><%= sec_text("bridal", "bridal_concierge", "title").presence || "For the mother & sister of the bride." %></span>
+        <p class="body-copy" style="margin-top:16px;max-width:520px"><span><%= sec_text("bridal", "bridal_concierge", "body").presence || "A quiet parallel plan, arranged with the same discretion. Ask us during your consultation." %></span></p>
+      </div>
+      <a class="arrowlink" href="<%= whatsapp_url(codeword: "BRIDE") %>" target="_blank" rel="noopener"><%= sec_text("bridal", "bridal_concierge", "link").presence || "Ask privately →" %></a>
+    </div>
+  </div>
+</section>
+
+<%# 6 · Bridal checklist lead form (existing flow) ---- %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner" style="max-width:560px">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("bridal.reassure_label") %></span>
+      <span class="eyebrow"><%= sec_text("bridal", "bridal_checklist", "eyebrow").presence || "The 6-month bridal checklist" %></span>
+      <h2><%= sec_text("bridal", "bridal_checklist", "title").presence || "A quiet plan, sent to your inbox." %></h2>
     </div>
-    <div class="reassure-grid">
-      <% %w[planned flexible locked].each do |kind| %>
-        <div class="reassure reassure--<%= kind %> reveal" data-reveal-target="item">
-          <h3 dir="<%= loc_dir %>">
-            <%= loc(ar: t("bridal.reassure.#{kind}.title_ar"), en: t("bridal.reassure.#{kind}.title_en")) %>
-          </h3>
-          <p><%= t("bridal.reassure.#{kind}.body") %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<%# 5 · Three anonymous bridal quotes %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
-    <div class="voices">
-      <% t("bridal.quotes").each do |q| %>
-        <div class="voice reveal" data-reveal-target="item">
-          <span class="mark">”</span>
-          <p class="q" dir="<%= loc_dir %>"><%= loc(ar: q[:ar], en: q[:en]) %></p>
-          <p class="by">— <%= q[:by] %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<%# 6 · Mother / sister of the bride sub-card %>
-<section class="section" data-controller="reveal">
-  <div class="wrap narrow">
-    <div class="family-card reveal" data-reveal-target="item">
-      <span class="label"><%= t("bridal.family_label") %></span>
-      <p dir="<%= loc_dir %>">
-        <%= loc(ar: t("bridal.family_ar"), en: t("bridal.family_en")) %>
-      </p>
-    </div>
-  </div>
-</section>
-
-<%# 8 · Lead magnet — the 6-month bridal skin checklist (email-gated) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap narrow checklist">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("bridal.checklist.label") %></span>
-      <h2 class="checklist-title" dir="<%= loc_dir %>">
-        <%= loc(ar: t("bridal.checklist.title_ar"), en: t("bridal.checklist.title_en")) %>
-      </h2>
-    </div>
-
     <% if params[:checklist] == "sent" %>
-      <p class="checklist-sent reveal" data-reveal-target="item"><%= t("bridal.checklist.sent") %></p>
+      <p class="lead reveal" data-reveal-target="item"><%= sec_text("bridal", "bridal_checklist", "sent_message").presence || "Thank you — your checklist is on its way." %></p>
     <% else %>
-      <%= form_with model: @lead, url: bridal_checklist_path, method: :post, class: "checklist-form reveal", data: { reveal_target: "item" } do |f| %>
+      <%= form_with model: @lead, url: bridal_checklist_path, method: :post, class: "form reveal", data: { reveal_target: "item" } do |f| %>
         <% if @lead.errors.any? %>
           <div class="form-errors"><% @lead.errors.full_messages.each do |m| %><p><%= m %></p><% end %></div>
         <% end %>
-        <%= f.email_field :email, required: true, placeholder: t("bridal.checklist.email_ph") %>
-        <%= f.submit t("bridal.checklist.button"), class: "cta" %>
+        <div class="form-row">
+          <div class="field">
+            <%= f.label :email, sec_text("bridal", "bridal_checklist", "email_label").presence || "Your email" %>
+            <%= f.email_field :email, required: true, placeholder: "you@example.com" %>
+          </div>
+        </div>
+        <%= f.submit (sec_text("bridal", "bridal_checklist", "submit_label").presence || "Send me the checklist"), class: "btn" %>
       <% end %>
-      <p class="checklist-note reveal" data-reveal-target="item"><%= t("bridal.checklist.note") %></p>
+      <p class="note reveal" data-reveal-target="item" style="margin-top:16px"><%= sec_text("bridal", "bridal_checklist", "note").presence || "One email. No list, no follow-ups you didn't ask for." %></p>
     <% end %>
   </div>
 </section>
 
-<%# 7 · CTA — request your Bride's 180 plan · codeword BRIDE %>
-<section class="section section--night invite">
-  <div class="wrap">
-    <span class="label"><%= t("bridal.cta_label") %></span>
-    <p class="line" dir="<%= loc_dir %>"><%= loc(ar: t("bridal.cta_ar"), en: t("bridal.cta_en")) %></p>
-    <%= link_to t("bridal.cta_button"), inquire_path(codeword: "BRIDE", persona: "bride"), class: "cta" %>
-    <p class="codeword"><%= t("protocols.codeword_html", word: content_tag(:strong, "BRIDE")).html_safe %></p>
-  </div>
+<%# 7 · Final CTA — codeword BRIDE ---- %>
+<section class="cta-center" data-controller="reveal">
+  <h2 class="reveal" data-reveal-target="item"><%= sec_text("bridal", "bridal_cta", "title").presence || "Request your Bride's 180 plan." %></h2>
+  <p class="reveal d1" data-reveal-target="item"><%= sec_text("bridal", "bridal_cta", "subtext").presence || "Send the codeword" %> <strong>BRIDE</strong> <%= sec_text("bridal", "bridal_cta", "subtext_suffix").presence || "on WhatsApp." %></p>
+  <p class="reveal d2" data-reveal-target="item">
+    <a class="btn" href="<%= whatsapp_url(codeword: "BRIDE") %>" target="_blank" rel="noopener"><%= sec_text("bridal", "bridal_cta", "button").presence || "Begin the conversation" %></a>
+  </p>
 </section>

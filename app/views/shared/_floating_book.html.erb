@@ -1,9 +1,2 @@
 <%# Floating booking affordance — fades in after the hero (booking_controller). %>
-<div class="floating-book" data-controller="booking">
-  <%= link_to inquire_path, class: "floating-book-btn" do %>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-      <path d="M3 21l1.6-4.5A8.4 8.4 0 1 1 8 19.4L3 21z"></path>
-    </svg>
-    <span><%= t("cta.inquire") %></span>
-  <% end %>
-</div>
+<%= link_to "Book a consultation", inquire_path, class: "floating-book", data: { controller: "booking" } %>

@@ -1,94 +1,118 @@
-<%# Private Care / VIP (§09) — gated, by invitation. Discretion is the entire offer. %>
+<%# Private Care / VIP (design §isVip) — gated, by invitation. Discretion is the entire offer. %>
 
-<%# Hero — a single sentence %>
-<section class="section vip-hero">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label"><%= t("vip.eyebrow") %></span>
-    <p class="vip-statement" dir="<%= loc_dir %>">
-      <%= loc(ar: t("vip.statement_ar"), en: t("vip.statement_en")) %>
-    </p>
+<%
+  vip_includes = [
+    sec_text("private_care", "private_includes", "item_1").presence || "A standing relationship with Dr. Maysa, not a queue.",
+    sec_text("private_care", "private_includes", "item_2").presence || "Same-week scheduling, including outside published hours.",
+    sec_text("private_care", "private_includes", "item_3").presence || "Quarterly reviews with your full skin history in the room.",
+    sec_text("private_care", "private_includes", "item_4").presence || "Discreet entry and a private suite for every visit.",
+    sec_text("private_care", "private_includes", "item_5").presence || "Priority on new protocols before they are offered widely.",
+    sec_text("private_care", "private_includes", "item_6").presence || "One point of contact who already knows your file."
+  ]
+
+  vip_tiers = [
+    { badge: sec_text("private_care", "private_tiers", "tier_1_badge").presence || "I", name: sec_text("private_care", "private_tiers", "tier_1_name").presence || "Quiet", line: sec_text("private_care", "private_tiers", "tier_1_line").presence || "The essential relationship.",
+      desc: sec_text("private_care", "private_tiers", "tier_1_desc").presence || "Doctor-led care on your schedule, with quarterly reviews and a single private point of contact." },
+    { badge: sec_text("private_care", "private_tiers", "tier_2_badge").presence || "II", name: sec_text("private_care", "private_tiers", "tier_2_name").presence || "Considered", line: sec_text("private_care", "private_tiers", "tier_2_line").presence || "For the long view.",
+      desc: sec_text("private_care", "private_tiers", "tier_2_desc").presence || "Everything in Quiet, plus priority access to new protocols and an annual full reassessment." },
+    { badge: sec_text("private_care", "private_tiers", "tier_3_badge").presence || "III", name: sec_text("private_care", "private_tiers", "tier_3_name").presence || "Invited", line: sec_text("private_care", "private_tiers", "tier_3_line").presence || "By Dr. Maysa, personally.",
+      desc: sec_text("private_care", "private_tiers", "tier_3_desc").presence || "A bespoke relationship arranged case by case. Extended discretion, travel coordination, family care." }
+  ]
+%>
+
+<%# Hero — landscape overlay (matches bridal-concierge) %>
+<section class="over-hero" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <%= sec_image_tag("private_care", "private_hero", :resort, alt: "Private Care", class: "kb") %>
+  </div>
+  <div class="over-hero-copy">
+    <div class="over-hero-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="eyebrow no-rule"><%= sec_text("private_care", "private_hero", "eyebrow").presence || "Private Care · By invitation" %></span>
+    </div>
+    <h1>
+      <span class="line" data-reveal="mask" data-reveal-delay="150"><span><%= sec_text("private_care", "private_hero", "title_1").presence || "Private Care" %></span></span>
+      <span class="line" data-reveal="mask" data-reveal-delay="260"><span><%= sec_text("private_care", "private_hero", "title_2").presence || "is by invitation." %></span></span>
+      <span class="line em" data-reveal="mask" data-reveal-delay="410"><span><%= sec_text("private_care", "private_hero", "title_em").presence || "You may already qualify." %></span></span>
+    </h1>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560"><%= sec_text("private_care", "private_hero", "lead").presence || "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite." %></p>
   </div>
 </section>
 
-<%# 1 · What Private Care includes %>
-<section class="section" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("vip.includes_label") %></span>
+<%# What Private Care includes %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head">
+      <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("private_care", "private_includes", "heading").presence || "What Private Care includes" %></span>
     </div>
-    <ul class="vip-includes">
-      <% t("vip.includes").each do |item| %>
-        <li class="reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-          <%= loc(ar: item[:ar], en: item[:en]) %>
-        </li>
+    <ul class="vip-rows vip-rows--2col reveal d1" data-reveal-target="item">
+      <% vip_includes.each do |item| %>
+        <li><%= item %></li>
       <% end %>
     </ul>
   </div>
 </section>
 
-<%# 2 · Membership tiers (no public pricing) %>
-<section class="section section--deep" data-controller="reveal">
-  <div class="wrap">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="label"><%= t("vip.tiers_label") %></span>
+<%# Membership tiers %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head">
+      <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("private_care", "private_tiers", "heading").presence || "Membership tiers" %></span>
     </div>
-    <div class="vip-tiers">
-      <% t("vip.tiers").each do |tier| %>
-        <div class="vip-tier reveal" data-reveal-target="item">
-          <h3 dir="<%= loc_dir %>">
-            <%= loc(ar: tier[:name_ar], en: tier[:name_en]) %>
-          </h3>
-          <p class="vip-tier-value"><%= tier[:value] %></p>
+    <div class="tiers">
+      <% vip_tiers.each_with_index do |tier, i| %>
+        <div class="tier reveal d<%= i + 1 %>" data-reveal-target="item">
+          <span class="badge"><%= tier[:badge] %></span>
+          <h3><%= tier[:name] %></h3>
+          <div class="line"><%= tier[:line] %></div>
+          <p><%= tier[:desc] %></p>
         </div>
       <% end %>
     </div>
   </div>
 </section>
 
-<%# 3 · Application (the only way in) — composes a private WhatsApp message %>
-<section class="section section--night vip-apply" id="apply" data-controller="vipapply">
-  <div class="wrap narrow">
-    <div class="sec-head" style="text-align:center">
-      <span class="label"><%= t("vip.apply_label") %></span>
-      <h2 class="vip-apply-title" dir="<%= loc_dir %>">
-        <%= loc(ar: t("vip.apply_title_ar"), en: t("vip.apply_title_en")) %>
-      </h2>
+<%# Application — quote (left) + form (right); composes a private WhatsApp message via the vipapply controller %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner" data-controller="vipapply">
+    <div class="split apply-split">
+      <%# Left — quote %>
+      <div class="apply-quote reveal" data-reveal-target="item">
+        <span class="eyebrow"><%= sec_text("private_care", "private_apply", "eyebrow").presence || "Application" %></span>
+        <blockquote>
+          <%= sec_text("private_care", "private_apply", "quote").presence || "“Discretion is not a feature here. It is the entire promise — and I keep it personally.”" %>
+        </blockquote>
+        <cite><%= sec_text("private_care", "private_apply", "quote_cite").presence || "— Dr. Maysa" %></cite>
+        <p class="apply-note">
+          <%= sec_text("private_care", "private_apply", "note").presence || "Private Care has no public booking. Tell us a little, and if it is the right fit, we will reach out personally and privately." %>
+        </p>
+      </div>
+
+      <%# Right — form %>
+      <div class="form reveal d1" data-reveal-target="item">
+        <div class="field">
+          <label for="vip_name"><%= sec_text("private_care", "private_apply", "field_name_label").presence || "Name" %></label>
+          <input id="vip_name" type="text" placeholder="<%= sec_text("private_care", "private_apply", "field_name_placeholder").presence || "Your name" %>" data-vipapply-target="name">
+        </div>
+        <div class="field">
+          <label for="vip_contact"><%= sec_text("private_care", "private_apply", "field_contact_label").presence || "Contact" %></label>
+          <input id="vip_contact" type="text" placeholder="<%= sec_text("private_care", "private_apply", "field_contact_placeholder").presence || "Mobile or email" %>" data-vipapply-target="contact">
+        </div>
+        <div class="field">
+          <label for="vip_referral"><%= sec_text("private_care", "private_apply", "field_referral_label").presence || "Referral source" %></label>
+          <input id="vip_referral" type="text" placeholder="<%= sec_text("private_care", "private_apply", "field_referral_placeholder").presence || "How did you hear of us?" %>" data-vipapply-target="referral">
+        </div>
+        <div class="field">
+          <label for="vip_note"><%= sec_text("private_care", "private_apply", "field_note_label").presence || "A brief note" %></label>
+          <textarea id="vip_note" placeholder="<%= sec_text("private_care", "private_apply", "field_note_placeholder").presence || "Anything you'd like us to know" %>" data-vipapply-target="note"></textarea>
+        </div>
+        <a class="btn" target="_blank" rel="noopener"
+           href="<%= whatsapp_url(codeword: "PRIVATE") %>"
+           data-vipapply-target="submit"
+           data-action="vipapply#compose">
+          <%= sec_text("private_care", "private_apply", "submit_button").presence || "Submit application" %>
+        </a>
+      </div>
     </div>
-
-    <div class="vip-form">
-      <label>
-        <span><%= t("vip.fields.name") %></span>
-        <input type="text" data-vipapply-target="name" autocomplete="name">
-      </label>
-      <label>
-        <span><%= t("vip.fields.contact") %></span>
-        <input type="text" data-vipapply-target="contact" inputmode="tel" autocomplete="tel">
-      </label>
-      <label>
-        <span><%= t("vip.fields.referral") %></span>
-        <input type="text" data-vipapply-target="referral">
-      </label>
-      <label>
-        <span><%= t("vip.fields.note") %></span>
-        <textarea data-vipapply-target="note" rows="3"></textarea>
-      </label>
-
-      <%# Falls back to a plain WhatsApp link if JS is off; JS rewrites href with the composed message. %>
-      <a class="cta" data-vipapply-target="submit"
-         data-action="vipapply#compose"
-         href="<%= whatsapp_url(codeword: "PRIVATE") %>"
-         target="_blank" rel="noopener"><%= t("vip.apply_button") %></a>
-    </div>
-  </div>
-</section>
-
-<%# 4 · Discretion policy, signed %>
-<section class="section" data-controller="reveal">
-  <div class="wrap narrow" style="text-align:center">
-    <span class="label reveal" data-reveal-target="item"><%= t("vip.discretion_label") %></span>
-    <p class="vip-discretion reveal" data-reveal-target="item" dir="<%= loc_dir %>">
-      <%= loc(ar: t("vip.discretion_ar"), en: t("vip.discretion_en")) %>
-    </p>
-    <p class="signed reveal" data-reveal-target="item" dir="rtl">— د. ميساء</p>
   </div>
 </section>

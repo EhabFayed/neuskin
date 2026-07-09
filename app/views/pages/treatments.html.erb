@@ -1,0 +1,47 @@
+<%# Treatments · by outcome — NeuSkin Clinic (standalone) design port. English / LTR. %>
+
+<%# Five outcome cards, one per sub-page (design §08). Copy and image come
+    from the same "Treatment Outcomes" dashboard sections that drive each
+    sub-page's hero, so editing one section updates both. %>
+<% outcomes = [
+     { slug: "skin",        image: :outcome_skin,        title: "Tired, dull skin",    headline: "Restoring vitality to tired, dull skin" },
+     { slug: "hair",        image: :outcome_hair,        title: "Thinning & shedding", headline: "Comprehensive care for thinning hair" },
+     { slug: "body",        image: :outcome_body,        title: "Tone & contour",      headline: "Sculpting and toning your natural silhouette" },
+     { slug: "injectables", image: :outcome_injectables, title: "Lines & volume",      headline: "Preserving natural contours before any intervention" },
+     { slug: "devices",     image: :outcome_devices,     title: "Advanced devices",    headline: "Our devices: True purpose, visible results" }
+   ] %>
+
+<%# ---- Hero ---- %>
+<section class="page-hero" data-controller="reveal">
+  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("treatments", "treatments_hero", "eyebrow").presence || "Treatments · by outcome" %></span>
+  <h1>
+    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("treatments", "treatments_hero", "title_1").presence || "We don't treat machines." %></span></span>
+    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("treatments", "treatments_hero", "title_em").presence || "We treat outcomes." %></span></span>
+  </h1>
+  <p class="lead reveal d2" data-reveal-target="item">
+    <%= sec_text("treatments", "treatments_hero", "lead").presence || "Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to." %>
+  </p>
+</section>
+
+<%# ---- Outcomes grid ---- %>
+<section class="section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="outcome-grid">
+      <% outcomes.each_with_index do |o, i| %>
+        <% kind = "outcome_#{o[:slug]}" %>
+        <%= link_to treatment_outcome_path(outcome: o[:slug]),
+                    class: "proto-card reveal#{" d#{i + 1}" if i < 6}", data: { reveal_target: "item" } do %>
+          <span class="proto-card-img"><%= sec_image_tag("treatment_outcomes", kind, o[:image],
+                                                         alt: sec_text("treatment_outcomes", kind, "headline").presence || o[:headline]) %></span>
+          <span class="proto-card-body">
+            <span class="tag"><%= sec_text("treatment_outcomes", kind, "title").presence || o[:title] %></span>
+            <h3><%= sec_text("treatment_outcomes", kind, "headline").presence || o[:headline] %></h3>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+    <p class="reveal" data-reveal-target="item" style="margin-top:var(--space-block);text-align:center">
+      <%= link_to sec_text("treatments", "treatments_footer", "protocols_link").presence || "View all six protocols →", protocols_path, class: "arrowlink" %>
+    </p>
+  </div>
+</section>
