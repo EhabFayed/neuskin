@@ -3,7 +3,7 @@
 <%# ---- Full-bleed hero, text overlaid (1:1 port of design §isClinic) ---- %>
 <section class="over-hero over-hero--clinic" data-controller="reveal parallax">
   <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
-    <%= sec_image_tag("the_clinic", "clinic_hero", :treatment_room, alt: "NeuSkin interior", class: "kb") %>
+    <%= sec_image_tag("the_clinic", "clinic_hero", :clinic_hero, alt: "NeuSkin interior", class: "kb") %>
   </div>
   <div class="over-hero-copy over-hero-copy--wide">
     <div class="clinic-hero-eyebrow reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_hero", "eyebrow").presence || "About · The Clinic" %></div>
@@ -34,7 +34,7 @@
   <div class="section-inner">
     <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_space", "eyebrow").presence || "The Space" %></span>
     <div class="shot-grid reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
-      <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:lounge, :diptyque, :device_table, :treatment_room, :interior_ext]) %>
+      <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5]) %>
       <figure class="shot w4"><%= image_tag clinic_space_imgs[0], alt: "Waiting lounge" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_1_caption").presence || "The lounge" %></figcaption></figure>
       <figure class="shot w2"><%= image_tag clinic_space_imgs[1], alt: "In the detail" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_2_caption").presence || "In the detail" %></figcaption></figure>
       <figure class="shot w2"><%= image_tag clinic_space_imgs[2], alt: "Device room" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_3_caption").presence || "Device room" %></figcaption></figure>

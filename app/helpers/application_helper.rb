@@ -9,13 +9,22 @@ module ApplicationHelper
   # design references images by semantic key (img.portraitNatural, img.lounge…);
   # this maps each to an asset on disk so every page references the same files.
   NS_IMAGES = {
-    portrait_natural: "site/people/maysa.jpg",
-    doctor_coat:      "site/people/maysa.jpg",
-    treatment_room:   "site/space/treatment.jpg",
-    lounge:           "site/space/waiting-lounge.jpg",
-    device_table:     "site/space/device-room.jpg",
-    diptyque:         "site/space/private-suite.jpg",
-    interior_ext:     "site/space/entrance.jpg",
+    # Real clinic photography (content team batch, July 2026) — WebP.
+    portrait_natural: "site/people/maysa.webp",
+    doctor_coat:      "site/people/maysa.webp",
+    maysa_hero:       "site/people/maysa-hero.webp",
+    hero_clinic:      "site/hero-clinic.webp",
+    clinic_hero:      "site/space/clinic-hero.webp",
+    treatment_room:   "site/space/treatment.webp",
+    lounge:           "site/space/waiting-lounge.webp",
+    device_table:     "site/space/device-room.webp",
+    diptyque:         "site/space/private-suite.webp",
+    interior_ext:     "site/space/entrance.webp",
+    clinic_shot_1:    "site/space/clinic-1.webp",
+    clinic_shot_2:    "site/space/clinic-2.webp",
+    clinic_shot_3:    "site/space/clinic-3.webp",
+    clinic_shot_4:    "site/space/clinic-4.webp",
+    clinic_shot_5:    "site/space/clinic-5.webp",
     consult:          "site/space/consultation.jpg",
     beauty_eyes:      "site/protocols/skin.jpg",
     bride_bouquet:    "site/bridal-mood.jpg",
@@ -25,8 +34,8 @@ module ApplicationHelper
     outcome_skin:        "site/protocols/skin.jpg",
     outcome_hair:        "site/protocols/hair.jpg",
     outcome_body:        "site/protocols/sculpt.jpg",
-    outcome_injectables: "site/space/treatment.jpg",
-    outcome_devices:     "site/space/device-room.jpg"
+    outcome_injectables: "site/space/treatment.webp",
+    outcome_devices:     "site/space/device-room.webp"
   }.freeze
 
   # Asset path for a design image key (symbol). Falls back to the brand mark.
