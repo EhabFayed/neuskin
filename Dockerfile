@@ -54,8 +54,11 @@ FROM base
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
-# Run and own only the runtime files as a non-root user for security
-RUN groupadd --system --gid 1000 rails && \
+# Run and own only the runtime files as a non-root user for security.
+# mkdir -p first: log/ tmp/ storage/ hold no tracked files, so a clean git
+# clone's build context does not contain them and chown would fail.
+RUN mkdir -p db log storage tmp && \
+    groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
