@@ -13,6 +13,7 @@ module ApplicationHelper
     portrait_natural: "site/people/maysa.webp",
     doctor_coat:      "site/people/maysa.webp",
     maysa_hero:       "site/people/maysa-hero.webp",
+    founder_portrait: "site/people/maysa-founder.webp",
     hero_clinic:      "site/hero-clinic.webp",
     clinic_hero:      "site/space/clinic-hero.webp",
     treatment_room:   "site/space/treatment.webp",

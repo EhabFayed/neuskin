@@ -8,7 +8,7 @@
 module SeedImages
   SINGLE = {
     ["home", "home_hero"]        => :hero_clinic,
-    ["home", "home_founder"]     => :portrait_natural,
+    ["home", "home_founder"]     => :founder_portrait,
     ["home", "home_cta"]         => :lounge,
     ["dr_maysa", "drmaysa_hero"] => :maysa_hero,
     ["the_clinic", "clinic_hero"] => :clinic_hero,
