@@ -19,7 +19,7 @@
   </div>
   <div class="split-hero-copy">
     <span class="eyebrow reveal" data-reveal-target="item"><%= p.meta %></span>
-    <h1><span data-reveal="mask" data-reveal-delay="120"><span><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></span></span></h1>
+    <h1><span data-reveal="mask" data-reveal-delay="120"><span><bdi><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></bdi></span></span></h1>
     <p class="lead reveal d2" data-reveal-target="item"><%= p.promise %></p>
     <ul class="specs reveal d3" data-reveal-target="item">
       <li><span class="k">Duration</span><span class="v"><%= p.duration %></span></li>

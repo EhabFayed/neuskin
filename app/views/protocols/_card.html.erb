@@ -12,7 +12,7 @@
     <span class="proto-card-tag"><%= chip %></span>
   </span>
   <span class="proto-card-body">
-    <h3><%= protocol.name %><% if protocol.trademark %><span class="tm">™</span><% end %></h3>
+    <h3><bdi><%= protocol.name %><% if protocol.trademark %><span class="tm">™</span><% end %></bdi></h3>
     <p class="promise"><%= protocol.promise %></p>
     <span class="proto-card-meta">
       <span class="dur"><%= protocol.duration %></span>
