@@ -34,4 +34,22 @@ RSpec.describe "Locale direction", type: :request do
       expect(response.body).to match(%r{locale-switch[^>]+href="/ar/inquire\?persona=unsure"})
     end
   end
+
+  describe "chrome translation" do
+    it "renders the nav and footer in Arabic under /ar" do
+      get "/ar"
+      expect(response.body).to include("العيادة")          # nav: The Clinic
+      expect(response.body).to include("استفسري")          # header Inquire button
+      expect(response.body).to include("الفريق الطبي")     # footer: The Medical Team
+      expect(response.body).to include("الجمعة · مغلق")    # footer: Friday · Closed
+    end
+
+    it "keeps the English nav and footer unchanged" do
+      get "/"
+      expect(response.body).to include(">The Clinic<")
+      expect(response.body).to include(">Inquire<")
+      expect(response.body).to include("The Medical Team")
+      expect(response.body).to include("© #{Time.current.year} NeuSkin Clinic · SFDA / MOH licensed")
+    end
+  end
 end
