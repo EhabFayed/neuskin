@@ -55,7 +55,10 @@ export default class extends Controller {
     const scrollable = this.element.offsetHeight - window.innerHeight
     if (scrollable <= 0) return
     const progress = Math.min(1, Math.max(0, -rect.top / scrollable))
-    this.trackTarget.style.transform = `translate3d(${-(progress * this.maxX).toFixed(1)}px,0,0)`
+    // In RTL the track overflows to the LEFT of the pin, so translate rightward.
+    const rtl = getComputedStyle(this.trackTarget).direction === "rtl"
+    const x = (progress * this.maxX * (rtl ? 1 : -1)).toFixed(1)
+    this.trackTarget.style.transform = `translate3d(${x}px,0,0)`
   }
 
   disconnect() {

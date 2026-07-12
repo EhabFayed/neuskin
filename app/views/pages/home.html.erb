@@ -105,7 +105,7 @@
                         action: "mouseenter->protoindex#show focus->protoindex#show",
                         tag: p.meta, promise: p.promise, href: protocol_path(p) } do %>
             <span class="ix"><%= format("%02d", i + 1) %></span>
-            <h3><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></h3>
+            <h3><bdi><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></bdi></h3>
             <span class="dur"><%= p.duration %></span>
           <% end %>
         <% end %>
