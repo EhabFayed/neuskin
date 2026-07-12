@@ -1,0 +1,4182 @@
+[
+  {
+    "page": "bridal",
+    "kind": "bridal_checklist",
+    "label": "Checklist lead form",
+    "position": 6,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The 6-month bridal checklist",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A quiet plan, sent to your inbox.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "sent_message",
+        "label": "Thank-you message (after submit)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Thank you — your checklist is on its way.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "email_label",
+        "label": "Email field label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your email",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "submit_label",
+        "label": "Submit button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Send me the checklist",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "note",
+        "label": "Privacy note below form",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "One email. No list, no follow-ups you didn't ask for.",
+        "content_type": "text",
+        "position": 5
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_concierge",
+    "label": "Mother & sister concierge card",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Card title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "For the mother & sister of the bride.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "body",
+        "label": "Card body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A quiet parallel plan, arranged with the same discretion. Ask us during your consultation.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "link",
+        "label": "Link label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Ask privately →",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_countdown",
+    "label": "Countdown messages",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "ample",
+        "label": "Ample-time message",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "There is ample time to plan calmly, in the right order.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "ideal",
+        "label": "Ideal-window message",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "An ideal window — the Bride's 180 fits beautifully.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "soon",
+        "label": "Soon-but-workable message",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Close, but workable — we'll prioritise what matters most.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "today",
+        "label": "Urgent (today) message",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Let's speak today — we'll make the most of every week.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "days_label",
+        "label": "Days-remaining label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "days to plan, calmly.",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_cta",
+    "label": "Final CTA",
+    "position": 7,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Request your Bride's 180 plan.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "subtext",
+        "label": "Subtext (before codeword)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Send the codeword",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "subtext_suffix",
+        "label": "Subtext (after codeword)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "on WhatsApp.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "button",
+        "label": "Button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Begin the conversation",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": "bridal__bridal_hero__bridal-mood.jpg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Bridal Concierge · Riyadh",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title line 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Skin,",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_2",
+        "label": "Title line 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "measured.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "title_em",
+        "label": "Title line 3 (emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Confidence, quiet.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "date_label",
+        "label": "Wedding-date input label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tell us your wedding date",
+        "content_type": "text",
+        "position": 5
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_pillars",
+    "label": "Planned / Flexible / Locked",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "pillar_1_title",
+        "label": "Pillar 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Planned",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "pillar_1_body",
+        "label": "Pillar 1 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Every step mapped to your date, so the work happens early and gently.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "pillar_2_title",
+        "label": "Pillar 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Flexible",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "pillar_2_body",
+        "label": "Pillar 2 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Room to adjust as your skin responds — reviewed, never improvised.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "pillar_3_title",
+        "label": "Pillar 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Locked",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "pillar_3_body",
+        "label": "Pillar 3 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No new treatments in the final two weeks. The plan closes, and you simply arrive.",
+        "content_type": "richtext",
+        "position": 5
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_quotes",
+    "label": "Bride quotes",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "quote_1_text",
+        "label": "Quote 1 text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Everything was decided months before. The last week, I just slept.",
+        "content_type": "richtext",
+        "position": 0
+      },
+      {
+        "key": "quote_1_by",
+        "label": "Quote 1 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "L.M. · 2024",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "quote_2_text",
+        "label": "Quote 2 text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No one could point to one thing. I just looked like myself, rested.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "quote_2_by",
+        "label": "Quote 2 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A.R. · 2025",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "quote_3_text",
+        "label": "Quote 3 text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "My mother started her own quiet plan beside mine. We came together.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "quote_3_by",
+        "label": "Quote 3 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "F.K. · 2025",
+        "content_type": "text",
+        "position": 5
+      }
+    ]
+  },
+  {
+    "page": "bridal",
+    "kind": "bridal_timeline",
+    "label": "The Bride's 180 timeline",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Bride's 180",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Section title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Six months, planned in the right order — so nothing is rushed at the end.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "stage_1_num",
+        "label": "Stage 1 number label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Months 1–2",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "stage_1_title",
+        "label": "Stage 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Foundation",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "stage_1_body",
+        "label": "Stage 1 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Diagnose, calm and correct. The slow, invisible work that everything later depends on.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "stage_2_num",
+        "label": "Stage 2 number label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Months 3–4",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "stage_2_title",
+        "label": "Stage 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Build",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "stage_2_body",
+        "label": "Stage 2 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Glow, contour and hair density — sequenced, then reviewed against where you began.",
+        "content_type": "richtext",
+        "position": 7
+      },
+      {
+        "key": "stage_3_num",
+        "label": "Stage 3 number label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Months 5–6",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "stage_3_title",
+        "label": "Stage 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Polish & lock",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "stage_3_body",
+        "label": "Stage 3 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Refinement, then a no-experiments rule. The last fortnight is for rest, not risk.",
+        "content_type": "richtext",
+        "position": 10
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_clips",
+    "label": "In her words — three clips",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [
+      "dr_maysa__drmaysa_clips__gallery0__maysa.webp",
+      "dr_maysa__drmaysa_clips__gallery1__consultation.jpg",
+      "dr_maysa__drmaysa_clips__gallery2__skin.jpg"
+    ],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "In her words",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "clip_1_title",
+        "label": "Clip 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What is worth your money?",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "clip_2_title",
+        "label": "Clip 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How I say no to a patient",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "clip_3_title",
+        "label": "Clip 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What I'd tell my best friend",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_creds",
+    "label": "Credentials band",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "cred_1",
+        "label": "Credential line 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Dermatology",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "cred_2",
+        "label": "Credential line 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Aesthetic Medicine Fellowship",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "cred_3",
+        "label": "Credential line 3",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Regenerative Aesthetics",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "cred_4",
+        "label": "Credential line 4",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "SFDA / MOH Licensed",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "cred_5",
+        "label": "Credential line 5",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Member · Saudi Society of Dermatology",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_cta",
+    "label": "Closing CTA",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "احجزي استشارتكِ الخاصة مع",
+        "value_en": "Book your private consultation with",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "دكتورة ميسا.",
+        "value_en": "Dr. Maysa.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Body text",
+        "hint": null,
+        "value_ar": "كلُّ جلسةِ تقييمٍ أولية، أُشرفُ عليها شخصياً.",
+        "value_en": "Every initial consultation is held personally by me.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "cta_label",
+        "label": "CTA button label",
+        "hint": null,
+        "value_ar": "ابدئي رحلتكِ الخاصة",
+        "value_en": "Start your private journey",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_hero",
+    "label": "Hero — portrait + quote",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": "dr_maysa__drmaysa_hero__maysa-hero.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Founder · Medical Director",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "quote",
+        "label": "Hero quote (headline)",
+        "hint": null,
+        "value_ar": "“أؤمنُ بأنَّ أثراً واحداً أُتقنَهُ بعمق، خيرٌ من عشرةِ مواعيدَ عابرةٍ لا تتركُ سوى صخبٍ في جدولِ المواعيد.”",
+        "value_en": "“I prioritize the depth of one transformation over the volume of ten superficial appointments.”",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "sign",
+        "label": "Signature",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "— Dr. Maysa Al-Rashid",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_method",
+    "label": "The Maysa Method™ — three steps",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Maysa Method™",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Section title",
+        "hint": null,
+        "value_ar": "ثلاث خطوات. منظومةٌ واحدة متكاملة.",
+        "value_en": "Three steps. One connected system.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "step_1_n",
+        "label": "Step 1 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "01",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "step_1_title",
+        "label": "Step 1 title",
+        "hint": null,
+        "value_ar": "خارطة التشخيص",
+        "value_en": "Diagnostic mapping",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "step_1_body",
+        "label": "Step 1 body",
+        "hint": null,
+        "value_ar": "رؤيةٌ متعمقةٌ لبشرتكِ وشعركِ وجسدكِ — تحت إشرافي الشخصي.",
+        "value_en": "A deep look at your skin, hair, and body — led by me.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "step_2_n",
+        "label": "Step 2 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "02",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "step_2_title",
+        "label": "Step 2 title",
+        "hint": null,
+        "value_ar": "خطة الـ 12 شهراً",
+        "value_en": "The 12-month plan",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "step_2_body",
+        "label": "Step 2 body",
+        "hint": null,
+        "value_ar": "خارطةُ طريقٍ شخصية لجمالِ بشرتكِ وأسلوب حياتكِ — صُممت لتكون بين يديكِ.",
+        "value_en": "A personal roadmap for your skin and lifestyle — yours to keep.",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "step_3_n",
+        "label": "Step 3 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "03",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "step_3_title",
+        "label": "Step 3 title",
+        "hint": null,
+        "value_ar": "المراجعة الدورية",
+        "value_en": "Quarterly review",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "step_3_body",
+        "label": "Step 3 body",
+        "hint": null,
+        "value_ar": "نتابع، نقارن، ونطور خطواتنا مع كل مرحلةٍ تتجدد فيها بشرتكِ.",
+        "value_en": "We measure, compare, and adjust as your skin evolves.",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "cta_label",
+        "label": "CTA button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Request the Maysa Method™ Assessment",
+        "content_type": "text",
+        "position": 11
+      }
+    ]
+  },
+  {
+    "page": "dr_maysa",
+    "kind": "drmaysa_philosophy",
+    "label": "How I think about treatment",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How I think about treatment",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "body_1",
+        "label": "Body paragraph 1",
+        "hint": null,
+        "value_ar": "تخصصتُ في الجلدية لأركز على البشرة، لكنني اكتشفتُ في الواقع ما هو أعمق: نساءٌ لسنَ مريضات، بل ضللنَ الطريق في صناعةٍ تبيعُهنَّ كل شيء.. إلا الحقيقة. يأتينَ إليّ محملاتٍ بمنتجاتٍ وقوائمَ علاجية، يغيبُ عنها الأهم دائماً: التشخيص.",
+        "value_en": "I specialized in dermatology to focus on skin, but in practice, I found something deeper: women who weren't ill, but had simply lost their way in a beauty industry that sold them everything — except the truth. They arrived with products and treatments, but never with a diagnosis.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "pull_1",
+        "label": "Pull quote 1",
+        "hint": null,
+        "value_ar": "“البشرةُ تتحدثُ لغةَ البيانات. مهمتي هي الإنصاتُ لها.. قبلَ اتخاذِ أيِّ قرار.”",
+        "value_en": "“Skin speaks in data. My role is to listen before I act.”",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "body_2",
+        "label": "Body paragraph 2",
+        "hint": null,
+        "value_ar": "في \"نيوسكن\"، جُلُّ اهتمامي هو الفهم قبل التدخل. أرى المريضة كمنظومةٍ واحدةٍ متكاملة؛ بشرةً وشعراً وروحاً. نأخذ وقتنا لنقرر معاً ما تحتاجه بشرتكِ فعلاً. وكثيراً ما تكون النصيحة الأكثر أهمية هي \"البساطة\"، وهذا التريث هو جوهر فلسفتي.",
+        "value_en": "At NeuSkin, I focus on understanding, not just intervening. Every patient is viewed as a whole — skin, hair, and biology — as one connected, living system. We take the time to decide, together, what truly serves you. Often, the most meaningful step is choosing to do less; that simplicity is the heart of my approach.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "body_3",
+        "label": "Body paragraph 3",
+        "hint": null,
+        "value_ar": "أسير في عملي وفق معايير واضحة. أؤمن بأنَّ الجمال يكمن في الحفاظ على ملامحكِ الفريدة، لا في ملاحقة الصيحات. لا أُجري أيَّ إجراءٍ قبل أن نُناقش تفاصيله معاً، ولا أعجل بالنتائج. البشرةُ الصحيةُ هي رحلةٌ هادئة ومستمرة، نعتني بمسارها معاً بكل صبرٍ وعناية.",
+        "value_en": "I am guided by clear boundaries. I believe in preserving the unique character of your face rather than chasing trends. I only perform procedures I can fully explain, and I never create a sense of urgency. Good skin is a quiet, steady journey — one we curate together, with patience and intention.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "pull_2",
+        "label": "Pull quote 2",
+        "hint": null,
+        "value_ar": "“أجملُ النتائج هي التي تمنحكِ شعوراً بأنكِ أنتِ.. ولكن بأفضلِ حالاتكِ.”",
+        "value_en": "“The most beautiful results are the ones that simply feel like ‘you’, only better.”",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "body_4",
+        "label": "Body paragraph 4",
+        "hint": null,
+        "value_ar": "أؤمنُ بالنتائج لا بالوعود. نوثقُ بدايتك ونتابعُ كلَّ تغييرٍ نلمسه، ليكونَ تقدمكِ حقيقياً وواضحاً أمام عينيكِ، لا مجرد شعور. القيادةُ الطبيةُ هنا ليست مجرد اسمٍ على الأبواب، بل هي سجلٌّ صادقٌ لنتائجكِ، يُمكنكِ الاحتفاظُ به.",
+        "value_en": "I believe in proof, not promises. We document your starting point and track every change, so your progress is clear, not just a feeling. Being 'doctor-led' here means you're not just getting a name on a door — you're getting a real, honest record of your results that you can actually hold.",
+        "content_type": "richtext",
+        "position": 6
+      },
+      {
+        "key": "sign",
+        "label": "Signature",
+        "hint": null,
+        "value_ar": "— ميسا",
+        "value_en": "— Maysa",
+        "content_type": "text",
+        "position": 7
+      }
+    ]
+  },
+  {
+    "page": "faq",
+    "kind": "faq_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Frequently Asked",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title line 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The questions",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title line 2 (emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "before the question.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "search_placeholder",
+        "label": "Search input placeholder",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Search the questions",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "empty_state",
+        "label": "No-results message",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No questions match.",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "faq",
+    "kind": "faq_items",
+    "label": "Question groups",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "group_1_title",
+        "label": "Group 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Before you come in",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "q_1_question",
+        "label": "Q1 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Do you publish a price list?",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "q_1_answer",
+        "label": "Q1 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "q_2_question",
+        "label": "Q2 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How do I start?",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "q_2_answer",
+        "label": "Q2 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "q_3_question",
+        "label": "Q3 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Is the first visit a treatment?",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "q_3_answer",
+        "label": "Q3 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan.",
+        "content_type": "richtext",
+        "position": 6
+      },
+      {
+        "key": "group_2_title",
+        "label": "Group 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How care works",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "q_4_question",
+        "label": "Q4 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Why a twelve-month plan?",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "q_4_answer",
+        "label": "Q4 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months.",
+        "content_type": "richtext",
+        "position": 9
+      },
+      {
+        "key": "q_5_question",
+        "label": "Q5 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Will I see Dr. Maysa herself?",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "q_5_answer",
+        "label": "Q5 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction.",
+        "content_type": "richtext",
+        "position": 11
+      },
+      {
+        "key": "q_6_question",
+        "label": "Q6 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What if a treatment isn't right for me?",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "q_6_answer",
+        "label": "Q6 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session.",
+        "content_type": "richtext",
+        "position": 13
+      },
+      {
+        "key": "group_3_title",
+        "label": "Group 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Privacy & practicalities",
+        "content_type": "text",
+        "position": 14
+      },
+      {
+        "key": "q_7_question",
+        "label": "Q7 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How private is my information?",
+        "content_type": "text",
+        "position": 15
+      },
+      {
+        "key": "q_7_answer",
+        "label": "Q7 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely.",
+        "content_type": "richtext",
+        "position": 16
+      },
+      {
+        "key": "q_8_question",
+        "label": "Q8 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Do you photograph patients?",
+        "content_type": "text",
+        "position": 17
+      },
+      {
+        "key": "q_8_answer",
+        "label": "Q8 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time.",
+        "content_type": "richtext",
+        "position": 18
+      },
+      {
+        "key": "q_9_question",
+        "label": "Q9 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Where are you, and when are you open?",
+        "content_type": "text",
+        "position": 19
+      },
+      {
+        "key": "q_9_answer",
+        "label": "Q9 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule.",
+        "content_type": "richtext",
+        "position": 20
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_clinic",
+    "label": "Inside the clinic (hscroll)",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [
+      "home__home_clinic__gallery0__treatment.webp",
+      "home__home_clinic__gallery1__waiting-lounge.webp",
+      "home__home_clinic__gallery2__device-room.webp",
+      "home__home_clinic__gallery3__private-suite.webp",
+      "home__home_clinic__gallery4__entrance.webp"
+    ],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Inside NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "صُممت للهدوء،",
+        "value_en": "Designed for quiet,",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Heading (emphasis)",
+        "hint": null,
+        "value_ar": "وتميزها الخصوصية.",
+        "value_en": "defined by privacy.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "خلفَ أبوابِ عيادتنا في حي الملقا، الخصوصيةُ هي بروتوكولنا الأول. استمتعي بمساحةٍ صُممت لراحتك، وبوتيرةٍ تليقُ بك.",
+        "value_en": "Beyond the clinic doors in Al Malqa, privacy is our first protocol. Experience a sanctuary crafted for your comfort, at your own pace.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "cue",
+        "label": "Scroll cue",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Scroll →",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "cap_1",
+        "label": "Photo caption 1",
+        "hint": null,
+        "value_ar": "01 · غرفة الإجراءات",
+        "value_en": "01 · Treatment room",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "cap_2",
+        "label": "Photo caption 2",
+        "hint": null,
+        "value_ar": "02 · صالة الاستقبال",
+        "value_en": "02 · The lounge",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "cap_3",
+        "label": "Photo caption 3",
+        "hint": null,
+        "value_ar": "03 · غرفة الأجهزة",
+        "value_en": "03 · Device room",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "cap_4",
+        "label": "Photo caption 4",
+        "hint": null,
+        "value_ar": "04 · في التفاصيل",
+        "value_en": "04 · In the detail",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "cap_5",
+        "label": "Photo caption 5",
+        "hint": null,
+        "value_ar": "05 · المدخل",
+        "value_en": "05 · The entrance",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "quote",
+        "label": "Closing quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "“A clinic should be measured by what it refuses to do.”",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "outro_link",
+        "label": "Outro link text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tour the clinic →",
+        "content_type": "text",
+        "position": 11
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_cta",
+    "label": "Closing CTA band",
+    "position": 6,
+    "settings": {},
+    "items": [],
+    "image": "home__home_cta__waiting-lounge.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "رفاهيةٌ تليقُ بكِ.",
+        "value_en": "Quietly bespoke.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_em",
+        "label": "Heading (emphasis)",
+        "hint": null,
+        "value_ar": "ابدئي رحلتكِ بحديثٍ استثنائي.",
+        "value_en": "Begin your journey with a personal dialogue.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Body text",
+        "hint": null,
+        "value_ar": "ندركُ أنَّ الخطوةَ الأولى تبدأُ بحديثٍ خاص. نحن هنا لنستمعَ إليكِ ونرسمَ لكِ المسارَ الأنسب، بكلِّ اهتمامٍ، من السبتِ إلى الخميس.",
+        "value_en": "A personal inquiry is all it takes to start. We are here to listen, guide, and respond to your needs, personally, from Saturday to Thursday.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "cta",
+        "label": "Button label",
+        "hint": null,
+        "value_ar": "احجزي استشارتكِ الخاصة",
+        "value_en": "Secure your private consultation",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "sign",
+        "label": "Signature",
+        "hint": null,
+        "value_ar": "— د. ميسا",
+        "value_en": "— Dr. Maysa",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_founder",
+    "label": "Meet the founder",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": "home__home_founder__maysa-founder.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Meet the founder",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "body_1",
+        "label": "Body paragraph 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "I founded NeuSkin to move beyond the noise of mass-market beauty. I believe in a medical approach that values your time and trust above all else. You deserve clarity, a bespoke plan, and results that honor your natural beauty, guided by patience and clinical expertise.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body_2",
+        "label": "Body paragraph 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "My approach begins with a deep, data-driven understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "sign",
+        "label": "Signature",
+        "hint": null,
+        "value_ar": "— ميسا",
+        "value_en": "— Maysa",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "link",
+        "label": "Link text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Read her philosophy →",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_hero",
+    "label": "Hero — top of page",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": "home__home_hero__hero-clinic.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow (small line above headline)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Doctor-led · Riyadh",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline_1",
+        "label": "Headline line 1",
+        "hint": null,
+        "value_ar": "دقةُ",
+        "value_en": "Medical",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "headline_2",
+        "label": "Headline line 2",
+        "hint": null,
+        "value_ar": "الطب،",
+        "value_en": "Precision.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "headline_3",
+        "label": "Headline line 3 (emphasis)",
+        "hint": null,
+        "value_ar": "ورقيُّ الجمال.",
+        "value_en": "Aesthetic Grace.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "sub",
+        "label": "Sub-text under headline",
+        "hint": null,
+        "value_ar": "وجهتُكِ في الرياض للعناية بالبشرة تحت إشرافٍ طبيٍّ متخصص؛ حيثُ نمنحُكِ جمالاً طبيعياً هادئاً، يضعُ خصوصيتكِ وراحتكِ في المقدمة.",
+        "value_en": "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "foot_1",
+        "label": "Footer note 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Est. Al Malqa · Riyadh",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "foot_2",
+        "label": "Footer note 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Six protocols · one philosophy",
+        "content_type": "text",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_principles",
+    "label": "Three principles",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Promise",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "ثلاثةُ وعود نلتزمُ بها بدقة.",
+        "value_en": "Three pillars of our promise.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "p1_num",
+        "label": "Principle 1 — number/label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "01 — Principle",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "p1_title",
+        "label": "Principle 1 — title",
+        "hint": null,
+        "value_ar": "قيادة طبية",
+        "value_en": "Doctor-led",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "p1_body",
+        "label": "Principle 1 — body",
+        "hint": null,
+        "value_ar": "لا نعتمدُ أبداً على قوائمَ جاهزة؛ كلُّ خطةٍ علاجيةٍ يُصممها فريقُنا الطبي خصيصاً لكِ. تلتقينَ بالمتخصصين أولاً، لنرسمَ معاً الطريقَ الأنسب لجمالك.",
+        "value_en": "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "p2_num",
+        "label": "Principle 2 — number/label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "02 — Principle",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "p2_title",
+        "label": "Principle 2 — title",
+        "hint": null,
+        "value_ar": "خصوصيةٍ تامة",
+        "value_en": "Discreet",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "p2_body",
+        "label": "Principle 2 — body",
+        "hint": null,
+        "value_ar": "استشارةٌ خاصة، جلسةٌ خاصة، ونتائجُ لكِ وحدك. اسمكِ لا يغادرُ غرفتنا، وملفُّكِ لا يخرجُ من عيادتنا.",
+        "value_en": "Private consultation. Private treatment. Private results. Your name never leaves the room, and your file never leaves the clinic.",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "p3_num",
+        "label": "Principle 3 — number/label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "03 — Principle",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "p3_title",
+        "label": "Principle 3 — title",
+        "hint": null,
+        "value_ar": "نتائجَ مدروسة",
+        "value_en": "Measured",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "p3_body",
+        "label": "Principle 3 — body",
+        "hint": null,
+        "value_ar": "نُوَثِّقُ تقدّمكِ كلَّ ربعِ سنة. بلا افتراضات أو مبالغات، نعتمدُ فقط على حالة بشرتكِ عند مقارنتها ببدايةِ رحلتكِ معنا.",
+        "value_en": "Outcomes documented every quarter. No guesswork, no theatre — only what the skin shows when we compare it to where it began.",
+        "content_type": "text",
+        "position": 10
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_protocols",
+    "label": "Six protocols — heading",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Six Protocols",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "ستةُ بروتوكولات.",
+        "value_en": "Six protocols.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Heading (emphasis)",
+        "hint": null,
+        "value_ar": "فلسفةٌ واحدة.",
+        "value_en": "One philosophy.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "link",
+        "label": "Link text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "View all protocols →",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_quotes",
+    "label": "Testimonials (hidden)",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "In their words",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "quote_1",
+        "label": "Quote 1 — text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "She told me what I didn't need before she told me what I did. I'd never had a doctor do that.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "by_1",
+        "label": "Quote 1 — attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "L.M. · Riyadh",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "quote_2",
+        "label": "Quote 2 — text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Six months, one plan, reviewed every quarter. My skin looks like mine — only rested.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "by_2",
+        "label": "Quote 2 — attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A.R. · Riyadh",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "quote_3",
+        "label": "Quote 3 — text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Discreet from the first message to the last review. I never felt like a number on a calendar.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "by_3",
+        "label": "Quote 3 — attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "F.K. · Riyadh",
+        "content_type": "text",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "page": "legal",
+    "kind": "legal_blocks",
+    "label": "Legal sections",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "privacy_title",
+        "label": "Privacy block heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Privacy & PDPL",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "privacy_p1",
+        "label": "Privacy block paragraph 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "We collect only what we need to care for you and to reply to your inquiry. Your personal data is stored securely, used solely for your care and communication with you, and never sold or shared for marketing.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "privacy_p2",
+        "label": "Privacy block paragraph 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "You may ask to see, correct, or delete the information we hold at any time. Our handling of personal data follows Saudi Arabia’s Personal Data Protection Law (PDPL).",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "medical_title",
+        "label": "Medical disclaimer heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Medical advertising disclaimer",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "medical_p1",
+        "label": "Medical disclaimer paragraph 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Results vary from person to person and depend on individual factors. Every treatment is subject to medical consultation and individual assessment, and no specific outcome is guaranteed.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "medical_p2",
+        "label": "Medical disclaimer paragraph 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Nothing on this site is medical advice or a substitute for an in-person consultation with a licensed practitioner.",
+        "content_type": "richtext",
+        "position": 5
+      },
+      {
+        "key": "consent_title",
+        "label": "Consent policy heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Consent policy",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "consent_p1",
+        "label": "Consent policy paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Photography and the use of any patient material require separate, specific, written consent. Consent is never assumed, is given freely, and may be withdrawn at any time without affecting your care.",
+        "content_type": "richtext",
+        "position": 7
+      },
+      {
+        "key": "terms_title",
+        "label": "Terms of inquiry heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Terms of inquiry",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "terms_p1",
+        "label": "Terms of inquiry paragraph 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Submitting an inquiry begins a private conversation, not a booking or a contract. All care is arranged after a medical consultation and individual assessment.",
+        "content_type": "richtext",
+        "position": 9
+      },
+      {
+        "key": "terms_p2",
+        "label": "Terms of inquiry paragraph 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "We reply personally, Saturday to Thursday. By contacting us you agree only to be contacted back — nothing more.",
+        "content_type": "richtext",
+        "position": 10
+      }
+    ]
+  },
+  {
+    "page": "legal",
+    "kind": "legal_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Legal & Compliance",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Plainly stated.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "We keep our terms in human language. This is a demonstration page — final legal copy is prepared with counsel for KSA / PDPL compliance.",
+        "content_type": "richtext",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "legal",
+    "kind": "legal_license",
+    "label": "License line",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "label",
+        "label": "License label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "SFDA / MOH license",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "number",
+        "label": "License number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No. 0000000000",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_cta",
+    "label": "Closing CTA",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Begin with the",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Maysa Method™.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Body text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "One reading, one written plan, reviewed every quarter. It begins with a private inquiry.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "cta_label",
+        "label": "CTA button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Request the Assessment",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_hero",
+    "label": "Hero — stacked eyebrow/sub/main",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Philosophy",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "sub",
+        "label": "Subheading (h2)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Skin is data.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "main",
+        "label": "Main heading (h1)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Read it, then treat it.",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_not",
+    "label": "What it is not",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What it is not",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Discipline is mostly",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "restraint.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "item_1",
+        "label": "Exclusion item 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "It is not a treatment, and nothing is performed during it.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "item_2",
+        "label": "Exclusion item 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "It is not a quick fix; good skin is sequenced over time.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "item_3",
+        "label": "Exclusion item 3",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "It is not a price list, and it is never sold from a menu.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "item_4",
+        "label": "Exclusion item 4",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "It is not for everyone — and that is entirely intentional.",
+        "content_type": "text",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_pillars",
+    "label": "Four pillars",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "pillar_1_num",
+        "label": "Pillar 1 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Pillar 01",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "pillar_1_title",
+        "label": "Pillar 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Skin",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "pillar_1_body",
+        "label": "Pillar 1 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Barrier, tone, texture and pigment — read, then restored in order.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "pillar_2_num",
+        "label": "Pillar 2 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Pillar 02",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "pillar_2_title",
+        "label": "Pillar 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Hair",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "pillar_2_body",
+        "label": "Pillar 2 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Scalp health and density, assessed clinically and supported over weeks.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "pillar_3_num",
+        "label": "Pillar 3 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Pillar 03",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "pillar_3_title",
+        "label": "Pillar 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Body",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "pillar_3_body",
+        "label": "Pillar 3 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tone, contour and posture — measured, not guessed, and supported clinically.",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "pillar_4_num",
+        "label": "Pillar 4 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Pillar 04",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "pillar_4_title",
+        "label": "Pillar 4 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Lifestyle",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "pillar_4_body",
+        "label": "Pillar 4 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds.",
+        "content_type": "text",
+        "position": 11
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_principle",
+    "label": "The principle",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The principle",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
+        "content_type": "richtext",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "maysa_method",
+    "kind": "method_timeline",
+    "label": "A year, in four movements — horizontal scroller",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The 12-month timeline",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A year, in",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "four movements.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "intro_body",
+        "label": "Intro paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "cue",
+        "label": "Scroll cue",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Scroll →",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "panel_1_q",
+        "label": "Panel 1 quarter label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Q1",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "panel_1_title",
+        "label": "Panel 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Diagnose",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "panel_1_body",
+        "label": "Panel 1 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Baseline captured, the plan written. The slow, invisible work begins.",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "panel_2_q",
+        "label": "Panel 2 quarter label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Q2",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "panel_2_title",
+        "label": "Panel 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Restore",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "panel_2_body",
+        "label": "Panel 2 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Targeted correction across the four pillars, reviewed against baseline.",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "panel_3_q",
+        "label": "Panel 3 quarter label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Q3",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "panel_3_title",
+        "label": "Panel 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Build",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "panel_3_body",
+        "label": "Panel 3 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Results compounded; the plan adjusted to how your skin responded.",
+        "content_type": "text",
+        "position": 13
+      },
+      {
+        "key": "panel_4_q",
+        "label": "Panel 4 quarter label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Q4",
+        "content_type": "text",
+        "position": 14
+      },
+      {
+        "key": "panel_4_title",
+        "label": "Panel 4 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Maintain",
+        "content_type": "text",
+        "position": 15
+      },
+      {
+        "key": "panel_4_body",
+        "label": "Panel 4 body",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A maintenance rhythm set, and a record you keep for the years ahead.",
+        "content_type": "text",
+        "position": 16
+      },
+      {
+        "key": "quote",
+        "label": "Closing quote (outro)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "“Skin is data. Read it across a year, and it stops surprising you.”",
+        "content_type": "text",
+        "position": 17
+      },
+      {
+        "key": "cta_label",
+        "label": "Outro CTA button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Request the Assessment",
+        "content_type": "text",
+        "position": 18
+      }
+    ]
+  },
+  {
+    "page": "private_care",
+    "kind": "private_apply",
+    "label": "Application",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Application",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "quote",
+        "label": "Quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "“Discretion is not a feature here. It is the entire promise — and I keep it personally.”",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "quote_cite",
+        "label": "Quote citation",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "— Dr. Maysa",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "note",
+        "label": "Note paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Private Care has no public booking. Tell us a little, and if it is the right fit, we will reach out personally and privately.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "field_name_label",
+        "label": "Name field label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Name",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "field_name_placeholder",
+        "label": "Name field placeholder",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your name",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "field_contact_label",
+        "label": "Contact field label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Contact",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "field_contact_placeholder",
+        "label": "Contact field placeholder",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Mobile or email",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "field_referral_label",
+        "label": "Referral source field label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Referral source",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "field_referral_placeholder",
+        "label": "Referral source field placeholder",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How did you hear of us?",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "field_note_label",
+        "label": "Brief note field label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A brief note",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "field_note_placeholder",
+        "label": "Brief note field placeholder",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Anything you'd like us to know",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "submit_button",
+        "label": "Submit button text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Submit application",
+        "content_type": "text",
+        "position": 12
+      }
+    ]
+  },
+  {
+    "page": "private_care",
+    "kind": "private_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": "private_care__private_hero__desert-atmosphere.jpg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Private Care · By invitation",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title line 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Private Care",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_2",
+        "label": "Title line 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "is by invitation.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "title_em",
+        "label": "Title line 3 (emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "You may already qualify.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "private_care",
+    "kind": "private_includes",
+    "label": "What Private Care includes",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "heading",
+        "label": "Section heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What Private Care includes",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "item_1",
+        "label": "Include item 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A standing relationship with Dr. Maysa, not a queue.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "item_2",
+        "label": "Include item 2",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Same-week scheduling, including outside published hours.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "item_3",
+        "label": "Include item 3",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Quarterly reviews with your full skin history in the room.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "item_4",
+        "label": "Include item 4",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Discreet entry and a private suite for every visit.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "item_5",
+        "label": "Include item 5",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Priority on new protocols before they are offered widely.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "item_6",
+        "label": "Include item 6",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "One point of contact who already knows your file.",
+        "content_type": "text",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "page": "private_care",
+    "kind": "private_tiers",
+    "label": "Membership tiers",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "heading",
+        "label": "Section heading",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Membership tiers",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tier_1_badge",
+        "label": "Tier 1 badge",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "I",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "tier_1_name",
+        "label": "Tier 1 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Quiet",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "tier_1_line",
+        "label": "Tier 1 line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The essential relationship.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "tier_1_desc",
+        "label": "Tier 1 description",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Doctor-led care on your schedule, with quarterly reviews and a single private point of contact.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "tier_2_badge",
+        "label": "Tier 2 badge",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "II",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "tier_2_name",
+        "label": "Tier 2 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Considered",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "tier_2_line",
+        "label": "Tier 2 line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "For the long view.",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "tier_2_desc",
+        "label": "Tier 2 description",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Everything in Quiet, plus priority access to new protocols and an annual full reassessment.",
+        "content_type": "richtext",
+        "position": 8
+      },
+      {
+        "key": "tier_3_badge",
+        "label": "Tier 3 badge",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "III",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "tier_3_name",
+        "label": "Tier 3 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Invited",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "tier_3_line",
+        "label": "Tier 3 line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "By Dr. Maysa, personally.",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "tier_3_desc",
+        "label": "Tier 3 description",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A bespoke relationship arranged case by case. Extended discretion, travel coordination, family care.",
+        "content_type": "richtext",
+        "position": 12
+      }
+    ]
+  },
+  {
+    "page": "protocols_index",
+    "kind": "protocols_cta",
+    "label": "Closing CTA",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "kicker",
+        "label": "Kicker line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Not sure where to start?",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Title (before emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Begin with the",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title (emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Maysa Method™",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "button",
+        "label": "Button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Begin with the Maysa Method™",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "protocols_index",
+    "kind": "protocols_filter",
+    "label": "Persona filter",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "I'm here because…",
+        "content_type": "text",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "page": "protocols_index",
+    "kind": "protocols_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Protocols",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title line 1",
+        "hint": null,
+        "value_ar": "ستةُ بروتوكولات.",
+        "value_en": "Six protocols.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title line 2 (emphasis)",
+        "hint": null,
+        "value_ar": "فلسفةٌ واحدة.",
+        "value_en": "One philosophy.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "في \"نيوسكن\"، نحن نعتمدُ على بروتوكولاتٍ مُخصصة لا مجرد علاجاتٍ متفرقة؛ فهي خططٌ مُرتّبة، تبدأُ بوضوح، وتمرُّ برحلةِ قياسٍ دقيقة، وتنتهي بمراجعةٍ للنتائج. أخبرينا بما تطمحين إليه، وسنرشدك إلى البروتوكول الأنسبِ لكِ.",
+        "value_en": "NeuSkin works through dedicated protocols, not à-la-carte treatments — these are sequenced plans with a clear start, a measured journey, and a review. Share your goals with us, and we will guide you to the right one.",
+        "content_type": "richtext",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "stories",
+    "kind": "story_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Patient Stories",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title line 1",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Real women. Consented words.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title line 2 (emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No stock photography.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Every story here is shared with explicit consent. Where a face is not shown, that too is a choice we respect.",
+        "content_type": "richtext",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "stories",
+    "kind": "story_items",
+    "label": "Story rows",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "story_1_intro",
+        "label": "Story 1 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "She came in tired of being sold to. What she wanted was a plan.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "story_1_quote",
+        "label": "Story 1 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "For the first time, someone told me what not to do. That's when I trusted them.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "story_1_protocol",
+        "label": "Story 1 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Diagnostic Foundation → Skin",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "story_1_close",
+        "label": "Story 1 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "story_1_by",
+        "label": "Story 1 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "L.M. · 34 · Riyadh",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "story_2_intro",
+        "label": "Story 2 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A bride with six months and a quiet kind of panic.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "story_2_quote",
+        "label": "Story 2 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No one promised me a miracle. They promised me a calendar, and they kept it.",
+        "content_type": "richtext",
+        "position": 6
+      },
+      {
+        "key": "story_2_protocol",
+        "label": "Story 2 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Bride's 180",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "story_2_close",
+        "label": "Story 2 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
+        "content_type": "richtext",
+        "position": 8
+      },
+      {
+        "key": "story_2_by",
+        "label": "Story 2 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A.R. · 29 · Jeddah",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "story_3_intro",
+        "label": "Story 3 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Long-term maintenance, on her own terms.",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "story_3_quote",
+        "label": "Story 3 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "I review my skin like I review anything that matters to me — with data, every quarter.",
+        "content_type": "richtext",
+        "position": 11
+      },
+      {
+        "key": "story_3_protocol",
+        "label": "Story 3 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Private Care",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "story_3_close",
+        "label": "Story 3 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
+        "content_type": "richtext",
+        "position": 13
+      },
+      {
+        "key": "story_3_by",
+        "label": "Story 3 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "F.K. · 41 · Riyadh",
+        "content_type": "text",
+        "position": 14
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_credentials",
+    "label": "Credentials, in plain language",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The standard",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Section title",
+        "hint": null,
+        "value_ar": "تراخيصنا، بصياغةٍ أكثر وضوحاً.",
+        "value_en": "Credentials, refined for clarity.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body_1",
+        "label": "Body paragraph 1",
+        "hint": null,
+        "value_ar": "الشفافيةُ هي بروتوكولنا الأساسي. نعرضُ تراخيصنا، وسياساتِ الموافقة، وواقعنا الطبي بكل صراحة؛ صُيغت من أجلكِ أنتِ، لنمنحكِ راحةَ البالِ التي تستحقينها.",
+        "value_en": "Transparency is our foundational protocol. We present our licenses, consent policies, and clinical realities exactly as they are — crafted for your peace of mind, not for regulatory convenience.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "spec_1_k",
+        "label": "Spec 1 label",
+        "hint": null,
+        "value_ar": "ترخيص هيئة الغذاء والدواء / وزارة الصحة",
+        "value_en": "SFDA / MOH license",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "spec_1_v",
+        "label": "Spec 1 value",
+        "hint": null,
+        "value_ar": "رقم 0000000000",
+        "value_en": "No. 0000000000",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "spec_2_k",
+        "label": "Spec 2 label",
+        "hint": null,
+        "value_ar": "تراخيص الممارسين",
+        "value_en": "Practitioner licenses",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "spec_2_v",
+        "label": "Spec 2 value",
+        "hint": null,
+        "value_ar": "متاحة · قابلة للتحقق",
+        "value_en": "On file · verifiable",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "spec_3_k",
+        "label": "Spec 3 label",
+        "hint": null,
+        "value_ar": "خصوصية المريض",
+        "value_en": "Patient privacy",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "spec_3_v",
+        "label": "Spec 3 value",
+        "hint": null,
+        "value_ar": "متوافقة مع نظام حماية البيانات",
+        "value_en": "PDPL compliant",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "spec_4_k",
+        "label": "Spec 4 label",
+        "hint": null,
+        "value_ar": "الموافقة على التصوير",
+        "value_en": "Photographic consent",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "spec_4_v",
+        "label": "Spec 4 value",
+        "hint": null,
+        "value_ar": "صريحة · قابلة للانسحاب",
+        "value_en": "Explicit · withdrawable",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "body_2",
+        "label": "Body paragraph 2 (footer note)",
+        "hint": null,
+        "value_ar": "النتائجُ الجماليةُ شخصيةٌ ولا تخضعُ للوعودِ الجازمة. نؤمنُ بأنَّ الحوارَ الصريحَ أفضلُ من الغموضِ الطبي، ونختارُ أن نخبرك بذلك بوضوح، بدلاً من إخفائه في الهوامش.",
+        "value_en": "Aesthetic results are personal, not guaranteed. We believe in open dialogue over clinical ambiguity, and we choose to state this here, plainly, rather than hidden in the fine print.",
+        "content_type": "richtext",
+        "position": 11
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_cta",
+    "label": "Closing CTA",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Begin a quiet conversation.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "body",
+        "label": "Body text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "We reply, personally, Saturday to Thursday, 10:00–22:00.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "cta_label",
+        "label": "CTA button label",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Speak with us",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_hero",
+    "label": "Hero — full-bleed interior",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": "the_clinic__clinic_hero__clinic-hero.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "About · The Clinic",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "عيادةٌ خاصة في حي الملقا، محورها تساؤلٌ واحد:",
+        "value_en": "A private clinic in Al Malqa, built around one question:",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "كيف ستكون بشرتكِ بعد خمس سنوات؟",
+        "value_en": "what will your skin look like in five years?",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_journey",
+    "label": "The four-step patient journey",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How we work",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Section title",
+        "hint": null,
+        "value_ar": "رحلة المريض: أربع خطوات نحو بشرةٍ متجددة",
+        "value_en": "The four-step patient journey",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "step_1_n",
+        "label": "Step 1 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "01",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "step_1_title",
+        "label": "Step 1 title",
+        "hint": null,
+        "value_ar": "الاستفسار",
+        "value_en": "Inquire",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "step_1_body",
+        "label": "Step 1 body",
+        "hint": null,
+        "value_ar": "رسالةٌ خاصة عبر واتساب أو نموذج، نراجعها بعنايةٍ واهتمام من قِبل مسؤولة علاقات المرضى.",
+        "value_en": "A private WhatsApp message or form, reviewed personally by our patient relations lead.",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "step_2_n",
+        "label": "Step 2 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "02",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "step_2_title",
+        "label": "Step 2 title",
+        "hint": null,
+        "value_ar": "الاستشارة",
+        "value_en": "Consult",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "step_2_body",
+        "label": "Step 2 body",
+        "hint": null,
+        "value_ar": "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"ميسا\" (Maysa Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية.",
+        "value_en": "A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "step_3_n",
+        "label": "Step 3 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "03",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "step_3_title",
+        "label": "Step 3 title",
+        "hint": null,
+        "value_ar": "الخطة",
+        "value_en": "Plan",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "step_3_body",
+        "label": "Step 3 body",
+        "hint": null,
+        "value_ar": "خارطةُ طريقٍ مكتوبةٍ لـ 12 شهراً، تغطي البشرة، الشعر، الجسم، ونمط الحياة. هي ملكٌ لكِ، لتختاري ما يناسبكِ في أي وقت.",
+        "value_en": "A written 12-month roadmap — skin, hair, body, lifestyle. Yours to keep, whatever you decide.",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "step_4_n",
+        "label": "Step 4 number",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "04",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "step_4_title",
+        "label": "Step 4 title",
+        "hint": null,
+        "value_ar": "العلاج",
+        "value_en": "Treat",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "step_4_body",
+        "label": "Step 4 body",
+        "hint": null,
+        "value_ar": "جلساتٌ علاجيةٌ متسلسلة مع مراجعاتٍ ربع سنوية، نعدّلها باستمرار لتواكبَ استجابةَ بشرتكِ وتطورها.",
+        "value_en": "Sequenced sessions with quarterly review, adjusted as your skin responds.",
+        "content_type": "text",
+        "position": 13
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_philosophy",
+    "label": "Philosophy — design statement + body",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "statement_1",
+        "label": "Statement line 1 (masked reveal)",
+        "hint": null,
+        "value_ar": "نؤمنُ بأنَّ مقياسَ العيادةِ",
+        "value_en": "We believe a clinic should be measured",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "statement_2",
+        "label": "Statement line 2 (before emphasis)",
+        "hint": null,
+        "value_ar": "هو",
+        "value_en": "by",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "statement_2_em",
+        "label": "Statement line 2 emphasis span",
+        "hint": null,
+        "value_ar": "ما تترفعُ عن فعله.",
+        "value_en": "what it refuses to do.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "body_1",
+        "label": "Body paragraph 1",
+        "hint": null,
+        "value_ar": "ولدت \"نيوسكن\" من فكرةٍ بسيطة: العنايةُ بالبشرة ليست مجرد قائمةِ خدماتٍ تُعرضُ للبيع. اخترنا النقيض؛ غرفاً هادئة، طبيبةً تُعنى بالتفاصيل، وخططاً علاجيةً تُصاغُ خصيصاً لكلِّ حالةٍ على حِدة.",
+        "value_en": "NeuSkin began with a simple belief: skin care should not be a list of treatments sold from a menu. We chose the opposite — a quiet room, a doctor who truly examines, and a plan crafted for one person at a time.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "body_2",
+        "label": "Body paragraph 2",
+        "hint": null,
+        "value_ar": "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"ميسا\" (Maysa Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً.",
+        "value_en": "So we built a clinic around diagnosis, not display. Every journey begins with the Maysa Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "body_3",
+        "label": "Body paragraph 3",
+        "hint": null,
+        "value_ar": "قد لا نكونُ العيادةَ الأكثر صخباً في المدينة، لكننا نطمحُ لنكونَ العيادةَ التي تثقينَ بها دوماً.",
+        "value_en": "We are not the loudest clinic in the city. We intend to be the one you keep.",
+        "content_type": "richtext",
+        "position": 5
+      },
+      {
+        "key": "sign",
+        "label": "Signature",
+        "hint": null,
+        "value_ar": "— د. ميسا، المؤسِسة",
+        "value_en": "— Dr. Maysa, Founder",
+        "content_type": "text",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "clinic_space",
+    "label": "The Space — photo grid captions",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [
+      "the_clinic__clinic_space__gallery0__clinic-1.webp",
+      "the_clinic__clinic_space__gallery1__clinic-2.webp",
+      "the_clinic__clinic_space__gallery2__clinic-3.webp",
+      "the_clinic__clinic_space__gallery3__clinic-4.webp",
+      "the_clinic__clinic_space__gallery4__clinic-5.webp"
+    ],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Space",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "shot_1_caption",
+        "label": "Photo 1 caption (lounge)",
+        "hint": null,
+        "value_ar": "صالة الاستقبال",
+        "value_en": "The lounge",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "shot_2_caption",
+        "label": "Photo 2 caption (diptyque)",
+        "hint": null,
+        "value_ar": "في التفاصيل",
+        "value_en": "In the detail",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "shot_3_caption",
+        "label": "Photo 3 caption (device room)",
+        "hint": null,
+        "value_ar": "غرفة الأجهزة",
+        "value_en": "Device room",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "shot_4_caption",
+        "label": "Photo 4 caption (treatment room)",
+        "hint": null,
+        "value_ar": "غرفة الإجراءات",
+        "value_en": "Treatment room",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "shot_5_caption",
+        "label": "Photo 5 caption (entrance)",
+        "hint": null,
+        "value_ar": "المدخل",
+        "value_en": "The entrance",
+        "content_type": "text",
+        "position": 5
+      }
+    ]
+  },
+  {
+    "page": "the_team",
+    "kind": "team_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Medical Team",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The people behind",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "the plan.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
+        "content_type": "richtext",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "the_team",
+    "kind": "team_members",
+    "label": "Team grid",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "member_1_name",
+        "label": "Member 1 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dr. Maysa Al-Rashid",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "member_1_role",
+        "label": "Member 1 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Founder · Medical Director",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "member_1_cred",
+        "label": "Member 1 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Dermatology · Aesthetic Medicine Fellowship",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "member_1_focus",
+        "label": "Member 1 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Diagnosis & the 12-month plan",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "member_1_bio",
+        "label": "Member 1 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "member_2_name",
+        "label": "Member 2 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dr. Lina Haddad",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "member_2_role",
+        "label": "Member 2 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Senior Aesthetic Physician",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "member_2_cred",
+        "label": "Member 2 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Diploma in Aesthetic Medicine",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "member_2_focus",
+        "label": "Member 2 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Injectables & restraint",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "member_2_bio",
+        "label": "Member 2 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
+        "content_type": "richtext",
+        "position": 9
+      },
+      {
+        "key": "member_3_name",
+        "label": "Member 3 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dr. Sara Othman",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "member_3_role",
+        "label": "Member 3 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dermatology Associate",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "member_3_cred",
+        "label": "Member 3 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Clinical Dermatology",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "member_3_focus",
+        "label": "Member 3 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Skin barrier & pigment",
+        "content_type": "text",
+        "position": 13
+      },
+      {
+        "key": "member_3_bio",
+        "label": "Member 3 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
+        "content_type": "richtext",
+        "position": 14
+      },
+      {
+        "key": "member_4_name",
+        "label": "Member 4 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Noor Al-Fahad",
+        "content_type": "text",
+        "position": 15
+      },
+      {
+        "key": "member_4_role",
+        "label": "Member 4 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Patient Relations Lead",
+        "content_type": "text",
+        "position": 16
+      },
+      {
+        "key": "member_4_cred",
+        "label": "Member 4 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "First point of contact · privacy-trained",
+        "content_type": "text",
+        "position": 17
+      },
+      {
+        "key": "member_4_focus",
+        "label": "Member 4 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Discretion & continuity",
+        "content_type": "text",
+        "position": 18
+      },
+      {
+        "key": "member_4_bio",
+        "label": "Member 4 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
+        "content_type": "richtext",
+        "position": 19
+      }
+    ]
+  },
+  {
+    "page": "treatment_outcomes",
+    "kind": "outcome_body",
+    "label": "Body — tone & contour",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Hero tag",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tone & contour",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline",
+        "label": "Hero headline",
+        "hint": null,
+        "value_ar": "نحتُ وتحديد ملامح قوامكِ بأناقة",
+        "value_en": "Sculpting and toning your natural silhouette",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "look",
+        "label": "What it looks like",
+        "hint": null,
+        "value_ar": "تلتزمين بالتمارين الرياضية وتناول الغذاء الصحي، ومع ذلك لا تزال هناك فجوة بين مجهودكِ وبين النتائج التي تطمحين إليها. ليونةٌ في أماكنَ تتمنين فيها قواماً مشدوداً، وانحناءةٌ في القوام تحتاجُ إلى استعادةِ حيويتها.",
+        "value_en": "You train, you eat well, yet a gap remains between your efforts and the results. There is softness where you desire definition, and your posture has lost its youthful lift.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "how",
+        "label": "How NeuSkin treats it",
+        "hint": null,
+        "value_ar": "نعتمدُ بروتوكولاً مُكثّفاً يمتدُّ لثمانيةِ أسابيع، مدعوماً بأحدث التقنيات لتعزيزِ قوةِ العضلات، ونحتِ القوام، وتحسينِ استقامةِ الجسم. ونعتمدُ في رحلتنا على قياساتٍ دقيقةٍ وموحدةٍ في بدايةِ البرنامجِ ونهايته، لنضمنَ توثيقَ النتائجِ بدقةٍ تامة، لا مجرد التكهن بها.",
+        "value_en": "Our eight-week, device-led protocol reinforces muscle tone, contour, and posture. We rely on standardized measurements — at both the start and the finish — to ensure your progress is precisely documented, not assumed.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "view",
+        "label": "Dr. Maysa's view (quote)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Body work should support your effort, never replace it. We measure posture and definition — not the scale — because that’s what actually changes how clothes sit and how you stand.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "treatment_outcomes",
+    "kind": "outcome_devices",
+    "label": "Advanced devices",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Hero tag",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Advanced devices",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline",
+        "label": "Hero headline",
+        "hint": null,
+        "value_ar": "أجهزتنا: الغاية الحقيقية، والنتائج الملموسة",
+        "value_en": "Our devices: True purpose, visible results",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "look",
+        "label": "What it looks like",
+        "hint": null,
+        "value_ar": "تقنياتٌ مثل EmFace وEmSculpt Neo، والليزر، والإكسوسومات، والبولينيوكليوتيدات؛ هي مصطلحاتٌ يعشقها قطاع التجميل، لكنها في الواقع تفاصيل تقنية لا تحتاج المريضة للانشغال بتسمياتها.",
+        "value_en": "EmFace, EmSculpt Neo, lasers, exosomes, polynucleotides — a vocabulary the industry loves, yet one that patients rarely need to navigate by name.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "how",
+        "label": "How NeuSkin treats it",
+        "hint": null,
+        "value_ar": "نحن نختار الجهاز ليلائم النتيجة المطلوبة، لا العكس. فكل جهازٍ لدينا هو مجرد أداةٍ ضمن خطةٍ مُحكمةٍ وضعها الطبيب؛ خطةٍ مُرتّبةٍ، ومدروسةٍ، ولا يُستخدم فيها أي جهازٍ إلا عندما يستحقُّ مكانهُ في رحلتكِ العلاجية.",
+        "value_en": "We choose the device to fit the outcome, never the other way around. Each is simply a tool within a doctor-written plan — sequenced, measured, and only used when it earns its place.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "view",
+        "label": "Dr. Maysa's view (quote)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A device is a means, not a headline. If a clinic is selling you the machine before the diagnosis, you’re being sold to — not treated.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "treatment_outcomes",
+    "kind": "outcome_hair",
+    "label": "Hair — thinning & shedding",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Hero tag",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Thinning & shedding",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline",
+        "label": "Hero headline",
+        "hint": null,
+        "value_ar": "عناية متكاملة لتقوية الشعر والحد من تساقطه",
+        "value_en": "Comprehensive care for thinning hair",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "look",
+        "label": "What it looks like",
+        "hint": null,
+        "value_ar": "فرقُ الشعر الذي يزداد اتساعاً، ذيلُ حصانٍ تلمسين خفته بيدك، وخصلاتٌ أكثر من المعتاد تجدينها على وسادتكِ — غالباً ما تلاحظين ذلك بعد الولادة أو فتراتِ الضغطِ النفسي.",
+        "value_en": "A part that widens. A ponytail that feels thinner in the hand. More strands than you remember on the pillow — often after a baby or a stretch of stress.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "how",
+        "label": "How NeuSkin treats it",
+        "hint": null,
+        "value_ar": "نبدأ بتقييم فروة الرأس سريرياً للبحث عن مسبباتٍ قابلةٍ للعلاج، ثم نبني بروتوكولاً تجديدياً للحد من التساقط وتعزيز الكثافة؛ حيث نراجع النتائج مقارنةً بحالتكِ الأصلية، ليكون التقدم حقيقياً وملموساً، لا مجرد آمال.",
+        "value_en": "We assess the scalp clinically to identify treatable causes, then build a regenerative protocol to slow shedding and support density. We review all progress against your starting point, ensuring the results are real, not just hopeful.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "view",
+        "label": "Dr. Maysa's view (quote)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The earlier we see shedding, the more we can do. The follicle is patient, but it isn’t infinitely so — measured intervention beats another year of waiting for a shampoo to work.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "treatment_outcomes",
+    "kind": "outcome_injectables",
+    "label": "Injectables — lines & volume",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Hero tag",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Lines & volume",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline",
+        "label": "Hero headline",
+        "hint": null,
+        "value_ar": "الحفاظ على جمال ملامحكِ قبل أي إجراء",
+        "value_en": "Preserving natural contours before any intervention",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "look",
+        "label": "What it looks like",
+        "hint": null,
+        "value_ar": "خطوطٌ أولية، فقدانٌ طفيفٌ في الامتلاء، ووجهٌ يبدو مُرهقاً قبل أن تشعري أنتِ بذلك. الغريزةُ الطبيعيةُ تدفعكِ لطلبِ \"حقن الفيلر\"، لكنَّ نهجنا يبدأُ دائماً بطرحِ سؤال \"لماذا\".",
+        "value_en": "Early lines, a slight loss of volume, and a face that appears tired before you actually feel it. The natural instinct is to ask for a syringe, but ours is to ask why first.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "how",
+        "label": "How NeuSkin treats it",
+        "hint": null,
+        "value_ar": "في نيوسكن، كلُّ قرارٍ بالحقنِ يسبقهُ تشخيصٌ دقيق، لا مجردُ طلبٍ علاجي. عندما يكون الإجراءُ مناسباً، فإننا نطبقهُ بدقةٍ وتحفظٍ تام. وإن لم يكن كذلك، فإننا نصارحكِ بذلك، ونعالجُ السببَ الجذريَّ للمشكلةِ بدلاً من ذلك.",
+        "value_en": "Every injectable decision at NeuSkin follows a diagnosis, not a request. When it is right, our approach is precise and conservative. When it isn't, we say so — and treat the underlying cause instead.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "view",
+        "label": "Dr. Maysa's view (quote)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The best injectable result is the one nobody can name. Restraint is a clinical skill; the goal is you, rested — never you, edited.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "treatment_outcomes",
+    "kind": "outcome_skin",
+    "label": "Skin — tired, dull skin",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Hero tag",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tired, dull skin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "headline",
+        "label": "Hero headline",
+        "hint": null,
+        "value_ar": "استعادة الحيوية والنضارة لبشرتكِ",
+        "value_en": "Restoring vitality to tired, dull skin",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "look",
+        "label": "What it looks like",
+        "hint": null,
+        "value_ar": "بشرةٌ فقدت بريقها المعتاد؛ لم تعد تعكس الضوءَ كما كانت، لونها غير متجانس، وتستغرق وقتاً أطول للتعافي بعد أسبوعٍ حافل. ليست تالفة، بل مُرهقة فحسب.",
+        "value_en": "Skin that has lost its radiance — no longer catching the light as it once did, uneven in tone, and slow to recover after a demanding week. Not damaged. Simply tired.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "how",
+        "label": "How NeuSkin treats it",
+        "hint": null,
+        "value_ar": "نبدأُ بفهم الأسباب قبل أن نلجأ لأي جهاز. فغالباً ما يكون الشحوب نتيجةً لاختلالٍ في حاجز البشرة أو الترطيب أو معدل التجدد. بناءً على ذلك، نضعُ لكِ بروتوكولاً متسلسلاً يعيد للبشرة صفاءها تدريجياً، مع قياس التقدم مقارنةً بحالتكِ في البداية.",
+        "value_en": "We begin by understanding the \"why,\" rather than reaching for a device. Often, dullness is a story of barrier, hydration, and turnover. From there, a sequenced plan rebuilds clarity over the coming weeks, measured against your skin's starting point.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "view",
+        "label": "Dr. Maysa's view (quote)",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Tired skin is rarely one problem; it’s usually three small ones compounding. Treat the cause in order and the glow returns on its own — chasing it with a single facial almost never holds.",
+        "content_type": "richtext",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "treatments",
+    "kind": "treatments_footer",
+    "label": "Footer link",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "protocols_link",
+        "label": "\"View all protocols\" link text",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "View all six protocols →",
+        "content_type": "text",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "page": "treatments",
+    "kind": "treatments_hero",
+    "label": "Hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Treatments · by outcome",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_1",
+        "label": "Title part 1 (before emphasis)",
+        "hint": null,
+        "value_ar": "نبدأُ من",
+        "value_en": "We begin with",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Title emphasis span",
+        "hint": null,
+        "value_ar": "النتيجةِ التي تطمحين إليها.",
+        "value_en": "the outcome you desire.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "تبحثين عن إجراءٍ بعينه؟ وجهي تركيزكِ نحو التغيير الذي تطمحين إليه. نحن هنا لنرسم معكِ خارطة الطريق، ونربط طموحاتكِ بالبروتوكول الدقيقِ الذي يُحقق لكِ النتيجةَ المرجوة.",
+        "value_en": "Searching for a specific procedure? Instead, look toward the change you wish to see. We guide your journey, connecting your goals to the precise protocol that delivers them.",
+        "content_type": "richtext",
+        "position": 3
+      }
+    ]
+  }
+]
