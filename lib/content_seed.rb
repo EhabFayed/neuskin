@@ -20,13 +20,21 @@ module ContentSeed
     dump = Section.order(:page, :kind).map do |section|
       image_file = nil
       if section.image.attached?
-        image_file = "#{section.page}__#{section.kind}__#{section.image.filename}"
-        File.binwrite(files_dir.join(image_file), section.image.download)
+        begin
+          data = section.image.download
+          image_file = "#{section.page}__#{section.kind}__#{section.image.filename}"
+          File.binwrite(files_dir.join(image_file), data)
+        rescue ActiveStorage::FileNotFoundError
+          warn "SKIP missing image file: #{section.page}/#{section.kind}"
+        end
       end
-      gallery_files = section.gallery.attached? ? section.gallery.map.with_index do |img, i|
+      gallery_files = section.gallery.attached? ? section.gallery.filter_map.with_index do |img, i|
         name = "#{section.page}__#{section.kind}__gallery#{i}__#{img.filename}"
         File.binwrite(files_dir.join(name), img.download)
         name
+      rescue ActiveStorage::FileNotFoundError
+        warn "SKIP missing gallery file #{i}: #{section.page}/#{section.kind}"
+        nil
       end : []
 
       {

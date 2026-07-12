@@ -13,7 +13,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "قائمة العروس لستة أشهر",
         "value_en": "The 6-month bridal checklist",
         "content_type": "text",
         "position": 0
@@ -22,7 +22,7 @@
         "key": "title",
         "label": "Title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "خطة هادئة، تصلك على بريدك.",
         "value_en": "A quiet plan, sent to your inbox.",
         "content_type": "text",
         "position": 1
@@ -31,7 +31,7 @@
         "key": "sent_message",
         "label": "Thank-you message (after submit)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "شكرًا لك — قائمتك في طريقها إليك.",
         "value_en": "Thank you — your checklist is on its way.",
         "content_type": "text",
         "position": 2
@@ -40,7 +40,7 @@
         "key": "email_label",
         "label": "Email field label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بريدك الإلكتروني",
         "value_en": "Your email",
         "content_type": "text",
         "position": 3
@@ -49,7 +49,7 @@
         "key": "submit_label",
         "label": "Submit button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أرسلوا لي القائمة",
         "value_en": "Send me the checklist",
         "content_type": "text",
         "position": 4
@@ -58,7 +58,7 @@
         "key": "note",
         "label": "Privacy note below form",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "رسالة واحدة فقط. لا قوائم بريدية، ولا متابعات لم تطلبيها.",
         "value_en": "One email. No list, no follow-ups you didn't ask for.",
         "content_type": "text",
         "position": 5
@@ -79,7 +79,7 @@
         "key": "title",
         "label": "Card title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لوالدة العروس وأختها.",
         "value_en": "For the mother & sister of the bride.",
         "content_type": "text",
         "position": 0
@@ -88,7 +88,7 @@
         "key": "body",
         "label": "Card body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "خطة موازية هادئة، تُرتَّب بالسرّية نفسها. اسألينا عنها خلال استشارتك.",
         "value_en": "A quiet parallel plan, arranged with the same discretion. Ask us during your consultation.",
         "content_type": "richtext",
         "position": 1
@@ -97,7 +97,7 @@
         "key": "link",
         "label": "Link label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اسألي بخصوصية ←",
         "value_en": "Ask privately →",
         "content_type": "text",
         "position": 2
@@ -118,7 +118,7 @@
         "key": "ample",
         "label": "Ample-time message",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أمامك متسع من الوقت للتخطيط بهدوء، وبالترتيب الصحيح.",
         "value_en": "There is ample time to plan calmly, in the right order.",
         "content_type": "text",
         "position": 0
@@ -127,7 +127,7 @@
         "key": "ideal",
         "label": "Ideal-window message",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "توقيت مثالي — بروتوكول عروس ١٨٠ يناسبك تمامًا.",
         "value_en": "An ideal window — the Bride's 180 fits beautifully.",
         "content_type": "text",
         "position": 1
@@ -136,7 +136,7 @@
         "key": "soon",
         "label": "Soon-but-workable message",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الوقت قريب، لكنه كافٍ — سنقدّم ما هو أهم أولًا.",
         "value_en": "Close, but workable — we'll prioritise what matters most.",
         "content_type": "text",
         "position": 2
@@ -145,7 +145,7 @@
         "key": "today",
         "label": "Urgent (today) message",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لنتحدث اليوم — سنستثمر كل أسبوع متبقٍّ بأفضل ما يمكن.",
         "value_en": "Let's speak today — we'll make the most of every week.",
         "content_type": "text",
         "position": 3
@@ -154,7 +154,7 @@
         "key": "days_label",
         "label": "Days-remaining label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يومًا للتخطيط، بهدوء.",
         "value_en": "days to plan, calmly.",
         "content_type": "text",
         "position": 4
@@ -175,7 +175,7 @@
         "key": "title",
         "label": "Title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اطلبي خطة عروس الـ١٨٠ الخاصة بك.",
         "value_en": "Request your Bride's 180 plan.",
         "content_type": "text",
         "position": 0
@@ -184,7 +184,7 @@
         "key": "subtext",
         "label": "Subtext (before codeword)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أرسلي الكلمة المفتاحية",
         "value_en": "Send the codeword",
         "content_type": "text",
         "position": 1
@@ -193,7 +193,7 @@
         "key": "subtext_suffix",
         "label": "Subtext (after codeword)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عبر واتساب.",
         "value_en": "on WhatsApp.",
         "content_type": "text",
         "position": 2
@@ -202,7 +202,7 @@
         "key": "button",
         "label": "Button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي الحوار",
         "value_en": "Begin the conversation",
         "content_type": "text",
         "position": 3
@@ -223,7 +223,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كونسيرج العروس · الرياض",
         "value_en": "Bridal Concierge · Riyadh",
         "content_type": "text",
         "position": 0
@@ -232,7 +232,7 @@
         "key": "title_1",
         "label": "Title line 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بشرة",
         "value_en": "Skin,",
         "content_type": "text",
         "position": 1
@@ -241,7 +241,7 @@
         "key": "title_2",
         "label": "Title line 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تُقرأ بعناية.",
         "value_en": "measured.",
         "content_type": "text",
         "position": 2
@@ -250,7 +250,7 @@
         "key": "title_em",
         "label": "Title line 3 (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "وثقة هادئة.",
         "value_en": "Confidence, quiet.",
         "content_type": "text",
         "position": 3
@@ -259,7 +259,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عيادة البشرة بقيادة الطبيبة للنساء في الرياض — حيث كل خطة تُقرأ وتُكتب وتُوقَّع بيد د. ميساء.",
         "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.",
         "content_type": "richtext",
         "position": 4
@@ -268,7 +268,7 @@
         "key": "date_label",
         "label": "Wedding-date input label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أخبرينا بموعد زفافك",
         "value_en": "Tell us your wedding date",
         "content_type": "text",
         "position": 5
@@ -289,7 +289,7 @@
         "key": "pillar_1_title",
         "label": "Pillar 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مخطَّطة",
         "value_en": "Planned",
         "content_type": "text",
         "position": 0
@@ -298,7 +298,7 @@
         "key": "pillar_1_body",
         "label": "Pillar 1 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كل خطوة مرسومة على موعدك، ليتم العمل مبكرًا وبرفق.",
         "value_en": "Every step mapped to your date, so the work happens early and gently.",
         "content_type": "richtext",
         "position": 1
@@ -307,7 +307,7 @@
         "key": "pillar_2_title",
         "label": "Pillar 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مرنة",
         "value_en": "Flexible",
         "content_type": "text",
         "position": 2
@@ -316,7 +316,7 @@
         "key": "pillar_2_body",
         "label": "Pillar 2 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مساحة للتعديل وفق استجابة بشرتك — تُراجَع دائمًا، ولا تُرتجَل أبدًا.",
         "value_en": "Room to adjust as your skin responds — reviewed, never improvised.",
         "content_type": "richtext",
         "position": 3
@@ -325,7 +325,7 @@
         "key": "pillar_3_title",
         "label": "Pillar 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مُغلَقة",
         "value_en": "Locked",
         "content_type": "text",
         "position": 4
@@ -334,7 +334,7 @@
         "key": "pillar_3_body",
         "label": "Pillar 3 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا علاجات جديدة في الأسبوعين الأخيرين. تُقفَل الخطة، وما عليكِ سوى الوصول.",
         "value_en": "No new treatments in the final two weeks. The plan closes, and you simply arrive.",
         "content_type": "richtext",
         "position": 5
@@ -355,7 +355,7 @@
         "key": "quote_1_text",
         "label": "Quote 1 text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كل شيء حُسم قبل أشهر. في الأسبوع الأخير، لم أفعل شيئًا سوى النوم.",
         "value_en": "Everything was decided months before. The last week, I just slept.",
         "content_type": "richtext",
         "position": 0
@@ -364,7 +364,7 @@
         "key": "quote_1_by",
         "label": "Quote 1 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ل.م. · ٢٠٢٤",
         "value_en": "L.M. · 2024",
         "content_type": "text",
         "position": 1
@@ -373,7 +373,7 @@
         "key": "quote_2_text",
         "label": "Quote 2 text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لم يستطع أحد أن يشير إلى شيء بعينه. بدوتُ نفسي فحسب، لكن مرتاحة.",
         "value_en": "No one could point to one thing. I just looked like myself, rested.",
         "content_type": "richtext",
         "position": 2
@@ -382,7 +382,7 @@
         "key": "quote_2_by",
         "label": "Quote 2 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أ.ر. · ٢٠٢٥",
         "value_en": "A.R. · 2025",
         "content_type": "text",
         "position": 3
@@ -391,7 +391,7 @@
         "key": "quote_3_text",
         "label": "Quote 3 text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بدأت والدتي خطتها الهادئة إلى جانب خطتي. ووصلنا معًا.",
         "value_en": "My mother started her own quiet plan beside mine. We came together.",
         "content_type": "richtext",
         "position": 4
@@ -400,7 +400,7 @@
         "key": "quote_3_by",
         "label": "Quote 3 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ف.ك. · ٢٠٢٥",
         "value_en": "F.K. · 2025",
         "content_type": "text",
         "position": 5
@@ -421,7 +421,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عروس الـ١٨٠",
         "value_en": "The Bride's 180",
         "content_type": "text",
         "position": 0
@@ -430,7 +430,7 @@
         "key": "title",
         "label": "Section title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ستة أشهر، مخطَّطة بالترتيب الصحيح — حتى لا يُستعجل شيء في النهاية.",
         "value_en": "Six months, planned in the right order — so nothing is rushed at the end.",
         "content_type": "text",
         "position": 1
@@ -439,7 +439,7 @@
         "key": "stage_1_num",
         "label": "Stage 1 number label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الشهران ١–٢",
         "value_en": "Months 1–2",
         "content_type": "text",
         "position": 2
@@ -448,7 +448,7 @@
         "key": "stage_1_title",
         "label": "Stage 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التأسيس",
         "value_en": "Foundation",
         "content_type": "text",
         "position": 3
@@ -457,7 +457,7 @@
         "key": "stage_1_body",
         "label": "Stage 1 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تشخيص وتهدئة وتصحيح. العمل البطيء غير المرئي الذي يُبنى عليه كل ما يأتي لاحقًا.",
         "value_en": "Diagnose, calm and correct. The slow, invisible work that everything later depends on.",
         "content_type": "richtext",
         "position": 4
@@ -466,7 +466,7 @@
         "key": "stage_2_num",
         "label": "Stage 2 number label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الشهران ٣–٤",
         "value_en": "Months 3–4",
         "content_type": "text",
         "position": 5
@@ -475,7 +475,7 @@
         "key": "stage_2_title",
         "label": "Stage 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البناء",
         "value_en": "Build",
         "content_type": "text",
         "position": 6
@@ -484,7 +484,7 @@
         "key": "stage_2_body",
         "label": "Stage 2 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "إشراق وتحديد وكثافة شعر — بتدرّج مدروس، ثم بمراجعةٍ مقارنةً بنقطة البداية.",
         "value_en": "Glow, contour and hair density — sequenced, then reviewed against where you began.",
         "content_type": "richtext",
         "position": 7
@@ -493,7 +493,7 @@
         "key": "stage_3_num",
         "label": "Stage 3 number label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الشهران ٥–٦",
         "value_en": "Months 5–6",
         "content_type": "text",
         "position": 8
@@ -502,7 +502,7 @@
         "key": "stage_3_title",
         "label": "Stage 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الصقل والإغلاق",
         "value_en": "Polish & lock",
         "content_type": "text",
         "position": 9
@@ -511,7 +511,7 @@
         "key": "stage_3_body",
         "label": "Stage 3 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لمسات أخيرة، ثم قاعدة «لا تجارب». الأسبوعان الأخيران للراحة، لا للمخاطرة.",
         "value_en": "Refinement, then a no-experiments rule. The last fortnight is for rest, not risk.",
         "content_type": "richtext",
         "position": 10
@@ -536,7 +536,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكلماتها",
         "value_en": "In her words",
         "content_type": "text",
         "position": 0
@@ -545,7 +545,7 @@
         "key": "clip_1_title",
         "label": "Clip 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ما الذي يستحق مالك فعلًا؟",
         "value_en": "What is worth your money?",
         "content_type": "text",
         "position": 1
@@ -554,7 +554,7 @@
         "key": "clip_2_title",
         "label": "Clip 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف أقول \"لا\" لمريضة",
         "value_en": "How I say no to a patient",
         "content_type": "text",
         "position": 2
@@ -563,7 +563,7 @@
         "key": "clip_3_title",
         "label": "Clip 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ما الذي سأقوله لأعزّ صديقاتي",
         "value_en": "What I'd tell my best friend",
         "content_type": "text",
         "position": 3
@@ -584,7 +584,7 @@
         "key": "cred_1",
         "label": "Credential line 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكالوريوس الطب والجراحة · الأمراض الجلدية",
         "value_en": "MBBS · Dermatology",
         "content_type": "text",
         "position": 0
@@ -593,7 +593,7 @@
         "key": "cred_2",
         "label": "Credential line 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "زمالة طب التجميل",
         "value_en": "Aesthetic Medicine Fellowship",
         "content_type": "text",
         "position": 1
@@ -602,7 +602,7 @@
         "key": "cred_3",
         "label": "Credential line 3",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التجميل التجديدي",
         "value_en": "Regenerative Aesthetics",
         "content_type": "text",
         "position": 2
@@ -611,7 +611,7 @@
         "key": "cred_4",
         "label": "Credential line 4",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مرخّصة من الهيئة العامة للغذاء والدواء ووزارة الصحة",
         "value_en": "SFDA / MOH Licensed",
         "content_type": "text",
         "position": 3
@@ -620,7 +620,7 @@
         "key": "cred_5",
         "label": "Credential line 5",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عضو · الجمعية السعودية للأمراض الجلدية",
         "value_en": "Member · Saudi Society of Dermatology",
         "content_type": "text",
         "position": 4
@@ -689,7 +689,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المؤسِّسة · المديرة الطبية",
         "value_en": "The Founder · Medical Director",
         "content_type": "text",
         "position": 0
@@ -707,7 +707,7 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "— د. ميساء الراشد",
         "value_en": "— Dr. Maysa Al-Rashid",
         "content_type": "text",
         "position": 2
@@ -728,7 +728,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "منهج ميساء™",
         "value_en": "The Maysa Method™",
         "content_type": "text",
         "position": 0
@@ -746,7 +746,7 @@
         "key": "step_1_n",
         "label": "Step 1 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠١",
         "value_en": "01",
         "content_type": "text",
         "position": 2
@@ -773,7 +773,7 @@
         "key": "step_2_n",
         "label": "Step 2 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٢",
         "value_en": "02",
         "content_type": "text",
         "position": 5
@@ -800,7 +800,7 @@
         "key": "step_3_n",
         "label": "Step 3 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٣",
         "value_en": "03",
         "content_type": "text",
         "position": 8
@@ -827,7 +827,7 @@
         "key": "cta_label",
         "label": "CTA button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "احجزي تقييم منهج ميساء™",
         "value_en": "Request the Maysa Method™ Assessment",
         "content_type": "text",
         "position": 11
@@ -848,7 +848,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف أفكّر في العلاج",
         "value_en": "How I think about treatment",
         "content_type": "text",
         "position": 0
@@ -932,7 +932,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الأسئلة الشائعة",
         "value_en": "Frequently Asked",
         "content_type": "text",
         "position": 0
@@ -941,7 +941,7 @@
         "key": "title_1",
         "label": "Title line 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الأسئلة التي تسبق",
         "value_en": "The questions",
         "content_type": "text",
         "position": 1
@@ -950,7 +950,7 @@
         "key": "title_em",
         "label": "Title line 2 (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "السؤال.",
         "value_en": "before the question.",
         "content_type": "text",
         "position": 2
@@ -959,7 +959,7 @@
         "key": "search_placeholder",
         "label": "Search input placeholder",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابحثي في الأسئلة",
         "value_en": "Search the questions",
         "content_type": "text",
         "position": 3
@@ -968,7 +968,7 @@
         "key": "empty_state",
         "label": "No-results message",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا توجد أسئلة مطابقة.",
         "value_en": "No questions match.",
         "content_type": "text",
         "position": 4
@@ -989,7 +989,7 @@
         "key": "group_1_title",
         "label": "Group 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "قبل زيارتك",
         "value_en": "Before you come in",
         "content_type": "text",
         "position": 0
@@ -998,7 +998,7 @@
         "key": "q_1_question",
         "label": "Q1 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "هل تنشرون قائمة أسعار؟",
         "value_en": "Do you publish a price list?",
         "content_type": "text",
         "position": 1
@@ -1007,7 +1007,7 @@
         "key": "q_1_answer",
         "label": "Q1 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا. الرعاية تُرتَّب عبر الاستشارة، ولا تُباع أبدًا من قائمة. نناقش التكلفة بخصوصية بعد أن نفهم ما تحتاجه بشرتك فعلًا.",
         "value_en": "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs.",
         "content_type": "richtext",
         "position": 2
@@ -1016,7 +1016,7 @@
         "key": "q_2_question",
         "label": "Q2 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف أبدأ؟",
         "value_en": "How do I start?",
         "content_type": "text",
         "position": 3
@@ -1025,7 +1025,7 @@
         "key": "q_2_answer",
         "label": "Q2 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أرسلي استفسارًا خاصًا — عبر واتساب أو من خلال النموذج. تُراجع د. ميساء أو مسؤولة علاقات المريضات كل رسالة شخصيًا.",
         "value_en": "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally.",
         "content_type": "richtext",
         "position": 4
@@ -1034,7 +1034,7 @@
         "key": "q_3_question",
         "label": "Q3 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "هل الزيارة الأولى علاج؟",
         "value_en": "Is the first visit a treatment?",
         "content_type": "text",
         "position": 5
@@ -1043,7 +1043,7 @@
         "key": "q_3_answer",
         "label": "Q3 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا. الموعد الأول تقييم تشخيصي بإشراف الطبيبة. لا يُجرى فيه أي إجراء؛ نقرأ بشرتك ونكتب الخطة.",
         "value_en": "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan.",
         "content_type": "richtext",
         "position": 6
@@ -1052,7 +1052,7 @@
         "key": "group_2_title",
         "label": "Group 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف تسير الرعاية",
         "value_en": "How care works",
         "content_type": "text",
         "position": 7
@@ -1061,7 +1061,7 @@
         "key": "q_4_question",
         "label": "Q4 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لماذا خطة من اثني عشر شهرًا؟",
         "value_en": "Why a twelve-month plan?",
         "content_type": "text",
         "position": 8
@@ -1070,7 +1070,7 @@
         "key": "q_4_answer",
         "label": "Q4 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البشرة الجميلة تُبنى بالتدرّج عبر الوقت، لا تُفرَض في جلسة واحدة. نخطّط على أرباع السنة ونراجع النتائج كل ثلاثة أشهر.",
         "value_en": "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months.",
         "content_type": "richtext",
         "position": 9
@@ -1079,7 +1079,7 @@
         "key": "q_5_question",
         "label": "Q5 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "هل سأقابل د. ميساء بنفسها؟",
         "value_en": "Will I see Dr. Maysa herself?",
         "content_type": "text",
         "position": 10
@@ -1088,7 +1088,7 @@
         "key": "q_5_answer",
         "label": "Q5 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تقييمك الأول تُجريه د. ميساء شخصيًا. وقد تشمل الرعاية اللاحقة الفريق الطبي الأوسع، دائمًا تحت إشرافها.",
         "value_en": "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction.",
         "content_type": "richtext",
         "position": 11
@@ -1097,7 +1097,7 @@
         "key": "q_6_question",
         "label": "Q6 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "وماذا لو لم يكن العلاج مناسبًا لي؟",
         "value_en": "What if a treatment isn't right for me?",
         "content_type": "text",
         "position": 12
@@ -1106,7 +1106,7 @@
         "key": "q_6_answer",
         "label": "Q6 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عندها نقولها بصراحة. رفض ما لا يناسبك جزء من ممارستنا — نفضّل أن نحفظ ثقتك على أن نبيعك جلسة.",
         "value_en": "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session.",
         "content_type": "richtext",
         "position": 13
@@ -1115,7 +1115,7 @@
         "key": "group_3_title",
         "label": "Group 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الخصوصية والتفاصيل العملية",
         "value_en": "Privacy & practicalities",
         "content_type": "text",
         "position": 14
@@ -1124,7 +1124,7 @@
         "key": "q_7_question",
         "label": "Q7 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ما مدى خصوصية معلوماتي؟",
         "value_en": "How private is my information?",
         "content_type": "text",
         "position": 15
@@ -1133,7 +1133,7 @@
         "key": "q_7_answer",
         "label": "Q7 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا يطّلع على استفسارك سوى مسؤولة علاقات المريضات ود. ميساء. نلتزم بنظام حماية البيانات الشخصية (PDPL) ونحفظ بياناتك بأمان.",
         "value_en": "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely.",
         "content_type": "richtext",
         "position": 16
@@ -1142,7 +1142,7 @@
         "key": "q_8_question",
         "label": "Q8 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "هل تلتقطون صورًا للمريضات؟",
         "value_en": "Do you photograph patients?",
         "content_type": "text",
         "position": 17
@@ -1151,7 +1151,7 @@
         "key": "q_8_answer",
         "label": "Q8 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "فقط بموافقة خطية منفصلة ومحددة. الموافقة لا تُفترَض أبدًا، ويمكن سحبها في أي وقت.",
         "value_en": "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time.",
         "content_type": "richtext",
         "position": 18
@@ -1160,7 +1160,7 @@
         "key": "q_9_question",
         "label": "Q9 question",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أين تقعون، ومتى تفتحون؟",
         "value_en": "Where are you, and when are you open?",
         "content_type": "text",
         "position": 19
@@ -1169,7 +1169,7 @@
         "key": "q_9_answer",
         "label": "Q9 answer",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الملقا، الرياض. من السبت إلى الخميس، ١٠:٠٠–٢٢:٠٠. الجمعة مغلق. نشارك العنوان الدقيق عند تحديد الموعد.",
         "value_en": "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule.",
         "content_type": "richtext",
         "position": 20
@@ -1196,7 +1196,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "داخل نيو سكين",
         "value_en": "Inside NeuSkin",
         "content_type": "text",
         "position": 0
@@ -1232,7 +1232,7 @@
         "key": "cue",
         "label": "Scroll cue",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مرّري ←",
         "value_en": "Scroll →",
         "content_type": "text",
         "position": 4
@@ -1286,7 +1286,7 @@
         "key": "quote",
         "label": "Closing quote",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "«قيمةُ العيادة تُقاس بما ترفض أن تفعله.»",
         "value_en": "“A clinic should be measured by what it refuses to do.”",
         "content_type": "text",
         "position": 10
@@ -1295,7 +1295,7 @@
         "key": "outro_link",
         "label": "Outro link text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تجوّلي في العيادة ←",
         "value_en": "Tour the clinic →",
         "content_type": "text",
         "position": 11
@@ -1373,7 +1373,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تعرّفي على المؤسِّسة",
         "value_en": "Meet the founder",
         "content_type": "text",
         "position": 0
@@ -1382,7 +1382,7 @@
         "key": "body_1",
         "label": "Body paragraph 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أسّستُ نيو سكين لأتجاوز ضجيج الجمال الاستهلاكي. أؤمن بنهجٍ طبي يُقدّر وقتك وثقتك قبل كل شيء. تستحقين وضوحًا، وخطةً تُصمَّم لكِ وحدك، ونتائج تُكرّم جمالك الطبيعي — بصبرٍ وخبرة سريرية.",
         "value_en": "I founded NeuSkin to move beyond the noise of mass-market beauty. I believe in a medical approach that values your time and trust above all else. You deserve clarity, a bespoke plan, and results that honor your natural beauty, guided by patience and clinical expertise.",
         "content_type": "text",
         "position": 1
@@ -1391,7 +1391,7 @@
         "key": "body_2",
         "label": "Body paragraph 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يبدأ نهجي بفهمٍ عميق لبشرتك مبنيٍّ على البيانات. معًا، نُقدّم ما يخدم صحتك على المدى الطويل، ونترك خلفنا كل ما لا يخدمها من صيحات.",
         "value_en": "My approach begins with a deep, data-driven understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
         "content_type": "text",
         "position": 2
@@ -1409,7 +1409,7 @@
         "key": "link",
         "label": "Link text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اقرئي فلسفتها ←",
         "value_en": "Read her philosophy →",
         "content_type": "text",
         "position": 4
@@ -1430,7 +1430,7 @@
         "key": "eyebrow",
         "label": "Eyebrow (small line above headline)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بإشراف طبيبة · الرياض",
         "value_en": "Doctor-led · Riyadh",
         "content_type": "text",
         "position": 0
@@ -1475,7 +1475,7 @@
         "key": "foot_1",
         "label": "Footer note 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تأسست في الملقا · الرياض",
         "value_en": "Est. Al Malqa · Riyadh",
         "content_type": "text",
         "position": 5
@@ -1484,7 +1484,7 @@
         "key": "foot_2",
         "label": "Footer note 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ستة بروتوكولات · فلسفة واحدة",
         "value_en": "Six protocols · one philosophy",
         "content_type": "text",
         "position": 6
@@ -1505,7 +1505,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "وعدنا",
         "value_en": "The Promise",
         "content_type": "text",
         "position": 0
@@ -1523,7 +1523,7 @@
         "key": "p1_num",
         "label": "Principle 1 — number/label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠١ — مبدأ",
         "value_en": "01 — Principle",
         "content_type": "text",
         "position": 2
@@ -1550,7 +1550,7 @@
         "key": "p2_num",
         "label": "Principle 2 — number/label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٢ — مبدأ",
         "value_en": "02 — Principle",
         "content_type": "text",
         "position": 5
@@ -1577,7 +1577,7 @@
         "key": "p3_num",
         "label": "Principle 3 — number/label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٣ — مبدأ",
         "value_en": "03 — Principle",
         "content_type": "text",
         "position": 8
@@ -1616,7 +1616,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البروتوكولات الستة",
         "value_en": "The Six Protocols",
         "content_type": "text",
         "position": 0
@@ -1643,7 +1643,7 @@
         "key": "link",
         "label": "Link text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "استعرضي كل البروتوكولات ←",
         "value_en": "View all protocols →",
         "content_type": "text",
         "position": 3
@@ -1664,7 +1664,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكلماتهنّ",
         "value_en": "In their words",
         "content_type": "text",
         "position": 0
@@ -1673,7 +1673,7 @@
         "key": "quote_1",
         "label": "Quote 1 — text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أخبرتني بما لا أحتاجه قبل أن تخبرني بما أحتاج. لم يسبق لطبيبةٍ أن فعلت ذلك معي.",
         "value_en": "She told me what I didn't need before she told me what I did. I'd never had a doctor do that.",
         "content_type": "text",
         "position": 1
@@ -1682,7 +1682,7 @@
         "key": "by_1",
         "label": "Quote 1 — attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ل.م. · الرياض",
         "value_en": "L.M. · Riyadh",
         "content_type": "text",
         "position": 2
@@ -1691,7 +1691,7 @@
         "key": "quote_2",
         "label": "Quote 2 — text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ستة أشهر، خطة واحدة، تُراجَع كل ثلاثة أشهر. بشرتي ما زالت بشرتي — لكنها مرتاحة.",
         "value_en": "Six months, one plan, reviewed every quarter. My skin looks like mine — only rested.",
         "content_type": "text",
         "position": 3
@@ -1700,7 +1700,7 @@
         "key": "by_2",
         "label": "Quote 2 — attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أ.ر. · الرياض",
         "value_en": "A.R. · Riyadh",
         "content_type": "text",
         "position": 4
@@ -1709,7 +1709,7 @@
         "key": "quote_3",
         "label": "Quote 3 — text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "خصوصية تامة من أول رسالة حتى آخر مراجعة. لم أشعر يومًا بأنني رقم في جدول مواعيد.",
         "value_en": "Discreet from the first message to the last review. I never felt like a number on a calendar.",
         "content_type": "text",
         "position": 5
@@ -1718,7 +1718,7 @@
         "key": "by_3",
         "label": "Quote 3 — attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ف.ك. · الرياض",
         "value_en": "F.K. · Riyadh",
         "content_type": "text",
         "position": 6
@@ -1739,7 +1739,7 @@
         "key": "privacy_title",
         "label": "Privacy block heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الخصوصية ونظام حماية البيانات (PDPL)",
         "value_en": "Privacy & PDPL",
         "content_type": "text",
         "position": 0
@@ -1748,7 +1748,7 @@
         "key": "privacy_p1",
         "label": "Privacy block paragraph 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا نجمع سوى ما نحتاجه للعناية بك وللردّ على استفسارك. تُحفَظ بياناتك الشخصية بأمان، وتُستخدم حصرًا لرعايتك وللتواصل معك، ولا تُباع أو تُشارَك لأغراض تسويقية أبدًا.",
         "value_en": "We collect only what we need to care for you and to reply to your inquiry. Your personal data is stored securely, used solely for your care and communication with you, and never sold or shared for marketing.",
         "content_type": "richtext",
         "position": 1
@@ -1757,7 +1757,7 @@
         "key": "privacy_p2",
         "label": "Privacy block paragraph 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يمكنك في أي وقت طلب الاطّلاع على المعلومات التي نحتفظ بها أو تصحيحها أو حذفها. تعاملنا مع البيانات الشخصية يلتزم بنظام حماية البيانات الشخصية في المملكة العربية السعودية (PDPL).",
         "value_en": "You may ask to see, correct, or delete the information we hold at any time. Our handling of personal data follows Saudi Arabia’s Personal Data Protection Law (PDPL).",
         "content_type": "richtext",
         "position": 2
@@ -1766,7 +1766,7 @@
         "key": "medical_title",
         "label": "Medical disclaimer heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "إخلاء مسؤولية الإعلان الطبي",
         "value_en": "Medical advertising disclaimer",
         "content_type": "text",
         "position": 3
@@ -1775,7 +1775,7 @@
         "key": "medical_p1",
         "label": "Medical disclaimer paragraph 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تختلف النتائج من شخص إلى آخر وتعتمد على عوامل فردية. كل علاج يخضع لاستشارة طبية وتقييم فردي، ولا تُضمَن أي نتيجة محددة.",
         "value_en": "Results vary from person to person and depend on individual factors. Every treatment is subject to medical consultation and individual assessment, and no specific outcome is guaranteed.",
         "content_type": "richtext",
         "position": 4
@@ -1784,7 +1784,7 @@
         "key": "medical_p2",
         "label": "Medical disclaimer paragraph 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا شيء في هذا الموقع يُعدّ استشارة طبية أو بديلًا عن استشارة حضورية مع ممارسٍ مرخَّص.",
         "value_en": "Nothing on this site is medical advice or a substitute for an in-person consultation with a licensed practitioner.",
         "content_type": "richtext",
         "position": 5
@@ -1793,7 +1793,7 @@
         "key": "consent_title",
         "label": "Consent policy heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "سياسة الموافقة",
         "value_en": "Consent policy",
         "content_type": "text",
         "position": 6
@@ -1802,7 +1802,7 @@
         "key": "consent_p1",
         "label": "Consent policy paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يتطلب التصوير واستخدام أي مواد تخص المريضة موافقة خطية منفصلة ومحددة. الموافقة لا تُفترَض أبدًا، وتُمنَح بحرية، ويمكن سحبها في أي وقت دون أن يؤثر ذلك على رعايتك.",
         "value_en": "Photography and the use of any patient material require separate, specific, written consent. Consent is never assumed, is given freely, and may be withdrawn at any time without affecting your care.",
         "content_type": "richtext",
         "position": 7
@@ -1811,7 +1811,7 @@
         "key": "terms_title",
         "label": "Terms of inquiry heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "شروط الاستفسار",
         "value_en": "Terms of inquiry",
         "content_type": "text",
         "position": 8
@@ -1820,7 +1820,7 @@
         "key": "terms_p1",
         "label": "Terms of inquiry paragraph 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "إرسال الاستفسار يبدأ حوارًا خاصًا، لا حجزًا ولا عقدًا. كل رعاية تُرتَّب بعد استشارة طبية وتقييم فردي.",
         "value_en": "Submitting an inquiry begins a private conversation, not a booking or a contract. All care is arranged after a medical consultation and individual assessment.",
         "content_type": "richtext",
         "position": 9
@@ -1829,7 +1829,7 @@
         "key": "terms_p2",
         "label": "Terms of inquiry paragraph 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نردّ شخصيًا، من السبت إلى الخميس. وبتواصلك معنا فأنتِ توافقين فقط على أن نعاود التواصل معك — لا أكثر.",
         "value_en": "We reply personally, Saturday to Thursday. By contacting us you agree only to be contacted back — nothing more.",
         "content_type": "richtext",
         "position": 10
@@ -1850,7 +1850,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الشؤون القانونية والامتثال",
         "value_en": "Legal & Compliance",
         "content_type": "text",
         "position": 0
@@ -1859,7 +1859,7 @@
         "key": "title_1",
         "label": "Title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بوضوحٍ تام.",
         "value_en": "Plainly stated.",
         "content_type": "text",
         "position": 1
@@ -1868,7 +1868,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نكتب شروطنا بلغةٍ إنسانية. هذه صفحة توضيحية — وتُعَدّ الصياغة القانونية النهائية مع مستشار قانوني بما يوافق أنظمة المملكة ونظام حماية البيانات الشخصية.",
         "value_en": "We keep our terms in human language. This is a demonstration page — final legal copy is prepared with counsel for KSA / PDPL compliance.",
         "content_type": "richtext",
         "position": 2
@@ -1889,7 +1889,7 @@
         "key": "label",
         "label": "License label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ترخيص الهيئة العامة للغذاء والدواء / وزارة الصحة",
         "value_en": "SFDA / MOH license",
         "content_type": "text",
         "position": 0
@@ -1898,7 +1898,7 @@
         "key": "number",
         "label": "License number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "رقم ٠٠٠٠٠٠٠٠٠٠",
         "value_en": "No. 0000000000",
         "content_type": "text",
         "position": 1
@@ -1919,7 +1919,7 @@
         "key": "title_1",
         "label": "Title part 1 (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي بـ",
         "value_en": "Begin with the",
         "content_type": "text",
         "position": 0
@@ -1928,7 +1928,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "منهج ميساء™.",
         "value_en": "Maysa Method™.",
         "content_type": "text",
         "position": 1
@@ -1937,7 +1937,7 @@
         "key": "body",
         "label": "Body text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "قراءة واحدة، خطة مكتوبة واحدة، تُراجَع كل ثلاثة أشهر. يبدأ كل شيء باستفسار خاص.",
         "value_en": "One reading, one written plan, reviewed every quarter. It begins with a private inquiry.",
         "content_type": "text",
         "position": 2
@@ -1946,7 +1946,7 @@
         "key": "cta_label",
         "label": "CTA button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "احجزي التقييم",
         "value_en": "Request the Assessment",
         "content_type": "text",
         "position": 3
@@ -1967,7 +1967,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الفلسفة",
         "value_en": "The Philosophy",
         "content_type": "text",
         "position": 0
@@ -1976,7 +1976,7 @@
         "key": "sub",
         "label": "Subheading (h2)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البشرة بيانات.",
         "value_en": "Skin is data.",
         "content_type": "text",
         "position": 1
@@ -1985,7 +1985,7 @@
         "key": "main",
         "label": "Main heading (h1)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اقرأها، ثم عالجها.",
         "value_en": "Read it, then treat it.",
         "content_type": "text",
         "position": 2
@@ -2006,7 +2006,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ما ليس منه",
         "value_en": "What it is not",
         "content_type": "text",
         "position": 0
@@ -2015,7 +2015,7 @@
         "key": "title_1",
         "label": "Title part 1 (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الانضباط في جوهره",
         "value_en": "Discipline is mostly",
         "content_type": "text",
         "position": 1
@@ -2024,7 +2024,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "امتناع.",
         "value_en": "restraint.",
         "content_type": "text",
         "position": 2
@@ -2033,7 +2033,7 @@
         "key": "item_1",
         "label": "Exclusion item 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ليس علاجًا، ولا يُجرى خلاله أي إجراء.",
         "value_en": "It is not a treatment, and nothing is performed during it.",
         "content_type": "text",
         "position": 3
@@ -2042,7 +2042,7 @@
         "key": "item_2",
         "label": "Exclusion item 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ليس حلًّا سريعًا؛ فالبشرة الجميلة تُبنى بالتدرّج عبر الوقت.",
         "value_en": "It is not a quick fix; good skin is sequenced over time.",
         "content_type": "text",
         "position": 4
@@ -2051,7 +2051,7 @@
         "key": "item_3",
         "label": "Exclusion item 3",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ليس قائمة أسعار، ولا يُباع أبدًا من قائمة.",
         "value_en": "It is not a price list, and it is never sold from a menu.",
         "content_type": "text",
         "position": 5
@@ -2060,7 +2060,7 @@
         "key": "item_4",
         "label": "Exclusion item 4",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ليس للجميع — وذلك مقصود تمامًا.",
         "value_en": "It is not for everyone — and that is entirely intentional.",
         "content_type": "text",
         "position": 6
@@ -2081,7 +2081,7 @@
         "key": "pillar_1_num",
         "label": "Pillar 1 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الركيزة ٠١",
         "value_en": "Pillar 01",
         "content_type": "text",
         "position": 0
@@ -2090,7 +2090,7 @@
         "key": "pillar_1_title",
         "label": "Pillar 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البشرة",
         "value_en": "Skin",
         "content_type": "text",
         "position": 1
@@ -2099,7 +2099,7 @@
         "key": "pillar_1_body",
         "label": "Pillar 1 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الحاجز الواقي واللون والملمس والتصبّغ — تُقرأ أولًا، ثم تُستعاد بالترتيب.",
         "value_en": "Barrier, tone, texture and pigment — read, then restored in order.",
         "content_type": "text",
         "position": 2
@@ -2108,7 +2108,7 @@
         "key": "pillar_2_num",
         "label": "Pillar 2 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الركيزة ٠٢",
         "value_en": "Pillar 02",
         "content_type": "text",
         "position": 3
@@ -2117,7 +2117,7 @@
         "key": "pillar_2_title",
         "label": "Pillar 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الشعر",
         "value_en": "Hair",
         "content_type": "text",
         "position": 4
@@ -2126,7 +2126,7 @@
         "key": "pillar_2_body",
         "label": "Pillar 2 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "صحة فروة الرأس وكثافة الشعر، تُقيَّم سريريًا وتُدعَم على مدى أسابيع.",
         "value_en": "Scalp health and density, assessed clinically and supported over weeks.",
         "content_type": "text",
         "position": 5
@@ -2135,7 +2135,7 @@
         "key": "pillar_3_num",
         "label": "Pillar 3 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الركيزة ٠٣",
         "value_en": "Pillar 03",
         "content_type": "text",
         "position": 6
@@ -2144,7 +2144,7 @@
         "key": "pillar_3_title",
         "label": "Pillar 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الجسم",
         "value_en": "Body",
         "content_type": "text",
         "position": 7
@@ -2153,7 +2153,7 @@
         "key": "pillar_3_body",
         "label": "Pillar 3 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التناسق والقوام والاستقامة — تُقاس ولا تُخمَّن، وتُدعَم سريريًا.",
         "value_en": "Tone, contour and posture — measured, not guessed, and supported clinically.",
         "content_type": "text",
         "position": 8
@@ -2162,7 +2162,7 @@
         "key": "pillar_4_num",
         "label": "Pillar 4 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الركيزة ٠٤",
         "value_en": "Pillar 04",
         "content_type": "text",
         "position": 9
@@ -2171,7 +2171,7 @@
         "key": "pillar_4_title",
         "label": "Pillar 4 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نمط الحياة",
         "value_en": "Lifestyle",
         "content_type": "text",
         "position": 10
@@ -2180,7 +2180,7 @@
         "key": "pillar_4_body",
         "label": "Pillar 4 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "النوم والشمس والتوتر والعادات — المدخلات الصامتة التي تقرّر ثبات كل ما سواها.",
         "value_en": "Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds.",
         "content_type": "text",
         "position": 11
@@ -2201,7 +2201,7 @@
         "key": "title",
         "label": "Title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المبدأ",
         "value_en": "The principle",
         "content_type": "text",
         "position": 0
@@ -2210,7 +2210,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "منهج ميساء™ ليس علاجًا، بل طريقة في اتخاذ القرار. قبل أي توصية، نقرأ البشرة والشعر والجسم كمنظومة واحدة مترابطة، وندَع تلك القراءة — لا قائمة العلاجات — تقرّر ما يأتي بعدها.",
         "value_en": "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
         "content_type": "richtext",
         "position": 1
@@ -2231,7 +2231,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "خط الاثني عشر شهرًا",
         "value_en": "The 12-month timeline",
         "content_type": "text",
         "position": 0
@@ -2240,7 +2240,7 @@
         "key": "title_1",
         "label": "Title part 1 (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "سنة كاملة، في",
         "value_en": "A year, in",
         "content_type": "text",
         "position": 1
@@ -2249,7 +2249,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أربع حركات.",
         "value_en": "four movements.",
         "content_type": "text",
         "position": 2
@@ -2258,7 +2258,7 @@
         "key": "intro_body",
         "label": "Intro paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يتكشّف منهج ميساء™ عبر أربعة أرباع — يُقاس ويُراجَع ويُعدَّل. مرّري عبر السنة.",
         "value_en": "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
         "content_type": "text",
         "position": 3
@@ -2267,7 +2267,7 @@
         "key": "cue",
         "label": "Scroll cue",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مرّري ←",
         "value_en": "Scroll →",
         "content_type": "text",
         "position": 4
@@ -2276,7 +2276,7 @@
         "key": "panel_1_q",
         "label": "Panel 1 quarter label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الربع ١",
         "value_en": "Q1",
         "content_type": "text",
         "position": 5
@@ -2285,7 +2285,7 @@
         "key": "panel_1_title",
         "label": "Panel 1 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التشخيص",
         "value_en": "Diagnose",
         "content_type": "text",
         "position": 6
@@ -2294,7 +2294,7 @@
         "key": "panel_1_body",
         "label": "Panel 1 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "يُوثَّق خط الأساس وتُكتَب الخطة. ويبدأ العمل الهادئ غير المرئي.",
         "value_en": "Baseline captured, the plan written. The slow, invisible work begins.",
         "content_type": "text",
         "position": 7
@@ -2303,7 +2303,7 @@
         "key": "panel_2_q",
         "label": "Panel 2 quarter label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الربع ٢",
         "value_en": "Q2",
         "content_type": "text",
         "position": 8
@@ -2312,7 +2312,7 @@
         "key": "panel_2_title",
         "label": "Panel 2 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الاستعادة",
         "value_en": "Restore",
         "content_type": "text",
         "position": 9
@@ -2321,7 +2321,7 @@
         "key": "panel_2_body",
         "label": "Panel 2 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تصحيح موجَّه عبر الركائز الأربع، يُراجَع مقارنةً بخط الأساس.",
         "value_en": "Targeted correction across the four pillars, reviewed against baseline.",
         "content_type": "text",
         "position": 10
@@ -2330,7 +2330,7 @@
         "key": "panel_3_q",
         "label": "Panel 3 quarter label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الربع ٣",
         "value_en": "Q3",
         "content_type": "text",
         "position": 11
@@ -2339,7 +2339,7 @@
         "key": "panel_3_title",
         "label": "Panel 3 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البناء",
         "value_en": "Build",
         "content_type": "text",
         "position": 12
@@ -2348,7 +2348,7 @@
         "key": "panel_3_body",
         "label": "Panel 3 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تتراكم النتائج، وتُعدَّل الخطة وفق استجابة بشرتك.",
         "value_en": "Results compounded; the plan adjusted to how your skin responded.",
         "content_type": "text",
         "position": 13
@@ -2357,7 +2357,7 @@
         "key": "panel_4_q",
         "label": "Panel 4 quarter label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الربع ٤",
         "value_en": "Q4",
         "content_type": "text",
         "position": 14
@@ -2366,7 +2366,7 @@
         "key": "panel_4_title",
         "label": "Panel 4 title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المحافظة",
         "value_en": "Maintain",
         "content_type": "text",
         "position": 15
@@ -2375,7 +2375,7 @@
         "key": "panel_4_body",
         "label": "Panel 4 body",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "إيقاع محافظةٍ ثابت، وسجلٌّ يبقى معك للسنوات القادمة.",
         "value_en": "A maintenance rhythm set, and a record you keep for the years ahead.",
         "content_type": "text",
         "position": 16
@@ -2384,7 +2384,7 @@
         "key": "quote",
         "label": "Closing quote (outro)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "«البشرة بيانات. اقرأها على مدى سنة، وستكفّ عن مفاجأتك.»",
         "value_en": "“Skin is data. Read it across a year, and it stops surprising you.”",
         "content_type": "text",
         "position": 17
@@ -2393,7 +2393,7 @@
         "key": "cta_label",
         "label": "Outro CTA button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "احجزي التقييم",
         "value_en": "Request the Assessment",
         "content_type": "text",
         "position": 18
@@ -2414,7 +2414,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "طلب الانضمام",
         "value_en": "Application",
         "content_type": "text",
         "position": 0
@@ -2423,7 +2423,7 @@
         "key": "quote",
         "label": "Quote",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "«الخصوصية هنا ليست ميزة، بل هي الوعد كلّه — وأنا أحفظه شخصيًا.»",
         "value_en": "“Discretion is not a feature here. It is the entire promise — and I keep it personally.”",
         "content_type": "richtext",
         "position": 1
@@ -2432,7 +2432,7 @@
         "key": "quote_cite",
         "label": "Quote citation",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "— د. ميساء",
         "value_en": "— Dr. Maysa",
         "content_type": "text",
         "position": 2
@@ -2441,7 +2441,7 @@
         "key": "note",
         "label": "Note paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الرعاية الخاصة لا تُحجَز عبر القنوات العامة. أخبرينا القليل عنك، وإن كانت الملاءمة صحيحة، سنتواصل معك شخصيًا وبسرّية تامة.",
         "value_en": "Private Care has no public booking. Tell us a little, and if it is the right fit, we will reach out personally and privately.",
         "content_type": "richtext",
         "position": 3
@@ -2450,7 +2450,7 @@
         "key": "field_name_label",
         "label": "Name field label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الاسم",
         "value_en": "Name",
         "content_type": "text",
         "position": 4
@@ -2459,7 +2459,7 @@
         "key": "field_name_placeholder",
         "label": "Name field placeholder",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اسمك",
         "value_en": "Your name",
         "content_type": "text",
         "position": 5
@@ -2468,7 +2468,7 @@
         "key": "field_contact_label",
         "label": "Contact field label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "وسيلة التواصل",
         "value_en": "Contact",
         "content_type": "text",
         "position": 6
@@ -2477,7 +2477,7 @@
         "key": "field_contact_placeholder",
         "label": "Contact field placeholder",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "جوال أو بريد إلكتروني",
         "value_en": "Mobile or email",
         "content_type": "text",
         "position": 7
@@ -2486,7 +2486,7 @@
         "key": "field_referral_label",
         "label": "Referral source field label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف وصلتِ إلينا",
         "value_en": "Referral source",
         "content_type": "text",
         "position": 8
@@ -2495,7 +2495,7 @@
         "key": "field_referral_placeholder",
         "label": "Referral source field placeholder",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف سمعتِ عنا؟",
         "value_en": "How did you hear of us?",
         "content_type": "text",
         "position": 9
@@ -2504,7 +2504,7 @@
         "key": "field_note_label",
         "label": "Brief note field label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ملاحظة موجزة",
         "value_en": "A brief note",
         "content_type": "text",
         "position": 10
@@ -2513,7 +2513,7 @@
         "key": "field_note_placeholder",
         "label": "Brief note field placeholder",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أي شيء تودّين أن نعرفه",
         "value_en": "Anything you'd like us to know",
         "content_type": "text",
         "position": 11
@@ -2522,7 +2522,7 @@
         "key": "submit_button",
         "label": "Submit button text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أرسلي الطلب",
         "value_en": "Submit application",
         "content_type": "text",
         "position": 12
@@ -2543,7 +2543,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الرعاية الخاصة · بالدعوة",
         "value_en": "Private Care · By invitation",
         "content_type": "text",
         "position": 0
@@ -2552,7 +2552,7 @@
         "key": "title_1",
         "label": "Title line 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الرعاية الخاصة",
         "value_en": "Private Care",
         "content_type": "text",
         "position": 1
@@ -2561,7 +2561,7 @@
         "key": "title_2",
         "label": "Title line 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بالدعوة فقط.",
         "value_en": "is by invitation.",
         "content_type": "text",
         "position": 2
@@ -2570,7 +2570,7 @@
         "key": "title_em",
         "label": "Title line 3 (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "وقد تكونين مؤهَّلة بالفعل.",
         "value_en": "You may already qualify.",
         "content_type": "text",
         "position": 3
@@ -2579,7 +2579,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "علاقة دائمة مع د. ميساء — تُرتَّب بخصوصية، وتُحفَظ بسرّية، وتُقدَّم فقط لمن ندعوها.",
         "value_en": "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.",
         "content_type": "richtext",
         "position": 4
@@ -2600,7 +2600,7 @@
         "key": "heading",
         "label": "Section heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ما الذي تشمله الرعاية الخاصة",
         "value_en": "What Private Care includes",
         "content_type": "text",
         "position": 0
@@ -2609,7 +2609,7 @@
         "key": "item_1",
         "label": "Include item 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "علاقة دائمة مع د. ميساء، لا دورُ انتظار.",
         "value_en": "A standing relationship with Dr. Maysa, not a queue.",
         "content_type": "text",
         "position": 1
@@ -2618,7 +2618,7 @@
         "key": "item_2",
         "label": "Include item 2",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مواعيد خلال الأسبوع نفسه، حتى خارج ساعات العمل المعلنة.",
         "value_en": "Same-week scheduling, including outside published hours.",
         "content_type": "text",
         "position": 2
@@ -2627,7 +2627,7 @@
         "key": "item_3",
         "label": "Include item 3",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مراجعات ربع سنوية وسجلّ بشرتك الكامل حاضرٌ في الغرفة.",
         "value_en": "Quarterly reviews with your full skin history in the room.",
         "content_type": "text",
         "position": 3
@@ -2636,7 +2636,7 @@
         "key": "item_4",
         "label": "Include item 4",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "دخول خاص وجناح منفصل في كل زيارة.",
         "value_en": "Discreet entry and a private suite for every visit.",
         "content_type": "text",
         "position": 4
@@ -2645,7 +2645,7 @@
         "key": "item_5",
         "label": "Include item 5",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أولوية في البروتوكولات الجديدة قبل طرحها للجميع.",
         "value_en": "Priority on new protocols before they are offered widely.",
         "content_type": "text",
         "position": 5
@@ -2654,7 +2654,7 @@
         "key": "item_6",
         "label": "Include item 6",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "جهة تواصل واحدة تعرف ملفّك مسبقًا.",
         "value_en": "One point of contact who already knows your file.",
         "content_type": "text",
         "position": 6
@@ -2675,7 +2675,7 @@
         "key": "heading",
         "label": "Section heading",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "فئات العضوية",
         "value_en": "Membership tiers",
         "content_type": "text",
         "position": 0
@@ -2684,7 +2684,7 @@
         "key": "tier_1_badge",
         "label": "Tier 1 badge",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "I",
         "value_en": "I",
         "content_type": "text",
         "position": 1
@@ -2693,7 +2693,7 @@
         "key": "tier_1_name",
         "label": "Tier 1 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الهدوء",
         "value_en": "Quiet",
         "content_type": "text",
         "position": 2
@@ -2702,7 +2702,7 @@
         "key": "tier_1_line",
         "label": "Tier 1 line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "العلاقة الأساسية.",
         "value_en": "The essential relationship.",
         "content_type": "text",
         "position": 3
@@ -2711,7 +2711,7 @@
         "key": "tier_1_desc",
         "label": "Tier 1 description",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "رعاية بإشراف طبيبة وفق جدولك، مع مراجعات ربع سنوية وجهة تواصل خاصة واحدة.",
         "value_en": "Doctor-led care on your schedule, with quarterly reviews and a single private point of contact.",
         "content_type": "richtext",
         "position": 4
@@ -2720,7 +2720,7 @@
         "key": "tier_2_badge",
         "label": "Tier 2 badge",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "II",
         "value_en": "II",
         "content_type": "text",
         "position": 5
@@ -2729,7 +2729,7 @@
         "key": "tier_2_name",
         "label": "Tier 2 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التأنّي",
         "value_en": "Considered",
         "content_type": "text",
         "position": 6
@@ -2738,7 +2738,7 @@
         "key": "tier_2_line",
         "label": "Tier 2 line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "للنظرة البعيدة.",
         "value_en": "For the long view.",
         "content_type": "text",
         "position": 7
@@ -2747,7 +2747,7 @@
         "key": "tier_2_desc",
         "label": "Tier 2 description",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كل ما في «الهدوء»، مع أولوية الوصول إلى البروتوكولات الجديدة وإعادة تقييم شاملة سنويًا.",
         "value_en": "Everything in Quiet, plus priority access to new protocols and an annual full reassessment.",
         "content_type": "richtext",
         "position": 8
@@ -2756,7 +2756,7 @@
         "key": "tier_3_badge",
         "label": "Tier 3 badge",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "III",
         "value_en": "III",
         "content_type": "text",
         "position": 9
@@ -2765,7 +2765,7 @@
         "key": "tier_3_name",
         "label": "Tier 3 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الدعوة",
         "value_en": "Invited",
         "content_type": "text",
         "position": 10
@@ -2774,7 +2774,7 @@
         "key": "tier_3_line",
         "label": "Tier 3 line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "من د. ميساء، شخصيًا.",
         "value_en": "By Dr. Maysa, personally.",
         "content_type": "text",
         "position": 11
@@ -2783,7 +2783,7 @@
         "key": "tier_3_desc",
         "label": "Tier 3 description",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "علاقة تُصمَّم حالةً بحالة. خصوصية موسّعة، وتنسيق للسفر، ورعاية للعائلة.",
         "value_en": "A bespoke relationship arranged case by case. Extended discretion, travel coordination, family care.",
         "content_type": "richtext",
         "position": 12
@@ -2804,7 +2804,7 @@
         "key": "kicker",
         "label": "Kicker line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لستِ متأكدة من أين تبدئين؟",
         "value_en": "Not sure where to start?",
         "content_type": "text",
         "position": 0
@@ -2813,7 +2813,7 @@
         "key": "title",
         "label": "Title (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي بـ",
         "value_en": "Begin with the",
         "content_type": "text",
         "position": 1
@@ -2822,7 +2822,7 @@
         "key": "title_em",
         "label": "Title (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "منهج ميساء™",
         "value_en": "Maysa Method™",
         "content_type": "text",
         "position": 2
@@ -2831,7 +2831,7 @@
         "key": "button",
         "label": "Button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي بمنهج ميساء™",
         "value_en": "Begin with the Maysa Method™",
         "content_type": "text",
         "position": 3
@@ -2852,7 +2852,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أنا هنا لأنّ…",
         "value_en": "I'm here because…",
         "content_type": "text",
         "position": 0
@@ -2873,7 +2873,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البروتوكولات",
         "value_en": "The Protocols",
         "content_type": "text",
         "position": 0
@@ -2921,7 +2921,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "قصص المريضات",
         "value_en": "Patient Stories",
         "content_type": "text",
         "position": 0
@@ -2930,7 +2930,7 @@
         "key": "title_1",
         "label": "Title line 1",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نساء حقيقيات. كلمات بموافقتهن.",
         "value_en": "Real women. Consented words.",
         "content_type": "text",
         "position": 1
@@ -2939,7 +2939,7 @@
         "key": "title_em",
         "label": "Title line 2 (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لا صور جاهزة.",
         "value_en": "No stock photography.",
         "content_type": "text",
         "position": 2
@@ -2948,7 +2948,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كل قصة هنا نُشرت بموافقة صريحة. وحيث لا يظهر وجه، فذلك أيضًا خيارٌ نحترمه.",
         "value_en": "Every story here is shared with explicit consent. Where a face is not shown, that too is a choice we respect.",
         "content_type": "richtext",
         "position": 3
@@ -2969,7 +2969,7 @@
         "key": "story_1_intro",
         "label": "Story 1 intro",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "جاءت وقد سئمت من محاولات البيع. كل ما أرادته هو خطة.",
         "value_en": "She came in tired of being sold to. What she wanted was a plan.",
         "content_type": "text",
         "position": 0
@@ -2978,7 +2978,7 @@
         "key": "story_1_quote",
         "label": "Story 1 quote",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لأول مرة، أخبرني أحد بما لا يجب أن أفعله. عندها وثقت بهم.",
         "value_en": "For the first time, someone told me what not to do. That's when I trusted them.",
         "content_type": "richtext",
         "position": 1
@@ -2987,7 +2987,7 @@
         "key": "story_1_protocol",
         "label": "Story 1 protocol",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التقييم التأسيسي ← البشرة",
         "value_en": "Diagnostic Foundation → Skin",
         "content_type": "text",
         "position": 2
@@ -2996,7 +2996,7 @@
         "key": "story_1_close",
         "label": "Story 1 closing line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بعد اثني عشر شهرًا، أصبح روتينها أقصر وبشرتها أكثر ثباتًا مما كانت عليه منذ سنوات.",
         "value_en": "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
         "content_type": "richtext",
         "position": 3
@@ -3005,7 +3005,7 @@
         "key": "story_1_by",
         "label": "Story 1 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ل.م. · ٣٤ · الرياض",
         "value_en": "L.M. · 34 · Riyadh",
         "content_type": "text",
         "position": 4
@@ -3014,7 +3014,7 @@
         "key": "story_2_intro",
         "label": "Story 2 intro",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عروس أمامها ستة أشهر، ونوعٌ هادئ من القلق.",
         "value_en": "A bride with six months and a quiet kind of panic.",
         "content_type": "text",
         "position": 5
@@ -3023,7 +3023,7 @@
         "key": "story_2_quote",
         "label": "Story 2 quote",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لم يعدني أحد بمعجزة. وعدوني بجدولٍ زمني، والتزموا به.",
         "value_en": "No one promised me a miracle. They promised me a calendar, and they kept it.",
         "content_type": "richtext",
         "position": 6
@@ -3032,7 +3032,7 @@
         "key": "story_2_protocol",
         "label": "Story 2 protocol",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عروس الـ١٨٠",
         "value_en": "The Bride's 180",
         "content_type": "text",
         "position": 7
@@ -3041,7 +3041,7 @@
         "key": "story_2_close",
         "label": "Story 2 closing line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "دخلت حفل زفافها دون علاجٍ واحد في اللحظة الأخيرة — كل شيء كان قد رُتِّب قبل أشهر.",
         "value_en": "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
         "content_type": "richtext",
         "position": 8
@@ -3050,7 +3050,7 @@
         "key": "story_2_by",
         "label": "Story 2 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أ.ر. · ٢٩ · جدة",
         "value_en": "A.R. · 29 · Jeddah",
         "content_type": "text",
         "position": 9
@@ -3059,7 +3059,7 @@
         "key": "story_3_intro",
         "label": "Story 3 intro",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عناية طويلة الأمد، بشروطها هي.",
         "value_en": "Long-term maintenance, on her own terms.",
         "content_type": "text",
         "position": 10
@@ -3068,7 +3068,7 @@
         "key": "story_3_quote",
         "label": "Story 3 quote",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أراجع بشرتي كما أراجع كل ما يهمّني — بالبيانات، كل ثلاثة أشهر.",
         "value_en": "I review my skin like I review anything that matters to me — with data, every quarter.",
         "content_type": "richtext",
         "position": 11
@@ -3077,7 +3077,7 @@
         "key": "story_3_protocol",
         "label": "Story 3 protocol",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الرعاية الخاصة",
         "value_en": "Private Care",
         "content_type": "text",
         "position": 12
@@ -3086,7 +3086,7 @@
         "key": "story_3_close",
         "label": "Story 3 closing line",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بعد ثلاث سنوات، أصبحت العلاقة هي العلاج. تعديلات صغيرة، تُراجَع باستمرار، دون أي مبالغة.",
         "value_en": "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
         "content_type": "richtext",
         "position": 13
@@ -3095,7 +3095,7 @@
         "key": "story_3_by",
         "label": "Story 3 attribution",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ف.ك. · ٤١ · الرياض",
         "value_en": "F.K. · 41 · Riyadh",
         "content_type": "text",
         "position": 14
@@ -3116,7 +3116,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المعيار",
         "value_en": "The standard",
         "content_type": "text",
         "position": 0
@@ -3236,7 +3236,7 @@
         "key": "title",
         "label": "Title",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي حوارًا هادئًا.",
         "value_en": "Begin a quiet conversation.",
         "content_type": "text",
         "position": 0
@@ -3245,7 +3245,7 @@
         "key": "body",
         "label": "Body text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نردّ عليكِ شخصيًا، من السبت إلى الخميس، ١٠:٠٠–٢٢:٠٠.",
         "value_en": "We reply, personally, Saturday to Thursday, 10:00–22:00.",
         "content_type": "text",
         "position": 1
@@ -3254,7 +3254,7 @@
         "key": "cta_label",
         "label": "CTA button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تحدّثي معنا",
         "value_en": "Speak with us",
         "content_type": "text",
         "position": 2
@@ -3275,7 +3275,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عن العيادة",
         "value_en": "About · The Clinic",
         "content_type": "text",
         "position": 0
@@ -3314,7 +3314,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كيف نعمل",
         "value_en": "How we work",
         "content_type": "text",
         "position": 0
@@ -3332,7 +3332,7 @@
         "key": "step_1_n",
         "label": "Step 1 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠١",
         "value_en": "01",
         "content_type": "text",
         "position": 2
@@ -3359,7 +3359,7 @@
         "key": "step_2_n",
         "label": "Step 2 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٢",
         "value_en": "02",
         "content_type": "text",
         "position": 5
@@ -3386,7 +3386,7 @@
         "key": "step_3_n",
         "label": "Step 3 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٣",
         "value_en": "03",
         "content_type": "text",
         "position": 8
@@ -3413,7 +3413,7 @@
         "key": "step_4_n",
         "label": "Step 4 number",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "٠٤",
         "value_en": "04",
         "content_type": "text",
         "position": 11
@@ -3533,7 +3533,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المكان",
         "value_en": "The Space",
         "content_type": "text",
         "position": 0
@@ -3599,7 +3599,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الفريق الطبي",
         "value_en": "The Medical Team",
         "content_type": "text",
         "position": 0
@@ -3608,7 +3608,7 @@
         "key": "title_1",
         "label": "Title part 1 (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الوجوه التي خلف",
         "value_en": "The people behind",
         "content_type": "text",
         "position": 1
@@ -3617,7 +3617,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الخطة.",
         "value_en": "the plan.",
         "content_type": "text",
         "position": 2
@@ -3626,7 +3626,7 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "فريق صغير مُعتمَد — تقوده د. ميساء، ومنظَّم بحسب الأقدمية، واختير لضبط النفس بقدر ما اختير للمهارة.",
         "value_en": "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
         "content_type": "richtext",
         "position": 3
@@ -3647,7 +3647,7 @@
         "key": "member_1_name",
         "label": "Member 1 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "د. ميساء الراشد",
         "value_en": "Dr. Maysa Al-Rashid",
         "content_type": "text",
         "position": 0
@@ -3656,7 +3656,7 @@
         "key": "member_1_role",
         "label": "Member 1 role",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المؤسِّسة · المديرة الطبية",
         "value_en": "Founder · Medical Director",
         "content_type": "text",
         "position": 1
@@ -3665,7 +3665,7 @@
         "key": "member_1_cred",
         "label": "Member 1 credentials",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكالوريوس الطب والجراحة · الأمراض الجلدية · زمالة طب التجميل",
         "value_en": "MBBS · Dermatology · Aesthetic Medicine Fellowship",
         "content_type": "text",
         "position": 2
@@ -3674,7 +3674,7 @@
         "key": "member_1_focus",
         "label": "Member 1 focus",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التشخيص وخطة الاثني عشر شهرًا",
         "value_en": "Diagnosis & the 12-month plan",
         "content_type": "text",
         "position": 3
@@ -3683,7 +3683,7 @@
         "key": "member_1_bio",
         "label": "Member 1 bio",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كل مريضة تبدأ مع ميساء وتنتهي معها. تقرأ خط الأساس، وتكتب الخطة، وتوقّع كل مراجعة ربع سنوية بنفسها — الثابت الوحيد عبر الرحلة كلها.",
         "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
         "content_type": "richtext",
         "position": 4
@@ -3692,7 +3692,7 @@
         "key": "member_2_name",
         "label": "Member 2 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "د. لينا حدّاد",
         "value_en": "Dr. Lina Haddad",
         "content_type": "text",
         "position": 5
@@ -3701,7 +3701,7 @@
         "key": "member_2_role",
         "label": "Member 2 role",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "طبيبة تجميل أولى",
         "value_en": "Senior Aesthetic Physician",
         "content_type": "text",
         "position": 6
@@ -3710,7 +3710,7 @@
         "key": "member_2_cred",
         "label": "Member 2 credentials",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكالوريوس الطب والجراحة · دبلوم طب التجميل",
         "value_en": "MBBS · Diploma in Aesthetic Medicine",
         "content_type": "text",
         "position": 7
@@ -3719,7 +3719,7 @@
         "key": "member_2_focus",
         "label": "Member 2 focus",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الحقن وضبط النفس",
         "value_en": "Injectables & restraint",
         "content_type": "text",
         "position": 8
@@ -3728,7 +3728,7 @@
         "key": "member_2_bio",
         "label": "Member 2 bio",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تنفّذ لينا الخطة بيدٍ خفيفة. سمعتها لم تُبنَ على ما تفعله بقدر ما بُنيت على ما ترفض أن تفعله — ولهذا بالضبط تثق بها المريضات.",
         "value_en": "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
         "content_type": "richtext",
         "position": 9
@@ -3737,7 +3737,7 @@
         "key": "member_3_name",
         "label": "Member 3 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "د. سارة عثمان",
         "value_en": "Dr. Sara Othman",
         "content_type": "text",
         "position": 10
@@ -3746,7 +3746,7 @@
         "key": "member_3_role",
         "label": "Member 3 role",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "طبيبة أمراض جلدية مشاركة",
         "value_en": "Dermatology Associate",
         "content_type": "text",
         "position": 11
@@ -3755,7 +3755,7 @@
         "key": "member_3_cred",
         "label": "Member 3 credentials",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "بكالوريوس الطب والجراحة · الأمراض الجلدية السريرية",
         "value_en": "MBBS · Clinical Dermatology",
         "content_type": "text",
         "position": 12
@@ -3764,7 +3764,7 @@
         "key": "member_3_focus",
         "label": "Member 3 focus",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "حاجز البشرة والتصبّغ",
         "value_en": "Skin barrier & pigment",
         "content_type": "text",
         "position": 13
@@ -3773,7 +3773,7 @@
         "key": "member_3_bio",
         "label": "Member 3 bio",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تتولّى سارة العمل الهادئ البعيد عن الأضواء الذي تقوم عليه البشرة الجميلة فعلًا — ترميم الحاجز الواقي، وتصحيح التصبّغ، والتدرّج الدقيق الذي يحفظ النتائج عبر الشهور.",
         "value_en": "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
         "content_type": "richtext",
         "position": 14
@@ -3782,7 +3782,7 @@
         "key": "member_4_name",
         "label": "Member 4 name",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "نور الفهد",
         "value_en": "Noor Al-Fahad",
         "content_type": "text",
         "position": 15
@@ -3791,7 +3791,7 @@
         "key": "member_4_role",
         "label": "Member 4 role",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "مسؤولة علاقات المريضات",
         "value_en": "Patient Relations Lead",
         "content_type": "text",
         "position": 16
@@ -3800,7 +3800,7 @@
         "key": "member_4_cred",
         "label": "Member 4 credentials",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أول جهة تواصل · مدرَّبة على حماية الخصوصية",
         "value_en": "First point of contact · privacy-trained",
         "content_type": "text",
         "position": 17
@@ -3809,7 +3809,7 @@
         "key": "member_4_focus",
         "label": "Member 4 focus",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "السرّية والاستمرارية",
         "value_en": "Discretion & continuity",
         "content_type": "text",
         "position": 18
@@ -3818,7 +3818,7 @@
         "key": "member_4_bio",
         "label": "Member 4 bio",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "تقرأ نور كل استفسار بنفسها، وتحمي خصوصية كل مريضة من أول رسالة حتى آخر مراجعة. لا يصل شيء إلى العيادة إلا وقد مرّ بعنايتها.",
         "value_en": "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
         "content_type": "richtext",
         "position": 19
@@ -3839,7 +3839,7 @@
         "key": "title",
         "label": "Hero tag",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التناسق والقوام",
         "value_en": "Tone & contour",
         "content_type": "text",
         "position": 0
@@ -3875,7 +3875,7 @@
         "key": "view",
         "label": "Dr. Maysa's view (quote)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "علاجات الجسم ينبغي أن تدعم جهدك، لا أن تحلّ محله. نقيس الاستقامة والتحديد — لا الميزان — لأن ذلك ما يغيّر فعلًا كيف تبدو ملابسك وكيف تقفين.",
         "value_en": "Body work should support your effort, never replace it. We measure posture and definition — not the scale — because that’s what actually changes how clothes sit and how you stand.",
         "content_type": "richtext",
         "position": 4
@@ -3896,7 +3896,7 @@
         "key": "title",
         "label": "Hero tag",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الأجهزة المتقدمة",
         "value_en": "Advanced devices",
         "content_type": "text",
         "position": 0
@@ -3932,7 +3932,7 @@
         "key": "view",
         "label": "Dr. Maysa's view (quote)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الجهاز وسيلة، لا عنوان. إن كانت العيادة تبيعك الجهاز قبل التشخيص، فأنتِ تُباعين — لا تُعالَجين.",
         "value_en": "A device is a means, not a headline. If a clinic is selling you the machine before the diagnosis, you’re being sold to — not treated.",
         "content_type": "richtext",
         "position": 4
@@ -3953,7 +3953,7 @@
         "key": "title",
         "label": "Hero tag",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "التساقط وخفة الشعر",
         "value_en": "Thinning & shedding",
         "content_type": "text",
         "position": 0
@@ -3989,7 +3989,7 @@
         "key": "view",
         "label": "Dr. Maysa's view (quote)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "كلما رأينا التساقط مبكرًا، اتّسعت خياراتنا. البصيلة صبورة، لكن صبرها ليس بلا حدود — والتدخل المدروس خيرٌ من سنةٍ أخرى في انتظار شامبو يُحدث فرقًا.",
         "value_en": "The earlier we see shedding, the more we can do. The follicle is patient, but it isn’t infinitely so — measured intervention beats another year of waiting for a shampoo to work.",
         "content_type": "richtext",
         "position": 4
@@ -4010,7 +4010,7 @@
         "key": "title",
         "label": "Hero tag",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "الخطوط والامتلاء",
         "value_en": "Lines & volume",
         "content_type": "text",
         "position": 0
@@ -4046,7 +4046,7 @@
         "key": "view",
         "label": "Dr. Maysa's view (quote)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "أفضل نتيجة للحقن هي تلك التي لا يستطيع أحد تسميتها. ضبط النفس مهارة سريرية؛ والهدف أن تبدي أنتِ، مرتاحة — لا أنتِ، معدَّلة.",
         "value_en": "The best injectable result is the one nobody can name. Restraint is a clinical skill; the goal is you, rested — never you, edited.",
         "content_type": "richtext",
         "position": 4
@@ -4067,7 +4067,7 @@
         "key": "title",
         "label": "Hero tag",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البشرة المتعبة الباهتة",
         "value_en": "Tired, dull skin",
         "content_type": "text",
         "position": 0
@@ -4103,7 +4103,7 @@
         "key": "view",
         "label": "Dr. Maysa's view (quote)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "البشرة المتعبة نادرًا ما تكون مشكلة واحدة؛ بل ثلاث مشكلات صغيرة تتراكم. عالجي السبب بالترتيب يعود الإشراق من تلقاء نفسه — أما ملاحقته بجلسة واحدة فنادرًا ما تدوم.",
         "value_en": "Tired skin is rarely one problem; it’s usually three small ones compounding. Treat the cause in order and the glow returns on its own — chasing it with a single facial almost never holds.",
         "content_type": "richtext",
         "position": 4
@@ -4124,7 +4124,7 @@
         "key": "protocols_link",
         "label": "\"View all protocols\" link text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "استعرضي البروتوكولات الستة ←",
         "value_en": "View all six protocols →",
         "content_type": "text",
         "position": 0
@@ -4145,7 +4145,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "العلاجات · حسب النتيجة",
         "value_en": "Treatments · by outcome",
         "content_type": "text",
         "position": 0
