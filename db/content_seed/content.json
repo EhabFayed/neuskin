@@ -216,7 +216,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": "bridal__bridal_hero__bridal-mood.jpg",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -526,11 +526,7 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [
-      "dr_maysa__drmaysa_clips__gallery0__maysa.webp",
-      "dr_maysa__drmaysa_clips__gallery1__consultation.jpg",
-      "dr_maysa__drmaysa_clips__gallery2__skin.jpg"
-    ],
+    "gallery": [],
     "contents": [
       {
         "key": "eyebrow",
@@ -682,7 +678,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": "dr_maysa__drmaysa_hero__maysa-hero.webp",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -1184,13 +1180,7 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [
-      "home__home_clinic__gallery0__treatment.webp",
-      "home__home_clinic__gallery1__waiting-lounge.webp",
-      "home__home_clinic__gallery2__device-room.webp",
-      "home__home_clinic__gallery3__private-suite.webp",
-      "home__home_clinic__gallery4__entrance.webp"
-    ],
+    "gallery": [],
     "contents": [
       {
         "key": "eyebrow",
@@ -1309,7 +1299,7 @@
     "position": 6,
     "settings": {},
     "items": [],
-    "image": "home__home_cta__waiting-lounge.webp",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -1366,7 +1356,7 @@
     "position": 2,
     "settings": {},
     "items": [],
-    "image": "home__home_founder__maysa-founder.webp",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -1423,7 +1413,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": "home__home_hero__hero-clinic.webp",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -2536,7 +2526,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": "private_care__private_hero__desert-atmosphere.jpg",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -3268,7 +3258,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": "the_clinic__clinic_hero__clinic-hero.webp",
+    "image": null,
     "gallery": [],
     "contents": [
       {
@@ -3521,13 +3511,7 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [
-      "the_clinic__clinic_space__gallery0__clinic-1.webp",
-      "the_clinic__clinic_space__gallery1__clinic-2.webp",
-      "the_clinic__clinic_space__gallery2__clinic-3.webp",
-      "the_clinic__clinic_space__gallery3__clinic-4.webp",
-      "the_clinic__clinic_space__gallery4__clinic-5.webp"
-    ],
+    "gallery": [],
     "contents": [
       {
         "key": "eyebrow",
@@ -3630,198 +3614,6 @@
         "value_en": "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
         "content_type": "richtext",
         "position": 3
-      }
-    ]
-  },
-  {
-    "page": "the_team",
-    "kind": "team_members",
-    "label": "Team grid",
-    "position": 1,
-    "settings": {},
-    "items": [],
-    "image": null,
-    "gallery": [],
-    "contents": [
-      {
-        "key": "member_1_name",
-        "label": "Member 1 name",
-        "hint": null,
-        "value_ar": "د. ميساء الراشد",
-        "value_en": "Dr. Maysa Al-Rashid",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "member_1_role",
-        "label": "Member 1 role",
-        "hint": null,
-        "value_ar": "المؤسِّسة · المديرة الطبية",
-        "value_en": "Founder · Medical Director",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "member_1_cred",
-        "label": "Member 1 credentials",
-        "hint": null,
-        "value_ar": "بكالوريوس الطب والجراحة · الأمراض الجلدية · زمالة طب التجميل",
-        "value_en": "MBBS · Dermatology · Aesthetic Medicine Fellowship",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "member_1_focus",
-        "label": "Member 1 focus",
-        "hint": null,
-        "value_ar": "التشخيص وخطة الاثني عشر شهرًا",
-        "value_en": "Diagnosis & the 12-month plan",
-        "content_type": "text",
-        "position": 3
-      },
-      {
-        "key": "member_1_bio",
-        "label": "Member 1 bio",
-        "hint": null,
-        "value_ar": "كل مريضة تبدأ مع ميساء وتنتهي معها. تقرأ خط الأساس، وتكتب الخطة، وتوقّع كل مراجعة ربع سنوية بنفسها — الثابت الوحيد عبر الرحلة كلها.",
-        "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
-        "content_type": "richtext",
-        "position": 4
-      },
-      {
-        "key": "member_2_name",
-        "label": "Member 2 name",
-        "hint": null,
-        "value_ar": "د. لينا حدّاد",
-        "value_en": "Dr. Lina Haddad",
-        "content_type": "text",
-        "position": 5
-      },
-      {
-        "key": "member_2_role",
-        "label": "Member 2 role",
-        "hint": null,
-        "value_ar": "طبيبة تجميل أولى",
-        "value_en": "Senior Aesthetic Physician",
-        "content_type": "text",
-        "position": 6
-      },
-      {
-        "key": "member_2_cred",
-        "label": "Member 2 credentials",
-        "hint": null,
-        "value_ar": "بكالوريوس الطب والجراحة · دبلوم طب التجميل",
-        "value_en": "MBBS · Diploma in Aesthetic Medicine",
-        "content_type": "text",
-        "position": 7
-      },
-      {
-        "key": "member_2_focus",
-        "label": "Member 2 focus",
-        "hint": null,
-        "value_ar": "الحقن وضبط النفس",
-        "value_en": "Injectables & restraint",
-        "content_type": "text",
-        "position": 8
-      },
-      {
-        "key": "member_2_bio",
-        "label": "Member 2 bio",
-        "hint": null,
-        "value_ar": "تنفّذ لينا الخطة بيدٍ خفيفة. سمعتها لم تُبنَ على ما تفعله بقدر ما بُنيت على ما ترفض أن تفعله — ولهذا بالضبط تثق بها المريضات.",
-        "value_en": "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
-        "content_type": "richtext",
-        "position": 9
-      },
-      {
-        "key": "member_3_name",
-        "label": "Member 3 name",
-        "hint": null,
-        "value_ar": "د. سارة عثمان",
-        "value_en": "Dr. Sara Othman",
-        "content_type": "text",
-        "position": 10
-      },
-      {
-        "key": "member_3_role",
-        "label": "Member 3 role",
-        "hint": null,
-        "value_ar": "طبيبة أمراض جلدية مشاركة",
-        "value_en": "Dermatology Associate",
-        "content_type": "text",
-        "position": 11
-      },
-      {
-        "key": "member_3_cred",
-        "label": "Member 3 credentials",
-        "hint": null,
-        "value_ar": "بكالوريوس الطب والجراحة · الأمراض الجلدية السريرية",
-        "value_en": "MBBS · Clinical Dermatology",
-        "content_type": "text",
-        "position": 12
-      },
-      {
-        "key": "member_3_focus",
-        "label": "Member 3 focus",
-        "hint": null,
-        "value_ar": "حاجز البشرة والتصبّغ",
-        "value_en": "Skin barrier & pigment",
-        "content_type": "text",
-        "position": 13
-      },
-      {
-        "key": "member_3_bio",
-        "label": "Member 3 bio",
-        "hint": null,
-        "value_ar": "تتولّى سارة العمل الهادئ البعيد عن الأضواء الذي تقوم عليه البشرة الجميلة فعلًا — ترميم الحاجز الواقي، وتصحيح التصبّغ، والتدرّج الدقيق الذي يحفظ النتائج عبر الشهور.",
-        "value_en": "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
-        "content_type": "richtext",
-        "position": 14
-      },
-      {
-        "key": "member_4_name",
-        "label": "Member 4 name",
-        "hint": null,
-        "value_ar": "نور الفهد",
-        "value_en": "Noor Al-Fahad",
-        "content_type": "text",
-        "position": 15
-      },
-      {
-        "key": "member_4_role",
-        "label": "Member 4 role",
-        "hint": null,
-        "value_ar": "مسؤولة علاقات المريضات",
-        "value_en": "Patient Relations Lead",
-        "content_type": "text",
-        "position": 16
-      },
-      {
-        "key": "member_4_cred",
-        "label": "Member 4 credentials",
-        "hint": null,
-        "value_ar": "أول جهة تواصل · مدرَّبة على حماية الخصوصية",
-        "value_en": "First point of contact · privacy-trained",
-        "content_type": "text",
-        "position": 17
-      },
-      {
-        "key": "member_4_focus",
-        "label": "Member 4 focus",
-        "hint": null,
-        "value_ar": "السرّية والاستمرارية",
-        "value_en": "Discretion & continuity",
-        "content_type": "text",
-        "position": 18
-      },
-      {
-        "key": "member_4_bio",
-        "label": "Member 4 bio",
-        "hint": null,
-        "value_ar": "تقرأ نور كل استفسار بنفسها، وتحمي خصوصية كل مريضة من أول رسالة حتى آخر مراجعة. لا يصل شيء إلى العيادة إلا وقد مرّ بعنايتها.",
-        "value_en": "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
-        "content_type": "richtext",
-        "position": 19
       }
     ]
   },

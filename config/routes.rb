@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       member { match :preview, via: %i[get post] }
     end
     resources :blogs, except: [:show]
+    resources :team_members, except: [:show]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

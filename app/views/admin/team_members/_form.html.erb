@@ -1,0 +1,52 @@
+<%= form_with model: @member, url: @member.persisted? ? admin_team_member_path(@member) : admin_team_members_path, local: true do |form| %>
+  <% if @member.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @member.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <% {
+    "Name"        => [:name_en, :name_ar, :text_field],
+    "Role"        => [:role_en, :role_ar, :text_field],
+    "Credentials" => [:cred_en, :cred_ar, :text_field],
+    "Focus"       => [:focus_en, :focus_ar, :text_field],
+    "Bio"         => [:bio_en, :bio_ar, :text_area]
+  }.each do |label, (en_attr, ar_attr, widget)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div class="ns-pair">
+        <div class="en">
+          <span class="lang-lbl">English</span>
+          <%= form.public_send(widget, en_attr, class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 4 } : {})) %>
+        </div>
+        <div class="ar">
+          <span class="lang-lbl">العربية · Arabic</span>
+          <%= form.public_send(widget, ar_attr, dir: "rtl", class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 4 } : {})) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Photo</span>
+    <% if @member.photo.attached? %>
+      <p class="hint">Current: <%= @member.photo.filename %></p>
+      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
+        <%= check_box_tag "team_member[remove_photo]", "1", false %> Remove photo (falls back to a stock portrait)
+      </label>
+    <% end %>
+    <%= form.file_field :photo, accept: "image/*" %>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Display position</span>
+    <p class="hint">Lower shows first — Dr. Maysa is 1.</p>
+    <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to team", admin_team_members_path, class: "ns-btn ghost" %>
+    <a href="<%= the_team_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

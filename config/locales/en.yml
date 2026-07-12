@@ -610,3 +610,5 @@ en:
       inside_clinic: "Inside the Clinic"
       ritual: "Ritual"
       patient_notes: "Notes from Patients"
+  team:
+    focus: "Focus"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_12_240000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_12_260000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -144,6 +144,23 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_240000) do
     t.datetime "updated_at", null: false
     t.index ["page", "kind"], name: "index_sections_on_page_and_kind", unique: true
     t.index ["page"], name: "index_sections_on_page"
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.string "name_ar"
+    t.string "name_en"
+    t.string "role_ar"
+    t.string "role_en"
+    t.string "cred_ar"
+    t.string "cred_en"
+    t.string "focus_ar"
+    t.string "focus_en"
+    t.text "bio_ar"
+    t.text "bio_en"
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_team_members_on_position"
   end
 
   create_table "users", force: :cascade do |t|

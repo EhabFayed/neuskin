@@ -44,6 +44,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20l8-8-4-4-8 8v4z"/><path d="M16 8l-3-3"/><path d="M4 20h5"/></svg>
             <span class="grow">Journal</span>
             <% if defined?(@nav_blogs_count) && @nav_blogs_count %><span class="count"><%= @nav_blogs_count %></span><% end %>
+
+          <%= link_to admin_team_members_path, class: "ns-navitem #{'active' if admin_nav == :team_members}" do %>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="grow">Team</span>
+            <% if defined?(@nav_team_count) && @nav_team_count %><span class="count"><%= @nav_team_count %></span><% end %>
+          <% end %>
           <% end %>
 
           <div class="ns-navitem soon">

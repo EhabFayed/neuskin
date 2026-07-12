@@ -197,3 +197,6 @@ Rake::Task["content:seed"].invoke if Rake::Task.task_defined?("content:seed")
 
 # Journal posts (bilingual, idempotent by slug).
 load Rails.root.join("db/seeds/blogs.rb")
+
+# Team members (bilingual, idempotent by name).
+load Rails.root.join("db/seeds/team_members.rb")

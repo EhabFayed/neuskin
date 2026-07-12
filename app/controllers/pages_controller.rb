@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def the_team
+    @members = TeamMember.with_attached_photo
   end
 
   def the_clinic

@@ -611,3 +611,5 @@ ar:
       inside_clinic: "من داخل العيادة"
       ritual: "طقوس"
       patient_notes: "من دفاتر المريضات"
+  team:
+    focus: "التخصص"
