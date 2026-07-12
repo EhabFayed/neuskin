@@ -1,0 +1,28 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "FAQ" %>
+<% content_for :title, "FAQ" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">Questions on the public FAQ page, grouped as they appear.</p>
+  <%= link_to "Add question", new_admin_faq_path, class: "ns-btn primary" %>
+</div>
+
+<% if @faqs.any? %>
+  <% Faq.category.values.each do |category| %>
+    <% next unless @faqs[category.to_s] %>
+    <h2 class="ns-section-title"><%= I18n.t("faq.groups.#{category}", locale: :en) %></h2>
+    <ul class="ns-list" style="margin-bottom:26px">
+      <% @faqs[category.to_s].each do |faq| %>
+        <li>
+          <%= link_to edit_admin_faq_path(faq), class: "ns-row" do %>
+            <span class="r-title"><%= faq.question_en %></span>
+            <span class="r-meta" style="width:80px">#<%= faq.position %></span>
+            <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <div class="ns-empty">No questions yet — add the first one.</div>
+<% end %>

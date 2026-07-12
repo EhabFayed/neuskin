@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def faq
+    @faq_groups = Faq.grouped
   end
 
   def maysa_method

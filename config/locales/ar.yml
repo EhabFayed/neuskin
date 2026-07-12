@@ -613,3 +613,8 @@ ar:
       patient_notes: "من دفاتر المريضات"
   team:
     focus: "التخصص"
+  faq:
+    groups:
+      before_you_come_in: "قبل زيارتك"
+      how_care_works: "كيف تسير الرعاية"
+      privacy: "الخصوصية والتفاصيل العملية"

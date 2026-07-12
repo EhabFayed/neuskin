@@ -1,0 +1,55 @@
+<%= form_with model: @faq, url: @faq.persisted? ? admin_faq_path(@faq) : admin_faqs_path, local: true do |form| %>
+  <% if @faq.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @faq.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Question</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_field :question_en, class: "ns-input" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_field :question_ar, dir: "rtl", class: "ns-input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Answer</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_area :answer_en, rows: 4, class: "ns-textarea" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_area :answer_ar, rows: 4, dir: "rtl", class: "ns-textarea" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Placement</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Group</span><br>
+        <%= form.select :category, Faq.category.values.map { |v| [I18n.t("faq.groups.#{v}", locale: :en), v] }, {}, class: "ns-input" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Position in group</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+    </div>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to FAQ", admin_faqs_path, class: "ns-btn ghost" %>
+    <a href="<%= faq_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

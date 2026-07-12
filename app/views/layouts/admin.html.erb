@@ -49,6 +49,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             <span class="grow">Team</span>
             <% if defined?(@nav_team_count) && @nav_team_count %><span class="count"><%= @nav_team_count %></span><% end %>
+
+          <%= link_to admin_faqs_path, class: "ns-navitem #{'active' if admin_nav == :faqs}" do %>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span class="grow">FAQ</span>
+            <% if defined?(@nav_faq_count) && @nav_faq_count %><span class="count"><%= @nav_faq_count %></span><% end %>
+          <% end %>
           <% end %>
           <% end %>
 

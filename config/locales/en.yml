@@ -612,3 +612,8 @@ en:
       patient_notes: "Notes from Patients"
   team:
     focus: "Focus"
+  faq:
+    groups:
+      before_you_come_in: "Before you come in"
+      how_care_works: "How care works"
+      privacy: "Privacy & practicalities"

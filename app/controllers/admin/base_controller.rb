@@ -27,6 +27,7 @@ module Admin
       @nav_pages_count = SitePages::LIST.size
       @nav_blogs_count = Blog.count
       @nav_team_count  = TeamMember.count
+      @nav_faq_count   = Faq.count
     end
 
     # Guard for admin-only areas (e.g. user management). Editors are bounced.

@@ -14,6 +14,21 @@
     <div class="lbl">Bridal leads</div>
   </div>
   <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Journal</div>
+    <div class="n"><%= @blogs_count %></div>
+    <div class="lbl">Posts<%= " · #{@drafts_count} draft#{'s' unless @drafts_count == 1}" if @drafts_count.to_i.positive? %></div>
+  </div>
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Team</div>
+    <div class="n"><%= @team_count %></div>
+    <div class="lbl">Members</div>
+  </div>
+  <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">FAQ</div>
+    <div class="n"><%= @faqs_count %></div>
+    <div class="lbl">Questions</div>
+  </div>
+  <div class="ns-card ns-stat">
     <div class="ns-eyebrow">Care</div>
     <div class="n"><%= @protocols_count %></div>
     <div class="lbl">Protocols</div>
@@ -26,28 +41,38 @@
 </div>
 
 <h2 class="ns-section-title">Quick actions</h2>
-<div class="ns-grid cols-3">
+<div class="ns-grid cols-4">
   <%= link_to admin_pages_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
     <div class="ns-eyebrow">Content</div>
     <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Edit page copy</div>
     <div style="font-size:12.5px;color:var(--ns-muted)">Update the words and images on every public page.</div>
   <% end %>
-  <div class="ns-card" style="opacity:.6">
+  <%= link_to new_admin_blog_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
     <div class="ns-eyebrow">Journal</div>
     <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Write a Journal post</div>
-    <div style="font-size:12.5px;color:var(--ns-muted)">Coming soon.</div>
-  </div>
-  <div class="ns-card" style="opacity:.6">
-    <div class="ns-eyebrow">Protocols</div>
-    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Update protocol content</div>
-    <div style="font-size:12.5px;color:var(--ns-muted)">Coming soon.</div>
-  </div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Draft a new note in both languages, publish when ready.</div>
+  <% end %>
+  <%= link_to admin_team_members_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
+    <div class="ns-eyebrow">Team</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Manage the team</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Add, reorder, or update the medical team page.</div>
+  <% end %>
+  <%= link_to admin_faqs_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
+    <div class="ns-eyebrow">FAQ</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Manage FAQs</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Add or edit the questions patients ask before the question.</div>
+  <% end %>
 </div>
 
 <h2 class="ns-section-title">Needs attention</h2>
 <div class="ns-card">
-  <% if @inquiries_count.to_i > 0 %>
-    <div style="font-size:14px;color:var(--ns-text)"><strong style="color:var(--ns-accent-2)"><%= @inquiries_count %></strong> new inquiries waiting in the inbox.</div>
+  <% attention = [] %>
+  <% attention << "#{@inquiries_count} new inquiries waiting in the inbox." if @inquiries_count.to_i.positive? %>
+  <% attention << "#{@drafts_count} unpublished Journal draft#{'s' unless @drafts_count == 1}." if @drafts_count.to_i.positive? %>
+  <% if attention.any? %>
+    <% attention.each do |line| %>
+      <div style="font-size:14px;color:var(--ns-text);padding:4px 0"><strong style="color:var(--ns-accent-2)">·</strong> <%= line %></div>
+    <% end %>
   <% else %>
     <div class="ns-empty" style="padding:8px 0">Nothing needs your attention right now.</div>
   <% end %>

@@ -200,3 +200,6 @@ load Rails.root.join("db/seeds/blogs.rb")
 
 # Team members (bilingual, idempotent by name).
 load Rails.root.join("db/seeds/team_members.rb")
+
+# FAQ entries (bilingual, idempotent by question).
+load Rails.root.join("db/seeds/faqs.rb")

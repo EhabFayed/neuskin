@@ -1,0 +1,11 @@
+<% content_for :crumb, "FAQ" %>
+<% content_for :heading, @faq.question_en %>
+<% content_for :title, "Edit question" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Delete this question", admin_faq_path(@faq), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Delete “#{@faq.question_en}”?" } %>
+</div>
