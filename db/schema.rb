@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_12_230000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_12_240000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -85,6 +85,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_230000) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "alt_ar"
+    t.string "alt_en"
     t.index ["parentable_type", "parentable_id", "key"], name: "index_contents_on_parent_and_key", unique: true
     t.index ["parentable_type", "parentable_id"], name: "index_contents_on_parentable"
   end

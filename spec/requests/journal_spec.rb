@@ -76,5 +76,41 @@ RSpec.describe "Journal", type: :request do
       get "/admin/blogs"
       expect(response.body).to include("A quiet room, by design")
     end
+
+    it "removes the cover image when the checkbox is ticked" do
+      blog = make_blog
+      blog.image.attach(io: File.open(Rails.root.join("spec/fixtures/files/pixel.png")),
+                        filename: "cover.png")
+      patch "/admin/blogs/#{blog.slug_en}",
+            params: { blog: { title_en: blog.title_en, title_ar: blog.title_ar },
+                      remove_image: "0" }.deep_merge(blog: { remove_image: "1" })
+      expect(blog.reload.image).not_to be_attached
+    end
+
+    it "attaches and removes a paragraph image" do
+      blog = make_blog
+      content = blog.contents.first
+
+      patch "/admin/blogs/#{blog.slug_en}", params: { blog: {
+        title_en: blog.title_en, title_ar: blog.title_ar,
+        contents_attributes: { "0" => {
+          id: content.id,
+          photo: Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/files/pixel.png"), "image/png"),
+          alt_en: "A quiet corridor", alt_ar: "ممر هادئ"
+        } }
+      } }
+      expect(content.reload.photo).to be_attached
+
+      # the paragraph image (and its Arabic alt) render on the public article
+      get "/ar/journal/#{ERB::Util.url_encode(blog.slug_ar)}"
+      expect(response.body).to include("jra-figure")
+      expect(response.body).to include("ممر هادئ")
+
+      patch "/admin/blogs/#{blog.slug_en}", params: { blog: {
+        title_en: blog.title_en, title_ar: blog.title_ar,
+        contents_attributes: { "0" => { id: content.id, remove_photo: "1" } }
+      } }
+      expect(content.reload.photo).not_to be_attached
+    end
   end
 end

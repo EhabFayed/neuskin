@@ -23,8 +23,14 @@
   <% end %>
 
   <div class="jra-body body-copy">
-    <% @blog.paragraphs.each do |para| %>
-      <p><%= para %></p>
+    <% @blog.contents.each do |block| %>
+      <% if block.value.present? %><p><%= block.value %></p><% end %>
+      <% if block.photo.attached? %>
+        <figure class="jra-figure">
+          <%= image_tag block.photo, alt: block.alt.to_s %>
+          <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
+        </figure>
+      <% end %>
     <% end %>
   </div>
 

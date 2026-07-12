@@ -29,6 +29,8 @@ module Admin
       @blog.assign_attributes(blog_params)
       assign_paragraph_keys
       if @blog.save
+        @blog.image.purge if params[:blog][:remove_image] == "1"
+        purge_flagged_paragraph_photos
         redirect_to edit_admin_blog_path(@blog), notice: "Post saved."
       else
         render :edit, status: :unprocessable_entity
@@ -51,8 +53,18 @@ module Admin
         :slug_en, :slug_ar, :title_ar, :title_en, :excerpt_ar, :excerpt_en,
         :meta_title_ar, :meta_title_en, :meta_description_ar, :meta_description_en,
         :alt_ar, :alt_en, :category, :is_published, :image,
-        contents_attributes: [:id, :key, :position, :value_ar, :value_en, :_destroy]
+        contents_attributes: [:id, :key, :position, :value_ar, :value_en,
+                              :photo, :alt_ar, :alt_en, :remove_photo, :_destroy]
       )
+    end
+
+    # "Remove image" checkboxes set a virtual flag on the in-memory contents;
+    # purge after save (virtual attrs don't dirty the record, so a model
+    # callback would never fire).
+    def purge_flagged_paragraph_photos
+      @blog.contents.each do |content|
+        content.photo.purge if content.remove_photo.in?(["1", true]) && content.photo.attached?
+      end
     end
 
     # Paragraph rows arrive without stable keys (the form only orders them);

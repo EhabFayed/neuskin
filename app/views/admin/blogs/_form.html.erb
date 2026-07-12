@@ -52,6 +52,26 @@
               <%= cf.text_area :value_ar, rows: 4, dir: "rtl", class: "ns-textarea" %>
             </div>
           </div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
+            <span class="lang-lbl">Paragraph image (optional)</span>
+            <% if cf.object.photo.attached? %>
+              <p class="hint" style="margin:4px 0">Current: <%= cf.object.photo.filename %></p>
+              <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font-size:12px;color:var(--ns-muted)">
+                <%= cf.check_box :remove_photo %> Remove image
+              </label><br>
+            <% end %>
+            <%= cf.file_field :photo, accept: "image/*" %>
+            <div class="ns-pair" style="margin-top:8px">
+              <div class="en">
+                <span class="lang-lbl">Image alt · English</span>
+                <%= cf.text_field :alt_en, class: "ns-input" %>
+              </div>
+              <div class="ar">
+                <span class="lang-lbl">النص البديل · Arabic</span>
+                <%= cf.text_field :alt_ar, dir: "rtl", class: "ns-input" %>
+              </div>
+            </div>
+          </div>
           <% if cf.object.persisted? %>
             <label style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--ns-muted)">
               <%= cf.check_box :_destroy %> Remove this paragraph
@@ -73,6 +93,20 @@
             <textarea name="blog[contents_attributes][IDX][value_ar]" rows="4" dir="rtl" class="ns-textarea"></textarea>
           </div>
         </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
+          <span class="lang-lbl">Paragraph image (optional)</span>
+          <input type="file" name="blog[contents_attributes][IDX][photo]" accept="image/*">
+          <div class="ns-pair" style="margin-top:8px">
+            <div class="en">
+              <span class="lang-lbl">Image alt · English</span>
+              <input type="text" name="blog[contents_attributes][IDX][alt_en]" class="ns-input">
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">النص البديل · Arabic</span>
+              <input type="text" name="blog[contents_attributes][IDX][alt_ar]" dir="rtl" class="ns-input">
+            </div>
+          </div>
+        </div>
       </div>
     </template>
     <button type="button" class="ns-btn ghost" style="margin-top:6px"
@@ -85,6 +119,9 @@
     <span class="ns-field-title">Cover image</span>
     <% if @blog.image.attached? %>
       <p class="hint">Current: <%= @blog.image.filename %></p>
+      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
+        <%= check_box_tag "blog[remove_image]", "1", false %> Remove cover image
+      </label>
     <% end %>
     <%= form.file_field :image, accept: "image/*" %>
     <div class="ns-pair" style="margin-top:10px">
