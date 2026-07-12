@@ -10,6 +10,9 @@ application.register("reveal", RevealController)
 import FilterController from "controllers/filter_controller"
 application.register("filter", FilterController)
 
+import JrfilterController from "controllers/jrfilter_controller"
+application.register("jrfilter", JrfilterController)
+
 import PhoneController from "controllers/phone_controller"
 application.register("phone", PhoneController)
 

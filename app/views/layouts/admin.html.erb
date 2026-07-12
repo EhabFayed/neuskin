@@ -40,10 +40,11 @@
             <% if defined?(@nav_pages_count) && @nav_pages_count %><span class="count"><%= @nav_pages_count %></span><% end %>
           <% end %>
 
-          <div class="ns-navitem soon">
+          <%= link_to admin_blogs_path, class: "ns-navitem #{'active' if admin_nav == :blogs}" do %>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20l8-8-4-4-8 8v4z"/><path d="M16 8l-3-3"/><path d="M4 20h5"/></svg>
-            <span class="grow">Journal</span><span class="soon-tag">Soon</span>
-          </div>
+            <span class="grow">Journal</span>
+            <% if defined?(@nav_blogs_count) && @nav_blogs_count %><span class="count"><%= @nav_blogs_count %></span><% end %>
+          <% end %>
 
           <div class="ns-navitem soon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.4"/><circle cx="4" cy="12" r="1.4"/><circle cx="4" cy="18" r="1.4"/></svg>

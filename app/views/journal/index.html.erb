@@ -1,0 +1,51 @@
+<%# Journal (design §isJournal) — editorial magazine grid, DB-backed (Blog). %>
+
+<div class="journal-page">
+  <%# Journal hero — ported 1:1 from design §isJournal %>
+  <section class="jr-hero" data-controller="reveal" data-screen-label="Journal">
+    <div class="jr-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="lbl"><%= t("journal.eyebrow") %></span>
+    </div>
+    <h1 class="jr-title" data-reveal="up"><%= t("journal.title_1") %><br><span class="em"><%= t("journal.title_em") %></span></h1>
+    <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= t("journal.lead") %></p>
+    <% categories = @blogs.map(&:category).uniq %>
+    <% if categories.size > 1 %>
+      <div class="jr-filters" data-reveal="up" data-reveal-delay="200" data-jrfilter-anchor>
+        <span class="jr-filter is-active" data-category="all"><%= t("journal.all") %></span>
+        <% categories.each do |cat| %>
+          <span class="jr-filter" data-category="<%= cat %>"><%= t("journal.categories.#{cat}") %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+
+  <%# Journal grid — repeat(3,1fr), 300px imagery %>
+  <section class="jr-grid-wrap" data-controller="reveal jrfilter">
+    <% if @blogs.any? %>
+      <div class="jr-grid">
+        <% fallback_covers = ["site/journal/j1.jpg", "site/journal/j2.jpg", "site/journal/j3.jpg"] %>
+        <% @blogs.each_with_index do |blog, i| %>
+          <%= link_to journal_article_path(blog), class: "jr-card reveal d#{(i % 3) + 1}",
+                      data: { reveal_target: "item", jrfilter_target: "item", category: blog.category } do %>
+            <div class="jr-card-img">
+              <% if blog.image.attached? %>
+                <%= image_tag blog.image, alt: blog.alt.presence || blog.title %>
+              <% else %>
+                <%= image_tag fallback_covers[i % fallback_covers.size], alt: blog.alt.presence || blog.title %>
+              <% end %>
+            </div>
+            <div class="jr-card-meta">
+              <span class="cat"><%= blog.category_label %></span>
+              <span class="read"><%= t("journal.read", count: blog.reading_minutes) %></span>
+            </div>
+            <h3><%= blog.title %></h3>
+            <p><%= blog.excerpt %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="jr-lead" style="padding-bottom:60px"><%= t("journal.empty") %></p>
+    <% end %>
+  </section>
+</div>

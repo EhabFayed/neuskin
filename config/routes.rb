@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :sections, only: [:show, :update] do
       member { match :preview, via: %i[get post] }
     end
+    resources :blogs, except: [:show]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.
@@ -26,8 +27,10 @@ Rails.application.routes.draw do
     # About — The Clinic (§02).
     get "the-clinic", to: "pages#the_clinic", as: :the_clinic
 
-    # Journal (§12) — editorial magazine grid.
-    get "journal", to: "pages#journal", as: :journal
+    # Journal (§12) — editorial magazine grid + article pages (DB-backed blogs,
+    # data design ported from the top_brand project).
+    get "journal", to: "journal#index", as: :journal
+    get "journal/:slug", to: "journal#show", as: :journal_article
 
     # Patient Stories (§13) — consented social proof. Empty until material is ready.
     get "stories", to: "pages#stories", as: :stories

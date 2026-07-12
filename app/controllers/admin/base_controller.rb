@@ -22,9 +22,10 @@ module Admin
 
     private
 
-    # Sidebar "Pages" count — the number of editable pages in the registry.
+    # Sidebar counts — editable pages in the registry, journal posts in the DB.
     def set_nav_counts
       @nav_pages_count = SitePages::LIST.size
+      @nav_blogs_count = Blog.count
     end
 
     # Guard for admin-only areas (e.g. user management). Editors are bounced.

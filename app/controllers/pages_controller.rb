@@ -12,9 +12,6 @@ class PagesController < ApplicationController
   def the_clinic
   end
 
-  def journal
-  end
-
   def stories
   end
 

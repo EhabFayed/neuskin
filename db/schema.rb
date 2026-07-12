@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_12_230000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,28 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "slug_en"
+    t.string "slug_ar"
+    t.string "title_ar"
+    t.string "title_en"
+    t.text "excerpt_ar"
+    t.text "excerpt_en"
+    t.string "meta_title_ar"
+    t.string "meta_title_en"
+    t.text "meta_description_ar"
+    t.text "meta_description_en"
+    t.string "alt_ar"
+    t.string "alt_en"
+    t.string "category"
+    t.boolean "is_published", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["is_published"], name: "index_blogs_on_is_published"
+    t.index ["slug_ar"], name: "index_blogs_on_slug_ar", unique: true
+    t.index ["slug_en"], name: "index_blogs_on_slug_en", unique: true
   end
 
   create_table "bridal_leads", force: :cascade do |t|

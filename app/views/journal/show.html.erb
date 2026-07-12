@@ -1,0 +1,34 @@
+<%# Journal article — quiet editorial single-column read. %>
+<% content_for :title, "#{@blog.meta_title.presence || @blog.title} — NeuSkin Clinic" %>
+<% content_for :meta_description, @blog.meta_description.presence || @blog.excerpt %>
+
+<article class="jra" data-controller="reveal">
+  <header class="jra-head">
+    <div class="jr-eyebrow reveal" data-reveal-target="item">
+      <span class="rule"></span>
+      <span class="lbl"><%= @blog.category_label %></span>
+      <span class="lbl faint">· <%= t("journal.read", count: @blog.reading_minutes) %></span>
+    </div>
+    <h1 class="jr-title jra-title" data-reveal="up"><%= @blog.title %></h1>
+    <% if @blog.excerpt.present? %>
+      <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= @blog.excerpt %></p>
+    <% end %>
+    <p class="jra-date" data-reveal="fade" data-reveal-delay="200"><%= @blog.created_at.strftime("%d.%m.%Y") %></p>
+  </header>
+
+  <% if @blog.image.attached? %>
+    <figure class="jra-cover" data-reveal="scale">
+      <%= image_tag @blog.image, alt: @blog.alt.presence || @blog.title %>
+    </figure>
+  <% end %>
+
+  <div class="jra-body body-copy">
+    <% @blog.paragraphs.each do |para| %>
+      <p><%= para %></p>
+    <% end %>
+  </div>
+
+  <footer class="jra-foot">
+    <%= link_to t("journal.back"), journal_path, class: "arrowlink" %>
+  </footer>
+</article>

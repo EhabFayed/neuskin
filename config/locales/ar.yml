@@ -594,3 +594,20 @@ ar:
       privacy: "الخصوصية وحماية البيانات"
       accept: "أوافق"
       essential: "الأساسي فقط"
+  # Journal (blog) — hero copy, category names, article chrome.
+  journal:
+    eyebrow: "المجلّة"
+    title_1: "تدويناتٌ تُحفَظ"
+    title_em: "بهدوء."
+    lead: "كتابات الطبيبة، والعيادة من الداخل، والطقوس بينهما — اقرئيها على مهلك. لا شيء رائج، ولا شيء مستعجل."
+    all: "الكل"
+    read:
+      one: "دقيقة قراءة واحدة"
+      other: "%{count} دقائق قراءة"
+    empty: "التدوينات الجديدة قيد الكتابة — عودي قريبًا."
+    back: "كل التدوينات ←"
+    categories:
+      maysa_writes: "بقلم د. ميساء"
+      inside_clinic: "من داخل العيادة"
+      ritual: "طقوس"
+      patient_notes: "من دفاتر المريضات"
