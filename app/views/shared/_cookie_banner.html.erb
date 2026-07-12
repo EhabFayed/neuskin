@@ -1,10 +1,10 @@
 <%# Site-wide cookie consent banner (§15), PDPL-aligned. Hidden until JS confirms
     no prior choice is stored, so it never flashes for returning visitors. %>
 <div class="cookie-banner" data-controller="cookie" data-cookie-target="banner" hidden>
-  <p>We keep only what's needed to run this site and remember your choice. Nothing is sold or shared.</p>
+  <p><%= t("layout.cookie.text") %></p>
   <div class="row">
-    <%= link_to "Privacy & PDPL", privacy_path %>
-    <button type="button" class="cookie-btn" data-action="cookie#accept">Accept</button>
-    <button type="button" class="cookie-btn" data-action="cookie#decline">Essential only</button>
+    <%= link_to t("layout.cookie.privacy"), privacy_path %>
+    <button type="button" class="cookie-btn" data-action="cookie#accept"><%= t("layout.cookie.accept") %></button>
+    <button type="button" class="cookie-btn" data-action="cookie#decline"><%= t("layout.cookie.essential") %></button>
   </div>
 </div>

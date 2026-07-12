@@ -3,58 +3,58 @@
     <div class="footer-top">
       <div class="footer-brand">
         <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: "NeuSkin Clinic" %>
-        <p class="blurb">Doctor-led skin intelligence for women, in the quiet of Al Malqa, Riyadh.</p>
+        <p class="blurb"><%= t("layout.footer.blurb") %></p>
         <div class="footer-socials">
           <a href="#">Instagram</a>
-          <a href="<%= whatsapp_url %>" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="<%= whatsapp_url %>" target="_blank" rel="noopener"><%= t("layout.footer.whatsapp") %></a>
         </div>
       </div>
 
       <div>
-        <h4>The Clinic</h4>
+        <h4><%= t("layout.footer.clinic_title") %></h4>
         <ul>
-          <li><%= link_to "About", the_clinic_path %></li>
-          <li><%= link_to "Dr. Maysa", dr_maysa_path %></li>
-          <li><%= link_to "The Medical Team", the_team_path %></li>
-          <li><%= link_to "The Maysa Method™", maysa_method_path %></li>
+          <li><%= link_to t("layout.footer.about"), the_clinic_path %></li>
+          <li><%= link_to t("layout.footer.dr_maysa"), dr_maysa_path %></li>
+          <li><%= link_to t("layout.footer.team"), the_team_path %></li>
+          <li><%= link_to t("layout.footer.method"), maysa_method_path %></li>
         </ul>
       </div>
 
       <div>
-        <h4>Protocols</h4>
+        <h4><%= t("layout.footer.protocols_title") %></h4>
         <ul>
-          <li><%= link_to "All Protocols", protocols_path %></li>
-          <li><%= link_to "Treatments", treatments_path %></li>
-          <li><%= link_to "Bridal Concierge", bridal_concierge_path %></li>
-          <li><%= link_to "Private Care", private_care_path %></li>
+          <li><%= link_to t("layout.footer.all_protocols"), protocols_path %></li>
+          <li><%= link_to t("layout.footer.treatments"), treatments_path %></li>
+          <li><%= link_to t("layout.footer.bridal"), bridal_concierge_path %></li>
+          <li><%= link_to t("layout.footer.private_care"), private_care_path %></li>
         </ul>
       </div>
 
       <div>
-        <h4>Care</h4>
+        <h4><%= t("layout.footer.care_title") %></h4>
         <ul>
-          <li><%= link_to "Journal", journal_path %></li>
-          <li><%= link_to "Patient Stories", stories_path %></li>
-          <li><%= link_to "FAQ", faq_path %></li>
-          <li><%= link_to "Contact", inquire_path %></li>
+          <li><%= link_to t("layout.footer.journal"), journal_path %></li>
+          <li><%= link_to t("layout.footer.stories"), stories_path %></li>
+          <li><%= link_to t("layout.footer.faq"), faq_path %></li>
+          <li><%= link_to t("layout.footer.contact"), inquire_path %></li>
         </ul>
       </div>
 
       <div class="footer-visit">
-        <h4>Visit</h4>
-        <p>Al Malqa, Riyadh<br>Kingdom of Saudi Arabia</p>
-        <p>Sat–Thu · 10:00–22:00<br>Friday · Closed</p>
-        <p><%= link_to "WhatsApp", whatsapp_url, target: "_blank", rel: "noopener" %><br>
-           <a href="mailto:hello@neuskin.sa">hello@neuskin.sa</a></p>
+        <h4><%= t("layout.footer.visit_title") %></h4>
+        <p><%= t("layout.footer.address_1") %><br><%= t("layout.footer.address_2") %></p>
+        <p><%= t("layout.footer.hours_1") %><br><%= t("layout.footer.hours_2") %></p>
+        <p><%= link_to t("layout.footer.whatsapp"), whatsapp_url, target: "_blank", rel: "noopener" %><br>
+           <a href="mailto:hello@neuskin.sa" dir="ltr">hello@neuskin.sa</a></p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© <%= Time.current.year %> NeuSkin Clinic · SFDA / MOH licensed</span>
+      <span><%= t("layout.footer.copyright", year: Time.current.year) %></span>
       <nav class="footer-bottom-nav" aria-label="Legal">
-        <%= link_to "Privacy & PDPL", privacy_path %>
-        <%= link_to "Consent", medical_disclaimer_path %>
-        <%= link_to "Terms", terms_path %>
+        <%= link_to t("layout.footer.legal_privacy"), privacy_path %>
+        <%= link_to t("layout.footer.legal_consent"), medical_disclaimer_path %>
+        <%= link_to t("layout.footer.legal_terms"), terms_path %>
       </nav>
     </div>
   </div>
