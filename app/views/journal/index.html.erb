@@ -5,10 +5,10 @@
   <section class="jr-hero" data-controller="reveal" data-screen-label="Journal">
     <div class="jr-eyebrow reveal" data-reveal-target="item">
       <span class="rule"></span>
-      <span class="lbl"><%= t("journal.eyebrow") %></span>
+      <span class="lbl"><%= sec_text("journal", "journal_hero", "eyebrow").presence || t("journal.eyebrow") %></span>
     </div>
-    <h1 class="jr-title" data-reveal="up"><%= t("journal.title_1") %><br><span class="em"><%= t("journal.title_em") %></span></h1>
-    <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= t("journal.lead") %></p>
+    <h1 class="jr-title" data-reveal="up"><%= sec_text("journal", "journal_hero", "title_1").presence || t("journal.title_1") %><br><span class="em"><%= sec_text("journal", "journal_hero", "title_em").presence || t("journal.title_em") %></span></h1>
+    <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= sec_text("journal", "journal_hero", "lead").presence || t("journal.lead") %></p>
     <% categories = @blogs.map(&:category).uniq %>
     <% if categories.size > 1 %>
       <div class="jr-filters" data-reveal="up" data-reveal-delay="200" data-jrfilter-anchor>

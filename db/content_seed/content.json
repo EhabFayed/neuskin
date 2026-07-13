@@ -1515,6 +1515,54 @@
     ]
   },
   {
+    "page": "journal",
+    "kind": "journal_hero",
+    "label": "Journal — hero",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "المجلّة",
+        "value_en": "The Journal",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_1",
+        "label": "Title — first line",
+        "hint": null,
+        "value_ar": "تدويناتٌ تُحفَظ",
+        "value_en": "Notes, quietly",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "title_em",
+        "label": "Title — italic line",
+        "hint": null,
+        "value_ar": "بهدوء.",
+        "value_en": "kept.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "lead",
+        "label": "Lead paragraph",
+        "hint": null,
+        "value_ar": "كتابات الطبيبة، والعيادة من الداخل، والطقوس بينهما — اقرئيها على مهلك. لا شيء رائج، ولا شيء مستعجل.",
+        "value_en": "A doctor's writing, the clinic from the inside, and the rituals in between — read at your own pace. Nothing trending, nothing rushed.",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
     "page": "legal",
     "kind": "legal_blocks",
     "label": "Legal sections",

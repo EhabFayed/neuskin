@@ -14,6 +14,39 @@ RSpec.describe "Journal", type: :request do
     blog
   end
 
+  describe "editable hero" do
+    it "renders admin-edited section copy over the yml default" do
+      section = Section.create!(page: "journal", kind: "journal_hero")
+      section.contents.create!(key: "title_1", value_en: "Custom journal title", value_ar: "عنوان مخصص")
+      get "/journal"
+      expect(response.body).to include("Custom journal title")
+      get "/ar/journal"
+      expect(response.body).to include("عنوان مخصص")
+    end
+
+    it "falls back to the yml copy when no section exists" do
+      get "/journal"
+      expect(response.body).to include("Notes, quietly")
+    end
+  end
+
+  describe "section preview (admin)" do
+    before { sign_in create(:user) }
+
+    it "renders the real page template for dynamic pages" do
+      {
+        "journal"  => "journal_hero",
+        "the_team" => "team_hero",
+        "stories"  => "story_hero",
+        "faq"      => "faq_hero"
+      }.each do |page, kind|
+        section = Section.create!(page: page, kind: kind)
+        get "/admin/sections/#{section.id}/preview", params: { section: { label: section.kind } }
+        expect(response).to have_http_status(:ok), "preview failed for #{page}"
+      end
+    end
+  end
+
   describe "index" do
     it "lists published posts and hides drafts" do
       live  = make_blog
