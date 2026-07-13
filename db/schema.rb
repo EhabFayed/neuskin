@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_12_280000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_13_110000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -156,6 +156,23 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_280000) do
     t.datetime "updated_at", null: false
     t.index ["page", "kind"], name: "index_sections_on_page_and_kind", unique: true
     t.index ["page"], name: "index_sections_on_page"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.text "intro_ar"
+    t.text "intro_en"
+    t.text "quote_ar"
+    t.text "quote_en"
+    t.string "protocol_line_ar"
+    t.string "protocol_line_en"
+    t.text "close_ar"
+    t.text "close_en"
+    t.string "byline_ar"
+    t.string "byline_en"
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_stories_on_position"
   end
 
   create_table "team_members", force: :cascade do |t|

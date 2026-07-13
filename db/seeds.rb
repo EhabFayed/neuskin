@@ -203,3 +203,6 @@ load Rails.root.join("db/seeds/team_members.rb")
 
 # FAQ entries (bilingual, idempotent by question).
 load Rails.root.join("db/seeds/faqs.rb")
+
+# Patient stories (bilingual, idempotent by quote).
+load Rails.root.join("db/seeds/stories.rb")

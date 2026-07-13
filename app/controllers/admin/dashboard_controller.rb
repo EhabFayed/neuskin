@@ -9,6 +9,7 @@ module Admin
       @drafts_count       = Blog.where(is_published: false).count
       @team_count         = TeamMember.count
       @faqs_count         = Faq.count
+      @stories_count      = Story.count
     end
   end
 end

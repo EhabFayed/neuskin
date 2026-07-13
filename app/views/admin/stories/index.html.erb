@@ -1,0 +1,34 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Stories" %>
+<% content_for :title, "Stories" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">Consented patient stories, in display order.</p>
+  <%= link_to "Add story", new_admin_story_path, class: "ns-btn primary" %>
+</div>
+
+<% if @stories.any? %>
+  <div class="ns-thead">
+    <span class="r-title">Quote</span>
+    <span style="width:150px">Byline</span>
+    <span style="width:80px">Position</span>
+    <span style="width:90px">Photo</span>
+    <span style="width:16px"></span>
+  </div>
+
+  <ul class="ns-list">
+    <% @stories.each do |story| %>
+      <li>
+        <%= link_to edit_admin_story_path(story), class: "ns-row" do %>
+          <span class="r-title"><%= truncate(story.quote_en, length: 70) %></span>
+          <span class="r-meta" style="width:150px"><%= story.byline_en %></span>
+          <span class="r-meta" style="width:80px"><%= story.position %></span>
+          <span class="r-meta" style="width:90px"><%= story.photo.attached? ? "Uploaded" : "Default" %></span>
+          <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="ns-empty">No stories yet — add the first one.</div>
+<% end %>

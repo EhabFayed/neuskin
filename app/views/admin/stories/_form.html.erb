@@ -1,0 +1,52 @@
+<%= form_with model: @story, url: @story.persisted? ? admin_story_path(@story) : admin_stories_path, local: true do |form| %>
+  <% if @story.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @story.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <% {
+    "Intro — one line of context" => [:intro_en, :intro_ar, :text_area],
+    "Quote — the patient's words" => [:quote_en, :quote_ar, :text_area],
+    "Protocol line (e.g. The Bride's 180)" => [:protocol_line_en, :protocol_line_ar, :text_field],
+    "Close — where she is now" => [:close_en, :close_ar, :text_area],
+    "Byline (e.g. L.M. · 34 · Riyadh)" => [:byline_en, :byline_ar, :text_field]
+  }.each do |label, (en_attr, ar_attr, widget)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div class="ns-pair">
+        <div class="en">
+          <span class="lang-lbl">English</span>
+          <%= form.public_send(widget, en_attr, class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+        <div class="ar">
+          <span class="lang-lbl">العربية · Arabic</span>
+          <%= form.public_send(widget, ar_attr, dir: "rtl", class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Photo</span>
+    <p class="hint">Only with the patient's written consent — a stock portrait is used otherwise.</p>
+    <% if @story.photo.attached? %>
+      <p class="hint">Current: <%= @story.photo.filename %></p>
+      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
+        <%= check_box_tag "story[remove_photo]", "1", false %> Remove photo
+      </label>
+    <% end %>
+    <%= form.file_field :photo, accept: "image/*" %>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Display position</span>
+    <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to stories", admin_stories_path, class: "ns-btn ghost" %>
+    <a href="<%= stories_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

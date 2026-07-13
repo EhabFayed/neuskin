@@ -29,6 +29,11 @@
     <div class="lbl">Questions</div>
   </div>
   <div class="ns-card ns-stat">
+    <div class="ns-eyebrow">Stories</div>
+    <div class="n"><%= @stories_count %></div>
+    <div class="lbl">Patient stories</div>
+  </div>
+  <div class="ns-card ns-stat">
     <div class="ns-eyebrow">Care</div>
     <div class="n"><%= @protocols_count %></div>
     <div class="lbl">Protocols</div>
@@ -61,6 +66,16 @@
     <div class="ns-eyebrow">FAQ</div>
     <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Manage FAQs</div>
     <div style="font-size:12.5px;color:var(--ns-muted)">Add or edit the questions patients ask before the question.</div>
+  <% end %>
+  <%= link_to admin_stories_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
+    <div class="ns-eyebrow">Stories</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Manage stories</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Consented patient stories on the Stories page.</div>
+  <% end %>
+  <%= link_to admin_protocols_path, class: "ns-card", style: "text-decoration:none;color:inherit" do %>
+    <div class="ns-eyebrow">Care</div>
+    <div style="font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ns-text-hi);margin:12px 0 6px">Update protocol copy</div>
+    <div style="font-size:12.5px;color:var(--ns-muted)">Edit the six protocols’ names, promises and details.</div>
   <% end %>
 </div>
 

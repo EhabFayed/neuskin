@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :blogs, except: [:show]
     resources :team_members, except: [:show]
     resources :faqs, except: [:show]
+    resources :stories, except: [:show]
+    resources :protocols, except: [:show]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

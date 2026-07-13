@@ -1,0 +1,11 @@
+<% content_for :crumb, "Protocols" %>
+<% content_for :heading, @protocol.name_en %>
+<% content_for :title, "Edit protocol" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Delete this protocol", admin_protocol_path(@protocol), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Delete “#{@protocol.name_en}” permanently? Its page and every link to it stop working." } %>
+</div>

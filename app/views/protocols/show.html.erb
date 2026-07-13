@@ -60,6 +60,7 @@
       <span class="eyebrow">What's inside</span>
       <h2><%= p.scope %></h2>
     </div>
+    <% if p.stages.any? %>
     <div class="stages reveal d1" data-reveal-target="item">
       <% p.stages.each do |stage| %>
         <div class="stage">
@@ -69,6 +70,7 @@
         </div>
       <% end %>
     </div>
+    <% end %>
     <p class="note reveal" data-reveal-target="item" style="margin-top:46px">Final protocol scope is confirmed during your Maysa Method™ assessment. All treatments are personalised.</p>
   </div>
 </section>

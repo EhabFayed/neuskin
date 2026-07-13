@@ -28,6 +28,8 @@ module Admin
       @nav_blogs_count = Blog.count
       @nav_team_count  = TeamMember.count
       @nav_faq_count   = Faq.count
+      @nav_stories_count   = Story.count
+      @nav_protocols_count = Protocol.count
     end
 
     # Guard for admin-only areas (e.g. user management). Editors are bounced.
