@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :faqs, except: [:show]
     resources :stories, except: [:show]
     resources :protocols, except: [:show]
+    resource :settings, only: [:show, :update], controller: "settings"
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.

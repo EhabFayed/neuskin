@@ -6,12 +6,12 @@
   <div class="ns-card ns-stat">
     <div class="ns-eyebrow">Inbox</div>
     <div class="n"><%= @inquiries_count %></div>
-    <div class="lbl">Inquiries</div>
+    <div class="lbl">Inquiries<%= " · #{@inquiries_week} this week" if @inquiries_week.to_i.positive? %></div>
   </div>
   <div class="ns-card ns-stat">
     <div class="ns-eyebrow">Bridal</div>
     <div class="n"><%= @bridal_leads_count %></div>
-    <div class="lbl">Bridal leads</div>
+    <div class="lbl">Bridal leads<%= " · #{@bridal_week} this week" if @bridal_week.to_i.positive? %></div>
   </div>
   <div class="ns-card ns-stat">
     <div class="ns-eyebrow">Journal</div>
@@ -79,10 +79,41 @@
   <% end %>
 </div>
 
+<h2 class="ns-section-title">Recent leads</h2>
+<% if @recent_leads.any? %>
+  <div class="ns-thead">
+    <span class="r-title">Lead</span>
+    <span style="width:170px">Contact</span>
+    <span style="width:130px">Source</span>
+    <span style="width:120px">Received</span>
+  </div>
+  <ul class="ns-list" style="margin-bottom:34px">
+    <% @recent_leads.each do |lead| %>
+      <li>
+        <div class="ns-row" style="cursor:default">
+          <% if lead.is_a?(Inquiry) %>
+            <span class="r-title"><%= lead.name %><%= " · #{lead.persona}" if lead.persona.present? %></span>
+            <span class="r-meta" style="width:170px" dir="ltr"><%= lead.mobile %><%= "<br>".html_safe + lead.email if lead.email.present? %></span>
+            <span class="r-meta" style="width:130px">Inquiry<%= " · #{lead.source_codeword}" if lead.source_codeword.present? %></span>
+          <% else %>
+            <span class="r-title">Bridal lead</span>
+            <span class="r-meta" style="width:170px"><%= lead.email %></span>
+            <span class="r-meta" style="width:130px">Bridal checklist</span>
+          <% end %>
+          <span class="r-meta" style="width:120px"><%= time_ago_in_words(lead.created_at) %> ago</span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="ns-card" style="margin-bottom:34px"><div class="ns-empty" style="padding:8px 0">No leads yet.</div></div>
+<% end %>
+
 <h2 class="ns-section-title">Needs attention</h2>
 <div class="ns-card">
   <% attention = [] %>
-  <% attention << "#{@inquiries_count} new inquiries waiting in the inbox." if @inquiries_count.to_i.positive? %>
+  <% attention << "#{@inquiries_week} inquir#{@inquiries_week == 1 ? 'y' : 'ies'} in the last 7 days." if @inquiries_week.to_i.positive? %>
+  <% attention << "#{@bridal_week} bridal lead#{'s' unless @bridal_week == 1} in the last 7 days." if @bridal_week.to_i.positive? %>
   <% attention << "#{@drafts_count} unpublished Journal draft#{'s' unless @drafts_count == 1}." if @drafts_count.to_i.positive? %>
   <% if attention.any? %>
     <% attention.each do |line| %>

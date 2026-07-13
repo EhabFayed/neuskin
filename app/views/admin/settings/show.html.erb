@@ -1,0 +1,45 @@
+<% content_for :crumb, "Account" %>
+<% content_for :heading, "Settings" %>
+<% content_for :title, "Settings" %>
+
+<%= form_with model: @user, url: admin_settings_path, method: :patch, local: true do |form| %>
+  <% if @user.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @user.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px;max-width:560px">
+    <span class="ns-field-title">Account</span>
+    <label style="display:block;margin-top:10px">
+      <span class="lang-lbl">Email</span>
+      <%= form.email_field :email, class: "ns-input", style: "margin-top:4px" %>
+    </label>
+    <p class="hint" style="margin-top:10px">Role: <strong><%= @user.role.capitalize %></strong> — roles are assigned by an administrator.</p>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px;max-width:560px">
+    <span class="ns-field-title">Change password</span>
+    <p class="hint">Leave blank to keep your current password.</p>
+    <label style="display:block;margin-top:6px">
+      <span class="lang-lbl">New password</span>
+      <%= form.password_field :password, autocomplete: "new-password", class: "ns-input", style: "margin-top:4px" %>
+    </label>
+    <label style="display:block;margin-top:10px">
+      <span class="lang-lbl">Confirm new password</span>
+      <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "ns-input", style: "margin-top:4px" %>
+    </label>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px;max-width:560px">
+    <span class="ns-field-title">Confirm it's you</span>
+    <label style="display:block;margin-top:6px">
+      <span class="lang-lbl">Current password (required to save)</span>
+      <%= form.password_field :current_password, autocomplete: "current-password", class: "ns-input", style: "margin-top:4px" %>
+    </label>
+  </div>
+
+  <div class="ns-savebar">
+    <%= form.submit "Save changes", class: "ns-btn primary" %>
+  </div>
+<% end %>

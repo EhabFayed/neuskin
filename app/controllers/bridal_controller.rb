@@ -10,8 +10,10 @@ class BridalController < ApplicationController
     @lead.preferred_locale ||= I18n.locale.to_s
 
     if @lead.save
-      # STUB: the real "6-month bridal skin checklist" PDF and the nurture
-      # sequence are not built yet. For now, confirm capture inline.
+      LeadMailer.bridal_notification(@lead).deliver_later
+      LeadMailer.bridal_confirmation(@lead).deliver_later
+      # STUB: the real "6-month bridal skin checklist" PDF is not built yet;
+      # the confirmation email covers the receipt. Confirm capture inline.
       redirect_to bridal_concierge_path(checklist: "sent"),
                   notice: t("bridal.checklist.success")
     else

@@ -617,3 +617,13 @@ en:
       before_you_come_in: "Before you come in"
       how_care_works: "How care works"
       privacy: "Privacy & practicalities"
+  mailer:
+    signature: "NeuSkin Clinic · Al Malqa, Riyadh"
+    inquiry_confirmation:
+      subject: "We received your inquiry — NeuSkin Clinic"
+      greeting: "Dear %{name},"
+      body: "Thank you for reaching out to NeuSkin Clinic. Your inquiry has been received and is being reviewed personally by our patient relations lead. We will call you within two hours during clinic hours (Saturday to Thursday, 10:00–22:00)."
+    bridal_confirmation:
+      subject: "Your bridal checklist request — NeuSkin Clinic"
+      greeting: "Dear bride,"
+      body: "Thank you — we received your request. Your 6-month bridal checklist is on its way, and our patient relations lead will call you to plan the months ahead, calmly and in the right order."
