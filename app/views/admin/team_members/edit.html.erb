@@ -1,0 +1,11 @@
+<% content_for :crumb, "Team" %>
+<% content_for :heading, @member.name_en %>
+<% content_for :title, "Edit member" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Remove this member", admin_team_member_path(@member), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Remove #{@member.name_en} from the team page?" } %>
+</div>

@@ -9,6 +9,9 @@ class Protocol < ApplicationRecord
 
   default_scope { order(:position) }
 
+  # Admin can leave the slug blank on create — derived from the English name.
+  before_validation { self.slug = name_en.to_s.parameterize if slug.blank? }
+
   def to_param = slug
 
   # Locale-aware readers: protocol.name returns name_ar or name_en for the

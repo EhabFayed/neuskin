@@ -1,0 +1,11 @@
+<% content_for :crumb, "Stories" %>
+<% content_for :heading, truncate(@story.quote_en, length: 40) %>
+<% content_for :title, "Edit story" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Delete this story", admin_story_path(@story), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Delete this story permanently?" } %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_13_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -42,6 +42,28 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "blogs", force: :cascade do |t|
+    t.string "slug_en"
+    t.string "slug_ar"
+    t.string "title_ar"
+    t.string "title_en"
+    t.text "excerpt_ar"
+    t.text "excerpt_en"
+    t.string "meta_title_ar"
+    t.string "meta_title_en"
+    t.text "meta_description_ar"
+    t.text "meta_description_en"
+    t.string "alt_ar"
+    t.string "alt_en"
+    t.string "category"
+    t.boolean "is_published", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["is_published"], name: "index_blogs_on_is_published"
+    t.index ["slug_ar"], name: "index_blogs_on_slug_ar", unique: true
+    t.index ["slug_en"], name: "index_blogs_on_slug_en", unique: true
+  end
+
   create_table "bridal_leads", force: :cascade do |t|
     t.string "email", null: false
     t.date "wedding_date"
@@ -63,8 +85,22 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "alt_ar"
+    t.string "alt_en"
     t.index ["parentable_type", "parentable_id", "key"], name: "index_contents_on_parent_and_key", unique: true
     t.index ["parentable_type", "parentable_id"], name: "index_contents_on_parentable"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string "question_ar"
+    t.string "question_en"
+    t.text "answer_ar"
+    t.text "answer_en"
+    t.string "category", default: "before_you_come_in", null: false
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category", "position"], name: "index_faqs_on_category_and_position"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -120,6 +156,40 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_12_210000) do
     t.datetime "updated_at", null: false
     t.index ["page", "kind"], name: "index_sections_on_page_and_kind", unique: true
     t.index ["page"], name: "index_sections_on_page"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.text "intro_ar"
+    t.text "intro_en"
+    t.text "quote_ar"
+    t.text "quote_en"
+    t.string "protocol_line_ar"
+    t.string "protocol_line_en"
+    t.text "close_ar"
+    t.text "close_en"
+    t.string "byline_ar"
+    t.string "byline_en"
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_stories_on_position"
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.string "name_ar"
+    t.string "name_en"
+    t.string "role_ar"
+    t.string "role_en"
+    t.string "cred_ar"
+    t.string "cred_en"
+    t.string "focus_ar"
+    t.string "focus_en"
+    t.text "bio_ar"
+    t.text "bio_en"
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_team_members_on_position"
   end
 
   create_table "users", force: :cascade do |t|

@@ -194,3 +194,15 @@ end
 
 # Content sections.
 Rake::Task["content:seed"].invoke if Rake::Task.task_defined?("content:seed")
+
+# Journal posts (bilingual, idempotent by slug).
+load Rails.root.join("db/seeds/blogs.rb")
+
+# Team members (bilingual, idempotent by name).
+load Rails.root.join("db/seeds/team_members.rb")
+
+# FAQ entries (bilingual, idempotent by question).
+load Rails.root.join("db/seeds/faqs.rb")
+
+# Patient stories (bilingual, idempotent by quote).
+load Rails.root.join("db/seeds/stories.rb")

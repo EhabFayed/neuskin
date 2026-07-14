@@ -1,0 +1,36 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Journal" %>
+<% content_for :title, "Journal" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">Posts on the public Journal. Drafts stay invisible until published.</p>
+  <%= link_to "New post", new_admin_blog_path, class: "ns-btn primary" %>
+</div>
+
+<% if @blogs.any? %>
+  <div class="ns-thead">
+    <span class="r-title">Title</span>
+    <span style="width:150px">Category</span>
+    <span style="width:120px">Created</span>
+    <span style="width:110px">Status</span>
+    <span style="width:16px"></span>
+  </div>
+
+  <ul class="ns-list">
+    <% @blogs.each do |blog| %>
+      <li>
+        <%= link_to edit_admin_blog_path(blog), class: "ns-row" do %>
+          <span class="r-title"><%= blog.title_en %></span>
+          <span class="r-meta" style="width:150px"><%= I18n.t("journal.categories.#{blog.category}", locale: :en) %></span>
+          <span class="r-meta" style="width:120px"><%= blog.created_at.strftime("%d.%m.%Y") %></span>
+          <span style="width:110px">
+            <span class="ns-status <%= blog.is_published? ? "published" : "draft" %>"><%= blog.is_published? ? "Live" : "Draft" %></span>
+          </span>
+          <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="ns-empty">No posts yet — write the first one.</div>
+<% end %>

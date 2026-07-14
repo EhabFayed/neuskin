@@ -7,18 +7,18 @@ class PagesController < ApplicationController
   end
 
   def the_team
+    @members = TeamMember.with_attached_photo
   end
 
   def the_clinic
   end
 
-  def journal
-  end
-
   def stories
+    @stories = Story.with_attached_photo
   end
 
   def faq
+    @faq_groups = Faq.grouped
   end
 
   def maysa_method

@@ -1,0 +1,74 @@
+<%= form_with model: @protocol, url: @protocol.persisted? ? admin_protocol_path(@protocol) : admin_protocols_path, local: true do |form| %>
+  <% if @protocol.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @protocol.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <% {
+    "Name" => [:name_en, :name_ar, :text_field],
+    "Promise — the one-line pitch" => [:promise_en, :promise_ar, :text_area],
+    "Duration (e.g. 12 weeks)" => [:duration_en, :duration_ar, :text_field],
+    "Meta line (e.g. 12 weeks · Skin reset)" => [:meta_en, :meta_ar, :text_field],
+    "Who it's for" => [:who_for_en, :who_for_ar, :text_area],
+    "What it covers" => [:scope_en, :scope_ar, :text_area],
+    "What it excludes" => [:excludes_en, :excludes_ar, :text_area]
+  }.each do |label, (en_attr, ar_attr, widget)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div class="ns-pair">
+        <div class="en">
+          <span class="lang-lbl">English</span>
+          <%= form.public_send(widget, en_attr, class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+        <div class="ar">
+          <span class="lang-lbl">العربية · Arabic</span>
+          <%= form.public_send(widget, ar_attr, dir: "rtl", class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Settings</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Display position</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Slug (URL)</span><br>
+        <%= form.text_field :slug, class: "ns-input", placeholder: "auto from English name" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Filter persona ("I'm here because…")</span><br>
+        <%= form.select :persona, Protocol.persona.values.map { |v| [v.to_s.titleize, v] }, { include_blank: "—" }, class: "ns-input" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">WhatsApp codeword</span><br>
+        <%= form.text_field :codeword, class: "ns-input", style: "max-width:160px" %>
+      </label>
+      <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
+        <%= form.check_box :trademark %> Show ™ after the name
+      </label>
+    </div>
+    <% if @protocol.persisted? %>
+      <p class="hint" style="margin-top:10px">Changing the slug changes the page URL — links shared before will stop working.</p>
+    <% end %>
+  </div>
+
+  <% if @protocol.persisted? && @protocol.stages.blank? %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title">Timeline stages</span>
+      <p class="hint">This protocol has no staged timeline yet — the "What's inside" grid stays hidden on the public page. Stages are set up with the development team.</p>
+    </div>
+  <% end %>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to protocols", admin_protocols_path, class: "ns-btn ghost" %>
+    <% if @protocol.persisted? %>
+      <a href="<%= protocol_path(@protocol) %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <% end %>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

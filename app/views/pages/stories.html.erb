@@ -1,27 +1,4 @@
-<%# Patient Stories (design §isStories) — consented social proof. No stock photography. %>
-
-<%
-  patient_stories = [
-    { img: :portrait_natural,
-      intro: sec_text("stories", "story_items", "story_1_intro").presence || "She came in tired of being sold to. What she wanted was a plan.",
-      quote: sec_text("stories", "story_items", "story_1_quote").presence || "For the first time, someone told me what not to do. That's when I trusted them.",
-      protocol: sec_text("stories", "story_items", "story_1_protocol").presence || "Diagnostic Foundation → Skin",
-      close: sec_text("stories", "story_items", "story_1_close").presence || "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
-      by: sec_text("stories", "story_items", "story_1_by").presence || "L.M. · 34 · Riyadh" },
-    { img: :consult,
-      intro: sec_text("stories", "story_items", "story_2_intro").presence || "A bride with six months and a quiet kind of panic.",
-      quote: sec_text("stories", "story_items", "story_2_quote").presence || "No one promised me a miracle. They promised me a calendar, and they kept it.",
-      protocol: sec_text("stories", "story_items", "story_2_protocol").presence || "The Bride's 180",
-      close: sec_text("stories", "story_items", "story_2_close").presence || "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
-      by: sec_text("stories", "story_items", "story_2_by").presence || "A.R. · 29 · Jeddah" },
-    { img: :beauty_eyes,
-      intro: sec_text("stories", "story_items", "story_3_intro").presence || "Long-term maintenance, on her own terms.",
-      quote: sec_text("stories", "story_items", "story_3_quote").presence || "I review my skin like I review anything that matters to me — with data, every quarter.",
-      protocol: sec_text("stories", "story_items", "story_3_protocol").presence || "Private Care",
-      close: sec_text("stories", "story_items", "story_3_close").presence || "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
-      by: sec_text("stories", "story_items", "story_3_by").presence || "F.K. · 41 · Riyadh" }
-  ]
-%>
+<%# Patient Stories (design §isStories) — consented social proof, dynamic (Story records). %>
 
 <div class="stories-page">
   <%# Patient Stories hero — 1:1 port of design §isStories %>
@@ -35,17 +12,22 @@
 
   <%# Story rows — image left, copy right, top-border dividers %>
   <section class="st-rows" data-controller="reveal">
-    <% patient_stories.each do |story| %>
+    <% fallback_photos = %i[portrait_natural consult beauty_eyes] %>
+    <% @stories.each_with_index do |story, i| %>
       <div class="st-row reveal" data-reveal-target="item">
         <div class="st-row-img">
-          <%= ns_image_tag story[:img], alt: "Patient" %>
+          <% if story.photo.attached? %>
+            <%= image_tag story.photo, alt: story.byline.to_s %>
+          <% else %>
+            <%= ns_image_tag fallback_photos[i % fallback_photos.size], alt: story.byline.to_s %>
+          <% end %>
         </div>
         <div class="st-row-copy">
-          <p class="st-intro"><%= story[:intro] %></p>
-          <p class="st-quote">&ldquo;<%= story[:quote] %>&rdquo;</p>
-          <div class="st-protocol"><%= story[:protocol] %></div>
-          <p class="st-close"><%= story[:close] %></p>
-          <div class="st-by"><%= story[:by] %></div>
+          <% if story.intro.present? %><p class="st-intro"><%= story.intro %></p><% end %>
+          <p class="st-quote">&ldquo;<%= story.quote %>&rdquo;</p>
+          <% if story.protocol_line.present? %><div class="st-protocol"><%= story.protocol_line %></div><% end %>
+          <% if story.close.present? %><p class="st-close"><%= story.close %></p><% end %>
+          <% if story.byline.present? %><div class="st-by"><%= story.byline %></div><% end %>
         </div>
       </div>
     <% end %>

@@ -20,6 +20,7 @@ module Admin
       "faq"             => "pages/faq",
       "legal"           => "pages/legal",
       "protocols_index" => "protocols/index",
+      "journal"         => "journal/index",
       "bridal"          => "bridal/show",
     }.freeze
 
@@ -65,6 +66,14 @@ module Admin
       when "bridal"
         @protocol = Protocol.find_by(slug: "brides-180")
         @lead = BridalLead.new
+      when "journal"
+        @blogs = Blog.published.newest_first.with_attached_image.includes(:contents)
+      when "the_team"
+        @members = TeamMember.with_attached_photo
+      when "stories"
+        @stories = Story.with_attached_photo
+      when "faq"
+        @faq_groups = Faq.grouped
       when "treatment_outcomes"
         # Section kinds are outcome_<slug>; fall back to skin for safety.
         slug = @section.kind.delete_prefix("outcome_")

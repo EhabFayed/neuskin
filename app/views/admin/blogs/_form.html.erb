@@ -1,0 +1,185 @@
+<%= form_with model: @blog, url: @blog.persisted? ? admin_blog_path(@blog) : admin_blogs_path, local: true do |form| %>
+  <% if @blog.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @blog.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Title</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_field :title_en, class: "ns-input" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_field :title_ar, dir: "rtl", class: "ns-input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Excerpt <span class="hint">— the card text on the Journal grid</span></span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_area :excerpt_en, rows: 3, class: "ns-textarea" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_area :excerpt_ar, rows: 3, dir: "rtl", class: "ns-textarea" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Body paragraphs</span>
+    <p class="hint">One card per paragraph, in reading order. Leave both languages blank to drop a row.</p>
+    <div id="blog-paragraphs">
+      <%= form.fields_for :contents do |cf| %>
+        <div class="ns-card" style="margin:10px 0;background:var(--ns-bg)">
+          <%= cf.hidden_field :id %>
+          <%= cf.hidden_field :key %>
+          <%= cf.hidden_field :position %>
+          <div class="ns-pair">
+            <div class="en">
+              <span class="lang-lbl">English</span>
+              <%= cf.text_area :value_en, rows: 4, class: "ns-textarea" %>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">العربية · Arabic</span>
+              <%= cf.text_area :value_ar, rows: 4, dir: "rtl", class: "ns-textarea" %>
+            </div>
+          </div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
+            <span class="lang-lbl">Paragraph image (optional)</span>
+            <% if cf.object.photo.attached? %>
+              <p class="hint" style="margin:4px 0">Current: <%= cf.object.photo.filename %></p>
+              <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font-size:12px;color:var(--ns-muted)">
+                <%= cf.check_box :remove_photo %> Remove image
+              </label><br>
+            <% end %>
+            <%= cf.file_field :photo, accept: "image/*" %>
+            <div class="ns-pair" style="margin-top:8px">
+              <div class="en">
+                <span class="lang-lbl">Image alt · English</span>
+                <%= cf.text_field :alt_en, class: "ns-input" %>
+              </div>
+              <div class="ar">
+                <span class="lang-lbl">النص البديل · Arabic</span>
+                <%= cf.text_field :alt_ar, dir: "rtl", class: "ns-input" %>
+              </div>
+            </div>
+          </div>
+          <% if cf.object.persisted? %>
+            <label style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--ns-muted)">
+              <%= cf.check_box :_destroy %> Remove this paragraph
+            </label>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <template id="blog-paragraph-template">
+      <div class="ns-card" style="margin:10px 0;background:var(--ns-bg)">
+        <input type="hidden" name="blog[contents_attributes][IDX][position]">
+        <div class="ns-pair">
+          <div class="en">
+            <span class="lang-lbl">English</span>
+            <textarea name="blog[contents_attributes][IDX][value_en]" rows="4" class="ns-textarea"></textarea>
+          </div>
+          <div class="ar">
+            <span class="lang-lbl">العربية · Arabic</span>
+            <textarea name="blog[contents_attributes][IDX][value_ar]" rows="4" dir="rtl" class="ns-textarea"></textarea>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
+          <span class="lang-lbl">Paragraph image (optional)</span>
+          <input type="file" name="blog[contents_attributes][IDX][photo]" accept="image/*">
+          <div class="ns-pair" style="margin-top:8px">
+            <div class="en">
+              <span class="lang-lbl">Image alt · English</span>
+              <input type="text" name="blog[contents_attributes][IDX][alt_en]" class="ns-input">
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">النص البديل · Arabic</span>
+              <input type="text" name="blog[contents_attributes][IDX][alt_ar]" dir="rtl" class="ns-input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <button type="button" class="ns-btn ghost" style="margin-top:6px"
+            onclick="var t=document.getElementById('blog-paragraph-template'),w=document.getElementById('blog-paragraphs'),i=Date.now();w.insertAdjacentHTML('beforeend',t.innerHTML.replaceAll('IDX',i));">
+      + Add paragraph
+    </button>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Cover image</span>
+    <% if @blog.image.attached? %>
+      <p class="hint">Current: <%= @blog.image.filename %></p>
+      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
+        <%= check_box_tag "blog[remove_image]", "1", false %> Remove cover image
+      </label>
+    <% end %>
+    <%= form.file_field :image, accept: "image/*" %>
+    <div class="ns-pair" style="margin-top:10px">
+      <div class="en">
+        <span class="lang-lbl">Alt text · English</span>
+        <%= form.text_field :alt_en, class: "ns-input" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">النص البديل · Arabic</span>
+        <%= form.text_field :alt_ar, dir: "rtl", class: "ns-input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Settings</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Category</span><br>
+        <%= form.select :category, Blog.category.values.map { |v| [I18n.t("journal.categories.#{v}", locale: :en), v] }, {}, class: "ns-input" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Slug · English URL</span><br>
+        <%= form.text_field :slug_en, class: "ns-input", placeholder: "auto from English title" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Slug · Arabic URL</span><br>
+        <%= form.text_field :slug_ar, dir: "rtl", class: "ns-input", placeholder: "تلقائي من العنوان العربي" %>
+      </label>
+      <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
+        <%= form.check_box :is_published %> Published
+      </label>
+    </div>
+  </div>
+
+  <details class="ns-card" style="margin-bottom:14px">
+    <summary class="ns-field-title" style="cursor:pointer">SEO (optional)</summary>
+    <div class="ns-pair" style="margin-top:10px">
+      <div class="en">
+        <span class="lang-lbl">Meta title · English</span>
+        <%= form.text_field :meta_title_en, class: "ns-input" %>
+        <span class="lang-lbl" style="margin-top:8px;display:block">Meta description · English</span>
+        <%= form.text_area :meta_description_en, rows: 2, class: "ns-textarea" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">Meta title · Arabic</span>
+        <%= form.text_field :meta_title_ar, dir: "rtl", class: "ns-input" %>
+        <span class="lang-lbl" style="margin-top:8px;display:block">Meta description · Arabic</span>
+        <%= form.text_area :meta_description_ar, rows: 2, dir: "rtl", class: "ns-textarea" %>
+      </div>
+    </div>
+  </details>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to posts", admin_blogs_path, class: "ns-btn ghost" %>
+    <% if @blog.persisted? %>
+      <a href="<%= journal_article_path(@blog) %>" target="_blank" rel="noopener" class="ns-btn ghost">View post</a>
+    <% end %>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

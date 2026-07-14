@@ -1,0 +1,6 @@
+New bridal checklist lead.
+
+Email:        <%= @lead.email %>
+Wedding date: <%= @lead.wedding_date&.strftime("%Y-%m-%d") || "—" %>
+Locale:       <%= @lead.preferred_locale %>
+Received:     <%= @lead.created_at.strftime("%Y-%m-%d %H:%M") %>

@@ -1,33 +1,4 @@
-<%# FAQ (design §isFaq) — search + accordion, grouped questions. %>
-
-<%
-  faq_groups = [
-    { title: sec_text("faq", "faq_items", "group_1_title").presence || "Before you come in", qs: [
-      { q: sec_text("faq", "faq_items", "q_1_question").presence || "Do you publish a price list?",
-        a: sec_text("faq", "faq_items", "q_1_answer").presence || "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs." },
-      { q: sec_text("faq", "faq_items", "q_2_question").presence || "How do I start?",
-        a: sec_text("faq", "faq_items", "q_2_answer").presence || "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally." },
-      { q: sec_text("faq", "faq_items", "q_3_question").presence || "Is the first visit a treatment?",
-        a: sec_text("faq", "faq_items", "q_3_answer").presence || "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan." }
-    ] },
-    { title: sec_text("faq", "faq_items", "group_2_title").presence || "How care works", qs: [
-      { q: sec_text("faq", "faq_items", "q_4_question").presence || "Why a twelve-month plan?",
-        a: sec_text("faq", "faq_items", "q_4_answer").presence || "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months." },
-      { q: sec_text("faq", "faq_items", "q_5_question").presence || "Will I see Dr. Maysa herself?",
-        a: sec_text("faq", "faq_items", "q_5_answer").presence || "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction." },
-      { q: sec_text("faq", "faq_items", "q_6_question").presence || "What if a treatment isn't right for me?",
-        a: sec_text("faq", "faq_items", "q_6_answer").presence || "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session." }
-    ] },
-    { title: sec_text("faq", "faq_items", "group_3_title").presence || "Privacy & practicalities", qs: [
-      { q: sec_text("faq", "faq_items", "q_7_question").presence || "How private is my information?",
-        a: sec_text("faq", "faq_items", "q_7_answer").presence || "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely." },
-      { q: sec_text("faq", "faq_items", "q_8_question").presence || "Do you photograph patients?",
-        a: sec_text("faq", "faq_items", "q_8_answer").presence || "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time." },
-      { q: sec_text("faq", "faq_items", "q_9_question").presence || "Where are you, and when are you open?",
-        a: sec_text("faq", "faq_items", "q_9_answer").presence || "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule." }
-    ] }
-  ]
-%>
+<%# FAQ (design §isFaq) — search + accordion, dynamic (Faq records). %>
 
 <div class="faq-page" data-controller="reveal faqsearch">
   <%# FAQ hero — 1:1 port of design §isFaq %>
@@ -47,15 +18,15 @@
 
   <%# FAQ groups — sticky title left, accordion right %>
   <section class="fq-groups">
-    <% faq_groups.each do |group| %>
+    <% @faq_groups.each do |category, faqs| %>
       <div class="fq-group" data-reveal="up" data-faqsearch-target="group">
-        <h2 class="fq-group-title"><%= group[:title] %></h2>
+        <h2 class="fq-group-title"><%= t("faq.groups.#{category}") %></h2>
         <div class="fq-list">
-          <% group[:qs].each do |item| %>
+          <% faqs.each do |faq| %>
             <details class="fq-item" data-faqsearch-target="item"
-                     data-search="<%= "#{item[:q]} #{item[:a]}".downcase %>">
-              <summary><span class="fq-q"><%= item[:q] %></span><span class="fq-sign">+</span></summary>
-              <p class="fq-a"><%= item[:a] %></p>
+                     data-search="<%= "#{faq.question} #{faq.answer}".downcase %>">
+              <summary><span class="fq-q"><%= faq.question %></span><span class="fq-sign">+</span></summary>
+              <p class="fq-a"><%= faq.answer %></p>
             </details>
           <% end %>
         </div>

@@ -1,0 +1,11 @@
+<% content_for :crumb, "Journal" %>
+<% content_for :heading, @blog.title_en %>
+<% content_for :title, "Edit post" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Delete this post", admin_blog_path(@blog), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Delete “#{@blog.title_en}” permanently?" } %>
+</div>

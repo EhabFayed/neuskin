@@ -1,0 +1,12 @@
+New inquiry received.
+
+Name:           <%= @inquiry.name %>
+Mobile:         <%= @inquiry.mobile %>
+Email:          <%= @inquiry.email.presence || "—" %>
+Persona:        <%= @inquiry.persona.presence || "—" %>
+Preferred time: <%= @inquiry.preferred_time.presence || "—" %>
+Codeword:       <%= @inquiry.source_codeword.presence || "—" %>
+Locale:         <%= @inquiry.preferred_locale %>
+Received:       <%= @inquiry.created_at.strftime("%Y-%m-%d %H:%M") %>
+
+SLA: reply within 2 hours (Sat–Thu, 10:00–22:00).
