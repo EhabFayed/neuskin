@@ -83,6 +83,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
   position: fixed; inset: 0 0 auto 0; z-index: 90;
   display: flex; align-items: center; justify-content: space-between;
   padding: 26px clamp(20px, 5vw, 56px);
+  /* slight tint even before scroll so links read over the hero video */
+  background: rgba(20, 16, 17, .38);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   transition: background .5s var(--ease-soft), padding .4s var(--ease-soft), border-color .5s;
   border-bottom: 1px solid transparent;
 }
@@ -201,8 +205,9 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .hero-media {  overflow: hidden; background: var(--card-2); }
 .hero-media-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-media-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(20,16,17,.55), transparent 45%), linear-gradient(to top, rgba(20,16,17,.6), transparent 50%); }
-[dir="rtl"] .hero-media::after { background: linear-gradient(240deg, rgba(20,16,17,.55), transparent 45%), linear-gradient(to top, rgba(20,16,17,.6), transparent 50%); }
+/* full-bleed video hero: scrim darkest behind the copy, brightening across the full width */
+.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(20,16,17,.92), rgba(20,16,17,.6) 20%, rgba(20,16,17,.2) 80%, rgba(20,16,17,0)); }
+[dir="rtl"] .hero-media::after { background: linear-gradient(to left, rgba(20,16,17,.92), rgba(20,16,17,.6) 20%, rgba(20,16,17,.2) 80%, rgba(20,16,17,0)); }
 .hero-media-cap { position: absolute; inset-inline-end: clamp(20px, 3vw, 40px); bottom: 38px; z-index: 2; text-align: end; }
 .hero-media-cap .nm { font-family: var(--serif); font-size: 18px; color: var(--text-soft); }
 .hero-media-cap .rl { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--accent-rose); margin-block-start: 6px; }
