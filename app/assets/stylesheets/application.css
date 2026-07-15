@@ -28,6 +28,9 @@ a { color: inherit; text-decoration: none; }
 ::-webkit-scrollbar-thumb:hover { background: #5a4a4f; }
 
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
+/* white rim on display headings so they hold up over photos/video and dark grounds */
+h1, h2 { -webkit-text-stroke: 1px rgba(255,255,255,.9); }
+h3, h4 { -webkit-text-stroke: .4px rgba(255,255,255,.75); }
 
 .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .wrap.narrow { max-width: 820px; }
@@ -141,6 +144,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .section--light .eyebrow::before { background: #8a6e72; }
 .section--light h2, .section--light h3,
 .section--light .sec-head h2, .section--light .sec-head h3 { color: #2a2224; }
+/* dark ink on cream needs no white rim — it inverts the contrast and blurs the type */
+.section--light h1, .section--light h2, .section--light h3, .section--light h4 { -webkit-text-stroke: 0; }
 .section--light .em, .section--light .sec-head .em { color: #8a6e72; }
 .section--light .exclude li { color: #5c4f52; border-block-end-color: rgba(42,34,36,.14); }
 .section--light .exclude li::before { color: #8a6e72; }
@@ -304,11 +309,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 /* Maysa Method light band: centered columns, 48px serif numbers, rose button */
 .mysa-method .mysa-method-eyebrow { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #9f8488; margin-bottom: 14px; text-align: center; }
 .mysa-method .mysa-method-title { margin: 0 0 70px; font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 3.6vw, 46px); color: #2a2224; text-align: center; }
-.mysa-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; max-width: 1100px; margin: 0 auto; }
-.mysa-step { text-align: center; }
-.mysa-step .n { font-family: var(--serif); font-size: 48px; color: #9f8488; margin-bottom: 18px; }
-.mysa-step h3 { margin: 0 0 12px; font-family: var(--serif); font-weight: 500; font-size: 25px; color: #2a2224; }
-.mysa-step p { margin: 0; font-weight: 300; font-size: 15px; line-height: 1.75; color: #6a5b5d; }
+.mysa-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 1100px; margin: 0 auto; }
+.mysa-step { text-align: center; padding: 26px 22px; transition: background .35s var(--ease-soft); }
+.mysa-step .n { font-family: var(--serif); font-size: 48px; color: #9f8488; margin-bottom: 18px; transition: color .35s var(--ease-soft); }
+.mysa-step h3 { margin: 0 0 12px; font-family: var(--serif); font-weight: 500; font-size: 25px; color: #2a2224; transition: color .35s var(--ease-soft); }
+.mysa-step p { margin: 0; font-weight: 300; font-size: 15px; line-height: 1.75; color: #6a5b5d; transition: color .35s var(--ease-soft); }
+/* hover inverts the step — cream band flips to the dark ground with cream type */
+.mysa-step:hover { background: var(--ground); }
+.mysa-step:hover .n { color: var(--accent-soft); }
+.mysa-step:hover h3 { color: var(--text-bright); -webkit-text-stroke: .4px rgba(255,255,255,.75); }
+.mysa-step:hover p { color: var(--text-soft); }
 .mysa-method-cta { text-align: center; margin-top: 64px; }
 .btn--rose { color: #fff; background: #9f8488; border-color: #9f8488; }
 .btn--rose:hover { background: #7d6469; border-color: #7d6469; color: #fff; }
@@ -335,10 +345,19 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .cols-2 { grid-template-columns: repeat(2, 1fr); }
 .cols-3 { grid-template-columns: repeat(3, 1fr); }
 .cols-4 { grid-template-columns: repeat(4, 1fr); }
-.col { background: var(--ground); padding: clamp(34px, 4vw, 56px) clamp(26px, 3vw, 44px); }
-.col .num { font-family: var(--sans); font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
-.col h3 { font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 400; margin: 22px 0 14px; color: var(--text-bright); }
-.col p { color: var(--text-muted); font-weight: 300; line-height: 1.8; margin: 0; }
+.col { background: var(--ground); padding: clamp(34px, 4vw, 56px) clamp(26px, 3vw, 44px); transition: background .35s var(--ease-soft); }
+.col .num { font-family: var(--sans); font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); transition: color .35s var(--ease-soft); }
+.col h3 { font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 400; margin: 22px 0 14px; color: var(--text-bright); transition: color .35s var(--ease-soft); }
+.col p { color: var(--text-muted); font-weight: 300; line-height: 1.8; margin: 0; transition: color .35s var(--ease-soft); }
+/* hover inverts the card — dark cards flip to cream with ink type, light cards flip to dark */
+.col:hover { background: #f4efea; }
+.col:hover .num { color: #8a6e72; }
+.col:hover h3 { color: #2a2224; -webkit-text-stroke: 0; }
+.col:hover p { color: #5a4d4f; }
+.section--light .col:hover { background: var(--ground); }
+.section--light .col:hover .num { color: var(--accent); }
+.section--light .col:hover h3 { color: var(--text-bright); -webkit-text-stroke: .4px rgba(255,255,255,.75); }
+.section--light .col:hover p { color: var(--text-soft); }
 @media (max-width: 880px) { .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; } }
 
 /* free-standing feature grid (no dividers) */
@@ -593,12 +612,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .journey-eyebrow { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #9f8488; margin-bottom: 14px; }
 .journey-title { margin: 0 0 70px; font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 50px); color: #2a2224; }
 .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(42,34,36,.15); }
-.journey .step { padding-block: 42px 0; padding-inline: 30px; border-inline-end: 1px solid rgba(42,34,36,.12); }
-.journey .step:first-child { padding-inline-start: 0; }
-.journey .step:last-child { padding-inline-end: 0; border-inline-end: none; }
-.journey .step .n { display: block; font-family: var(--serif); font-size: 34px; color: #9f8488; margin-bottom: 22px; letter-spacing: 0; text-transform: none; }
-.journey .step h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0 0 14px; color: #2a2224; }
-.journey .step p { font-weight: 300; font-size: 14.5px; line-height: 1.75; color: #6a5b5d; margin: 0; }
+.journey .step { padding-block: 42px 32px; padding-inline: 30px; border-inline-end: 1px solid rgba(42,34,36,.12); transition: background .35s var(--ease-soft); }
+.journey .step:last-child { border-inline-end: none; }
+.journey .step .n { display: block; font-family: var(--serif); font-size: 34px; color: #9f8488; margin-bottom: 22px; letter-spacing: 0; text-transform: none; transition: color .35s var(--ease-soft); }
+.journey .step h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0 0 14px; color: #2a2224; transition: color .35s var(--ease-soft); }
+.journey .step p { font-weight: 300; font-size: 14.5px; line-height: 1.75; color: #6a5b5d; margin: 0; transition: color .35s var(--ease-soft); }
+/* hover inverts the step — cream band flips to the dark ground with cream type */
+.journey .step:hover { background: var(--ground); }
+.journey .step:hover .n { color: var(--accent-soft); }
+.journey .step:hover h3 { color: var(--text-bright); -webkit-text-stroke: .4px rgba(255,255,255,.75); }
+.journey .step:hover p { color: var(--text-soft); }
 @media (max-width: 880px) {
   .journey { grid-template-columns: 1fr 1fr; }
   .journey .step { padding-block: 42px 0 !important; padding-inline: 24px !important; border-inline-end: none; }
@@ -783,11 +806,22 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; }
 .vip-rows--2col { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 5vw, 72px); }
 @media (max-width: 700px) { .vip-rows--2col { grid-template-columns: 1fr; } }
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.tier { background: var(--card); border: 1px solid var(--line); padding: 38px 32px; }
-.tier .badge { font-family: var(--sans); font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
-.tier h3 { font-size: 1.6rem; font-weight: 400; margin: 18px 0 8px; color: var(--text-bright); }
-.tier .line { font-family: var(--serif); font-style: italic; color: var(--accent-soft); margin-block-end: 16px; }
-.tier p { color: var(--text-muted); font-weight: 300; margin: 0; font-size: .95rem; }
+.tier { background: var(--card); border: 1px solid var(--line); padding: 38px 32px; transition: background .35s var(--ease-soft), border-color .35s var(--ease-soft); }
+.tier .badge { font-family: var(--sans); font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); transition: color .35s var(--ease-soft); }
+.tier h3 { font-size: 1.6rem; font-weight: 400; margin: 18px 0 8px; color: var(--text-bright); transition: color .35s var(--ease-soft); }
+.tier .line { font-family: var(--serif); font-style: italic; color: var(--accent-soft); margin-block-end: 16px; transition: color .35s var(--ease-soft); }
+/* hover inverts the tier — dark cards flip to cream with ink type, light cards flip to dark */
+.tier:hover { background: #f4efea; border-color: rgba(42,34,36,.14); }
+.tier:hover .badge { color: #8a6e72; }
+.tier:hover h3 { color: #2a2224; -webkit-text-stroke: 0; }
+.tier:hover .line { color: #8a6e72; }
+.tier:hover p { color: #5a4d4f; }
+.section--light .tier:hover { background: var(--card); border-color: var(--line); }
+.section--light .tier:hover .badge { color: var(--accent); }
+.section--light .tier:hover h3 { color: var(--text-bright); -webkit-text-stroke: .4px rgba(255,255,255,.75); }
+.section--light .tier:hover .line { color: var(--accent-soft); }
+.section--light .tier:hover p { color: var(--text-soft); }
+.tier p { color: var(--text-muted); font-weight: 300; margin: 0; font-size: .95rem; transition: color .35s var(--ease-soft); }
 @media (max-width: 880px) { .tiers { grid-template-columns: 1fr; } }
 
 /* ============================ forms ============================ */
