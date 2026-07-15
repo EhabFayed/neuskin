@@ -25,8 +25,12 @@
     </div>
   </div>
   <div class="hero-media">
-    <%# Content team (July 2026): hero shows the clinic with the logo visible. %>
-    <%= sec_image_tag("home", "home_hero", :hero_clinic, alt: "NeuSkin Clinic — reception", class: "hero-media-img kb") %>
+    <%# Content team (July 2026): hero plays the clinic video; the clinic image stays as poster. %>
+    <%= video_tag "/videos/neuskin-web-data.mp4",
+          class: "hero-media-video",
+          autoplay: true, muted: true, loop: true, playsinline: true,
+          preload: "auto",
+          poster: sec_image("home", "home_hero", :hero_clinic) %>
     <div class="hero-media-cap">
       <span class="nm">NeuSkin Clinic</span>
       <span class="rl">Al Malqa · Riyadh</span>
