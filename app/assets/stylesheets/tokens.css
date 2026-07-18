@@ -5,9 +5,52 @@
  * for display and Hanken Grotesk for interface/body. English, LTR.
  * These values are the single source of truth.
  */
+
+/*
+ * Arabic webfonts — locally hosted (Google removed Droid Arabic Kufi/Naskh;
+ * their Google Fonts URLs 404). unicode-range limits them to Arabic script,
+ * so Latin text on Arabic pages still renders in Bodoni Moda / Hanken Grotesk.
+ */
+@font-face {
+  font-family: "Droid Arabic Kufi";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("DroidKufi-Regular.woff2") format("woff2"),
+       url("DroidKufi-Regular.ttf") format("truetype");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669;
+}
+@font-face {
+  font-family: "Droid Arabic Kufi";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("DroidKufi-Bold.woff2") format("woff2"),
+       url("DroidKufi-Bold.ttf") format("truetype");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669;
+}
+@font-face {
+  font-family: "Droid Arabic Naskh";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("DroidNaskh-Regular.woff2") format("woff2"),
+       url("DroidNaskh-Regular.ttf") format("truetype");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669;
+}
+@font-face {
+  font-family: "Droid Arabic Naskh";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("DroidNaskh-Bold.woff2") format("woff2"),
+       url("DroidNaskh-Bold.ttf") format("truetype");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669;
+}
+
 :root {
   /* Ground + surfaces */
-  --ground:       #141011; /* warm near-black — page background */
+  --ground:       #302427; /* warm near-black — page background */
   --surface:      #1b1517; /* faint alternating band */
   --card:         #241c1e; /* card background */
   --card-2:       #2a2024; /* raised / detail card */
@@ -54,4 +97,14 @@
   --dur-fast:  .25s;
   --dur-mid:   .55s;
   --dur-slow:  1.1s;
+}
+
+/*
+ * Arabic pages: Naskh carries display/headline type (the naskh-style serif the
+ * design direction calls for), Kufi carries interface/body. Latin fallbacks
+ * stay in the chain — unicode-range above keeps them owning Latin glyphs.
+ */
+html[lang="ar"] {
+  --serif: "Droid Arabic Naskh", "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  --sans:  "Droid Arabic Kufi", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
 }

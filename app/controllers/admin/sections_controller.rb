@@ -105,6 +105,7 @@ module Admin
     def section_params
       params.require(:section).permit(
         :label, :image,
+        gallery: [],
         settings: {},
         contents_attributes: [
           :id, :key, :label, :hint, :value_ar, :value_en,

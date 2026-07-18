@@ -20,37 +20,41 @@
   <div class="ns-editor">
     <%# ---- left: the fields ---- %>
     <div class="ns-editor-fields">
-      <% if @section.image.attached? || @section.gallery.attached? %>
-        <div class="ns-card" style="margin-bottom:22px">
-          <div class="ns-eyebrow" style="margin-bottom:14px">Image</div>
-          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-            <% if @section.image.attached? %>
-              <%# seeds the live preview with the current image url %>
-              <%= image_tag url_for(@section.image),
-                    data: { "livepreview-target": "img", url: url_for(@section.image) },
-                    style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
-            <% else %>
-              <div style="width:180px;height:120px;border-radius:8px;border:1px dashed var(--ns-border);display:grid;place-items:center;color:var(--ns-muted-2);font-size:12px">No single image</div>
-            <% end %>
-            <div>
-              <%= form.label :image, "Replace image", class: "ns-field-title" %>
-              <%= form.file_field :image,
-                    data: { "livepreview-target": "file", action: "livepreview#pickImage" } %>
-              <p class="hint" style="margin-top:6px">Pick a file to preview it before saving.</p>
-            </div>
+      <div class="ns-card" style="margin-bottom:22px">
+        <div class="ns-eyebrow" style="margin-bottom:14px">Images</div>
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+          <% if @section.image.attached? %>
+            <%# seeds the live preview with the current image url %>
+            <%= image_tag url_for(@section.image),
+                  data: { "livepreview-target": "img", url: url_for(@section.image) },
+                  style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
+          <% else %>
+            <div style="width:180px;height:120px;border-radius:8px;border:1px dashed var(--ns-border);display:grid;place-items:center;color:var(--ns-muted-2);font-size:12px">No single image</div>
+          <% end %>
+          <div>
+            <%= form.label :image, "Replace image", class: "ns-field-title" %>
+            <%= form.file_field :image,
+                  data: { "livepreview-target": "file", action: "livepreview#pickImage" } %>
+            <p class="hint" style="margin-top:6px">Pick a file to preview it before saving.</p>
           </div>
+        </div>
+        <div style="margin-top:16px">
+          <div class="ns-eyebrow" style="margin-bottom:10px">Gallery<%= " (#{@section.gallery.count} images)" if @section.gallery.attached? %></div>
           <% if @section.gallery.attached? %>
-            <div style="margin-top:16px">
-              <div class="ns-eyebrow" style="margin-bottom:10px">Gallery (<%= @section.gallery.count %> images)</div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <% @section.gallery.each do |img| %>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+              <% @section.gallery.each_with_index do |img, i| %>
+                <figure style="margin:0;text-align:center">
                   <%= image_tag url_for(img), style: "width:84px;height:60px;object-fit:cover;border-radius:6px;border:1px solid var(--ns-border)" %>
-                <% end %>
-              </div>
+                  <figcaption style="font-size:11px;color:var(--ns-muted-2)"><%= i + 1 %></figcaption>
+                </figure>
+              <% end %>
             </div>
           <% end %>
+          <%= form.label :gallery, "Replace gallery", class: "ns-field-title" %>
+          <%= form.file_field :gallery, multiple: true %>
+          <p class="hint" style="margin-top:6px">Used by sections that show a set of images (e.g. the patient-journey cards). Select all images together, in display order — they replace the current set on save.</p>
         </div>
-      <% end %>
+      </div>
 
       <h2 class="ns-section-title">Text</h2>
       <%= form.fields_for :contents do |content_form| %>

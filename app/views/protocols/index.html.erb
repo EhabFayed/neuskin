@@ -1,15 +1,20 @@
 <%# Protocols Hub — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# ---- Hero ---- %>
-<section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("protocols_index", "protocols_hero", "eyebrow").presence || "The Protocols" %></span>
-  <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("protocols_index", "protocols_hero", "title_1").presence || "Six named protocols." %></span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("protocols_index", "protocols_hero", "title_em").presence || "One philosophy. Zero menu pricing." %></span></span>
-  </h1>
-  <p class="lead reveal d2" data-reveal-target="item">
-    <%= sec_text("protocols_index", "protocols_hero", "lead").presence || "NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list." %>
-  </p>
+<%# ---- Hero (atmospheric: photo bleeds through under the radial glow).
+      The background image is the protocols_hero section image in the
+      dashboard; the static asset is only the fallback. %>
+<section class="page-hero has-bg" data-controller="reveal"
+         style="--hero-bg: url('<%= sec_image("protocols_index", "protocols_hero", :protocols_hero) %>')">
+  <div class="section-inner">
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("protocols_index", "protocols_hero", "eyebrow").presence || "The Protocols" %></span>
+    <h1>
+      <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("protocols_index", "protocols_hero", "title_1").presence || "Six named protocols." %></span></span>
+      <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("protocols_index", "protocols_hero", "title_em").presence || "One philosophy. Zero menu pricing." %></span></span>
+    </h1>
+    <p class="lead reveal d2" data-reveal-target="item">
+      <%= sec_text("protocols_index", "protocols_hero", "lead").presence || "NeuSkin works in protocols, not à-la-carte treatments — sequenced plans with a beginning, a measured middle, and a review built in. Six named programmes, one philosophy, and never a price list." %>
+    </p>
+  </div>
 </section>
 
 <%# ---- "I'm here because…" filter + card grid ---- %>
