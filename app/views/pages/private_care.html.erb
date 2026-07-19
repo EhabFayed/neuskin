@@ -54,7 +54,8 @@
 </section>
 
 <%# Membership tiers %>
-<section class="section" data-controller="reveal">
+<section class="section orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "tl" %>
   <div class="section-inner">
     <div class="sec-head">
       <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("private_care", "private_tiers", "heading").presence || "Membership tiers" %></span>

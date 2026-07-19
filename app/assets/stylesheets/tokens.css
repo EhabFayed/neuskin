@@ -1,15 +1,41 @@
 /*
  * NeuSkin Clinic — design tokens (dark editorial reskin).
  * Ported from the "NeuSkin Clinic (standalone)" design: a warm near-black
- * ground (#141011) with cream type, mauve / dusty-rose accents, Bodoni Moda
+ * ground (#141011) with cream type, mauve / dusty-rose accents, Playfair Display
  * for display and Hanken Grotesk for interface/body. English, LTR.
  * These values are the single source of truth.
  */
 
 /*
+ * Latin webfonts — locally hosted variable woff2 (no Google CDN dependency).
+ * Playfair Display: all serif display and text · Hanken Grotesk: interface/body.
+ */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("PlayfairDisplay.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("PlayfairDisplay-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("HankenGrotesk.woff2") format("woff2");
+}
+
+/*
  * Arabic webfonts — locally hosted (Google removed Droid Arabic Kufi/Naskh;
  * their Google Fonts URLs 404). unicode-range limits them to Arabic script,
- * so Latin text on Arabic pages still renders in Bodoni Moda / Hanken Grotesk.
+ * so Latin text on Arabic pages still renders in Playfair Display / Hanken Grotesk.
  */
 @font-face {
   font-family: "Droid Arabic Kufi";
@@ -80,8 +106,10 @@
   --btn-bg-hover: #ffffff;
   --btn-ink:      #1a1416;
 
-  /* Type families */
-  --serif: "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  /* Type families — Playfair Display carries all serif work: the original
+     design's editorial voice, sturdier than a Didone at card sizes */
+  --serif: "Playfair Display", Georgia, serif;
+  --serif-text: "Playfair Display", Georgia, serif;
   --sans:  "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
 
   /* Layout */
@@ -105,6 +133,55 @@
  * stay in the chain — unicode-range above keeps them owning Latin glyphs.
  */
 html[lang="ar"] {
-  --serif: "Droid Arabic Naskh", "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  --serif: "Droid Arabic Naskh", Tahoma, Verdana, serif;
+  --serif-text: "Droid Arabic Naskh", Tahoma, Verdana, serif;
   --sans:  "Droid Arabic Kufi", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+/* ============================================================
+ * LIGHT MODE — warm ivory palette
+ * Applied when <html data-theme="light"> is set by JS.
+ * ============================================================ */
+html[data-theme="light"] {
+  /* Ground + surfaces — rose-ivory */
+  --ground:       #F4EEE9;   /* warm ivory — page background             */
+  --surface:      #EBE0DC;   /* deeper rose-ivory — alternating bands     */
+  --card:         #EBE0DC;   /* card background (matches surface)         */
+  --card-2:       #DDD0CC;   /* raised / detail card                      */
+
+  /* Type — mauve-ink */
+  --text:         #2E2429;   /* deep mauve-ink (near-black, rose undertone) */
+  --text-soft:    #3D3035;   /* slightly softer mauve-ink                  */
+  --text-bright:  #2E2429;   /* headings — same deep mauve-ink             */
+  --text-muted:   #7A6A70;   /* muted mauve-grey — secondary copy          */
+  --text-faint:   #9A8A90;   /* faint — captions, meta                     */
+
+  /* Accents — brand mauve */
+  --accent:       #8E6E76;   /* brand mauve, deepened for legible CTAs     */
+  --accent-soft:  #A8909A;   /* soft mauve-taupe — italic display accents  */
+  --accent-rose:  #A8909A;   /* muted rose                                 */
+  --accent-pink:  #C4AAAF;   /* light pink                                 */
+  --accent-dusty: #9C8484;   /* logo mauve — eyebrows, brand touches       */
+  --whatsapp:     #4a9e6a;   /* WhatsApp green (darker for light bg)       */
+
+  /* Lines — dusty-rose hairlines */
+  --line:         rgba(142, 110, 118, .2);
+  --line-soft:    rgba(142, 110, 118, .12);
+  --line-strong:  rgba(142, 110, 118, .35);
+
+  /* Buttons */
+  --btn-bg:       #8E6E76;
+  --btn-bg-hover: #6B4F57;
+  --btn-ink:      #F4EEE9;
+}
+
+/* Night / closing band stays dark even in light mode */
+html[data-theme="light"] .night-band {
+  --ground:       #2B2126;
+  --text:         #F4EEE9;
+  --text-soft:    #EBE0DC;
+  --text-bright:  #F4EEE9;
+  --text-muted:   #A8909A;
+  --text-faint:   #9C8484;
+  --line:         rgba(244, 238, 233, .12);
 }

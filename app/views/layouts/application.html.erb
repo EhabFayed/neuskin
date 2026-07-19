@@ -7,9 +7,8 @@
     <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by Dr. Maysa." %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <%# Apply saved theme before CSS loads — prevents flash of dark/light mismatch %>
+    <script>!function(){var t=localStorage.getItem('ns-theme');if(t==='light')document.documentElement.dataset.theme='light';}();</script>
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>

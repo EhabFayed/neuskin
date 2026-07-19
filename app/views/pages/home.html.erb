@@ -1,74 +1,63 @@
 <%# Homepage — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# ---- Hero (split: copy + portrait) ---- %>
-<section class="hero" data-controller="reveal parallax">
-  <div class="hero-copy">
-    <span class="eyebrow" data-reveal="fade"><%= sec_text("home", "home_hero", "eyebrow").presence || "Doctor-led · Riyadh" %></span>
-    <h1>
-      <span class="ln" data-reveal="mask" data-reveal-delay="150"><span><%= sec_text("home", "home_hero", "headline_1").presence || "Skin," %></span></span>
-      <span class="ln" data-reveal="mask" data-reveal-delay="260"><span><%= sec_text("home", "home_hero", "headline_2").presence || "measured." %></span></span>
-      <span class="ln em" data-reveal="mask" data-reveal-delay="410"><span><%= sec_text("home", "home_hero", "headline_3").presence || "Confidence, quiet." %></span></span>
-    </h1>
-    <p class="hero-sub" data-reveal="up" data-reveal-delay="560">
-      <%= sec_text("home", "home_hero", "sub").presence || "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa." %>
-    </p>
-    <div class="hero-cta" data-reveal="up" data-reveal-delay="680">
-      <%= link_to "Request an assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %>
-      <a class="wa-link" href="<%= whatsapp_url %>" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#6fb98a" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
-        Speak privately on WhatsApp
-      </a>
-    </div>
-    <div class="hero-foot" data-reveal="fade" data-reveal-delay="820">
-      <span><%= sec_text("home", "home_hero", "foot_1").presence || "Est. Al Malqa · Riyadh" %></span>
-      <span><%= sec_text("home", "home_hero", "foot_2").presence || "Six protocols · one philosophy" %></span>
-    </div>
-  </div>
+<%# ---- Hero (full-bleed media, centered overlay copy — Figma landing) ---- %>
+<section class="hero" data-controller="reveal">
   <div class="hero-media">
-    <%# Content team (July 2026): hero plays the clinic video; the clinic image stays as poster. %>
+    <%# Content team (July 2026): hero plays the clinic video full-bleed behind the copy. %>
     <%= video_tag "/videos/neuskin-web-data.mp4",
           class: "hero-media-video",
           autoplay: true, muted: true, loop: true, playsinline: true,
           preload: "auto" %>
-    <div class="hero-media-cap">
-      <span class="nm">NeuSkin Clinic</span>
-      <span class="rl">Al Malqa · Riyadh</span>
+  </div>
+  <div class="hero-copy">
+    <span class="eyebrow no-rule" data-reveal="fade"><%= sec_text("home", "home_hero", "eyebrow").presence || "Doctor-led · Riyadh" %></span>
+    <h1>
+      <% hero_lines = [sec_text("home", "home_hero", "headline_1").presence || "Medical Precision.",
+                       sec_text("home", "home_hero", "headline_2").presence || "Aesthetic Grace.",
+                       sec_text("home", "home_hero", "headline_3").presence].compact %>
+      <% hero_lines.each_with_index do |line, i| %>
+        <span class="ln" data-reveal="mask" data-reveal-delay="<%= 150 + i * 130 %>"><span><%= line %></span></span>
+      <% end %>
+    </h1>
+    <p class="hero-sub" data-reveal="up" data-reveal-delay="520">
+      <%= sec_text("home", "home_hero", "sub").presence || "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy." %>
+    </p>
+    <div class="hero-cta" data-reveal="up" data-reveal-delay="640">
+      <%= link_to "Request an assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %>
+      <a class="btn btn--ghost" href="<%= whatsapp_url %>" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#6fb98a" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+        Speak privately on WhatsApp
+      </a>
     </div>
   </div>
-  <span class="scroll-cue">Scroll</span>
 </section>
 
 <%# ---- Three principles ---- %>
-<section class="section" data-controller="reveal">
+<section class="section orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "tr" %>
   <div class="section-inner">
     <div class="sec-head center reveal" data-reveal-target="item">
       <span class="eyebrow center"><%= sec_text("home", "home_principles", "eyebrow").presence || "The Promise" %></span>
       <h2><%= sec_text("home", "home_principles", "title").presence || "Three commitments, quietly kept." %></h2>
     </div>
-    <%# Flip cards: image + title on the front, body copy on the back (flips on hover).
-        Images come from the home_principles section gallery in the dashboard (upload 3
-        in card order to replace); static assets below are only the fallback. %>
+    <%# Slide carousel (Seline-style): one principle per full-width slide —
+        image + number/title/body glide sideways, autoplay with arrows/dots.
+        Texts and per-card images stay dashboard-editable as before. %>
     <% pillar_defaults = ["site/people/maysa.webp", "site/space/entrance.webp", "site/space/device-room.webp"] %>
-    <div class="cols cols-3 pillars">
-      <% [[1, "01 — Principle", "Doctor-led",  "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year."],
-          [2, "02 — Principle", "Discreet",    "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it."],
-          [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]].each do |i, num_default, title_default, body_default| %>
+    <% pillars = [[1, "01 — Principle", "Doctor-led",  "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year."],
+                  [2, "02 — Principle", "Discreet",    "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it."],
+                  [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]] %>
+    <div class="ns-expand reveal d1" data-reveal-target="item">
+      <% pillars.each do |i, num_default, title_default, body_default| %>
         <% p_num   = sec_text("home", "home_principles", "p#{i}_num").presence   || num_default %>
         <% p_title = sec_text("home", "home_principles", "p#{i}_title").presence || title_default %>
         <% p_body  = sec_text("home", "home_principles", "p#{i}_body").presence  || body_default %>
-        <div class="col flipcard reveal d<%= i %>" data-reveal-target="item">
-          <div class="flip-inner">
-            <div class="flip-front">
-              <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="" class="flip-img">
-              <span class="num"><%= p_num %></span>
-              <h3><%= p_title %></h3>
-              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-            </div>
-            <div class="flip-back">
-              <span class="num"><%= p_num %></span>
-              <h3><%= p_title %></h3>
-              <p><%= p_body %></p>
-            </div>
+        <div class="ns-panel">
+          <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="">
+          <div class="ns-panel-copy">
+            <span class="num"><%= p_num %></span>
+            <h3><%= p_title %></h3>
+            <p><%= p_body %></p>
           </div>
         </div>
       <% end %>
@@ -77,7 +66,8 @@
 </section>
 
 <%# ---- Meet the founder (light contrast band) ---- %>
-<section class="section section--light" data-controller="reveal">
+<section class="section section--light orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "petal", pos: "br" %>
   <div class="section-inner split media-left">
     <div class="split-media reveal" data-reveal-target="item">
       <%= sec_image_tag("home", "home_founder", :founder_portrait, alt: "Dr. Maysa Al-Rashid") %>

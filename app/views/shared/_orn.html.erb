@@ -1,0 +1,30 @@
+<%# Decorative line ornament for section whitespace — brand mauve, very low
+    opacity, sits behind content (see .orn / .orn-host in application.css).
+    variant: "rings"  — concentric circles (measurement / precision)
+             "dots"   — dotted ring, slow spin (quiet clinical rhythm)
+             "petal"  — ellipse fan (care / bloom)
+    pos: tr | tl | br | bl | halo   size: optional px override %>
+<% variant ||= "rings"; pos ||= "tr"; size ||= nil %>
+<% style = size ? "width:#{size}px;height:#{size}px;" : "" %>
+<% case variant %>
+<% when "rings" %>
+  <svg class="orn orn--<%= pos %>" style="<%= style %>" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <circle cx="200" cy="200" r="60"  stroke="currentColor" stroke-opacity=".9"/>
+    <circle cx="200" cy="200" r="100" stroke="currentColor" stroke-opacity=".65"/>
+    <circle cx="200" cy="200" r="140" stroke="currentColor" stroke-opacity=".45"/>
+    <circle cx="200" cy="200" r="175" stroke="currentColor" stroke-opacity=".3"/>
+    <circle cx="200" cy="200" r="199" stroke="currentColor" stroke-opacity=".18"/>
+  </svg>
+<% when "dots" %>
+  <svg class="orn orn--<%= pos %> orn-spin" style="<%= style %>" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <circle cx="200" cy="200" r="170" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 24"/>
+    <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-opacity=".5" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 18"/>
+  </svg>
+<% when "petal" %>
+  <svg class="orn orn--<%= pos %>" style="<%= style %>" viewBox="0 0 240 240" fill="none" aria-hidden="true">
+    <% [-60, -30, 0, 30, 60].each do |a| %>
+      <ellipse cx="120" cy="105" rx="17" ry="62" stroke="currentColor" stroke-opacity=".55" transform="rotate(<%= a %> 120 168)"/>
+    <% end %>
+    <circle cx="120" cy="176" r="5" stroke="currentColor" stroke-opacity=".8"/>
+  </svg>
+<% end %>
