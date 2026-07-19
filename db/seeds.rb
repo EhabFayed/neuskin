@@ -206,3 +206,6 @@ load Rails.root.join("db/seeds/faqs.rb")
 
 # Patient stories (bilingual, idempotent by quote).
 load Rails.root.join("db/seeds/stories.rb")
+
+# Treatment outcomes (bilingual, idempotent by slug).
+load Rails.root.join("db/seeds/treatments.rb")

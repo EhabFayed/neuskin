@@ -7,6 +7,9 @@ class Section < ApplicationRecord
 
   has_one_attached  :image
   has_many_attached :gallery
+  # Per-card image slots for flip-card sections (see ContentHelper::SECTION_CARD_SLOTS):
+  # slot N renders on card N, so editors always know which image lands where.
+  (1..6).each { |i| has_one_attached :"card_image_#{i}" }
 
   validates :page, :kind, presence: true
   validates :kind, uniqueness: { scope: :page }

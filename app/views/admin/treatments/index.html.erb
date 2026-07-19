@@ -1,0 +1,32 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Treatments" %>
+<% content_for :title, "Treatments" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">
+    The outcome cards on /treatments and their sub-pages. With an even number
+    of treatments the cards pair up side by side; with an odd number the last
+    one runs full-width.
+  </p>
+  <%= link_to "Add treatment", new_admin_treatment_path, class: "ns-btn primary", style: "flex:none;margin-left:20px" %>
+</div>
+
+<div class="ns-thead">
+  <span class="r-title">Treatment</span>
+  <span style="width:240px">Owning protocol</span>
+  <span style="width:80px">Position</span>
+  <span style="width:16px"></span>
+</div>
+
+<ul class="ns-list">
+  <% @treatments.each do |treatment| %>
+    <li>
+      <%= link_to edit_admin_treatment_path(treatment), class: "ns-row" do %>
+        <span class="r-title"><%= treatment.title_en %> <span style="color:var(--ns-muted-2)">· /treatments/<%= treatment.slug %></span></span>
+        <span class="r-meta" style="width:240px"><%= treatment.protocol&.name_en || "—" %></span>
+        <span class="r-meta" style="width:80px"><%= treatment.position %></span>
+        <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

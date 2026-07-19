@@ -45,22 +45,33 @@
       <span class="eyebrow center"><%= sec_text("home", "home_principles", "eyebrow").presence || "The Promise" %></span>
       <h2><%= sec_text("home", "home_principles", "title").presence || "Three commitments, quietly kept." %></h2>
     </div>
-    <div class="cols cols-3 reveal d1" data-reveal-target="item">
-      <div class="col">
-        <span class="num"><%= sec_text("home", "home_principles", "p1_num").presence || "01 — Principle" %></span>
-        <h3><%= sec_text("home", "home_principles", "p1_title").presence || "Doctor-led" %></h3>
-        <p><%= sec_text("home", "home_principles", "p1_body").presence || "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year." %></p>
-      </div>
-      <div class="col">
-        <span class="num"><%= sec_text("home", "home_principles", "p2_num").presence || "02 — Principle" %></span>
-        <h3><%= sec_text("home", "home_principles", "p2_title").presence || "Discreet" %></h3>
-        <p><%= sec_text("home", "home_principles", "p2_body").presence || "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it." %></p>
-      </div>
-      <div class="col">
-        <span class="num"><%= sec_text("home", "home_principles", "p3_num").presence || "03 — Principle" %></span>
-        <h3><%= sec_text("home", "home_principles", "p3_title").presence || "Measured" %></h3>
-        <p><%= sec_text("home", "home_principles", "p3_body").presence || "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed." %></p>
-      </div>
+    <%# Flip cards: image + title on the front, body copy on the back (flips on hover).
+        Images come from the home_principles section gallery in the dashboard (upload 3
+        in card order to replace); static assets below are only the fallback. %>
+    <% pillar_defaults = ["site/people/maysa.webp", "site/space/entrance.webp", "site/space/device-room.webp"] %>
+    <div class="cols cols-3 pillars">
+      <% [[1, "01 — Principle", "Doctor-led",  "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year."],
+          [2, "02 — Principle", "Discreet",    "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it."],
+          [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]].each do |i, num_default, title_default, body_default| %>
+        <% p_num   = sec_text("home", "home_principles", "p#{i}_num").presence   || num_default %>
+        <% p_title = sec_text("home", "home_principles", "p#{i}_title").presence || title_default %>
+        <% p_body  = sec_text("home", "home_principles", "p#{i}_body").presence  || body_default %>
+        <div class="col flipcard reveal d<%= i %>" data-reveal-target="item">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="" class="flip-img">
+              <span class="num"><%= p_num %></span>
+              <h3><%= p_title %></h3>
+              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <div class="flip-back">
+              <span class="num"><%= p_num %></span>
+              <h3><%= p_title %></h3>
+              <p><%= p_body %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

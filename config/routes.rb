@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :faqs, except: [:show]
     resources :stories, except: [:show]
     resources :protocols, except: [:show]
+    resources :treatments, except: [:show]
     resource :settings, only: [:show, :update], controller: "settings"
   end
 
@@ -60,9 +61,9 @@ Rails.application.routes.draw do
     # Treatments — by outcome (design §08). A curated outcome list.
     get "treatments", to: "pages#treatments", as: :treatments
 
-    # Per-outcome treatment pages (design §08 "Outcome" screen).
-    get "treatments/:outcome", to: "pages#treatment_outcome", as: :treatment_outcome,
-        constraints: { outcome: /skin|hair|body|injectables|devices/ }
+    # Per-outcome treatment pages (design §08 "Outcome" screen). Outcomes are
+    # Treatment records now, so any dashboard-created slug routes here.
+    get "treatments/:outcome", to: "pages#treatment_outcome", as: :treatment_outcome
 
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care

@@ -59,13 +59,27 @@
     <div class="sec-head">
       <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("private_care", "private_tiers", "heading").presence || "Membership tiers" %></span>
     </div>
+    <%# Flip cards: image + tier front, description on the back. Images come
+        from this section's gallery in the dashboard (upload 3 in tier order). %>
+    <% tier_defaults = ["site/space/private-suite.webp", "site/space/waiting-lounge.webp", "site/people/maysa.webp"] %>
     <div class="tiers">
       <% vip_tiers.each_with_index do |tier, i| %>
-        <div class="tier reveal d<%= i + 1 %>" data-reveal-target="item">
-          <span class="badge"><%= tier[:badge] %></span>
-          <h3><%= tier[:name] %></h3>
-          <div class="line"><%= tier[:line] %></div>
-          <p><%= tier[:desc] %></p>
+        <div class="tier flipcard reveal d<%= i + 1 %>" data-reveal-target="item">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="<%= sec_card_image("private_care", "private_tiers", i + 1, tier_defaults[i]) %>" alt="" class="flip-img">
+              <span class="badge"><%= tier[:badge] %></span>
+              <h3><%= tier[:name] %></h3>
+              <div class="line"><%= tier[:line] %></div>
+              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <div class="flip-back">
+              <span class="badge"><%= tier[:badge] %></span>
+              <h3><%= tier[:name] %></h3>
+              <div class="line"><%= tier[:line] %></div>
+              <p><%= tier[:desc] %></p>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

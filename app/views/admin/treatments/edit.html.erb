@@ -1,0 +1,11 @@
+<% content_for :crumb, "Treatments" %>
+<% content_for :heading, @treatment.title_en %>
+<% content_for :title, "Edit treatment" %>
+
+<%= render "form" %>
+
+<div style="margin-top:26px">
+  <%= button_to "Delete this treatment", admin_treatment_path(@treatment), method: :delete,
+                class: "ns-btn ghost",
+                data: { turbo_confirm: "Delete “#{@treatment.title_en}” permanently? Its page and every link to it stop working." } %>
+</div>

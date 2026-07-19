@@ -1,7 +1,11 @@
 <%# The Medical Team — dynamic (TeamMember records; top_brand leadership port). %>
 
 <%# ---- Hero ---- %>
-<section class="page-hero" data-controller="reveal">
+<%# Atmospheric hero — the background image is the team_hero section image in
+    the dashboard; the static asset is only the fallback. %>
+<section class="page-hero has-bg" data-controller="reveal"
+         style="--hero-bg: url('<%= sec_image("the_team", "team_hero", :clinic_hero) %>')">
+  <div class="section-inner">
   <span class="eyebrow center reveal" data-reveal-target="item"><%= sec_text("the_team", "team_hero", "eyebrow").presence || "The Medical Team" %></span>
   <h1>
     <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("the_team", "team_hero", "title_1").presence || "The people behind" %></span></span>
@@ -10,6 +14,7 @@
   <p class="lead reveal d2" data-reveal-target="item">
     <%= sec_text("the_team", "team_hero", "lead").presence || "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill." %>
   </p>
+  </div>
 </section>
 
 <%# ---- Team grid ---- %>

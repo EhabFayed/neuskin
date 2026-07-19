@@ -52,6 +52,51 @@ module ContentHelper
     end
   end
 
+  # Flip-card sections and their per-card image slots: count of cards and the
+  # content key that names each card (used as the slot label in the editor).
+  SECTION_CARD_SLOTS = {
+    "home/home_principles"        => { count: 3, label_key: "p%d_title" },
+    "the_clinic/clinic_journey"   => { count: 4, label_key: "step_%d_title" },
+    "dr_maysa/drmaysa_method"     => { count: 3, label_key: "step_%d_title" },
+    "maysa_method/method_pillars" => { count: 4, label_key: "pillar_%d_title" },
+    "maysa_method/method_timeline" => { count: 4, label_key: "panel_%d_title" },
+    "bridal/bridal_timeline"      => { count: 3, label_key: "stage_%d_title" },
+    "bridal/bridal_pillars"       => { count: 3, label_key: "pillar_%d_title" },
+    "private_care/private_tiers"  => { count: 3, label_key: "tier_%d_name" }
+  }.freeze
+
+  # URL for card slot `index` (1-based) of a section: the dashboard slot image
+  # when attached, else the legacy gallery image at that position, else the
+  # given static asset fallback.
+  def sec_card_image(page, kind, index, fallback_path)
+    section = sec(page, kind)
+    if section.persisted?
+      slot = section.public_send("card_image_#{index}")
+      return url_for(slot) if slot.attached?
+
+      legacy = section.gallery
+      return url_for(legacy[index - 1]) if legacy.attached? && legacy[index - 1]
+    end
+    image_path(fallback_path)
+  end
+
+  # Card / hero image URL for a Treatment: the dashboard-attached image when
+  # present, else the launch static asset for the original five slugs, else
+  # the treatment-room photo for newly created outcomes.
+  TREATMENT_FALLBACK_IMAGES = {
+    "skin"        => :outcome_skin,
+    "hair"        => :outcome_hair,
+    "body"        => :outcome_body,
+    "injectables" => :outcome_injectables,
+    "devices"     => :outcome_devices
+  }.freeze
+
+  def treatment_image_url(treatment)
+    return url_for(treatment.image) if treatment.image.attached?
+
+    ns_image(TREATMENT_FALLBACK_IMAGES.fetch(treatment.slug, :treatment_room))
+  end
+
   # Ordered list of gallery image URLs for a section (has_many_attached
   # :gallery). Falls back to the given static keys (array) when nothing is
   # attached, so galleries render unchanged before migration.

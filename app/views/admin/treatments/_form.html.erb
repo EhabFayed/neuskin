@@ -1,0 +1,68 @@
+<%= form_with model: @treatment, url: @treatment.persisted? ? admin_treatment_path(@treatment) : admin_treatments_path, local: true do |form| %>
+  <% if @treatment.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @treatment.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <% {
+    "Card tag / hero eyebrow (e.g. Tired, dull skin)" => [:title_en, :title_ar, :text_field],
+    "Headline (card + sub-page hero)" => [:headline_en, :headline_ar, :text_field],
+    "What it looks like (card description + sub-page)" => [:look_en, :look_ar, :text_area],
+    "How NeuSkin treats it (sub-page)" => [:how_en, :how_ar, :text_area],
+    "Dr. Maysa's view — quote (sub-page)" => [:view_en, :view_ar, :text_area]
+  }.each do |label, (en_attr, ar_attr, widget)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div class="ns-pair">
+        <div class="en">
+          <span class="lang-lbl">English</span>
+          <%= form.public_send(widget, en_attr, class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+        <div class="ar">
+          <span class="lang-lbl">العربية · Arabic</span>
+          <%= form.public_send(widget, ar_attr, dir: "rtl", class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 3 } : {})) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Image (card + sub-page hero)</span>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <% if @treatment.image.attached? %>
+        <%= image_tag url_for(@treatment.image), style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
+      <% end %>
+      <div>
+        <%= form.file_field :image %>
+        <p class="hint" style="margin-top:6px">Leave empty to keep the built-in photo for this outcome.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Settings</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Display position</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Slug (URL)</span><br>
+        <%= form.text_field :slug, class: "ns-input", placeholder: "auto from English title" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Owning protocol ("the protocol that owns this")</span><br>
+        <%= form.select :protocol_slug, Protocol.all.map { |p| [p.name_en, p.slug] }, { include_blank: "— none —" }, class: "ns-input" %>
+      </label>
+    </div>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to treatments", admin_treatments_path, class: "ns-btn ghost" %>
+    <% if @treatment.persisted? %>
+      <a href="<%= treatment_outcome_path(outcome: @treatment.slug) %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <% end %>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

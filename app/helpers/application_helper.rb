@@ -28,6 +28,8 @@ module ApplicationHelper
     clinic_shot_5:    "site/space/clinic-5.webp",
     consult:          "site/space/consultation.jpg",
     beauty_eyes:      "site/protocols/skin.jpg",
+    protocols_hero:   "site/protocols-hero.jpg",
+    treatments_hero:  "site/treatments-hero.jpg",
     bride_bouquet:    "site/bridal-mood.jpg",
     resort:           "site/desert-atmosphere.jpg",
     # Treatment outcome heroes (design keys facialBrush/salon/fitness1/
