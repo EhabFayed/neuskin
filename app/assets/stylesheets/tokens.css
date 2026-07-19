@@ -143,36 +143,37 @@ html[lang="ar"] {
  * Applied when <html data-theme="light"> is set by JS.
  * ============================================================ */
 html[data-theme="light"] {
-  /* Ground + surfaces — rose-ivory */
-  --ground:       #F4EEE9;   /* warm ivory — page background             */
-  --surface:      #EBE0DC;   /* deeper rose-ivory — alternating bands     */
-  --card:         #EBE0DC;   /* card background (matches surface)         */
-  --card-2:       #DDD0CC;   /* raised / detail card                      */
+  /* Ground + surfaces — porcelain with white cards ("Porcelain & Mauve";
+     anchored to the flat logo mauve #9F8488) */
+  --ground:       #F7F2EE;   /* warm porcelain — page background          */
+  --surface:      #EFE6E2;   /* rose-porcelain — alternating bands        */
+  --card:         #FFFFFF;   /* card background — crisp white             */
+  --card-2:       #F3EAE6;   /* raised / detail card                      */
 
   /* Type — mauve-ink */
-  --text:         #2E2429;   /* deep mauve-ink (near-black, rose undertone) */
-  --text-soft:    #3D3035;   /* slightly softer mauve-ink                  */
-  --text-bright:  #2E2429;   /* headings — same deep mauve-ink             */
-  --text-muted:   #7A6A70;   /* muted mauve-grey — secondary copy          */
-  --text-faint:   #9A8A90;   /* faint — captions, meta                     */
+  --text:         #2B2125;   /* deep mauve-ink (near-black, rose undertone) */
+  --text-soft:    #3E3237;   /* slightly softer mauve-ink                  */
+  --text-bright:  #2B2125;   /* headings — same deep mauve-ink             */
+  --text-muted:   #746167;   /* muted mauve-grey — secondary copy          */
+  --text-faint:   #9A8B90;   /* faint — captions, meta                     */
 
-  /* Accents — brand mauve */
-  --accent:       #8E6E76;   /* brand mauve, deepened for legible CTAs     */
-  --accent-soft:  #A8909A;   /* soft mauve-taupe — italic display accents  */
-  --accent-rose:  #A8909A;   /* muted rose                                 */
-  --accent-pink:  #C4AAAF;   /* light pink                                 */
-  --accent-dusty: #9C8484;   /* logo mauve — eyebrows, brand touches       */
-  --whatsapp:     #4a9e6a;   /* WhatsApp green (darker for light bg)       */
+  /* Accents — logo mauve, deepened where it must read as text/CTA */
+  --accent:       #8A6670;   /* logo mauve deepened — eyebrows, CTAs       */
+  --accent-soft:  #AE949C;   /* soft mauve-taupe — italic display accents  */
+  --accent-rose:  #C2A9AE;   /* muted rose                                 */
+  --accent-pink:  #D9C2C3;   /* light pink                                 */
+  --accent-dusty: #9F8488;   /* the logo mauve, pure — brand touches       */
+  --whatsapp:     #3f9663;   /* WhatsApp green (darker for light bg)       */
 
   /* Lines — dusty-rose hairlines */
-  --line:         rgba(142, 110, 118, .2);
-  --line-soft:    rgba(142, 110, 118, .12);
-  --line-strong:  rgba(142, 110, 118, .35);
+  --line:         rgba(138, 102, 112, .18);
+  --line-soft:    rgba(138, 102, 112, .11);
+  --line-strong:  rgba(138, 102, 112, .32);
 
   /* Buttons */
-  --btn-bg:       #8E6E76;
-  --btn-bg-hover: #6B4F57;
-  --btn-ink:      #F4EEE9;
+  --btn-bg:       #8A6670;
+  --btn-bg-hover: #6F4F59;
+  --btn-ink:      #FBF7F4;
 }
 
 /* Night / closing band stays dark even in light mode */

@@ -275,18 +275,16 @@ html[data-theme="light"] .orn { opacity: .17; }
 .hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .hero-media-img,
 .hero-media-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-/* gentle scrim: darker at the top (header legibility) and behind the copy band */
-.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,16,17,.38), rgba(20,16,17,.1) 32%, rgba(20,16,17,.18) 64%, rgba(20,16,17,.42)); }
 .hero-copy { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; text-align: center; width: min(100%, 1120px); padding: 150px clamp(22px, 5vw, 60px) 90px; }
-.hero-copy .eyebrow { margin-block-end: 34px; color: #f2ead9; }
-.hero h1 { font-weight: 400; font-size: clamp(48px, 7.2vw, 104px); line-height: 1.06; letter-spacing: .002em; color: #f2ead9; }
+.hero-copy .eyebrow { margin-block-end: 34px; color: #fff; }
+.hero h1 { font-weight: 400; font-size: clamp(48px, 7.2vw, 104px); line-height: 1.06; letter-spacing: .002em; color: #fff; }
 .hero h1 .ln { display: block; }
-.hero-sub { margin: 36px 0 0; font-weight: 400; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.75; color: #f6f2ef; max-width: 64ch; }
+.hero-sub { margin: 36px 0 0; font-weight: 400; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.75; color: #fff; max-width: 64ch; }
 .hero-cta { margin-block-start: 46px; display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap; }
 /* Figma CTA pair: lowercase letterspaced — solid cream + outlined glass */
 .hero .btn { background: #efe3da; border-color: #efe3da; color: #241c1e; padding: 18px 46px; font-size: 12px; letter-spacing: .16em; text-transform: lowercase; }
 .hero .btn:hover { background: #fff; border-color: #fff; }
-.hero .btn--ghost { background: rgba(20,16,17,.1); border-color: rgba(246,240,235,.55); color: #f6f0eb; gap: 11px; padding-inline: 34px; }
+.hero .btn--ghost { background: rgba(20,16,17,.1); border-color: rgba(255,255,255,.55); color: #fff; gap: 11px; padding-inline: 34px; }
 .hero .btn--ghost:hover { background: rgba(20,16,17,.28); border-color: #fff; color: #fff; }
 .hero .btn--ghost svg { flex: none; }
 @media (max-width: 880px) {
@@ -304,9 +302,15 @@ html[data-theme="light"] .orn { opacity: .17; }
 /* atmospheric hero: a photo bleeds through under a radial glow (Private Care) */
 .page-hero.has-bg { position: relative; max-width: none; padding-inline: var(--gutter); overflow: hidden; }
 .page-hero.has-bg > * { position: relative; z-index: 1; }
-.page-hero.has-bg::before { content: ""; position: absolute; inset: 0; z-index: 0; background-image: var(--hero-bg); background-size: cover; background-position: center; opacity: .5; }
-.page-hero.has-bg::after { content: ""; position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 50% 40%, transparent, rgba(20,16,17,.65) 60%, var(--ground)); }
+.page-hero.has-bg::before { content: ""; position: absolute; inset: 0; z-index: 0; background-image: var(--hero-bg); background-size: cover; background-position: center; }
+/* photo shows at full strength — no dimming filter; copy is pinned white in both themes */
+.page-hero.has-bg::after { content: none; }
 .page-hero.has-bg .section-inner, .page-hero.has-bg.center-inner { max-width: var(--maxw); margin-inline: auto; }
+.page-hero.has-bg .eyebrow { color: #fff; }
+.page-hero.has-bg .eyebrow::before { background: #fff; }
+.page-hero.has-bg h1, .page-hero.has-bg h1 .em { color: #fff; }
+.page-hero.has-bg .lead { color: #fff; }
+.page-hero.has-bg .mm-hero-sub, .page-hero.has-bg .mm-hero-main { color: #fff; }
 .page-hero .eyebrow { margin-block-end: 30px; }
 .page-hero h1 { font-weight: 300; font-size: clamp(2.4rem, 5.2vw, 4.6rem); line-height: 1.02; letter-spacing: -.02em; color: var(--text-bright); max-width: 18ch; }
 .page-hero h1 .em { font-style: italic; color: var(--accent-soft); }
@@ -340,7 +344,7 @@ html[data-theme="light"] .orn { opacity: .17; }
 }
 .over-hero-copy h1 .line { display: block; overflow: hidden; padding-block-end: .02em; }
 .over-hero-copy h1 .line.em { font-style: italic; font-weight: 400; color: var(--accent-soft); margin-block-start: .04em; padding-block-end: .06em; }
-.over-hero-lead { margin: clamp(28px, 4vh, 42px) 0 0; font-weight: 400; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.78; color: var(--text-soft); max-width: 440px; }
+.over-hero-lead { margin: clamp(28px, 4vh, 42px) 0 0; font-weight: 400; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.78; color: #fff; max-width: 440px; }
 .over-hero .date-ask { margin-block-start: clamp(28px, 4vh, 42px); }
 @media (max-width: 880px) {
   .over-hero { min-height: 88vh; }
@@ -371,6 +375,17 @@ html[data-theme="light"] .orn { opacity: .17; }
   font-style: normal; color: var(--text-bright); max-width: 980px;
 }
 .over-hero-copy h1.clinic-hero-title .em { font-style: italic; font-weight: 300; color: var(--accent-pink); }
+/* hero copy sits on photography in both themes — pinned white */
+.over-hero-copy h1,
+.over-hero-copy h1.clinic-hero-title,
+.over-hero-copy h1.mysa-hero-quote,
+.over-hero-copy .mysa-hero-eyebrow,
+.over-hero-copy .mysa-hero-sign,
+.over-hero-copy h1 .line.em,
+.over-hero-copy h1.clinic-hero-title .em,
+.over-hero-copy .clinic-hero-eyebrow,
+.over-hero-eyebrow .eyebrow { color: #fff; }
+.over-hero-eyebrow .rule { background: #fff; }
 
 /* credentials thin band under the hero */
 .creds-band { background: rgba(13,10,11,0.7); padding: 46px 8vw; border-bottom: 1px solid var(--line-soft); }
@@ -1209,21 +1224,9 @@ html[data-theme="light"] .brand-name          { color: var(--text); }
 html[data-theme="light"] .brand-sub           { color: var(--accent); }
 html[data-theme="light"] .btn-inquire         { color: var(--text); }
 
-/* Hero video scrim — the dark gradient behind the copy is still needed for legibility
-   on photos; keep it but lighten the right-side fade so the image reads through */
-html[data-theme="light"] .hero-media::after {
-  background: linear-gradient(to right, rgba(244,238,233,.92), rgba(244,238,233,.62) 34%, rgba(244,238,233,.18) 78%, transparent);
-}
-html[data-theme="light"] [dir="rtl"] .hero-media::after {
-  background: linear-gradient(to left, rgba(244,238,233,.92), rgba(244,238,233,.62) 34%, rgba(244,238,233,.18) 78%, transparent);
-}
-
 /* Page-hero radial glow — mauve tint fits the light ground */
 html[data-theme="light"] .page-hero::after {
   background: radial-gradient(ellipse 60% 50% at 50% 18%, rgba(142,110,118,.1), transparent 70%);
-}
-html[data-theme="light"] .page-hero.has-bg::after {
-  background: radial-gradient(ellipse 70% 60% at 50% 40%, transparent, rgba(244,238,233,.65) 60%, var(--ground));
 }
 
 /* Over-hero dark overlays — darken for legibility but use warmer tones */

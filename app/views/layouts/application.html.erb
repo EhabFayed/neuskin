@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" dir="<%= loc_dir %>">
+<%# Light-only site: data-theme is fixed — the palette lives in tokens.css
+    under html[data-theme="light"], with the dark tokens kept as dormant
+    fallback should a toggle ever return. %>
+<html lang="<%= I18n.locale %>" dir="<%= loc_dir %>" data-theme="light">
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "NeuSkin Clinic — Doctor-led skin intelligence, Riyadh" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,8 +10,6 @@
     <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by Dr. Maysa." %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%# Apply saved theme before CSS loads — prevents flash of dark/light mismatch %>
-    <script>!function(){var t=localStorage.getItem('ns-theme');if(t==='light')document.documentElement.dataset.theme='light';}();</script>
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
