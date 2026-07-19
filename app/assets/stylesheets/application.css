@@ -376,6 +376,13 @@ h3, h4 { -webkit-text-stroke: .4px rgba(255,255,255,.75); }
 .flipcard .flip-back .num { color: #8a6e72; }
 .flipcard .flip-back h3 { color: #2a2224; -webkit-text-stroke: 0; }
 .flipcard .flip-back p { color: #5a4d4f; line-height: 1.8; margin: 0; }
+/* tier / timeline card vocab gets the same two-face recoloring as num/h3/p */
+.flip-front .badge, .flip-front .line, .flip-front .q { position: relative; z-index: 1; }
+.flipcard .flip-back .badge, .flipcard .flip-back .line, .flipcard .flip-back .q { color: #8a6e72; }
+.flipcard:hover .flip-front .badge, .flipcard:hover .flip-front .q { color: var(--accent); }
+.flipcard:hover .flip-front .line { color: var(--accent-soft); }
+/* ghost numeral tint on dark backs (cream tint instead of mauve-on-cream) */
+.pillars .flipcard--dark .flip-back::before { color: rgba(201,166,169,.1); }
 /* Dr. Maysa sits left-of-frame in the wide portrait — keep her in the crop */
 .pillars .col:nth-child(1) .flip-img { object-position: 22% center; }
 /* the generic .col inversion hover must not recolor the front face mid-flip */
@@ -451,7 +458,24 @@ h3, h4 { -webkit-text-stroke: .4px rgba(255,255,255,.75); }
 /* outcome grid (Treatments) — 2 columns, taller tiles per design */
 .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .outcome-grid .proto-card-img { height: auto; aspect-ratio: 16/10; }
-@media (max-width: 720px) { .outcome-grid { grid-template-columns: 1fr; } }
+/* warm dark tone over every outcome image so mixed stock reads as one set */
+.outcome-grid .proto-card-img img { filter: saturate(.82) contrast(.96); }
+.outcome-grid .proto-card-img::after { background: linear-gradient(180deg, rgba(42,28,30,.2), rgba(42,28,30,.2) 40%, rgba(20,16,17,.72)); }
+/* one-line invitation under the headline; clamped so cards stay even */
+.proto-card-lead { color: var(--text-muted); font-weight: 300; font-size: 14.5px; line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.proto-card-go { margin-top: auto; padding-top: 18px; font-family: var(--sans); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-soft); opacity: 0; transform: translateY(6px); transition: opacity .35s var(--ease-soft), transform .35s var(--ease-soft); }
+.proto-card:hover .proto-card-go { opacity: 1; transform: none; }
+/* "Advanced devices" runs full-width as a horizontal feature band */
+.outcome-grid .outcome-feature { grid-column: 1 / -1; flex-direction: row; }
+.outcome-feature .proto-card-img { aspect-ratio: auto; flex: 0 0 52%; min-height: 340px; }
+/* absolute so the (portrait) source can't stretch the band — body sets height */
+.outcome-feature .proto-card-img img { position: absolute; inset: 0; }
+.outcome-feature .proto-card-body { justify-content: center; padding-block: 44px; }
+@media (max-width: 720px) {
+  .outcome-grid { grid-template-columns: 1fr; }
+  .outcome-grid .outcome-feature { flex-direction: column; }
+  .outcome-feature .proto-card-img { aspect-ratio: 16/10; flex: none; }
+}
 
 /* Maysa Method hero — stacked + centered: eyebrow, "Skin is data." (h2), "Read it…" (h1) */
 .mm-hero { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -674,6 +698,18 @@ h3, h4 { -webkit-text-stroke: .4px rgba(255,255,255,.75); }
   .journey { grid-template-columns: 1fr; }
   .journey .step, .journey .step:nth-child(odd) { padding: 36px 0 0 !important; border-inline-end: none; }
 }
+
+/* tiers (private care) as flip cards */
+.tier.flipcard, .tier.flipcard:hover { padding: 0; background: transparent; border: none; }
+.tier.flipcard { perspective: 1400px; }
+.tier .flip-inner { min-height: 380px; }
+
+/* pinned-timeline quarter panels (maysa method) as flip cards */
+.hpanel.flipcard, .hpanel.flipcard:hover { padding: 0; background: transparent; border: none; }
+.hpanel.flipcard { perspective: 1200px; }
+.hpanel .flip-inner { height: 100%; min-height: 100%; }
+.hpanel .flip-front, .hpanel .flip-back { padding: 28px; }
+.hpanel .flip-back h3 { font-size: clamp(1.5rem, 2vw, 2rem); }
 
 /* flip cards on cream bands (clinic journey, maysa-method steps): image fronts,
    dark backs — brighter type than the old taupe-on-cream for readability */

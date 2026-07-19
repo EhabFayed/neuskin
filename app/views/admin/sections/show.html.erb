@@ -38,9 +38,31 @@
             <p class="hint" style="margin-top:6px">Pick a file to preview it before saving.</p>
           </div>
         </div>
-        <div style="margin-top:16px">
-          <div class="ns-eyebrow" style="margin-bottom:10px">Gallery<%= " (#{@section.gallery.count} images)" if @section.gallery.attached? %></div>
-          <% if @section.gallery.attached? %>
+        <% if (slots = ContentHelper::SECTION_CARD_SLOTS["#{@section.page}/#{@section.kind}"]) %>
+          <div style="margin-top:16px">
+            <div class="ns-eyebrow" style="margin-bottom:10px">Card images — one per card, in page order</div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <% (1..slots[:count]).each do |i| %>
+                <% slot = @section.public_send("card_image_#{i}") %>
+                <% card_name = @section.text(format(slots[:label_key], i)).presence || "Card #{i}" %>
+                <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+                  <% if slot.attached? %>
+                    <%= image_tag url_for(slot), style: "width:84px;height:60px;object-fit:cover;border-radius:6px;border:1px solid var(--ns-border)" %>
+                  <% else %>
+                    <div style="width:84px;height:60px;border-radius:6px;border:1px dashed var(--ns-border);display:grid;place-items:center;color:var(--ns-muted-2);font-size:11px">built-in</div>
+                  <% end %>
+                  <div style="min-width:220px">
+                    <span class="ns-field-title" style="display:block;margin-bottom:4px"><%= i %> · <%= card_name %></span>
+                    <%= form.file_field :"card_image_#{i}" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <p class="hint" style="margin-top:10px">Each slot replaces the image on that one card. Leave a slot empty to keep its current image.</p>
+          </div>
+        <% elsif @section.gallery.attached? %>
+          <div style="margin-top:16px">
+            <div class="ns-eyebrow" style="margin-bottom:10px">Gallery (<%= @section.gallery.count %> images)</div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
               <% @section.gallery.each_with_index do |img, i| %>
                 <figure style="margin:0;text-align:center">
@@ -49,11 +71,11 @@
                 </figure>
               <% end %>
             </div>
-          <% end %>
-          <%= form.label :gallery, "Replace gallery", class: "ns-field-title" %>
-          <%= form.file_field :gallery, multiple: true %>
-          <p class="hint" style="margin-top:6px">Used by sections that show a set of images (e.g. the patient-journey cards). Select all images together, in display order — they replace the current set on save.</p>
-        </div>
+            <%= form.label :gallery, "Replace gallery", class: "ns-field-title" %>
+            <%= form.file_field :gallery, multiple: true %>
+            <p class="hint" style="margin-top:6px">Select all images together, in display order — they replace the current set on save.</p>
+          </div>
+        <% end %>
       </div>
 
       <h2 class="ns-section-title">Text</h2>

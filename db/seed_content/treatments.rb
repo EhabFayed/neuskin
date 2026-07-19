@@ -3,10 +3,9 @@
 # EN/AR values reflect the content team's approved copy
 # ("NeuSkin Website content.pdf", July 2026).
 #
-# Note: the outcome CARDS on this page are driven by the "treatment_outcomes"
-# page sections (see db/seed_content/treatment_outcomes.rb) — the same
-# sections that drive each /treatments/<outcome> sub-page hero — so this file
-# only seeds the page's own hero and footer chrome.
+# Note: the outcome CARDS on this page are Treatment records (see
+# db/seeds/treatments.rb and Admin::TreatmentsController) — this file only
+# seeds the page's own hero, footer and CTA chrome.
 #
 # Idempotent: upserts by (page, kind) and (section, key).
 require_relative "_registry"
@@ -30,7 +29,22 @@ SeedContent.register("treatments", [
     kind: "treatments_footer", label: "Footer link", position: 1,
     contents: [
       { key: "protocols_link", label: "\"View all protocols\" link text",
-        en: "View all six protocols →", ar: "" }
+        en: "View all six protocols →", ar: "" },
+      { key: "card_cta", label: "Card hover line (\"See the approach\")",
+        en: "See the approach →", ar: "" }
+    ]
+  },
+  {
+    kind: "treatments_cta", label: "Closing CTA", position: 2,
+    contents: [
+      { key: "kicker",   label: "Kicker (italic line)",
+        en: "Not sure where to start?", ar: "" },
+      { key: "title",    label: "Title (before emphasis)",
+        en: "Begin with the", ar: "" },
+      { key: "title_em", label: "Title emphasis span",
+        en: "Maysa Method™", ar: "" },
+      { key: "button",   label: "Button label",
+        en: "Request the assessment", ar: "" }
     ]
   }
 ])

@@ -48,7 +48,6 @@
         Images come from this section's gallery in the dashboard (upload 3 in
         step order to replace); static assets below are only the fallback. %>
     <% mysa_defaults = ["site/space/device-room.webp", "site/people/maysa-founder.webp", "site/space/clinic-3.webp"] %>
-    <% mysa_gallery = sec_gallery_urls("dr_maysa", "drmaysa_method", []) %>
     <% mysa_steps = [["Diagnostic mapping", "Skin, hair and body baseline — captured with imaging and a doctor-led examination."],
                      ["The 12-month plan",  "A written roadmap across skin, hair, body and lifestyle — yours to keep."],
                      ["Quarterly review",   "We measure, compare and adjust as your skin responds over time."]] %>
@@ -58,7 +57,7 @@
         <div class="mysa-step flipcard flipcard--dark reveal d<%= i %>" data-reveal-target="item">
           <div class="flip-inner">
             <div class="flip-front">
-              <img src="<%= mysa_gallery[idx] || image_path(mysa_defaults[idx]) %>" alt="" class="flip-img">
+              <img src="<%= sec_card_image("dr_maysa", "drmaysa_method", i, mysa_defaults[idx]) %>" alt="" class="flip-img">
               <span class="n"><%= sec_text("dr_maysa", "drmaysa_method", "step_#{i}_n").presence || format("%02d", i) %></span>
               <h3><%= sec_text("dr_maysa", "drmaysa_method", "step_#{i}_title").presence || title_default %></h3>
               <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>

@@ -14,7 +14,6 @@ module Admin
       "maysa_method"    => "pages/maysa_method",
       "the_team"        => "pages/the_team",
       "treatments"      => "pages/treatments",
-      "treatment_outcomes" => "pages/treatment_outcome",
       "private_care"    => "pages/private_care",
       "stories"         => "pages/stories",
       "faq"             => "pages/faq",
@@ -74,12 +73,6 @@ module Admin
         @stories = Story.with_attached_photo
       when "faq"
         @faq_groups = Faq.grouped
-      when "treatment_outcomes"
-        # Section kinds are outcome_<slug>; fall back to skin for safety.
-        slug = @section.kind.delete_prefix("outcome_")
-        slug = "skin" unless PagesController::TREATMENT_OUTCOME_OWNERS.key?(slug)
-        @outcome  = slug
-        @protocol = Protocol.find_by(slug: PagesController::TREATMENT_OUTCOME_OWNERS[slug])
       end
     end
 
@@ -105,6 +98,8 @@ module Admin
     def section_params
       params.require(:section).permit(
         :label, :image,
+        :card_image_1, :card_image_2, :card_image_3,
+        :card_image_4, :card_image_5, :card_image_6,
         gallery: [],
         settings: {},
         contents_attributes: [

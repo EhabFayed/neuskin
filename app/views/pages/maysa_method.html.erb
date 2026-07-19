@@ -1,10 +1,15 @@
 <%# The Maysa Method™ — the philosophy page. NeuSkin Clinic (standalone) design port. English / LTR. %>
 
 <%# ---- Hero (stacked: eyebrow → h2 → h1) ---- %>
-<section class="page-hero mm-hero" data-controller="reveal">
-  <span class="eyebrow" data-reveal="fade"><%= sec_text("maysa_method", "method_hero", "eyebrow").presence || "The Philosophy" %></span>
-  <h2 class="mm-hero-sub" data-reveal="mask" data-reveal-delay="160"><span><%= sec_text("maysa_method", "method_hero", "sub").presence || "Skin is data." %></span></h2>
-  <h1 class="mm-hero-main" data-reveal="mask" data-reveal-delay="320"><span><%= sec_text("maysa_method", "method_hero", "main").presence || "Read it, then treat it." %></span></h1>
+<%# Atmospheric hero — the background image is the method_hero section image in
+    the dashboard; the static asset is only the fallback. %>
+<section class="page-hero mm-hero has-bg" data-controller="reveal"
+         style="--hero-bg: url('<%= sec_image("maysa_method", "method_hero", :clinic_shot_1) %>')">
+  <div class="section-inner">
+    <span class="eyebrow" data-reveal="fade"><%= sec_text("maysa_method", "method_hero", "eyebrow").presence || "The Philosophy" %></span>
+    <h2 class="mm-hero-sub" data-reveal="mask" data-reveal-delay="160"><span><%= sec_text("maysa_method", "method_hero", "sub").presence || "Skin is data." %></span></h2>
+    <h1 class="mm-hero-main" data-reveal="mask" data-reveal-delay="320"><span><%= sec_text("maysa_method", "method_hero", "main").presence || "Read it, then treat it." %></span></h1>
+  </div>
 </section>
 
 <%# ---- The principle (2-col) ---- %>
@@ -18,11 +23,35 @@
 <%# ---- Four pillars ---- %>
 <section class="section section--surface" data-controller="reveal" style="padding-top:0">
   <div class="section-inner">
-    <div class="cols cols-4" data-reveal="up">
-      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_1_num").presence || "Pillar 01" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_1_title").presence || "Skin" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_1_body").presence || "Barrier, tone, texture and pigment — read, then restored in order." %></p></div>
-      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_2_num").presence || "Pillar 02" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_2_title").presence || "Hair" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_2_body").presence || "Scalp health and density, assessed clinically and supported over weeks." %></p></div>
-      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_3_num").presence || "Pillar 03" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_3_title").presence || "Body" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_3_body").presence || "Tone, contour and posture — measured, not guessed, and supported clinically." %></p></div>
-      <div class="col"><span class="num"><%= sec_text("maysa_method", "method_pillars", "pillar_4_num").presence || "Pillar 04" %></span><h3><%= sec_text("maysa_method", "method_pillars", "pillar_4_title").presence || "Lifestyle" %></h3><p><%= sec_text("maysa_method", "method_pillars", "pillar_4_body").presence || "Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds." %></p></div>
+    <%# Flip cards: image + title front, body copy on the back. Card images come
+        from this section's gallery in the dashboard (upload 4 in order). %>
+    <% pillar_defaults = ["site/protocols/skin.jpg", "site/protocols/hair.jpg", "site/space/private-suite.webp", "site/lounge.jpg"] %>
+    <% pillar_texts = [["Skin", "Barrier, tone, texture and pigment — read, then restored in order."],
+                       ["Hair", "Scalp health and density, assessed clinically and supported over weeks."],
+                       ["Body", "Tone, contour and posture — measured, not guessed, and supported clinically."],
+                       ["Lifestyle", "Sleep, sun, stress and habit — the quiet inputs that decide how the rest holds."]] %>
+    <div class="cols cols-4 pillars" data-reveal="up">
+      <% pillar_texts.each_with_index do |(title_default, body_default), idx| %>
+        <% i = idx + 1 %>
+        <% p_num   = sec_text("maysa_method", "method_pillars", "pillar_#{i}_num").presence   || "Pillar 0#{i}" %>
+        <% p_title = sec_text("maysa_method", "method_pillars", "pillar_#{i}_title").presence || title_default %>
+        <% p_body  = sec_text("maysa_method", "method_pillars", "pillar_#{i}_body").presence  || body_default %>
+        <div class="col flipcard">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="<%= sec_card_image("maysa_method", "method_pillars", i, pillar_defaults[idx]) %>" alt="" class="flip-img">
+              <span class="num"><%= p_num %></span>
+              <h3><%= p_title %></h3>
+              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <div class="flip-back">
+              <span class="num"><%= p_num %></span>
+              <h3><%= p_title %></h3>
+              <p><%= p_body %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
@@ -53,10 +82,34 @@
         <p><%= sec_text("maysa_method", "method_timeline", "intro_body").presence || "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year." %></p>
         <div class="cue"><%= sec_text("maysa_method", "method_timeline", "cue").presence || "Scroll →" %></div>
       </div>
-      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_1_q").presence || "Q1" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_1_title").presence || "Diagnose" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_1_body").presence || "Baseline captured, the plan written. The slow, invisible work begins." %></p></div>
-      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_2_q").presence || "Q2" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_2_title").presence || "Restore" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_2_body").presence || "Targeted correction across the four pillars, reviewed against baseline." %></p></div>
-      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_3_q").presence || "Q3" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_3_title").presence || "Build" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_3_body").presence || "Results compounded; the plan adjusted to how your skin responded." %></p></div>
-      <div class="hpanel"><h4 class="q"><%= sec_text("maysa_method", "method_timeline", "panel_4_q").presence || "Q4" %></h4><h3><%= sec_text("maysa_method", "method_timeline", "panel_4_title").presence || "Maintain" %></h3><p><%= sec_text("maysa_method", "method_timeline", "panel_4_body").presence || "A maintenance rhythm set, and a record you keep for the years ahead." %></p></div>
+      <%# Quarter panels flip: image + quarter front, body on the back. Images
+          come from this section's gallery in the dashboard (upload 4 in order). %>
+      <% panel_defaults = ["site/space/device-room.webp", "site/space/treatment.webp", "site/space/clinic-4.webp", "site/space/clinic-1.webp"] %>
+      <% panel_texts = [["Diagnose", "Baseline captured, the plan written. The slow, invisible work begins."],
+                        ["Restore",  "Targeted correction across the four pillars, reviewed against baseline."],
+                        ["Build",    "Results compounded; the plan adjusted to how your skin responded."],
+                        ["Maintain", "A maintenance rhythm set, and a record you keep for the years ahead."]] %>
+      <% panel_texts.each_with_index do |(title_default, body_default), idx| %>
+        <% i = idx + 1 %>
+        <% q_label = sec_text("maysa_method", "method_timeline", "panel_#{i}_q").presence     || "Q#{i}" %>
+        <% q_title = sec_text("maysa_method", "method_timeline", "panel_#{i}_title").presence || title_default %>
+        <% q_body  = sec_text("maysa_method", "method_timeline", "panel_#{i}_body").presence  || body_default %>
+        <div class="hpanel flipcard">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="<%= sec_card_image("maysa_method", "method_timeline", i, panel_defaults[idx]) %>" alt="" class="flip-img">
+              <h4 class="q"><%= q_label %></h4>
+              <h3><%= q_title %></h3>
+              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <div class="flip-back">
+              <h4 class="q"><%= q_label %></h4>
+              <h3><%= q_title %></h3>
+              <p><%= q_body %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <div class="hshot-outro">
         <blockquote><%= sec_text("maysa_method", "method_timeline", "quote").presence || "“Skin is data. Read it across a year, and it stops surprising you.”" %></blockquote>
         <%= link_to (sec_text("maysa_method", "method_timeline", "cta_label").presence || "Request the Assessment"), inquire_path(codeword: "METHOD"), class: "btn", style: "align-self:flex-start" %>

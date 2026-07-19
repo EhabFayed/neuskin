@@ -1,41 +1,42 @@
 <%# Treatments · by outcome — NeuSkin Clinic (standalone) design port. English / LTR. %>
 
-<%# Five outcome cards, one per sub-page (design §08). Copy and image come
-    from the same "Treatment Outcomes" dashboard sections that drive each
-    sub-page's hero, so editing one section updates both. %>
-<% outcomes = [
-     { slug: "skin",        image: :outcome_skin,        title: "Tired, dull skin",    headline: "Restoring vitality to tired, dull skin" },
-     { slug: "hair",        image: :outcome_hair,        title: "Thinning & shedding", headline: "Comprehensive care for thinning hair" },
-     { slug: "body",        image: :outcome_body,        title: "Tone & contour",      headline: "Sculpting and toning your natural silhouette" },
-     { slug: "injectables", image: :outcome_injectables, title: "Lines & volume",      headline: "Preserving natural contours before any intervention" },
-     { slug: "devices",     image: :outcome_devices,     title: "Advanced devices",    headline: "Our devices: True purpose, visible results" }
-   ] %>
+<%# Outcome cards are Treatment records (dashboard → Treatments). With an even
+    count the cards pair up two across; with an odd count the last treatment
+    runs full-width as a feature band so the grid never leaves a hole. %>
+<% card_cta = sec_text("treatments", "treatments_footer", "card_cta").presence || "See the approach →" %>
+<% feature_last = @treatments.size.odd? %>
 
-<%# ---- Hero ---- %>
-<section class="page-hero" data-controller="reveal">
-  <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("treatments", "treatments_hero", "eyebrow").presence || "Treatments · by outcome" %></span>
-  <h1>
-    <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("treatments", "treatments_hero", "title_1").presence || "We don't treat machines." %></span></span>
-    <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("treatments", "treatments_hero", "title_em").presence || "We treat outcomes." %></span></span>
-  </h1>
-  <p class="lead reveal d2" data-reveal-target="item">
-    <%= sec_text("treatments", "treatments_hero", "lead").presence || "Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to." %>
-  </p>
+<%# ---- Hero (atmospheric: photo bleeds through under the radial glow).
+      The background image is the treatments_hero section image in the
+      dashboard; the static asset is only the fallback. %>
+<section class="page-hero has-bg" data-controller="reveal"
+         style="--hero-bg: url('<%= sec_image("treatments", "treatments_hero", :treatments_hero) %>')">
+  <div class="section-inner">
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("treatments", "treatments_hero", "eyebrow").presence || "Treatments · by outcome" %></span>
+    <h1>
+      <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("treatments", "treatments_hero", "title_1").presence || "We don't treat machines." %></span></span>
+      <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("treatments", "treatments_hero", "title_em").presence || "We treat outcomes." %></span></span>
+    </h1>
+    <p class="lead reveal d2" data-reveal-target="item">
+      <%= sec_text("treatments", "treatments_hero", "lead").presence || "Searching for a specific treatment? Start with what you actually want changed. We'll show you how we approach it — and which protocol it belongs to." %>
+    </p>
+  </div>
 </section>
 
 <%# ---- Outcomes grid ---- %>
 <section class="section" data-controller="reveal">
   <div class="section-inner">
     <div class="outcome-grid">
-      <% outcomes.each_with_index do |o, i| %>
-        <% kind = "outcome_#{o[:slug]}" %>
-        <%= link_to treatment_outcome_path(outcome: o[:slug]),
-                    class: "proto-card reveal#{" d#{i + 1}" if i < 6}", data: { reveal_target: "item" } do %>
-          <span class="proto-card-img"><%= sec_image_tag("treatment_outcomes", kind, o[:image],
-                                                         alt: sec_text("treatment_outcomes", kind, "headline").presence || o[:headline]) %></span>
+      <% @treatments.each_with_index do |treatment, i| %>
+        <% featured = feature_last && i == @treatments.size - 1 %>
+        <%= link_to treatment_outcome_path(outcome: treatment.slug),
+                    class: "proto-card#{" outcome-feature" if featured} reveal#{" d#{i + 1}" if i < 4}", data: { reveal_target: "item" } do %>
+          <span class="proto-card-img"><%= image_tag treatment_image_url(treatment), alt: treatment.headline %></span>
           <span class="proto-card-body">
-            <span class="tag"><%= sec_text("treatment_outcomes", kind, "title").presence || o[:title] %></span>
-            <h3><%= sec_text("treatment_outcomes", kind, "headline").presence || o[:headline] %></h3>
+            <span class="tag"><%= treatment.title %></span>
+            <h3><%= treatment.headline %></h3>
+            <span class="proto-card-lead"><%= treatment.look %></span>
+            <span class="proto-card-go"><%= card_cta %></span>
           </span>
         <% end %>
       <% end %>
@@ -44,4 +45,11 @@
       <%= link_to sec_text("treatments", "treatments_footer", "protocols_link").presence || "View all six protocols →", protocols_path, class: "arrowlink" %>
     </p>
   </div>
+</section>
+
+<%# ---- Closing CTA ---- %>
+<section class="cta-center" data-controller="reveal">
+  <p class="reveal" data-reveal-target="item" style="font-family:var(--serif);font-style:italic"><%= sec_text("treatments", "treatments_cta", "kicker").presence || "Not sure where to start?" %></p>
+  <h2 class="reveal d1" data-reveal-target="item"><%= sec_text("treatments", "treatments_cta", "title").presence || "Begin with the" %> <span class="em"><%= sec_text("treatments", "treatments_cta", "title_em").presence || "Maysa Method™" %></span></h2>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("treatments", "treatments_cta", "button").presence || "Request the assessment"), maysa_method_path, class: "btn" %></p>
 </section>
