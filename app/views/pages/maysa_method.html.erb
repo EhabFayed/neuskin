@@ -13,7 +13,8 @@
 </section>
 
 <%# ---- The principle (2-col) ---- %>
-<section class="section section--surface" data-controller="reveal">
+<section class="section section--surface orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "tr", size: 280 %>
   <div class="section-inner split" style="align-items:start">
     <h2 data-reveal="up" style="font-size:clamp(1.6rem,2.6vw,2.4rem); color:var(--text-bright)"><%= sec_text("maysa_method", "method_principle", "title").presence || "The principle" %></h2>
     <p class="lead" data-reveal="up" data-reveal-delay="120"><%= sec_text("maysa_method", "method_principle", "lead").presence || "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next." %></p>
@@ -119,7 +120,8 @@
 </section>
 
 <%# ---- Closing CTA ---- %>
-<section class="cta-center" data-controller="reveal">
+<section class="cta-center orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
   <h2 class="reveal" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "title_1").presence || "Begin with the" %> <span class="em"><%= sec_text("maysa_method", "method_cta", "title_em").presence || "Maysa Method™." %></span></h2>
   <p class="reveal d1" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "body").presence || "One reading, one written plan, reviewed every quarter. It begins with a private inquiry." %></p>
   <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("maysa_method", "method_cta", "cta_label").presence || "Request the Assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %></p>

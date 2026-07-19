@@ -48,3 +48,9 @@ application.register("hscroll", HscrollController)
 
 import LivepreviewController from "controllers/livepreview_controller"
 application.register("livepreview", LivepreviewController)
+
+import ThemeController from "controllers/theme_controller"
+application.register("theme", ThemeController)
+
+import CarouselController from "controllers/carousel_controller"
+application.register("carousel", CarouselController)

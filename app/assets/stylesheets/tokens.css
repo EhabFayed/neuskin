@@ -1,15 +1,41 @@
 /*
  * NeuSkin Clinic — design tokens (dark editorial reskin).
  * Ported from the "NeuSkin Clinic (standalone)" design: a warm near-black
- * ground (#141011) with cream type, mauve / dusty-rose accents, Bodoni Moda
+ * ground (#141011) with cream type, mauve / dusty-rose accents, Playfair Display
  * for display and Hanken Grotesk for interface/body. English, LTR.
  * These values are the single source of truth.
  */
 
 /*
+ * Latin webfonts — locally hosted variable woff2 (no Google CDN dependency).
+ * Playfair Display: all serif display and text · Hanken Grotesk: interface/body.
+ */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("PlayfairDisplay.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("PlayfairDisplay-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("HankenGrotesk.woff2") format("woff2");
+}
+
+/*
  * Arabic webfonts — locally hosted (Google removed Droid Arabic Kufi/Naskh;
  * their Google Fonts URLs 404). unicode-range limits them to Arabic script,
- * so Latin text on Arabic pages still renders in Bodoni Moda / Hanken Grotesk.
+ * so Latin text on Arabic pages still renders in Playfair Display / Hanken Grotesk.
  */
 @font-face {
   font-family: "Droid Arabic Kufi";
@@ -80,8 +106,10 @@
   --btn-bg-hover: #ffffff;
   --btn-ink:      #1a1416;
 
-  /* Type families */
-  --serif: "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  /* Type families — Playfair Display carries all serif work: the original
+     design's editorial voice, sturdier than a Didone at card sizes */
+  --serif: "Playfair Display", Georgia, serif;
+  --serif-text: "Playfair Display", Georgia, serif;
   --sans:  "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
 
   /* Layout */
@@ -105,6 +133,56 @@
  * stay in the chain — unicode-range above keeps them owning Latin glyphs.
  */
 html[lang="ar"] {
-  --serif: "Droid Arabic Naskh", "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  --serif: "Droid Arabic Naskh", Tahoma, Verdana, serif;
+  --serif-text: "Droid Arabic Naskh", Tahoma, Verdana, serif;
   --sans:  "Droid Arabic Kufi", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+/* ============================================================
+ * LIGHT MODE — warm ivory palette
+ * Applied when <html data-theme="light"> is set by JS.
+ * ============================================================ */
+html[data-theme="light"] {
+  /* Ground + surfaces — porcelain with white cards ("Porcelain & Mauve";
+     anchored to the flat logo mauve #9F8488) */
+  --ground:       #F7F2EE;   /* warm porcelain — page background          */
+  --surface:      #EFE6E2;   /* rose-porcelain — alternating bands        */
+  --card:         #FFFFFF;   /* card background — crisp white             */
+  --card-2:       #F3EAE6;   /* raised / detail card                      */
+
+  /* Type — mauve-ink */
+  --text:         #2B2125;   /* deep mauve-ink (near-black, rose undertone) */
+  --text-soft:    #3E3237;   /* slightly softer mauve-ink                  */
+  --text-bright:  #2B2125;   /* headings — same deep mauve-ink             */
+  --text-muted:   #746167;   /* muted mauve-grey — secondary copy          */
+  --text-faint:   #9A8B90;   /* faint — captions, meta                     */
+
+  /* Accents — logo mauve, deepened where it must read as text/CTA */
+  --accent:       #8A6670;   /* logo mauve deepened — eyebrows, CTAs       */
+  --accent-soft:  #AE949C;   /* soft mauve-taupe — italic display accents  */
+  --accent-rose:  #C2A9AE;   /* muted rose                                 */
+  --accent-pink:  #D9C2C3;   /* light pink                                 */
+  --accent-dusty: #9F8488;   /* the logo mauve, pure — brand touches       */
+  --whatsapp:     #3f9663;   /* WhatsApp green (darker for light bg)       */
+
+  /* Lines — dusty-rose hairlines */
+  --line:         rgba(138, 102, 112, .18);
+  --line-soft:    rgba(138, 102, 112, .11);
+  --line-strong:  rgba(138, 102, 112, .32);
+
+  /* Buttons */
+  --btn-bg:       #8A6670;
+  --btn-bg-hover: #6F4F59;
+  --btn-ink:      #FBF7F4;
+}
+
+/* Night / closing band stays dark even in light mode */
+html[data-theme="light"] .night-band {
+  --ground:       #2B2126;
+  --text:         #F4EEE9;
+  --text-soft:    #EBE0DC;
+  --text-bright:  #F4EEE9;
+  --text-muted:   #A8909A;
+  --text-faint:   #9C8484;
+  --line:         rgba(244, 238, 233, .12);
 }

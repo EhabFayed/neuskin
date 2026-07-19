@@ -2,7 +2,8 @@
 
 <div class="faq-page" data-controller="reveal faqsearch">
   <%# FAQ hero — 1:1 port of design §isFaq %>
-  <section class="fq-hero">
+  <section class="fq-hero orn-host">
+    <%= render "shared/orn", variant: "rings", pos: "tr", size: 460 %>
     <div class="fq-eyebrow reveal" data-reveal-target="item">
       <span class="rule"></span>
       <span class="lbl"><%= sec_text("faq", "faq_hero", "eyebrow").presence || "Frequently Asked" %></span>

@@ -40,31 +40,22 @@
       <span class="eyebrow"><%= sec_text("bridal", "bridal_timeline", "eyebrow").presence || "The Bride's 180" %></span>
       <h2><%= sec_text("bridal", "bridal_timeline", "title").presence || "Six months, planned in the right order — so nothing is rushed at the end." %></h2>
     </div>
-    <%# Flip cards: image + stage front, body on the back. Images come from
-        this section's gallery in the dashboard (upload 3 in stage order). %>
+    <%# Expanding panel gallery: stages side by side; the active stage is wide
+        with its copy shown and image zoomed — hovering a neighbour hands the
+        expansion over. Texts and per-card images stay dashboard-editable. %>
     <% stage_defaults = ["site/space/device-room.webp", "site/space/treatment.webp", "site/bridal-mood.jpg"] %>
     <% stage_texts = [["Months 1–2", "Foundation",    "Diagnose, calm and correct. The slow, invisible work that everything later depends on."],
                       ["Months 3–4", "Build",         "Glow, contour and hair density — sequenced, then reviewed against where you began."],
                       ["Months 5–6", "Polish & lock", "Refinement, then a no-experiments rule. The last fortnight is for rest, not risk."]] %>
-    <div class="cols cols-3 pillars reveal d1" data-reveal-target="item">
+    <div class="ns-expand reveal d1" data-reveal-target="item">
       <% stage_texts.each_with_index do |(num_default, title_default, body_default), idx| %>
         <% i = idx + 1 %>
-        <% s_num   = sec_text("bridal", "bridal_timeline", "stage_#{i}_num").presence   || num_default %>
-        <% s_title = sec_text("bridal", "bridal_timeline", "stage_#{i}_title").presence || title_default %>
-        <% s_body  = sec_text("bridal", "bridal_timeline", "stage_#{i}_body").presence  || body_default %>
-        <div class="col flipcard">
-          <div class="flip-inner">
-            <div class="flip-front">
-              <img src="<%= sec_card_image("bridal", "bridal_timeline", i, stage_defaults[idx]) %>" alt="" class="flip-img">
-              <span class="num"><%= s_num %></span>
-              <h3><%= s_title %></h3>
-              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-            </div>
-            <div class="flip-back">
-              <span class="num"><%= s_num %></span>
-              <h3><%= s_title %></h3>
-              <p><%= s_body %></p>
-            </div>
+        <div class="ns-panel">
+          <img src="<%= sec_card_image("bridal", "bridal_timeline", i, stage_defaults[idx]) %>" alt="">
+          <div class="ns-panel-copy">
+            <span class="num"><%= sec_text("bridal", "bridal_timeline", "stage_#{i}_num").presence || num_default %></span>
+            <h3><%= sec_text("bridal", "bridal_timeline", "stage_#{i}_title").presence || title_default %></h3>
+            <p><%= sec_text("bridal", "bridal_timeline", "stage_#{i}_body").presence || body_default %></p>
           </div>
         </div>
       <% end %>
