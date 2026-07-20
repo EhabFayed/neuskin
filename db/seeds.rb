@@ -209,3 +209,6 @@ load Rails.root.join("db/seeds/stories.rb")
 
 # Treatment outcomes (bilingual, idempotent by slug).
 load Rails.root.join("db/seeds/treatments.rb")
+
+# Device cards on /technologies (bilingual, idempotent by name).
+load Rails.root.join("db/seeds/devices.rb")

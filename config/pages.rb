@@ -3,7 +3,8 @@
 module SitePages
   LIST = [
     { slug: "home",           name: "Home" },
-    { slug: "dr_maysa",       name: "Dr. Maysa" },
+    # Dr. Maysa page hidden (July 2026 content deck) — entry removed so the
+    # dashboard doesn't offer it. Restore alongside the route in routes.rb.
     { slug: "the_clinic",     name: "The Clinic" },
     { slug: "maysa_method",   name: "The Maysa Method" },
     { slug: "the_team",       name: "The Medical Team" },

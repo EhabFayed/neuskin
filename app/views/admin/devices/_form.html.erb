@@ -1,0 +1,65 @@
+<%= form_with model: [:admin, @device], local: true do |form| %>
+  <% if @device.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @device.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Device name (brand — shown as-is in both languages)</span>
+    <%= form.text_field :name, class: "ns-input", placeholder: "EMTONE" %>
+  </div>
+
+  <% {
+    "Tagline (small line above the name, e.g. Harmonious Rejuvenation)" => [:tagline_en, :tagline_ar, :text_field],
+    "Card front — what it does for the patient" => [:body_en, :body_ar, :text_area],
+    "Card back — technical specs" => [:specs_en, :specs_ar, :text_area]
+  }.each do |label, (en_attr, ar_attr, widget)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div class="ns-pair">
+        <div class="en">
+          <span class="lang-lbl">English</span>
+          <%= form.public_send(widget, en_attr, class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 4 } : {})) %>
+        </div>
+        <div class="ar">
+          <span class="lang-lbl">العربية · Arabic</span>
+          <%= form.public_send(widget, ar_attr, dir: "rtl", class: widget == :text_area ? "ns-textarea" : "ns-input", **(widget == :text_area ? { rows: 4 } : {})) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% { "Front image (product shot)" => [:front_image, "Shown above the name on the card front."],
+       "Back image (in-clinic photo)" => [:back_image, "Fills the space under the specs after the card flips."] }.each do |label, (attr, hint)| %>
+    <div class="ns-card" style="margin-bottom:14px">
+      <span class="ns-field-title"><%= label %></span>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <% attachment = @device.public_send(attr) %>
+        <% if attachment.attached? %>
+          <%= image_tag url_for(attachment), style: "width:180px;height:120px;object-fit:contain;background:#f4efea;border-radius:8px;border:1px solid var(--ns-border)" %>
+        <% end %>
+        <div>
+          <%= form.file_field attr %>
+          <p class="hint" style="margin-top:6px"><%= hint %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Settings</span>
+    <label style="display:block">
+      <span class="lang-lbl">Display position</span><br>
+      <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+    </label>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to devices", admin_devices_path, class: "ns-btn ghost" %>
+    <% if @device.persisted? %>
+      <a href="<%= technologies_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <% end %>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

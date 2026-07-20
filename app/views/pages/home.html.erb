@@ -80,7 +80,10 @@
         <p><%= sec_text("home", "home_founder", "body_2").presence || "Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed." %></p>
       </div>
       <p class="sign"><%= sec_text("home", "home_founder", "sign").presence || "— Maysa" %></p>
-      <p style="margin-top:20px"><%= link_to (sec_text("home", "home_founder", "link").presence || "Read her philosophy →"), dr_maysa_path, class: "arrowlink" %></p>
+      <%# "Read her philosophy" link hidden with the Dr. Maysa page (July 2026). %>
+      <% if false %>
+        <p style="margin-top:20px"><%= link_to (sec_text("home", "home_founder", "link").presence || "Read her philosophy →"), dr_maysa_path, class: "arrowlink" %></p>
+      <% end %>
     </div>
   </div>
 </section>

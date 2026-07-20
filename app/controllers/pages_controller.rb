@@ -40,9 +40,11 @@ class PagesController < ApplicationController
   def private_care
   end
 
-  # Our Technologies — the device portfolio (July 2026 content deck). Fully
-  # CMS-driven: every section is a `technologies` Section edited in the admin.
+  # Our Technologies — the device portfolio (July 2026 content deck). Page
+  # chrome (hero/intro/CTA) is `technologies` Sections; the flip cards are
+  # Device records (dashboard → Devices), so editors can add or remove cards.
   def technologies
+    @devices = Device.all
   end
 
   # Legal & compliance (§15). Each renders the shared legal layout with a
