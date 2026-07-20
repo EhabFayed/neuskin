@@ -12,20 +12,21 @@ SeedContent.register("home", [
       kind: "home_hero", label: "Hero — top of page", position: 0,
       contents: [
         { key: "eyebrow",    label: "Eyebrow (small line above headline)",
-          en: "Doctor-led · Riyadh", ar: "" },
+          en: "Doctor-led · Riyadh", ar: "بإشراف طبيبة · الرياض" },
+        # Hero runs as two lines (dashboard edit, "heros" commit) — line 3 empty.
         { key: "headline_1", label: "Headline line 1",
-          en: "Medical", ar: "دقةُ" },
+          en: "Medical Precision.", ar: "دقةُ الطب،" },
         { key: "headline_2", label: "Headline line 2",
-          en: "Precision.", ar: "الطب،" },
-        { key: "headline_3", label: "Headline line 3 (emphasis)",
           en: "Aesthetic Grace.", ar: "ورقيُّ الجمال." },
+        { key: "headline_3", label: "Headline line 3 (emphasis)",
+          en: "", ar: "" },
         { key: "sub",        label: "Sub-text under headline",
           en: "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
           ar: "وجهتُكِ في الرياض للعناية بالبشرة تحت إشرافٍ طبيٍّ متخصص؛ حيثُ نمنحُكِ جمالاً طبيعياً هادئاً، يضعُ خصوصيتكِ وراحتكِ في المقدمة." },
         { key: "foot_1",     label: "Footer note 1",
-          en: "Est. Al Malqa · Riyadh", ar: "" },
+          en: "Est. Al Malqa · Riyadh", ar: "تأسست في الملقا · الرياض" },
         { key: "foot_2",     label: "Footer note 2",
-          en: "Six protocols · one philosophy", ar: "" }
+          en: "Six protocols · one philosophy", ar: "ستة بروتوكولات · فلسفة واحدة" }
       ]
     },
     {

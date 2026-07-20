@@ -8,6 +8,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -74,6 +75,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -113,6 +115,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "ample",
@@ -170,6 +173,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -218,6 +222,7 @@
     "items": [],
     "image": "bridal__bridal_hero__bridal-mood.jpg",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -284,6 +289,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "pillar_1_title",
@@ -350,6 +356,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "quote_1_text",
@@ -416,6 +423,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -531,6 +539,7 @@
       "dr_maysa__drmaysa_clips__gallery1__consultation.jpg",
       "dr_maysa__drmaysa_clips__gallery2__skin.jpg"
     ],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -579,6 +588,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "cred_1",
@@ -636,6 +646,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title_1",
@@ -684,6 +695,7 @@
     "items": [],
     "image": "dr_maysa__drmaysa_hero__maysa-hero.webp",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -723,6 +735,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -843,6 +856,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -927,6 +941,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -984,6 +999,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "group_1_title",
@@ -1191,6 +1207,7 @@
       "home__home_clinic__gallery3__private-suite.webp",
       "home__home_clinic__gallery4__entrance.webp"
     ],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1311,6 +1328,7 @@
     "items": [],
     "image": "home__home_cta__waiting-lounge.webp",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -1368,6 +1386,7 @@
     "items": [],
     "image": "home__home_founder__maysa-founder.webp",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1425,6 +1444,7 @@
     "items": [],
     "image": "home__home_hero__hero-clinic.webp",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1500,6 +1520,11 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {
+      "1": "home__home_principles__card1__doctor-led.jpg",
+      "2": "home__home_principles__card2__discreet.jpg",
+      "3": "home__home_principles__card3__measured.jpg"
+    },
     "contents": [
       {
         "key": "eyebrow",
@@ -1611,6 +1636,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1659,6 +1685,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1734,6 +1761,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1782,6 +1810,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "privacy_title",
@@ -1893,6 +1922,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -1932,6 +1962,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "label",
@@ -1962,6 +1993,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title_1",
@@ -2010,6 +2042,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2049,6 +2082,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2124,6 +2158,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "pillar_1_num",
@@ -2244,6 +2279,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -2274,6 +2310,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2457,6 +2494,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2586,6 +2624,7 @@
     "items": [],
     "image": "private_care__private_hero__desert-atmosphere.jpg",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2643,6 +2682,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "heading",
@@ -2718,6 +2758,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "heading",
@@ -2847,6 +2888,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "kicker",
@@ -2895,6 +2937,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2916,6 +2959,7 @@
     "items": [],
     "image": "protocols_index__protocols_hero__Gemini_Generated_Image_jwy4ubjwy4ubjwy4.png",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -2964,6 +3008,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3012,6 +3057,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "story_1_intro",
@@ -3159,6 +3205,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -3198,6 +3245,9 @@
     "items": [],
     "image": "technologies__tech_device_1__harmonious-rejuvenation-jpeg.jpeg",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_1__card1__tech-page-after-harmonious.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3246,6 +3296,9 @@
     "items": [],
     "image": "technologies__tech_device_2__needle-free-lift-jpeg.jpeg",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_2__card1__needle-free-lift-2nd-image.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3294,6 +3347,9 @@
     "items": [],
     "image": "technologies__tech_device_3__sculpted-strength-jpg.jpg",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_3__card1__sculpted-strength-image.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3342,6 +3398,9 @@
     "items": [],
     "image": "technologies__tech_device_4__advanced-skin-vitality-jpg.jpg",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_4__card1__advanced-skin-vitality-img.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3390,6 +3449,9 @@
     "items": [],
     "image": "technologies__tech_device_5__precision-care-jpg.jpg",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_5__card1__precision-care-image.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3438,6 +3500,9 @@
     "items": [],
     "image": "technologies__tech_device_6__luminous-renewal-png.png",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_6__card1__luminous-renewal-image.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3486,6 +3551,9 @@
     "items": [],
     "image": "technologies__tech_device_7__natural-fat-loss-webp.webp",
     "gallery": [],
+    "cards": {
+      "1": "technologies__tech_device_7__card1__natural-fat-loss-image.jpg"
+    },
     "contents": [
       {
         "key": "name",
@@ -3539,6 +3607,7 @@
       "technologies__tech_hero__gallery2__tech-page-4.jpg",
       "technologies__tech_hero__gallery3__tech-page.jpg"
     ],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3596,6 +3665,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3635,6 +3705,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3755,6 +3826,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "title",
@@ -3794,6 +3866,7 @@
     "items": [],
     "image": "the_clinic__clinic_hero__clinic-hero.webp",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3833,6 +3906,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -3971,6 +4045,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "statement_1",
@@ -4052,6 +4127,7 @@
       "the_clinic__clinic_space__gallery3__clinic-4.webp",
       "the_clinic__clinic_space__gallery4__clinic-5.webp"
     ],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -4118,6 +4194,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",
@@ -4166,6 +4243,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "member_1_name",
@@ -4358,6 +4436,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "kicker",
@@ -4406,6 +4485,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "protocols_link",
@@ -4436,6 +4516,7 @@
     "items": [],
     "image": "treatments__treatments_hero__Gemini_Generated_Image_ad31apad31apad31.png",
     "gallery": [],
+    "cards": {},
     "contents": [
       {
         "key": "eyebrow",

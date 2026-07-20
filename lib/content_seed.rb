@@ -37,10 +37,24 @@ module ContentSeed
         nil
       end : []
 
+      # Per-card slot images (card_image_1..6, see Section) — pillar photos,
+      # flip-card back faces, and the like.
+      card_files = (1..6).each_with_object({}) do |i, h|
+        slot = section.public_send("card_image_#{i}")
+        next unless slot.attached?
+        begin
+          name = "#{section.page}__#{section.kind}__card#{i}__#{slot.filename}"
+          File.binwrite(files_dir.join(name), slot.download)
+          h[i.to_s] = name
+        rescue ActiveStorage::FileNotFoundError
+          warn "SKIP missing card image #{i}: #{section.page}/#{section.kind}"
+        end
+      end
+
       {
         page: section.page, kind: section.kind, label: section.label,
         position: section.position, settings: section.settings, items: section.items,
-        image: image_file, gallery: gallery_files,
+        image: image_file, gallery: gallery_files, cards: card_files,
         contents: section.contents.map do |c|
           c.slice("key", "label", "hint", "value_ar", "value_en", "content_type", "position")
         end
@@ -81,6 +95,11 @@ module ContentSeed
         s["gallery"].each do |f|
           section.gallery.attach(io: File.open(files_dir.join(f)), filename: f.split("__").last)
         end
+      end
+      (s["cards"] || {}).each do |i, f|
+        slot = section.public_send("card_image_#{i}")
+        next if slot.attached? || !File.exist?(files_dir.join(f))
+        slot.attach(io: File.open(files_dir.join(f)), filename: f.split("__").last)
       end
     end
 
