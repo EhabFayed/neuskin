@@ -1334,3 +1334,64 @@ html[data-theme="light"] .pillars .flip-back::before { color: rgba(142,110,118,.
 /* Pull-quote pink — remap to brand accent */
 html[data-theme="light"] .pull-quote { color: var(--accent-soft); }
 
+
+/* ============================ Our Technologies ============================ */
+/* Split composite hero: device-room shots side by side; the last slice (the
+   branded shot) runs wider, per the July 2026 content deck. */
+.tech-hero-slices { display: grid; grid-template-columns: 1fr 1fr 1fr 1.55fr; gap: 3px; height: clamp(300px, 44vh, 470px); }
+.tech-hero-slices span { display: block; background-size: cover; background-position: center; }
+.tech-hero-copy { position: relative; max-width: var(--maxw); margin-inline: auto; padding: clamp(52px, 6vw, 88px) var(--gutter) clamp(56px, 7vw, 100px); text-align: center; }
+.tech-hero-copy::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 55% at 50% 22%, rgba(159,132,136,.12), transparent 70%); }
+.tech-hero-copy > * { position: relative; }
+.tech-hero-copy .eyebrow { justify-content: center; margin-block-end: 26px; }
+.tech-hero-copy h1 { font-weight: 300; font-size: clamp(2.3rem, 4.6vw, 4.2rem); line-height: 1.06; letter-spacing: -.02em; color: var(--text-bright); }
+.tech-hero-copy h1 .em { display: block; font-style: italic; color: var(--accent-soft); }
+.tech-hero-copy .lead { margin: 26px auto 32px; max-width: 62ch; }
+@media (max-width: 760px) { .tech-hero-slices { grid-template-columns: 1fr 1fr; grid-auto-rows: 30vh; height: auto; } }
+
+/* centered intro lead under "The Science of You" */
+.tech-intro-lead { margin-inline: auto; text-align: center; max-width: 68ch; }
+
+/* Device flip cards: product story on the front, technical specs (with an
+   in-clinic photo strip) on the back. Reuses the site-wide .flipcard flip;
+   the flip Stimulus controller adds .is-flipped for touch and keyboard. */
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 1020px) { .tech-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 660px)  { .tech-grid { grid-template-columns: 1fr; } }
+.tech-card { perspective: 1400px; cursor: pointer; }
+.tech-card .flip-inner { min-height: clamp(450px, 36vw, 540px); }
+.tech-card .flip-front, .tech-card .flip-back { padding: 0; justify-content: flex-start; border: 1px solid var(--line); background: var(--card); }
+.tech-card .flip-front::after { content: none; }
+.tech-card .tech-media { display: block; height: clamp(170px, 14vw, 210px); background: #f4efea; }
+.tech-card .tech-media img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+/* the clinic photo fills whatever the spec text leaves free — as large as the
+   card allows without ever clipping the copy */
+.tech-card .tech-back-media { display: block; flex: 1 1 auto; min-height: clamp(180px, 15vw, 240px); background-size: cover; background-position: center; }
+.tech-card .tech-copy { padding: clamp(20px, 2vw, 28px); display: flex; flex-direction: column; gap: 10px; }
+.tech-card .badge { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+.tech-card h3 { margin: 0; font-family: var(--serif-text); font-weight: 500; font-size: 22px; color: var(--text-bright); }
+.tech-card .tech-copy p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--text-soft); }
+.tech-card .flip-back { background: #f4efea; }
+.tech-card .flip-back .badge { color: #8a6e72; }
+.tech-card .flip-back h3 { color: #2a2224; -webkit-text-stroke: 0; }
+.tech-card .flip-back p { color: #5a4d4f; }
+/* tap / keyboard flip (mirrors the :hover flip) */
+.flipcard.is-flipped .flip-inner { transform: rotateY(180deg); }
+[dir="rtl"] .flipcard.is-flipped .flip-inner { transform: rotateY(-180deg); }
+.flipcard.is-flipped .flip-front { visibility: hidden; }
+/* light theme: back face follows the theme's card surface (matches site-wide
+   flip-back remap at the end of the theme block) */
+html[data-theme="light"] .tech-card .flip-back { background: var(--card); }
+html[data-theme="light"] .tech-card .tech-media { background: #F7F1EC; }
+html[data-theme="light"] .tech-card h3 { color: var(--text); -webkit-text-stroke: 0; }
+/* compact "The Science of You" band — tight padding, full-size type, so the
+   copy fills the band instead of white space */
+.tech-intro { padding-block: clamp(30px, 4vw, 48px); }
+.tech-intro .sec-head { margin-block-end: 14px; }
+.tech-intro .sec-head .eyebrow { margin-block-end: 12px; }
+.tech-intro .sec-head h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); }
+.tech-intro .tech-intro-lead { font-size: clamp(16px, 1.35vw, 19px); line-height: 1.8; max-width: 66ch; }
+/* front badge reads like the back one — override the light-theme
+   .flip-front .badge remap (#DCC6C9, meant for badges over dark photos):
+   these fronts are plain cards, not photo faces */
+html[data-theme="light"] .tech-card .flip-front .badge { color: var(--accent); }

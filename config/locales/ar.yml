@@ -552,6 +552,10 @@ ar:
       privacy: "الخصوصية وحماية البيانات"
       disclaimer: "إخلاء المسؤولية الطبية"
       terms: "الشروط"
+  # Our Technologies — device portfolio (July 2026 content deck).
+  technologies:
+    specs_label: "المواصفات التقنية"
+
   # Site chrome — header nav + footer (shared/_header, shared/_footer).
   layout:
     nav:
@@ -559,6 +563,7 @@ ar:
       dr_maysa: "د. ميساء"
       protocols: "البروتوكولات"
       treatments: "العلاجات"
+      technologies: "التقنيات"
       journal: "المجلّة"
       inquire: "استفسري"
     footer:
@@ -571,6 +576,7 @@ ar:
       protocols_title: "البروتوكولات"
       all_protocols: "كل البروتوكولات"
       treatments: "العلاجات"
+      technologies: "تقنياتنا"
       bridal: "كونسيرج العروس"
       private_care: "الرعاية الخاصة"
       care_title: "العناية"

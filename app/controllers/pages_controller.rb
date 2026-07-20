@@ -40,6 +40,11 @@ class PagesController < ApplicationController
   def private_care
   end
 
+  # Our Technologies — the device portfolio (July 2026 content deck). Fully
+  # CMS-driven: every section is a `technologies` Section edited in the admin.
+  def technologies
+  end
+
   # Legal & compliance (§15). Each renders the shared legal layout with a
   # different i18n key namespace. Copy is draft — pending KSA legal review.
   def privacy

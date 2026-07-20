@@ -16,7 +16,7 @@ RSpec.describe "content:seed", type: :task do
 
     I18n.with_locale(:en) do
       expect(hero.text("headline_1")).to be_present
-      expect(hero.text("headline_1")).to eq("Medical")
+      expect(hero.text("headline_1")).to eq("Medical Precision.")
     end
 
     Rake::Task["content:seed"].reenable

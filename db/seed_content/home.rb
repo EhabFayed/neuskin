@@ -12,20 +12,21 @@ SeedContent.register("home", [
       kind: "home_hero", label: "Hero — top of page", position: 0,
       contents: [
         { key: "eyebrow",    label: "Eyebrow (small line above headline)",
-          en: "Doctor-led · Riyadh", ar: "" },
+          en: "Doctor-led · Riyadh", ar: "بإشراف طبيبة · الرياض" },
+        # Hero runs as two lines (dashboard edit, "heros" commit) — line 3 empty.
         { key: "headline_1", label: "Headline line 1",
-          en: "Medical", ar: "دقةُ" },
+          en: "Medical Precision.", ar: "دقةُ الطب،" },
         { key: "headline_2", label: "Headline line 2",
-          en: "Precision.", ar: "الطب،" },
-        { key: "headline_3", label: "Headline line 3 (emphasis)",
           en: "Aesthetic Grace.", ar: "ورقيُّ الجمال." },
+        { key: "headline_3", label: "Headline line 3 (emphasis)",
+          en: "", ar: "" },
         { key: "sub",        label: "Sub-text under headline",
           en: "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
           ar: "وجهتُكِ في الرياض للعناية بالبشرة تحت إشرافٍ طبيٍّ متخصص؛ حيثُ نمنحُكِ جمالاً طبيعياً هادئاً، يضعُ خصوصيتكِ وراحتكِ في المقدمة." },
         { key: "foot_1",     label: "Footer note 1",
-          en: "Est. Al Malqa · Riyadh", ar: "" },
+          en: "Est. Al Malqa · Riyadh", ar: "تأسست في الملقا · الرياض" },
         { key: "foot_2",     label: "Footer note 2",
-          en: "Six protocols · one philosophy", ar: "" }
+          en: "Six protocols · one philosophy", ar: "ستة بروتوكولات · فلسفة واحدة" }
       ]
     },
     {
@@ -59,16 +60,17 @@ SeedContent.register("home", [
       ]
     },
     {
-      kind: "home_founder", label: "Meet the founder", position: 2,
+      # July 2026 deck: retitled "About NeuSkin", third-person copy, AR added.
+      kind: "home_founder", label: "About NeuSkin", position: 2,
       contents: [
         { key: "eyebrow", label: "Eyebrow",
-          en: "Meet the founder", ar: "" },
+          en: "About NeuSkin", ar: "عن نيوسكن" },
         { key: "body_1",  label: "Body paragraph 1",
-          en: "I founded NeuSkin to move beyond the noise of mass-market beauty. I believe in a medical approach that values your time and trust above all else. You deserve clarity, a bespoke plan, and results that honor your natural beauty, guided by patience and clinical expertise.",
-          ar: "" },
+          en: "NeuSkin was founded to move beyond the noise of mass-market beauty. We believe in a medical approach that values your time and trust above all else. Every woman deserves clarity, a bespoke plan, and results that honor her natural beauty, guided by patience and clinical expertise.",
+          ar: "تأسست 'نيوسكن' لتكون صوتاً مختلفاً يبتعد عن صخب التجميل التقليدي. نحن نؤمن بنهجٍ طبي يضع وقتك وثقتك فوق كل اعتبار؛ فكل امرأة تستحق الوضوح، وخطةً صُممت خصيصاً لها، ونتائجَ تُكرم جمالها الطبيعي بلمسةٍ تجمع بين الصبرِ والخبرة." },
         { key: "body_2",  label: "Body paragraph 2",
-          en: "My approach begins with a deep, data-driven understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
-          ar: "" },
+          en: "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
+          ar: "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً." },
         { key: "sign",    label: "Signature",
           en: "— Maysa", ar: "— ميسا" },
         { key: "link",    label: "Link text",
