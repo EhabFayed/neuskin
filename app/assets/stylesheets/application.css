@@ -1359,12 +1359,14 @@ html[data-theme="light"] .pull-quote { color: var(--accent-soft); }
 @media (max-width: 1020px) { .tech-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 660px)  { .tech-grid { grid-template-columns: 1fr; } }
 .tech-card { perspective: 1400px; cursor: pointer; }
-.tech-card .flip-inner { min-height: clamp(430px, 34vw, 500px); }
+.tech-card .flip-inner { min-height: clamp(450px, 36vw, 540px); }
 .tech-card .flip-front, .tech-card .flip-back { padding: 0; justify-content: flex-start; border: 1px solid var(--line); background: var(--card); }
 .tech-card .flip-front::after { content: none; }
 .tech-card .tech-media { display: block; height: clamp(170px, 14vw, 210px); background: #f4efea; }
 .tech-card .tech-media img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
-.tech-card .tech-back-media { display: block; height: clamp(120px, 9vw, 150px); background-size: cover; background-position: center; }
+/* the clinic photo fills whatever the spec text leaves free — as large as the
+   card allows without ever clipping the copy */
+.tech-card .tech-back-media { display: block; flex: 1 1 auto; min-height: clamp(180px, 15vw, 240px); background-size: cover; background-position: center; }
 .tech-card .tech-copy { padding: clamp(20px, 2vw, 28px); display: flex; flex-direction: column; gap: 10px; }
 .tech-card .badge { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
 .tech-card h3 { margin: 0; font-family: var(--serif-text); font-weight: 500; font-size: 22px; color: var(--text-bright); }
