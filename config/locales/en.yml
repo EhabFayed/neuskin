@@ -551,6 +551,10 @@ en:
       privacy: "Privacy & PDPL"
       disclaimer: "Medical Disclaimer"
       terms: "Terms"
+  # Our Technologies — device portfolio (July 2026 content deck).
+  technologies:
+    specs_label: "Technical specs"
+
   # Site chrome — header nav + footer (shared/_header, shared/_footer).
   layout:
     nav:
@@ -558,6 +562,7 @@ en:
       dr_maysa: "Dr. Maysa"
       protocols: "Protocols"
       treatments: "Treatments"
+      technologies: "Technologies"
       journal: "Journal"
       inquire: "Inquire"
     footer:
@@ -570,6 +575,7 @@ en:
       protocols_title: "Protocols"
       all_protocols: "All Protocols"
       treatments: "Treatments"
+      technologies: "Our Technologies"
       bridal: "Bridal Concierge"
       private_care: "Private Care"
       care_title: "Care"

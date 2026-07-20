@@ -59,16 +59,17 @@ SeedContent.register("home", [
       ]
     },
     {
-      kind: "home_founder", label: "Meet the founder", position: 2,
+      # July 2026 deck: retitled "About NeuSkin", third-person copy, AR added.
+      kind: "home_founder", label: "About NeuSkin", position: 2,
       contents: [
         { key: "eyebrow", label: "Eyebrow",
-          en: "Meet the founder", ar: "" },
+          en: "About NeuSkin", ar: "عن نيوسكن" },
         { key: "body_1",  label: "Body paragraph 1",
-          en: "I founded NeuSkin to move beyond the noise of mass-market beauty. I believe in a medical approach that values your time and trust above all else. You deserve clarity, a bespoke plan, and results that honor your natural beauty, guided by patience and clinical expertise.",
-          ar: "" },
+          en: "NeuSkin was founded to move beyond the noise of mass-market beauty. We believe in a medical approach that values your time and trust above all else. Every woman deserves clarity, a bespoke plan, and results that honor her natural beauty, guided by patience and clinical expertise.",
+          ar: "تأسست 'نيوسكن' لتكون صوتاً مختلفاً يبتعد عن صخب التجميل التقليدي. نحن نؤمن بنهجٍ طبي يضع وقتك وثقتك فوق كل اعتبار؛ فكل امرأة تستحق الوضوح، وخطةً صُممت خصيصاً لها، ونتائجَ تُكرم جمالها الطبيعي بلمسةٍ تجمع بين الصبرِ والخبرة." },
         { key: "body_2",  label: "Body paragraph 2",
-          en: "My approach begins with a deep, data-driven understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
-          ar: "" },
+          en: "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
+          ar: "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً." },
         { key: "sign",    label: "Signature",
           en: "— Maysa", ar: "— ميسا" },
         { key: "link",    label: "Link text",

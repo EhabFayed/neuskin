@@ -216,7 +216,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "bridal__bridal_hero__bridal-mood.jpg",
     "gallery": [],
     "contents": [
       {
@@ -526,7 +526,11 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [],
+    "gallery": [
+      "dr_maysa__drmaysa_clips__gallery0__maysa.webp",
+      "dr_maysa__drmaysa_clips__gallery1__consultation.jpg",
+      "dr_maysa__drmaysa_clips__gallery2__skin.jpg"
+    ],
     "contents": [
       {
         "key": "eyebrow",
@@ -678,7 +682,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "dr_maysa__drmaysa_hero__maysa-hero.webp",
     "gallery": [],
     "contents": [
       {
@@ -972,6 +976,207 @@
     ]
   },
   {
+    "page": "faq",
+    "kind": "faq_items",
+    "label": "Question groups",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "group_1_title",
+        "label": "Group 1 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Before you come in",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "q_1_question",
+        "label": "Q1 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Do you publish a price list?",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "q_1_answer",
+        "label": "Q1 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No. Care is arranged by consultation, never sold from a menu. We discuss investment privately once we understand what your skin actually needs.",
+        "content_type": "richtext",
+        "position": 2
+      },
+      {
+        "key": "q_2_question",
+        "label": "Q2 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How do I start?",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "q_2_answer",
+        "label": "Q2 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally.",
+        "content_type": "richtext",
+        "position": 4
+      },
+      {
+        "key": "q_3_question",
+        "label": "Q3 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Is the first visit a treatment?",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "q_3_answer",
+        "label": "Q3 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No. The first appointment is a doctor-led diagnostic assessment. Nothing is performed; we read your skin and write a plan.",
+        "content_type": "richtext",
+        "position": 6
+      },
+      {
+        "key": "group_2_title",
+        "label": "Group 2 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How care works",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "q_4_question",
+        "label": "Q4 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Why a twelve-month plan?",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "q_4_answer",
+        "label": "Q4 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Good skin is sequenced over time, not forced in a single session. We plan across quarters and review the results every three months.",
+        "content_type": "richtext",
+        "position": 9
+      },
+      {
+        "key": "q_5_question",
+        "label": "Q5 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Will I see Dr. Maysa herself?",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "q_5_answer",
+        "label": "Q5 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction.",
+        "content_type": "richtext",
+        "position": 11
+      },
+      {
+        "key": "q_6_question",
+        "label": "Q6 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "What if a treatment isn't right for me?",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "q_6_answer",
+        "label": "Q6 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Then we say so. Turning something down is part of the practice — we would rather keep your trust than sell you a session.",
+        "content_type": "richtext",
+        "position": 13
+      },
+      {
+        "key": "group_3_title",
+        "label": "Group 3 title",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Privacy & practicalities",
+        "content_type": "text",
+        "position": 14
+      },
+      {
+        "key": "q_7_question",
+        "label": "Q7 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "How private is my information?",
+        "content_type": "text",
+        "position": 15
+      },
+      {
+        "key": "q_7_answer",
+        "label": "Q7 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely.",
+        "content_type": "richtext",
+        "position": 16
+      },
+      {
+        "key": "q_8_question",
+        "label": "Q8 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Do you photograph patients?",
+        "content_type": "text",
+        "position": 17
+      },
+      {
+        "key": "q_8_answer",
+        "label": "Q8 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Only with separate, specific, written consent. Consent is never assumed and can be withdrawn at any time.",
+        "content_type": "richtext",
+        "position": 18
+      },
+      {
+        "key": "q_9_question",
+        "label": "Q9 question",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Where are you, and when are you open?",
+        "content_type": "text",
+        "position": 19
+      },
+      {
+        "key": "q_9_answer",
+        "label": "Q9 answer",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Al Malqa, Riyadh. Saturday to Thursday, 10:00–22:00. Friday closed. The exact address is shared when we schedule.",
+        "content_type": "richtext",
+        "position": 20
+      }
+    ]
+  },
+  {
     "page": "home",
     "kind": "home_clinic",
     "label": "Inside the clinic (hscroll)",
@@ -979,7 +1184,13 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [],
+    "gallery": [
+      "home__home_clinic__gallery0__treatment.webp",
+      "home__home_clinic__gallery1__waiting-lounge.webp",
+      "home__home_clinic__gallery2__device-room.webp",
+      "home__home_clinic__gallery3__private-suite.webp",
+      "home__home_clinic__gallery4__entrance.webp"
+    ],
     "contents": [
       {
         "key": "eyebrow",
@@ -1098,7 +1309,7 @@
     "position": 6,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "home__home_cta__waiting-lounge.webp",
     "gallery": [],
     "contents": [
       {
@@ -1151,19 +1362,19 @@
   {
     "page": "home",
     "kind": "home_founder",
-    "label": "Meet the founder",
+    "label": "About NeuSkin",
     "position": 2,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "home__home_founder__maysa-founder.webp",
     "gallery": [],
     "contents": [
       {
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "تعرّفي على المؤسِّسة",
-        "value_en": "Meet the founder",
+        "value_ar": "عن نيوسكن",
+        "value_en": "About NeuSkin",
         "content_type": "text",
         "position": 0
       },
@@ -1171,8 +1382,8 @@
         "key": "body_1",
         "label": "Body paragraph 1",
         "hint": null,
-        "value_ar": "أسّستُ نيو سكين لأتجاوز ضجيج الجمال الاستهلاكي. أؤمن بنهجٍ طبي يُقدّر وقتك وثقتك قبل كل شيء. تستحقين وضوحًا، وخطةً تُصمَّم لكِ وحدك، ونتائج تُكرّم جمالك الطبيعي — بصبرٍ وخبرة سريرية.",
-        "value_en": "I founded NeuSkin to move beyond the noise of mass-market beauty. I believe in a medical approach that values your time and trust above all else. You deserve clarity, a bespoke plan, and results that honor your natural beauty, guided by patience and clinical expertise.",
+        "value_ar": "تأسست 'نيوسكن' لتكون صوتاً مختلفاً يبتعد عن صخب التجميل التقليدي. نحن نؤمن بنهجٍ طبي يضع وقتك وثقتك فوق كل اعتبار؛ فكل امرأة تستحق الوضوح، وخطةً صُممت خصيصاً لها، ونتائجَ تُكرم جمالها الطبيعي بلمسةٍ تجمع بين الصبرِ والخبرة.",
+        "value_en": "NeuSkin was founded to move beyond the noise of mass-market beauty. We believe in a medical approach that values your time and trust above all else. Every woman deserves clarity, a bespoke plan, and results that honor her natural beauty, guided by patience and clinical expertise.",
         "content_type": "text",
         "position": 1
       },
@@ -1180,8 +1391,8 @@
         "key": "body_2",
         "label": "Body paragraph 2",
         "hint": null,
-        "value_ar": "يبدأ نهجي بفهمٍ عميق لبشرتك مبنيٍّ على البيانات. معًا، نُقدّم ما يخدم صحتك على المدى الطويل، ونترك خلفنا كل ما لا يخدمها من صيحات.",
-        "value_en": "My approach begins with a deep, data-driven understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
+        "value_ar": "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً.",
+        "value_en": "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
         "content_type": "text",
         "position": 2
       },
@@ -1198,7 +1409,7 @@
         "key": "link",
         "label": "Link text",
         "hint": null,
-        "value_ar": "اقرئي فلسفتها ←",
+        "value_ar": "",
         "value_en": "Read her philosophy →",
         "content_type": "text",
         "position": 4
@@ -1212,7 +1423,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "home__home_hero__hero-clinic.webp",
     "gallery": [],
     "contents": [
       {
@@ -1228,8 +1439,8 @@
         "key": "headline_1",
         "label": "Headline line 1",
         "hint": null,
-        "value_ar": "دقةُ",
-        "value_en": "Medical",
+        "value_ar": "دقةُ الطب،",
+        "value_en": "Medical Precision.",
         "content_type": "text",
         "position": 1
       },
@@ -1237,8 +1448,8 @@
         "key": "headline_2",
         "label": "Headline line 2",
         "hint": null,
-        "value_ar": "الطب،",
-        "value_en": "Precision.",
+        "value_ar": "ورقيُّ الجمال.",
+        "value_en": "Aesthetic Grace.",
         "content_type": "text",
         "position": 2
       },
@@ -1246,8 +1457,8 @@
         "key": "headline_3",
         "label": "Headline line 3 (emphasis)",
         "hint": null,
-        "value_ar": "ورقيُّ الجمال.",
-        "value_en": "Aesthetic Grace.",
+        "value_ar": "",
+        "value_en": "",
         "content_type": "text",
         "position": 3
       },
@@ -2373,7 +2584,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "private_care__private_hero__desert-atmosphere.jpg",
     "gallery": [],
     "contents": [
       {
@@ -2703,7 +2914,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "protocols_index__protocols_hero__Gemini_Generated_Image_jwy4ubjwy4ubjwy4.png",
     "gallery": [],
     "contents": [
       {
@@ -2789,6 +3000,629 @@
         "value_en": "Every story here is shared with explicit consent. Where a face is not shown, that too is a choice we respect.",
         "content_type": "richtext",
         "position": 3
+      }
+    ]
+  },
+  {
+    "page": "stories",
+    "kind": "story_items",
+    "label": "Story rows",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "story_1_intro",
+        "label": "Story 1 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "She came in tired of being sold to. What she wanted was a plan.",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "story_1_quote",
+        "label": "Story 1 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "For the first time, someone told me what not to do. That's when I trusted them.",
+        "content_type": "richtext",
+        "position": 1
+      },
+      {
+        "key": "story_1_protocol",
+        "label": "Story 1 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Diagnostic Foundation → Skin",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "story_1_close",
+        "label": "Story 1 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Twelve months on, her routine is shorter and her skin is steadier than it has been in years.",
+        "content_type": "richtext",
+        "position": 3
+      },
+      {
+        "key": "story_1_by",
+        "label": "Story 1 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "L.M. · 34 · Riyadh",
+        "content_type": "text",
+        "position": 4
+      },
+      {
+        "key": "story_2_intro",
+        "label": "Story 2 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A bride with six months and a quiet kind of panic.",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "story_2_quote",
+        "label": "Story 2 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "No one promised me a miracle. They promised me a calendar, and they kept it.",
+        "content_type": "richtext",
+        "position": 6
+      },
+      {
+        "key": "story_2_protocol",
+        "label": "Story 2 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Bride's 180",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "story_2_close",
+        "label": "Story 2 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "She walked into her wedding without a single last-minute treatment — everything had been sequenced months earlier.",
+        "content_type": "richtext",
+        "position": 8
+      },
+      {
+        "key": "story_2_by",
+        "label": "Story 2 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "A.R. · 29 · Jeddah",
+        "content_type": "text",
+        "position": 9
+      },
+      {
+        "key": "story_3_intro",
+        "label": "Story 3 intro",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Long-term maintenance, on her own terms.",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "story_3_quote",
+        "label": "Story 3 quote",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "I review my skin like I review anything that matters to me — with data, every quarter.",
+        "content_type": "richtext",
+        "position": 11
+      },
+      {
+        "key": "story_3_protocol",
+        "label": "Story 3 protocol",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Private Care",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "story_3_close",
+        "label": "Story 3 closing line",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Three years in, the relationship is the treatment. Small adjustments, reviewed often, nothing overdone.",
+        "content_type": "richtext",
+        "position": 13
+      },
+      {
+        "key": "story_3_by",
+        "label": "Story 3 attribution",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "F.K. · 41 · Riyadh",
+        "content_type": "text",
+        "position": 14
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_cta",
+    "label": "Closing CTA",
+    "position": 9,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "مستعدة لتجربة الفرق مع 'نيوسكن'؟",
+        "value_en": "Ready to experience the NeuSkin difference?",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title_em",
+        "label": "Heading (emphasis)",
+        "hint": null,
+        "value_ar": "رحلة جمالك تبدأ من هنا.",
+        "value_en": "Your transformation begins here.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "button",
+        "label": "Button label",
+        "hint": null,
+        "value_ar": "احجزي استشارتك",
+        "value_en": "Book Your Consultation",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_1",
+    "label": "Device 1 — EMTONE",
+    "position": 2,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_1__harmonious-rejuvenation-jpeg.jpeg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "EMTONE",
+        "value_en": "EMTONE",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "نضارة متناغمة",
+        "value_en": "Harmonious Rejuvenation",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "بدمج الطاقة الحرارية والميكانيكية، يعيد Emtone للبشرة تماسكها بنعومة، ويعالج مظهر السيلوليت، لتشعري ببشرة أكثر نعومة وثقة.",
+        "value_en": "By blending thermal and mechanical energy, Emtone gently restores your skin's firmness and addresses cellulite, helping you feel smoother and more confident in your skin.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "يستخدم طاقة الضغط المستهدفة مع الترددات الراديوية. فعال للبطن، الذراعين، الفخذين، وجانبي الخصر والأرداف. نتائج مثالية خلال 4-6 جلسات. أكثر فعالية بنسبة 64% في إنتاج الإيلاستين و59% في إنتاج الكولاجين.",
+        "value_en": "Uses targeted pressure energy combined with radiofrequency. Effective for abdomen, arms, thighs, love handles, and buttocks. Optimal results in 4–6 sessions. 64% more effective for elastin and 59% for collagen production.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_2",
+    "label": "Device 2 — EMFACE",
+    "position": 3,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_2__needle-free-lift-jpeg.jpeg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "EMFACE",
+        "value_en": "EMFACE",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "رفع وشد بلا إبر",
+        "value_en": "Needle-Free Lift",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "يعمل هذا النظام الذكي على رفع وشد وتنعيم الوجه في آنٍ واحد، ليقلل التجاعيد ويحسن تناسق ملامحك بدون الحاجة لأي إبر.",
+        "value_en": "This intelligent system simultaneously lifts, tightens, and tones the face, reducing wrinkles while improving facial symmetry without the need for needles.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "يجمع بين تقنيات HIFEM والترددات الراديوية. يقلل التجاعيد بنسبة 37% ويزيد الشد بنسبة 23%. يعالج الجبهة، الحواجب، الخدين، وخط الفك. لا يتطلب فترة نقاهة.",
+        "value_en": "Combines HIFEM and radiofrequency technologies. Reduces wrinkles by 37% and provides 23% more lift. Treats forehead, eyebrows, cheeks, and jawline. No downtime.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_3",
+    "label": "Device 3 — EMSCULPT",
+    "position": 4,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_3__sculpted-strength-jpg.jpg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "EMSCULPT",
+        "value_en": "EMSCULPT",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "قوام منحوت",
+        "value_en": "Sculpted Strength",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "انحتي قوامك بشكل طبيعي. يعمل هذا النظام مع عضلاتك لتعزيز رسمها وتحديد ملامح الجسم، ليمنحك المظهر المصقول والرياضي الذي يكمل أسلوب حياتك.",
+        "value_en": "Sculpt your body's natural shape. This system works with your muscles to define and contour, providing a refined, athletic look that perfectly complements your lifestyle.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "يجمع بين التسخين بالترددات الراديوية وتقنية HIFEM في جلسة واحدة. يستهدف البطن، الأرداف، الذراعين، الفخذين، وعضلات الساق. جلسات مدتها 30 دقيقة بدون فترة نقاهة.",
+        "value_en": "Combines RF heating and HIFEM in a single treatment. Targets abdomen, buttocks, arms, thighs, and calves. 30-minute sessions with zero downtime.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_4",
+    "label": "Device 4 — POTENZA",
+    "position": 5,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_4__advanced-skin-vitality-jpg.jpg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "POTENZA",
+        "value_en": "POTENZA",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "تجديد البشرة المتطور",
+        "value_en": "Advanced Skin Vitality",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "أعيدي الحياة لبشرتك. هذا العلاج الدقيق يشد البشرة ويمنحها إشراقاً، ليساعدك على الحصول على ملمس ناعم، ممتلئ، وأكثر شباباً.",
+        "value_en": "Bringing your skin back to life. This sophisticated microneedling treatment firms and brightens, helping you achieve a smoother, fuller, and more youthful complexion.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "وخز بالإبر الدقيقة مع الترددات الراديوية وتقنية Tiger Tip. مصمم لشد البشرة، تقليل الخطوط الدقيقة، تصغير المسام، وتقليل الندبات في الوجه والجسم.",
+        "value_en": "Microneedling with radiofrequency using Tiger Tip technology. Designed to tighten skin, reduce fine lines, shrink pores, and diminish scars on face and body.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_5",
+    "label": "Device 5 — ELITE IQ",
+    "position": 6,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_5__precision-care-jpg.jpg",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "ELITE IQ",
+        "value_en": "ELITE IQ",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "دقة العناية",
+        "value_en": "Precision Care",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "حيث تلتقي المرونة بالأمان. جهاز ذو طول موجي مزدوج مصمم لتلبية احتياجات بشرتك الخاصة، من تقليل الاحمرار إلى إزالة الشعر، لضمان نتائج صُممت خصيصاً لك.",
+        "value_en": "Versatility meets safety. A dual-wavelength platform designed to address your skin's specific needs, from reducing redness to effective hair removal, ensuring results tailored to you.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "طول موجي مزدوج (ND YAG + ALEX). يتميز بـ Skintel™، وهو أول قارئ للميلانين في العالم. عرض نبض قابل للتعديل وأحجام بقع متنوعة لضمان سلامة المريض.",
+        "value_en": "Dual-wavelength (ND YAG + ALEX). Features Skintel™, the world's first Melanin Reader™. Adjustable pulse width and various spot sizes for patient safety.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_6",
+    "label": "Device 6 — REVLITE",
+    "position": 7,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_6__luminous-renewal-png.png",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "REVLITE",
+        "value_en": "REVLITE",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "إشراقة وتجديد",
+        "value_en": "Luminous Renewal",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "علاج طبي متعدد الأغراض لتحسين ملمس البشرة. يعمل على إشراقها، تصغير المسام، وتقليل العيوب للحصول على بشرة أكثر صفاءً ونضارة.",
+        "value_en": "A multi-purpose medical treatment to improve skin texture. It works to brighten, refine pores, and diminish imperfections for a clearer, fairer complexion.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "تقنية الليزر Q-Switched. يقلل الزيوت، يعزز الكولاجين، ويقلل التصبغات وندبات حب الشباب والخطوط الدقيقة.",
+        "value_en": "Q-Switched laser technology. Reduces oiliness, promotes collagen, minimizes pigmentation, acne scars, and fine lines.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_device_7",
+    "label": "Device 7 — EMERALD",
+    "position": 8,
+    "settings": {},
+    "items": [],
+    "image": "technologies__tech_device_7__natural-fat-loss-webp.webp",
+    "gallery": [],
+    "contents": [
+      {
+        "key": "name",
+        "label": "Device name (not translated)",
+        "hint": null,
+        "value_ar": "EMERALD",
+        "value_en": "EMERALD",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "tagline",
+        "label": "Tagline",
+        "hint": null,
+        "value_ar": "فقدان الدهون الطبيعي",
+        "value_en": "Natural Fat Loss",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Card front — what it does for the patient",
+        "hint": null,
+        "value_ar": "يعمل بتناغم تام مع جسمك. هذا العلاج غير الجراحي يدعم معدل الأيض الطبيعي لتقليل الدهون العنيدة، مما يجعله بديلاً لطيفاً للطرق التقليدية.",
+        "value_en": "Working in harmony with your body. This non-invasive treatment supports your natural metabolism to reduce stubborn fat, offering a gentle alternative to traditional methods.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "specs",
+        "label": "Card back — technical specs",
+        "hint": null,
+        "value_ar": "علاج معتمد من FDA لفقدان الدهون غير الجراحي. الجهاز الوحيد المعتمد لمن لديهم مؤشر كتلة جسم يصل إلى 40. يستهدف محيط الجسم بالكامل.",
+        "value_en": "FDA-cleared, non-invasive fat loss. Only device cleared for up to 40 BMI. Targets overall body circumference.",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_hero",
+    "label": "Hero — split device-room composite",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [
+      "technologies__tech_hero__gallery0__tech-page-2.jpg",
+      "technologies__tech_hero__gallery1__tech-page-3.jpg",
+      "technologies__tech_hero__gallery2__tech-page-4.jpg",
+      "technologies__tech_hero__gallery3__tech-page.jpg"
+    ],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "تقنياتنا",
+        "value_en": "Our Technologies",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Headline line 1",
+        "hint": null,
+        "value_ar": "حيث يلتقي التميز الطبي",
+        "value_en": "Where Clinical Excellence",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Headline line 2 (emphasis)",
+        "hint": null,
+        "value_ar": "برقيّ اللمسة الإنسانية.",
+        "value_en": "Meets Human Grace.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "sub",
+        "label": "Sub-headline",
+        "hint": null,
+        "value_ar": "نؤمن أن الجمال الحقيقي يستمد قوته من العلم، ويحدده الصبر. اكتشفي التقنيات المبتكرة التي تشكل أساس رحلتكِ معنا في 'نيوسكن'.",
+        "value_en": "We believe true beauty is powered by science and defined by patience. Explore the innovative protocols that form the foundation of your NeuSkin journey.",
+        "content_type": "text",
+        "position": 3
+      },
+      {
+        "key": "cta",
+        "label": "Button label",
+        "hint": null,
+        "value_ar": "اكتشفي خدماتنا",
+        "value_en": "Explore Our Treatments",
+        "content_type": "text",
+        "position": 4
+      }
+    ]
+  },
+  {
+    "page": "technologies",
+    "kind": "tech_intro",
+    "label": "The Science of You",
+    "position": 1,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "The Standard",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": null,
+        "value_ar": "العلم خلف الجمال",
+        "value_en": "The Science of You",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "body",
+        "label": "Body text",
+        "hint": null,
+        "value_ar": "في 'نيوسكن'، التكنولوجيا هي وسيلة دقيقة نكرّم بها جمالك الطبيعي. اخترنا بعناية تقنيات معتمدة عالمياً تعمل في تناغم مع طبيعة جسمك، واضعين صحتك على المدى الطويل ونتائجك المرجوة في مقدمة أولوياتنا.",
+        "value_en": "At NeuSkin, technology is a refined tool to honor your body's natural potential. We have selected a portfolio of FDA-cleared innovations that work in harmony with your physiology, prioritizing your long-term health and aesthetic goals.",
+        "content_type": "text",
+        "position": 2
       }
     ]
   },
@@ -2958,7 +3792,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "the_clinic__clinic_hero__clinic-hero.webp",
     "gallery": [],
     "contents": [
       {
@@ -3211,7 +4045,13 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [],
+    "gallery": [
+      "the_clinic__clinic_space__gallery0__clinic-1.webp",
+      "the_clinic__clinic_space__gallery1__clinic-2.webp",
+      "the_clinic__clinic_space__gallery2__clinic-3.webp",
+      "the_clinic__clinic_space__gallery3__clinic-4.webp",
+      "the_clinic__clinic_space__gallery4__clinic-5.webp"
+    ],
     "contents": [
       {
         "key": "eyebrow",
@@ -3318,123 +4158,9 @@
     ]
   },
   {
-    "page": "treatment_outcomes",
-    "kind": "outcome_body",
-    "label": "Body — tone & contour",
-    "position": 2,
-    "settings": {},
-    "items": [],
-    "image": null,
-    "gallery": [],
-    "contents": [
-      {
-        "key": "title",
-        "label": "Hero tag",
-        "hint": null,
-        "value_ar": "التناسق والقوام",
-        "value_en": "Tone & contour",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "headline",
-        "label": "Hero headline",
-        "hint": null,
-        "value_ar": "نحتُ وتحديد ملامح قوامكِ بأناقة",
-        "value_en": "Sculpting and toning your natural silhouette",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "look",
-        "label": "What it looks like",
-        "hint": null,
-        "value_ar": "تلتزمين بالتمارين الرياضية وتناول الغذاء الصحي، ومع ذلك لا تزال هناك فجوة بين مجهودكِ وبين النتائج التي تطمحين إليها. ليونةٌ في أماكنَ تتمنين فيها قواماً مشدوداً، وانحناءةٌ في القوام تحتاجُ إلى استعادةِ حيويتها.",
-        "value_en": "You train, you eat well, yet a gap remains between your efforts and the results. There is softness where you desire definition, and your posture has lost its youthful lift.",
-        "content_type": "richtext",
-        "position": 2
-      },
-      {
-        "key": "how",
-        "label": "How NeuSkin treats it",
-        "hint": null,
-        "value_ar": "نعتمدُ بروتوكولاً مُكثّفاً يمتدُّ لثمانيةِ أسابيع، مدعوماً بأحدث التقنيات لتعزيزِ قوةِ العضلات، ونحتِ القوام، وتحسينِ استقامةِ الجسم. ونعتمدُ في رحلتنا على قياساتٍ دقيقةٍ وموحدةٍ في بدايةِ البرنامجِ ونهايته، لنضمنَ توثيقَ النتائجِ بدقةٍ تامة، لا مجرد التكهن بها.",
-        "value_en": "Our eight-week, device-led protocol reinforces muscle tone, contour, and posture. We rely on standardized measurements — at both the start and the finish — to ensure your progress is precisely documented, not assumed.",
-        "content_type": "richtext",
-        "position": 3
-      },
-      {
-        "key": "view",
-        "label": "Dr. Maysa's view (quote)",
-        "hint": null,
-        "value_ar": "علاجات الجسم ينبغي أن تدعم جهدك، لا أن تحلّ محله. نقيس الاستقامة والتحديد — لا الميزان — لأن ذلك ما يغيّر فعلًا كيف تبدو ملابسك وكيف تقفين.",
-        "value_en": "Body work should support your effort, never replace it. We measure posture and definition — not the scale — because that’s what actually changes how clothes sit and how you stand.",
-        "content_type": "richtext",
-        "position": 4
-      }
-    ]
-  },
-  {
-    "page": "treatment_outcomes",
-    "kind": "outcome_devices",
-    "label": "Advanced devices",
-    "position": 4,
-    "settings": {},
-    "items": [],
-    "image": null,
-    "gallery": [],
-    "contents": [
-      {
-        "key": "title",
-        "label": "Hero tag",
-        "hint": null,
-        "value_ar": "الأجهزة المتقدمة",
-        "value_en": "Advanced devices",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "headline",
-        "label": "Hero headline",
-        "hint": null,
-        "value_ar": "أجهزتنا: الغاية الحقيقية، والنتائج الملموسة",
-        "value_en": "Our devices: True purpose, visible results",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "look",
-        "label": "What it looks like",
-        "hint": null,
-        "value_ar": "تقنياتٌ مثل EmFace وEmSculpt Neo، والليزر، والإكسوسومات، والبولينيوكليوتيدات؛ هي مصطلحاتٌ يعشقها قطاع التجميل، لكنها في الواقع تفاصيل تقنية لا تحتاج المريضة للانشغال بتسمياتها.",
-        "value_en": "EmFace, EmSculpt Neo, lasers, exosomes, polynucleotides — a vocabulary the industry loves, yet one that patients rarely need to navigate by name.",
-        "content_type": "richtext",
-        "position": 2
-      },
-      {
-        "key": "how",
-        "label": "How NeuSkin treats it",
-        "hint": null,
-        "value_ar": "نحن نختار الجهاز ليلائم النتيجة المطلوبة، لا العكس. فكل جهازٍ لدينا هو مجرد أداةٍ ضمن خطةٍ مُحكمةٍ وضعها الطبيب؛ خطةٍ مُرتّبةٍ، ومدروسةٍ، ولا يُستخدم فيها أي جهازٍ إلا عندما يستحقُّ مكانهُ في رحلتكِ العلاجية.",
-        "value_en": "We choose the device to fit the outcome, never the other way around. Each is simply a tool within a doctor-written plan — sequenced, measured, and only used when it earns its place.",
-        "content_type": "richtext",
-        "position": 3
-      },
-      {
-        "key": "view",
-        "label": "Dr. Maysa's view (quote)",
-        "hint": null,
-        "value_ar": "الجهاز وسيلة، لا عنوان. إن كانت العيادة تبيعك الجهاز قبل التشخيص، فأنتِ تُباعين — لا تُعالَجين.",
-        "value_en": "A device is a means, not a headline. If a clinic is selling you the machine before the diagnosis, you’re being sold to — not treated.",
-        "content_type": "richtext",
-        "position": 4
-      }
-    ]
-  },
-  {
-    "page": "treatment_outcomes",
-    "kind": "outcome_hair",
-    "label": "Hair — thinning & shedding",
+    "page": "the_team",
+    "kind": "team_members",
+    "label": "Team grid",
     "position": 1,
     "settings": {},
     "items": [],
@@ -3442,163 +4168,232 @@
     "gallery": [],
     "contents": [
       {
-        "key": "title",
-        "label": "Hero tag",
+        "key": "member_1_name",
+        "label": "Member 1 name",
         "hint": null,
-        "value_ar": "التساقط وخفة الشعر",
-        "value_en": "Thinning & shedding",
+        "value_ar": "",
+        "value_en": "Dr. Maysa Al-Rashid",
         "content_type": "text",
         "position": 0
       },
       {
-        "key": "headline",
-        "label": "Hero headline",
+        "key": "member_1_role",
+        "label": "Member 1 role",
         "hint": null,
-        "value_ar": "عناية متكاملة لتقوية الشعر والحد من تساقطه",
-        "value_en": "Comprehensive care for thinning hair",
+        "value_ar": "",
+        "value_en": "Founder · Medical Director",
         "content_type": "text",
         "position": 1
       },
       {
-        "key": "look",
-        "label": "What it looks like",
+        "key": "member_1_cred",
+        "label": "Member 1 credentials",
         "hint": null,
-        "value_ar": "فرقُ الشعر الذي يزداد اتساعاً، ذيلُ حصانٍ تلمسين خفته بيدك، وخصلاتٌ أكثر من المعتاد تجدينها على وسادتكِ — غالباً ما تلاحظين ذلك بعد الولادة أو فتراتِ الضغطِ النفسي.",
-        "value_en": "A part that widens. A ponytail that feels thinner in the hand. More strands than you remember on the pillow — often after a baby or a stretch of stress.",
-        "content_type": "richtext",
+        "value_ar": "",
+        "value_en": "MBBS · Dermatology · Aesthetic Medicine Fellowship",
+        "content_type": "text",
         "position": 2
       },
       {
-        "key": "how",
-        "label": "How NeuSkin treats it",
+        "key": "member_1_focus",
+        "label": "Member 1 focus",
         "hint": null,
-        "value_ar": "نبدأ بتقييم فروة الرأس سريرياً للبحث عن مسبباتٍ قابلةٍ للعلاج، ثم نبني بروتوكولاً تجديدياً للحد من التساقط وتعزيز الكثافة؛ حيث نراجع النتائج مقارنةً بحالتكِ الأصلية، ليكون التقدم حقيقياً وملموساً، لا مجرد آمال.",
-        "value_en": "We assess the scalp clinically to identify treatable causes, then build a regenerative protocol to slow shedding and support density. We review all progress against your starting point, ensuring the results are real, not just hopeful.",
-        "content_type": "richtext",
+        "value_ar": "",
+        "value_en": "Diagnosis & the 12-month plan",
+        "content_type": "text",
         "position": 3
       },
       {
-        "key": "view",
-        "label": "Dr. Maysa's view (quote)",
+        "key": "member_1_bio",
+        "label": "Member 1 bio",
         "hint": null,
-        "value_ar": "كلما رأينا التساقط مبكرًا، اتّسعت خياراتنا. البصيلة صبورة، لكن صبرها ليس بلا حدود — والتدخل المدروس خيرٌ من سنةٍ أخرى في انتظار شامبو يُحدث فرقًا.",
-        "value_en": "The earlier we see shedding, the more we can do. The follicle is patient, but it isn’t infinitely so — measured intervention beats another year of waiting for a shampoo to work.",
+        "value_ar": "",
+        "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
         "content_type": "richtext",
         "position": 4
+      },
+      {
+        "key": "member_2_name",
+        "label": "Member 2 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dr. Lina Haddad",
+        "content_type": "text",
+        "position": 5
+      },
+      {
+        "key": "member_2_role",
+        "label": "Member 2 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Senior Aesthetic Physician",
+        "content_type": "text",
+        "position": 6
+      },
+      {
+        "key": "member_2_cred",
+        "label": "Member 2 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Diploma in Aesthetic Medicine",
+        "content_type": "text",
+        "position": 7
+      },
+      {
+        "key": "member_2_focus",
+        "label": "Member 2 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Injectables & restraint",
+        "content_type": "text",
+        "position": 8
+      },
+      {
+        "key": "member_2_bio",
+        "label": "Member 2 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
+        "content_type": "richtext",
+        "position": 9
+      },
+      {
+        "key": "member_3_name",
+        "label": "Member 3 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dr. Sara Othman",
+        "content_type": "text",
+        "position": 10
+      },
+      {
+        "key": "member_3_role",
+        "label": "Member 3 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Dermatology Associate",
+        "content_type": "text",
+        "position": 11
+      },
+      {
+        "key": "member_3_cred",
+        "label": "Member 3 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "MBBS · Clinical Dermatology",
+        "content_type": "text",
+        "position": 12
+      },
+      {
+        "key": "member_3_focus",
+        "label": "Member 3 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Skin barrier & pigment",
+        "content_type": "text",
+        "position": 13
+      },
+      {
+        "key": "member_3_bio",
+        "label": "Member 3 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
+        "content_type": "richtext",
+        "position": 14
+      },
+      {
+        "key": "member_4_name",
+        "label": "Member 4 name",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Noor Al-Fahad",
+        "content_type": "text",
+        "position": 15
+      },
+      {
+        "key": "member_4_role",
+        "label": "Member 4 role",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Patient Relations Lead",
+        "content_type": "text",
+        "position": 16
+      },
+      {
+        "key": "member_4_cred",
+        "label": "Member 4 credentials",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "First point of contact · privacy-trained",
+        "content_type": "text",
+        "position": 17
+      },
+      {
+        "key": "member_4_focus",
+        "label": "Member 4 focus",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Discretion & continuity",
+        "content_type": "text",
+        "position": 18
+      },
+      {
+        "key": "member_4_bio",
+        "label": "Member 4 bio",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
+        "content_type": "richtext",
+        "position": 19
       }
     ]
   },
   {
-    "page": "treatment_outcomes",
-    "kind": "outcome_injectables",
-    "label": "Injectables — lines & volume",
-    "position": 3,
+    "page": "treatments",
+    "kind": "treatments_cta",
+    "label": "Closing CTA",
+    "position": 2,
     "settings": {},
     "items": [],
     "image": null,
     "gallery": [],
     "contents": [
       {
-        "key": "title",
-        "label": "Hero tag",
+        "key": "kicker",
+        "label": "Kicker (italic line)",
         "hint": null,
-        "value_ar": "الخطوط والامتلاء",
-        "value_en": "Lines & volume",
+        "value_ar": "",
+        "value_en": "Not sure where to start?",
         "content_type": "text",
         "position": 0
       },
       {
-        "key": "headline",
-        "label": "Hero headline",
-        "hint": null,
-        "value_ar": "الحفاظ على جمال ملامحكِ قبل أي إجراء",
-        "value_en": "Preserving natural contours before any intervention",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "look",
-        "label": "What it looks like",
-        "hint": null,
-        "value_ar": "خطوطٌ أولية، فقدانٌ طفيفٌ في الامتلاء، ووجهٌ يبدو مُرهقاً قبل أن تشعري أنتِ بذلك. الغريزةُ الطبيعيةُ تدفعكِ لطلبِ \"حقن الفيلر\"، لكنَّ نهجنا يبدأُ دائماً بطرحِ سؤال \"لماذا\".",
-        "value_en": "Early lines, a slight loss of volume, and a face that appears tired before you actually feel it. The natural instinct is to ask for a syringe, but ours is to ask why first.",
-        "content_type": "richtext",
-        "position": 2
-      },
-      {
-        "key": "how",
-        "label": "How NeuSkin treats it",
-        "hint": null,
-        "value_ar": "في نيوسكن، كلُّ قرارٍ بالحقنِ يسبقهُ تشخيصٌ دقيق، لا مجردُ طلبٍ علاجي. عندما يكون الإجراءُ مناسباً، فإننا نطبقهُ بدقةٍ وتحفظٍ تام. وإن لم يكن كذلك، فإننا نصارحكِ بذلك، ونعالجُ السببَ الجذريَّ للمشكلةِ بدلاً من ذلك.",
-        "value_en": "Every injectable decision at NeuSkin follows a diagnosis, not a request. When it is right, our approach is precise and conservative. When it isn't, we say so — and treat the underlying cause instead.",
-        "content_type": "richtext",
-        "position": 3
-      },
-      {
-        "key": "view",
-        "label": "Dr. Maysa's view (quote)",
-        "hint": null,
-        "value_ar": "أفضل نتيجة للحقن هي تلك التي لا يستطيع أحد تسميتها. ضبط النفس مهارة سريرية؛ والهدف أن تبدي أنتِ، مرتاحة — لا أنتِ، معدَّلة.",
-        "value_en": "The best injectable result is the one nobody can name. Restraint is a clinical skill; the goal is you, rested — never you, edited.",
-        "content_type": "richtext",
-        "position": 4
-      }
-    ]
-  },
-  {
-    "page": "treatment_outcomes",
-    "kind": "outcome_skin",
-    "label": "Skin — tired, dull skin",
-    "position": 0,
-    "settings": {},
-    "items": [],
-    "image": null,
-    "gallery": [],
-    "contents": [
-      {
         "key": "title",
-        "label": "Hero tag",
+        "label": "Title (before emphasis)",
         "hint": null,
-        "value_ar": "البشرة المتعبة الباهتة",
-        "value_en": "Tired, dull skin",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "headline",
-        "label": "Hero headline",
-        "hint": null,
-        "value_ar": "استعادة الحيوية والنضارة لبشرتكِ",
-        "value_en": "Restoring vitality to tired, dull skin",
+        "value_ar": "",
+        "value_en": "Begin with the",
         "content_type": "text",
         "position": 1
       },
       {
-        "key": "look",
-        "label": "What it looks like",
+        "key": "title_em",
+        "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "بشرةٌ فقدت بريقها المعتاد؛ لم تعد تعكس الضوءَ كما كانت، لونها غير متجانس، وتستغرق وقتاً أطول للتعافي بعد أسبوعٍ حافل. ليست تالفة، بل مُرهقة فحسب.",
-        "value_en": "Skin that has lost its radiance — no longer catching the light as it once did, uneven in tone, and slow to recover after a demanding week. Not damaged. Simply tired.",
-        "content_type": "richtext",
+        "value_ar": "",
+        "value_en": "Maysa Method™",
+        "content_type": "text",
         "position": 2
       },
       {
-        "key": "how",
-        "label": "How NeuSkin treats it",
+        "key": "button",
+        "label": "Button label",
         "hint": null,
-        "value_ar": "نبدأُ بفهم الأسباب قبل أن نلجأ لأي جهاز. فغالباً ما يكون الشحوب نتيجةً لاختلالٍ في حاجز البشرة أو الترطيب أو معدل التجدد. بناءً على ذلك، نضعُ لكِ بروتوكولاً متسلسلاً يعيد للبشرة صفاءها تدريجياً، مع قياس التقدم مقارنةً بحالتكِ في البداية.",
-        "value_en": "We begin by understanding the \"why,\" rather than reaching for a device. Often, dullness is a story of barrier, hydration, and turnover. From there, a sequenced plan rebuilds clarity over the coming weeks, measured against your skin's starting point.",
-        "content_type": "richtext",
+        "value_ar": "",
+        "value_en": "Request the assessment",
+        "content_type": "text",
         "position": 3
-      },
-      {
-        "key": "view",
-        "label": "Dr. Maysa's view (quote)",
-        "hint": null,
-        "value_ar": "البشرة المتعبة نادرًا ما تكون مشكلة واحدة؛ بل ثلاث مشكلات صغيرة تتراكم. عالجي السبب بالترتيب يعود الإشراق من تلقاء نفسه — أما ملاحقته بجلسة واحدة فنادرًا ما تدوم.",
-        "value_en": "Tired skin is rarely one problem; it’s usually three small ones compounding. Treat the cause in order and the glow returns on its own — chasing it with a single facial almost never holds.",
-        "content_type": "richtext",
-        "position": 4
       }
     ]
   },
@@ -3620,6 +4415,15 @@
         "value_en": "View all six protocols →",
         "content_type": "text",
         "position": 0
+      },
+      {
+        "key": "card_cta",
+        "label": "Card hover line (\"See the approach\")",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "See the approach →",
+        "content_type": "text",
+        "position": 1
       }
     ]
   },
@@ -3630,7 +4434,7 @@
     "position": 0,
     "settings": {},
     "items": [],
-    "image": null,
+    "image": "treatments__treatments_hero__Gemini_Generated_Image_ad31apad31apad31.png",
     "gallery": [],
     "contents": [
       {

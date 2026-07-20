@@ -62,7 +62,16 @@ module ContentHelper
     "maysa_method/method_timeline" => { count: 4, label_key: "panel_%d_title" },
     "bridal/bridal_timeline"      => { count: 3, label_key: "stage_%d_title" },
     "bridal/bridal_pillars"       => { count: 3, label_key: "pillar_%d_title" },
-    "private_care/private_tiers"  => { count: 3, label_key: "tier_%d_name" }
+    "private_care/private_tiers"  => { count: 3, label_key: "tier_%d_name" },
+    # Our Technologies device cards: slot 1 = the in-clinic photo shown on the
+    # card's spec (back) face; the front product shot is the section image.
+    "technologies/tech_device_1"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_2"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_3"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_4"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_5"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_6"  => { count: 1, label_key: "name" },
+    "technologies/tech_device_7"  => { count: 1, label_key: "name" }
   }.freeze
 
   # URL for card slot `index` (1-based) of a section: the dashboard slot image

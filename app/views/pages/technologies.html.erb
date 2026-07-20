@@ -1,0 +1,112 @@
+<%# Our Technologies — device portfolio (July 2026 content deck). Every
+    section is CMS-editable (page "technologies"); literals below are only
+    un-seeded fallbacks, per the site-wide sec_text(...).presence || idiom. %>
+
+<%# Device card fallbacks (deck order). Name · tagline · patient copy · specs. %>
+<% device_defaults = [
+     ["EMTONE",   "Harmonious Rejuvenation",
+      "By blending thermal and mechanical energy, Emtone gently restores your skin's firmness and addresses cellulite, helping you feel smoother and more confident in your skin.",
+      "Uses targeted pressure energy combined with radiofrequency. Effective for abdomen, arms, thighs, love handles, and buttocks. Optimal results in 4–6 sessions. 64% more effective for elastin and 59% for collagen production."],
+     ["EMFACE",   "Needle-Free Lift",
+      "This intelligent system simultaneously lifts, tightens, and tones the face, reducing wrinkles while improving facial symmetry without the need for needles.",
+      "Combines HIFEM and radiofrequency technologies. Reduces wrinkles by 37% and provides 23% more lift. Treats forehead, eyebrows, cheeks, and jawline. No downtime."],
+     ["EMSCULPT", "Sculpted Strength",
+      "Sculpt your body's natural shape. This system works with your muscles to define and contour, providing a refined, athletic look that perfectly complements your lifestyle.",
+      "Combines RF heating and HIFEM in a single treatment. Targets abdomen, buttocks, arms, thighs, and calves. 30-minute sessions with zero downtime."],
+     ["POTENZA",  "Advanced Skin Vitality",
+      "Bringing your skin back to life. This sophisticated microneedling treatment firms and brightens, helping you achieve a smoother, fuller, and more youthful complexion.",
+      "Microneedling with radiofrequency using Tiger Tip technology. Designed to tighten skin, reduce fine lines, shrink pores, and diminish scars on face and body."],
+     ["ELITE IQ", "Precision Care",
+      "Versatility meets safety. A dual-wavelength platform designed to address your skin's specific needs, from reducing redness to effective hair removal, ensuring results tailored to you.",
+      "Dual-wavelength (ND YAG + ALEX). Features Skintel™, the world's first Melanin Reader™. Adjustable pulse width and various spot sizes for patient safety."],
+     ["REVLITE",  "Luminous Renewal",
+      "A multi-purpose medical treatment to improve skin texture. It works to brighten, refine pores, and diminish imperfections for a clearer, fairer complexion.",
+      "Q-Switched laser technology. Reduces oiliness, promotes collagen, minimizes pigmentation, acne scars, and fine lines."],
+     ["EMERALD",  "Natural Fat Loss",
+      "Working in harmony with your body. This non-invasive treatment supports your natural metabolism to reduce stubborn fat, offering a gentle alternative to traditional methods.",
+      "FDA-cleared, non-invasive fat loss. Only device cleared for up to 40 BMI. Targets overall body circumference."]
+   ] %>
+
+<%# ---- Hero: vertically split composite — the deck asks for the device rooms
+      side by side, with the branded shot last and slightly wider. Slices are
+      the tech_hero gallery in the dashboard. %>
+<% slices = sec_gallery_urls("technologies", "tech_hero", %i[treatment_room device_table lounge interior_ext]) %>
+<section class="tech-hero" data-controller="reveal">
+  <div class="tech-hero-slices" aria-hidden="true">
+    <% slices.each do |url| %><span style="background-image:url('<%= url %>')"></span><% end %>
+  </div>
+  <div class="tech-hero-copy">
+    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("technologies", "tech_hero", "eyebrow").presence || "Our Technologies" %></span>
+    <h1>
+      <span data-reveal="mask" data-reveal-delay="120"><span><%= sec_text("technologies", "tech_hero", "title").presence || "Where Clinical Excellence" %></span></span>
+      <span class="em" data-reveal="mask" data-reveal-delay="240"><span><%= sec_text("technologies", "tech_hero", "title_em").presence || "Meets Human Grace." %></span></span>
+    </h1>
+    <p class="lead reveal d2" data-reveal-target="item">
+      <%= sec_text("technologies", "tech_hero", "sub").presence || "We believe true beauty is powered by science and defined by patience. Explore the innovative protocols that form the foundation of your NeuSkin journey." %>
+    </p>
+    <p class="reveal d3" data-reveal-target="item">
+      <%= link_to (sec_text("technologies", "tech_hero", "cta").presence || "Explore Our Treatments"), treatments_path, class: "btn" %>
+    </p>
+  </div>
+</section>
+
+<%# ---- The Science of You ---- %>
+<section class="section orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "tr" %>
+  <div class="section-inner">
+    <div class="sec-head center reveal" data-reveal-target="item">
+      <span class="eyebrow center"><%= sec_text("technologies", "tech_intro", "eyebrow").presence || "The Standard" %></span>
+      <h2><%= sec_text("technologies", "tech_intro", "title").presence || "The Science of You" %></h2>
+    </div>
+    <p class="lead tech-intro-lead reveal d1" data-reveal-target="item">
+      <%= sec_text("technologies", "tech_intro", "body").presence || "At NeuSkin, technology is a refined tool to honor your body's natural potential. We have selected a portfolio of FDA-cleared innovations that work in harmony with your physiology, prioritizing your long-term health and aesthetic goals." %>
+    </p>
+  </div>
+</section>
+
+<%# ---- Device flip cards: patient-facing story on the front, technical
+      specs on the back. Hover flips on pointer devices (site-wide .flipcard
+      CSS); the flip controller adds tap/keyboard toggling for touch. %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner">
+    <div class="tech-grid reveal d1" data-reveal-target="item">
+      <% device_defaults.each_with_index do |(name_d, tagline_d, body_d, specs_d), idx| %>
+        <% i = idx + 1 %>
+        <% kind    = "tech_device_#{i}" %>
+        <% name    = sec_text("technologies", kind, "name").presence    || name_d %>
+        <% tagline = sec_text("technologies", kind, "tagline").presence || tagline_d %>
+        <% body    = sec_text("technologies", kind, "body").presence    || body_d %>
+        <% specs   = sec_text("technologies", kind, "specs").presence   || specs_d %>
+        <div class="tech-card flipcard" data-controller="flip" data-action="click->flip#toggle keydown.enter->flip#toggle"
+             tabindex="0" role="button" aria-pressed="false" aria-label="<%= name %>">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="tech-media"><%= sec_image_tag("technologies", kind, :device_table, alt: name) %></span>
+              <div class="tech-copy">
+                <span class="badge"><%= tagline %></span>
+                <h3><%= name %></h3>
+                <p><%= body %></p>
+              </div>
+              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <div class="flip-back">
+              <span class="tech-back-media" style="background-image:url('<%= sec_card_image("technologies", kind, 1, "site/space/device-room.webp") %>')"></span>
+              <div class="tech-copy">
+                <span class="badge"><%= t("technologies.specs_label") %></span>
+                <h3><%= name %></h3>
+                <p><%= specs %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# ---- Closing CTA ---- %>
+<section class="cta-center orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
+  <h2 class="reveal" data-reveal-target="item"><%= sec_text("technologies", "tech_cta", "title").presence || "Ready to experience the NeuSkin difference?" %> <span class="em"><%= sec_text("technologies", "tech_cta", "title_em").presence || "Your transformation begins here." %></span></h2>
+  <p class="reveal d1" data-reveal-target="item"><%= link_to (sec_text("technologies", "tech_cta", "button").presence || "Book Your Consultation"), inquire_path, class: "btn" %></p>
+</section>

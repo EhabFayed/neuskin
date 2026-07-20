@@ -54,3 +54,6 @@ application.register("theme", ThemeController)
 
 import CarouselController from "controllers/carousel_controller"
 application.register("carousel", CarouselController)
+
+import FlipController from "controllers/flip_controller"
+application.register("flip", FlipController)

@@ -65,6 +65,9 @@ Rails.application.routes.draw do
     # Treatment records now, so any dashboard-created slug routes here.
     get "treatments/:outcome", to: "pages#treatment_outcome", as: :treatment_outcome
 
+    # Our Technologies — the device portfolio (July 2026 content deck).
+    get "technologies", to: "pages#technologies", as: :technologies
+
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
 
