@@ -1382,3 +1382,13 @@ html[data-theme="light"] .pull-quote { color: var(--accent-soft); }
 html[data-theme="light"] .tech-card .flip-back { background: var(--card); }
 html[data-theme="light"] .tech-card .tech-media { background: #F7F1EC; }
 html[data-theme="light"] .tech-card h3 { color: var(--text); -webkit-text-stroke: 0; }
+/* compact "The Science of You" band — half the default section rhythm */
+.tech-intro { padding-block: clamp(44px, 6vw, 76px); }
+.tech-intro .sec-head { margin-block-end: 18px; }
+.tech-intro .sec-head .eyebrow { margin-block-end: 14px; }
+.tech-intro .sec-head h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); }
+.tech-intro .tech-intro-lead { font-size: clamp(14px, 1.05vw, 16px); max-width: 62ch; }
+/* front badge reads like the back one — override the light-theme
+   .flip-front .badge remap (#DCC6C9, meant for badges over dark photos):
+   these fronts are plain cards, not photo faces */
+html[data-theme="light"] .tech-card .flip-front .badge { color: var(--accent); }
