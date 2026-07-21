@@ -74,8 +74,9 @@
   </div>
 </section>
 
-<%# ---- A year, in four movements — pinned horizontal scroller ---- %>
-<section class="hscroll" data-controller="hscroll">
+<%# ---- A year, in four movements — pinned horizontal scroller. Big photo
+      quarters (home "Inside NeuSkin" gallery style), shorter scroll run. %>
+<section class="hscroll hscroll--method" data-controller="hscroll">
   <div class="hscroll-pin">
     <div class="hscroll-track" data-hscroll-target="track">
       <div class="hscroll-intro">
@@ -84,8 +85,9 @@
         <p><%= sec_text("maysa_method", "method_timeline", "intro_body").presence || "The NeuSkin Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year." %></p>
         <div class="cue"><%= sec_text("maysa_method", "method_timeline", "cue").presence || "Scroll →" %></div>
       </div>
-      <%# Quarter panels flip: image + quarter front, body on the back. Images
-          come from this section's gallery in the dashboard (upload 4 in order). %>
+      <%# Quarter panels flip: image + quarter front, body on the back —
+          slightly larger than the original cards. Images come from this
+          section's card slots in the dashboard (upload 4 in order). %>
       <% panel_defaults = ["site/space/device-room.webp", "site/space/treatment.webp", "site/space/clinic-4.webp", "site/space/clinic-1.webp"] %>
       <% panel_texts = [["Diagnose", "Baseline captured, the plan written. The slow, invisible work begins."],
                         ["Restore",  "Targeted correction across the four pillars, reviewed against baseline."],
