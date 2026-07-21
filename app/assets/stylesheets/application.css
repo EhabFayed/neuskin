@@ -1395,3 +1395,30 @@ html[data-theme="light"] .tech-card h3 { color: var(--text); -webkit-text-stroke
    .flip-front .badge remap (#DCC6C9, meant for badges over dark photos):
    these fronts are plain cards, not photo faces */
 html[data-theme="light"] .tech-card .flip-front .badge { color: var(--accent); }
+
+/* Journal article hero — half copy, half cover image (the same cover the
+   post's card shows on the Journal grid) */
+.jra-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(30px, 5vw, 70px); align-items: center; margin-block-end: clamp(36px, 5vw, 60px); }
+.jra-hero-media { margin: 0; overflow: hidden; background: var(--card-2); border-radius: 2px; }
+.jra-hero-media img { display: block; width: 100%; height: 100%; min-height: 340px; max-height: 56vh; object-fit: cover; }
+@media (max-width: 860px) {
+  .jra-hero { grid-template-columns: 1fr; gap: 28px; }
+  .jra-hero-media img { min-height: 0; height: 52vw; }
+}
+
+/* Protocol detail pages — motion retouch (July 2026). Hover micro-lift on the
+   stage cards, matching the site's card language; scoped so shared classes on
+   other pages are untouched. */
+.proto-detail .stage { transition: transform .45s var(--ease-soft), border-color .45s var(--ease-soft), background .45s var(--ease-soft); }
+.proto-detail .stage:hover { transform: translateY(-4px); border-color: var(--line-strong); background: var(--card-2); }
+.proto-detail .stage:hover .wk { color: var(--accent-soft); }
+.proto-detail .rows li .n { transition: color .3s var(--ease-soft); }
+.proto-detail .rows li:hover .n { color: var(--accent-soft); }
+html[data-theme="light"] .proto-detail .stage:hover { background: #fff; box-shadow: 0 14px 34px rgba(43,33,37,.08); }
+/* protocol patient-story band — the .section wrapper already pads the block;
+   .pull-band stacked a second full section padding on top of it. One tight
+   rhythm instead. */
+.proto-story { padding-block: clamp(40px, 6vw, 72px); }
+.proto-story .pull-band { padding-block: 0; }
+/* protocol closing CTA — tighter than the default full section rhythm */
+.cta-center--tight { padding-block: clamp(44px, 6vw, 80px); }
