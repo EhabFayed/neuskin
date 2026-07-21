@@ -1,29 +1,15 @@
 /*
  * NeuSkin Clinic — design tokens (dark editorial reskin).
  * Ported from the "NeuSkin Clinic (standalone)" design: a warm near-black
- * ground (#141011) with cream type, mauve / dusty-rose accents, Playfair Display
+ * ground (#141011) with cream type, mauve / dusty-rose accents, Google Sans Flex
  * for display and Hanken Grotesk for interface/body. English, LTR.
  * These values are the single source of truth.
  */
 
 /*
  * Latin webfonts — locally hosted variable woff2 (no Google CDN dependency).
- * Playfair Display: all serif display and text · Hanken Grotesk: interface/body.
+ * Google Sans Flex carries all English type (July 2026 — Playfair Display retired).
  */
-@font-face {
-  font-family: "Playfair Display";
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-  src: url("PlayfairDisplay.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Playfair Display";
-  font-style: italic;
-  font-weight: 400 900;
-  font-display: swap;
-  src: url("PlayfairDisplay-Italic.woff2") format("woff2");
-}
 @font-face {
   font-family: "Hanken Grotesk";
   font-style: normal;
@@ -55,7 +41,7 @@
 /*
  * Arabic webfonts — locally hosted (Google removed Droid Arabic Kufi/Naskh;
  * their Google Fonts URLs 404). unicode-range limits them to Arabic script,
- * so Latin text on Arabic pages still renders in Playfair Display / Hanken Grotesk.
+ * so Latin text on Arabic pages still renders in Google Sans Flex.
  */
 @font-face {
   font-family: "Droid Arabic Kufi";
@@ -126,10 +112,10 @@
   --btn-bg-hover: #ffffff;
   --btn-ink:      #1a1416;
 
-  /* Type families — Playfair Display carries all serif work: the original
+  /* Type families — Google Sans Flex carries the former serif slots too: the
      design's editorial voice, sturdier than a Didone at card sizes */
-  --serif: "Playfair Display", Georgia, serif;
-  --serif-text: "Playfair Display", Georgia, serif;
+  --serif: "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --serif-text: "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
   --sans:  "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
 
   /* Layout */
