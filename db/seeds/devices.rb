@@ -51,4 +51,26 @@ DEVICE_SEEDS.each do |attrs|
   Device.find_or_initialize_by(name: attrs[:name]).update!(attrs)
 end
 
+# Card photos, committed under db/seed_data/devices as <name>-front.* /
+# <name>-back.*. Attach only when the slot is empty — dashboard uploads win.
+images_dir = Rails.root.join("db/seed_data/devices")
+if File.directory?(images_dir)
+  types = { ".jpg" => "image/jpeg", ".jpeg" => "image/jpeg",
+            ".png" => "image/png", ".webp" => "image/webp" }
+  Device.find_each do |device|
+    key = device.name.parameterize
+    { front_image: "front", back_image: "back" }.each do |slot, face|
+      attachment = device.public_send(slot)
+      next if attachment.attached?
+
+      path = Dir[images_dir.join("#{key}-#{face}.*").to_s].first
+      next unless path
+
+      attachment.attach(io: File.open(path),
+                        filename: File.basename(path),
+                        content_type: types.fetch(File.extname(path).downcase, "image/jpeg"))
+    end
+  end
+end
+
 puts "Seeded #{Device.count} devices."
