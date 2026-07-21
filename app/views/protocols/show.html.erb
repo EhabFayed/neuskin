@@ -36,34 +36,34 @@
      ["02", "You'd rather follow one sequenced plan than collect single treatments."],
      ["03", "You value discretion, and a doctor who will tell you what to skip."]
    ] %>
-<section class="section section--surface" data-controller="reveal">
+<section class="section section--surface proto-detail" data-controller="reveal">
   <div class="section-inner split">
     <div class="split-text reveal" data-reveal-target="item">
       <span class="eyebrow">Who it's for</span>
       <p class="lead"><%= p.who_for %></p>
     </div>
-    <div class="split-text reveal d1" data-reveal-target="item">
+    <div class="split-text">
       <ul class="rows">
-        <% signs.each do |n, t| %>
-          <li><span class="n"><%= n %></span><span class="t"><%= t %></span></li>
+        <% signs.each_with_index do |(n, t), i| %>
+          <li data-reveal="left" data-reveal-delay="<%= 120 + i * 140 %>"><span class="n"><%= n %></span><span class="t"><%= t %></span></li>
         <% end %>
       </ul>
-      <p class="sign" style="font-style:italic;margin-top:24px">This protocol is not for everyone — and that is intentional.</p>
+      <p class="sign" style="font-style:italic;margin-top:24px" data-reveal="fade" data-reveal-delay="<%= 120 + signs.size * 140 %>">This protocol is not for everyone — and that is intentional.</p>
     </div>
   </div>
 </section>
 
 <%# 3 · What's inside (staged timeline) ---- %>
-<section class="section" data-controller="reveal">
+<section class="section proto-detail" data-controller="reveal">
   <div class="section-inner">
-    <div class="sec-head reveal" data-reveal-target="item">
-      <span class="eyebrow">What's inside</span>
-      <h2><%= p.scope %></h2>
+    <div class="sec-head">
+      <span class="eyebrow" data-reveal="fade">What's inside</span>
+      <h2 data-reveal="mask" data-reveal-delay="120"><span><%= p.scope %></span></h2>
     </div>
     <% if p.stages.any? %>
-    <div class="stages reveal d1" data-reveal-target="item">
-      <% p.stages.each do |stage| %>
-        <div class="stage">
+    <div class="stages">
+      <% p.stages.each_with_index do |stage, i| %>
+        <div class="stage" data-reveal="up" data-reveal-delay="<%= 160 + i * 150 %>">
           <span class="wk"><%= p.loc(stage, "week") %></span>
           <h3><%= p.loc(stage, "title") %></h3>
           <p><%= p.loc(stage, "body") %></p>
@@ -71,51 +71,62 @@
       <% end %>
     </div>
     <% end %>
-    <p class="note reveal" data-reveal-target="item" style="margin-top:46px">Final protocol scope is confirmed during your NeuSkin Method™ assessment. All treatments are personalised.</p>
+    <p class="note" data-reveal="fade" data-reveal-delay="<%= 160 + p.stages.size * 150 %>" style="margin-top:46px">Final protocol scope is confirmed during your NeuSkin Method™ assessment. All treatments are personalised.</p>
   </div>
 </section>
 
 <%# 4 · What's not included ---- %>
 <% exclusions = p.excludes.to_s.split(/[.;\n]/).map(&:strip).reject(&:blank?) %>
 <% exclusions = [p.excludes.to_s.strip] if exclusions.empty? %>
-<section class="section section--surface" data-controller="reveal">
+<section class="section section--surface proto-detail" data-controller="reveal">
   <div class="section-inner split">
-    <div class="split-text reveal" data-reveal-target="item">
-      <span class="eyebrow">What's not included</span>
-      <h2>Honesty, set early.</h2>
+    <div class="split-text">
+      <span class="eyebrow" data-reveal="fade">What's not included</span>
+      <h2 data-reveal="mask" data-reveal-delay="120"><span>Honesty, set early.</span></h2>
     </div>
-    <div class="split-text reveal d1" data-reveal-target="item">
+    <div class="split-text">
       <ul class="exclude">
-        <% exclusions.each do |item| %>
-          <li><%= item %></li>
+        <% exclusions.each_with_index do |item, i| %>
+          <li data-reveal="left" data-reveal-delay="<%= 160 + i * 130 %>"><%= item %></li>
         <% end %>
       </ul>
     </div>
   </div>
 </section>
 
-<%# 5 · The patient journey (light contrast band, matching the-clinic) ---- %>
-<section class="section section--light" data-controller="reveal">
+<%# 5 · The patient journey — expanding image panels, same component as the
+      home "Three pillars of our promise" (ns-expand: hovered card grows and
+      its photo zooms; first panel holds the expansion at rest). %>
+<section id="patient-journey" class="section section--light" data-controller="reveal">
   <div class="section-inner">
     <div class="sec-head reveal" data-reveal-target="item">
       <span class="eyebrow">The patient journey</span>
     </div>
-    <div class="journey reveal d1" data-reveal-target="item">
-      <div class="step"><span class="n">01</span><h3>Inquire</h3><p>A private message, reviewed personally.</p></div>
-      <div class="step"><span class="n">02</span><h3>Consult</h3><p>A doctor-led diagnostic assessment.</p></div>
-      <div class="step"><span class="n">03</span><h3>Plan</h3><p>A written, sequenced roadmap.</p></div>
-      <div class="step"><span class="n">04</span><h3>Treat</h3><p>Sessions, reviewed each quarter.</p></div>
+    <div class="ns-expand reveal d1" data-reveal-target="item">
+      <% [["01 — Step", "Inquire", "A private message, reviewed personally.",  "site/space/waiting-lounge.webp"],
+          ["02 — Step", "Consult", "A doctor-led diagnostic assessment.",      "site/space/consultation.jpg"],
+          ["03 — Step", "Plan",    "A written, sequenced roadmap.",            "site/space/private-suite.webp"],
+          ["04 — Step", "Treat",   "Sessions, reviewed each quarter.",         "site/space/treatment.webp"]].each do |num, title, body, img| %>
+        <div class="ns-panel">
+          <%= image_tag img, alt: title %>
+          <div class="ns-panel-copy">
+            <span class="num"><%= num %></span>
+            <h3><%= title %></h3>
+            <p><%= body %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
 
 <%# 6 · One consented patient story ---- %>
 <% if p.patient_story.present? && p.patient_story["quote_en"].present? %>
-  <section class="section section--surface" data-controller="reveal">
+  <section class="section section--surface proto-story" data-controller="reveal">
     <div class="section-inner">
-      <div class="pull-band reveal" data-reveal-target="item">
-        <blockquote><%= p.patient_story["quote_en"] %></blockquote>
-        <p class="by">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
+      <div class="pull-band">
+        <blockquote data-reveal="scale"><%= p.patient_story["quote_en"] %></blockquote>
+        <p class="by" data-reveal="fade" data-reveal-delay="260">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
       </div>
     </div>
   </section>
@@ -128,9 +139,9 @@
       <div class="sec-head reveal" data-reveal-target="item">
         <span class="eyebrow">Frequently asked</span>
       </div>
-      <div class="faq-group reveal d1" data-reveal-target="item">
-        <% p.faqs.each do |faq| %>
-          <details class="faq">
+      <div class="faq-group">
+        <% p.faqs.each_with_index do |faq, i| %>
+          <details class="faq" data-reveal="up" data-reveal-delay="<%= 140 + i * 120 %>">
             <summary><%= p.loc(faq, "q") %> <span class="sign">+</span></summary>
             <div class="faq-a"><%= p.loc(faq, "a") %></div>
           </details>
@@ -141,10 +152,11 @@
 <% end %>
 
 <%# 8 · Final CTA + WhatsApp codeword ---- %>
-<section class="cta-center" data-controller="reveal">
-  <h2 class="reveal" data-reveal-target="item">Begin <%= p.name %>.</h2>
-  <p class="reveal d1" data-reveal-target="item">Send the codeword <strong><%= p.codeword %></strong> on WhatsApp for a private inquiry.</p>
-  <p class="reveal d2" data-reveal-target="item">
+<section class="cta-center cta-center--tight orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
+  <h2 data-reveal="mask"><span>Begin <%= p.name %>.</span></h2>
+  <p data-reveal="up" data-reveal-delay="160">Send the codeword <strong><%= p.codeword %></strong> on WhatsApp for a private inquiry.</p>
+  <p data-reveal="up" data-reveal-delay="300">
     <a class="btn" href="<%= whatsapp_url(codeword: p.codeword) %>" target="_blank" rel="noopener">Send "<%= p.codeword %>"</a>
   </p>
 </section>

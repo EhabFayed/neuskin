@@ -1405,3 +1405,20 @@ html[data-theme="light"] .tech-card .flip-front .badge { color: var(--accent); }
   .jra-hero { grid-template-columns: 1fr; gap: 28px; }
   .jra-hero-media img { min-height: 0; height: 52vw; }
 }
+
+/* Protocol detail pages — motion retouch (July 2026). Hover micro-lift on the
+   stage cards, matching the site's card language; scoped so shared classes on
+   other pages are untouched. */
+.proto-detail .stage { transition: transform .45s var(--ease-soft), border-color .45s var(--ease-soft), background .45s var(--ease-soft); }
+.proto-detail .stage:hover { transform: translateY(-4px); border-color: var(--line-strong); background: var(--card-2); }
+.proto-detail .stage:hover .wk { color: var(--accent-soft); }
+.proto-detail .rows li .n { transition: color .3s var(--ease-soft); }
+.proto-detail .rows li:hover .n { color: var(--accent-soft); }
+html[data-theme="light"] .proto-detail .stage:hover { background: #fff; box-shadow: 0 14px 34px rgba(43,33,37,.08); }
+/* protocol patient-story band — the .section wrapper already pads the block;
+   .pull-band stacked a second full section padding on top of it. One tight
+   rhythm instead. */
+.proto-story { padding-block: clamp(40px, 6vw, 72px); }
+.proto-story .pull-band { padding-block: 0; }
+/* protocol closing CTA — tighter than the default full section rhythm */
+.cta-center--tight { padding-block: clamp(44px, 6vw, 80px); }
