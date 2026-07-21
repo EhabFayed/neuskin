@@ -3,24 +3,27 @@
 <% content_for :meta_description, @blog.meta_description.presence || @blog.excerpt %>
 
 <article class="jra" data-controller="reveal">
-  <header class="jra-head">
-    <div class="jr-eyebrow reveal" data-reveal-target="item">
-      <span class="rule"></span>
-      <span class="lbl"><%= @blog.category_label %></span>
-      <span class="lbl faint">· <%= t("journal.read", count: @blog.reading_minutes) %></span>
-    </div>
-    <h1 class="jr-title jra-title" data-reveal="up"><%= @blog.title %></h1>
-    <% if @blog.excerpt.present? %>
-      <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= @blog.excerpt %></p>
-    <% end %>
-    <p class="jra-date" data-reveal="fade" data-reveal-delay="200"><%= @blog.created_at.strftime("%d.%m.%Y") %></p>
-  </header>
-
-  <% if @blog.image.attached? %>
-    <figure class="jra-cover" data-reveal="scale">
-      <%= image_tag @blog.image, alt: @blog.alt.presence || @blog.title %>
+  <%# Split hero — copy on one side, the post's cover on the other. The cover
+      is the SAME image the card shows on the Journal grid (attachment or
+      rotating fallback) until the content team decides articles get their
+      own inside imagery. %>
+  <div class="jra-hero">
+    <header class="jra-head">
+      <div class="jr-eyebrow reveal" data-reveal-target="item">
+        <span class="rule"></span>
+        <span class="lbl"><%= @blog.category_label %></span>
+        <span class="lbl faint">· <%= t("journal.read", count: @blog.reading_minutes) %></span>
+      </div>
+      <h1 class="jr-title jra-title" data-reveal="up"><%= @blog.title %></h1>
+      <% if @blog.excerpt.present? %>
+        <p class="jr-lead" data-reveal="up" data-reveal-delay="120"><%= @blog.excerpt %></p>
+      <% end %>
+      <p class="jra-date" data-reveal="fade" data-reveal-delay="200"><%= @blog.created_at.strftime("%d.%m.%Y") %></p>
+    </header>
+    <figure class="jra-hero-media" data-reveal="scale">
+      <%= image_tag journal_cover_source(@blog), alt: @blog.alt.presence || @blog.title %>
     </figure>
-  <% end %>
+  </div>
 
   <div class="jra-body body-copy">
     <% @blog.contents.each do |block| %>
