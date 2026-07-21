@@ -22,13 +22,13 @@ ar:
       line: "احجزي تجربتك مع نيو سكين."
     protocol:
       label: "خطتك بانتظارك"
-      line: "احجزي تقييمك ودَعي د. ميساء تصمّم بروتوكولك."
+      line: "احجزي تقييمك ودَعي فريقنا الطبي يصمّم بروتوكولك."
     clinic:
       label: "زورينا"
       line: "احجزي زيارتك لعيادتنا في الملقا، الرياض."
     method:
       label: "ابدئي المنهج"
-      line: "احجزي تقييم منهج ميساء — حيث تبدأ كل خطة."
+      line: "احجزي تقييم منهج نيوسكن — حيث تبدأ كل خطة."
     team:
       label: "بين أيدٍ موثوقة"
       line: "احجزي استشارتك مع فريقنا الطبي."
@@ -56,7 +56,7 @@ ar:
     voice_title: "بهدوء، بكلماتهنّ."
     voices:
       - { q: "«لأول مرة شعرت أن أحدًا يخطّط لبشرتي، لا يبيع لي.»", by: "M.A. · Bride's 180 · 2025" }
-      - { q: "«قالت لي د. ميساء \"لا\" أكثر مما قالت \"نعم\". وثقت بها أكثر.»", by: "R.K. · Maysa Method™ · 2025" }
+      - { q: "«قالت لي الطبيبة \"لا\" أكثر مما قالت \"نعم\". وثقت بها أكثر.»", by: "R.K. · NeuSkin Method™ · 2025" }
       - { q: "«بعد الولادة استعدت شعري بهدوء، دون وعود كبيرة.»", by: "N.S. · Reset Crown · 2024" }
     invite_label: "الدعوة"
     invite_line: "لأنكِ تستحقين العناية الأرقى."
@@ -79,20 +79,20 @@ ar:
         - { persona: "unsure",   ar: "لا أعرف بعد", en: "I don't know yet" }
   nav:
     clinic: "العيادة"
-    doctor: "د. ميساء"
+    doctor: "الفريق"
     protocols: "البروتوكولات"
     stories: "قصص"
     journal: "المجلّة"
   cta:
     inquire: "احجزي الآن"
     whatsapp: "احجزي تجربتك عبر واتساب"
-    assessment: "احجزي تقييم منهج ميساء"
+    assessment: "احجزي تقييم منهج نيوسكن"
     private_inquiry: "احجزي تجربتك الفاخرة"
   protocols:
     eyebrow_tagline: "ستة بروتوكولات · فلسفة واحدة · بلا قائمة أسعار"
     hub_title: "ستة بروتوكولات. فلسفة واحدة. بلا قائمة أسعار."
     hub_filter_lead: "أنا هنا لأنّني…"
-    hub_closing: "لا تعرفين من أين تبدئين؟ ابدئي بتقييم منهج ميساء."
+    hub_closing: "لا تعرفين من أين تبدئين؟ ابدئي بتقييم منهج نيوسكن."
     hub_chips:
       all: "اعرضي الكل"
       bride: "أنا عروس"
@@ -113,7 +113,7 @@ ar:
     begin: "الدعوة"
 
     request: "اطلبي خطة %{name}"
-    scope_note: "يُحدَّد النطاق النهائي للبروتوكول خلال تقييم منهج ميساء. جميع العلاجات مُصمّمة فرديًا."
+    scope_note: "يُحدَّد النطاق النهائي للبروتوكول خلال تقييم منهج نيوسكن. جميع العلاجات مُصمّمة فرديًا."
     codeword_html: "أرسلي %{word} على واتساب لاستفسار خاص."
   legal:
     eyebrow: "القانونية والامتثال"
@@ -214,15 +214,15 @@ ar:
     discretion_ar: "ما يُقال في هذه العيادة، يبقى فيها. لا أسماء، لا صور، لا استثناءات دون موافقتك الصريحة. الخصوصية ليست خدمة نقدّمها — إنها شرطٌ نعمل به."
     discretion_en: "What is said in this clinic stays in it. No names, no images, no exceptions without your explicit consent. Privacy is not a service we offer — it is a condition we work under."
   method:
-    brand_html: "منهج ميساء<span class=\"tm\">™</span>"
-    eyebrow: "منهج ميساء"
+    brand_html: "منهج نيوسكن<span class=\"tm\">™</span>"
+    eyebrow: "منهج نيوسكن"
 
     statement_ar: "البشرة بيانات. اقرأيها، ثم عالجيها."
     statement_en: "Skin is data. Read it, then treat it."
     principle_label: "المبدأ"
 
     principle:
-      - "تبدأ معظم العيادات بعلاجٍ ثم تبحث عن وجهٍ تطبّقه عليه. منهج ميساء يبدأ بالعكس. يعامل البشرة كنظامٍ يمكن قراءته — يُقاس ويُرسَم ويُفهَم — قبل اتخاذ أي قرار."
+      - "تبدأ معظم العيادات بعلاجٍ ثم تبحث عن وجهٍ تطبّقه عليه. منهج نيوسكن يبدأ بالعكس. يعامل البشرة كنظامٍ يمكن قراءته — يُقاس ويُرسَم ويُفهَم — قبل اتخاذ أي قرار."
       - "من تلك القراءة تأتي خطة، لا عملية بيع. المنهج ليس إجراءً تحجزينه؛ بل هو الانضباط الذي يقرّر أي الإجراءات يستحقّ الحجز، وبأي ترتيب، وعلى أي مدى. إنه الفرق بين نتيجة تبدو «مصنوعة» ونتيجة تبدو أنتِ."
     pillars_label: "الركائز الأربع"
 
@@ -267,17 +267,17 @@ ar:
     intro_ar: "ليست مدوّنة، بل مجلّة هادئة — صوت الطبيبة، وما يجري داخل العيادة، وطقوس الموسم."
     intro_en: "Not a blog — a quiet magazine. The doctor's voice, what happens inside the clinic, and the rituals of the season."
     categories:
-      - "بقلم د. ميساء · Dr. Maysa Writes"
+      - "من العيادة · Clinic Notes"
       - "داخل العيادة · Inside the Clinic"
       - "طقوس · Ritual"
       - "من المريضات · Notes from Patients"
-    placeholder_note: "نص مؤقّت. ستُنشر مقالات المجلّة الحقيقية — بلغتين، بقلم د. ميساء ومساهمين معروفين — قبل الإطلاق."
+    placeholder_note: "نص مؤقّت. ستُنشر مقالات المجلّة الحقيقية — بلغتين، من العيادة ومساهمين معروفين — قبل الإطلاق."
     articles:
-      - { category: "بقلم د. ميساء", title_ar: "ما الذي يستحقّ أموالك؟", title_en: "What is worth your money?", byline: "د. ميساء", reading_time: "٦ دقائق" }
+      - { category: "من العيادة", title_ar: "ما الذي يستحقّ أموالك؟", title_en: "What is worth your money?", byline: "نيوسكن", reading_time: "٦ دقائق" }
       - { category: "داخل العيادة", title_ar: "جولة في غرفة الأجهزة", title_en: "A walk through the device room", byline: "نيو سكين", reading_time: "٤ دقائق" }
-      - { category: "طقوس", title_ar: "العناية بالبشرة في رمضان", title_en: "Skincare through Ramadan", byline: "د. ميساء", reading_time: "٥ دقائق" }
-      - { category: "بقلم د. ميساء", title_ar: "لماذا أقول لا أحيانًا", title_en: "Why I sometimes say no", byline: "د. ميساء", reading_time: "٧ دقائق" }
-      - { category: "طقوس", title_ar: "توهّج ما قبل العيد", title_en: "The pre-Eid glow", byline: "د. ميساء", reading_time: "٤ دقائق" }
+      - { category: "طقوس", title_ar: "العناية بالبشرة في رمضان", title_en: "Skincare through Ramadan", byline: "نيوسكن", reading_time: "٥ دقائق" }
+      - { category: "من العيادة", title_ar: "لماذا أقول لا أحيانًا", title_en: "Why I sometimes say no", byline: "نيوسكن", reading_time: "٧ دقائق" }
+      - { category: "طقوس", title_ar: "توهّج ما قبل العيد", title_en: "The pre-Eid glow", byline: "نيوسكن", reading_time: "٤ دقائق" }
       - { category: "داخل العيادة", title_ar: "كيف نقيس النتائج", title_en: "How we measure results", byline: "نيو سكين", reading_time: "٥ دقائق" }
   stories:
     eyebrow: "قصص المريضات"
@@ -299,7 +299,7 @@ ar:
     title_en: "The questions that come before a decision."
     search_ph: "ابحثي في الأسئلة…"
 
-    no_results: "لا يوجد سؤال مطابق. أرسليه لنا بسرية وستجيبك د. ميساء."
+    no_results: "لا يوجد سؤال مطابق. أرسليه لنا بسرية وسيجيبك فريقنا الطبي."
     cta_label: "ما زال لديك سؤال؟"
 
     cta_ar: "سؤال لم نُجب عنه؟ اسألينا بسرية."
@@ -311,7 +311,7 @@ ar:
         items:
           - { q_ar: "أين تقع العيادة وما ساعات العمل؟", q_en: "Where are you, and what are your hours?", a_ar: "نحن في حي الملقا بالرياض. نعمل من السبت إلى الخميس، ١٠:٠٠–٢٢:٠٠، والجمعة مغلق.", a_en: "We're in Al Malqa, Riyadh, open Saturday to Thursday, 10:00–22:00, closed Friday." }
           - { q_ar: "كيف أبدأ؟", q_en: "How do I begin?", a_ar: "برسالة واتساب خاصة أو نموذج الاستفسار. تراجعه مسؤولة علاقات المريضات وتعاودين التواصل خلال ساعتين في أوقات العمل.", a_en: "With a private WhatsApp message or the inquiry form. Our patient relations lead reviews it and replies within two hours during business hours." }
-          - { q_ar: "من سيعالجني؟", q_en: "Who will treat me?", a_ar: "تقود د. ميساء كل خطة وتُجري التقييم الأول بنفسها. ينفّذ الجلسات فريق طبي مرخّص تحت إشرافها.", a_en: "Dr. Maysa leads every plan and conducts the first assessment personally. A licensed medical team carries out sessions under her supervision." }
+          - { q_ar: "من سيعالجني؟", q_en: "Who will treat me?", a_ar: "تقود مديرتنا الطبية كل خطة وتُجري التقييم الأول بنفسها. ينفّذ الجلسات فريق طبي مرخّص تحت إشرافها.", a_en: "Our medical director leads every plan and conducts the first assessment personally. A licensed medical team carries out sessions under her supervision." }
           - { q_ar: "هل أحتاج موعدًا مسبقًا؟", q_en: "Do I need an appointment?", a_ar: "نعم، نعمل بالمواعيد فقط حفاظًا على الخصوصية والهدوء. لا زيارات دون ترتيب مسبق.", a_en: "Yes — we work by appointment only, to keep things private and unhurried. No walk-ins." }
           - { q_ar: "ماذا أتوقّع في زيارتي الأولى؟", q_en: "What should I expect on my first visit?", a_ar: "تقييم تشخيصي لمدة ٦٠ دقيقة، دون أي علاج. نقرأ بشرتك ونضع خطة مكتوبة تحتفظين بها.", a_en: "A 60-minute diagnostic assessment, with no treatment performed. We read your skin and write a plan you keep." }
       treatments:
@@ -328,10 +328,10 @@ ar:
         title_en: "About protocols"
         items:
           - { q_ar: "كيف تعمل البروتوكولات؟", q_en: "How do protocols work?", a_ar: "كل بروتوكول خطة متسلسلة لمدّة محدّدة، لا إجراءً منفردًا. نعالج بالترتيب ونراجع كل ثلاثة أشهر.", a_en: "Each protocol is a sequenced plan over a set period, not a single procedure. We treat in order and review quarterly." }
-          - { q_ar: "هل يمكنني تغيير البروتوكول؟", q_en: "Can I switch protocols?", a_ar: "نعم. تستجيب الخطة لبشرتك؛ إن تغيّرت احتياجاتك، نعدّلها مع د. ميساء.", a_en: "Yes. The plan responds to your skin; if your needs change, we adjust it with Dr. Maysa." }
+          - { q_ar: "هل يمكنني تغيير البروتوكول؟", q_en: "Can I switch protocols?", a_ar: "نعم. تستجيب الخطة لبشرتك؛ إن تغيّرت احتياجاتك، نعدّلها مع طبيبتك.", a_en: "Yes. The plan responds to your skin; if your needs change, we adjust it with your doctor." }
           - { q_ar: "ماذا لو لم أرَ نتائج؟", q_en: "What if I don't see results?", a_ar: "لأننا نقيس كل ثلاثة أشهر، نلاحظ مبكرًا ونعدّل. النتائج موثّقة، لا موعودة.", a_en: "Because we measure quarterly, we notice early and adjust. Results are documented, not promised." }
-          - { q_ar: "من يقرّر الخطة؟", q_en: "Who decides the plan?", a_ar: "د. ميساء، بناءً على تشخيصك ومع موافقتك. لا شيء يُجرى دون أن تفهميه وتختاريه.", a_en: "Dr. Maysa, based on your diagnosis and with your consent. Nothing happens without your understanding and choice." }
-          - { q_ar: "هل أحتاج عضوية للبدء؟", q_en: "Do I need a membership to begin?", a_ar: "لا. يبدأ الجميع بتقييم منهج ميساء. العضوية للعناية المستمرة بعد إكمال بروتوكول.", a_en: "No. Everyone begins with the Maysa Method™ assessment. Membership is for ongoing maintenance after a protocol." }
+          - { q_ar: "من يقرّر الخطة؟", q_en: "Who decides the plan?", a_ar: "مديرتنا الطبية، بناءً على تشخيصك ومع موافقتك. لا شيء يُجرى دون أن تفهميه وتختاريه.", a_en: "Our medical director, based on your diagnosis and with your consent. Nothing happens without your understanding and choice." }
+          - { q_ar: "هل أحتاج عضوية للبدء؟", q_en: "Do I need a membership to begin?", a_ar: "لا. يبدأ الجميع بتقييم منهج نيوسكن. العضوية للعناية المستمرة بعد إكمال بروتوكول.", a_en: "No. Everyone begins with the NeuSkin Method™ assessment. Membership is for ongoing maintenance after a protocol." }
       privacy:
         title_ar: "عن الخصوصية"
         title_en: "About privacy"
@@ -421,13 +421,12 @@ ar:
 
     title_ar: "أيدٍ قليلة، مدرَّبة جيدًا."
     title_en: "Few hands, well-trained."
-    intro_ar: "تقود د. ميساء كل خطة، وينفّذها فريق صغير مختار — كل عضو بترخيصه ومجال تركيزه."
-    intro_en: "Dr. Maysa leads every plan; a small, chosen team carries it out — each with their own licence and focus."
+    intro_ar: "تقود مديرتنا الطبية كل خطة، وينفّذها فريق صغير مختار — كل عضو بترخيصه ومجال تركيزه."
+    intro_en: "Our medical director leads every plan; a small, chosen team carries it out — each with their own licence and focus."
     focus_label: "التركيز"
 
     members:
-      - { name_ar: "د. ميساء", name_en: "Dr. Maysa", title_ar: "المؤسِّسة · استشارية الجلدية", title_en: "Founder · Consultant Dermatologist", certs: "استشارية أمراض جلدية · زمالة في الطب التجميلي والتجديدي", focus: "التشخيص، منهج ميساء، تجديد البشرة.", bio: "أسّست د. ميساء نيو سكين لتعامل البشرة كنظامٍ يُقرأ قبل أن يُعالَج. تُجري كل تقييم أول بنفسها، وتكتب خطة الاثني عشر شهرًا التي تحتفظ بها كل مريضة." }
-      - { name_ar: "د. ليان [مؤقّت]", name_en: "Dr. Layan [placeholder]", title_ar: "طبيبة جلدية", title_en: "Dermatologist", certs: "دكتوراه في الطب · البورد السعودي للجلدية", focus: "التصبّغ، حبّ الشباب، ترميم الحاجز.", bio: "نص مؤقّت. تعمل د. ليان إلى جانب د. ميساء على بروتوكولات البشرة، مع تركيز خاص على التصبّغ وصحّة الحاجز. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
+      - { name_ar: "د. ليان [مؤقّت]", name_en: "Dr. Layan [placeholder]", title_ar: "طبيبة جلدية", title_en: "Dermatologist", certs: "دكتوراه في الطب · البورد السعودي للجلدية", focus: "التصبّغ، حبّ الشباب، ترميم الحاجز.", bio: "نص مؤقّت. تعمل د. ليان إلى جانب مديرتنا الطبية على بروتوكولات البشرة، مع تركيز خاص على التصبّغ وصحّة الحاجز. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "نورة [مؤقّت]", name_en: "Noura [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "أخصائية تجميل مرخّصة", focus: "الأجهزة، العناية بالوجه، بروتوكولات الجسم.", bio: "نص مؤقّت. تنفّذ نورة بروتوكولات الأجهزة والجسم تحت إشراف طبي. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "سارة [مؤقّت]", name_en: "Sara [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "أخصائية تجميل مرخّصة", focus: "الشعر وفروة الرأس، دعم الحقن.", bio: "نص مؤقّت. تركّز سارة على بروتوكولات الشعر وفروة الرأس وتدعم جلسات الحقن. يُؤكَّد الاسم والصورة والسيرة قبل الإطلاق." }
       - { name_ar: "ريم [مؤقّت]", name_en: "Reem [placeholder]", title_ar: "مسؤولة علاقات المريضات", title_en: "Patient Relations Lead", certs: "علاقات المريضات", focus: "نقطة تواصلك الأولى، المواعيد، السرية.", bio: "نص مؤقّت. تراجع ريم كل استفسار، وتنسّق المواعيد، وهي الخيط الهادئ الذي يُبقي تجربة كل مريضة خاصة وغير مستعجلة. يُؤكَّد الاسم والصورة." }
@@ -474,10 +473,10 @@ ar:
     press: []
     cta_label: "الدعوة"
 
-    cta_ar: "استشارة خاصة مع د. ميساء."
-    cta_en: "A private consultation with Dr. Maysa."
+    cta_ar: "استشارة خاصة مع فريقنا الطبي."
+    cta_en: "A private consultation with our medical team."
     cta_button: "اطلبي استشارة خاصة"
-    cta_note: "تُجري د. ميساء جميع الاستشارات الأولى بنفسها."
+    cta_note: "تُجري مديرتنا الطبية جميع الاستشارات الأولى بنفسها."
   whatsapp:
     prefill: "مرحبًا نيو سكين، أودّ تقديم استفسار خاص."
   inquire:
@@ -487,7 +486,7 @@ ar:
     steps:
       choose: { title: "اختاري طريقتك", body: "راسلينا على واتساب، أو املئي النموذج الخاص أدناه — كلاهما يصل مباشرةً إلى مسؤولة علاقات المريضات." }
       tell: { title: "أخبرينا قليلًا", body: "اسمك، ورقمك، وما الذي يأتي بك. دقيقة واحدة لا أكثر." }
-      confirm: { title: "نؤكّد الموعد", body: "نردّ خلال ساعتين في أوقات العمل لتحديد موعدك مع د. ميساء." }
+      confirm: { title: "نؤكّد الموعد", body: "نردّ خلال ساعتين في أوقات العمل لتحديد موعدك مع طبيبتك." }
     path_a_lead: "الطريقة المفضّلة — احجزي وتحدّثي معنا مباشرة وبسرية."
     label: "تواصلي واستفسري"
 
@@ -497,7 +496,7 @@ ar:
     submit: "أرسلي استفساري"
     next_label: "ماذا يحدث بعد ذلك"
 
-    privacy: "لا يطّلع على استفسارك سوى مسؤولة علاقات المريضات والدكتورة ميساء."
+    privacy: "لا يطّلع على استفسارك سوى مسؤولة علاقات المريضات وطبيبتك المعالجة."
     lang: { ar: "العربية", en: "الإنجليزية · English" }
     fields:
       name: "الاسم"
@@ -524,12 +523,12 @@ ar:
     next:
       1: "يصل استفسارك مباشرةً إلى مسؤولة علاقات المريضات."
       2: "نردّ خلال ساعتين في أوقات العمل (السبت–الخميس، ١٠:٠٠–٢٢:٠٠)."
-      3: "إن كان مناسبًا، تُجري د. ميساء بنفسها تقييم منهج ميساء."
+      3: "إن كان مناسبًا، تُجري مديرتنا الطبية بنفسها تقييم منهج نيوسكن."
   journey:
     label: "كيف نعمل"
 
     inquire: { title_ar: "استفسري", title_en: "Inquire", body: "رسالة واتساب خاصة أو نموذج، تُراجعه مسؤولة علاقات المريضات." }
-    consult: { title_ar: "نستشير", title_en: "Consult", body: "تقييم منهج ميساء لمدة ٦٠ دقيقة، بقيادة الطبيبة، تشخيصي، دون أي علاج." }
+    consult: { title_ar: "نستشير", title_en: "Consult", body: "تقييم منهج نيوسكن لمدة ٦٠ دقيقة، بقيادة الطبيبة، تشخيصي، دون أي علاج." }
     plan:    { title_ar: "نخطّط", title_en: "Plan", body: "خطة مكتوبة لاثني عشر شهرًا — بشرة وشعر وجسم ونمط حياة، لكِ أن تحتفظي بها." }
     treat:   { title_ar: "نعالج", title_en: "Treat", body: "جلسات متسلسلة، تُراجَع كل ثلاثة أشهر، وتُعدَّل وفق استجابة بشرتك." }
   footer:
@@ -538,7 +537,7 @@ ar:
     contact: "تواصلي"
     about: "عن العيادة"
     team: "الفريق الطبي"
-    method: "منهج ميساء"
+    method: "منهج نيوسكن"
     bridal: "كونسيرج العرائس"
     private_care: "العناية الخاصة"
 
@@ -560,7 +559,7 @@ ar:
   layout:
     nav:
       the_clinic: "العيادة"
-      dr_maysa: "د. ميساء"
+      dr_maysa: "الفريق"
       protocols: "البروتوكولات"
       treatments: "العلاجات"
       technologies: "التقنيات"
@@ -570,9 +569,9 @@ ar:
       blurb: "ذكاءٌ جلدي بقيادة طبيبة، للنساء، في هدوء حي الملقا بالرياض."
       clinic_title: "العيادة"
       about: "عن العيادة"
-      dr_maysa: "د. ميساء"
+      dr_maysa: "الفريق"
       team: "الفريق الطبي"
-      method: "منهج ميساء™"
+      method: "منهج نيوسكن™"
       protocols_title: "البروتوكولات"
       all_protocols: "كل البروتوكولات"
       treatments: "العلاجات"
@@ -613,7 +612,7 @@ ar:
     empty: "التدوينات الجديدة قيد الكتابة — عودي قريبًا."
     back: "كل التدوينات ←"
     categories:
-      maysa_writes: "بقلم د. ميساء"
+      clinic_notes: "من العيادة"
       inside_clinic: "من داخل العيادة"
       ritual: "طقوس"
       patient_notes: "من دفاتر المريضات"

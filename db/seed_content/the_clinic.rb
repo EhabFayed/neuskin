@@ -35,13 +35,13 @@ SeedContent.register("the_clinic", [
         en: "NeuSkin began with a simple belief: skin care should not be a list of treatments sold from a menu. We chose the opposite — a quiet room, a doctor who truly examines, and a plan crafted for one person at a time.",
         ar: "ولدت \"نيوسكن\" من فكرةٍ بسيطة: العنايةُ بالبشرة ليست مجرد قائمةِ خدماتٍ تُعرضُ للبيع. اخترنا النقيض؛ غرفاً هادئة، طبيبةً تُعنى بالتفاصيل، وخططاً علاجيةً تُصاغُ خصيصاً لكلِّ حالةٍ على حِدة." },
       { key: "body_2", label: "Body paragraph 2", content_type: "richtext",
-        en: "So we built a clinic around diagnosis, not display. Every journey begins with the Maysa Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
-        ar: "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"ميسا\" (Maysa Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً." },
+        en: "So we built a clinic around diagnosis, not display. Every journey begins with the NeuSkin Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
+        ar: "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"نيوسكن\" (NeuSkin Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً." },
       { key: "body_3", label: "Body paragraph 3", content_type: "richtext",
         en: "We are not the loudest clinic in the city. We intend to be the one you keep.",
         ar: "قد لا نكونُ العيادةَ الأكثر صخباً في المدينة، لكننا نطمحُ لنكونَ العيادةَ التي تثقينَ بها دوماً." },
       { key: "sign", label: "Signature",
-        en: "— Dr. Maysa, Founder", ar: "— د. ميسا، المؤسِسة" }
+        en: "— The NeuSkin Team", ar: "— فريق نيوسكن" }
     ]
   },
   {
@@ -81,8 +81,8 @@ SeedContent.register("the_clinic", [
       { key: "step_2_title", label: "Step 2 title",
         en: "Consult", ar: "الاستشارة" },
       { key: "step_2_body",  label: "Step 2 body",
-        en: "A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
-        ar: "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"ميسا\" (Maysa Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية." },
+        en: "A 60-minute NeuSkin Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
+        ar: "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"نيوسكن\" (NeuSkin Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية." },
       { key: "step_3_n",     label: "Step 3 number",
         en: "03", ar: "" },
       { key: "step_3_title", label: "Step 3 title",

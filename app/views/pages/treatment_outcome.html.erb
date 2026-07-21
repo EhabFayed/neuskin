@@ -41,13 +41,13 @@
   </section>
 <% end %>
 
-<%# ---- 4 · Dr. Maysa's view + closing CTA ---- %>
+<%# ---- 4 · The NeuSkin view + closing CTA ---- %>
 <% if @treatment.view.present? %>
   <section class="pull-band orn-host" data-controller="reveal">
     <%= render "shared/orn", variant: "petal", pos: "tl", size: 220 %>
-    <span class="eyebrow center no-rule reveal" data-reveal-target="item" style="margin-block-end:34px">Dr. Maysa's view</span>
+    <span class="eyebrow center no-rule reveal" data-reveal-target="item" style="margin-block-end:34px">The NeuSkin view</span>
     <blockquote class="reveal d1" data-reveal-target="item">“<%= @treatment.view %>”</blockquote>
-    <p class="by reveal d2" data-reveal-target="item">— Maysa</p>
+    <p class="by reveal d2" data-reveal-target="item">— NeuSkin</p>
     <p class="reveal d3" data-reveal-target="item" style="margin-block-start:50px">
       <%= link_to "Begin with a private inquiry", inquire_path, class: "btn btn--ghost" %>
     </p>

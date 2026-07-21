@@ -30,7 +30,7 @@ SeedContent.register("bridal", [
       { key: "title_em", label: "Title line 3 (emphasis)",
         en: "Confidence, quiet.", ar: "" },
       { key: "lead", label: "Lead paragraph", content_type: "richtext",
-        en: "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.",
+        en: "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by our medical team.",
         ar: "" },
       { key: "date_label", label: "Wedding-date input label",
         en: "Tell us your wedding date", ar: "" }

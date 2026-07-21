@@ -72,7 +72,7 @@ SeedContent.register("home", [
           en: "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
           ar: "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً." },
         { key: "sign",    label: "Signature",
-          en: "— Maysa", ar: "— ميسا" },
+          en: "", ar: "" },
         { key: "link",    label: "Link text",
           en: "Read her philosophy →", ar: "" }
       ]
@@ -158,7 +158,7 @@ SeedContent.register("home", [
         { key: "cta",      label: "Button label",
           en: "Secure your private consultation", ar: "احجزي استشارتكِ الخاصة" },
         { key: "sign",     label: "Signature",
-          en: "— Dr. Maysa", ar: "— د. ميسا" }
+          en: "— The NeuSkin Team", ar: "— فريق نيوسكن" }
       ]
     }
   ])

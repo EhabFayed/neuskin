@@ -43,8 +43,8 @@
     <%# Slide carousel (Seline-style): one principle per full-width slide —
         image + number/title/body glide sideways, autoplay with arrows/dots.
         Texts and per-card images stay dashboard-editable as before. %>
-    <% pillar_defaults = ["site/people/maysa.webp", "site/space/entrance.webp", "site/space/device-room.webp"] %>
-    <% pillars = [[1, "01 — Principle", "Doctor-led",  "Every plan is built by Dr. Maysa — never assembled from a treatment menu. One doctor, reading your skin and writing your year."],
+    <% pillar_defaults = ["site/space/consultation.jpg", "site/space/entrance.webp", "site/space/device-room.webp"] %>
+    <% pillars = [[1, "01 — Principle", "Doctor-led",  "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second."],
                   [2, "02 — Principle", "Discreet",    "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it."],
                   [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]] %>
     <div class="ns-expand reveal d1" data-reveal-target="item">
@@ -70,8 +70,7 @@
   <%= render "shared/orn", variant: "petal", pos: "br" %>
   <div class="section-inner split media-left">
     <div class="split-media reveal" data-reveal-target="item">
-      <%= sec_image_tag("home", "home_founder", :founder_portrait, alt: "Dr. Maysa Al-Rashid") %>
-      <div class="cap"><span class="nm">Dr. Maysa Al-Rashid</span><span class="rl">Founder · Medical Director</span></div>
+      <%= sec_image_tag("home", "home_founder", :lounge, alt: "Inside the NeuSkin clinic") %>
     </div>
     <div class="split-text reveal d1" data-reveal-target="item">
       <span class="eyebrow"><%= sec_text("home", "home_founder", "eyebrow").presence || "Meet the founder" %></span>
@@ -79,7 +78,7 @@
         <p><%= sec_text("home", "home_founder", "body_1").presence || "I opened NeuSkin because I was tired of watching women sold ten treatments to fill a calendar. Skin is data — it can be read, and once read, it can be treated honestly." %></p>
         <p><%= sec_text("home", "home_founder", "body_2").presence || "Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed." %></p>
       </div>
-      <p class="sign"><%= sec_text("home", "home_founder", "sign").presence || "— Maysa" %></p>
+      <p class="sign"><%= sec_text("home", "home_founder", "sign") %></p>
       <%# "Read her philosophy" link hidden with the Dr. Maysa page (July 2026). %>
       <% if false %>
         <p style="margin-top:20px"><%= link_to (sec_text("home", "home_founder", "link").presence || "Read her philosophy →"), dr_maysa_path, class: "arrowlink" %></p>
@@ -89,7 +88,7 @@
 </section>
 
 <%# ---- Six protocols — row list + sticky swapping image (design §isHome) ---- %>
-<% proto_imgs = { "maysa-method" => "site/protocols/maysa-method.jpg", "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
+<% proto_imgs = { "neuskin-method" => "site/protocols/neuskin-method.jpg", "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
                   "brides-180" => "site/protocols/bridal.jpg", "reset-crown" => "site/protocols/hair.jpg",
                   "8-week-sculpt" => "site/protocols/sculpt.jpg", "skin-insider" => "site/protocols/insider.jpg" } %>
 <% protocols = Protocol.all.to_a %>
@@ -199,6 +198,6 @@
     <h2><%= sec_text("home", "home_cta", "title").presence || "There is no rush here." %> <span class="em"><%= sec_text("home", "home_cta", "title_em").presence || "Begin with a quiet conversation." %></span></h2>
     <p><%= sec_text("home", "home_cta", "body").presence || "A private message, reviewed personally by the clinic — Saturday to Thursday, 10:00–22:00." %></p>
     <p><%= link_to (sec_text("home", "home_cta", "cta").presence || "Begin a private inquiry"), inquire_path, class: "btn" %></p>
-    <p class="sign"><%= sec_text("home", "home_cta", "sign").presence || "— Dr. Maysa" %></p>
+    <p class="sign"><%= sec_text("home", "home_cta", "sign").presence || "— The NeuSkin Team" %></p>
   </div>
 </section>

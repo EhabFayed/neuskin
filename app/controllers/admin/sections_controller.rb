@@ -11,7 +11,7 @@ module Admin
       "home"            => "pages/home",
       "dr_maysa"        => "pages/dr_maysa",
       "the_clinic"      => "pages/the_clinic",
-      "maysa_method"    => "pages/maysa_method",
+      "maysa_method"    => "pages/neuskin_method",
       "the_team"        => "pages/the_team",
       "treatments"      => "pages/treatments",
       "private_care"    => "pages/private_care",

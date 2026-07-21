@@ -6,7 +6,7 @@ require "rails_helper"
 RSpec.describe "Page resilience", type: :request do
   PUBLIC_PATHS = %w[
     / /the-clinic /journal /stories /faq /privacy /medical-disclaimer /terms
-    /the-team /maysa-method /technologies /treatments /treatments/skin
+    /the-team /neuskin-method /technologies /treatments /treatments/skin
     /treatments/hair /treatments/body /treatments/injectables /treatments/devices
     /private-care /protocols /inquire /bridal-concierge
   ].freeze

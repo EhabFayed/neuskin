@@ -5,7 +5,7 @@ class Blog < ApplicationRecord
   extend Enumerize
 
   # Journal categories — the editorial strands from the design's filter row.
-  enumerize :category, in: %i[maysa_writes inside_clinic ritual patient_notes],
+  enumerize :category, in: %i[clinic_notes inside_clinic ritual patient_notes],
                        default: :inside_clinic, scope: true
 
   has_many :contents, -> { order(:position) },

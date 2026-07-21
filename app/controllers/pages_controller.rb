@@ -21,7 +21,9 @@ class PagesController < ApplicationController
     @faq_groups = Faq.grouped
   end
 
-  def maysa_method
+  # The NeuSkin Method™ philosophy page (renamed from Maysa Method™; its CMS
+  # sections keep the historical maysa_method page slug).
+  def neuskin_method
   end
 
   # Treatments — browse by outcome (design §08).

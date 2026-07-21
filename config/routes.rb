@@ -58,8 +58,10 @@ Rails.application.routes.draw do
     # The Medical Team (§04) — the credibility layer.
     get "the-team", to: "pages#the_team", as: :the_team
 
-    # The Maysa Method™ — the philosophy page (§05), not the protocol page.
-    get "maysa-method", to: "pages#maysa_method", as: :maysa_method
+    # The NeuSkin Method™ — the philosophy page (§05), not the protocol page.
+    # (Renamed from "The Maysa Method™", July 2026; the maysa_method CMS page
+    # slug is kept so existing Section rows keep working.)
+    get "neuskin-method", to: "pages#neuskin_method", as: :neuskin_method
 
     # Treatments — by outcome (design §08). A curated outcome list.
     get "treatments", to: "pages#treatments", as: :treatments

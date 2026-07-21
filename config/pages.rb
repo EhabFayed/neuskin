@@ -6,7 +6,7 @@ module SitePages
     # Dr. Maysa page hidden (July 2026 content deck) — entry removed so the
     # dashboard doesn't offer it. Restore alongside the route in routes.rb.
     { slug: "the_clinic",     name: "The Clinic" },
-    { slug: "maysa_method",   name: "The Maysa Method" },
+    { slug: "maysa_method",   name: "The NeuSkin Method" },
     { slug: "the_team",       name: "The Medical Team" },
     { slug: "treatments",     name: "Treatments" },
     { slug: "technologies",   name: "Our Technologies" },

@@ -43,9 +43,9 @@ SeedContent.register("protocols_index", [
       { key: "title", label: "Title (before emphasis)",
         en: "Begin with the", ar: "" },
       { key: "title_em", label: "Title (emphasis)",
-        en: "Maysa Method™", ar: "" },
+        en: "NeuSkin Method™", ar: "" },
       { key: "button", label: "Button label",
-        en: "Begin with the Maysa Method™", ar: "" }
+        en: "Begin with the NeuSkin Method™", ar: "" }
     ]
   }
 ])

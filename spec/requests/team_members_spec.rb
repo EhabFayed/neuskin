@@ -14,10 +14,10 @@ RSpec.describe "Team members", type: :request do
   describe "public page" do
     it "renders members from the DB in position order" do
       make_member
-      make_member(name_en: "Dr. Maysa Al-Rashid", name_ar: "د. ميساء الراشد", position: 1)
+      make_member(name_en: "Dr. Amal Al-Rashid", name_ar: "د. أمل الراشد", position: 1)
       get "/the-team"
       expect(response.body).to include("Dr. Lina Haddad")
-      expect(response.body.index("Dr. Maysa Al-Rashid")).to be < response.body.index("Dr. Lina Haddad")
+      expect(response.body.index("Dr. Amal Al-Rashid")).to be < response.body.index("Dr. Lina Haddad")
     end
 
     it "renders Arabic fields under /ar" do

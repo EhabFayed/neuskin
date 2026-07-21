@@ -51,6 +51,6 @@
 <section class="cta-center orn-host" data-controller="reveal">
   <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
   <p class="reveal" data-reveal-target="item" style="font-family:var(--serif);font-style:italic"><%= sec_text("treatments", "treatments_cta", "kicker").presence || "Not sure where to start?" %></p>
-  <h2 class="reveal d1" data-reveal-target="item"><%= sec_text("treatments", "treatments_cta", "title").presence || "Begin with the" %> <span class="em"><%= sec_text("treatments", "treatments_cta", "title_em").presence || "Maysa Method™" %></span></h2>
-  <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("treatments", "treatments_cta", "button").presence || "Request the assessment"), maysa_method_path, class: "btn" %></p>
+  <h2 class="reveal d1" data-reveal-target="item"><%= sec_text("treatments", "treatments_cta", "title").presence || "Begin with the" %> <span class="em"><%= sec_text("treatments", "treatments_cta", "title_em").presence || "NeuSkin Method™" %></span></h2>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("treatments", "treatments_cta", "button").presence || "Request the assessment"), neuskin_method_path, class: "btn" %></p>
 </section>

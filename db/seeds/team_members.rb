@@ -1,16 +1,8 @@
 # The four launch team members — the values that previously lived in the
 # the_team/team_members section keys, as records. Idempotent by name_en.
+# The founder entry was removed with the site-wide Maysa replacement
+# (July 2026) — the team now leads with the practising physicians.
 TEAM_SEEDS = [
-  {
-    position: 1,
-    name_en: "Dr. Maysa Al-Rashid", name_ar: "د. ميساء الراشد",
-    role_en: "Founder · Medical Director", role_ar: "المؤسِّسة · المديرة الطبية",
-    cred_en: "MBBS · Dermatology · Aesthetic Medicine Fellowship",
-    cred_ar: "بكالوريوس الطب والجراحة · الأمراض الجلدية · زمالة طب التجميل",
-    focus_en: "Diagnosis & the 12-month plan", focus_ar: "التشخيص وخطة الاثني عشر شهرًا",
-    bio_en: "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
-    bio_ar: "كل مريضة تبدأ مع ميساء وتنتهي معها. تقرأ خط الأساس، وتكتب الخطة، وتوقّع كل مراجعة ربع سنوية بنفسها — الثابت الوحيد عبر الرحلة كلها."
-  },
   {
     position: 2,
     name_en: "Dr. Lina Haddad", name_ar: "د. لينا حدّاد",

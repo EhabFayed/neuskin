@@ -42,8 +42,8 @@ RSpec.describe "Stories and protocol admin", type: :request do
 
   describe "protocols admin" do
     let!(:protocol) do
-      Protocol.create!(slug: "maysa-method", position: 1, trademark: true,
-                       name_en: "The Maysa Method", name_ar: "منهج ميساء",
+      Protocol.create!(slug: "neuskin-method", position: 1, trademark: true,
+                       name_en: "The NeuSkin Method", name_ar: "منهج نيوسكن",
                        promise_en: "Where every plan begins.", promise_ar: "حيث تبدأ كل خطة.")
     end
 
@@ -51,7 +51,7 @@ RSpec.describe "Stories and protocol admin", type: :request do
 
     it "lists the protocols" do
       get "/admin/protocols"
-      expect(response.body).to include("The Maysa Method")
+      expect(response.body).to include("The NeuSkin Method")
     end
 
     it "updates protocol copy" do

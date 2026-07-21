@@ -264,8 +264,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "عيادة البشرة بقيادة الطبيبة للنساء في الرياض — حيث كل خطة تُقرأ وتُكتب وتُوقَّع بيد د. ميساء.",
-        "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.",
+        "value_ar": "عيادة البشرة بقيادة الطبيبة للنساء في الرياض — حيث كل خطة تُقرأ وتُكتب وتُوقَّع بيد فريقنا الطبي.",
+        "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by our medical team.",
         "content_type": "richtext",
         "position": 4
       },
@@ -1042,7 +1042,7 @@
         "label": "Q2 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally.",
+        "value_en": "Send a private inquiry — on WhatsApp or through the form. Our medical team or patient relations lead reviews every message personally.",
         "content_type": "richtext",
         "position": 4
       },
@@ -1096,7 +1096,7 @@
         "label": "Q5 question",
         "hint": null,
         "value_ar": "",
-        "value_en": "Will I see Dr. Maysa herself?",
+        "value_en": "Who will conduct my assessment?",
         "content_type": "text",
         "position": 10
       },
@@ -1105,7 +1105,7 @@
         "label": "Q5 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction.",
+        "value_en": "Your initial assessment is conducted personally by our medical director. Ongoing care may involve the wider medical team, always under their direction.",
         "content_type": "richtext",
         "position": 11
       },
@@ -1150,7 +1150,7 @@
         "label": "Q7 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely.",
+        "value_en": "Your inquiry is seen only by our patient relations lead and your treating doctor. We are PDPL compliant and store data securely.",
         "content_type": "richtext",
         "position": 16
       },
@@ -1370,8 +1370,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— د. ميسا",
-        "value_en": "— Dr. Maysa",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 4
       }
@@ -1384,7 +1384,7 @@
     "position": 2,
     "settings": {},
     "items": [],
-    "image": "home__home_founder__maysa-founder.webp",
+    "image": "home__home_founder__about-neuskin-clinic.jpg",
     "gallery": [],
     "cards": {},
     "contents": [
@@ -1419,8 +1419,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— ميسا",
-        "value_en": "— Maysa",
+        "value_ar": "",
+        "value_en": "",
         "content_type": "text",
         "position": 3
       },
@@ -2008,8 +2008,8 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "منهج ميساء™.",
-        "value_en": "Maysa Method™.",
+        "value_ar": "منهج نيوسكن™.",
+        "value_en": "NeuSkin Method™.",
         "content_type": "text",
         "position": 1
       },
@@ -2294,8 +2294,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "منهج ميساء™ ليس علاجًا، بل طريقة في اتخاذ القرار. قبل أي توصية، نقرأ البشرة والشعر والجسم كمنظومة واحدة مترابطة، وندَع تلك القراءة — لا قائمة العلاجات — تقرّر ما يأتي بعدها.",
-        "value_en": "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
+        "value_ar": "منهج نيوسكن™ ليس علاجًا، بل طريقة في اتخاذ القرار. قبل أي توصية، نقرأ البشرة والشعر والجسم كمنظومة واحدة مترابطة، وندَع تلك القراءة — لا قائمة العلاجات — تقرّر ما يأتي بعدها.",
+        "value_en": "The NeuSkin Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
         "content_type": "richtext",
         "position": 1
       }
@@ -2343,8 +2343,8 @@
         "key": "intro_body",
         "label": "Intro paragraph",
         "hint": null,
-        "value_ar": "يتكشّف منهج ميساء™ عبر أربعة أرباع — يُقاس ويُراجَع ويُعدَّل. مرّري عبر السنة.",
-        "value_en": "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
+        "value_ar": "يتكشّف منهج نيوسكن™ عبر أربعة أرباع — يُقاس ويُراجَع ويُعدَّل. مرّري عبر السنة.",
+        "value_en": "The NeuSkin Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
         "content_type": "text",
         "position": 3
       },
@@ -2518,8 +2518,8 @@
         "key": "quote_cite",
         "label": "Quote citation",
         "hint": null,
-        "value_ar": "— د. ميساء",
-        "value_en": "— Dr. Maysa",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 2
       },
@@ -2666,8 +2666,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "علاقة دائمة مع د. ميساء — تُرتَّب بخصوصية، وتُحفَظ بسرّية، وتُقدَّم فقط لمن ندعوها.",
-        "value_en": "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.",
+        "value_ar": "علاقة دائمة مع فريقنا الطبي — تُرتَّب بخصوصية، وتُحفَظ بسرّية، وتُقدَّم فقط لمن ندعوها.",
+        "value_en": "A standing relationship with your doctor — arranged privately, kept discreetly, and offered only to those we invite.",
         "content_type": "richtext",
         "position": 4
       }
@@ -2697,8 +2697,8 @@
         "key": "item_1",
         "label": "Include item 1",
         "hint": null,
-        "value_ar": "علاقة دائمة مع د. ميساء، لا دورُ انتظار.",
-        "value_en": "A standing relationship with Dr. Maysa, not a queue.",
+        "value_ar": "علاقة دائمة مع فريقنا الطبي، لا دورُ انتظار.",
+        "value_en": "A standing relationship with your doctor, not a queue.",
         "content_type": "text",
         "position": 1
       },
@@ -2863,8 +2863,8 @@
         "key": "tier_3_line",
         "label": "Tier 3 line",
         "hint": null,
-        "value_ar": "من د. ميساء، شخصيًا.",
-        "value_en": "By Dr. Maysa, personally.",
+        "value_ar": "من فريقنا الطبي، شخصيًا.",
+        "value_en": "By our medical director, personally.",
         "content_type": "text",
         "position": 11
       },
@@ -2912,8 +2912,8 @@
         "key": "title_em",
         "label": "Title (emphasis)",
         "hint": null,
-        "value_ar": "منهج ميساء™",
-        "value_en": "Maysa Method™",
+        "value_ar": "منهج نيوسكن™",
+        "value_en": "NeuSkin Method™",
         "content_type": "text",
         "position": 2
       },
@@ -2921,8 +2921,8 @@
         "key": "button",
         "label": "Button label",
         "hint": null,
-        "value_ar": "ابدئي بمنهج ميساء™",
-        "value_en": "Begin with the Maysa Method™",
+        "value_ar": "ابدئي بمنهج نيوسكن™",
+        "value_en": "Begin with the NeuSkin Method™",
         "content_type": "text",
         "position": 3
       }
@@ -3618,8 +3618,8 @@
         "key": "step_2_body",
         "label": "Step 2 body",
         "hint": null,
-        "value_ar": "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"ميسا\" (Maysa Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية.",
-        "value_en": "A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
+        "value_ar": "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"نيوسكن\" (NeuSkin Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية.",
+        "value_en": "A 60-minute NeuSkin Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
         "content_type": "text",
         "position": 7
       },
@@ -3730,8 +3730,8 @@
         "key": "body_2",
         "label": "Body paragraph 2",
         "hint": null,
-        "value_ar": "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"ميسا\" (Maysa Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً.",
-        "value_en": "So we built a clinic around diagnosis, not display. Every journey begins with the Maysa Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
+        "value_ar": "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"نيوسكن\" (NeuSkin Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً.",
+        "value_en": "So we built a clinic around diagnosis, not display. Every journey begins with the NeuSkin Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
         "content_type": "richtext",
         "position": 4
       },
@@ -3748,8 +3748,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— د. ميسا، المؤسِسة",
-        "value_en": "— Dr. Maysa, Founder",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 6
       }
@@ -3870,8 +3870,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "فريق صغير مُعتمَد — تقوده د. ميساء، ومنظَّم بحسب الأقدمية، واختير لضبط النفس بقدر ما اختير للمهارة.",
-        "value_en": "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
+        "value_ar": "فريق صغير مُعتمَد — تقوده فريقنا الطبي، ومنظَّم بحسب الأقدمية، واختير لضبط النفس بقدر ما اختير للمهارة.",
+        "value_en": "A small, credentialed team — led by our medical director, organised by seniority, and chosen for restraint as much as skill.",
         "content_type": "richtext",
         "position": 3
       }
@@ -3893,7 +3893,7 @@
         "label": "Member 1 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Dr. Maysa Al-Rashid",
+        "value_en": "Medical Director",
         "content_type": "text",
         "position": 0
       },
@@ -3929,7 +3929,7 @@
         "label": "Member 1 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+        "value_en": "Every patient begins and ends with the medical director, who reads the baseline, writes the plan, and signs off each quarterly review — the one constant across the whole journey.",
         "content_type": "richtext",
         "position": 4
       },
@@ -4104,7 +4104,7 @@
         "label": "Title emphasis span",
         "hint": null,
         "value_ar": "",
-        "value_en": "Maysa Method™",
+        "value_en": "NeuSkin Method™",
         "content_type": "text",
         "position": 2
       },
