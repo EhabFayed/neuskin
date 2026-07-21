@@ -42,7 +42,7 @@ SeedContent.register("treatments", [
       { key: "title",    label: "Title (before emphasis)",
         en: "Begin with the", ar: "" },
       { key: "title_em", label: "Title emphasis span",
-        en: "Maysa Method™", ar: "" },
+        en: "NeuSkin Method™", ar: "" },
       { key: "button",   label: "Button label",
         en: "Request the assessment", ar: "" }
     ]

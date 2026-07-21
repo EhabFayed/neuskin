@@ -1,4 +1,5 @@
-<%# The Maysa Method™ — the philosophy page. NeuSkin Clinic (standalone) design port. English / LTR. %>
+<%# The NeuSkin Method™ — the philosophy page (renamed from Maysa Method™,
+    July 2026; internal maysa_method keys kept). %>
 
 <%# ---- Hero (stacked: eyebrow → h2 → h1) ---- %>
 <%# Atmospheric hero — the background image is the method_hero section image in
@@ -17,7 +18,7 @@
   <%= render "shared/orn", variant: "rings", pos: "tr", size: 280 %>
   <div class="section-inner split" style="align-items:start">
     <h2 data-reveal="up" style="font-size:clamp(1.6rem,2.6vw,2.4rem); color:var(--text-bright)"><%= sec_text("maysa_method", "method_principle", "title").presence || "The principle" %></h2>
-    <p class="lead" data-reveal="up" data-reveal-delay="120"><%= sec_text("maysa_method", "method_principle", "lead").presence || "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next." %></p>
+    <p class="lead" data-reveal="up" data-reveal-delay="120"><%= sec_text("maysa_method", "method_principle", "lead").presence || "The NeuSkin Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next." %></p>
   </div>
 </section>
 
@@ -80,7 +81,7 @@
       <div class="hscroll-intro">
         <span class="eyebrow"><%= sec_text("maysa_method", "method_timeline", "eyebrow").presence || "The 12-month timeline" %></span>
         <h2><%= sec_text("maysa_method", "method_timeline", "title_1").presence || "A year, in" %> <span class="em"><%= sec_text("maysa_method", "method_timeline", "title_em").presence || "four movements." %></span></h2>
-        <p><%= sec_text("maysa_method", "method_timeline", "intro_body").presence || "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year." %></p>
+        <p><%= sec_text("maysa_method", "method_timeline", "intro_body").presence || "The NeuSkin Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year." %></p>
         <div class="cue"><%= sec_text("maysa_method", "method_timeline", "cue").presence || "Scroll →" %></div>
       </div>
       <%# Quarter panels flip: image + quarter front, body on the back. Images
@@ -122,7 +123,7 @@
 <%# ---- Closing CTA ---- %>
 <section class="cta-center orn-host" data-controller="reveal">
   <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
-  <h2 class="reveal" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "title_1").presence || "Begin with the" %> <span class="em"><%= sec_text("maysa_method", "method_cta", "title_em").presence || "Maysa Method™." %></span></h2>
+  <h2 class="reveal" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "title_1").presence || "Begin with the" %> <span class="em"><%= sec_text("maysa_method", "method_cta", "title_em").presence || "NeuSkin Method™." %></span></h2>
   <p class="reveal d1" data-reveal-target="item"><%= sec_text("maysa_method", "method_cta", "body").presence || "One reading, one written plan, reviewed every quarter. It begins with a private inquiry." %></p>
   <p class="reveal d2" data-reveal-target="item"><%= link_to (sec_text("maysa_method", "method_cta", "cta_label").presence || "Request the Assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn" %></p>
 </section>

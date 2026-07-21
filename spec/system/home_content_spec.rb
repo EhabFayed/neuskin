@@ -13,7 +13,7 @@ RSpec.describe "Home page content", type: :system do
   it "falls back to the hardcoded literal when no section exists" do
     visit root_path(locale: "en")
     expect(page).to have_content(
-      "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa."
+      "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy."
     )
   end
 end

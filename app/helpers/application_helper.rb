@@ -10,10 +10,13 @@ module ApplicationHelper
   # this maps each to an asset on disk so every page references the same files.
   NS_IMAGES = {
     # Real clinic photography (content team batch, July 2026) — WebP.
-    portrait_natural: "site/people/maysa.webp",
-    doctor_coat:      "site/people/maysa.webp",
+    # Person-neutral since the July 2026 Maysa replacement — clinic
+    # photography instead of founder portraits. maysa_hero remains only for
+    # the hidden dr_maysa page.
+    portrait_natural: "site/space/consultation.jpg",
+    doctor_coat:      "site/space/treatment.webp",
     maysa_hero:       "site/people/maysa-hero.webp",
-    founder_portrait: "site/people/maysa-founder.webp",
+    founder_portrait: "site/space/waiting-lounge.webp",
     hero_clinic:      "site/hero-clinic.webp",
     clinic_hero:      "site/space/clinic-hero.webp",
     treatment_room:   "site/space/treatment.webp",

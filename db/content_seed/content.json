@@ -264,8 +264,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "عيادة البشرة بقيادة الطبيبة للنساء في الرياض — حيث كل خطة تُقرأ وتُكتب وتُوقَّع بيد د. ميساء.",
-        "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by Dr. Maysa.",
+        "value_ar": "عيادة البشرة بقيادة الطبيبة للنساء في الرياض — حيث كل خطة تُقرأ وتُكتب وتُوقَّع بيد فريقنا الطبي.",
+        "value_en": "The doctor-led skin clinic for women in Riyadh — where every plan is read, written, and signed by our medical team.",
         "content_type": "richtext",
         "position": 4
       },
@@ -1042,7 +1042,7 @@
         "label": "Q2 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Send a private inquiry — on WhatsApp or through the form. Dr. Maysa or our patient relations lead reviews every message personally.",
+        "value_en": "Send a private inquiry — on WhatsApp or through the form. Our medical team or patient relations lead reviews every message personally.",
         "content_type": "richtext",
         "position": 4
       },
@@ -1096,7 +1096,7 @@
         "label": "Q5 question",
         "hint": null,
         "value_ar": "",
-        "value_en": "Will I see Dr. Maysa herself?",
+        "value_en": "Who will conduct my assessment?",
         "content_type": "text",
         "position": 10
       },
@@ -1105,7 +1105,7 @@
         "label": "Q5 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Your initial assessment is conducted personally by Dr. Maysa. Ongoing care may involve the wider medical team, always under her direction.",
+        "value_en": "Your initial assessment is conducted personally by our medical director. Ongoing care may involve the wider medical team, always under their direction.",
         "content_type": "richtext",
         "position": 11
       },
@@ -1150,7 +1150,7 @@
         "label": "Q7 answer",
         "hint": null,
         "value_ar": "",
-        "value_en": "Your inquiry is seen only by our patient relations lead and Dr. Maysa. We are PDPL compliant and store data securely.",
+        "value_en": "Your inquiry is seen only by our patient relations lead and your treating doctor. We are PDPL compliant and store data securely.",
         "content_type": "richtext",
         "position": 16
       },
@@ -1370,8 +1370,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— د. ميسا",
-        "value_en": "— Dr. Maysa",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 4
       }
@@ -1384,7 +1384,7 @@
     "position": 2,
     "settings": {},
     "items": [],
-    "image": "home__home_founder__maysa-founder.webp",
+    "image": "home__home_founder__about-neuskin-clinic.jpg",
     "gallery": [],
     "cards": {},
     "contents": [
@@ -1419,8 +1419,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— ميسا",
-        "value_en": "— Maysa",
+        "value_ar": "",
+        "value_en": "",
         "content_type": "text",
         "position": 3
       },
@@ -2008,8 +2008,8 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "منهج ميساء™.",
-        "value_en": "Maysa Method™.",
+        "value_ar": "منهج نيوسكن™.",
+        "value_en": "NeuSkin Method™.",
         "content_type": "text",
         "position": 1
       },
@@ -2294,8 +2294,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "منهج ميساء™ ليس علاجًا، بل طريقة في اتخاذ القرار. قبل أي توصية، نقرأ البشرة والشعر والجسم كمنظومة واحدة مترابطة، وندَع تلك القراءة — لا قائمة العلاجات — تقرّر ما يأتي بعدها.",
-        "value_en": "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
+        "value_ar": "منهج نيوسكن™ ليس علاجًا، بل طريقة في اتخاذ القرار. قبل أي توصية، نقرأ البشرة والشعر والجسم كمنظومة واحدة مترابطة، وندَع تلك القراءة — لا قائمة العلاجات — تقرّر ما يأتي بعدها.",
+        "value_en": "The NeuSkin Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
         "content_type": "richtext",
         "position": 1
       }
@@ -2343,8 +2343,8 @@
         "key": "intro_body",
         "label": "Intro paragraph",
         "hint": null,
-        "value_ar": "يتكشّف منهج ميساء™ عبر أربعة أرباع — يُقاس ويُراجَع ويُعدَّل. مرّري عبر السنة.",
-        "value_en": "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
+        "value_ar": "يتكشّف منهج نيوسكن™ عبر أربعة أرباع — يُقاس ويُراجَع ويُعدَّل. مرّري عبر السنة.",
+        "value_en": "The NeuSkin Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.",
         "content_type": "text",
         "position": 3
       },
@@ -2518,8 +2518,8 @@
         "key": "quote_cite",
         "label": "Quote citation",
         "hint": null,
-        "value_ar": "— د. ميساء",
-        "value_en": "— Dr. Maysa",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 2
       },
@@ -2666,8 +2666,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "علاقة دائمة مع د. ميساء — تُرتَّب بخصوصية، وتُحفَظ بسرّية، وتُقدَّم فقط لمن ندعوها.",
-        "value_en": "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.",
+        "value_ar": "علاقة دائمة مع فريقنا الطبي — تُرتَّب بخصوصية، وتُحفَظ بسرّية، وتُقدَّم فقط لمن ندعوها.",
+        "value_en": "A standing relationship with your doctor — arranged privately, kept discreetly, and offered only to those we invite.",
         "content_type": "richtext",
         "position": 4
       }
@@ -2697,8 +2697,8 @@
         "key": "item_1",
         "label": "Include item 1",
         "hint": null,
-        "value_ar": "علاقة دائمة مع د. ميساء، لا دورُ انتظار.",
-        "value_en": "A standing relationship with Dr. Maysa, not a queue.",
+        "value_ar": "علاقة دائمة مع فريقنا الطبي، لا دورُ انتظار.",
+        "value_en": "A standing relationship with your doctor, not a queue.",
         "content_type": "text",
         "position": 1
       },
@@ -2863,8 +2863,8 @@
         "key": "tier_3_line",
         "label": "Tier 3 line",
         "hint": null,
-        "value_ar": "من د. ميساء، شخصيًا.",
-        "value_en": "By Dr. Maysa, personally.",
+        "value_ar": "من فريقنا الطبي، شخصيًا.",
+        "value_en": "By our medical director, personally.",
         "content_type": "text",
         "position": 11
       },
@@ -2912,8 +2912,8 @@
         "key": "title_em",
         "label": "Title (emphasis)",
         "hint": null,
-        "value_ar": "منهج ميساء™",
-        "value_en": "Maysa Method™",
+        "value_ar": "منهج نيوسكن™",
+        "value_en": "NeuSkin Method™",
         "content_type": "text",
         "position": 2
       },
@@ -2921,8 +2921,8 @@
         "key": "button",
         "label": "Button label",
         "hint": null,
-        "value_ar": "ابدئي بمنهج ميساء™",
-        "value_en": "Begin with the Maysa Method™",
+        "value_ar": "ابدئي بمنهج نيوسكن™",
+        "value_en": "Begin with the NeuSkin Method™",
         "content_type": "text",
         "position": 3
       }
@@ -3233,363 +3233,6 @@
         "value_en": "Book Your Consultation",
         "content_type": "text",
         "position": 2
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_1",
-    "label": "Device 1 — EMTONE",
-    "position": 2,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_1__harmonious-rejuvenation-jpeg.jpeg",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_1__card1__tech-page-after-harmonious.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "EMTONE",
-        "value_en": "EMTONE",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "نضارة متناغمة",
-        "value_en": "Harmonious Rejuvenation",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "بدمج الطاقة الحرارية والميكانيكية، يعيد Emtone للبشرة تماسكها بنعومة، ويعالج مظهر السيلوليت، لتشعري ببشرة أكثر نعومة وثقة.",
-        "value_en": "By blending thermal and mechanical energy, Emtone gently restores your skin's firmness and addresses cellulite, helping you feel smoother and more confident in your skin.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "يستخدم طاقة الضغط المستهدفة مع الترددات الراديوية. فعال للبطن، الذراعين، الفخذين، وجانبي الخصر والأرداف. نتائج مثالية خلال 4-6 جلسات. أكثر فعالية بنسبة 64% في إنتاج الإيلاستين و59% في إنتاج الكولاجين.",
-        "value_en": "Uses targeted pressure energy combined with radiofrequency. Effective for abdomen, arms, thighs, love handles, and buttocks. Optimal results in 4–6 sessions. 64% more effective for elastin and 59% for collagen production.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_2",
-    "label": "Device 2 — EMFACE",
-    "position": 3,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_2__needle-free-lift-jpeg.jpeg",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_2__card1__needle-free-lift-2nd-image.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "EMFACE",
-        "value_en": "EMFACE",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "رفع وشد بلا إبر",
-        "value_en": "Needle-Free Lift",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "يعمل هذا النظام الذكي على رفع وشد وتنعيم الوجه في آنٍ واحد، ليقلل التجاعيد ويحسن تناسق ملامحك بدون الحاجة لأي إبر.",
-        "value_en": "This intelligent system simultaneously lifts, tightens, and tones the face, reducing wrinkles while improving facial symmetry without the need for needles.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "يجمع بين تقنيات HIFEM والترددات الراديوية. يقلل التجاعيد بنسبة 37% ويزيد الشد بنسبة 23%. يعالج الجبهة، الحواجب، الخدين، وخط الفك. لا يتطلب فترة نقاهة.",
-        "value_en": "Combines HIFEM and radiofrequency technologies. Reduces wrinkles by 37% and provides 23% more lift. Treats forehead, eyebrows, cheeks, and jawline. No downtime.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_3",
-    "label": "Device 3 — EMSCULPT",
-    "position": 4,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_3__sculpted-strength-jpg.jpg",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_3__card1__sculpted-strength-image.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "EMSCULPT",
-        "value_en": "EMSCULPT",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "قوام منحوت",
-        "value_en": "Sculpted Strength",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "انحتي قوامك بشكل طبيعي. يعمل هذا النظام مع عضلاتك لتعزيز رسمها وتحديد ملامح الجسم، ليمنحك المظهر المصقول والرياضي الذي يكمل أسلوب حياتك.",
-        "value_en": "Sculpt your body's natural shape. This system works with your muscles to define and contour, providing a refined, athletic look that perfectly complements your lifestyle.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "يجمع بين التسخين بالترددات الراديوية وتقنية HIFEM في جلسة واحدة. يستهدف البطن، الأرداف، الذراعين، الفخذين، وعضلات الساق. جلسات مدتها 30 دقيقة بدون فترة نقاهة.",
-        "value_en": "Combines RF heating and HIFEM in a single treatment. Targets abdomen, buttocks, arms, thighs, and calves. 30-minute sessions with zero downtime.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_4",
-    "label": "Device 4 — POTENZA",
-    "position": 5,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_4__advanced-skin-vitality-jpg.jpg",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_4__card1__advanced-skin-vitality-img.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "POTENZA",
-        "value_en": "POTENZA",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "تجديد البشرة المتطور",
-        "value_en": "Advanced Skin Vitality",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "أعيدي الحياة لبشرتك. هذا العلاج الدقيق يشد البشرة ويمنحها إشراقاً، ليساعدك على الحصول على ملمس ناعم، ممتلئ، وأكثر شباباً.",
-        "value_en": "Bringing your skin back to life. This sophisticated microneedling treatment firms and brightens, helping you achieve a smoother, fuller, and more youthful complexion.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "وخز بالإبر الدقيقة مع الترددات الراديوية وتقنية Tiger Tip. مصمم لشد البشرة، تقليل الخطوط الدقيقة، تصغير المسام، وتقليل الندبات في الوجه والجسم.",
-        "value_en": "Microneedling with radiofrequency using Tiger Tip technology. Designed to tighten skin, reduce fine lines, shrink pores, and diminish scars on face and body.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_5",
-    "label": "Device 5 — ELITE IQ",
-    "position": 6,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_5__precision-care-jpg.jpg",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_5__card1__precision-care-image.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "ELITE IQ",
-        "value_en": "ELITE IQ",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "دقة العناية",
-        "value_en": "Precision Care",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "حيث تلتقي المرونة بالأمان. جهاز ذو طول موجي مزدوج مصمم لتلبية احتياجات بشرتك الخاصة، من تقليل الاحمرار إلى إزالة الشعر، لضمان نتائج صُممت خصيصاً لك.",
-        "value_en": "Versatility meets safety. A dual-wavelength platform designed to address your skin's specific needs, from reducing redness to effective hair removal, ensuring results tailored to you.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "طول موجي مزدوج (ND YAG + ALEX). يتميز بـ Skintel™، وهو أول قارئ للميلانين في العالم. عرض نبض قابل للتعديل وأحجام بقع متنوعة لضمان سلامة المريض.",
-        "value_en": "Dual-wavelength (ND YAG + ALEX). Features Skintel™, the world's first Melanin Reader™. Adjustable pulse width and various spot sizes for patient safety.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_6",
-    "label": "Device 6 — REVLITE",
-    "position": 7,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_6__luminous-renewal-png.png",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_6__card1__luminous-renewal-image.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "REVLITE",
-        "value_en": "REVLITE",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "إشراقة وتجديد",
-        "value_en": "Luminous Renewal",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "علاج طبي متعدد الأغراض لتحسين ملمس البشرة. يعمل على إشراقها، تصغير المسام، وتقليل العيوب للحصول على بشرة أكثر صفاءً ونضارة.",
-        "value_en": "A multi-purpose medical treatment to improve skin texture. It works to brighten, refine pores, and diminish imperfections for a clearer, fairer complexion.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "تقنية الليزر Q-Switched. يقلل الزيوت، يعزز الكولاجين، ويقلل التصبغات وندبات حب الشباب والخطوط الدقيقة.",
-        "value_en": "Q-Switched laser technology. Reduces oiliness, promotes collagen, minimizes pigmentation, acne scars, and fine lines.",
-        "content_type": "text",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "technologies",
-    "kind": "tech_device_7",
-    "label": "Device 7 — EMERALD",
-    "position": 8,
-    "settings": {},
-    "items": [],
-    "image": "technologies__tech_device_7__natural-fat-loss-webp.webp",
-    "gallery": [],
-    "cards": {
-      "1": "technologies__tech_device_7__card1__natural-fat-loss-image.jpg"
-    },
-    "contents": [
-      {
-        "key": "name",
-        "label": "Device name (not translated)",
-        "hint": null,
-        "value_ar": "EMERALD",
-        "value_en": "EMERALD",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "tagline",
-        "label": "Tagline",
-        "hint": null,
-        "value_ar": "فقدان الدهون الطبيعي",
-        "value_en": "Natural Fat Loss",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "body",
-        "label": "Card front — what it does for the patient",
-        "hint": null,
-        "value_ar": "يعمل بتناغم تام مع جسمك. هذا العلاج غير الجراحي يدعم معدل الأيض الطبيعي لتقليل الدهون العنيدة، مما يجعله بديلاً لطيفاً للطرق التقليدية.",
-        "value_en": "Working in harmony with your body. This non-invasive treatment supports your natural metabolism to reduce stubborn fat, offering a gentle alternative to traditional methods.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "specs",
-        "label": "Card back — technical specs",
-        "hint": null,
-        "value_ar": "علاج معتمد من FDA لفقدان الدهون غير الجراحي. الجهاز الوحيد المعتمد لمن لديهم مؤشر كتلة جسم يصل إلى 40. يستهدف محيط الجسم بالكامل.",
-        "value_en": "FDA-cleared, non-invasive fat loss. Only device cleared for up to 40 BMI. Targets overall body circumference.",
-        "content_type": "text",
-        "position": 3
       }
     ]
   },
@@ -3975,8 +3618,8 @@
         "key": "step_2_body",
         "label": "Step 2 body",
         "hint": null,
-        "value_ar": "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"ميسا\" (Maysa Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية.",
-        "value_en": "A 60-minute Maysa Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
+        "value_ar": "جلسة تقييم شاملة لمدة 60 دقيقة وفق منهجية \"نيوسكن\" (NeuSkin Method™). بقيادةٍ طبيةٍ دقيقة، مخصصة للتشخيص فقط دون إجراء أيّ جلساتٍ علاجية.",
+        "value_en": "A 60-minute NeuSkin Method™ assessment. Doctor-led, diagnostic. No treatment performed.",
         "content_type": "text",
         "position": 7
       },
@@ -4087,8 +3730,8 @@
         "key": "body_2",
         "label": "Body paragraph 2",
         "hint": null,
-        "value_ar": "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"ميسا\" (Maysa Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً.",
-        "value_en": "So we built a clinic around diagnosis, not display. Every journey begins with the Maysa Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
+        "value_ar": "أسسنا عيادةً جوهرها التشخيصُ لا العرض. تبدأ رحلتكِ بمنهجية \"نيوسكن\" (NeuSkin Method™) — قراءةٌ شاملةٌ للبشرةِ والشعرِ والجسم — قبل أن نقترحَ أيَّ إجراء. اخترنا \"حي الملقا\" لخصوصيته، وخصصنا اهتمامنا للمرأة؛ لأنها تستحقُّ من يُنصتُ إليها، لا من يبيعها وعوداً.",
+        "value_en": "So we built a clinic around diagnosis, not display. Every journey begins with the NeuSkin Method™ — a full reading of skin, hair, and body — before any recommendation. We chose Al Malqa for its quiet discretion, and we focus on women because they deserve to be heard, not just sold to.",
         "content_type": "richtext",
         "position": 4
       },
@@ -4105,8 +3748,8 @@
         "key": "sign",
         "label": "Signature",
         "hint": null,
-        "value_ar": "— د. ميسا، المؤسِسة",
-        "value_en": "— Dr. Maysa, Founder",
+        "value_ar": "— فريق نيوسكن",
+        "value_en": "— The NeuSkin Team",
         "content_type": "text",
         "position": 6
       }
@@ -4227,8 +3870,8 @@
         "key": "lead",
         "label": "Lead paragraph",
         "hint": null,
-        "value_ar": "فريق صغير مُعتمَد — تقوده د. ميساء، ومنظَّم بحسب الأقدمية، واختير لضبط النفس بقدر ما اختير للمهارة.",
-        "value_en": "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
+        "value_ar": "فريق صغير مُعتمَد — تقوده فريقنا الطبي، ومنظَّم بحسب الأقدمية، واختير لضبط النفس بقدر ما اختير للمهارة.",
+        "value_en": "A small, credentialed team — led by our medical director, organised by seniority, and chosen for restraint as much as skill.",
         "content_type": "richtext",
         "position": 3
       }
@@ -4250,7 +3893,7 @@
         "label": "Member 1 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Dr. Maysa Al-Rashid",
+        "value_en": "Medical Director",
         "content_type": "text",
         "position": 0
       },
@@ -4286,7 +3929,7 @@
         "label": "Member 1 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+        "value_en": "Every patient begins and ends with the medical director, who reads the baseline, writes the plan, and signs off each quarterly review — the one constant across the whole journey.",
         "content_type": "richtext",
         "position": 4
       },
@@ -4461,7 +4104,7 @@
         "label": "Title emphasis span",
         "hint": null,
         "value_ar": "",
-        "value_en": "Maysa Method™",
+        "value_en": "NeuSkin Method™",
         "content_type": "text",
         "position": 2
       },

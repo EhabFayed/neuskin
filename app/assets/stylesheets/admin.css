@@ -2,7 +2,7 @@
    NeuSkin Studio — admin design system
    Ported from the "NeuSkin Studio — Content Back-office" design.
    Palette: dark mood (#141011) + mauve accent (#9f8488),
-   Playfair Display (display) + Hanken Grotesk (sans).
+   Google Sans Flex throughout (July 2026 — Playfair retired).
    ============================================================ */
 
 :root {
@@ -65,9 +65,9 @@ body.admin {
   width: 34px; height: 34px; border-radius: 8px; flex: none;
   display: grid; place-items: center;
   background: radial-gradient(circle at 30% 25%, #b79aa0, #6d565b);
-   font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 17px;
+   font-family: 'Google Sans Flex', system-ui, sans-serif; color: #fff; font-size: 17px;
 }
-.ns-brand .name { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; letter-spacing: .03em; color: var(--ns-text-hi); line-height: 1.25; }
+.ns-brand .name { font-family: 'Google Sans Flex', system-ui, sans-serif; font-size: 18px; letter-spacing: .03em; color: var(--ns-text-hi); line-height: 1.25; }
 .ns-brand .kicker { display:block; font-size: 7.5px; letter-spacing: .34em; text-transform: uppercase; color: var(--ns-accent); }
 
 .ns-navgroup { padding: 20px 0 4px; }
@@ -126,7 +126,7 @@ body.admin {
 }
 .ns-header .titles { flex: 1; min-width: 0; }
 .ns-header .crumb { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--ns-accent); margin-bottom: 6px; }
-.ns-header h1 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 300; font-size: 29px; line-height: 1; color: var(--ns-text-hi); }
+.ns-header h1 { margin: 0; font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 300; font-size: 29px; line-height: 1; color: var(--ns-text-hi); }
 .ns-header .actions { display: flex; align-items: center; gap: 12px; flex: none; }
 .ns-viewsite {
   display: flex; align-items: center; gap: 8px; text-decoration: none;
@@ -148,9 +148,9 @@ body.admin {
 .ns-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .ns-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 .ns-eyebrow { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--ns-muted); }
-.ns-stat .n { font-family: 'Playfair Display', Georgia, serif; font-weight: 300; font-size: 34px; color: var(--ns-text-hi); line-height: 1; margin: 14px 0 6px; }
+.ns-stat .n { font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 300; font-size: 34px; color: var(--ns-text-hi); line-height: 1; margin: 14px 0 6px; }
 .ns-stat .lbl { font-size: 12.5px; color: var(--ns-muted); }
-.ns-section-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 20px; color: var(--ns-text-hi); margin: 34px 0 14px; }
+.ns-section-title { font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 400; font-size: 20px; color: var(--ns-text-hi); margin: 34px 0 14px; }
 .ns-section-title:first-child { margin-top: 0; }
 
 /* ---- list / table ---- */
@@ -233,14 +233,14 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
 .ns-auth-brand .mark {
   width: 40px; height: 40px; border-radius: 9px; flex: none; display: grid; place-items: center;
   background: radial-gradient(circle at 30% 25%, #b79aa0, #6d565b);
-  font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 20px;
+  font-family: 'Google Sans Flex', system-ui, sans-serif; color: #fff; font-size: 20px;
 }
-.ns-auth-brand .name { font-family: 'Playfair Display', Georgia, serif; font-size: 21px; letter-spacing: .03em; color: var(--ns-text-hi); line-height: 1.2; display: block; }
+.ns-auth-brand .name { font-family: 'Google Sans Flex', system-ui, sans-serif; font-size: 21px; letter-spacing: .03em; color: var(--ns-text-hi); line-height: 1.2; display: block; }
 .ns-auth-brand .kicker { display: block; font-size: 8px; letter-spacing: .34em; text-transform: uppercase; color: var(--ns-accent); }
 
 .ns-auth-head { margin-bottom: 26px; }
 .ns-auth-head .crumb { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--ns-accent); margin-bottom: 8px; }
-.ns-auth-head h1 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 300; font-size: 34px; color: var(--ns-text-hi); line-height: 1; }
+.ns-auth-head h1 { margin: 0; font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 300; font-size: 34px; color: var(--ns-text-hi); line-height: 1; }
 .ns-auth-head .sub { margin: 10px 0 0; font-size: 13.5px; color: var(--ns-muted); }
 
 .ns-remember { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ns-muted); margin: 4px 0 22px; cursor: pointer; }
@@ -262,7 +262,7 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
 }
 .ns-auth-brandcopy { position: relative; z-index: 2; max-width: 420px; }
 .ns-auth-brandcopy .eyebrow { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--ns-accent); margin-bottom: 20px; }
-.ns-auth-brandcopy h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 300; font-size: 46px; line-height: 1.08; color: var(--ns-text-hi); margin: 0 0 22px; }
+.ns-auth-brandcopy h2 { font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 300; font-size: 46px; line-height: 1.08; color: var(--ns-text-hi); margin: 0 0 22px; }
 .ns-auth-brandcopy h2 em { font-style: italic; color: var(--ns-accent-2); }
 .ns-auth-brandcopy p { font-size: 15px; line-height: 1.6; color: var(--ns-muted); margin: 0; }
 
@@ -291,7 +291,7 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
 .ns-preview-body .lp-block { margin-bottom: 18px; }
 .ns-preview-body .lp-block:last-child { margin-bottom: 0; }
 .ns-preview-body .lp-lbl { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--ns-muted-2); margin-bottom: 6px; }
-.ns-preview-body .lp-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 300; font-size: 22px; line-height: 1.15; color: var(--ns-text-hi); }
+.ns-preview-body .lp-heading { font-family: 'Google Sans Flex', system-ui, sans-serif; font-weight: 300; font-size: 22px; line-height: 1.15; color: var(--ns-text-hi); }
 .ns-preview-body .lp-text { font-size: 14px; line-height: 1.55; color: var(--ns-text); white-space: pre-wrap; }
 .ns-preview-body .lp-ar { margin-top: 6px; color: var(--ns-rose); }
 .ns-preview-body .lp-empty { font-size: 12.5px; color: var(--ns-muted-2); font-style: italic; }

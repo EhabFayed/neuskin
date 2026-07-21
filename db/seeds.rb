@@ -3,9 +3,9 @@
 
 protocols = [
   {
-    slug: "maysa-method", position: 1, trademark: true, persona: "unsure", codeword: "METHOD",
+    slug: "neuskin-method", position: 1, trademark: true, persona: "unsure", codeword: "METHOD",
     # Content team (July 2026): protocol names stay in English on both locales.
-    name_ar: "The Maysa Method", name_en: "The Maysa Method",
+    name_ar: "The NeuSkin Method", name_en: "The NeuSkin Method",
     promise_ar: "بداية رحلتك: حيثُ تُقرأ بشرتك بعيون العلم.",
     promise_en: "Where every plan begins — your skin, read as data.",
     duration_ar: "جلسة واحدة", duration_en: "1 session",
@@ -161,7 +161,7 @@ protocols = [
     ],
     faqs: [
       { q_ar: "هل يمكنني الانضمام دون بروتوكول سابق؟", q_en: "Can I join without a prior protocol?",
-        a_ar: "نوصي بالبدء بتقييم منهج ميساء أولًا.", a_en: "We recommend beginning with the Maysa Method assessment first." }
+        a_ar: "نوصي بالبدء بتقييم منهج نيوسكن أولًا.", a_en: "We recommend beginning with the NeuSkin Method assessment first." }
     ],
     patient_story: { quote_ar: "أصبحت العناية ببشرتي عادة هادئة، لا مهمة.",
                      quote_en: "Caring for my skin became a quiet habit, not a task.",
@@ -209,3 +209,6 @@ load Rails.root.join("db/seeds/stories.rb")
 
 # Treatment outcomes (bilingual, idempotent by slug).
 load Rails.root.join("db/seeds/treatments.rb")
+
+# Device cards on /technologies (bilingual, idempotent by name).
+load Rails.root.join("db/seeds/devices.rb")

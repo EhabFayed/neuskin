@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Treatment outcome pages", type: :request do
   before do
-    %w[90-day-glow-reset reset-crown 8-week-sculpt maysa-method].each do |slug|
+    %w[90-day-glow-reset reset-crown 8-week-sculpt neuskin-method].each do |slug|
       Protocol.find_or_create_by!(slug: slug) do |p|
         p.name_en = slug.titleize
         p.name_ar = slug
@@ -15,8 +15,8 @@ RSpec.describe "Treatment outcome pages", type: :request do
       "skin"        => "90-day-glow-reset",
       "hair"        => "reset-crown",
       "body"        => "8-week-sculpt",
-      "injectables" => "maysa-method",
-      "devices"     => "maysa-method"
+      "injectables" => "neuskin-method",
+      "devices"     => "neuskin-method"
     }.each do |outcome, owner_slug|
       get "/en/treatments/#{outcome}"
       expect(response).to have_http_status(:ok), "expected /en/treatments/#{outcome} to render"

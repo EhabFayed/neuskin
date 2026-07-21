@@ -63,10 +63,10 @@ SeedContent.register("dr_maysa", [
     ]
   },
   {
-    kind: "drmaysa_method", label: "The Maysa Method™ — three steps", position: 3,
+    kind: "drmaysa_method", label: "The NeuSkin Method™ — three steps", position: 3,
     contents: [
       { key: "eyebrow",      label: "Eyebrow",
-        en: "The Maysa Method™", ar: "" },
+        en: "The NeuSkin Method™", ar: "" },
       { key: "title",        label: "Section title",
         en: "Three steps. One connected system.", ar: "ثلاث خطوات. منظومةٌ واحدة متكاملة." },
       { key: "step_1_n",     label: "Step 1 number",
@@ -91,7 +91,7 @@ SeedContent.register("dr_maysa", [
         en: "We measure, compare, and adjust as your skin evolves.",
         ar: "نتابع، نقارن، ونطور خطواتنا مع كل مرحلةٍ تتجدد فيها بشرتكِ." },
       { key: "cta_label",    label: "CTA button label",
-        en: "Request the Maysa Method™ Assessment", ar: "" }
+        en: "Request the NeuSkin Method™ Assessment", ar: "" }
     ]
   },
   {

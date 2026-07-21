@@ -20,7 +20,7 @@ SeedContent.register("the_team", [
       { key: "title_em", label: "Title emphasis span",
         en: "the plan.", ar: "" },
       { key: "lead",     label: "Lead paragraph", content_type: "richtext",
-        en: "A small, credentialed team — led by Dr. Maysa, organised by seniority, and chosen for restraint as much as skill.",
+        en: "A small, credentialed team — led by our medical director, organised by seniority, and chosen for restraint as much as skill.",
         ar: "" }
     ]
   },
@@ -28,15 +28,15 @@ SeedContent.register("the_team", [
     kind: "team_members", label: "Team grid", position: 1,
     contents: [
       { key: "member_1_name",  label: "Member 1 name",
-        en: "Dr. Maysa Al-Rashid", ar: "" },
+        en: "Medical Director", ar: "" },
       { key: "member_1_role",  label: "Member 1 role",
-        en: "Founder · Medical Director", ar: "" },
+        en: "Medical Director", ar: "" },
       { key: "member_1_cred",  label: "Member 1 credentials",
         en: "MBBS · Dermatology · Aesthetic Medicine Fellowship", ar: "" },
       { key: "member_1_focus", label: "Member 1 focus",
         en: "Diagnosis & the 12-month plan", ar: "" },
       { key: "member_1_bio",   label: "Member 1 bio", content_type: "richtext",
-        en: "Every patient begins and ends with Maysa. She reads the baseline, writes the plan, and signs off each quarterly review herself — the one constant across the whole journey.",
+        en: "Every patient begins and ends with the medical director, who reads the baseline, writes the plan, and signs off each quarterly review — the one constant across the whole journey.",
         ar: "" },
 
       { key: "member_2_name",  label: "Member 2 name",

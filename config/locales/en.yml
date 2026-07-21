@@ -22,13 +22,13 @@ en:
       line: "Book your experience with NeuSkin."
     protocol:
       label: "Your plan awaits"
-      line: "Book your assessment and let Dr. Maysa design your protocol."
+      line: "Book your assessment and let our medical team design your protocol."
     clinic:
       label: "Visit us"
       line: "Book your visit to our clinic in Al Malqa, Riyadh."
     method:
       label: "Begin the method"
-      line: "Book the Maysa Method™ Assessment — where every plan begins."
+      line: "Book the NeuSkin Method™ Assessment — where every plan begins."
     team:
       label: "In trusted hands"
       line: "Book your consultation with our medical team."
@@ -56,7 +56,7 @@ en:
     voice_title: "Quietly, in their own words."
     voices:
       - { q: "For the first time, someone was planning for my skin — not selling to me.", by: "M.A. · Bride's 180 · 2025" }
-      - { q: "Dr. Maysa told me “no” more than she told me “yes.” I trusted her more for it.", by: "R.K. · Maysa Method™ · 2025" }
+      - { q: "The doctor told me “no” more than she told me “yes.” I trusted her more for it.", by: "R.K. · NeuSkin Method™ · 2025" }
       - { q: "After my pregnancy I got my hair back — quietly, with no big promises.", by: "N.S. · Reset Crown · 2024" }
     invite_label: "The invitation"
     invite_line: "Because you deserve nothing less than the finest care."
@@ -79,20 +79,20 @@ en:
         - { persona: "unsure",   ar: "لا أعرف بعد", en: "I don't know yet" }
   nav:
     clinic: "The Clinic"
-    doctor: "Dr. Maysa"
+    doctor: "The Team"
     protocols: "Protocols"
     stories: "Stories"
     journal: "Journal"
   cta:
     inquire: "Book Now"
     whatsapp: "Book your experience on WhatsApp"
-    assessment: "Book the Maysa Method™ Assessment"
+    assessment: "Book the NeuSkin Method™ Assessment"
     private_inquiry: "Book your luxury experience"
   protocols:
     eyebrow_tagline: "Six protocols · One philosophy · No menu pricing"
     hub_title: "We work in protocols, not à-la-carte treatments."
     hub_filter_lead: "I'm here because…"
-    hub_closing: "Not sure where to start? Begin with the Maysa Method™ assessment."
+    hub_closing: "Not sure where to start? Begin with the NeuSkin Method™ assessment."
     hub_chips:
       all: "Show all"
       bride: "I'm a bride"
@@ -113,7 +113,7 @@ en:
     begin: "The invitation"
 
     request: "Request your %{name} plan"
-    scope_note: "Final protocol scope is confirmed during your Maysa Method™ assessment. All treatments are personalised."
+    scope_note: "Final protocol scope is confirmed during your NeuSkin Method™ assessment. All treatments are personalised."
     codeword_html: "Send %{word} on WhatsApp for a private inquiry."
   legal:
     eyebrow: "Legal & Compliance"
@@ -214,15 +214,15 @@ en:
     discretion_ar: "ما يُقال في هذه العيادة، يبقى فيها. لا أسماء، لا صور، لا استثناءات دون موافقتك الصريحة. الخصوصية ليست خدمة نقدّمها — إنها شرطٌ نعمل به."
     discretion_en: "What is said in this clinic stays in it. No names, no images, no exceptions without your explicit consent. Privacy is not a service we offer — it is a condition we work under."
   method:
-    brand_html: "The Maysa Method™"
-    eyebrow: "The Maysa Method™"
+    brand_html: "The NeuSkin Method™"
+    eyebrow: "The NeuSkin Method™"
 
     statement_ar: "البشرة بيانات. اقرأيها، ثم عالجيها."
     statement_en: "Skin is data. Read it, then treat it."
     principle_label: "The principle"
 
     principle:
-      - "Most clinics begin with a treatment and look for a face to apply it to. The Maysa Method™ begins the other way around. It treats the skin as a system that can be read — measured, mapped, understood — before a single decision is made."
+      - "Most clinics begin with a treatment and look for a face to apply it to. The NeuSkin Method™ begins the other way around. It treats the skin as a system that can be read — measured, mapped, understood — before a single decision is made."
       - "From that reading comes a plan, not a sale. The Method is not a procedure you book; it is the discipline that decides which procedures are worth booking, in what order, over how long. It is the difference between a result that looks done and a result that looks like you."
     pillars_label: "The four pillars"
 
@@ -267,17 +267,17 @@ en:
     intro_ar: "ليست مدوّنة، بل مجلّة هادئة — صوت الطبيبة، وما يجري داخل العيادة، وطقوس الموسم."
     intro_en: "Not a blog — a quiet magazine. The doctor's voice, what happens inside the clinic, and the rituals of the season."
     categories:
-      - "Dr. Maysa Writes · بقلم د. ميساء"
+      - "Clinic Notes · من العيادة"
       - "Inside the Clinic · داخل العيادة"
       - "Ritual · طقوس"
       - "Notes from Patients · من المريضات"
-    placeholder_note: "Placeholder articles. Real Journal entries — bilingual, by Dr. Maysa and named contributors — to be published before launch."
+    placeholder_note: "Placeholder articles. Real Journal entries — bilingual, by our medical team and named contributors — to be published before launch."
     articles:
-      - { category: "Dr. Maysa Writes", title_ar: "ما الذي يستحقّ أموالك؟", title_en: "What is worth your money?", byline: "Dr. Maysa", reading_time: "6 min" }
+      - { category: "Clinic Notes", title_ar: "ما الذي يستحقّ أموالك؟", title_en: "What is worth your money?", byline: "NeuSkin", reading_time: "6 min" }
       - { category: "Inside the Clinic", title_ar: "جولة في غرفة الأجهزة", title_en: "A walk through the device room", byline: "NeuSkin", reading_time: "4 min" }
-      - { category: "Ritual", title_ar: "العناية بالبشرة في رمضان", title_en: "Skincare through Ramadan", byline: "Dr. Maysa", reading_time: "5 min" }
-      - { category: "Dr. Maysa Writes", title_ar: "لماذا أقول لا أحيانًا", title_en: "Why I sometimes say no", byline: "Dr. Maysa", reading_time: "7 min" }
-      - { category: "Ritual", title_ar: "توهّج ما قبل العيد", title_en: "The pre-Eid glow", byline: "Dr. Maysa", reading_time: "4 min" }
+      - { category: "Ritual", title_ar: "العناية بالبشرة في رمضان", title_en: "Skincare through Ramadan", byline: "NeuSkin", reading_time: "5 min" }
+      - { category: "Clinic Notes", title_ar: "لماذا أقول لا أحيانًا", title_en: "Why I sometimes say no", byline: "NeuSkin", reading_time: "7 min" }
+      - { category: "Ritual", title_ar: "توهّج ما قبل العيد", title_en: "The pre-Eid glow", byline: "NeuSkin", reading_time: "4 min" }
       - { category: "Inside the Clinic", title_ar: "كيف نقيس النتائج", title_en: "How we measure results", byline: "NeuSkin", reading_time: "5 min" }
   stories:
     eyebrow: "Patient Stories"
@@ -299,7 +299,7 @@ en:
     title_en: "The questions that come before a decision."
     search_ph: "Search the questions…"
 
-    no_results: "No question matches that. Send it to us privately and Dr. Maysa will answer."
+    no_results: "No question matches that. Send it to us privately and our medical team will answer."
     cta_label: "Still wondering?"
 
     cta_ar: "سؤال لم نُجب عنه؟ اسألينا بسرية."
@@ -311,7 +311,7 @@ en:
         items:
           - { q_ar: "أين تقع العيادة وما ساعات العمل؟", q_en: "Where are you, and what are your hours?", a_ar: "نحن في حي الملقا بالرياض. نعمل من السبت إلى الخميس، ١٠:٠٠–٢٢:٠٠، والجمعة مغلق.", a_en: "We're in Al Malqa, Riyadh, open Saturday to Thursday, 10:00–22:00, closed Friday." }
           - { q_ar: "كيف أبدأ؟", q_en: "How do I begin?", a_ar: "برسالة واتساب خاصة أو نموذج الاستفسار. تراجعه مسؤولة علاقات المريضات وتعاودين التواصل خلال ساعتين في أوقات العمل.", a_en: "With a private WhatsApp message or the inquiry form. Our patient relations lead reviews it and replies within two hours during business hours." }
-          - { q_ar: "من سيعالجني؟", q_en: "Who will treat me?", a_ar: "تقود د. ميساء كل خطة وتُجري التقييم الأول بنفسها. ينفّذ الجلسات فريق طبي مرخّص تحت إشرافها.", a_en: "Dr. Maysa leads every plan and conducts the first assessment personally. A licensed medical team carries out sessions under her supervision." }
+          - { q_ar: "من سيعالجني؟", q_en: "Who will treat me?", a_ar: "تقود مديرتنا الطبية كل خطة وتُجري التقييم الأول بنفسها. ينفّذ الجلسات فريق طبي مرخّص تحت إشرافها.", a_en: "Our medical director leads every plan and conducts the first assessment personally. A licensed medical team carries out sessions under her supervision." }
           - { q_ar: "هل أحتاج موعدًا مسبقًا؟", q_en: "Do I need an appointment?", a_ar: "نعم، نعمل بالمواعيد فقط حفاظًا على الخصوصية والهدوء. لا زيارات دون ترتيب مسبق.", a_en: "Yes — we work by appointment only, to keep things private and unhurried. No walk-ins." }
           - { q_ar: "ماذا أتوقّع في زيارتي الأولى؟", q_en: "What should I expect on my first visit?", a_ar: "تقييم تشخيصي لمدة ٦٠ دقيقة، دون أي علاج. نقرأ بشرتك ونضع خطة مكتوبة تحتفظين بها.", a_en: "A 60-minute diagnostic assessment, with no treatment performed. We read your skin and write a plan you keep." }
       treatments:
@@ -328,10 +328,10 @@ en:
         title_en: "About protocols"
         items:
           - { q_ar: "كيف تعمل البروتوكولات؟", q_en: "How do protocols work?", a_ar: "كل بروتوكول خطة متسلسلة لمدّة محدّدة، لا إجراءً منفردًا. نعالج بالترتيب ونراجع كل ثلاثة أشهر.", a_en: "Each protocol is a sequenced plan over a set period, not a single procedure. We treat in order and review quarterly." }
-          - { q_ar: "هل يمكنني تغيير البروتوكول؟", q_en: "Can I switch protocols?", a_ar: "نعم. تستجيب الخطة لبشرتك؛ إن تغيّرت احتياجاتك، نعدّلها مع د. ميساء.", a_en: "Yes. The plan responds to your skin; if your needs change, we adjust it with Dr. Maysa." }
+          - { q_ar: "هل يمكنني تغيير البروتوكول؟", q_en: "Can I switch protocols?", a_ar: "نعم. تستجيب الخطة لبشرتك؛ إن تغيّرت احتياجاتك، نعدّلها مع طبيبتك.", a_en: "Yes. The plan responds to your skin; if your needs change, we adjust it with your doctor." }
           - { q_ar: "ماذا لو لم أرَ نتائج؟", q_en: "What if I don't see results?", a_ar: "لأننا نقيس كل ثلاثة أشهر، نلاحظ مبكرًا ونعدّل. النتائج موثّقة، لا موعودة.", a_en: "Because we measure quarterly, we notice early and adjust. Results are documented, not promised." }
-          - { q_ar: "من يقرّر الخطة؟", q_en: "Who decides the plan?", a_ar: "د. ميساء، بناءً على تشخيصك ومع موافقتك. لا شيء يُجرى دون أن تفهميه وتختاريه.", a_en: "Dr. Maysa, based on your diagnosis and with your consent. Nothing happens without your understanding and choice." }
-          - { q_ar: "هل أحتاج عضوية للبدء؟", q_en: "Do I need a membership to begin?", a_ar: "لا. يبدأ الجميع بتقييم منهج ميساء. العضوية للعناية المستمرة بعد إكمال بروتوكول.", a_en: "No. Everyone begins with the Maysa Method™ assessment. Membership is for ongoing maintenance after a protocol." }
+          - { q_ar: "من يقرّر الخطة؟", q_en: "Who decides the plan?", a_ar: "مديرتنا الطبية، بناءً على تشخيصك ومع موافقتك. لا شيء يُجرى دون أن تفهميه وتختاريه.", a_en: "Our medical director, based on your diagnosis and with your consent. Nothing happens without your understanding and choice." }
+          - { q_ar: "هل أحتاج عضوية للبدء؟", q_en: "Do I need a membership to begin?", a_ar: "لا. يبدأ الجميع بتقييم منهج نيوسكن. العضوية للعناية المستمرة بعد إكمال بروتوكول.", a_en: "No. Everyone begins with the NeuSkin Method™ assessment. Membership is for ongoing maintenance after a protocol." }
       privacy:
         title_ar: "عن الخصوصية"
         title_en: "About privacy"
@@ -421,13 +421,12 @@ en:
 
     title_ar: "أيدٍ قليلة، مدرَّبة جيدًا."
     title_en: "Few hands, well-trained."
-    intro_ar: "تقود د. ميساء كل خطة، وينفّذها فريق صغير مختار — كل عضو بترخيصه ومجال تركيزه."
-    intro_en: "Dr. Maysa leads every plan; a small, chosen team carries it out — each with their own licence and focus."
+    intro_ar: "تقود مديرتنا الطبية كل خطة، وينفّذها فريق صغير مختار — كل عضو بترخيصه ومجال تركيزه."
+    intro_en: "Our medical director leads every plan; a small, chosen team carries it out — each with their own licence and focus."
     focus_label: "Focus"
 
     members:
-      - { name_ar: "د. ميساء", name_en: "Dr. Maysa", title_ar: "المؤسِّسة · استشارية الجلدية", title_en: "Founder · Consultant Dermatologist", certs: "Board-Certified Dermatologist · Fellowship, Aesthetic & Regenerative Medicine", focus: "Diagnostic mapping, the Maysa Method™, regenerative skin.", bio: "Dr. Maysa founded NeuSkin to treat skin as a system to be read before it is treated. She conducts every first assessment personally and writes the twelve-month plan each patient keeps." }
-      - { name_ar: "د. ليان [مؤقّت]", name_en: "Dr. Layan [placeholder]", title_ar: "طبيبة جلدية", title_en: "Dermatologist", certs: "MD · Saudi Board of Dermatology", focus: "Pigmentation, acne, barrier repair.", bio: "Placeholder bio. Dr. Layan works alongside Dr. Maysa on skin protocols, with a particular focus on pigmentation and barrier health. Real name, photograph and bio to be confirmed before launch." }
+      - { name_ar: "د. ليان [مؤقّت]", name_en: "Dr. Layan [placeholder]", title_ar: "طبيبة جلدية", title_en: "Dermatologist", certs: "MD · Saudi Board of Dermatology", focus: "Pigmentation, acne, barrier repair.", bio: "Placeholder bio. Dr. Layan works alongside our medical director on skin protocols, with a particular focus on pigmentation and barrier health. Real name, photograph and bio to be confirmed before launch." }
       - { name_ar: "نورة [مؤقّت]", name_en: "Noura [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "Licensed Aesthetic Practitioner", focus: "Devices, facials, body protocols.", bio: "Placeholder bio. Noura delivers device-led and body protocols under medical supervision. Real name, photograph and bio to be confirmed before launch." }
       - { name_ar: "سارة [مؤقّت]", name_en: "Sara [placeholder]", title_ar: "أخصائية تجميل", title_en: "Aesthetic Practitioner", certs: "Licensed Aesthetic Practitioner", focus: "Hair & scalp, injectables support.", bio: "Placeholder bio. Sara focuses on hair and scalp protocols and supports injectable sessions. Real name, photograph and bio to be confirmed before launch." }
       - { name_ar: "ريم [مؤقّت]", name_en: "Reem [placeholder]", title_ar: "مسؤولة علاقات المريضات", title_en: "Patient Relations Lead", certs: "Patient Relations", focus: "Your first point of contact, scheduling, discretion.", bio: "Placeholder bio. Reem reviews every inquiry, coordinates appointments, and is the quiet thread that keeps each patient's experience private and unhurried. Real name and photograph to be confirmed." }
@@ -474,10 +473,10 @@ en:
     press: []
     cta_label: "The invitation"
 
-    cta_ar: "استشارة خاصة مع د. ميساء."
-    cta_en: "A private consultation with Dr. Maysa."
+    cta_ar: "استشارة خاصة مع فريقنا الطبي."
+    cta_en: "A private consultation with our medical team."
     cta_button: "Request a private consultation"
-    cta_note: "All initial consultations are conducted personally by Dr. Maysa."
+    cta_note: "All initial consultations are conducted personally by our medical director."
   whatsapp:
     prefill: "Hello NeuSkin, I'd like to make a private inquiry."
   inquire:
@@ -487,7 +486,7 @@ en:
     steps:
       choose: { title: "Choose your way", body: "Message us on WhatsApp, or fill the private form below — both reach our patient relations lead directly." }
       tell: { title: "Tell us a little", body: "Your name, your number, and what brings you in. A minute, no more." }
-      confirm: { title: "We confirm", body: "We reply within two hours during business hours to set your appointment with Dr. Maysa." }
+      confirm: { title: "We confirm", body: "We reply within two hours during business hours to set your appointment with your doctor." }
     path_a_lead: "The preferred way — book and speak with us directly and privately."
     label: "Contact & Inquiry"
 
@@ -497,7 +496,7 @@ en:
     submit: "Send my inquiry"
     next_label: "What happens next"
 
-    privacy: "Your inquiry is reviewed only by our patient relations lead and Dr. Maysa."
+    privacy: "Your inquiry is reviewed only by our patient relations lead and your treating doctor."
     lang: { ar: "Arabic · العربية", en: "English" }
     fields:
       name: "Your name"
@@ -524,12 +523,12 @@ en:
     next:
       1: "Your inquiry reaches our patient relations lead directly."
       2: "We reply within 2 hours during business hours (Sat–Thu, 10:00–22:00)."
-      3: "If it's a fit, Dr. Maysa personally conducts your Maysa Method™ assessment."
+      3: "If it's a fit, our medical director personally conducts your NeuSkin Method™ assessment."
   journey:
     label: "How we work"
 
     inquire: { title_ar: "استفسري", title_en: "Inquire", body: "A private WhatsApp message or form, reviewed by a patient relations lead." }
-    consult: { title_ar: "نستشير", title_en: "Consult", body: "A 60-minute Maysa Method™ assessment. Doctor-led. Diagnostic. No treatment performed." }
+    consult: { title_ar: "نستشير", title_en: "Consult", body: "A 60-minute NeuSkin Method™ assessment. Doctor-led. Diagnostic. No treatment performed." }
     plan:    { title_ar: "نخطّط", title_en: "Plan", body: "A written 12-month roadmap — skin, hair, body, lifestyle. Yours to keep." }
     treat:   { title_ar: "نعالج", title_en: "Treat", body: "Sequenced sessions, reviewed quarterly, adjusted as your skin responds." }
   footer:
@@ -538,7 +537,7 @@ en:
     contact: "Contact"
     about: "About"
     team: "The Medical Team"
-    method: "The Maysa Method™"
+    method: "The NeuSkin Method™"
     bridal: "Bridal Concierge"
     private_care: "Private Care · VIP"
     faq: "FAQ"
@@ -559,7 +558,7 @@ en:
   layout:
     nav:
       the_clinic: "The Clinic"
-      dr_maysa: "Dr. Maysa"
+      dr_maysa: "The Team"
       protocols: "Protocols"
       treatments: "Treatments"
       technologies: "Technologies"
@@ -569,9 +568,9 @@ en:
       blurb: "Doctor-led skin intelligence for women, in the quiet of Al Malqa, Riyadh."
       clinic_title: "The Clinic"
       about: "About"
-      dr_maysa: "Dr. Maysa"
+      dr_maysa: "The Team"
       team: "The Medical Team"
-      method: "The Maysa Method™"
+      method: "The NeuSkin Method™"
       protocols_title: "Protocols"
       all_protocols: "All Protocols"
       treatments: "Treatments"
@@ -612,7 +611,7 @@ en:
     empty: "New notes are being written — come back soon."
     back: "← All notes"
     categories:
-      maysa_writes: "Dr. Maysa Writes"
+      clinic_notes: "Clinic Notes"
       inside_clinic: "Inside the Clinic"
       ritual: "Ritual"
       patient_notes: "Notes from Patients"

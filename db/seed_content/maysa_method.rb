@@ -1,4 +1,4 @@
-# The Maysa Method page content seed.
+# The NeuSkin Method page content seed.
 #
 # EN values are copied verbatim from the hardcoded literals in
 # app/views/pages/maysa_method.html.erb (sec_text(...).presence || "<literal>"
@@ -27,7 +27,7 @@ SeedContent.register("maysa_method", [
       { key: "title", label: "Title",
         en: "The principle", ar: "" },
       { key: "lead",  label: "Lead paragraph", content_type: "richtext",
-        en: "The Maysa Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
+        en: "The NeuSkin Method™ is not a treatment. It is a way of deciding. Before anything is recommended, we read the skin, hair and body as a single connected system and let that reading — not a menu — decide what comes next.",
         ar: "" }
     ]
   },
@@ -89,7 +89,7 @@ SeedContent.register("maysa_method", [
       { key: "title_em",      label: "Title emphasis span",
         en: "four movements.", ar: "" },
       { key: "intro_body",    label: "Intro paragraph",
-        en: "The Maysa Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.", ar: "" },
+        en: "The NeuSkin Method™ unfolds over four quarters — measured, reviewed, adjusted. Scroll through the year.", ar: "" },
       { key: "cue",           label: "Scroll cue",
         en: "Scroll →", ar: "" },
       { key: "panel_1_q",     label: "Panel 1 quarter label",
@@ -128,7 +128,7 @@ SeedContent.register("maysa_method", [
       { key: "title_1",   label: "Title part 1 (before emphasis)",
         en: "Begin with the", ar: "" },
       { key: "title_em",  label: "Title emphasis span",
-        en: "Maysa Method™.", ar: "" },
+        en: "NeuSkin Method™.", ar: "" },
       { key: "body",      label: "Body text",
         en: "One reading, one written plan, reviewed every quarter. It begins with a private inquiry.", ar: "" },
       { key: "cta_label", label: "CTA button label",

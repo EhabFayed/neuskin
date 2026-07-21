@@ -26,7 +26,7 @@ SeedContent.register("private_care", [
       { key: "title_em", label: "Title line 3 (emphasis)",
         en: "You may already qualify.", ar: "" },
       { key: "lead",     label: "Lead paragraph", content_type: "richtext",
-        en: "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite.",
+        en: "A standing relationship with your doctor — arranged privately, kept discreetly, and offered only to those we invite.",
         ar: "" }
     ]
   },
@@ -37,7 +37,7 @@ SeedContent.register("private_care", [
         en: "What Private Care includes", ar: "" },
 
       { key: "item_1", label: "Include item 1",
-        en: "A standing relationship with Dr. Maysa, not a queue.", ar: "" },
+        en: "A standing relationship with your doctor, not a queue.", ar: "" },
       { key: "item_2", label: "Include item 2",
         en: "Same-week scheduling, including outside published hours.", ar: "" },
       { key: "item_3", label: "Include item 3",
@@ -81,7 +81,7 @@ SeedContent.register("private_care", [
       { key: "tier_3_name",  label: "Tier 3 name",
         en: "Invited", ar: "" },
       { key: "tier_3_line",  label: "Tier 3 line",
-        en: "By Dr. Maysa, personally.", ar: "" },
+        en: "By our medical director, personally.", ar: "" },
       { key: "tier_3_desc",  label: "Tier 3 description", content_type: "richtext",
         en: "A bespoke relationship arranged case by case. Extended discretion, travel coordination, family care.",
         ar: "" }
@@ -96,7 +96,7 @@ SeedContent.register("private_care", [
         en: "“Discretion is not a feature here. It is the entire promise — and I keep it personally.”",
         ar: "" },
       { key: "quote_cite",  label: "Quote citation",
-        en: "— Dr. Maysa", ar: "" },
+        en: "— The NeuSkin Team", ar: "— فريق نيوسكن" },
       { key: "note",        label: "Note paragraph", content_type: "richtext",
         en: "Private Care has no public booking. Tell us a little, and if it is the right fit, we will reach out personally and privately.",
         ar: "" },

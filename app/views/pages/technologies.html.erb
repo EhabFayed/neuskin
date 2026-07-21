@@ -1,31 +1,6 @@
-<%# Our Technologies — device portfolio (July 2026 content deck). Every
-    section is CMS-editable (page "technologies"); literals below are only
-    un-seeded fallbacks, per the site-wide sec_text(...).presence || idiom. %>
-
-<%# Device card fallbacks (deck order). Name · tagline · patient copy · specs. %>
-<% device_defaults = [
-     ["EMTONE",   "Harmonious Rejuvenation",
-      "By blending thermal and mechanical energy, Emtone gently restores your skin's firmness and addresses cellulite, helping you feel smoother and more confident in your skin.",
-      "Uses targeted pressure energy combined with radiofrequency. Effective for abdomen, arms, thighs, love handles, and buttocks. Optimal results in 4–6 sessions. 64% more effective for elastin and 59% for collagen production."],
-     ["EMFACE",   "Needle-Free Lift",
-      "This intelligent system simultaneously lifts, tightens, and tones the face, reducing wrinkles while improving facial symmetry without the need for needles.",
-      "Combines HIFEM and radiofrequency technologies. Reduces wrinkles by 37% and provides 23% more lift. Treats forehead, eyebrows, cheeks, and jawline. No downtime."],
-     ["EMSCULPT", "Sculpted Strength",
-      "Sculpt your body's natural shape. This system works with your muscles to define and contour, providing a refined, athletic look that perfectly complements your lifestyle.",
-      "Combines RF heating and HIFEM in a single treatment. Targets abdomen, buttocks, arms, thighs, and calves. 30-minute sessions with zero downtime."],
-     ["POTENZA",  "Advanced Skin Vitality",
-      "Bringing your skin back to life. This sophisticated microneedling treatment firms and brightens, helping you achieve a smoother, fuller, and more youthful complexion.",
-      "Microneedling with radiofrequency using Tiger Tip technology. Designed to tighten skin, reduce fine lines, shrink pores, and diminish scars on face and body."],
-     ["ELITE IQ", "Precision Care",
-      "Versatility meets safety. A dual-wavelength platform designed to address your skin's specific needs, from reducing redness to effective hair removal, ensuring results tailored to you.",
-      "Dual-wavelength (ND YAG + ALEX). Features Skintel™, the world's first Melanin Reader™. Adjustable pulse width and various spot sizes for patient safety."],
-     ["REVLITE",  "Luminous Renewal",
-      "A multi-purpose medical treatment to improve skin texture. It works to brighten, refine pores, and diminish imperfections for a clearer, fairer complexion.",
-      "Q-Switched laser technology. Reduces oiliness, promotes collagen, minimizes pigmentation, acne scars, and fine lines."],
-     ["EMERALD",  "Natural Fat Loss",
-      "Working in harmony with your body. This non-invasive treatment supports your natural metabolism to reduce stubborn fat, offering a gentle alternative to traditional methods.",
-      "FDA-cleared, non-invasive fat loss. Only device cleared for up to 40 BMI. Targets overall body circumference."]
-   ] %>
+<%# Our Technologies — device portfolio (July 2026 content deck). Page chrome
+    (hero/intro/CTA) is CMS-editable (page "technologies", sec_text idiom);
+    the flip cards are Device records managed in dashboard → Devices. %>
 
 <%# ---- Hero: vertically split composite — the deck asks for the device rooms
       side by side, with the branded shot last and slightly wider. Slices are
@@ -66,43 +41,46 @@
 
 <%# ---- Device flip cards: patient-facing story on the front, technical
       specs on the back. Hover flips on pointer devices (site-wide .flipcard
-      CSS); the flip controller adds tap/keyboard toggling for touch. %>
-<section class="section section--surface" data-controller="reveal">
-  <div class="section-inner">
-    <div class="tech-grid reveal d1" data-reveal-target="item">
-      <% device_defaults.each_with_index do |(name_d, tagline_d, body_d, specs_d), idx| %>
-        <% i = idx + 1 %>
-        <% kind    = "tech_device_#{i}" %>
-        <% name    = sec_text("technologies", kind, "name").presence    || name_d %>
-        <% tagline = sec_text("technologies", kind, "tagline").presence || tagline_d %>
-        <% body    = sec_text("technologies", kind, "body").presence    || body_d %>
-        <% specs   = sec_text("technologies", kind, "specs").presence   || specs_d %>
-        <div class="tech-card flipcard" data-controller="flip" data-action="click->flip#toggle keydown.enter->flip#toggle"
-             tabindex="0" role="button" aria-pressed="false" aria-label="<%= name %>">
-          <div class="flip-inner">
-            <div class="flip-front">
-              <span class="tech-media"><%= sec_image_tag("technologies", kind, :device_table, alt: name) %></span>
-              <div class="tech-copy">
-                <span class="badge"><%= tagline %></span>
-                <h3><%= name %></h3>
-                <p><%= body %></p>
+      CSS); the flip controller adds tap/keyboard toggling for touch.
+      One card per Device record — add/edit/remove in dashboard → Devices. %>
+<% if @devices.any? %>
+  <section class="section section--surface" data-controller="reveal">
+    <div class="section-inner">
+      <div class="tech-grid reveal d1" data-reveal-target="item">
+        <% @devices.each do |device| %>
+          <div class="tech-card flipcard" data-controller="flip" data-action="click->flip#toggle keydown.enter->flip#toggle"
+               tabindex="0" role="button" aria-pressed="false" aria-label="<%= device.name %>">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="tech-media">
+                  <% if device.front_image.attached? %>
+                    <%= image_tag device.front_image, alt: device.name %>
+                  <% else %>
+                    <%= ns_image_tag :device_table, alt: device.name %>
+                  <% end %>
+                </span>
+                <div class="tech-copy">
+                  <span class="badge"><%= device.tagline %></span>
+                  <h3><%= device.name %></h3>
+                  <p><%= device.body %></p>
+                </div>
+                <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
               </div>
-              <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-            </div>
-            <div class="flip-back">
-              <span class="tech-back-media" style="background-image:url('<%= sec_card_image("technologies", kind, 1, "site/space/device-room.webp") %>')"></span>
-              <div class="tech-copy">
-                <span class="badge"><%= t("technologies.specs_label") %></span>
-                <h3><%= name %></h3>
-                <p><%= specs %></p>
+              <div class="flip-back">
+                <span class="tech-back-media" style="background-image:url('<%= device.back_image.attached? ? url_for(device.back_image) : image_path("site/space/device-room.webp") %>')"></span>
+                <div class="tech-copy">
+                  <span class="badge"><%= t("technologies.specs_label") %></span>
+                  <h3><%= device.name %></h3>
+                  <p><%= device.specs %></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+<% end %>
 
 <%# ---- Closing CTA ---- %>
 <section class="cta-center orn-host" data-controller="reveal">

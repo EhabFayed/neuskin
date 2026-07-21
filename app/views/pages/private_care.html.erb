@@ -2,7 +2,7 @@
 
 <%
   vip_includes = [
-    sec_text("private_care", "private_includes", "item_1").presence || "A standing relationship with Dr. Maysa, not a queue.",
+    sec_text("private_care", "private_includes", "item_1").presence || "A standing relationship with your doctor, not a queue.",
     sec_text("private_care", "private_includes", "item_2").presence || "Same-week scheduling, including outside published hours.",
     sec_text("private_care", "private_includes", "item_3").presence || "Quarterly reviews with your full skin history in the room.",
     sec_text("private_care", "private_includes", "item_4").presence || "Discreet entry and a private suite for every visit.",
@@ -15,7 +15,7 @@
       desc: sec_text("private_care", "private_tiers", "tier_1_desc").presence || "Doctor-led care on your schedule, with quarterly reviews and a single private point of contact." },
     { badge: sec_text("private_care", "private_tiers", "tier_2_badge").presence || "II", name: sec_text("private_care", "private_tiers", "tier_2_name").presence || "Considered", line: sec_text("private_care", "private_tiers", "tier_2_line").presence || "For the long view.",
       desc: sec_text("private_care", "private_tiers", "tier_2_desc").presence || "Everything in Quiet, plus priority access to new protocols and an annual full reassessment." },
-    { badge: sec_text("private_care", "private_tiers", "tier_3_badge").presence || "III", name: sec_text("private_care", "private_tiers", "tier_3_name").presence || "Invited", line: sec_text("private_care", "private_tiers", "tier_3_line").presence || "By Dr. Maysa, personally.",
+    { badge: sec_text("private_care", "private_tiers", "tier_3_badge").presence || "III", name: sec_text("private_care", "private_tiers", "tier_3_name").presence || "Invited", line: sec_text("private_care", "private_tiers", "tier_3_line").presence || "By our medical director, personally.",
       desc: sec_text("private_care", "private_tiers", "tier_3_desc").presence || "A bespoke relationship arranged case by case. Extended discretion, travel coordination, family care." }
   ]
 %>
@@ -35,7 +35,7 @@
       <span class="line" data-reveal="mask" data-reveal-delay="260"><span><%= sec_text("private_care", "private_hero", "title_2").presence || "is by invitation." %></span></span>
       <span class="line em" data-reveal="mask" data-reveal-delay="410"><span><%= sec_text("private_care", "private_hero", "title_em").presence || "You may already qualify." %></span></span>
     </h1>
-    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560"><%= sec_text("private_care", "private_hero", "lead").presence || "A standing relationship with Dr. Maysa — arranged privately, kept discreetly, and offered only to those we invite." %></p>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="560"><%= sec_text("private_care", "private_hero", "lead").presence || "A standing relationship with your doctor — arranged privately, kept discreetly, and offered only to those we invite." %></p>
   </div>
 </section>
 
@@ -62,7 +62,7 @@
     </div>
     <%# Flip cards: image + tier front, description on the back. Images come
         from this section's gallery in the dashboard (upload 3 in tier order). %>
-    <% tier_defaults = ["site/space/private-suite.webp", "site/space/waiting-lounge.webp", "site/people/maysa.webp"] %>
+    <% tier_defaults = ["site/space/private-suite.webp", "site/space/waiting-lounge.webp", "site/space/consultation.jpg"] %>
     <div class="tiers">
       <% vip_tiers.each_with_index do |tier, i| %>
         <div class="tier flipcard reveal d<%= i + 1 %>" data-reveal-target="item">
@@ -97,7 +97,7 @@
         <blockquote>
           <%= sec_text("private_care", "private_apply", "quote").presence || "“Discretion is not a feature here. It is the entire promise — and I keep it personally.”" %>
         </blockquote>
-        <cite><%= sec_text("private_care", "private_apply", "quote_cite").presence || "— Dr. Maysa" %></cite>
+        <cite><%= sec_text("private_care", "private_apply", "quote_cite").presence || "— The NeuSkin Team" %></cite>
         <p class="apply-note">
           <%= sec_text("private_care", "private_apply", "note").presence || "Private Care has no public booking. Tell us a little, and if it is the right fit, we will reach out personally and privately." %>
         </p>

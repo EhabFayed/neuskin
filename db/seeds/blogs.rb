@@ -5,7 +5,7 @@ BLOG_SEEDS = [
   {
     slug_en: "why-i-read-skin-before-i-treat-it",
     slug_ar: "لماذا-أقرأ-البشرة-قبل-أن-أعالجها",
-    category: "maysa_writes",
+    category: "clinic_notes",
     title_en: "Why I read skin before I treat it",
     title_ar: "لماذا أقرأ البشرة قبل أن أعالجها",
     excerpt_en: "The first appointment is diagnostic, never cosmetic. Here is what we are actually measuring, and why the order matters.",
@@ -56,7 +56,7 @@ BLOG_SEEDS = [
   {
     slug_en: "sequencing-the-year-not-the-session",
     slug_ar: "التسلسل-السنة-لا-الجلسة",
-    category: "maysa_writes",
+    category: "clinic_notes",
     title_en: "Sequencing: the year, not the session",
     title_ar: "التسلسل: السنة لا الجلسة",
     excerpt_en: "Good skin is built across quarters. How we plan twelve months so nothing is ever overwhelmed.",
@@ -81,8 +81,8 @@ BLOG_SEEDS = [
     paragraphs: [
       ["“I had been to enough clinics to know the script. You sit down, you name one concern, and you leave with a quote for five treatments. I walked into NeuSkin braced for the same conversation.”",
        "«زرتُ من العيادات ما يكفي لأحفظ السيناريو. تجلسين، تذكرين مشكلة واحدة، وتخرجين بعرض سعرٍ لخمسة علاجات. دخلتُ نيو سكين وأنا متحفّزة للحوار نفسه.»"],
-      ["“Instead, the first thing Dr. Maysa did was tell me what I did not need. She crossed two things off my own list. I remember thinking: she just talked herself out of money — and talked me into trust.”",
-       "«بدلًا من ذلك، كان أول ما فعلته د. ميساء أن أخبرتني بما لا أحتاجه. شطبت أمرين من قائمتي أنا. أذكر أنني فكّرت: لقد تخلّت للتو عن مالٍ كان سيصلها — وكسبت ثقتي.»"],
+      ["“Instead, the first thing the doctor did was tell me what I did not need. She crossed two things off my own list. I remember thinking: she just talked herself out of money — and talked me into trust.”",
+       "«بدلًا من ذلك، كان أول ما فعلته الطبيبة أن أخبرتني بما لا أحتاجه. شطبت أمرين من قائمتي أنا. أذكر أنني فكّرت: لقد تخلّت للتو عن مالٍ كان سيصلها — وكسبت ثقتي.»"],
       ["“The results came, quietly, over months. But what changed first was how I felt walking in: not like a customer, like a patient. That difference is the whole clinic.”",
        "«جاءت النتائج بهدوء، على مدى شهور. لكن ما تغيّر أولًا هو شعوري وأنا أدخل: لست زبونة، بل مريضة. هذا الفرق هو العيادة كلها.»"]
     ]

@@ -1,0 +1,32 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Devices" %>
+<% content_for :title, "Devices" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">
+    The flip cards on /technologies. The front shows the product shot and the
+    patient-facing story; the card flips to the technical specs over an
+    in-clinic photo. Device names are brand names and are never translated.
+  </p>
+  <%= link_to "Add device", new_admin_device_path, class: "ns-btn primary", style: "flex:none;margin-left:20px" %>
+</div>
+
+<div class="ns-thead">
+  <span class="r-title">Device</span>
+  <span style="width:240px">Tagline</span>
+  <span style="width:80px">Position</span>
+  <span style="width:16px"></span>
+</div>
+
+<ul class="ns-list">
+  <% @devices.each do |device| %>
+    <li>
+      <%= link_to edit_admin_device_path(device), class: "ns-row" do %>
+        <span class="r-title"><%= device.name %></span>
+        <span class="r-meta" style="width:240px"><%= device.tagline_en %></span>
+        <span class="r-meta" style="width:80px"><%= device.position %></span>
+        <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
