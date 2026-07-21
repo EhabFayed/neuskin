@@ -305,7 +305,10 @@ html[data-theme="light"] .orn { opacity: .17; }
 .page-hero.has-bg::before { content: ""; position: absolute; inset: 0; z-index: 0; background-image: var(--hero-bg); background-size: cover; background-position: center; }
 /* photo shows at full strength — no dimming filter; copy is pinned white in both themes */
 .page-hero.has-bg::after { content: none; }
-.page-hero.has-bg .section-inner, .page-hero.has-bg.center-inner { max-width: var(--maxw); margin-inline: auto; }
+/* hub heroes (protocols, treatments): copy pinned to the page's left edge,
+   matching the clinic hero — not floated in a centered container */
+.page-hero.has-bg .section-inner { max-width: 1040px; margin-inline: 0; }
+.page-hero.has-bg.center-inner { max-width: var(--maxw); margin-inline: auto; }
 .page-hero.has-bg .eyebrow { color: #fff; }
 .page-hero.has-bg .eyebrow::before { background: #fff; }
 .page-hero.has-bg h1, .page-hero.has-bg h1 .em { color: #fff; }
