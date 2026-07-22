@@ -1441,34 +1441,3 @@ html[data-theme="light"] .proto-detail .stage:hover { background: #fff; box-shad
 .clinic-statement-media img { display: block; width: 100%; max-height: 400px; object-fit: cover; transition: transform 1.2s var(--ease-soft); }
 .clinic-statement-media:hover img { transform: scale(1.04); }
 @media (max-width: 880px) { .clinic-statement-col { position: static; } }
-
-/* ================= monogram side wallpaper (July 2026) =================
-   The NS monogram tiled as a staggered brand pattern in the page's side
-   margins. The columns are exactly as wide as the space left beside the
-   content column (zero on narrow screens, so nothing ever overlaps), fade
-   toward the content edge, and pan upward very slowly. Photo heroes and
-   positioned sections paint above it. */
-body::before, body::after {
-  content: ""; position: fixed; top: 0; bottom: 0; z-index: 0; pointer-events: none;
-  width: max(0px, calc((100vw - var(--maxw)) / 2 - 10px));
-  background-image: url("site/logo-ns.png"), url("site/logo-ns.png");
-  background-size: 104px 100px, 104px 100px;
-  background-position: 0 0, 52px 50px;   /* second layer staggered half a tile */
-  background-repeat: repeat, repeat;
-  opacity: .14;
-  animation: monogram-pan 80s linear infinite;
-}
-body::before { inset-inline-start: 0; mask-image: linear-gradient(to right, black 70%, transparent); -webkit-mask-image: linear-gradient(to right, black 70%, transparent); }
-body::after  { inset-inline-end: 0;  mask-image: linear-gradient(to left,  black 70%, transparent); -webkit-mask-image: linear-gradient(to left,  black 70%, transparent); }
-html[dir="rtl"] body::before { mask-image: linear-gradient(to left, black 55%, transparent); -webkit-mask-image: linear-gradient(to left, black 55%, transparent); }
-html[dir="rtl"] body::after  { mask-image: linear-gradient(to right, black 55%, transparent); -webkit-mask-image: linear-gradient(to right, black 55%, transparent); }
-html[data-theme="light"] body::before, html[data-theme="light"] body::after { opacity: .16; }
-@keyframes monogram-pan {
-  from { background-position: 0 0, 52px 50px; }
-  to   { background-position: 0 -200px, 52px -150px; }
-}
-@media (prefers-reduced-motion: reduce) { body::before, body::after { animation: none; } }
-/* dark theme: lift the dark monogram toward cream so it reads on the
-   near-black ground (light theme keeps the natural mauve mark) */
-html:not([data-theme="light"]) body::before,
-html:not([data-theme="light"]) body::after { filter: brightness(3) saturate(.6); opacity: .17; }
