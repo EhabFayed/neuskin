@@ -52,4 +52,13 @@ RSpec.describe "Admin sections", type: :request do
     expect(response.body).to include("Items JSON is invalid.")
     expect(section.reload.items).to eq([{ "q" => { "en" => "orig" } }])
   end
+
+  it "renders a live preview for every mapped page template" do
+    Admin::SectionsController::PAGE_TEMPLATES.each_key do |page|
+      section = Section.find_by(page: page) ||
+                create(:section, page: page, kind: "#{page}_probe", label: "Probe")
+      get "/admin/sections/#{section.id}/preview", params: { section: { label: section.label } }
+      expect(response).to have_http_status(:ok), "preview for #{page} -> #{response.status}"
+    end
+  end
 end

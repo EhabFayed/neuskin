@@ -21,6 +21,7 @@ module Admin
       "protocols_index" => "protocols/index",
       "journal"         => "journal/index",
       "bridal"          => "bridal/show",
+      "technologies"    => "pages/technologies",
     }.freeze
 
     def preview
@@ -73,6 +74,10 @@ module Admin
         @stories = Story.with_attached_photo
       when "faq"
         @faq_groups = Faq.grouped
+      when "treatments"
+        @treatments = Treatment.all
+      when "technologies"
+        @devices = Device.all
       end
     end
 
