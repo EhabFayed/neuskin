@@ -14,7 +14,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <%# cursor: custom dot + trailing ring; smoothscroll: Lenis inertia —
+      both bail out on touch / reduced-motion and leave defaults alone. %>
+  <body data-controller="cursor smoothscroll">
     <%# Intro splash — NS monogram, fades out on first load (intro_controller). %>
     <div class="intro-splash" data-controller="intro">
       <%= image_tag "site/logo-ns.png", class: "mark", alt: "" %>
