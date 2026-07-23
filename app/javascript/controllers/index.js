@@ -57,3 +57,12 @@ application.register("carousel", CarouselController)
 
 import FlipController from "controllers/flip_controller"
 application.register("flip", FlipController)
+
+import CursorController from "controllers/cursor_controller"
+application.register("cursor", CursorController)
+
+import MagneticController from "controllers/magnetic_controller"
+application.register("magnetic", MagneticController)
+
+import SmoothscrollController from "controllers/smoothscroll_controller"
+application.register("smoothscroll", SmoothscrollController)

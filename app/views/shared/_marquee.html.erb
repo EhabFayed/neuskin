@@ -1,0 +1,17 @@
+<%# Marquee word band (see .marquee in application.css): `words` glide across
+    in a seamless loop — every other word set italic in the accent rose.
+    The track holds the segment twice; the copy is aria-hidden. Pauses on
+    hover, reverses for RTL, freezes into a static band under reduced motion. %>
+<% words = Array(words) %>
+<div class="marquee">
+  <div class="marquee-track">
+    <% 2.times do |copy| %>
+      <div class="marquee-seg"<%= ' aria-hidden="true"'.html_safe if copy == 1 %>>
+        <% words.each_with_index do |word, i| %>
+          <span class="marquee-word<%= " em" if i.odd? %>"><%= word %></span>
+          <span class="marquee-sep" aria-hidden="true">✦</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

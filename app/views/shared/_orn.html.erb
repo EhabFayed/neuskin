@@ -3,8 +3,10 @@
     variant: "rings"  — concentric circles (measurement / precision)
              "dots"   — dotted ring, slow spin (quiet clinical rhythm)
              "petal"  — ellipse fan (care / bloom)
-    pos: tr | tl | br | bl | halo   size: optional px override %>
-<% variant ||= "rings"; pos ||= "tr"; size ||= nil %>
+    pos: tr | tl | br | bl | halo   size: optional px override
+    float: true — slow ambient drift (.float-drift, application.css) %>
+<% variant ||= "rings"; pos ||= "tr"; size ||= nil; float ||= false %>
+<% pos = "#{pos} #{'float-drift' if float}".strip %>
 <% style = size ? "width:#{size}px;height:#{size}px;" : "" %>
 <% case variant %>
 <% when "rings" %>

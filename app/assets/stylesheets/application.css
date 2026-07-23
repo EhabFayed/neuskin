@@ -1441,3 +1441,101 @@ html[data-theme="light"] .proto-detail .stage:hover { background: #fff; box-shad
 .clinic-statement-media img { display: block; width: 100%; max-height: 400px; object-fit: cover; transition: transform 1.2s var(--ease-soft); }
 .clinic-statement-media:hover img { transform: scale(1.04); }
 @media (max-width: 880px) { .clinic-statement-col { position: static; } }
+
+/* ============================ custom cursor ============================ */
+/* Injected by cursor_controller (fine pointers, motion-safe only): a cream
+   dot rides the pointer; the mauve ring trails it and swells over anything
+   clickable. .ns-cursor-on hides the native arrow — but never over form
+   fields, where the pair goes .is-muted and the I-beam returns. */
+html.ns-cursor-on body, html.ns-cursor-on body * { cursor: none !important; }
+html.ns-cursor-on input, html.ns-cursor-on textarea, html.ns-cursor-on select { cursor: auto !important; }
+.ns-cursor-dot, .ns-cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 240; /* above the intro splash (200) */
+  border-radius: 50%; pointer-events: none; opacity: 0;
+}
+.ns-cursor-dot {
+  width: 6px; height: 6px; margin: -3px 0 0 -3px; background: #efe3da;
+  transition: opacity .35s var(--ease-soft), width .25s var(--ease-soft), height .25s var(--ease-soft), margin .25s var(--ease-soft);
+}
+.ns-cursor-ring {
+  width: 38px; height: 38px; margin: -19px 0 0 -19px;
+  border: 1px solid var(--accent-dusty); background: transparent;
+  transition: opacity .35s var(--ease-soft), width .35s var(--ease-soft), height .35s var(--ease-soft),
+              margin .35s var(--ease-soft), border-color .35s var(--ease-soft), background .35s var(--ease-soft);
+}
+.ns-cursor-dot.is-shown { opacity: 1; }
+.ns-cursor-ring.is-shown { opacity: .9; }
+.ns-cursor-dot.is-muted, .ns-cursor-ring.is-muted { opacity: 0; }
+.ns-cursor-ring.is-hot {
+  width: 58px; height: 58px; margin: -29px 0 0 -29px;
+  border-color: var(--accent-soft); background: rgba(159,132,136,.14);
+}
+.ns-cursor-dot.is-down { width: 4px; height: 4px; margin: -2px 0 0 -2px; }
+.ns-cursor-ring.is-down { width: 30px; height: 30px; margin: -15px 0 0 -15px; }
+.ns-cursor-ring.is-hot.is-down { width: 48px; height: 48px; margin: -24px 0 0 -24px; }
+
+/* ============================ hover motion pass ============================ */
+/* Buttons lift with a soft shadow; settle back while pressed. The transition
+   list restates the color moves so this shorthand doesn't clobber them. */
+.btn, .btn-inquire, .locale-switch {
+  transition: background .3s var(--ease-soft), color .3s, border-color .3s,
+              transform .35s var(--ease-soft), box-shadow .35s var(--ease-soft);
+}
+.btn:hover, .btn-inquire:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(0,0,0,.55); }
+.btn:active, .btn-inquire:active { transform: translateY(0); box-shadow: 0 6px 16px -10px rgba(0,0,0,.45); }
+html[data-theme="light"] .btn:hover,
+html[data-theme="light"] .btn-inquire:hover { box-shadow: 0 14px 30px -16px rgba(43,33,37,.35); }
+
+/* Nav links: a hairline underline sweeps in from the reading edge. */
+.site-nav a { position: relative; }
+.site-nav a::after {
+  content: ""; position: absolute; inset-inline: 0; bottom: -7px; height: 1px;
+  background: var(--accent); transform: scaleX(0); transform-origin: 100% 50%;
+  transition: transform .45s var(--ease-soft);
+}
+.site-nav a:hover::after, .site-nav a:focus-visible::after { transform: scaleX(1); transform-origin: 0 50%; }
+[dir="rtl"] .site-nav a::after { transform-origin: 0 50%; }
+[dir="rtl"] .site-nav a:hover::after, [dir="rtl"] .site-nav a:focus-visible::after { transform-origin: 100% 50%; }
+
+/* Magnetic pull (magnetic_controller): the standalone translate property
+   keeps this clear of transform-based show/hide animations. */
+.is-magnetic { transition: translate .4s var(--ease-out); will-change: translate; }
+
+/* ============================ ambient / floating motion ============================ */
+/* Slow drift utilities for decorative accents — transform-only, and the global
+   reduced-motion block above already freezes them. */
+@keyframes ns-float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes ns-float-drift { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(8px, -10px) rotate(2deg); } }
+@keyframes ns-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+.float-slow  { animation: ns-float-slow 7s ease-in-out infinite; }
+.float-drift { animation: ns-float-drift 11s ease-in-out infinite; }
+.breathe     { animation: ns-breathe 9s ease-in-out infinite; }
+.float-delay-1 { animation-delay: 1.2s; } .float-delay-2 { animation-delay: 2.4s; } .float-delay-3 { animation-delay: 3.6s; }
+/* ornaments keep their spin — drift wraps them without fighting it */
+.orn.float-drift { animation: ns-float-drift 14s ease-in-out infinite; }
+
+/* ============================ marquee strip ============================ */
+/* Seamless loop: the track holds two identical segments and slides one
+   segment-width; pauses on hover; direction flips for RTL. Under reduced
+   motion the global block freezes it into a static word band. */
+.marquee { overflow: hidden; border-block: 1px solid var(--line); padding-block: clamp(18px, 2.4vw, 30px); }
+.marquee-track { display: flex; width: max-content; animation: ns-marquee 42s linear infinite; will-change: transform; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-seg { display: flex; align-items: baseline; flex: none; }
+.marquee-word {
+  font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  line-height: 1.2; color: var(--text-soft); white-space: nowrap;
+}
+.marquee-word.em { font-style: italic; color: var(--accent-soft); }
+.marquee-sep { color: var(--accent); margin-inline: clamp(20px, 2.6vw, 40px); font-size: .9em; }
+@keyframes ns-marquee { to { transform: translateX(-50%); } }
+[dir="rtl"] .marquee-track { animation-name: ns-marquee-rtl; }
+@keyframes ns-marquee-rtl { to { transform: translateX(50%); } }
+
+/* ============================ smooth scrolling (Lenis) ============================ */
+/* Recommended Lenis host styles; .lenis-smooth turns the CSS smooth-anchor
+   behavior off so the two smoothers never fight. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
