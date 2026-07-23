@@ -1532,6 +1532,37 @@ html[data-theme="light"] .btn-inquire:hover { box-shadow: 0 14px 30px -16px rgba
 [dir="rtl"] .marquee-track { animation-name: ns-marquee-rtl; }
 @keyframes ns-marquee-rtl { to { transform: translateX(50%); } }
 
+/* ============================ motion pass II ============================ */
+/* Header tucks away while scrolling down; any scroll-up brings it back
+   (header_controller adds/removes .is-tucked). */
+.site-header {
+  transition: background .5s var(--ease-soft), padding .4s var(--ease-soft),
+              border-color .5s, transform .5s var(--ease-soft);
+}
+.site-header.is-tucked { transform: translateY(-100%); }
+
+/* Hero headline word cascade: each word is its own mask window rising in
+   sequence (home hero). Slight padding keeps descenders out of the clip. */
+.hero h1 .wd { display: inline-block; padding-block-end: .06em; margin-block-end: -.06em; vertical-align: top; }
+
+/* Ken Burns on page heroes — interior pages open with a slow drift-zoom on
+   their hero media. Composes with the wrapper's parallax (this transform
+   lives on the img / ::before, parallax on the wrapper); frozen under
+   reduced motion by the global block above. */
+.page-hero.has-bg::before { animation: ns-kb 30s var(--ease-soft) infinite alternate; }
+.over-hero-media img { animation: ns-kb 32s var(--ease-soft) infinite alternate; }
+.split-hero-media img { animation: ns-kb2 34s var(--ease-soft) infinite alternate; }
+.hero-media-img { animation: ns-kb 36s var(--ease-soft) infinite alternate; }
+
+/* Six-protocols index: rows cascade in (per-row data-reveal in the view);
+   once the reveal lands, hand the row's own hover transitions back. */
+.reveal-ready .proto-row[data-reveal].is-in {
+  transition: opacity .9s var(--ease-soft), transform 1s var(--ease-soft),
+              padding-inline-start .35s var(--ease-soft), background .35s;
+}
+/* while the pointer wanders the list, the sticky stage image leans in */
+.proto-index:hover .proto-stage-img.is-shown { transform: scale(1.045); }
+
 /* ============================ smooth scrolling (Lenis) ============================ */
 /* Recommended Lenis host styles; .lenis-smooth turns the CSS smooth-anchor
    behavior off so the two smoothers never fight. */
