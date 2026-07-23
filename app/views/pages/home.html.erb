@@ -15,8 +15,16 @@
       <% hero_lines = [sec_text("home", "home_hero", "headline_1").presence || "Medical Precision.",
                        sec_text("home", "home_hero", "headline_2").presence || "Aesthetic Grace.",
                        sec_text("home", "home_hero", "headline_3").presence].compact %>
-      <% hero_lines.each_with_index do |line, i| %>
-        <span class="ln" data-reveal="mask" data-reveal-delay="<%= 150 + i * 130 %>"><span><%= line %></span></span>
+      <%# word cascade: every word is its own mask window, rising in sequence
+          across the whole headline (.wd — see "motion pass II" in the CSS) %>
+      <% word_index = 0 %>
+      <% hero_lines.each do |line| %>
+        <span class="ln">
+          <% line.split(/\s+/).each do |word| %>
+            <span class="wd" data-reveal="mask" data-reveal-delay="<%= 150 + word_index * 90 %>"><span><%= word %></span></span>
+            <% word_index += 1 %>
+          <% end %>
+        </span>
       <% end %>
     </h1>
     <p class="hero-sub" data-reveal="up" data-reveal-delay="520">
@@ -105,14 +113,17 @@
       <%= link_to (sec_text("home", "home_protocols", "link").presence || "View all protocols →"), protocols_path, class: "arrowlink" %>
     </div>
 
-    <div class="proto-index" data-controller="protoindex" data-reveal="up" data-reveal-delay="120">
+    <%# rows carry their own staggered reveals (was one block reveal on the
+        wrapper); the stage scales in alongside them %>
+    <div class="proto-index" data-controller="protoindex">
       <div class="proto-list">
         <% protocols.each_with_index do |p, i| %>
           <%= link_to protocol_path(p),
                 class: "proto-row",
                 data: { protoindex_target: "row", index: i,
                         action: "mouseenter->protoindex#show focus->protoindex#show",
-                        tag: p.meta, promise: p.promise, href: protocol_path(p) } do %>
+                        tag: p.meta, promise: p.promise, href: protocol_path(p),
+                        reveal: "up", reveal_delay: 120 + i * 90 } do %>
             <span class="ix"><%= format("%02d", i + 1) %></span>
             <h3><bdi><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></bdi></h3>
             <span class="dur"><%= p.duration %></span>
@@ -120,7 +131,7 @@
         <% end %>
       </div>
 
-      <div class="proto-stage">
+      <div class="proto-stage" data-reveal="scale" data-reveal-delay="220">
         <% protocols.each_with_index do |p, i| %>
           <%= image_tag (proto_imgs[p.slug] || "site/protocols/skin.jpg"),
                 class: "proto-stage-img#{' is-shown' if i.zero?}",
