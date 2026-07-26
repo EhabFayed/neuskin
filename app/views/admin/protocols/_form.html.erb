@@ -30,6 +30,19 @@
   <% end %>
 
   <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Image (home protocols stage · hub card · protocol page hero)</span>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <% if @protocol.image.attached? %>
+        <%= image_tag url_for(@protocol.image), style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
+      <% end %>
+      <div>
+        <%= form.file_field :image %>
+        <p class="hint" style="margin-top:6px">Leave empty to keep the built-in photo for this protocol.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Settings</span>
     <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
       <label style="display:block">

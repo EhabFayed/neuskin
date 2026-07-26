@@ -1,6 +1,10 @@
 class Protocol < ApplicationRecord
   extend Enumerize
 
+  # Card / stage / hero photo — dashboard-uploaded; the launch static asset
+  # (see ContentHelper#protocol_image_url) is the fallback.
+  has_one_attached :image
+
   # Personas the "I'm here because…" filter routes on (architecture §06).
   enumerize :persona, in: %i[bride tired hair maintain fresh unsure], scope: true
 
