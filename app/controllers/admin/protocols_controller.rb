@@ -48,7 +48,7 @@ module Admin
       params.require(:protocol).permit(
         :slug, :name_ar, :name_en, :promise_ar, :promise_en, :duration_ar, :duration_en,
         :meta_ar, :meta_en, :who_for_ar, :who_for_en, :scope_ar, :scope_en,
-        :excludes_ar, :excludes_en, :position, :trademark, :persona, :codeword
+        :excludes_ar, :excludes_en, :position, :trademark, :persona, :codeword, :image
       )
     end
   end

@@ -97,6 +97,24 @@ module ContentHelper
     ns_image(TREATMENT_FALLBACK_IMAGES.fetch(treatment.slug, :treatment_room))
   end
 
+  # Stage / card / hero image URL for a Protocol: the dashboard-attached image
+  # (Admin → Protocols) when present, else the launch static asset for the
+  # original six slugs, else a generic clinic shot for new protocols.
+  PROTOCOL_FALLBACK_IMAGES = {
+    "neuskin-method"    => "site/protocols/neuskin-method.jpg",
+    "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
+    "brides-180"        => "site/protocols/bridal.jpg",
+    "reset-crown"       => "site/protocols/hair.jpg",
+    "8-week-sculpt"     => "site/protocols/sculpt.jpg",
+    "skin-insider"      => "site/protocols/insider.jpg"
+  }.freeze
+
+  def protocol_image_url(protocol)
+    return url_for(protocol.image) if protocol.image.attached?
+
+    image_path(PROTOCOL_FALLBACK_IMAGES.fetch(protocol.slug, "site/protocols/skin.jpg"))
+  end
+
   # Ordered list of gallery image URLs for a section (has_many_attached
   # :gallery). Falls back to the given static keys (array) when nothing is
   # attached, so galleries render unchanged before migration.
