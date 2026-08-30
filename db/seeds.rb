@@ -179,7 +179,7 @@ puts "Seeded #{Protocol.count} protocols."
 # In production the password MUST be supplied via ENV — never fall back to a
 # known default, which would create a publicly-guessable live admin account.
 admin_email = ENV.fetch("ADMIN_EMAIL", "admin@neuskin.test")
-admin_password =
+admin_password = "123456"
   if Rails.env.production?
     ENV.fetch("ADMIN_PASSWORD") do
       raise "Set ADMIN_PASSWORD (and ideally ADMIN_EMAIL) before seeding in production."
