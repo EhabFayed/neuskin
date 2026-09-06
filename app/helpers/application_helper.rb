@@ -85,4 +85,26 @@ module ApplicationHelper
   rescue ActionController::UrlGenerationError
     root_path(locale: (other == I18n.default_locale ? nil : other))
   end
+
+  # Absolute URL for the CURRENT page in the given locale, query string
+  # dropped — used for <link rel="canonical"> and the hreflang alternates.
+  # The default locale carries no path prefix, so /en/... canonicalises to /...
+  def page_url_in(locale)
+    params = request.path_parameters.symbolize_keys
+    params[:locale] = (locale == I18n.default_locale ? nil : locale)
+    "#{seo_origin}#{url_for(params.merge(only_path: true))}"
+  rescue ActionController::UrlGenerationError
+    "#{seo_origin}#{root_path(locale: (locale == I18n.default_locale ? nil : locale))}"
+  end
+
+  def canonical_url
+    page_url_in(I18n.locale)
+  end
+
+  # Public origin for absolute SEO URLs. RAILS_HOST is how production names
+  # itself (config/environments/production.rb); dev falls back to the request.
+  def seo_origin
+    host = ENV["RAILS_HOST"]
+    host.present? ? "https://#{host}" : request.base_url
+  end
 end
