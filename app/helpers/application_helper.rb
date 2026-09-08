@@ -107,4 +107,14 @@ module ApplicationHelper
     host = ENV["RAILS_HOST"]
     host.present? ? "https://#{host}" : request.base_url
   end
+
+  # Rich text (Quill) — journal body paragraphs are stored as HTML written in
+  # the Studio editor. Sanitized on every render, same allowlist as the
+  # Balhareth admin, so stray markup in the DB can never reach the page live.
+  RICH_TAGS  = %w[h1 h2 h3 h4 p ul ol li strong em b i u a br blockquote img span div].freeze
+  RICH_ATTRS = %w[href src alt title target rel].freeze
+
+  def rich(html)
+    sanitize(html.to_s, tags: RICH_TAGS, attributes: RICH_ATTRS)
+  end
 end

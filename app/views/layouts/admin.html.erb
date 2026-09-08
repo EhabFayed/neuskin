@@ -9,6 +9,13 @@
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%# Quill rich text editor (vendored, same build as the Balhareth admin) —
+        picked up by /admin-rte.js on [data-rte] wrappers. no-cache keeps Turbo
+        from restoring snapshots holding already-built (dead) editor DOM. %>
+    <meta name="turbo-cache-control" content="no-cache">
+    <link rel="stylesheet" href="/vendor/quill.snow.css">
+    <script src="/vendor/quill.js" defer></script>
+    <script src="/admin-rte.js" defer></script>
   </head>
   <body class="admin">
     <span class="ns-glow tl"></span>

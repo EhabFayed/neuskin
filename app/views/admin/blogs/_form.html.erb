@@ -45,11 +45,17 @@
           <div class="ns-pair">
             <div class="en">
               <span class="lang-lbl">English</span>
-              <%= cf.text_area :value_en, rows: 4, class: "ns-textarea" %>
+              <div data-rte>
+                <%= cf.hidden_field :value_en %>
+                <div class="rte-editor"><%= rich(cf.object.value_en) %></div>
+              </div>
             </div>
             <div class="ar">
               <span class="lang-lbl">العربية · Arabic</span>
-              <%= cf.text_area :value_ar, rows: 4, dir: "rtl", class: "ns-textarea" %>
+              <div data-rte data-dir="rtl">
+                <%= cf.hidden_field :value_ar %>
+                <div class="rte-editor" dir="rtl"><%= rich(cf.object.value_ar) %></div>
+              </div>
             </div>
           </div>
           <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
@@ -86,11 +92,17 @@
         <div class="ns-pair">
           <div class="en">
             <span class="lang-lbl">English</span>
-            <textarea name="blog[contents_attributes][IDX][value_en]" rows="4" class="ns-textarea"></textarea>
+            <div data-rte>
+              <input type="hidden" name="blog[contents_attributes][IDX][value_en]">
+              <div class="rte-editor"></div>
+            </div>
           </div>
           <div class="ar">
             <span class="lang-lbl">العربية · Arabic</span>
-            <textarea name="blog[contents_attributes][IDX][value_ar]" rows="4" dir="rtl" class="ns-textarea"></textarea>
+            <div data-rte data-dir="rtl">
+              <input type="hidden" name="blog[contents_attributes][IDX][value_ar]">
+              <div class="rte-editor" dir="rtl"></div>
+            </div>
           </div>
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">

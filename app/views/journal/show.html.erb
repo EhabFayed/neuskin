@@ -27,7 +27,15 @@
 
   <div class="jra-body body-copy">
     <% @blog.contents.each do |block| %>
-      <% if block.value.present? %><p><%= block.value %></p><% end %>
+      <%# Paragraphs written in the Studio RTE are stored as HTML (sanitized
+          via rich); older seeded rows are plain text and keep their <p>. %>
+      <% if block.value.present? %>
+        <% if block.value.lstrip.start_with?("<") %>
+          <%= rich(block.value) %>
+        <% else %>
+          <p><%= block.value %></p>
+        <% end %>
+      <% end %>
       <% if block.photo.attached? %>
         <figure class="jra-figure">
           <%= image_tag block.photo, alt: block.alt.to_s %>
