@@ -333,3 +333,12 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
 
 /* the preview panel is wider now that it holds a full page */
 @media (min-width: 1001px) { .ns-editor { grid-template-columns: minmax(0,1fr) 420px; } }
+
+/* ---- Rich text editors (Quill, snow theme) — journal body paragraphs.
+   The snow theme is light; the editor sits as a white "paper" island on the
+   dark Studio ground, same treatment as the Balhareth admin. ---- */
+[data-rte] { background: #fff; border-radius: 10px; }
+[data-rte] .ql-toolbar { border-radius: 10px 10px 0 0; border-color: var(--ns-border); background: #f4efea; }
+[data-rte] .ql-container { border-radius: 0 0 10px 10px; border-color: var(--ns-border); font-family: inherit; font-size: 14px; color: #1d1719; }
+[data-rte] .rte-editor, [data-rte] .ql-editor { min-height: 140px; }
+[data-rte] .ql-editor[dir=rtl] { direction: rtl; text-align: right; }
