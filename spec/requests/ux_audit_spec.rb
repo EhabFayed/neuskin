@@ -17,7 +17,7 @@ RSpec.describe "UX audit fixes", type: :request do
       get "/"
       expect(response.body).to include('href="/protocols/brides-180"')
       expect(response.body).to include('href="/treatments/skin"')
-      expect(response.body).to include('href="/technologies#device-emface"')
+      expect(response.body).to include('href="/technologies/emface"')
       expect(response.body).to include("workstation.repzo.com")
       expect(response.body).to include('class="btn-book"')
       expect(response.body).to include('class="nav-burger"')
@@ -80,6 +80,19 @@ RSpec.describe "UX audit fixes", type: :request do
       expect(response.body).to include("رحلة المريضة")
       expect(response.body).not_to include("Request your plan")
       expect(response.body).not_to include("The patient journey")
+    end
+  end
+
+  describe "device pages (client follow-up)" do
+    it "gives every device its own page in both locales" do
+      get "/technologies/emface"
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include("EMFACE").and include("Needle-free lift")
+      get "/ar/technologies/emface"
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include("شدّ بلا إبر")
+      get "/technologies/nope"
+      expect(response).to have_http_status(:moved_permanently)
     end
   end
 

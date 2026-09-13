@@ -524,6 +524,17 @@ ar:
     view_protocol: "اطّلعي على البروتوكول ←"
     neuskin_view: "رؤية نيوسكن"
     private_inquiry: "ابدئي باستفسار خاص"
+  technology_page:
+    eyebrow: "تقنياتنا"
+    learn_more: "اعرفي أكثر ←"
+    about: "ماذا تقدّم لكِ"
+    specs: "المواصفات التقنية"
+    cta_title: "هل هذه التقنية المناسبة لكِ؟"
+    cta_body: "لا يُستخدم أي جهاز إلا ضمن خطة بإشراف طبيبة. ابدئي بمحادثة خاصة وسنقول لكِ بصدق ما يناسبكِ."
+    cta_button: "اطلبي تقييمكِ"
+    others: "تقنيات أخرى"
+    back: "← كل التقنيات"
+    meta_title: "%{name} في عيادة نيوسكن — %{tagline}"
   inquire:
     title: "احجزي موعدك."
     hero_eyebrow: "تواصلي · استفسري"

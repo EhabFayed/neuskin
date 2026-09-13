@@ -45,7 +45,7 @@ module Admin
 
     def device_params
       params.require(:device).permit(
-        :name, :position, :front_image, :back_image,
+        :name, :slug, :position, :front_image, :back_image,
         :tagline_en, :tagline_ar, :body_en, :body_ar, :specs_en, :specs_ar
       )
     end

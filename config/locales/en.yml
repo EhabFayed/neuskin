@@ -524,6 +524,17 @@ en:
     view_protocol: "View the protocol →"
     neuskin_view: "The NeuSkin view"
     private_inquiry: "Begin with a private inquiry"
+  technology_page:
+    eyebrow: "Our Technologies"
+    learn_more: "Learn more →"
+    about: "What it does for you"
+    specs: "Technical specs"
+    cta_title: "Is this the right technology for you?"
+    cta_body: "Every device is only ever used inside a doctor-led plan. Begin with a private conversation and we will tell you honestly what fits."
+    cta_button: "Request an assessment"
+    others: "Other technologies"
+    back: "← All technologies"
+    meta_title: "%{name} at NeuSkin Clinic — %{tagline}"
   inquire:
     title: "Book your appointment."
     hero_eyebrow: "Contact · Inquiry"

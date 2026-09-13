@@ -62,7 +62,7 @@
       <div class="nav-sub">
         <%= link_to t("layout.nav.all_technologies"), technologies_path, class: "nav-sub-all" %>
         <% nav_devices.each do |d| %>
-          <%= link_to technologies_path(anchor: device_anchor(d)) do %>
+          <%= link_to technology_path(d) do %>
             <bdi><%= d.name %></bdi>
             <small><%= d.tagline %></small>
           <% end %>

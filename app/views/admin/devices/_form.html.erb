@@ -49,10 +49,16 @@
 
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Settings</span>
-    <label style="display:block">
-      <span class="lang-lbl">Display position</span><br>
-      <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
-    </label>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Display position</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Page URL slug · /technologies/…</span><br>
+        <%= form.text_field :slug, class: "ns-input", placeholder: "auto from the name" %>
+      </label>
+    </div>
   </div>
 
   <div class="ns-savebar">

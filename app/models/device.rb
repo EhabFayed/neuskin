@@ -8,8 +8,16 @@ class Device < ApplicationRecord
   has_one_attached :back_image
 
   validates :name, presence: true
+  validates :slug, presence: true, uniqueness: true,
+                   format: { with: /\A[a-z0-9-]+\z/, message: "lowercase letters, digits and dashes only" }
 
   default_scope { order(:position) }
+
+  # Every device has its own page at /technologies/<slug>. The slug is derived
+  # from the brand name unless the dashboard sets one explicitly.
+  before_validation { self.slug = name.to_s.parameterize if slug.blank? }
+
+  def to_param = slug
 
   # Locale-aware readers: device.tagline returns tagline_ar or tagline_en for
   # the current I18n locale, falling back to English when Arabic is blank.

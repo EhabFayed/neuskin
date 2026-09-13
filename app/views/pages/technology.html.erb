@@ -1,0 +1,78 @@
+<%# One device page (/technologies/:slug). Copy and images are the Device
+    record (dashboard → Devices); the brand name stays untranslated. %>
+<% content_for :title, t("technology_page.meta_title", name: @device.name, tagline: @device.tagline) %>
+<% content_for :meta_description, @device.body.to_s.truncate(155) %>
+<% hero_url = @device.back_image.attached? ? opt_url(@device.back_image, width: 1800) : image_path("site/space/device-room.webp") %>
+
+<%# 1 · Overlay hero on the in-clinic photo %>
+<section class="over-hero over-hero--device" data-controller="reveal parallax">
+  <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
+    <img src="<%= hero_url %>" alt="<%= @device.name %>" class="kb" fetchpriority="high" decoding="async">
+  </div>
+  <div class="over-hero-copy over-hero-copy--wide">
+    <div class="clinic-hero-eyebrow reveal" data-reveal-target="item"><%= t("technology_page.eyebrow") %> · <%= @device.tagline %></div>
+    <h1 class="clinic-hero-title" data-reveal="up"><bdi><%= @device.name %></bdi></h1>
+    <p class="over-hero-lead" data-reveal="up" data-reveal-delay="140"><%= @device.body %></p>
+  </div>
+</section>
+
+<%# 2 · Product shot + specs %>
+<section class="section section--surface" data-controller="reveal">
+  <div class="section-inner split media-left device-split">
+    <div class="device-shot reveal" data-reveal-target="item">
+      <% if @device.front_image.attached? %>
+        <%= image_tag opt_url(@device.front_image, width: 1000), alt: @device.name, loading: "lazy", decoding: "async" %>
+      <% else %>
+        <%= ns_image_tag :device_table, alt: @device.name, loading: "lazy" %>
+      <% end %>
+    </div>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <span class="eyebrow"><%= t("technology_page.about") %></span>
+      <h2 style="margin:18px 0 20px"><bdi><%= @device.name %></bdi> <span class="em"><%= @device.tagline %></span></h2>
+      <div class="body-copy"><p><%= @device.body %></p></div>
+      <% if @device.specs.present? %>
+        <span class="eyebrow" style="margin-top:34px"><%= t("technology_page.specs") %></span>
+        <ul class="rows device-specs">
+          <% @device.specs.to_s.split(/(?<=[.؟!])\s+/).map(&:strip).reject(&:blank?).each_with_index do |line, i| %>
+            <li><span class="n"><%= format("%02d", i + 1) %></span><span class="t"><%= line %></span></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# 3 · CTA %>
+<section class="cta-center cta-center--tight orn-host" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
+  <h2 class="reveal" data-reveal-target="item"><%= t("technology_page.cta_title") %></h2>
+  <p class="reveal d1" data-reveal-target="item"><%= t("technology_page.cta_body") %></p>
+  <p class="reveal d2" data-reveal-target="item"><%= link_to t("technology_page.cta_button"), inquire_path(codeword: "TECH"), class: "btn" %></p>
+</section>
+
+<%# 4 · Other devices %>
+<% if @other_devices.any? %>
+  <section class="section" data-controller="reveal">
+    <div class="section-inner">
+      <div class="sec-head-row" data-reveal="up">
+        <div class="sec-head" style="margin:0"><span class="eyebrow"><%= t("technology_page.others") %></span></div>
+        <%= link_to t("technology_page.back"), technologies_path, class: "arrowlink" %>
+      </div>
+      <div class="device-others">
+        <% @other_devices.each_with_index do |d, i| %>
+          <%= link_to technology_path(d), class: "device-other", data: { reveal: "up", reveal_delay: 100 + i * 80 } do %>
+            <span class="device-other-media">
+              <% if d.front_image.attached? %>
+                <%= image_tag opt_url(d.front_image, width: 480), alt: d.name, loading: "lazy", decoding: "async" %>
+              <% else %>
+                <%= ns_image_tag :device_table, alt: d.name, loading: "lazy" %>
+              <% end %>
+            </span>
+            <span class="badge"><%= d.tagline %></span>
+            <h3><bdi><%= d.name %></bdi></h3>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>

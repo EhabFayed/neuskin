@@ -127,7 +127,10 @@
   /* One shared height for every INTERIOR photo hero (clinic, protocols,
      outcomes, bridal, private care, technologies) — the home landing hero
      stays full-screen (100svh). July 2026 */
-  --hero-h:        78vh;
+  --hero-h:        max(78vh, 600px); /* never shorter than 600px: on laptop
+                                        viewports (~650px tall) the bottom-
+                                        aligned copy otherwise climbs under
+                                        the fixed header */
 
   /* Motion */
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);

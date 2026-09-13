@@ -51,6 +51,13 @@ class PagesController < ApplicationController
     @devices = Device.all
   end
 
+  # One device (EMTONE, EMFACE, …) — its own page, linked from the header
+  # submenu and the /technologies flip cards.
+  def technology
+    @device = Device.find_by!(slug: params[:slug])
+    @other_devices = Device.where.not(id: @device.id)
+  end
+
   # Legal & compliance (§15). Each renders the shared legal layout with a
   # different i18n key namespace. Copy is draft — pending KSA legal review.
   def privacy

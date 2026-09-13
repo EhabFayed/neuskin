@@ -75,6 +75,9 @@ Rails.application.routes.draw do
 
     # Our Technologies — the device portfolio (July 2026 content deck).
     get "technologies", to: "pages#technologies", as: :technologies
+    # One page per device (client follow-up, Sept 2026): the header submenu
+    # and the flip cards link here.
+    get "technologies/:slug", to: "pages#technology", as: :technology
 
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
