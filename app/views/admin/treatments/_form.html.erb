@@ -29,15 +29,8 @@
 
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Image (card + sub-page hero)</span>
-    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-      <% if @treatment.image.attached? %>
-        <%= image_tag url_for(@treatment.image), style: "width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--ns-border)" %>
-      <% end %>
-      <div>
-        <%= form.file_field :image %>
-        <p class="hint" style="margin-top:6px">Leave empty to keep the built-in photo for this outcome.</p>
-      </div>
-    </div>
+    <%= render "admin/shared/image_field", name: "treatment[image]", current: @treatment.image, remove_name: "treatment[remove_image]",
+               hint: "Leave empty to keep the built-in photo for this outcome." %>
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">

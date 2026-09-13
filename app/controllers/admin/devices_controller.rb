@@ -26,6 +26,9 @@ module Admin
 
     def update
       if @device.update(device_params)
+        %i[front_image back_image].each do |attr|
+          @device.public_send(attr).purge if params[:device]["remove_#{attr}"] == "1" && params[:device][attr].blank?
+        end
         redirect_to admin_devices_path, notice: "Device saved."
       else
         render :edit, status: :unprocessable_entity

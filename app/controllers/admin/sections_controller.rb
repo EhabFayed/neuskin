@@ -43,6 +43,7 @@ module Admin
       # assign_items returns false (and records an error) on invalid JSON;
       # bail to a single render so we never double-render.
       if assign_items && @section.update(section_params)
+        purge_flagged_images
         redirect_to admin_section_path(@section), notice: "Saved."
       else
         render :show, status: :unprocessable_entity
@@ -53,6 +54,18 @@ module Admin
 
     def set_section
       @section = Section.find(params[:id])
+    end
+
+    # "Remove" in the image fields only sets section[remove_<slot>]=1; the
+    # purge happens here after a successful save, and never when a
+    # replacement file came in the same request.
+    def purge_flagged_images
+      slots = [ :image ] + (1..6).map { |i| :"card_image_#{i}" }
+      slots.each do |slot|
+        next unless params[:section]["remove_#{slot}"] == "1" && params[:section][slot].blank?
+        att = @section.public_send(slot)
+        att.purge if att.attached?
+      end
     end
 
     # Replicate the instance variables the public controllers set, so the

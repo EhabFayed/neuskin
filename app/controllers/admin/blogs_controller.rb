@@ -31,7 +31,7 @@ module Admin
       @blog.faqs = normalized_faqs if faqs_submitted?
       assign_paragraph_keys
       if @blog.save
-        @blog.image.purge if params[:blog][:remove_image] == "1"
+        @blog.image.purge if params[:blog][:remove_image] == "1" && params[:blog][:image].blank?
         purge_flagged_paragraph_photos
         redirect_to edit_admin_blog_path(@blog), notice: "Post saved."
       else

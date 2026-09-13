@@ -25,7 +25,7 @@ module Admin
 
     def update
       if @member.update(member_params)
-        @member.photo.purge if params[:team_member][:remove_photo] == "1"
+        @member.photo.purge if params[:team_member][:remove_photo] == "1" && params[:team_member][:photo].blank?
         redirect_to admin_team_members_path, notice: "Member saved."
       else
         render :edit, status: :unprocessable_entity

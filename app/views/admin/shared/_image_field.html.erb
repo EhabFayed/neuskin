@@ -1,0 +1,46 @@
+<%# Reusable Studio image field — thumbnail of the current upload, live preview
+    of a newly picked file, Remove (flag, purged on save) and Undo.
+    Locals:
+      name         input name, e.g. "protocol[image]"        (required)
+      current      the attachment (Attached::One) or nil
+      remove_name  hidden flag name, e.g. "protocol[remove_image]" (nil = no remove)
+      hint         helper text under the field
+      accept       default "image/*"
+      fit          "cover" | "contain"
+      multiple     true for galleries
+      input_data   extra data-* on the <input> (livepreview hooks)
+      size         "lg" | "sm" thumbnail size %>
+<% current     = local_assigns[:current] %>
+<% remove_name = local_assigns[:remove_name] %>
+<% hint        = local_assigns[:hint] %>
+<% accept      = local_assigns.fetch(:accept, "image/*") %>
+<% fit         = local_assigns.fetch(:fit, "cover") %>
+<% multiple    = local_assigns.fetch(:multiple, false) %>
+<% input_data  = local_assigns.fetch(:input_data, {}) %>
+<% size        = local_assigns.fetch(:size, "lg") %>
+<% attached    = current.respond_to?(:attached?) && current.attached? %>
+<% current_url = attached ? url_for(current) : nil %>
+<% filename    = attached ? (current.respond_to?(:filename) ? current.filename.to_s : current.map { |a| a.filename.to_s }.join(", ")) : "" %>
+<div class="ns-imgfield ns-imgfield--<%= size %>" data-controller="imagefield">
+  <div class="ns-imgfield-frame<%= ' is-empty' unless current_url %>" data-imagefield-target="frame">
+    <img data-imagefield-target="preview" alt="" style="object-fit:<%= fit %>"<%= current_url ? " src=\"#{current_url}\"".html_safe : " hidden".html_safe %>>
+    <span class="ns-imgfield-empty" data-imagefield-target="empty"<%= " hidden".html_safe if current_url %>>No image</span>
+    <span class="ns-imgfield-badge" data-imagefield-target="badge" hidden></span>
+  </div>
+  <div class="ns-imgfield-side">
+    <div class="ns-imgfield-actions">
+      <label class="ns-btn ghost small">
+        <span data-imagefield-target="label"><%= current_url ? "Replace" : "Upload" %></span>
+        <%= tag.input type: "file", name: name, accept: accept, multiple: multiple, class: "ns-imgfield-input",
+              data: { imagefield_target: "input", action: "change->imagefield#pick" }.merge(input_data) %>
+      </label>
+      <% if remove_name %>
+        <button type="button" class="ns-btn danger small" data-imagefield-target="remove" data-action="imagefield#remove"<%= " hidden".html_safe unless current_url %>>Remove</button>
+        <input type="hidden" name="<%= remove_name %>" value="0" data-imagefield-target="flag">
+      <% end %>
+      <button type="button" class="ns-btn ghost small" data-imagefield-target="undo" data-action="imagefield#undo" hidden>Undo</button>
+    </div>
+    <span class="ns-imgfield-name" data-imagefield-target="filename"><%= filename %></span>
+    <% if hint %><p class="hint" style="margin:6px 0 0"><%= hint %></p><% end %>
+  </div>
+</div>

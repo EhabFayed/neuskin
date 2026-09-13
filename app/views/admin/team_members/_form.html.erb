@@ -29,13 +29,8 @@
 
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Photo</span>
-    <% if @member.photo.attached? %>
-      <p class="hint">Current: <%= @member.photo.filename %></p>
-      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
-        <%= check_box_tag "team_member[remove_photo]", "1", false %> Remove photo (falls back to a stock portrait)
-      </label>
-    <% end %>
-    <%= form.file_field :photo, accept: "image/*" %>
+    <%= render "admin/shared/image_field", name: "team_member[photo]", current: @member.photo, remove_name: "team_member[remove_photo]",
+               hint: "Without a photo the page falls back to a stock portrait." %>
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">

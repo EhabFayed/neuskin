@@ -27,6 +27,7 @@ module Admin
 
     def update
       if @protocol.update(protocol_params)
+        @protocol.image.purge if params[:protocol][:remove_image] == "1" && params[:protocol][:image].blank?
         redirect_to admin_protocols_path, notice: "Protocol saved."
       else
         render :edit, status: :unprocessable_entity

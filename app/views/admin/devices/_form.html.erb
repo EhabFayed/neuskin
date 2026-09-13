@@ -34,16 +34,8 @@
        "Back image (in-clinic photo)" => [:back_image, "Fills the space under the specs after the card flips."] }.each do |label, (attr, hint)| %>
     <div class="ns-card" style="margin-bottom:14px">
       <span class="ns-field-title"><%= label %></span>
-      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-        <% attachment = @device.public_send(attr) %>
-        <% if attachment.attached? %>
-          <%= image_tag url_for(attachment), style: "width:180px;height:120px;object-fit:contain;background:#f4efea;border-radius:8px;border:1px solid var(--ns-border)" %>
-        <% end %>
-        <div>
-          <%= form.file_field attr %>
-          <p class="hint" style="margin-top:6px"><%= hint %></p>
-        </div>
-      </div>
+      <%= render "admin/shared/image_field", name: "device[#{attr}]", current: @device.public_send(attr),
+                 remove_name: "device[remove_#{attr}]", fit: (attr == :front_image ? "contain" : "cover"), hint: hint %>
     </div>
   <% end %>
 

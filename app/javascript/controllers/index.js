@@ -40,6 +40,9 @@ application.register("herovideo", HerovideoController)
 import AdminthemeController from "controllers/admintheme_controller"
 application.register("admintheme", AdminthemeController)
 
+import ImagefieldController from "controllers/imagefield_controller"
+application.register("imagefield", ImagefieldController)
+
 import IntroController from "controllers/intro_controller"
 application.register("intro", IntroController)
 
