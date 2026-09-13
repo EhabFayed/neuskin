@@ -56,12 +56,12 @@ module ApplicationHelper
 
   # Asset path for a design image key (symbol). Falls back to the brand mark.
   def ns_image(key)
-    asset_path(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.png"))
+    asset_path(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.webp"))
   end
 
   # <img> tag for a design image key, with object-fit handled by the CSS class.
   def ns_image_tag(key, alt: "", **opts)
-    image_tag(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.png"), alt: alt, **opts)
+    image_tag(NS_IMAGES.fetch(key.to_sym, "site/logo-ns.webp"), alt: alt, **opts)
   end
 
   # Returns the string for the active locale. The whole site renders one
@@ -125,6 +125,32 @@ module ApplicationHelper
   RICH_ATTRS = %w[href src alt title target rel].freeze
 
   def rich(html)
-    sanitize(html.to_s, tags: RICH_TAGS, attributes: RICH_ATTRS)
+    webp_images(sanitize(html.to_s, tags: RICH_TAGS, attributes: RICH_ATTRS))
+  end
+
+  # Images the editor uploaded into an article body point at the raw blob
+  # (/rails/active_storage/blobs/proxy/<signed_id>/name.png). Swap each for a
+  # resized WebP variant and lazy-load it, so article imagery follows the same
+  # rule as every other picture on the site. Any lookup failure leaves the
+  # original tag untouched — rendering never breaks because of an image.
+  BLOB_SRC = %r{\A(?:https?://[^/]+)?/rails/active_storage/blobs/(?:proxy|redirect)/([^/]+)/}
+
+  def webp_images(html, width: 1400)
+    return html unless html.to_s.include?("/rails/active_storage/blobs/")
+
+    frag = Nokogiri::HTML::DocumentFragment.parse(html)
+    frag.css("img[src]").each do |img|
+      signed = img["src"].to_s[BLOB_SRC, 1] or next
+      blob = ActiveStorage::Blob.find_signed(signed) rescue nil
+      next unless blob&.variable?
+
+      img["src"] = rails_storage_proxy_path(blob.variant(resize_to_limit: [ width, nil ], format: :webp,
+                                                         saver: { quality: ContentHelper::VARIANT_QUALITY, strip: true }))
+      img["loading"] ||= "lazy"
+      img["decoding"] ||= "async"
+    end
+    frag.to_html.html_safe
+  rescue StandardError
+    html
   end
 end

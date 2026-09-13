@@ -126,6 +126,18 @@ RSpec.describe "UX audit fixes", type: :request do
   end
 
   describe "images (items 1–3)" do
+    it "rewrites editor-uploaded article images to WebP variants" do
+      png = Vips::Image.black(30, 30).write_to_buffer(".png")
+      blob = ActiveStorage::Blob.create_and_upload!(io: StringIO.new(png), filename: "inline.png", content_type: "image/png")
+      blog = Blog.create!(title_en: "Pic", title_ar: "صورة", is_published: true)
+      blog.contents.create!(key: "para_1", position: 1,
+                            value_en: %(<p>Hi</p><img src="/rails/active_storage/blobs/proxy/#{blob.signed_id}/inline.png">))
+      get "/journal/pic"
+      expect(response.body).to include("/rails/active_storage/representations/")
+      expect(response.body).not_to include("/rails/active_storage/blobs/proxy/#{blob.signed_id}")
+      expect(response.body).to include('loading="lazy"')
+    end
+
     it "serves dashboard images as resized WebP variants" do
       t = Treatment.first
       png = Vips::Image.black(40, 40).write_to_buffer(".png")
