@@ -21,17 +21,9 @@
 <section class="section section--surface" data-controller="reveal filter">
   <div class="section-inner">
     <div class="reveal" data-reveal-target="item">
-      <span class="eyebrow"><%= sec_text("protocols_index", "protocols_filter", "eyebrow").presence || "I'm here because…" %></span>
+      <span class="eyebrow"><%= sec_text("protocols_index", "protocols_filter", "eyebrow").presence || t("protocol_page.hub_filter") %></span>
       <div class="chips" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:24px">
-        <% chips = [
-             ["all",      "Show me everything"],
-             ["bride",    "I have a wedding ahead"],
-             ["tired",    "My skin looks tired"],
-             ["hair",     "I'm losing hair"],
-             ["maintain", "I want to maintain"],
-             ["fresh",    "I want to start fresh"],
-             ["unsure",   "I'm not sure yet"]
-           ] %>
+        <% chips = %w[all bride tired hair maintain fresh unsure].map { |k| [k, t("protocol_page.chips.#{k}")] } %>
         <% chips.each do |persona, label| %>
           <button type="button"
                   class="chip<%= " is-active" if persona == "all" %>"

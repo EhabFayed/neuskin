@@ -31,5 +31,4 @@ class Content < ApplicationRecord
   def display_label
     label.presence || key.to_s.titleize
   end
-
 end

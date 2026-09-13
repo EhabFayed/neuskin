@@ -19,11 +19,11 @@ RSpec.describe "Lead forms — emails and dashboard", type: :request do
       mails = ActionMailer::Base.deliveries
       expect(mails.size).to eq(2)
 
-      internal = mails.find { |m| m.to == [Clinic::INFO_EMAIL] }
+      internal = mails.find { |m| m.to == [ Clinic::INFO_EMAIL ] }
       expect(internal.subject).to include("New inquiry — نورة")
       expect(internal.body.encoded).to include("+966512345678")
 
-      confirmation = mails.find { |m| m.to == ["noura@example.com"] }
+      confirmation = mails.find { |m| m.to == [ "noura@example.com" ] }
       expect(confirmation.subject).to eq("استلمنا استفسارك — عيادة نيو سكين")
       expect(confirmation.body.to_s).to include("سنتصل بك خلال ساعتين")
     end
@@ -34,7 +34,7 @@ RSpec.describe "Lead forms — emails and dashboard", type: :request do
       end
       mails = ActionMailer::Base.deliveries
       expect(mails.size).to eq(1)
-      expect(mails.first.to).to eq([Clinic::INFO_EMAIL])
+      expect(mails.first.to).to eq([ Clinic::INFO_EMAIL ])
     end
 
     it "sends the confirmation in English for English-locale leads" do
@@ -43,7 +43,7 @@ RSpec.describe "Lead forms — emails and dashboard", type: :request do
           name: "Sara", mobile: "0512345678", email: "sara@example.com"
         } }
       end
-      confirmation = ActionMailer::Base.deliveries.find { |m| m.to == ["sara@example.com"] }
+      confirmation = ActionMailer::Base.deliveries.find { |m| m.to == [ "sara@example.com" ] }
       expect(confirmation.subject).to eq("We received your inquiry — NeuSkin Clinic")
       expect(confirmation.body.to_s).to include("We will call you within two hours")
     end
@@ -61,7 +61,7 @@ RSpec.describe "Lead forms — emails and dashboard", type: :request do
 
       mails = ActionMailer::Base.deliveries
       expect(mails.size).to eq(2)
-      expect(mails.map(&:to)).to contain_exactly([Clinic::INFO_EMAIL], ["bride@example.com"])
+      expect(mails.map(&:to)).to contain_exactly([ Clinic::INFO_EMAIL ], [ "bride@example.com" ])
     end
   end
 

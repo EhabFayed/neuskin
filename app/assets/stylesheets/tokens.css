@@ -142,9 +142,17 @@
  * design direction calls for), Kufi carries interface/body. Latin fallbacks
  * stay in the chain — unicode-range above keeps them owning Latin glyphs.
  */
+/*
+ * Sept 2026 (client audit, item 7): ONE Arabic face everywhere. The Naskh
+ * display face clipped its ascenders in the masked hero reveals and read as a
+ * second, competing voice next to the Kufi body copy. Kufi now carries
+ * headlines, body and interface alike; Latin glyphs still fall through to
+ * Google Sans Flex via unicode-range. Naskh @font-face stays declared (unused)
+ * so a future toggle is one line.
+ */
 html[lang="ar"] {
-  --serif: "Droid Arabic Naskh", Tahoma, Verdana, serif;
-  --serif-text: "Droid Arabic Naskh", Tahoma, Verdana, serif;
+  --serif: "Droid Arabic Kufi", "Google Sans Flex", "Hanken Grotesk", Tahoma, -apple-system, "Segoe UI", system-ui, sans-serif;
+  --serif-text: "Droid Arabic Kufi", "Google Sans Flex", "Hanken Grotesk", Tahoma, -apple-system, "Segoe UI", system-ui, sans-serif;
   --sans:  "Droid Arabic Kufi", "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
 }
 

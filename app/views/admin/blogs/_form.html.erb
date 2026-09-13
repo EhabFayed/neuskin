@@ -169,6 +169,61 @@
     </div>
   </div>
 
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Frequently asked <span class="hint">(optional)</span></span>
+    <p class="hint">Short Q&amp;A shown under the article as an accordion (and as FAQ schema for search engines). Leave every field blank to drop a row.</p>
+    <%# Rows post as blog[faqs][][q_en] etc. — an array of hashes the controller
+        normalises (blank rows dropped). The marker tells the controller the
+        list was submitted, so removing every row clears it. %>
+    <input type="hidden" name="blog[faqs_submitted]" value="1">
+    <div id="blog-faqs">
+      <% Array(@blog.faqs).each do |faq| %>
+        <div class="ns-card blog-faq-row" style="margin:10px 0;background:var(--ns-bg)">
+          <div class="ns-pair">
+            <div class="en">
+              <span class="lang-lbl">Question · English</span>
+              <input type="text" name="blog[faqs][][q_en]" class="ns-input" value="<%= faq["q_en"] %>">
+              <span class="lang-lbl" style="margin-top:8px;display:block">Answer · English</span>
+              <textarea name="blog[faqs][][a_en]" rows="3" class="ns-textarea"><%= faq["a_en"] %></textarea>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">السؤال · Arabic</span>
+              <input type="text" name="blog[faqs][][q_ar]" dir="rtl" class="ns-input" value="<%= faq["q_ar"] %>">
+              <span class="lang-lbl" style="margin-top:8px;display:block">الإجابة · Arabic</span>
+              <textarea name="blog[faqs][][a_ar]" rows="3" dir="rtl" class="ns-textarea"><%= faq["a_ar"] %></textarea>
+            </div>
+          </div>
+          <button type="button" class="ns-btn ghost" style="margin-top:8px;font-size:12px"
+                  onclick="this.closest('.blog-faq-row').remove()">Remove question</button>
+        </div>
+      <% end %>
+    </div>
+    <template id="blog-faq-template">
+      <div class="ns-card blog-faq-row" style="margin:10px 0;background:var(--ns-bg)">
+        <div class="ns-pair">
+          <div class="en">
+            <span class="lang-lbl">Question · English</span>
+            <input type="text" name="blog[faqs][][q_en]" class="ns-input">
+            <span class="lang-lbl" style="margin-top:8px;display:block">Answer · English</span>
+            <textarea name="blog[faqs][][a_en]" rows="3" class="ns-textarea"></textarea>
+          </div>
+          <div class="ar">
+            <span class="lang-lbl">السؤال · Arabic</span>
+            <input type="text" name="blog[faqs][][q_ar]" dir="rtl" class="ns-input">
+            <span class="lang-lbl" style="margin-top:8px;display:block">الإجابة · Arabic</span>
+            <textarea name="blog[faqs][][a_ar]" rows="3" dir="rtl" class="ns-textarea"></textarea>
+          </div>
+        </div>
+        <button type="button" class="ns-btn ghost" style="margin-top:8px;font-size:12px"
+                onclick="this.closest('.blog-faq-row').remove()">Remove question</button>
+      </div>
+    </template>
+    <button type="button" class="ns-btn ghost" style="margin-top:6px"
+            onclick="var t=document.getElementById('blog-faq-template'),w=document.getElementById('blog-faqs');w.insertAdjacentHTML('beforeend',t.innerHTML);">
+      + Add question
+    </button>
+  </div>
+
   <details class="ns-card" style="margin-bottom:14px">
     <summary class="ns-field-title" style="cursor:pointer">SEO (optional)</summary>
     <div class="ns-pair" style="margin-top:10px">
@@ -191,6 +246,11 @@
     <%= link_to "Back to posts", admin_blogs_path, class: "ns-btn ghost" %>
     <% if @blog.persisted? %>
       <a href="<%= journal_article_path(@blog) %>" target="_blank" rel="noopener" class="ns-btn ghost">View post</a>
+    <% end %>
+    <span class="spacer"></span>
+    <% if @blog.persisted? %>
+      <%= link_to "Delete post", admin_blog_path(@blog), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@blog.title_en}” permanently?" } %>
     <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>

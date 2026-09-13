@@ -1,0 +1,89 @@
+/* Journal article — body typography guards, per-article FAQ and the sticky
+   booking aside. Layout tokens (--serif, --text-*, --accent-*) come from
+   tokens.css; the hero/eyebrow rules stay in application.css (.jra*, .jr-*). */
+
+/* Two columns on desktop: article + FAQ, then the booking aside. */
+.jra-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.jra-main { min-width: 0; }
+
+/* Body copy — long unbroken runs (URLs, pasted text) must wrap instead of
+   pushing the column wider than the viewport. */
+.jra-body,
+.jra-body * { overflow-wrap: anywhere; word-break: break-word; }
+.jra-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: clamp(20px, 3vw, 32px) 0;
+  background: var(--card-2);
+}
+.jra-body h2,
+.jra-body h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--text-bright);
+  line-height: 1.2;
+  margin: clamp(28px, 4vw, 44px) 0 0.6em;
+}
+.jra-body h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.jra-body h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
+.jra-body h2:first-child,
+.jra-body h3:first-child { margin-block-start: 0; }
+.jra-body a { color: var(--accent-soft); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.jra-body a:hover { color: var(--text-bright); }
+.jra-body blockquote {
+  margin: clamp(24px, 3vw, 36px) 0;
+  padding: 4px 0 4px clamp(18px, 2.5vw, 28px);
+  border-inline-start: 1px solid var(--accent);
+  font-family: var(--serif);
+  font-size: 1.15em;
+  font-style: italic;
+  color: var(--text-soft);
+}
+[dir="rtl"] .jra-body blockquote { padding: 4px clamp(18px, 2.5vw, 28px) 4px 0; }
+.jra-body ul,
+.jra-body ol { margin: 0 0 1.5em; padding-inline-start: 1.4em; }
+.jra-body li { margin: 0 0 0.5em; }
+.jra-body li::marker { color: var(--accent); }
+
+/* Per-article FAQ accordion — reuses the .faq rules from application.css. */
+.jra-faq { max-width: 720px; margin-block-start: clamp(44px, 6vw, 72px); }
+.jra-faq > h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: var(--text-bright);
+  margin: 0 0 8px;
+}
+.jra-faq .faq-group { margin-block-end: 0; border-block-start: 1px solid var(--line); }
+.jra-faq .faq-a p { margin: 0 0 0.8em; }
+.jra-faq .faq-a p:last-child { margin-block-end: 0; }
+
+/* Sticky booking aside. */
+.jra-aside { position: sticky; top: 110px; min-width: 0; }
+.jra-aside-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: clamp(22px, 2.4vw, 32px);
+}
+.jra-aside .jr-eyebrow { margin-block-end: 12px; }
+.jra-aside-title {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  font-weight: 400;
+  color: var(--text-bright);
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+.jra-aside-wa { display: flex; justify-content: center; width: 100%; margin-block-start: 14px; }
+
+@media (max-width: 960px) {
+  .jra-layout { grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 8vw, 64px); }
+  .jra-aside { position: static; }
+  .jra-aside-card { max-width: 560px; }
+}

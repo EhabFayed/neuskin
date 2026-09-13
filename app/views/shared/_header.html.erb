@@ -1,19 +1,82 @@
-<header class="site-header" data-controller="header">
+<%# Site header. Desktop: inline nav with hover submenus for Protocols /
+    Treatments / Technologies (every record links to its own page or card).
+    Mobile: burger → full-width panel; carets open the same submenus on tap.
+    Booking (Repzo) moved up here from the old floating button (audit item 9). %>
+<header class="site-header" data-controller="header nav">
   <%= link_to root_path, class: "brand", "aria-label": "NeuSkin Clinic" do %>
-    <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: "NeuSkin" %>
+    <%= image_tag "site/logo-ns.png", class: "brand-logo", alt: "NeuSkin", width: 42, height: 40 %>
     <span class="brand-text">
       <span class="brand-name">NeuSkin</span>
-      <span class="brand-sub">Clinic · Riyadh</span>
+      <span class="brand-sub"><%= t("layout.brand_sub") %></span>
     </span>
   <% end %>
 
-  <nav class="site-nav">
+  <button type="button" class="nav-burger" aria-label="<%= t("layout.nav.menu") %>" aria-expanded="false"
+          data-nav-target="burger" data-action="nav#toggle">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="site-nav" data-nav-target="panel" aria-label="<%= t("layout.nav.menu") %>">
     <%= link_to t("layout.nav.the_clinic"), the_clinic_path %>
-    <%# Dr. Maysa link hidden with the page (July 2026 content deck). %>
-    <%= link_to t("layout.nav.protocols"),  protocols_path %>
-    <%= link_to t("layout.nav.treatments"), treatments_path %>
-    <%= link_to t("layout.nav.technologies"), technologies_path %>
-    <%= link_to t("layout.nav.journal"),    journal_path %>
+
+    <%# Protocols — hub + one entry per protocol %>
+    <div class="nav-item has-sub" data-nav-target="item">
+      <%= link_to t("layout.nav.protocols"), protocols_path, class: "nav-parent" %>
+      <button type="button" class="nav-caret" aria-expanded="false" aria-label="<%= t("layout.nav.protocols") %>" data-action="nav#toggleSub">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-sub">
+        <%= link_to t("layout.footer.all_protocols"), protocols_path, class: "nav-sub-all" %>
+        <% nav_protocols.each do |p| %>
+          <%= link_to protocol_path(p) do %>
+            <bdi><%= p.name %><% if p.trademark %>™<% end %></bdi>
+            <small><%= p.duration %></small>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Treatments — hub + one entry per outcome %>
+    <div class="nav-item has-sub" data-nav-target="item">
+      <%= link_to t("layout.nav.treatments"), treatments_path, class: "nav-parent" %>
+      <button type="button" class="nav-caret" aria-expanded="false" aria-label="<%= t("layout.nav.treatments") %>" data-action="nav#toggleSub">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-sub">
+        <%= link_to t("layout.nav.all_treatments"), treatments_path, class: "nav-sub-all" %>
+        <% nav_treatments.each do |tr| %>
+          <%= link_to treatment_outcome_path(outcome: tr.slug) do %>
+            <bdi><%= tr.title %></bdi>
+            <small><%= tr.headline %></small>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Technologies — page + one anchor per device card %>
+    <div class="nav-item has-sub" data-nav-target="item">
+      <%= link_to t("layout.nav.technologies"), technologies_path, class: "nav-parent" %>
+      <button type="button" class="nav-caret" aria-expanded="false" aria-label="<%= t("layout.nav.technologies") %>" data-action="nav#toggleSub">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-sub">
+        <%= link_to t("layout.nav.all_technologies"), technologies_path, class: "nav-sub-all" %>
+        <% nav_devices.each do |d| %>
+          <%= link_to technologies_path(anchor: device_anchor(d)) do %>
+            <bdi><%= d.name %></bdi>
+            <small><%= d.tagline %></small>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= link_to t("layout.nav.journal"), journal_path %>
+
+    <%# Mobile-only actions (duplicated from header-actions, hidden on desktop) %>
+    <div class="nav-mobile-actions">
+      <a class="btn" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= t("layout.book") %></a>
+      <%= link_to t("layout.nav.inquire"), inquire_path, class: "btn btn--ghost" %>
+    </div>
   </nav>
 
   <div class="header-actions">
@@ -37,7 +100,8 @@
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
     </a>
-    <%# Dark / Light mode toggle — sun shown in dark mode (click → light), moon shown in light mode (click → dark) %>
+    <%# Booking — online appointment (Repzo). Was the floating button. %>
+    <a class="btn-book" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= t("layout.book") %></a>
     <%= link_to t("layout.nav.inquire"), inquire_path, class: "btn-inquire" %>
   </div>
 </header>

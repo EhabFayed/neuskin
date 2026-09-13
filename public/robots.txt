@@ -1,5 +1,11 @@
 User-Agent: *
 Allow: /
 Disallow: /cdn-cgi/
+Disallow: /admin/
+Disallow: /users/
+# Prefilled inquiry variants (?codeword=…) are the same page — do not crawl them
+Disallow: /inquire?*
+Disallow: /en/inquire?*
+Disallow: /ar/inquire?*
 
 Sitemap: https://neuskin.me/sitemap.xml

@@ -47,6 +47,11 @@
   <div class="ns-savebar">
     <%= link_to "Back to stories", admin_stories_path, class: "ns-btn ghost" %>
     <a href="<%= stories_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <span class="spacer"></span>
+    <% if @story.persisted? %>
+      <%= link_to "Delete story", admin_story_path(@story), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete this story permanently?" } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

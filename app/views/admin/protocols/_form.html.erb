@@ -82,6 +82,11 @@
     <% if @protocol.persisted? %>
       <a href="<%= protocol_path(@protocol) %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
     <% end %>
+    <span class="spacer"></span>
+    <% if @protocol.persisted? %>
+      <%= link_to "Delete protocol", admin_protocol_path(@protocol), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@protocol.name_en}” permanently? Its page and every link to it stop working." } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

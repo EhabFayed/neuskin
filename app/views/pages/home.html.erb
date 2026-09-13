@@ -3,11 +3,17 @@
 <%# ---- Hero (full-bleed media, centered overlay copy — Figma landing) ---- %>
 <section class="hero" data-controller="reveal">
   <div class="hero-media">
-    <%# Content team (July 2026): hero plays the clinic video full-bleed behind the copy. %>
-    <%= video_tag "/videos/neuskin-web-data.mp4",
-          class: "hero-media-video",
-          autoplay: true, muted: true, loop: true, playsinline: true,
-          preload: "auto" %>
+    <%# Content team (July 2026): hero plays the clinic video full-bleed behind
+        the copy. Performance pass (Sept 2026): the poster (20 KB WebP) is the
+        only hero media in the HTML; herovideo_controller attaches the 0.6 MB
+        1280p clip on desktop after load, phones keep the poster (mobile LCP). %>
+    <picture class="hero-media-poster">
+      <source media="(max-width: 880px)" srcset="<%= asset_path("site/hero-poster-m.webp") %>" type="image/webp">
+      <img src="<%= asset_path("site/hero-poster.webp") %>" alt="" width="1600" height="900" fetchpriority="high" decoding="async">
+    </picture>
+    <video class="hero-media-video" muted loop playsinline preload="none" aria-hidden="true"
+           poster="<%= asset_path("site/hero-poster.webp") %>"
+           data-controller="herovideo" data-herovideo-src-value="/videos/neuskin-hero-1280.mp4"></video>
   </div>
   <div class="hero-copy">
     <span class="eyebrow no-rule" data-reveal="fade"><%= sec_text("home", "home_hero", "eyebrow").presence || "Doctor-led · Riyadh" %></span>
@@ -31,10 +37,10 @@
       <%= sec_text("home", "home_hero", "sub").presence || "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy." %>
     </p>
     <div class="hero-cta" data-reveal="up" data-reveal-delay="640">
-      <%= link_to "Request an assessment", inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn", data: { controller: "magnetic" } %>
+      <%= link_to t("home_page.cta_assessment"), inquire_path(codeword: "METHOD", persona: "unsure"), class: "btn", data: { controller: "magnetic" } %>
       <a class="btn btn--ghost" href="<%= whatsapp_url %>" target="_blank" rel="noopener">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="#6fb98a" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
-        Speak privately on WhatsApp
+        <%= t("home_page.cta_whatsapp") %>
       </a>
     </div>
   </div>
@@ -51,7 +57,7 @@
     <%# Slide carousel (Seline-style): one principle per full-width slide —
         image + number/title/body glide sideways, autoplay with arrows/dots.
         Texts and per-card images stay dashboard-editable as before. %>
-    <% pillar_defaults = ["site/space/consultation.jpg", "site/space/entrance.webp", "site/space/device-room.webp"] %>
+    <% pillar_defaults = ["site/space/consultation.webp", "site/space/entrance.webp", "site/space/device-room.webp"] %>
     <% pillars = [[1, "01 — Principle", "Doctor-led",  "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second."],
                   [2, "02 — Principle", "Discreet",    "Private consultation. Private treatment. Private results. A quiet room, a closed door, and nothing that leaves it."],
                   [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]] %>
@@ -61,7 +67,7 @@
         <% p_title = sec_text("home", "home_principles", "p#{i}_title").presence || title_default %>
         <% p_body  = sec_text("home", "home_principles", "p#{i}_body").presence  || body_default %>
         <div class="ns-panel">
-          <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="">
+          <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="" loading="lazy" decoding="async">
           <div class="ns-panel-copy">
             <span class="num"><%= p_num %></span>
             <h3><%= p_title %></h3>
@@ -78,7 +84,7 @@
   <%= render "shared/orn", variant: "petal", pos: "br", float: true %>
   <div class="section-inner split media-left">
     <div class="split-media reveal" data-reveal-target="item">
-      <%= sec_image_tag("home", "home_founder", :lounge, alt: "Inside the NeuSkin clinic", class: "breathe") %>
+      <%= sec_image_tag("home", "home_founder", :lounge, alt: "Inside the NeuSkin clinic", class: "breathe", loading: "lazy") %>
     </div>
     <div class="split-text reveal d1" data-reveal-target="item">
       <span class="eyebrow"><%= sec_text("home", "home_founder", "eyebrow").presence || "Meet the founder" %></span>
@@ -96,7 +102,7 @@
 </section>
 
 <%# ---- Marquee word band — the brand vocabulary gliding between sections ---- %>
-<%= render "shared/marquee", words: ["Doctor-led", "Discreet", "Measured", "Skin intelligence", "Protocol-led", "Riyadh"] %>
+<%= render "shared/marquee", words: t("home_page.marquee") %>
 
 <%# ---- Six protocols — row list + sticky swapping image (design §isHome) ---- %>
 <%# Stage images are the protocols' dashboard images (Admin → Protocols),
@@ -132,14 +138,14 @@
 
       <div class="proto-stage" data-reveal="scale" data-reveal-delay="220">
         <% protocols.each_with_index do |p, i| %>
-          <%= image_tag protocol_image_url(p),
+          <%= image_tag protocol_image_url(p, width: 1000),
                 class: "proto-stage-img#{' is-shown' if i.zero?}",
-                alt: p.name, data: { protoindex_target: "img", index: i } %>
+                alt: p.name, loading: "lazy", decoding: "async", data: { protoindex_target: "img", index: i } %>
         <% end %>
         <div class="proto-stage-cap">
           <div class="cap-tag" data-protoindex-target="tag"><%= protocols.first&.meta %></div>
           <p class="cap-promise" data-protoindex-target="promise"><%= protocols.first&.promise %></p>
-          <a class="cap-cta" data-protoindex-target="cta" href="<%= protocols.first ? protocol_path(protocols.first) : protocols_path %>">Explore this protocol →</a>
+          <a class="cap-cta" data-protoindex-target="cta" href="<%= protocols.first ? protocol_path(protocols.first) : protocols_path %>"><%= t("home_page.explore_protocol") %></a>
         </div>
       </div>
     </div>
@@ -158,11 +164,11 @@
         <div class="cue"><%= sec_text("home", "home_clinic", "cue").presence || "Scroll →" %></div>
       </div>
       <% home_clinic_imgs = sec_gallery_urls("home", "home_clinic", [:treatment_room, :lounge, :device_table, :diptyque, :interior_ext]) %>
-      <figure class="hshot"><%= image_tag home_clinic_imgs[0], alt: "Treatment room" %><figcaption><%= sec_text("home", "home_clinic", "cap_1").presence || "01 · Treatment room" %></figcaption></figure>
-      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[1], alt: "The lounge" %><figcaption><%= sec_text("home", "home_clinic", "cap_2").presence || "02 · The lounge" %></figcaption></figure>
-      <figure class="hshot"><%= image_tag home_clinic_imgs[2], alt: "Device room" %><figcaption><%= sec_text("home", "home_clinic", "cap_3").presence || "03 · Device room" %></figcaption></figure>
-      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[3], alt: "In the detail" %><figcaption><%= sec_text("home", "home_clinic", "cap_4").presence || "04 · In the detail" %></figcaption></figure>
-      <figure class="hshot"><%= image_tag home_clinic_imgs[4], alt: "The entrance" %><figcaption><%= sec_text("home", "home_clinic", "cap_5").presence || "05 · The entrance" %></figcaption></figure>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[0], loading: "lazy", alt: "Treatment room" %><figcaption><%= sec_text("home", "home_clinic", "cap_1").presence || "01 · Treatment room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[1], loading: "lazy", alt: "The lounge" %><figcaption><%= sec_text("home", "home_clinic", "cap_2").presence || "02 · The lounge" %></figcaption></figure>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[2], loading: "lazy", alt: "Device room" %><figcaption><%= sec_text("home", "home_clinic", "cap_3").presence || "03 · Device room" %></figcaption></figure>
+      <figure class="hshot narrow"><%= image_tag home_clinic_imgs[3], loading: "lazy", alt: "In the detail" %><figcaption><%= sec_text("home", "home_clinic", "cap_4").presence || "04 · In the detail" %></figcaption></figure>
+      <figure class="hshot"><%= image_tag home_clinic_imgs[4], loading: "lazy", alt: "The entrance" %><figcaption><%= sec_text("home", "home_clinic", "cap_5").presence || "05 · The entrance" %></figcaption></figure>
       <div class="hshot-outro">
         <blockquote><%= sec_text("home", "home_clinic", "quote").presence || "“A clinic should be measured by what it refuses to do.”" %></blockquote>
         <%= link_to (sec_text("home", "home_clinic", "outro_link").presence || "Tour the clinic →"), the_clinic_path, class: "arrowlink" %>
@@ -205,7 +211,7 @@
 <%# ---- Closing CTA band ---- %>
 <section class="cta-band" data-controller="reveal">
   <div class="cta-band-media reveal" data-reveal-target="item">
-    <%= sec_image_tag("home", "home_cta", :lounge, alt: "The lounge at NeuSkin", class: "breathe float-delay-2") %>
+    <%= sec_image_tag("home", "home_cta", :lounge, alt: "The lounge at NeuSkin", class: "breathe float-delay-2", loading: "lazy") %>
   </div>
   <div class="cta-band-copy reveal d1" data-reveal-target="item">
     <h2><%= sec_text("home", "home_cta", "title").presence || "There is no rush here." %> <span class="em"><%= sec_text("home", "home_cta", "title_em").presence || "Begin with a quiet conversation." %></span></h2>
@@ -214,3 +220,35 @@
     <p class="sign"><%= sec_text("home", "home_cta", "sign").presence || "— The NeuSkin Team" %></p>
   </div>
 </section>
+
+<%# ---- Latest from the Journal — three newest published notes, just above
+      the footer (audit items 8 + 13). Heading copy is CMS-editable
+      (home → home_journal); falls back to the locale strings. %>
+<% if @latest_posts.present? %>
+<section class="section home-journal" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head-row" data-reveal="up">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow"><%= sec_text("home", "home_journal", "eyebrow").presence || t("journal.home_eyebrow") %></span>
+        <h2 style="margin-top:22px"><%= sec_text("home", "home_journal", "title").presence || t("journal.home_title") %> <span class="em"><%= sec_text("home", "home_journal", "title_em").presence || t("journal.home_title_em") %></span></h2>
+      </div>
+      <%= link_to (sec_text("home", "home_journal", "link").presence || t("journal.home_all")), journal_path, class: "arrowlink" %>
+    </div>
+    <div class="jr-grid home-journal-grid">
+      <% @latest_posts.each_with_index do |blog, i| %>
+        <%= link_to journal_article_path(blog), class: "jr-card", data: { reveal: "up", reveal_delay: 120 + i * 110 } do %>
+          <div class="jr-card-img">
+            <%= image_tag journal_cover_source(blog, position: i), alt: blog.alt.presence || blog.title, loading: "lazy", decoding: "async" %>
+          </div>
+          <div class="jr-card-meta">
+            <span class="cat"><%= blog.category_label %></span>
+            <span class="read"><%= t("journal.read", count: blog.reading_minutes) %></span>
+          </div>
+          <h3><%= blog.title %></h3>
+          <p><%= blog.excerpt %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>

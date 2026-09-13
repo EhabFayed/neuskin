@@ -1,4 +1,32 @@
 module ContentHelper
+  # ---- Image delivery (client audit, Sept 2026: "convert to WebP, shrink") ----
+  # Every dashboard-uploaded image is served as an Active Storage VARIANT:
+  # resized to the width its slot actually needs and re-encoded as WebP. The
+  # variant is generated once (libvips), stored next to the original, and the
+  # proxy URL is long-cached. Originals stay untouched so editors can keep
+  # uploading full-size JPG/PNG.
+  VARIANT_QUALITY = 78
+
+  # Accepts an Attached::One (has_one_attached), a single Attachment out of a
+  # has_many_attached gallery, or a Blob. Anything non-variable (SVG, missing
+  # file, unknown type) comes back untouched and is served as before.
+  def optimized(attachment, width: 1200)
+    return attachment if attachment.respond_to?(:attached?) && !attachment.attached?
+    return attachment unless attachment.respond_to?(:variable?) && attachment.variable?
+
+    attachment.variant(resize_to_limit: [ width, nil ], format: :webp,
+                       saver: { quality: VARIANT_QUALITY, strip: true })
+  rescue StandardError
+    attachment
+  end
+
+  # Relative proxy path for the optimized image (variants are otherwise
+  # url_for'd with the request host, which is noise in the HTML).
+  def opt_url(attachment, width: 1200)
+    img = optimized(attachment, width: width)
+    img.is_a?(ActiveStorage::VariantWithRecord) || img.is_a?(ActiveStorage::Variant) ? rails_storage_proxy_path(img) : url_for(img)
+  end
+
   # Memoized per request. Never nil (Section.for returns a blank when missing).
   #
   # In the admin section preview (Admin::SectionsController#preview), the
@@ -13,7 +41,7 @@ module ContentHelper
     end
 
     @__sections ||= {}
-    @__sections[[page.to_s, kind.to_s]] ||= Section.for(page, kind)
+    @__sections[[ page.to_s, kind.to_s ]] ||= Section.for(page, kind)
   end
 
   # Locale-aware text for a Content key. Safe empty string when absent.
@@ -27,10 +55,10 @@ module ContentHelper
   end
 
   # ActiveStorage image URL when attached, else the static asset fallback.
-  def sec_image(page, kind, fallback_key)
+  def sec_image(page, kind, fallback_key, width: 1800)
     section = sec(page, kind)
     if section.persisted? && section.image.attached?
-      url_for(section.image)
+      opt_url(section.image, width: width)
     else
       ns_image(fallback_key)
     end
@@ -40,13 +68,14 @@ module ContentHelper
   # static NS_IMAGES asset. Drop-in replacement for ns_image_tag so views can
   # become image-editable without changing their markup. Extra opts (alt,
   # class, …) pass straight through, exactly like ns_image_tag.
-  def sec_image_tag(page, kind, fallback_key, alt: "", **opts)
+  def sec_image_tag(page, kind, fallback_key, alt: "", width: 1600, **opts)
     section = sec(page, kind)
     # Tag the img so the editor's live preview can swap in a just-picked
     # (not-yet-uploaded) image before saving. Harmless on the public site.
     opts = opts.merge(data: (opts[:data] || {}).merge("sec-image": "#{page}/#{kind}"))
+    opts[:decoding] ||= "async"
     if section.persisted? && section.image.attached?
-      image_tag(section.image, alt: alt, **opts)
+      image_tag(opt_url(section.image, width: width), alt: alt, **opts)
     else
       ns_image_tag(fallback_key, alt: alt, **opts)
     end
@@ -68,14 +97,14 @@ module ContentHelper
   # URL for card slot `index` (1-based) of a section: the dashboard slot image
   # when attached, else the legacy gallery image at that position, else the
   # given static asset fallback.
-  def sec_card_image(page, kind, index, fallback_path)
+  def sec_card_image(page, kind, index, fallback_path, width: 1000)
     section = sec(page, kind)
     if section.persisted?
       slot = section.public_send("card_image_#{index}")
-      return url_for(slot) if slot.attached?
+      return opt_url(slot, width: width) if slot.attached?
 
       legacy = section.gallery
-      return url_for(legacy[index - 1]) if legacy.attached? && legacy[index - 1]
+      return opt_url(legacy[index - 1], width: width) if legacy.attached? && legacy[index - 1]
     end
     image_path(fallback_path)
   end
@@ -91,8 +120,8 @@ module ContentHelper
     "devices"     => :outcome_devices
   }.freeze
 
-  def treatment_image_url(treatment)
-    return url_for(treatment.image) if treatment.image.attached?
+  def treatment_image_url(treatment, width: 1200)
+    return opt_url(treatment.image, width: width) if treatment.image.attached?
 
     ns_image(TREATMENT_FALLBACK_IMAGES.fetch(treatment.slug, :treatment_room))
   end
@@ -101,27 +130,27 @@ module ContentHelper
   # (Admin → Protocols) when present, else the launch static asset for the
   # original six slugs, else a generic clinic shot for new protocols.
   PROTOCOL_FALLBACK_IMAGES = {
-    "neuskin-method"    => "site/protocols/neuskin-method.jpg",
-    "90-day-glow-reset" => "site/protocols/glow-reset.jpg",
-    "brides-180"        => "site/protocols/bridal.jpg",
-    "reset-crown"       => "site/protocols/hair.jpg",
-    "8-week-sculpt"     => "site/protocols/sculpt.jpg",
-    "skin-insider"      => "site/protocols/insider.jpg"
+    "neuskin-method"    => "site/protocols/neuskin-method.webp",
+    "90-day-glow-reset" => "site/protocols/glow-reset.webp",
+    "brides-180"        => "site/protocols/bridal.webp",
+    "reset-crown"       => "site/protocols/hair.webp",
+    "8-week-sculpt"     => "site/protocols/sculpt.webp",
+    "skin-insider"      => "site/protocols/insider.webp"
   }.freeze
 
-  def protocol_image_url(protocol)
-    return url_for(protocol.image) if protocol.image.attached?
+  def protocol_image_url(protocol, width: 1200)
+    return opt_url(protocol.image, width: width) if protocol.image.attached?
 
-    image_path(PROTOCOL_FALLBACK_IMAGES.fetch(protocol.slug, "site/protocols/skin.jpg"))
+    image_path(PROTOCOL_FALLBACK_IMAGES.fetch(protocol.slug, "site/protocols/skin.webp"))
   end
 
   # Ordered list of gallery image URLs for a section (has_many_attached
   # :gallery). Falls back to the given static keys (array) when nothing is
   # attached, so galleries render unchanged before migration.
-  def sec_gallery_urls(page, kind, fallback_keys = [])
+  def sec_gallery_urls(page, kind, fallback_keys = [], width: 1200)
     section = sec(page, kind)
     if section.persisted? && section.gallery.attached?
-      section.gallery.map { |img| url_for(img) }
+      section.gallery.map { |img| opt_url(img, width: width) }
     else
       Array(fallback_keys).map { |k| ns_image(k) }
     end

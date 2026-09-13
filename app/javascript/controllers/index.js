@@ -31,8 +31,14 @@ application.register("cookie", CookieController)
 import CounterController from "controllers/counter_controller"
 application.register("counter", CounterController)
 
-import BookingController from "controllers/booking_controller"
-application.register("booking", BookingController)
+import NavController from "controllers/nav_controller"
+application.register("nav", NavController)
+
+import HerovideoController from "controllers/herovideo_controller"
+application.register("herovideo", HerovideoController)
+
+import AdminthemeController from "controllers/admintheme_controller"
+application.register("admintheme", AdminthemeController)
 
 import IntroController from "controllers/intro_controller"
 application.register("intro", IntroController)

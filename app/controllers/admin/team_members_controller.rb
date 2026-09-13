@@ -2,7 +2,7 @@ module Admin
   # Medical team CRUD — the dynamic counterpart of the old fixed-key
   # the_team/team_members section (top_brand leadership pattern).
   class TeamMembersController < BaseController
-    before_action :set_member, only: [:edit, :update, :destroy]
+    before_action :set_member, only: [ :edit, :update, :destroy ]
 
     def index
       @members = TeamMember.with_attached_photo

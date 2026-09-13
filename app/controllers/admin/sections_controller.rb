@@ -1,6 +1,6 @@
 module Admin
   class SectionsController < BaseController
-    before_action :set_section, only: [:show, :update, :preview]
+    before_action :set_section, only: [ :show, :update, :preview ]
 
     def show; end
 
@@ -21,7 +21,7 @@ module Admin
       "protocols_index" => "protocols/index",
       "journal"         => "journal/index",
       "bridal"          => "bridal/show",
-      "technologies"    => "pages/technologies",
+      "technologies"    => "pages/technologies"
     }.freeze
 
     def preview
@@ -61,6 +61,7 @@ module Admin
       case page
       when "home"
         @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
+        @latest_posts = Blog.published.newest_first.with_attached_image.includes(:contents).limit(3)
       when "protocols_index"
         @protocols = Protocol.all
       when "bridal"

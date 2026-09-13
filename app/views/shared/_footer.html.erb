@@ -45,6 +45,13 @@
         <h4><%= t("layout.footer.visit_title") %></h4>
         <p><%= t("layout.footer.address_1") %><br><%= t("layout.footer.address_2") %></p>
         <p><%= t("layout.footer.hours_1") %><br><%= t("layout.footer.hours_2") %></p>
+        <%# Clinic location — Google Maps (audit item 6). URL: Clinic::MAPS_URL / ENV["MAPS_URL"]. %>
+        <p class="footer-map">
+          <a href="<%= Clinic::MAPS_URL %>" target="_blank" rel="noopener" class="footer-map-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span><%= t("layout.footer.location_cta") %></span>
+          </a>
+        </p>
         <p><%= link_to t("layout.footer.whatsapp"), whatsapp_url, target: "_blank", rel: "noopener" %><br>
            <a href="mailto:hello@neuskin.sa" dir="ltr">hello@neuskin.sa</a></p>
       </div>

@@ -10,10 +10,59 @@
     [{ header: [2, 3, false] }],
     ['bold', 'italic', 'underline'],
     [{ list: 'ordered' }, { list: 'bullet' }],
-    ['link', 'blockquote'],
+    ['link', 'blockquote', 'image'],
     [{ direction: 'rtl' }],
     ['clean']
   ];
+
+  // Quill's stock image button embeds the picked file as a base64 data: URI,
+  // which the public sanitizer strips (so "test images" never reached the
+  // article). Upload to /admin/uploads instead and embed the returned
+  // permanent ActiveStorage URL.
+  var UPLOAD_URL = '/admin/uploads';
+  var MAX_BYTES = 10 * 1024 * 1024;
+
+  function csrfToken() {
+    var meta = document.querySelector('meta[name="csrf-token"]');
+    return meta ? meta.getAttribute('content') : '';
+  }
+
+  function uploadImage(file) {
+    var body = new FormData();
+    body.append('file', file);
+    return fetch(UPLOAD_URL, {
+      method: 'POST',
+      body: body,
+      credentials: 'same-origin',
+      headers: { 'X-CSRF-Token': csrfToken(), 'Accept': 'application/json' }
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (json) {
+        if (!res.ok || !json.url) throw new Error(json.error || ('Upload failed (' + res.status + ')'));
+        return json.url;
+      });
+    });
+  }
+
+  function imageHandler() {
+    var quill = this.quill;
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      if (!file) return;
+      if (!/^image\//.test(file.type)) { window.alert('Please choose an image file.'); return; }
+      if (file.size > MAX_BYTES) { window.alert('Image is larger than 10 MB.'); return; }
+      var range = quill.getSelection(true) || { index: quill.getLength() };
+      uploadImage(file).then(function (url) {
+        quill.insertEmbed(range.index, 'image', url, 'user');
+        quill.setSelection(range.index + 1, 0, 'silent');
+      }).catch(function (err) {
+        window.alert('Could not upload the image: ' + (err && err.message ? err.message : 'unknown error'));
+      });
+    });
+    input.click();
+  }
 
   function initEditor(wrap) {
     if (wrap.dataset.rteReady || typeof Quill === 'undefined') return;
@@ -25,7 +74,7 @@
 
     var quill = new Quill(editorEl, {
       theme: 'snow',
-      modules: { toolbar: TOOLBAR },
+      modules: { toolbar: { container: TOOLBAR, handlers: { image: imageHandler } } },
       placeholder: wrap.dataset.placeholder || ''
     });
 

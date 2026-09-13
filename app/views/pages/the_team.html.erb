@@ -26,7 +26,7 @@
         <div class="member">
           <div class="member-photo">
             <% if member.photo.attached? %>
-              <%= image_tag member.photo, alt: member.name %>
+              <%= image_tag opt_url(member.photo, width: 800), alt: member.name, loading: "lazy", decoding: "async" %>
             <% else %>
               <%= ns_image_tag fallback_photos[i % fallback_photos.size], alt: member.name %>
             <% end %>

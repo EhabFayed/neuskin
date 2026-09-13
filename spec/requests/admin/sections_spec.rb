@@ -39,18 +39,18 @@ RSpec.describe "Admin sections", type: :request do
       }
     }
     expect(section.reload.items).to eq(
-      [{ "q" => { "en" => "Great", "ar" => "رائع" }, "by" => { "en" => "L.M.", "ar" => "ل.م." } }]
+      [ { "q" => { "en" => "Great", "ar" => "رائع" }, "by" => { "en" => "L.M.", "ar" => "ل.م." } } ]
     )
   end
   it "re-renders with an error (no double-render) when items JSON is invalid" do
     section = create(:section, page: "home", kind: "home_voices", label: "Voices",
-                     items: [{ "q" => { "en" => "orig" } }])
+                     items: [ { "q" => { "en" => "orig" } } ])
     patch "/admin/sections/#{section.id}", params: {
       section: { items_json: "{not valid json" }
     }
     expect(response).to have_http_status(:unprocessable_entity)
     expect(response.body).to include("Items JSON is invalid.")
-    expect(section.reload.items).to eq([{ "q" => { "en" => "orig" } }])
+    expect(section.reload.items).to eq([ { "q" => { "en" => "orig" } } ])
   end
 
   it "renders a live preview for every mapped page template" do

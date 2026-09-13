@@ -9,7 +9,7 @@ class CreateSections < ActiveRecord::Migration[8.0]
       t.jsonb   :items,    null: false, default: []
       t.timestamps
     end
-    add_index :sections, [:page, :kind], unique: true
+    add_index :sections, [ :page, :kind ], unique: true
     add_index :sections, :page
   end
 end

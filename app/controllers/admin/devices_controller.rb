@@ -3,7 +3,7 @@ module Admin
   # TreatmentsController; front_image is the product shot on the card front,
   # back_image the in-clinic photo on the spec (back) face.
   class DevicesController < BaseController
-    before_action :set_device, only: [:edit, :update, :destroy]
+    before_action :set_device, only: [ :edit, :update, :destroy ]
 
     def index
       @devices = Device.all

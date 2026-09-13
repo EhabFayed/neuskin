@@ -1,6 +1,16 @@
 require "rails_helper"
 
 RSpec.describe "Treatment outcome pages", type: :request do
+  # Outcomes are Treatment records (dashboard-managed); the launch five are
+  # recreated here with the protocol that owns each one.
+  OUTCOMES = {
+    "skin"        => "90-day-glow-reset",
+    "hair"        => "reset-crown",
+    "body"        => "8-week-sculpt",
+    "injectables" => "neuskin-method",
+    "devices"     => "neuskin-method"
+  }.freeze
+
   before do
     %w[90-day-glow-reset reset-crown 8-week-sculpt neuskin-method].each do |slug|
       Protocol.find_or_create_by!(slug: slug) do |p|
@@ -8,16 +18,18 @@ RSpec.describe "Treatment outcome pages", type: :request do
         p.name_ar = slug
       end
     end
+    OUTCOMES.each_with_index do |(slug, owner), i|
+      Treatment.find_or_create_by!(slug: slug) do |t|
+        t.title_en = slug.titleize
+        t.headline_en = "#{slug.titleize} headline"
+        t.protocol_slug = owner
+        t.position = i
+      end
+    end
   end
 
   it "renders each outcome with its owning protocol" do
-    {
-      "skin"        => "90-day-glow-reset",
-      "hair"        => "reset-crown",
-      "body"        => "8-week-sculpt",
-      "injectables" => "neuskin-method",
-      "devices"     => "neuskin-method"
-    }.each do |outcome, owner_slug|
+    OUTCOMES.each do |outcome, owner_slug|
       get "/en/treatments/#{outcome}"
       expect(response).to have_http_status(:ok), "expected /en/treatments/#{outcome} to render"
       expect(response.body).to include("The protocol that owns this")
@@ -33,9 +45,9 @@ RSpec.describe "Treatment outcome pages", type: :request do
     end
   end
 
-  it "does not route an unknown outcome" do
-    expect {
-      Rails.application.routes.recognize_path("/en/treatments/unknown", method: :get)
-    }.to raise_error(ActionController::RoutingError)
+  it "sends an unknown outcome home with a permanent redirect (no 404 pages)" do
+    get "/en/treatments/unknown"
+    expect(response).to have_http_status(:moved_permanently)
+    expect(response).to redirect_to("/")
   end
 end

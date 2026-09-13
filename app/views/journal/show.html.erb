@@ -1,6 +1,8 @@
-<%# Journal article — quiet editorial single-column read. %>
+<%# Journal article — editorial read with a sticky booking aside on desktop
+    (audit item 14: use the empty space beside the article for the form). %>
 <% content_for :title, "#{@blog.meta_title.presence || @blog.title} — NeuSkin Clinic" %>
 <% content_for :meta_description, @blog.meta_description.presence || @blog.excerpt %>
+<% faqs = @blog.localized_faqs %>
 
 <article class="jra" data-controller="reveal">
   <%# Split hero — copy on one side, the post's cover on the other. The cover
@@ -21,31 +23,77 @@
       <p class="jra-date" data-reveal="fade" data-reveal-delay="200"><%= @blog.created_at.strftime("%d.%m.%Y") %></p>
     </header>
     <figure class="jra-hero-media" data-reveal="scale">
-      <%= image_tag journal_cover_source(@blog), alt: @blog.alt.presence || @blog.title %>
+      <%= image_tag journal_cover_source(@blog, width: 1200), alt: @blog.alt.presence || @blog.title, fetchpriority: "high" %>
     </figure>
   </div>
 
-  <div class="jra-body body-copy">
-    <% @blog.contents.each do |block| %>
-      <%# Paragraphs written in the Studio RTE are stored as HTML (sanitized
-          via rich); older seeded rows are plain text and keep their <p>. %>
-      <% if block.value.present? %>
-        <% if block.value.lstrip.start_with?("<") %>
-          <%= rich(block.value) %>
-        <% else %>
-          <p><%= block.value %></p>
+  <div class="jra-layout">
+    <div class="jra-main">
+      <div class="jra-body body-copy">
+        <% @blog.contents.each do |block| %>
+          <%# Paragraphs written in the Studio RTE are stored as HTML (sanitized
+              via rich); older seeded rows are plain text and keep their <p>. %>
+          <% if block.value.present? %>
+            <% if block.value.lstrip.start_with?("<") %>
+              <%= rich(block.value) %>
+            <% else %>
+              <p><%= block.value %></p>
+            <% end %>
+          <% end %>
+          <% if block.photo.attached? %>
+            <figure class="jra-figure">
+              <%= image_tag opt_url(block.photo, width: 1200), alt: block.alt.to_s, loading: "lazy", decoding: "async" %>
+              <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
+            </figure>
+          <% end %>
         <% end %>
-      <% end %>
-      <% if block.photo.attached? %>
-        <figure class="jra-figure">
-          <%= image_tag block.photo, alt: block.alt.to_s %>
-          <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
-        </figure>
-      <% end %>
-    <% end %>
-  </div>
+      </div>
 
-  <footer class="jra-foot">
-    <%= link_to t("journal.back"), journal_path, class: "arrowlink" %>
-  </footer>
+      <% if faqs.any? %>
+        <section class="jra-faq" aria-labelledby="jra-faq-title">
+          <h2 id="jra-faq-title"><%= t("journal.faq_title", default: ar? ? "الأسئلة الشائعة" : "Frequently asked") %></h2>
+          <div class="faq-group">
+            <% faqs.each do |faq| %>
+              <details class="faq">
+                <summary><%= @blog.loc(faq, "q") %> <span class="sign">+</span></summary>
+                <div class="faq-a"><%= simple_format(@blog.loc(faq, "a").to_s, {}, wrapper_tag: "p") %></div>
+              </details>
+            <% end %>
+          </div>
+        </section>
+        <%# FAQPage structured data — the same Q&A, for rich results. %>
+        <script type="application/ld+json">
+          <%= raw({
+            "@context" => "https://schema.org",
+            "@type" => "FAQPage",
+            "mainEntity" => faqs.map do |faq|
+              {
+                "@type" => "Question",
+                "name" => @blog.loc(faq, "q").to_s,
+                "acceptedAnswer" => { "@type" => "Answer", "text" => @blog.loc(faq, "a").to_s }
+              }
+            end
+          }.to_json.gsub("</", "<\\/")) %>
+        </script>
+      <% end %>
+
+      <footer class="jra-foot">
+        <%= link_to t("journal.back"), journal_path, class: "arrowlink" %>
+      </footer>
+    </div>
+
+    <aside class="jra-aside" aria-labelledby="jra-aside-title">
+      <div class="jra-aside-card">
+        <div class="jr-eyebrow">
+          <span class="rule"></span>
+          <span class="lbl"><%= t("journal.book_eyebrow", default: ar? ? "الخطوة التالية" : "Next step") %></span>
+        </div>
+        <h2 id="jra-aside-title" class="jra-aside-title"><%= t("journal.book_title", default: ar? ? "احجزي استشارتك" : "Book a consultation") %></h2>
+        <%= render "shared/inquiry_form", compact: true %>
+        <a class="btn btn--ghost jra-aside-wa" href="<%= whatsapp_url %>" target="_blank" rel="noopener">
+          <%= t("journal.book_whatsapp", default: ar? ? "تحدثي معنا على واتساب" : "Speak on WhatsApp") %>
+        </a>
+      </div>
+    </aside>
+  </div>
 </article>

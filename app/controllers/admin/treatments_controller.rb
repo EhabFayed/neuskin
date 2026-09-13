@@ -3,7 +3,7 @@ module Admin
   # Mirrors ProtocolsController; the attached image drives both the card and
   # the sub-page hero, with a static per-slug asset as fallback.
   class TreatmentsController < BaseController
-    before_action :set_treatment, only: [:edit, :update, :destroy]
+    before_action :set_treatment, only: [ :edit, :update, :destroy ]
 
     def index
       @treatments = Treatment.all

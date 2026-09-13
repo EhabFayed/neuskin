@@ -4,7 +4,7 @@ module Admin
   # renders only when present, so a newly created protocol is safe to publish
   # with copy alone and the structured blocks can follow later.
   class ProtocolsController < BaseController
-    before_action :set_protocol, only: [:edit, :update, :destroy]
+    before_action :set_protocol, only: [ :edit, :update, :destroy ]
 
     def index
       @protocols = Protocol.all

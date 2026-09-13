@@ -63,6 +63,11 @@
     <% if @treatment.persisted? %>
       <a href="<%= treatment_outcome_path(outcome: @treatment.slug) %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
     <% end %>
+    <span class="spacer"></span>
+    <% if @treatment.persisted? %>
+      <%= link_to "Delete treatment", admin_treatment_path(@treatment), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@treatment.title_en}” permanently? Its page and every link to it stop working." } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

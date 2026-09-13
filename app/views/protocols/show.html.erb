@@ -3,36 +3,32 @@
 
 <%# Hero image = the protocol's dashboard image (Admin → Protocols), launch
     static asset as fallback — see protocol_image_url. %>
-<% for_who = p.who_for.to_s.split(/[.\n]/).first.to_s.strip.presence || "By assessment" %>
+<% for_who = p.who_for.to_s.split(/[.\n]/).first.to_s.strip.presence || t("protocol_page.by_assessment") %>
 
 <%# 1 · Split hero ---- %>
 <section class="split-hero" data-controller="reveal parallax">
   <div class="split-hero-media reveal" data-reveal-target="item" data-parallax data-parallax-speed="0.08">
-    <%= image_tag protocol_image_url(p), alt: p.name, class: "kb" %>
+    <%= image_tag protocol_image_url(p, width: 1600), alt: p.name, class: "kb", fetchpriority: "high" %>
   </div>
   <div class="split-hero-copy">
     <span class="eyebrow reveal" data-reveal-target="item"><%= p.meta %></span>
     <h1><span data-reveal="mask" data-reveal-delay="120"><span><bdi><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></bdi></span></span></h1>
     <p class="lead reveal d2" data-reveal-target="item"><%= p.promise %></p>
     <ul class="specs reveal d3" data-reveal-target="item">
-      <li><span class="k">Duration</span><span class="v"><%= p.duration %></span></li>
-      <li><span class="k">Format</span><span class="v">Doctor-led · personalised</span></li>
-      <li><span class="k">For</span><span class="v"><%= for_who %></span></li>
+      <li><span class="k"><%= t("protocol_page.duration") %></span><span class="v"><%= p.duration %></span></li>
+      <li><span class="k"><%= t("protocol_page.format") %></span><span class="v"><%= t("protocol_page.format_value") %></span></li>
+      <li><span class="k"><%= t("protocol_page.for") %></span><span class="v"><%= for_who %></span></li>
     </ul>
-    <p class="reveal d4" data-reveal-target="item"><%= link_to "Request your plan", inquire_path(codeword: p.codeword, persona: p.persona), class: "btn" %></p>
+    <p class="reveal d4" data-reveal-target="item"><%= link_to t("protocol_page.request_plan"), inquire_path(codeword: p.codeword, persona: p.persona), class: "btn" %></p>
   </div>
 </section>
 
 <%# 2 · Who it's for ---- %>
-<% signs = [
-     ["01", "You want to know what your skin actually needs — measured, not guessed."],
-     ["02", "You'd rather follow one sequenced plan than collect single treatments."],
-     ["03", "You value discretion, and a doctor who will tell you what to skip."]
-   ] %>
+<% signs = t("protocol_page.signs").each_with_index.map { |line, i| [format("%02d", i + 1), line] } %>
 <section class="section section--surface proto-detail" data-controller="reveal">
   <div class="section-inner split">
     <div class="split-text reveal" data-reveal-target="item">
-      <span class="eyebrow">Who it's for</span>
+      <span class="eyebrow"><%= t("protocol_page.who_for") %></span>
       <p class="lead"><%= p.who_for %></p>
     </div>
     <div class="split-text">
@@ -41,7 +37,7 @@
           <li data-reveal="left" data-reveal-delay="<%= 120 + i * 140 %>"><span class="n"><%= n %></span><span class="t"><%= t %></span></li>
         <% end %>
       </ul>
-      <p class="sign" style="font-style:italic;margin-top:24px" data-reveal="fade" data-reveal-delay="<%= 120 + signs.size * 140 %>">This protocol is not for everyone — and that is intentional.</p>
+      <p class="sign" style="font-style:italic;margin-top:24px" data-reveal="fade" data-reveal-delay="<%= 120 + signs.size * 140 %>"><%= t("protocol_page.not_for_all") %></p>
     </div>
   </div>
 </section>
@@ -50,7 +46,7 @@
 <section class="section proto-detail" data-controller="reveal">
   <div class="section-inner">
     <div class="sec-head">
-      <span class="eyebrow" data-reveal="fade">What's inside</span>
+      <span class="eyebrow" data-reveal="fade"><%= t("protocol_page.inside") %></span>
       <h2 data-reveal="mask" data-reveal-delay="120"><span><%= p.scope %></span></h2>
     </div>
     <% if p.stages.any? %>
@@ -64,7 +60,7 @@
       <% end %>
     </div>
     <% end %>
-    <p class="note" data-reveal="fade" data-reveal-delay="<%= 160 + p.stages.size * 150 %>" style="margin-top:46px">Final protocol scope is confirmed during your NeuSkin Method™ assessment. All treatments are personalised.</p>
+    <p class="note" data-reveal="fade" data-reveal-delay="<%= 160 + p.stages.size * 150 %>" style="margin-top:46px"><%= t("protocol_page.scope_note") %></p>
   </div>
 </section>
 
@@ -74,8 +70,8 @@
 <section class="section section--surface proto-detail" data-controller="reveal">
   <div class="section-inner split">
     <div class="split-text">
-      <span class="eyebrow" data-reveal="fade">What's not included</span>
-      <h2 data-reveal="mask" data-reveal-delay="120"><span>Honesty, set early.</span></h2>
+      <span class="eyebrow" data-reveal="fade"><%= t("protocol_page.excludes") %></span>
+      <h2 data-reveal="mask" data-reveal-delay="120"><span><%= t("protocol_page.honesty") %></span></h2>
     </div>
     <div class="split-text">
       <ul class="exclude">
@@ -93,15 +89,14 @@
 <section id="patient-journey" class="section section--light" data-controller="reveal">
   <div class="section-inner">
     <div class="sec-head reveal" data-reveal-target="item">
-      <span class="eyebrow">The patient journey</span>
+      <span class="eyebrow"><%= t("protocol_page.journey") %></span>
     </div>
     <div class="ns-expand reveal d1" data-reveal-target="item">
-      <% [["01 — Step", "Inquire", "A private message, reviewed personally.",  "site/space/waiting-lounge.webp"],
-          ["02 — Step", "Consult", "A doctor-led diagnostic assessment.",      "site/space/consultation.jpg"],
-          ["03 — Step", "Plan",    "A written, sequenced roadmap.",            "site/space/private-suite.webp"],
-          ["04 — Step", "Treat",   "Sessions, reviewed each quarter.",         "site/space/treatment.webp"]].each do |num, title, body, img| %>
+      <% journey_imgs = ["site/space/waiting-lounge.webp", "site/space/consultation.webp", "site/space/private-suite.webp", "site/space/treatment.webp"] %>
+      <% t("protocol_page.journey_steps").each_with_index do |step, i| %>
+        <% num, title, body, img = step[:num], step[:title], step[:body], journey_imgs[i] %>
         <div class="ns-panel">
-          <%= image_tag img, alt: title %>
+          <%= image_tag img, alt: title, loading: "lazy" %>
           <div class="ns-panel-copy">
             <span class="num"><%= num %></span>
             <h3><%= title %></h3>
@@ -118,7 +113,7 @@
   <section class="section section--surface proto-story" data-controller="reveal">
     <div class="section-inner">
       <div class="pull-band">
-        <blockquote data-reveal="scale"><%= p.patient_story["quote_en"] %></blockquote>
+        <blockquote data-reveal="scale"><%= p.loc(p.patient_story, "quote").presence || p.patient_story["quote_en"] %></blockquote>
         <p class="by" data-reveal="fade" data-reveal-delay="260">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
       </div>
     </div>
@@ -130,7 +125,7 @@
   <section class="section" data-controller="reveal">
     <div class="section-inner">
       <div class="sec-head reveal" data-reveal-target="item">
-        <span class="eyebrow">Frequently asked</span>
+        <span class="eyebrow"><%= t("protocol_page.faq") %></span>
       </div>
       <div class="faq-group">
         <% p.faqs.each_with_index do |faq, i| %>
@@ -147,9 +142,9 @@
 <%# 8 · Final CTA + WhatsApp codeword ---- %>
 <section class="cta-center cta-center--tight orn-host" data-controller="reveal">
   <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
-  <h2 data-reveal="mask"><span>Begin <%= p.name %>.</span></h2>
-  <p data-reveal="up" data-reveal-delay="160">Send the codeword <strong><%= p.codeword %></strong> on WhatsApp for a private inquiry.</p>
+  <h2 data-reveal="mask"><span><%= t("protocol_page.begin", name: p.name) %></span></h2>
+  <p data-reveal="up" data-reveal-delay="160"><%= t("protocol_page.codeword_html", word: p.codeword) %></p>
   <p data-reveal="up" data-reveal-delay="300">
-    <a class="btn" href="<%= whatsapp_url(codeword: p.codeword) %>" target="_blank" rel="noopener">Send "<%= p.codeword %>"</a>
+    <a class="btn" href="<%= whatsapp_url(codeword: p.codeword) %>" target="_blank" rel="noopener"><%= t("protocol_page.send_button", word: p.codeword) %></a>
   </p>
 </section>

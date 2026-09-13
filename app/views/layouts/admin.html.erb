@@ -6,6 +6,10 @@
     <title>NeuSkin Studio<%= " — #{content_for(:title)}" if content_for?(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%# Apply the saved Studio theme before any stylesheet paints so a light-mode
+        editor never sees a dark flash. Mirrors admintheme_controller.js —
+        localStorage "ns-admin-theme"; default (no attribute) is dark. %>
+    <script>try{if(localStorage.getItem("ns-admin-theme")==="light"){document.documentElement.setAttribute("data-admin-theme","light")}}catch(e){}</script>
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -122,6 +126,10 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
               View site
             </a>
+            <button type="button" class="ns-themebtn" data-controller="admintheme" data-action="click->admintheme#toggle" aria-label="Switch to light mode" title="Switch to light mode">
+              <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
           </div>
         </header>
 

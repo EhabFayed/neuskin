@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
     @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
+    # Three newest Journal notes for the pre-footer band.
+    @latest_posts = Blog.published.newest_first.with_attached_image.includes(:contents).limit(3)
   end
 
   def dr_maysa

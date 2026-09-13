@@ -11,7 +11,7 @@ class CreateContents < ActiveRecord::Migration[8.0]
       t.integer :position,     null: false, default: 0
       t.timestamps
     end
-    add_index :contents, [:parentable_type, :parentable_id, :key],
+    add_index :contents, [ :parentable_type, :parentable_id, :key ],
               unique: true, name: "index_contents_on_parent_and_key"
   end
 end

@@ -48,13 +48,13 @@
     <div class="section-inner">
       <div class="tech-grid reveal d1" data-reveal-target="item">
         <% @devices.each do |device| %>
-          <div class="tech-card flipcard" data-controller="flip" data-action="click->flip#toggle keydown.enter->flip#toggle"
+          <div class="tech-card flipcard" id="<%= device_anchor(device) %>" data-controller="flip" data-action="click->flip#toggle keydown.enter->flip#toggle"
                tabindex="0" role="button" aria-pressed="false" aria-label="<%= device.name %>">
             <div class="flip-inner">
               <div class="flip-front">
                 <span class="tech-media">
                   <% if device.front_image.attached? %>
-                    <%= image_tag device.front_image, alt: device.name %>
+                    <%= image_tag opt_url(device.front_image, width: 720), alt: device.name, loading: "lazy", decoding: "async" %>
                   <% else %>
                     <%= ns_image_tag :device_table, alt: device.name %>
                   <% end %>
@@ -67,7 +67,7 @@
                 <svg class="flip-cue" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
               </div>
               <div class="flip-back">
-                <span class="tech-back-media" style="background-image:url('<%= device.back_image.attached? ? url_for(device.back_image) : image_path("site/space/device-room.webp") %>')"></span>
+                <span class="tech-back-media" style="background-image:url('<%= device.back_image.attached? ? opt_url(device.back_image, width: 900) : image_path("site/space/device-room.webp") %>')"></span>
                 <div class="tech-copy">
                   <span class="badge"><%= t("technologies.specs_label") %></span>
                   <h3><%= device.name %></h3>

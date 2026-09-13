@@ -31,7 +31,7 @@
         <% featured = feature_last && i == @treatments.size - 1 %>
         <%= link_to treatment_outcome_path(outcome: treatment.slug),
                     class: "proto-card#{" outcome-feature" if featured} reveal#{" d#{i + 1}" if i < 4}", data: { reveal_target: "item" } do %>
-          <span class="proto-card-img"><%= image_tag treatment_image_url(treatment), alt: treatment.headline %></span>
+          <span class="proto-card-img"><%= image_tag treatment_image_url(treatment, width: 1000), alt: treatment.headline, loading: "lazy", decoding: "async" %></span>
           <span class="proto-card-body">
             <span class="tag"><%= treatment.title %></span>
             <h3><%= treatment.headline %></h3>

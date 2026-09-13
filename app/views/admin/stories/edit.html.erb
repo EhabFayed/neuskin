@@ -3,9 +3,3 @@
 <% content_for :title, "Edit story" %>
 
 <%= render "form" %>
-
-<div style="margin-top:26px">
-  <%= button_to "Delete this story", admin_story_path(@story), method: :delete,
-                class: "ns-btn ghost",
-                data: { turbo_confirm: "Delete this story permanently?" } %>
-</div>

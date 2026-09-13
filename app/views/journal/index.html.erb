@@ -28,7 +28,7 @@
           <%= link_to journal_article_path(blog), class: "jr-card reveal d#{(i % 3) + 1}",
                       data: { reveal_target: "item", jrfilter_target: "item", category: blog.category } do %>
             <div class="jr-card-img">
-              <%= image_tag journal_cover_source(blog, position: i), alt: blog.alt.presence || blog.title %>
+              <%= image_tag journal_cover_source(blog, position: i), alt: blog.alt.presence || blog.title, loading: "lazy", decoding: "async" %>
             </div>
             <div class="jr-card-meta">
               <span class="cat"><%= blog.category_label %></span>

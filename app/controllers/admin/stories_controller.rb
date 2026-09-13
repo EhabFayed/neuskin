@@ -2,7 +2,7 @@ module Admin
   # Patient stories CRUD — dynamic counterpart of the old fixed-key
   # stories/story_items section.
   class StoriesController < BaseController
-    before_action :set_story, only: [:edit, :update, :destroy]
+    before_action :set_story, only: [ :edit, :update, :destroy ]
 
     def index
       @stories = Story.with_attached_photo

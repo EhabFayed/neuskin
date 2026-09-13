@@ -479,8 +479,78 @@ en:
     cta_note: "All initial consultations are conducted personally by our medical director."
   whatsapp:
     prefill: "Hello NeuSkin, I'd like to make a private inquiry."
+  home_page:
+    cta_assessment: "Request an assessment"
+    cta_whatsapp: "Speak privately on WhatsApp"
+    explore_protocol: "Explore this protocol →"
+    marquee: ["Doctor-led", "Discreet", "Measured", "Skin intelligence", "Protocol-led", "Riyadh"]
+  protocol_page:
+    duration: "Duration"
+    format: "Format"
+    format_value: "Doctor-led · personalised"
+    for: "For"
+    by_assessment: "By assessment"
+    request_plan: "Request your plan"
+    who_for: "Who it's for"
+    signs:
+      - "You want to know what your skin actually needs — measured, not guessed."
+      - "You'd rather follow one sequenced plan than collect single treatments."
+      - "You value discretion, and a doctor who will tell you what to skip."
+    not_for_all: "This protocol is not for everyone — and that is intentional."
+    inside: "What's inside"
+    scope_note: "Final protocol scope is confirmed during your NeuSkin Method™ assessment. All treatments are personalised."
+    excludes: "What's not included"
+    honesty: "Honesty, set early."
+    journey: "The patient journey"
+    journey_steps:
+      - { num: "01 — Step", title: "Inquire", body: "A private message, reviewed personally." }
+      - { num: "02 — Step", title: "Consult", body: "A doctor-led diagnostic assessment." }
+      - { num: "03 — Step", title: "Plan",    body: "A written, sequenced roadmap." }
+      - { num: "04 — Step", title: "Treat",   body: "Sessions, reviewed each quarter." }
+    faq: "Frequently asked"
+    codeword_html: "Send <strong>%{word}</strong> on WhatsApp for a private inquiry."
+    begin: "Begin %{name}."
+    send_button: "Send “%{word}”"
+    hub_filter: "I'm here because…"
+    chips:
+      all: "Show me everything"
+      bride: "I have a wedding ahead"
+      tired: "My skin looks tired"
+      hair: "I'm losing hair"
+      maintain: "I want to maintain"
+      fresh: "I want to start fresh"
+      unsure: "I'm not sure yet"
+  treatment_page:
+    view_protocol: "View the protocol →"
+    neuskin_view: "The NeuSkin view"
+    private_inquiry: "Begin with a private inquiry"
   inquire:
     title: "Book your appointment."
+    hero_eyebrow: "Contact · Inquiry"
+    hero_title_1: "Begin a quiet"
+    hero_title_em: "conversation."
+    path_a_tag: "Path A · Preferred"
+    path_a_title: "Speak privately on WhatsApp"
+    path_a_body: "The fastest, quietest way to reach us. Send the codeword for the protocol you're curious about — or simply say hello."
+    path_a_button: "Speak privately on WhatsApp"
+    path_b_tag: "Path B · Private form"
+    form:
+      meta_title: "Contact & Inquiry"
+      name: "Name"
+      name_ph: "Your name"
+      mobile: "Mobile"
+      email: "Email"
+      email_ph: "you@example.com"
+      persona: "What brings you here?"
+      persona_blank: "What brings you here?"
+      preferred_time: "Preferred contact time"
+      preferred_time_blank: "Preferred contact time"
+      times: { morning: "Morning", afternoon: "Afternoon", evening: "Evening" }
+      send: "Send inquiry"
+    trust:
+      reply: { title: "Within 2 hours", body: "Every inquiry is reviewed by our patient relations lead within two hours during business hours." }
+      place: { title: "Al Malqa, Riyadh", body: "Saturday–Thursday · 10:00–22:00. Friday closed. Exact address shared on scheduling." }
+      seen:  { title: "Seen by two", body: "Your inquiry is reviewed only by our patient relations lead and your treating doctor. Nowhere else." }
     sub: "Two ways to book — whichever feels right. We confirm within two hours."
     steps_label: "How booking works"
     steps:
@@ -564,6 +634,9 @@ en:
       technologies: "Technologies"
       journal: "Journal"
       inquire: "Inquire"
+      menu: "Menu"
+      all_treatments: "All treatments"
+      all_technologies: "All technologies"
     footer:
       blurb: "Doctor-led skin intelligence for women, in the quiet of Al Malqa, Riyadh."
       clinic_title: "The Clinic"
@@ -592,7 +665,14 @@ en:
       legal_privacy: "Privacy & PDPL"
       legal_consent: "Consent"
       legal_terms: "Terms"
+      location: "Clinic location"
+      location_cta: "Open in Google Maps →"
     floating_book: "Book a consultation"
+    floating_whatsapp: "WhatsApp"
+    book: "Book a consultation"
+    brand_sub: "Clinic · Riyadh"
+    meta_title: "NeuSkin Clinic — Doctor-led skin intelligence, Riyadh"
+    meta_description: "NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by our medical team."
     cookie:
       text: "We keep only what's needed to run this site and remember your choice. Nothing is sold or shared."
       privacy: "Privacy & PDPL"
@@ -610,6 +690,14 @@ en:
       other: "%{count} min read"
     empty: "New notes are being written — come back soon."
     back: "← All notes"
+    faq_title: "Frequently asked"
+    book_eyebrow: "Next step"
+    book_title: "Book a consultation"
+    book_whatsapp: "Speak on WhatsApp"
+    home_eyebrow: "From the Journal"
+    home_title: "Latest notes,"
+    home_title_em: "quietly kept."
+    home_all: "Read all notes →"
     categories:
       clinic_notes: "Clinic Notes"
       inside_clinic: "Inside the Clinic"

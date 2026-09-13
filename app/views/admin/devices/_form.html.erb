@@ -60,6 +60,11 @@
     <% if @device.persisted? %>
       <a href="<%= technologies_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
     <% end %>
+    <span class="spacer"></span>
+    <% if @device.persisted? %>
+      <%= link_to "Delete device", admin_device_path(@device), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@device.name}” permanently?" } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

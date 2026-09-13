@@ -5,7 +5,7 @@
 <%# ---- 1 · Full-bleed hero, text bottom-left (design 72vh) ---- %>
 <section class="over-hero over-hero--outcome" data-controller="reveal parallax">
   <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
-    <%= image_tag treatment_image_url(@treatment), alt: @treatment.headline, class: "kb" %>
+    <%= image_tag treatment_image_url(@treatment, width: 1800), alt: @treatment.headline, class: "kb", fetchpriority: "high" %>
   </div>
   <div class="over-hero-copy over-hero-copy--wide">
     <div class="clinic-hero-eyebrow reveal" data-reveal-target="item"><%= @treatment.title %></div>
@@ -35,7 +35,7 @@
         <span class="eyebrow"><%= t("treatments.owner_eyebrow", default: "The protocol that owns this") %></span>
         <h2 style="margin:14px 0 0"><%= @protocol.name %><% if @protocol.trademark %><span class="tm">™</span><% end %></h2>
       </div>
-      <%= link_to "View the protocol →", protocol_path(@protocol),
+      <%= link_to t("treatment_page.view_protocol"), protocol_path(@protocol),
                   class: "btn btn--rose reveal d1", data: { reveal_target: "item" } %>
     </div>
   </section>
@@ -45,11 +45,11 @@
 <% if @treatment.view.present? %>
   <section class="pull-band orn-host" data-controller="reveal">
     <%= render "shared/orn", variant: "petal", pos: "tl", size: 220 %>
-    <span class="eyebrow center no-rule reveal" data-reveal-target="item" style="margin-block-end:34px">The NeuSkin view</span>
+    <span class="eyebrow center no-rule reveal" data-reveal-target="item" style="margin-block-end:34px"><%= t("treatment_page.neuskin_view") %></span>
     <blockquote class="reveal d1" data-reveal-target="item">“<%= @treatment.view %>”</blockquote>
     <p class="by reveal d2" data-reveal-target="item">— NeuSkin</p>
     <p class="reveal d3" data-reveal-target="item" style="margin-block-start:50px">
-      <%= link_to "Begin with a private inquiry", inquire_path, class: "btn btn--ghost" %>
+      <%= link_to t("treatment_page.private_inquiry"), inquire_path, class: "btn btn--ghost" %>
     </p>
   </section>
 <% end %>

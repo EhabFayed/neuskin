@@ -35,7 +35,7 @@ SeedContent.register("technologies", [
     kind: "tech_intro", label: "The Science of You", position: 1,
     contents: [
       { key: "eyebrow", label: "Eyebrow",
-        en: "The Standard", ar: "" },
+        en: "The Standard", ar: "المعيار" },
       { key: "title",   label: "Heading",
         en: "The Science of You", ar: "العلم خلف الجمال" },
       { key: "body",    label: "Body text",
