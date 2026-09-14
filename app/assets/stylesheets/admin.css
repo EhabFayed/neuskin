@@ -461,3 +461,9 @@ label.ns-btn { position: relative; cursor: pointer; }
    beat the UA stylesheet's [hidden] — make hidden always win in the Studio */
 [hidden] { display: none !important; }
 .ns-imgfield .hint { font-size: 12.5px; color: var(--ns-muted); }
+/* bilingual image pairs (article cover + paragraph photos): two fields side
+   by side on a wide screen, stacked once the columns get too narrow to hold
+   a thumbnail and its buttons */
+.ns-imgpair .ns-imgfield { gap: 12px; }
+.ns-imgpair .ns-imgfield-side { min-width: 130px; }
+@media (max-width: 1280px) { .ns-imgpair { grid-template-columns: 1fr; } }

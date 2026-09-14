@@ -12,7 +12,11 @@ class Blog < ApplicationRecord
            as: :parentable, dependent: :destroy, inverse_of: :parentable
   accepts_nested_attributes_for :contents, allow_destroy: true, reject_if: :all_blank
 
+  # Cover image. `image` is the default (and the English article's cover);
+  # `image_ar` is an OPTIONAL Arabic-only cover — when a post's artwork carries
+  # text, each language needs its own file. Arabic falls back to `image`.
   has_one_attached :image
+  has_one_attached :image_ar
 
   validates :slug_en, presence: true, uniqueness: true,
                       format: { with: /\A[a-z0-9-]+\z/, message: "lowercase letters, digits and dashes only" }
@@ -41,6 +45,15 @@ class Blog < ApplicationRecord
     define_method(attr) do
       public_send("#{attr}_#{localized_suffix}")
     end
+  end
+
+  # The cover for the active locale: the Arabic file on Arabic pages when one
+  # is attached, the default cover otherwise. Never nil — callers check
+  # `.attached?` exactly as before.
+  def localized_image
+    return image_ar if I18n.locale == :ar && image_ar.attached?
+
+    image
   end
 
   # Localized pick for a JSONB hash with _ar/_en keys — mirrors Protocol#loc,

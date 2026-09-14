@@ -14,7 +14,8 @@ module JournalHelper
   # `position` is the post's index in the grid when the caller already knows
   # it; otherwise it is derived from the published ordering.
   def journal_cover_source(blog, position: nil, width: 900)
-    return opt_url(blog.image, width: width) if blog.image.attached?
+    cover = blog.localized_image
+    return opt_url(cover, width: width) if cover.attached?
 
     position ||= Blog.published.newest_first.pluck(:id).index(blog.id) || 0
     JOURNAL_FALLBACK_COVERS[position % JOURNAL_FALLBACK_COVERS.size]

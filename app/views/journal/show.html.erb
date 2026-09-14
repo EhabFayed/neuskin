@@ -40,9 +40,9 @@
               <p><%= block.value %></p>
             <% end %>
           <% end %>
-          <% if block.photo.attached? %>
+          <% if (block_photo = block.localized_photo).attached? %>
             <figure class="jra-figure">
-              <%= image_tag opt_url(block.photo, width: 1200), alt: block.alt.to_s, loading: "lazy", decoding: "async" %>
+              <%= image_tag opt_url(block_photo, width: 1200), alt: block.alt.to_s, loading: "lazy", decoding: "async" %>
               <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
             </figure>
           <% end %>

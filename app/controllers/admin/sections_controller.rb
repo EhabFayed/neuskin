@@ -74,14 +74,15 @@ module Admin
       case page
       when "home"
         @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
-        @latest_posts = Blog.published.newest_first.with_attached_image.includes(:contents).limit(3)
+        @latest_posts = Blog.published.newest_first.with_attached_image.with_attached_image_ar
+                            .includes(:contents).limit(3)
       when "protocols_index"
         @protocols = Protocol.all
       when "bridal"
         @protocol = Protocol.find_by(slug: "brides-180")
         @lead = BridalLead.new
       when "journal"
-        @blogs = Blog.published.newest_first.with_attached_image.includes(:contents)
+        @blogs = Blog.published.newest_first.with_attached_image.with_attached_image_ar.includes(:contents)
       when "the_team"
         @members = TeamMember.with_attached_photo
       when "stories"

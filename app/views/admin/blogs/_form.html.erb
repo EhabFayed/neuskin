@@ -59,10 +59,21 @@
             </div>
           </div>
           <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
-            <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional)</span>
-            <%= render "admin/shared/image_field", name: "#{cf.object_name}[photo]", current: cf.object.photo,
-                       remove_name: "#{cf.object_name}[remove_photo]", size: "sm",
-                       hint: "Shown under this paragraph on the article page." %>
+            <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional) — one per language</span>
+            <div class="ns-pair ns-imgpair">
+              <div class="en">
+                <span class="lang-lbl">English</span>
+                <%= render "admin/shared/image_field", name: "#{cf.object_name}[photo]", current: cf.object.photo,
+                           remove_name: "#{cf.object_name}[remove_photo]", size: "sm",
+                           hint: "Shown under this paragraph in the English article." %>
+              </div>
+              <div class="ar">
+                <span class="lang-lbl">العربية · Arabic</span>
+                <%= render "admin/shared/image_field", name: "#{cf.object_name}[photo_ar]", current: cf.object.photo_ar,
+                           remove_name: "#{cf.object_name}[remove_photo_ar]", size: "sm",
+                           hint: "Optional. Left empty, the Arabic article shows the English image." %>
+              </div>
+            </div>
             <div class="ns-pair" style="margin-top:8px">
               <div class="en">
                 <span class="lang-lbl">Image alt · English</span>
@@ -102,9 +113,20 @@
           </div>
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
-          <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional)</span>
-          <%= render "admin/shared/image_field", name: "blog[contents_attributes][IDX][photo]", current: nil,
-                     remove_name: "blog[contents_attributes][IDX][remove_photo]", size: "sm" %>
+          <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional) — one per language</span>
+          <div class="ns-pair ns-imgpair">
+            <div class="en">
+              <span class="lang-lbl">English</span>
+              <%= render "admin/shared/image_field", name: "blog[contents_attributes][IDX][photo]", current: nil,
+                         remove_name: "blog[contents_attributes][IDX][remove_photo]", size: "sm" %>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">العربية · Arabic</span>
+              <%= render "admin/shared/image_field", name: "blog[contents_attributes][IDX][photo_ar]", current: nil,
+                         remove_name: "blog[contents_attributes][IDX][remove_photo_ar]", size: "sm",
+                         hint: "Optional. Left empty, the Arabic article shows the English image." %>
+            </div>
+          </div>
           <div class="ns-pair" style="margin-top:8px">
             <div class="en">
               <span class="lang-lbl">Image alt · English</span>
@@ -125,9 +147,20 @@
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
-    <span class="ns-field-title">Cover image</span>
-    <%= render "admin/shared/image_field", name: "blog[image]", current: @blog.image, remove_name: "blog[remove_image]",
-               hint: "The card on the Journal grid and the article hero. Without one, a rotating stock cover is used." %>
+    <span class="ns-field-title">Cover image — one per language</span>
+    <p class="hint" style="margin:0 0 12px">The card on the Journal grid and the article hero.</p>
+    <div class="ns-pair ns-imgpair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= render "admin/shared/image_field", name: "blog[image]", current: @blog.image, remove_name: "blog[remove_image]",
+                   hint: "Without one, a rotating stock cover is used." %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= render "admin/shared/image_field", name: "blog[image_ar]", current: @blog.image_ar, remove_name: "blog[remove_image_ar]",
+                   hint: "Optional. Left empty, the Arabic article shows the English cover." %>
+      </div>
+    </div>
     <div class="ns-pair" style="margin-top:10px">
       <div class="en">
         <span class="lang-lbl">Alt text · English</span>
