@@ -38,3 +38,8 @@
 # Ignore Claude Code worktrees and local settings.
 /.claude/worktrees/
 /.claude/settings.local.json
+# Ignore gems Bundler installs locally (.bundle/config sets BUNDLE_PATH to vendor/bundle).
+/vendor/bundle
+
+# Ignore Claude Code worktrees so a checkout is never committed as a gitlink again.
+/.claude/worktrees/
