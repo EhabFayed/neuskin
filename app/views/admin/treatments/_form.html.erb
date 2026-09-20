@@ -1,4 +1,4 @@
-<%= form_with model: @treatment, url: @treatment.persisted? ? admin_treatment_path(@treatment) : admin_treatments_path, local: true do |form| %>
+<%= form_with model: @treatment, url: @treatment.persisted? ? admin_treatment_path(@treatment) : admin_treatments_path, local: true, multipart: true do |form| %>
   <% if @treatment.errors.any? %>
     <div class="ns-flash" style="margin-bottom:16px">
       <% @treatment.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>

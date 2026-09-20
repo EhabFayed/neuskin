@@ -1,4 +1,4 @@
-<%= form_with model: @blog, url: @blog.persisted? ? admin_blog_path(@blog) : admin_blogs_path, local: true do |form| %>
+<%= form_with model: @blog, url: @blog.persisted? ? admin_blog_path(@blog) : admin_blogs_path, local: true, multipart: true do |form| %>
   <% if @blog.errors.any? %>
     <div class="ns-flash" style="margin-bottom:16px">
       <% @blog.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
