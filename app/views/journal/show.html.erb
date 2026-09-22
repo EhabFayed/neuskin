@@ -43,7 +43,8 @@
           <% if (block_photo = block.localized_photo).attached? %>
             <figure class="jra-figure">
               <%= image_tag opt_url(block_photo, width: 1200), alt: block.alt.to_s, loading: "lazy", decoding: "async" %>
-              <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
+              <%# Alt text stays on the <img> for screen readers and SEO; it is
+                  not shown as a caption. %>
             </figure>
           <% end %>
         <% end %>
