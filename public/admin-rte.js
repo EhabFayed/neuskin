@@ -31,8 +31,10 @@
 
     if (wrap.dataset.dir === 'rtl') {
       quill.root.setAttribute('dir', 'rtl');
-      quill.format('direction', 'rtl');
-      quill.format('align', 'right');
+      // Saved HTML comes back without Quill's per-line classes (the server
+      // sanitizer drops class=), so mark EVERY line RTL / right-aligned — not
+      // just the caret's line — or list numbers render over the Arabic text.
+      quill.formatLine(0, quill.getLength(), { direction: 'rtl', align: 'right' }, 'api');
     }
 
     var sync = function () { hidden.value = quill.getSemanticHTML(); };
