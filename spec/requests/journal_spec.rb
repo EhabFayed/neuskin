@@ -87,6 +87,29 @@ RSpec.describe "Journal", type: :request do
     end
   end
 
+  describe "article body" do
+    let(:png) { Vips::Image.black(8, 8).write_to_buffer(".png") }
+
+    it "keeps a paragraph photo's alt text on the image without showing it as a caption" do
+      blog = make_blog
+      para = blog.contents.first
+      para.update!(alt_en: "Treatment room, north light", alt_ar: "غرفة العلاج")
+      para.photo.attach(io: StringIO.new(png), filename: "room.png", content_type: "image/png")
+
+      get "/journal/#{blog.slug_en}"
+      expect(response.body).to include('alt="Treatment room, north light"')
+      expect(response.body).not_to include("<figcaption")
+    end
+
+    it "turns pasted non-breaking spaces into plain spaces so words wrap at line ends" do
+      blog = make_blog
+      blog.contents.first.update!(value_en: "<p>Hair&nbsp;care\u00A0basics&nbsp;first.</p>")
+
+      get "/journal/#{blog.slug_en}"
+      expect(response.body).to include("<p>Hair care basics first.</p>")
+    end
+  end
+
   describe "admin" do
     before { sign_in create(:user) }
 

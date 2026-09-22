@@ -114,7 +114,13 @@ module ApplicationHelper
   RICH_TAGS  = %w[h1 h2 h3 h4 p ul ol li strong em b i u a br blockquote img span div].freeze
   RICH_ATTRS = %w[href src alt title target rel].freeze
 
+  # Text pasted from Word/Google Docs arrives with a non-breaking space between
+  # every word, which turns a paragraph into one unbreakable string and makes
+  # the browser split words mid-way at the line end. Normalise to plain spaces
+  # so lines wrap at word boundaries.
+  NBSP = /\u00A0|&nbsp;/
+
   def rich(html)
-    sanitize(html.to_s, tags: RICH_TAGS, attributes: RICH_ATTRS)
+    sanitize(html.to_s.gsub(NBSP, " "), tags: RICH_TAGS, attributes: RICH_ATTRS)
   end
 end

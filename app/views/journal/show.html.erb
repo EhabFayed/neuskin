@@ -37,9 +37,10 @@
         <% end %>
       <% end %>
       <% if block.photo.attached? %>
+        <%# Alt text stays on the <img> for screen readers and SEO; it is not
+            shown as a caption. %>
         <figure class="jra-figure">
           <%= image_tag block.photo, alt: block.alt.to_s %>
-          <% if block.alt.present? %><figcaption><%= block.alt %></figcaption><% end %>
         </figure>
       <% end %>
     <% end %>

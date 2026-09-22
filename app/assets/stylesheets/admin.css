@@ -342,3 +342,12 @@ input::placeholder, textarea::placeholder { color: var(--ns-muted-2); }
 [data-rte] .ql-container { border-radius: 0 0 10px 10px; border-color: var(--ns-border); font-family: inherit; font-size: 14px; color: #1d1719; }
 [data-rte] .rte-editor, [data-rte] .ql-editor { min-height: 140px; }
 [data-rte] .ql-editor[dir=rtl] { direction: rtl; text-align: right; }
+/* Right-to-left editors: Quill mirrors list markers and quotes only on lines
+   carrying its own .ql-direction-rtl class, which the sanitizer strips when
+   saved HTML is loaded back — the numbers then land on top of the text.
+   Mirror the layout for the whole RTL editor so markers sit in the right-hand
+   gutter regardless of per-line classes. */
+[data-rte] .ql-editor[dir=rtl] ol { padding-left: 0; padding-right: 1.5em; }
+[data-rte] .ql-editor[dir=rtl] li { padding-left: 0; padding-right: 1.5em; }
+[data-rte] .ql-editor[dir=rtl] li > .ql-ui:before { margin-left: .3em; margin-right: -1.5em; text-align: left; }
+[data-rte] .ql-editor[dir=rtl] blockquote { border-left: 0; border-right: 4px solid #ccc; padding-left: 0; padding-right: 16px; }
