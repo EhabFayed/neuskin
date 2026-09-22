@@ -43,3 +43,4 @@
 
 # Ignore Claude Code worktrees so a checkout is never committed as a gitlink again.
 /.claude/worktrees/
+/app.env
