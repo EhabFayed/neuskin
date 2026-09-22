@@ -12,7 +12,11 @@ class Blog < ApplicationRecord
            as: :parentable, dependent: :destroy, inverse_of: :parentable
   accepts_nested_attributes_for :contents, allow_destroy: true, reject_if: :all_blank
 
+  # Cover image. `image` is the default (and the English article's cover);
+  # `image_ar` is an OPTIONAL Arabic-only cover — when a post's artwork carries
+  # text, each language needs its own file. Arabic falls back to `image`.
   has_one_attached :image
+  has_one_attached :image_ar
 
   validates :slug_en, presence: true, uniqueness: true,
                       format: { with: /\A[a-z0-9-]+\z/, message: "lowercase letters, digits and dashes only" }
@@ -43,6 +47,27 @@ class Blog < ApplicationRecord
     end
   end
 
+  # The cover for the active locale: the Arabic file on Arabic pages when one
+  # is attached, the default cover otherwise. Never nil — callers check
+  # `.attached?` exactly as before.
+  def localized_image
+    return image_ar if I18n.locale == :ar && image_ar.attached?
+
+    image
+  end
+
+  # Localized pick for a JSONB hash with _ar/_en keys — mirrors Protocol#loc,
+  # used by the per-article FAQ rows: blog.loc(faq, "q") -> faq["q_ar"].
+  def loc(hash, key)
+    return if hash.blank?
+    hash["#{key}_#{localized_suffix}"]
+  end
+
+  # FAQ rows that have a question in the active locale (skip half-filled rows).
+  def localized_faqs
+    Array(faqs).select { |f| f.is_a?(Hash) && loc(f, "q").present? }
+  end
+
   # Body paragraphs for the active locale (blank ones dropped).
   def paragraphs
     contents.filter_map { |c| c.value.presence }
@@ -51,7 +76,7 @@ class Blog < ApplicationRecord
   # "6 min read" input — ~200 words/minute, floor of 1.
   def reading_minutes
     words = contents.sum { |c| c.value.to_s.split.size } + excerpt.to_s.split.size
-    [(words / 200.0).ceil, 1].max
+    [ (words / 200.0).ceil, 1 ].max
   end
 
   def category_label

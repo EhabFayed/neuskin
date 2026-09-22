@@ -4,11 +4,13 @@
     fallback should a toggle ever return. %>
 <html lang="<%= I18n.locale %>" dir="<%= loc_dir %>" data-theme="light">
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "NeuSkin Clinic — Doctor-led skin intelligence, Riyadh" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t("layout.meta_title") %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by our medical team." %>">
+    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : t("layout.meta_description") %>">
     <link rel="canonical" href="<%= canonical_url %>">
+    <%= yield :head_extra if content_for?(:head_extra) %>
     <link rel="alternate" hreflang="en" href="<%= page_url_in(:en) %>">
     <link rel="alternate" hreflang="ar" href="<%= page_url_in(:ar) %>">
     <link rel="alternate" hreflang="x-default" href="<%= page_url_in(:en) %>">
@@ -25,8 +27,15 @@
     <!-- End Google Tag Manager -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%# Self-hosted webfonts the first paint needs — preloaded so the headline
+        doesn't wait for CSS → font discovery (audit: mobile FCP/LCP). %>
+    <% if ar? %>
+      <%= preload_link_tag asset_path("DroidKufi-Regular.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+    <% end %>
+    <%= preload_link_tag asset_path("GoogleSansFlex-Latin.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "journal", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <%# cursor: custom dot + trailing ring; smoothscroll: Lenis inertia —
@@ -36,16 +45,17 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ4HN4KB"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <%# Intro splash — NS monogram, fades out on first load (intro_controller). %>
+    <%# Intro splash — NS monogram, fades out on first load (intro_controller).
+        Desktop only: on phones it just delayed the first meaningful paint. %>
     <div class="intro-splash" data-controller="intro">
-      <%= image_tag "site/logo-ns.png", class: "mark", alt: "" %>
+      <%= image_tag "site/logo-ns.webp", class: "mark", alt: "", width: 120, height: 113 %>
       <span class="line" style="width:170px"></span>
       <span class="wordmark">NeuSkin<span class="sub">Clinic · Riyadh</span></span>
     </div>
     <%= render "shared/header" %>
     <%= yield %>
     <%= render "shared/footer" %>
-    <%= render "shared/floating_book" %>
+    <%= render "shared/floating_whatsapp" %>
     <%= render "shared/cookie_banner" %>
   </body>
 </html>

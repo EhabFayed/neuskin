@@ -1,7 +1,7 @@
 module Admin
   # FAQ CRUD — dynamic counterpart of the old fixed-key faq/faq_items section.
   class FaqsController < BaseController
-    before_action :set_faq, only: [:edit, :update, :destroy]
+    before_action :set_faq, only: [ :edit, :update, :destroy ]
 
     def index
       @faqs = Faq.all.group_by { |f| f.category.to_s }

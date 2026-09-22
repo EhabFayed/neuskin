@@ -2,7 +2,7 @@ module Admin
   # Medical team CRUD — the dynamic counterpart of the old fixed-key
   # the_team/team_members section (top_brand leadership pattern).
   class TeamMembersController < BaseController
-    before_action :set_member, only: [:edit, :update, :destroy]
+    before_action :set_member, only: [ :edit, :update, :destroy ]
 
     def index
       @members = TeamMember.with_attached_photo
@@ -25,7 +25,7 @@ module Admin
 
     def update
       if @member.update(member_params)
-        @member.photo.purge if params[:team_member][:remove_photo] == "1"
+        @member.photo.purge if params[:team_member][:remove_photo] == "1" && params[:team_member][:photo].blank?
         redirect_to admin_team_members_path, notice: "Member saved."
       else
         render :edit, status: :unprocessable_entity

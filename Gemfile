@@ -11,9 +11,9 @@ gem "puma", ">= 5.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
-gem 'enumerize', '~> 2.8', '>= 2.8.1'
-gem 'sidekiq', '~> 8.0', '>= 8.0.1'
-gem 'ruby-vips'
+gem "enumerize", "~> 2.8", ">= 2.8.1"
+gem "sidekiq", "~> 8.0", ">= 8.0.1"
+gem "ruby-vips"
 gem "image_processing", "~> 1.2"
 
 # Full-stack frontend: asset pipeline + Hotwire (server-rendered, no Node build step)
@@ -45,14 +45,14 @@ gem "thruster", require: false
 
 group :development, :test do
   # Loads .env into ENV in development/test (production uses compose env_file).
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "capybara"
+  gem "selenium-webdriver"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false

@@ -1,13 +1,13 @@
 <%# One protocol card — matches design (tag chip over image, Duration / For meta row). %>
 <%# Card image = the protocol's dashboard image (Admin → Protocols), launch
     static asset as fallback. %>
-<% img = protocol_image_url(protocol) %>
+<% img = protocol_image_url(protocol, width: 800) %>
 <% for_who = protocol.who_for.to_s.split(/[.\n]/).first.to_s.strip.truncate(26, omission: "…").presence || "By assessment" %>
 <%# Chip = category only (meta is "duration · category"); drop the duration part. %>
 <% chip = protocol.meta.to_s.split("·").last.to_s.strip.presence || protocol.meta %>
 <%= link_to protocol_path(protocol), class: "proto-card filter-item reveal", data: { reveal_target: "item", persona: protocol.persona } do %>
   <span class="proto-card-img">
-    <%= image_tag img, alt: protocol.name %>
+    <%= image_tag img, alt: protocol.name, loading: "lazy", decoding: "async" %>
     <span class="proto-card-tag"><%= chip %></span>
   </span>
   <span class="proto-card-body">

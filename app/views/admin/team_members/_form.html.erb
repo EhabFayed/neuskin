@@ -29,13 +29,8 @@
 
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Photo</span>
-    <% if @member.photo.attached? %>
-      <p class="hint">Current: <%= @member.photo.filename %></p>
-      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
-        <%= check_box_tag "team_member[remove_photo]", "1", false %> Remove photo (falls back to a stock portrait)
-      </label>
-    <% end %>
-    <%= form.file_field :photo, accept: "image/*" %>
+    <%= render "admin/shared/image_field", name: "team_member[photo]", current: @member.photo, remove_name: "team_member[remove_photo]",
+               hint: "Without a photo the page falls back to a stock portrait." %>
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
@@ -47,6 +42,11 @@
   <div class="ns-savebar">
     <%= link_to "Back to team", admin_team_members_path, class: "ns-btn ghost" %>
     <a href="<%= the_team_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <span class="spacer"></span>
+    <% if @member.persisted? %>
+      <%= link_to "Remove member", admin_team_member_path(@member), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Remove #{@member.name_en} from the team page?" } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

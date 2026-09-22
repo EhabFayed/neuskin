@@ -62,7 +62,7 @@
     </div>
     <%# Flip cards: image + tier front, description on the back. Images come
         from this section's gallery in the dashboard (upload 3 in tier order). %>
-    <% tier_defaults = ["site/space/private-suite.webp", "site/space/waiting-lounge.webp", "site/space/consultation.jpg"] %>
+    <% tier_defaults = ["site/space/private-suite.webp", "site/space/waiting-lounge.webp", "site/space/consultation.webp"] %>
     <div class="tiers">
       <% vip_tiers.each_with_index do |tier, i| %>
         <div class="tier flipcard reveal d<%= i + 1 %>" data-reveal-target="item">

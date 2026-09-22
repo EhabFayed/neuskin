@@ -59,14 +59,21 @@
             </div>
           </div>
           <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
-            <span class="lang-lbl">Paragraph image (optional)</span>
-            <% if cf.object.photo.attached? %>
-              <p class="hint" style="margin:4px 0">Current: <%= cf.object.photo.filename %></p>
-              <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font-size:12px;color:var(--ns-muted)">
-                <%= cf.check_box :remove_photo %> Remove image
-              </label><br>
-            <% end %>
-            <%= cf.file_field :photo, accept: "image/*" %>
+            <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional) — one per language</span>
+            <div class="ns-pair ns-imgpair">
+              <div class="en">
+                <span class="lang-lbl">English</span>
+                <%= render "admin/shared/image_field", name: "#{cf.object_name}[photo]", current: cf.object.photo,
+                           remove_name: "#{cf.object_name}[remove_photo]", size: "sm",
+                           hint: "Shown under this paragraph in the English article." %>
+              </div>
+              <div class="ar">
+                <span class="lang-lbl">العربية · Arabic</span>
+                <%= render "admin/shared/image_field", name: "#{cf.object_name}[photo_ar]", current: cf.object.photo_ar,
+                           remove_name: "#{cf.object_name}[remove_photo_ar]", size: "sm",
+                           hint: "Optional. Left empty, the Arabic article shows the English image." %>
+              </div>
+            </div>
             <div class="ns-pair" style="margin-top:8px">
               <div class="en">
                 <span class="lang-lbl">Image alt · English</span>
@@ -106,8 +113,20 @@
           </div>
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--ns-border-soft)">
-          <span class="lang-lbl">Paragraph image (optional)</span>
-          <input type="file" name="blog[contents_attributes][IDX][photo]" accept="image/*">
+          <span class="lang-lbl" style="display:block;margin-bottom:8px">Paragraph image (optional) — one per language</span>
+          <div class="ns-pair ns-imgpair">
+            <div class="en">
+              <span class="lang-lbl">English</span>
+              <%= render "admin/shared/image_field", name: "blog[contents_attributes][IDX][photo]", current: nil,
+                         remove_name: "blog[contents_attributes][IDX][remove_photo]", size: "sm" %>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">العربية · Arabic</span>
+              <%= render "admin/shared/image_field", name: "blog[contents_attributes][IDX][photo_ar]", current: nil,
+                         remove_name: "blog[contents_attributes][IDX][remove_photo_ar]", size: "sm",
+                         hint: "Optional. Left empty, the Arabic article shows the English image." %>
+            </div>
+          </div>
           <div class="ns-pair" style="margin-top:8px">
             <div class="en">
               <span class="lang-lbl">Image alt · English</span>
@@ -128,14 +147,20 @@
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
-    <span class="ns-field-title">Cover image</span>
-    <% if @blog.image.attached? %>
-      <p class="hint">Current: <%= @blog.image.filename %></p>
-      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
-        <%= check_box_tag "blog[remove_image]", "1", false %> Remove cover image
-      </label>
-    <% end %>
-    <%= form.file_field :image, accept: "image/*" %>
+    <span class="ns-field-title">Cover image — one per language</span>
+    <p class="hint" style="margin:0 0 12px">The card on the Journal grid and the article hero.</p>
+    <div class="ns-pair ns-imgpair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= render "admin/shared/image_field", name: "blog[image]", current: @blog.image, remove_name: "blog[remove_image]",
+                   hint: "Without one, a rotating stock cover is used." %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= render "admin/shared/image_field", name: "blog[image_ar]", current: @blog.image_ar, remove_name: "blog[remove_image_ar]",
+                   hint: "Optional. Left empty, the Arabic article shows the English cover." %>
+      </div>
+    </div>
     <div class="ns-pair" style="margin-top:10px">
       <div class="en">
         <span class="lang-lbl">Alt text · English</span>
@@ -169,6 +194,61 @@
     </div>
   </div>
 
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Frequently asked <span class="hint">(optional)</span></span>
+    <p class="hint">Short Q&amp;A shown under the article as an accordion (and as FAQ schema for search engines). Leave every field blank to drop a row.</p>
+    <%# Rows post as blog[faqs][][q_en] etc. — an array of hashes the controller
+        normalises (blank rows dropped). The marker tells the controller the
+        list was submitted, so removing every row clears it. %>
+    <input type="hidden" name="blog[faqs_submitted]" value="1">
+    <div id="blog-faqs">
+      <% Array(@blog.faqs).each do |faq| %>
+        <div class="ns-card blog-faq-row" style="margin:10px 0;background:var(--ns-bg)">
+          <div class="ns-pair">
+            <div class="en">
+              <span class="lang-lbl">Question · English</span>
+              <input type="text" name="blog[faqs][][q_en]" class="ns-input" value="<%= faq["q_en"] %>">
+              <span class="lang-lbl" style="margin-top:8px;display:block">Answer · English</span>
+              <textarea name="blog[faqs][][a_en]" rows="3" class="ns-textarea"><%= faq["a_en"] %></textarea>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">السؤال · Arabic</span>
+              <input type="text" name="blog[faqs][][q_ar]" dir="rtl" class="ns-input" value="<%= faq["q_ar"] %>">
+              <span class="lang-lbl" style="margin-top:8px;display:block">الإجابة · Arabic</span>
+              <textarea name="blog[faqs][][a_ar]" rows="3" dir="rtl" class="ns-textarea"><%= faq["a_ar"] %></textarea>
+            </div>
+          </div>
+          <button type="button" class="ns-btn ghost" style="margin-top:8px;font-size:12px"
+                  onclick="this.closest('.blog-faq-row').remove()">Remove question</button>
+        </div>
+      <% end %>
+    </div>
+    <template id="blog-faq-template">
+      <div class="ns-card blog-faq-row" style="margin:10px 0;background:var(--ns-bg)">
+        <div class="ns-pair">
+          <div class="en">
+            <span class="lang-lbl">Question · English</span>
+            <input type="text" name="blog[faqs][][q_en]" class="ns-input">
+            <span class="lang-lbl" style="margin-top:8px;display:block">Answer · English</span>
+            <textarea name="blog[faqs][][a_en]" rows="3" class="ns-textarea"></textarea>
+          </div>
+          <div class="ar">
+            <span class="lang-lbl">السؤال · Arabic</span>
+            <input type="text" name="blog[faqs][][q_ar]" dir="rtl" class="ns-input">
+            <span class="lang-lbl" style="margin-top:8px;display:block">الإجابة · Arabic</span>
+            <textarea name="blog[faqs][][a_ar]" rows="3" dir="rtl" class="ns-textarea"></textarea>
+          </div>
+        </div>
+        <button type="button" class="ns-btn ghost" style="margin-top:8px;font-size:12px"
+                onclick="this.closest('.blog-faq-row').remove()">Remove question</button>
+      </div>
+    </template>
+    <button type="button" class="ns-btn ghost" style="margin-top:6px"
+            onclick="var t=document.getElementById('blog-faq-template'),w=document.getElementById('blog-faqs');w.insertAdjacentHTML('beforeend',t.innerHTML);">
+      + Add question
+    </button>
+  </div>
+
   <details class="ns-card" style="margin-bottom:14px">
     <summary class="ns-field-title" style="cursor:pointer">SEO (optional)</summary>
     <div class="ns-pair" style="margin-top:10px">
@@ -191,6 +271,11 @@
     <%= link_to "Back to posts", admin_blogs_path, class: "ns-btn ghost" %>
     <% if @blog.persisted? %>
       <a href="<%= journal_article_path(@blog) %>" target="_blank" rel="noopener" class="ns-btn ghost">View post</a>
+    <% end %>
+    <span class="spacer"></span>
+    <% if @blog.persisted? %>
+      <%= link_to "Delete post", admin_blog_path(@blog), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@blog.title_en}” permanently?" } %>
     <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>

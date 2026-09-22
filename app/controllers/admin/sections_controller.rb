@@ -1,6 +1,6 @@
 module Admin
   class SectionsController < BaseController
-    before_action :set_section, only: [:show, :update, :preview]
+    before_action :set_section, only: [ :show, :update, :preview ]
 
     def show; end
 
@@ -21,7 +21,7 @@ module Admin
       "protocols_index" => "protocols/index",
       "journal"         => "journal/index",
       "bridal"          => "bridal/show",
-      "technologies"    => "pages/technologies",
+      "technologies"    => "pages/technologies"
     }.freeze
 
     def preview
@@ -43,6 +43,7 @@ module Admin
       # assign_items returns false (and records an error) on invalid JSON;
       # bail to a single render so we never double-render.
       if assign_items && @section.update(section_params)
+        purge_flagged_images
         redirect_to admin_section_path(@section), notice: "Saved."
       else
         render :show, status: :unprocessable_entity
@@ -55,19 +56,33 @@ module Admin
       @section = Section.find(params[:id])
     end
 
+    # "Remove" in the image fields only sets section[remove_<slot>]=1; the
+    # purge happens here after a successful save, and never when a
+    # replacement file came in the same request.
+    def purge_flagged_images
+      slots = [ :image ] + (1..6).map { |i| :"card_image_#{i}" }
+      slots.each do |slot|
+        next unless params[:section]["remove_#{slot}"] == "1" && params[:section][slot].blank?
+        att = @section.public_send(slot)
+        att.purge if att.attached?
+      end
+    end
+
     # Replicate the instance variables the public controllers set, so the
     # real page template renders correctly inside the preview.
     def prepare_page_vars(page)
       case page
       when "home"
         @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
+        @latest_posts = Blog.published.newest_first.with_attached_image.with_attached_image_ar
+                            .includes(:contents).limit(3)
       when "protocols_index"
         @protocols = Protocol.all
       when "bridal"
         @protocol = Protocol.find_by(slug: "brides-180")
         @lead = BridalLead.new
       when "journal"
-        @blogs = Blog.published.newest_first.with_attached_image.includes(:contents)
+        @blogs = Blog.published.newest_first.with_attached_image.with_attached_image_ar.includes(:contents)
       when "the_team"
         @members = TeamMember.with_attached_photo
       when "stories"

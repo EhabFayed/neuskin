@@ -15,7 +15,7 @@ SeedContent.register("treatments", [
     kind: "treatments_hero", label: "Hero", position: 0,
     contents: [
       { key: "eyebrow",  label: "Eyebrow",
-        en: "Treatments · by outcome", ar: "" },
+        en: "Treatments · by outcome", ar: "العلاجات · حسب النتيجة" },
       { key: "title_1",  label: "Title part 1 (before emphasis)",
         en: "We begin with", ar: "نبدأُ من" },
       { key: "title_em", label: "Title emphasis span",
@@ -29,22 +29,22 @@ SeedContent.register("treatments", [
     kind: "treatments_footer", label: "Footer link", position: 1,
     contents: [
       { key: "protocols_link", label: "\"View all protocols\" link text",
-        en: "View all six protocols →", ar: "" },
+        en: "View all six protocols →", ar: "اطّلعي على البروتوكولات الستة ←" },
       { key: "card_cta", label: "Card hover line (\"See the approach\")",
-        en: "See the approach →", ar: "" }
+        en: "See the approach →", ar: "اكتشفي المنهج ←" }
     ]
   },
   {
     kind: "treatments_cta", label: "Closing CTA", position: 2,
     contents: [
       { key: "kicker",   label: "Kicker (italic line)",
-        en: "Not sure where to start?", ar: "" },
+        en: "Not sure where to start?", ar: "لستِ متأكدة من أين تبدئين؟" },
       { key: "title",    label: "Title (before emphasis)",
-        en: "Begin with the", ar: "" },
+        en: "Begin with the", ar: "ابدئي مع" },
       { key: "title_em", label: "Title emphasis span",
-        en: "NeuSkin Method™", ar: "" },
+        en: "NeuSkin Method™", ar: "منهج نيوسكن™" },
       { key: "button",   label: "Button label",
-        en: "Request the assessment", ar: "" }
+        en: "Request the assessment", ar: "اطلبي التقييم" }
     ]
   }
 ])

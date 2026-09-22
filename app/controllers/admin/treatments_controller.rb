@@ -3,7 +3,7 @@ module Admin
   # Mirrors ProtocolsController; the attached image drives both the card and
   # the sub-page hero, with a static per-slug asset as fallback.
   class TreatmentsController < BaseController
-    before_action :set_treatment, only: [:edit, :update, :destroy]
+    before_action :set_treatment, only: [ :edit, :update, :destroy ]
 
     def index
       @treatments = Treatment.all
@@ -26,6 +26,7 @@ module Admin
 
     def update
       if @treatment.update(treatment_params)
+        @treatment.image.purge if params[:treatment][:remove_image] == "1" && params[:treatment][:image].blank?
         redirect_to admin_treatments_path, notice: "Treatment saved."
       else
         render :edit, status: :unprocessable_entity

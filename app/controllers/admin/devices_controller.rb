@@ -3,7 +3,7 @@ module Admin
   # TreatmentsController; front_image is the product shot on the card front,
   # back_image the in-clinic photo on the spec (back) face.
   class DevicesController < BaseController
-    before_action :set_device, only: [:edit, :update, :destroy]
+    before_action :set_device, only: [ :edit, :update, :destroy ]
 
     def index
       @devices = Device.all
@@ -26,6 +26,9 @@ module Admin
 
     def update
       if @device.update(device_params)
+        %i[front_image back_image].each do |attr|
+          @device.public_send(attr).purge if params[:device]["remove_#{attr}"] == "1" && params[:device][attr].blank?
+        end
         redirect_to admin_devices_path, notice: "Device saved."
       else
         render :edit, status: :unprocessable_entity
@@ -45,7 +48,7 @@ module Admin
 
     def device_params
       params.require(:device).permit(
-        :name, :position, :front_image, :back_image,
+        :name, :slug, :position, :front_image, :back_image,
         :tagline_en, :tagline_ar, :body_en, :body_ar, :specs_en, :specs_ar
       )
     end

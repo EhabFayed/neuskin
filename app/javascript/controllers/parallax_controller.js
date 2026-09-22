@@ -8,10 +8,10 @@ export default class extends Controller {
 
   connect() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
-    this.targets = this.element.matches("[data-parallax]")
+    this.nodes = this.element.matches("[data-parallax]")
       ? [this.element]
       : Array.from(this.element.querySelectorAll("[data-parallax]"))
-    if (!this.targets.length) return
+    if (!this.nodes.length) return
 
     this.ticking = false
     this.onScroll = this.onScroll.bind(this)
@@ -27,7 +27,7 @@ export default class extends Controller {
 
   update() {
     const vh = window.innerHeight
-    this.targets.forEach((el) => {
+    this.nodes.forEach((el) => {
       const rect = el.getBoundingClientRect()
       const speed = parseFloat(el.dataset.parallaxSpeed || this.speedValue)
       const fromCentre = (rect.top + rect.height / 2) - vh / 2

@@ -10,12 +10,16 @@ export default class extends Controller {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     const seen = (() => { try { return sessionStorage.getItem(KEY) } catch (e) { return null } })()
 
-    if (reduce || seen) {
+    const narrow = window.matchMedia("(max-width: 880px)").matches
+
+    // Phones skip the splash entirely — it only postponed the first paint
+    // (audit: mobile FCP 3.2s / LCP 8.1s). Returning visitors skip it too.
+    if (reduce || seen || narrow) {
       this.dismiss(0)
       return
     }
     // Hold the splash briefly so the intro animation plays, then fade out.
-    this.timer = setTimeout(() => this.dismiss(), 1700)
+    this.timer = setTimeout(() => this.dismiss(), 1200)
   }
 
   dismiss(_) {

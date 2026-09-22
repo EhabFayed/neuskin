@@ -33,25 +33,25 @@ SeedContent.register("home", [
       kind: "home_principles", label: "Three principles", position: 1,
       contents: [
         { key: "eyebrow",   label: "Eyebrow",
-          en: "The Promise", ar: "" },
+          en: "The Promise", ar: "وعدنا" },
         { key: "title",     label: "Heading",
           en: "Three pillars of our promise.", ar: "ثلاثةُ وعود نلتزمُ بها بدقة." },
         { key: "p1_num",    label: "Principle 1 — number/label",
-          en: "01 — Principle", ar: "" },
+          en: "01 — Principle", ar: "٠١ — المبدأ" },
         { key: "p1_title",  label: "Principle 1 — title",
           en: "Doctor-led", ar: "قيادة طبية" },
         { key: "p1_body",   label: "Principle 1 — body",
           en: "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second.",
           ar: "لا نعتمدُ أبداً على قوائمَ جاهزة؛ كلُّ خطةٍ علاجيةٍ يُصممها فريقُنا الطبي خصيصاً لكِ. تلتقينَ بالمتخصصين أولاً، لنرسمَ معاً الطريقَ الأنسب لجمالك." },
         { key: "p2_num",    label: "Principle 2 — number/label",
-          en: "02 — Principle", ar: "" },
+          en: "02 — Principle", ar: "٠٢ — المبدأ" },
         { key: "p2_title",  label: "Principle 2 — title",
           en: "Discreet", ar: "خصوصيةٍ تامة" },
         { key: "p2_body",   label: "Principle 2 — body",
           en: "Private consultation. Private treatment. Private results. Your name never leaves the room, and your file never leaves the clinic.",
           ar: "استشارةٌ خاصة، جلسةٌ خاصة، ونتائجُ لكِ وحدك. اسمكِ لا يغادرُ غرفتنا، وملفُّكِ لا يخرجُ من عيادتنا." },
         { key: "p3_num",    label: "Principle 3 — number/label",
-          en: "03 — Principle", ar: "" },
+          en: "03 — Principle", ar: "٠٣ — المبدأ" },
         { key: "p3_title",  label: "Principle 3 — title",
           en: "Measured", ar: "نتائجَ مدروسة" },
         { key: "p3_body",   label: "Principle 3 — body",
@@ -160,5 +160,14 @@ SeedContent.register("home", [
         { key: "sign",     label: "Signature",
           en: "— The NeuSkin Team", ar: "— فريق نيوسكن" }
       ]
+    },
+    {
+      kind: "home_journal", label: "Latest from the Journal", position: 9,
+      contents: [
+        { key: "eyebrow",  label: "Eyebrow",                   en: "From the Journal", ar: "من المجلّة" },
+        { key: "title",    label: "Heading (before emphasis)", en: "Latest notes,",    ar: "أحدث المقالات،" },
+        { key: "title_em", label: "Heading emphasis span",     en: "quietly kept.",    ar: "بهدوء." },
+        { key: "link",     label: "\"All notes\" link text",   en: "Read all notes →", ar: "كل المقالات ←" }
+      ]
     }
-  ])
+])

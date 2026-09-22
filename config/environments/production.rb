@@ -102,7 +102,7 @@ Rails.application.configure do
     IPAddr.new("172.16.0.0/12"),   # Private network
     IPAddr.new("192.168.0.0/16"),  # Private network
     IPAddr.new("127.0.0.0/8"),     # Localhost
-    IPAddr.new("::1"),             # IPv6 localhost
+    IPAddr.new("::1")             # IPv6 localhost
   ]
 
   # Serve static files from public/ — important for Docker deployments with

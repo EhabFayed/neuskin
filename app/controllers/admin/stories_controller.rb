@@ -2,7 +2,7 @@ module Admin
   # Patient stories CRUD — dynamic counterpart of the old fixed-key
   # stories/story_items section.
   class StoriesController < BaseController
-    before_action :set_story, only: [:edit, :update, :destroy]
+    before_action :set_story, only: [ :edit, :update, :destroy ]
 
     def index
       @stories = Story.with_attached_photo
@@ -25,7 +25,7 @@ module Admin
 
     def update
       if @story.update(story_params)
-        @story.photo.purge if params[:story][:remove_photo] == "1"
+        @story.photo.purge if params[:story][:remove_photo] == "1" && params[:story][:photo].blank?
         redirect_to admin_stories_path, notice: "Story saved."
       else
         render :edit, status: :unprocessable_entity

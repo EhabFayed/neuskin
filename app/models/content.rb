@@ -6,7 +6,10 @@ class Content < ApplicationRecord
 
   # Optional inline image for journal paragraphs (top_brand blog_con_photos,
   # folded into Content). Section contents simply never attach one.
+  # `photo` is the default (English) file; `photo_ar` is an optional
+  # Arabic-only replacement, used on Arabic pages when present.
   has_one_attached :photo
+  has_one_attached :photo_ar
 
   enumerize :content_type, in: %i[text richtext plain], default: :text
 
@@ -15,7 +18,7 @@ class Content < ApplicationRecord
   # Admin "remove image" checkbox — read by Admin::BlogsController, which
   # purges after save (a virtual attr never marks the record dirty, so an
   # after_save hook here would not fire).
-  attr_accessor :remove_photo
+  attr_accessor :remove_photo, :remove_photo_ar
 
   # Locale-aware reader, mirrors Protocol's localized readers.
   def value
@@ -27,9 +30,16 @@ class Content < ApplicationRecord
     localized(alt_ar, alt_en)
   end
 
+  # The paragraph image for the active locale — the Arabic file on Arabic
+  # pages when one is attached, else the default one.
+  def localized_photo
+    return photo_ar if I18n.locale == :ar && photo_ar.attached?
+
+    photo
+  end
+
   # Human-friendly field name for the admin. Falls back to a titleized key.
   def display_label
     label.presence || key.to_s.titleize
   end
-
 end

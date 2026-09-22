@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
     @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
+    # Three newest Journal notes for the pre-footer band.
+    @latest_posts = Blog.published.newest_first.with_attached_image.with_attached_image_ar
+                        .includes(:contents).limit(3)
   end
 
   def dr_maysa
@@ -47,6 +50,13 @@ class PagesController < ApplicationController
   # Device records (dashboard → Devices), so editors can add or remove cards.
   def technologies
     @devices = Device.all
+  end
+
+  # One device (EMTONE, EMFACE, …) — its own page, linked from the header
+  # submenu and the /technologies flip cards.
+  def technology
+    @device = Device.find_by!(slug: params[:slug])
+    @other_devices = Device.where.not(id: @device.id)
   end
 
   # Legal & compliance (§15). Each renders the shared legal layout with a

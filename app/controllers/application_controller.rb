@@ -7,6 +7,16 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
   skip_around_action :switch_locale, if: :devise_controller?
 
+  # Records that no longer exist (/journal/old-slug, /treatments/removed) and
+  # stale slugs also go home with a 301 rather than a bare 404 — same policy
+  # as the routing catch-all in routes.rb. The admin keeps real 404s so an
+  # editor sees what went wrong.
+  rescue_from ActiveRecord::RecordNotFound do |error|
+    raise error if request.path.start_with?("/admin")
+
+    redirect_to root_path, status: :moved_permanently
+  end
+
   def layout_by_resource
     devise_controller? ? "auth" : "application"
   end

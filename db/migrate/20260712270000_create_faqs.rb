@@ -13,6 +13,6 @@ class CreateFaqs < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    add_index :faqs, [:category, :position]
+    add_index :faqs, [ :category, :position ]
   end
 end

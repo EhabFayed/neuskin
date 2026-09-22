@@ -1,0 +1,58 @@
+<%# The private inquiry form — shared by /inquire (full) and the journal
+    article sidebar (compact: true). Fully localized (inquire.form.* keys).
+    Locals: inquiry (defaults to a fresh Inquiry), compact (boolean). %>
+<% inquiry ||= @inquiry || Inquiry.new %>
+<% compact ||= false %>
+
+<% if inquiry.errors.any? %>
+  <div class="form-errors" style="margin-block:18px 0">
+    <% inquiry.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_with model: inquiry, url: inquire_path, method: :post, class: "form#{' form--compact' if compact}", data: { turbo: false } do |f| %>
+  <%= f.hidden_field :source_codeword %>
+  <%= f.hidden_field :persona if compact %>
+
+  <div class="form-row">
+    <div class="field">
+      <%= f.label :name, t("inquire.form.name") %>
+      <%= f.text_field :name, placeholder: t("inquire.form.name_ph"), required: true, autocomplete: "name" %>
+    </div>
+    <div class="field" data-controller="phone">
+      <%= f.label :mobile, t("inquire.form.mobile") %>
+      <div class="mobile-field">
+        <span class="prefix">+966</span>
+        <%= f.text_field :mobile, placeholder: "5X XXX XXXX", inputmode: "tel", required: true, autocomplete: "tel-national",
+              data: { phone_target: "input", action: "input->phone#format" } %>
+      </div>
+    </div>
+  </div>
+
+  <% unless compact %>
+    <div class="field">
+      <%= f.label :email, t("inquire.form.email") %>
+      <%= f.email_field :email, placeholder: t("inquire.form.email_ph"), autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :persona, t("inquire.form.persona") %>
+      <%= f.select :persona,
+            options_for_select(%w[tired hair bride maintain fresh unsure].map { |k| [t("inquire.personas.#{k}"), k] }, inquiry.persona),
+            { include_blank: t("inquire.form.persona_blank") } %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :preferred_time, t("inquire.form.preferred_time") %>
+    <%= f.select :preferred_time,
+          options_for_select([["Morning", t("inquire.form.times.morning")],
+                              ["Afternoon", t("inquire.form.times.afternoon")],
+                              ["Evening", t("inquire.form.times.evening")]].map { |v, l| [l, v] }, inquiry.preferred_time),
+          { include_blank: t("inquire.form.preferred_time_blank") } %>
+  </div>
+
+  <%= f.submit t("inquire.form.send"), class: "btn" %>
+<% end %>

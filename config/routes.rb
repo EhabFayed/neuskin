@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Silence the favicon.ico RoutingError — browsers always request this.
   # Must be outside the locale scope so switch_locale never runs on it.
-  get "/favicon.ico", to: proc { [204, {}, []] }
+  get "/favicon.ico", to: proc { [ 204, {}, [] ] }
 
   # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
@@ -12,18 +12,21 @@ Rails.application.routes.draw do
   # Admin area — English-only chrome, outside the locale scope.
   namespace :admin do
     root to: "dashboard#index"
-    resources :pages, only: [:index, :show]
-    resources :sections, only: [:show, :update] do
+    resources :pages, only: [ :index, :show ]
+    resources :sections, only: [ :show, :update ] do
       member { match :preview, via: %i[get post] }
     end
-    resources :blogs, except: [:show]
-    resources :team_members, except: [:show]
-    resources :faqs, except: [:show]
-    resources :stories, except: [:show]
-    resources :protocols, except: [:show]
-    resources :treatments, except: [:show]
-    resources :devices, except: [:show]
-    resource :settings, only: [:show, :update], controller: "settings"
+    resources :blogs, except: [ :show ]
+    resources :team_members, except: [ :show ]
+    resources :faqs, except: [ :show ]
+    resources :stories, except: [ :show ]
+    resources :protocols, except: [ :show ]
+    resources :treatments, except: [ :show ]
+    resources :devices, except: [ :show ]
+    resource :settings, only: [ :show, :update ], controller: "settings"
+    # Image uploads from the Studio rich-text editor (Quill) — returns a
+    # permanent ActiveStorage proxy URL that is inserted into the article HTML.
+    resources :uploads, only: [ :create ]
   end
 
   # Locale-scoped pages. Arabic is the default; English is /en.
@@ -72,6 +75,9 @@ Rails.application.routes.draw do
 
     # Our Technologies — the device portfolio (July 2026 content deck).
     get "technologies", to: "pages#technologies", as: :technologies
+    # One page per device (client follow-up, Sept 2026): the header submenu
+    # and the flip cards link here.
+    get "technologies/:slug", to: "pages#technology", as: :technology
 
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
@@ -87,4 +93,10 @@ Rails.application.routes.draw do
     get  "bridal-concierge",          to: "bridal#show",          as: :bridal_concierge
     post "bridal-concierge/checklist", to: "bridal#checklist",     as: :bridal_checklist
   end
+
+  # Unknown paths never show a 404 page: a permanent redirect sends them home
+  # (client request, Sept 2026 — clears the crawl-error backlog). Rails' own
+  # internals (Active Storage, health check) are matched above and unaffected.
+  match "*unmatched", to: "errors#redirect_home", via: [ :get, :head ],
+        constraints: ->(req) { !req.path.start_with?("/rails/") }
 end

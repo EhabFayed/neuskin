@@ -5,17 +5,17 @@ require "rails_helper"
 RSpec.describe "Locale direction", type: :request do
   it "serves English LTR at the unprefixed root" do
     get "/"
-    expect(response.body).to include('<html lang="en" dir="ltr">')
+    expect(response.body).to match(/<html lang="en" dir="ltr"/)
   end
 
   it "serves Arabic RTL under /ar" do
     get "/ar"
-    expect(response.body).to include('<html lang="ar" dir="rtl">')
+    expect(response.body).to match(/<html lang="ar" dir="rtl"/)
   end
 
   it "serves English LTR under the explicit /en prefix" do
     get "/en"
-    expect(response.body).to include('<html lang="en" dir="ltr">')
+    expect(response.body).to match(/<html lang="en" dir="ltr"/)
   end
 
   describe "header language switcher" do

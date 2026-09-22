@@ -1428,7 +1428,7 @@
         "key": "link",
         "label": "Link text",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اقرئي فلسفتها ←",
         "value_en": "Read her philosophy →",
         "content_type": "text",
         "position": 4
@@ -3314,7 +3314,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "المعيار",
         "value_en": "The Standard",
         "content_type": "text",
         "position": 0
@@ -4085,7 +4085,7 @@
         "key": "kicker",
         "label": "Kicker (italic line)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "لستِ متأكدة من أين تبدئين؟",
         "value_en": "Not sure where to start?",
         "content_type": "text",
         "position": 0
@@ -4094,7 +4094,7 @@
         "key": "title",
         "label": "Title (before emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "ابدئي مع",
         "value_en": "Begin with the",
         "content_type": "text",
         "position": 1
@@ -4103,7 +4103,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "منهج نيوسكن™",
         "value_en": "NeuSkin Method™",
         "content_type": "text",
         "position": 2
@@ -4112,7 +4112,7 @@
         "key": "button",
         "label": "Button label",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اطلبي التقييم",
         "value_en": "Request the assessment",
         "content_type": "text",
         "position": 3
@@ -4143,7 +4143,7 @@
         "key": "card_cta",
         "label": "Card hover line (\"See the approach\")",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "اكتشفي المنهج ←",
         "value_en": "See the approach →",
         "content_type": "text",
         "position": 1
@@ -4195,6 +4195,55 @@
         "value_ar": "تبحثين عن إجراءٍ بعينه؟ وجهي تركيزكِ نحو التغيير الذي تطمحين إليه. نحن هنا لنرسم معكِ خارطة الطريق، ونربط طموحاتكِ بالبروتوكول الدقيقِ الذي يُحقق لكِ النتيجةَ المرجوة.",
         "value_en": "Searching for a specific procedure? Instead, look toward the change you wish to see. We guide your journey, connecting your goals to the precise protocol that delivers them.",
         "content_type": "richtext",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "kind": "home_journal",
+    "label": "Latest from the Journal",
+    "position": 9,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "من المجلّة",
+        "value_en": "From the Journal",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading (before emphasis)",
+        "hint": null,
+        "value_ar": "أحدث المقالات،",
+        "value_en": "Latest notes,",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Heading emphasis span",
+        "hint": null,
+        "value_ar": "بهدوء.",
+        "value_en": "quietly kept.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "link",
+        "label": "\"All notes\" link text",
+        "hint": null,
+        "value_ar": "كل المقالات ←",
+        "value_en": "Read all notes →",
+        "content_type": "text",
         "position": 3
       }
     ]

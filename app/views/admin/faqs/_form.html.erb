@@ -50,6 +50,11 @@
   <div class="ns-savebar">
     <%= link_to "Back to FAQ", admin_faqs_path, class: "ns-btn ghost" %>
     <a href="<%= faq_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <span class="spacer"></span>
+    <% if @faq.persisted? %>
+      <%= link_to "Delete question", admin_faq_path(@faq), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@faq.question_en}”?" } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

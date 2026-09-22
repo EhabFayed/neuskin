@@ -17,7 +17,7 @@
       <div class="st-row reveal" data-reveal-target="item">
         <div class="st-row-img">
           <% if story.photo.attached? %>
-            <%= image_tag story.photo, alt: story.byline.to_s %>
+            <%= image_tag opt_url(story.photo, width: 900), alt: story.byline.to_s, loading: "lazy", decoding: "async" %>
           <% else %>
             <%= ns_image_tag fallback_photos[i % fallback_photos.size], alt: story.byline.to_s %>
           <% end %>

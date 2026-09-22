@@ -33,8 +33,8 @@ RSpec.describe ContentHelper, type: :helper do
   describe "#sec_items" do
     it "returns the items array" do
       create(:section, page: "home", kind: "home_voices",
-             items: [{ "q" => { "en" => "hi" } }])
-      expect(helper.sec_items("home", "home_voices")).to eq([{ "q" => { "en" => "hi" } }])
+             items: [ { "q" => { "en" => "hi" } } ])
+      expect(helper.sec_items("home", "home_voices")).to eq([ { "q" => { "en" => "hi" } } ])
     end
 
     it "returns [] when the section is missing" do

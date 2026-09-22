@@ -30,13 +30,7 @@
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Photo</span>
     <p class="hint">Only with the patient's written consent — a stock portrait is used otherwise.</p>
-    <% if @story.photo.attached? %>
-      <p class="hint">Current: <%= @story.photo.filename %></p>
-      <label style="display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;font-size:12px;color:var(--ns-muted)">
-        <%= check_box_tag "story[remove_photo]", "1", false %> Remove photo
-      </label>
-    <% end %>
-    <%= form.file_field :photo, accept: "image/*" %>
+    <%= render "admin/shared/image_field", name: "story[photo]", current: @story.photo, remove_name: "story[remove_photo]" %>
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
@@ -47,6 +41,11 @@
   <div class="ns-savebar">
     <%= link_to "Back to stories", admin_stories_path, class: "ns-btn ghost" %>
     <a href="<%= stories_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <span class="spacer"></span>
+    <% if @story.persisted? %>
+      <%= link_to "Delete story", admin_story_path(@story), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete this story permanently?" } %>
+    <% end %>
     <%= form.submit "Save", class: "ns-btn primary" %>
   </div>
 <% end %>

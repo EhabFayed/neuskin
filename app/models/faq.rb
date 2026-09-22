@@ -15,7 +15,7 @@ class Faq < ApplicationRecord
   # [[:before_you_come_in, [faq, …]], …]
   def self.grouped
     by_cat = all.group_by { |f| f.category.to_s }
-    category.values.filter_map { |cat| [cat, by_cat[cat.to_s]] if by_cat[cat.to_s] }
+    category.values.filter_map { |cat| [ cat, by_cat[cat.to_s] ] if by_cat[cat.to_s] }
   end
 
   # Locale-aware readers (question -> question_ar / question_en).
