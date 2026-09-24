@@ -1,7 +1,9 @@
 <%# Journal article — editorial read with a sticky booking aside on desktop
     (audit item 14: use the empty space beside the article for the form). %>
-<% content_for :title, "#{@blog.meta_title.presence || @blog.title} — NeuSkin Clinic" %>
+<% content_for :title, "#{@blog.meta_title.presence || @blog.title} — #{t('seo.site_name')}" %>
 <% content_for :meta_description, @blog.meta_description.presence || @blog.excerpt %>
+<% content_for :og_type, "article" %>
+<% content_for :og_image, image_path(journal_cover_source(@blog, width: 1200)) %>
 <% faqs = @blog.localized_faqs %>
 
 <article class="jra" data-controller="reveal">
@@ -48,16 +50,7 @@
             </figure>
           <% end %>
         <% end %>
-      <% end %>
-      <% if block.photo.attached? %>
-        <%# Alt text stays on the <img> for screen readers and SEO; it is not
-            shown as a caption. %>
-        <figure class="jra-figure">
-          <%= image_tag block.photo, alt: block.alt.to_s %>
-        </figure>
-      <% end %>
-    <% end %>
-  </div>
+      </div>
 
       <% if faqs.any? %>
         <section class="jra-faq" aria-labelledby="jra-faq-title">

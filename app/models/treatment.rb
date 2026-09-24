@@ -21,7 +21,7 @@ class Treatment < ApplicationRecord
 
   # Locale-aware readers: treatment.title returns title_ar or title_en for the
   # current I18n locale, falling back to English when Arabic is blank.
-  %i[title headline look how view].each do |attr|
+  %i[title headline look how view meta_title meta_description].each do |attr|
     define_method(attr) do
       ar = public_send("#{attr}_ar")
       en = public_send("#{attr}_en")

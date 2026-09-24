@@ -1,0 +1,22 @@
+<%# "Search preview" card — the record's own <title> and meta description per
+    language (Google result snippet + link previews). Blank = the page builds
+    them from its content (see the per-page fallback in the public view).
+    Locals: form (the record's form builder). %>
+<details class="ns-card" style="margin-bottom:14px">
+  <summary class="ns-field-title" style="cursor:pointer">Search preview (SEO) — title &amp; description shown by Google</summary>
+  <p class="hint" style="margin-top:8px">Optional. Leave blank to use the automatic text built from this page's content. Aim for a title under 60 characters and a description under 160.</p>
+  <div class="ns-pair" style="margin-top:10px">
+    <div class="en">
+      <span class="lang-lbl">Meta title · English</span>
+      <%= form.text_field :meta_title_en, class: "ns-input", maxlength: 120 %>
+      <span class="lang-lbl" style="margin-top:8px;display:block">Meta description · English</span>
+      <%= form.text_area :meta_description_en, rows: 2, class: "ns-textarea", maxlength: 320 %>
+    </div>
+    <div class="ar">
+      <span class="lang-lbl">Meta title · Arabic</span>
+      <%= form.text_field :meta_title_ar, dir: "rtl", class: "ns-input", maxlength: 120 %>
+      <span class="lang-lbl" style="margin-top:8px;display:block">Meta description · Arabic</span>
+      <%= form.text_area :meta_description_ar, rows: 2, dir: "rtl", class: "ns-textarea", maxlength: 320 %>
+    </div>
+  </div>
+</details>

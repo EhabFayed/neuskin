@@ -4,16 +4,32 @@
     fallback should a toggle ever return. %>
 <html lang="<%= I18n.locale %>" dir="<%= loc_dir %>" data-theme="light">
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : t("layout.meta_title") %></title>
+    <%# Title / description / Open Graph resolve per page — dashboard value,
+        then the page's built-in default, then the site default (SeoHelper). %>
+    <meta charset="utf-8">
+    <title><%= seo_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : t("layout.meta_description") %>">
+    <meta name="description" content="<%= seo_description %>">
     <link rel="canonical" href="<%= canonical_url %>">
     <%= yield :head_extra if content_for?(:head_extra) %>
+    <%# One URL per language: English unprefixed, Arabic under /ar. Each page
+        lists itself + the other language + x-default (English). Record pages
+        with per-language slugs (journal) feed the right slug via
+        localize_route_params, so an Arabic page never points at an English slug. %>
     <link rel="alternate" hreflang="en" href="<%= page_url_in(:en) %>">
     <link rel="alternate" hreflang="ar" href="<%= page_url_in(:ar) %>">
     <link rel="alternate" hreflang="x-default" href="<%= page_url_in(:en) %>">
+    <meta property="og:site_name" content="<%= t("seo.site_name") %>">
+    <meta property="og:type" content="<%= seo_og_type %>">
+    <meta property="og:title" content="<%= seo_title %>">
+    <meta property="og:description" content="<%= seo_description %>">
+    <meta property="og:url" content="<%= canonical_url %>">
+    <meta property="og:image" content="<%= seo_image %>">
+    <meta property="og:locale" content="<%= seo_og_locale %>">
+    <meta property="og:locale:alternate" content="<%= seo_og_locale(ar? ? :en : :ar) %>">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

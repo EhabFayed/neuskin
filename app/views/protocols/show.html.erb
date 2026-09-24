@@ -1,5 +1,9 @@
 <%# Protocol detail — NeuSkin Clinic (standalone) design port. English / LTR. %>
 <% p = @protocol %>
+<%# Search snippet: the record's own meta fields (Admin → Protocols → Search
+    preview), else built from the name + promise. %>
+<% content_for :title, p.meta_title.presence || "#{p.name} — #{t('seo.site_name')}" %>
+<% content_for :meta_description, p.meta_description.presence || p.promise.presence || p.who_for %>
 
 <%# Hero image = the protocol's dashboard image (Admin → Protocols), launch
     static asset as fallback — see protocol_image_url. %>

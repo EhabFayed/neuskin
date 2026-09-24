@@ -11,7 +11,7 @@ RSpec.describe "Our Technologies page", type: :request do
   end
 
   it "renders the English page with a card per device record" do
-    get "/en/technologies"
+    get "/technologies"
     expect(response).to have_http_status(:ok)
     expect(response.body).to include("EMTONE")
     expect(response.body).to include("EMERALD")
@@ -31,13 +31,13 @@ RSpec.describe "Our Technologies page", type: :request do
 
   it "renders without a device grid when no devices exist" do
     Device.delete_all
-    get "/en/technologies"
+    get "/technologies"
     expect(response).to have_http_status(:ok)
     expect(response.body).not_to include("tech-grid")
   end
 
   it "is linked from the header navigation" do
-    get "/en"
+    get "/"
     expect(response.body).to match(%r{href="(/en)?/technologies"})
   end
 end

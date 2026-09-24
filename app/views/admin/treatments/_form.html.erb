@@ -51,6 +51,8 @@
     </div>
   </div>
 
+  <%= render "admin/shared/search_meta_fields", form: form %>
+
   <div class="ns-savebar">
     <%= link_to "Back to treatments", admin_treatments_path, class: "ns-btn ghost" %>
     <% if @treatment.persisted? %>

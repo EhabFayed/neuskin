@@ -18,6 +18,7 @@ namespace :content do
         Array(sec[:contents]).each_with_index do |c, i|
           content = Content.find_or_initialize_by(parentable: section, key: c[:key])
           content.label        = c[:label]
+          content.hint         = c[:hint] if c.key?(:hint)
           content.value_en     = c[:en]
           content.value_ar     = c[:ar]
           content.content_type = c[:content_type] || "text"

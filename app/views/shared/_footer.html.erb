@@ -53,7 +53,10 @@
           </a>
         </p>
         <p><%= link_to t("layout.footer.whatsapp"), whatsapp_url, target: "_blank", rel: "noopener" %><br>
-           <a href="mailto:hello@neuskin.sa" dir="ltr">hello@neuskin.sa</a></p>
+           <%# email_off: tells Cloudflare's Email Address Obfuscation to leave
+               this address alone — otherwise it rewrites the link to
+               /cdn-cgi/l/email-protection, a page crawlers then report. %>
+           <!--email_off--><a href="mailto:hello@neuskin.sa" dir="ltr">hello@neuskin.sa</a><!--/email_off--></p>
       </div>
     </div>
 

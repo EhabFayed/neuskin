@@ -18,10 +18,14 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
-ENV RAILS_ENV="production" \
+# Build args let docker-compose.dev.yml build a development image (all gem
+# groups, RAILS_ENV=development) from this same Dockerfile. Defaults = production.
+ARG RAILS_ENV="production"
+ARG BUNDLE_WITHOUT="development test"
+ENV RAILS_ENV="${RAILS_ENV}" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_WITHOUT="development test"
+    BUNDLE_WITHOUT="${BUNDLE_WITHOUT}"
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
@@ -44,7 +48,8 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompile assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+# Only production ships precompiled assets; development serves them live.
+RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile; fi
 
 
 # Final stage for app image

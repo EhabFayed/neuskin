@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_13_130000) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_24_100000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -104,6 +104,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_13_130000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug", null: false
+    t.string "meta_title_en"
+    t.string "meta_title_ar"
+    t.text "meta_description_en"
+    t.text "meta_description_ar"
     t.index ["slug"], name: "index_devices_on_slug", unique: true
   end
 
@@ -157,6 +161,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_13_130000) do
     t.jsonb "patient_story", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "meta_title_en"
+    t.string "meta_title_ar"
+    t.text "meta_description_en"
+    t.text "meta_description_ar"
     t.index ["position"], name: "index_protocols_on_position"
     t.index ["slug"], name: "index_protocols_on_slug", unique: true
   end
@@ -224,6 +232,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_13_130000) do
     t.text "view_ar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "meta_title_en"
+    t.string "meta_title_ar"
+    t.text "meta_description_en"
+    t.text "meta_description_ar"
     t.index ["slug"], name: "index_treatments_on_slug", unique: true
   end
 

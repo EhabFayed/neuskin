@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
+  before_action :drop_default_locale_prefix
 
   # Devise (sign-in / password) screens use a dedicated, chrome-free auth
   # layout styled to the Studio design — not the public site layout — and are
@@ -36,5 +37,25 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+  end
+
+  # English is the default locale and carries no prefix, so /en/... was the
+  # same page as /... under a second URL. One indexable URL per language:
+  # GET/HEAD on /en 301 to the bare path (query string kept). /ar is untouched.
+  def drop_default_locale_prefix
+    return unless params[:locale] == I18n.default_locale.to_s
+    return unless request.get? || request.head?
+
+    path = request.path.sub(%r{\A/#{I18n.default_locale}(?=/|\z)}, "").presence || "/"
+    path = "#{path}?#{request.query_string}" if request.query_string.present?
+    redirect_to path, status: :moved_permanently
+  end
+
+  # For pages whose route params differ by language (a journal article's
+  # slug_en / slug_ar), name the params that build the page in each locale.
+  # The layout's hreflang alternates and the header language switch use them
+  # (ApplicationHelper#localized_route_params).
+  def localize_route_params(**per_locale)
+    @localized_route_params = per_locale
   end
 end

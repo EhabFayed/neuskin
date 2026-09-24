@@ -1,7 +1,9 @@
 <%# One device page (/technologies/:slug). Copy and images are the Device
     record (dashboard → Devices); the brand name stays untranslated. %>
-<% content_for :title, t("technology_page.meta_title", name: @device.name, tagline: @device.tagline) %>
-<% content_for :meta_description, @device.body.to_s.truncate(155) %>
+<%# Search snippet: the record's own meta fields (Admin → Devices → Search
+    preview), else built from the name + tagline / card copy. %>
+<% content_for :title, @device.meta_title.presence || t("technology_page.meta_title", name: @device.name, tagline: @device.tagline) %>
+<% content_for :meta_description, @device.meta_description.presence || @device.body.to_s %>
 <% hero_url = @device.back_image.attached? ? opt_url(@device.back_image, width: 1800) : image_path("site/space/device-room.webp") %>
 
 <%# 1 · Overlay hero on the in-clinic photo %>

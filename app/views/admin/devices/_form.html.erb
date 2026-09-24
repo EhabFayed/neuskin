@@ -53,6 +53,8 @@
     </div>
   </div>
 
+  <%= render "admin/shared/search_meta_fields", form: form %>
+
   <div class="ns-savebar">
     <%= link_to "Back to devices", admin_devices_path, class: "ns-btn ghost" %>
     <% if @device.persisted? %>

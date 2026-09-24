@@ -73,11 +73,11 @@ RSpec.describe "Journal", type: :request do
       expect(response.body).to include("الخصوصية هي مخطط المبنى.")
     end
 
-    it "resolves either slug regardless of locale (locale switcher keeps the path)" do
+    it "resolves either slug, but 301s to the slug of the page's own language" do
       blog = make_blog
       get "/journal/#{ERB::Util.url_encode(blog.slug_ar)}"
-      expect(response).to have_http_status(:ok)
-      expect(response.body).to include(blog.title_en)
+      expect(response).to have_http_status(:moved_permanently)
+      expect(response).to redirect_to("/journal/#{blog.slug_en}")
     end
 
     it "never shows a draft — it is sent home like any unknown URL (301)" do

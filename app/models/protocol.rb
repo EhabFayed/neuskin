@@ -20,7 +20,7 @@ class Protocol < ApplicationRecord
 
   # Locale-aware readers: protocol.name returns name_ar or name_en for the
   # current I18n locale. Covers every paired _ar/_en column.
-  %i[name promise duration meta who_for scope excludes].each do |attr|
+  %i[name promise duration meta who_for scope excludes meta_title meta_description].each do |attr|
     define_method(attr) do
       public_send("#{attr}_#{localized_suffix}")
     end

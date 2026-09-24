@@ -731,3 +731,58 @@ en:
       subject: "Your bridal checklist request — NeuSkin Clinic"
       greeting: "Dear bride,"
       body: "Thank you — we received your request. Your 6-month bridal checklist is on its way, and our patient relations lead will call you to plan the months ahead, calmly and in the right order."
+
+  # Per-page search titles + descriptions (built-in defaults; the dashboard
+  # "Search preview (SEO)" section on each page overrides them). See SeoHelper.
+  seo:
+    site_name: "NeuSkin Clinic"
+    home:
+      title: "NeuSkin Clinic — Doctor-led skin intelligence, Riyadh"
+      description: "NeuSkin is Riyadh's doctor-led skin intelligence clinic for women — protocol-led, consultation-led, quietly luxurious. Every plan is read, written and signed by our medical team."
+    the_clinic:
+      title: "The Clinic — NeuSkin, Riyadh"
+      description: "A doctor-led skin clinic in Riyadh: private consultation rooms, a calm lounge and a medical team that reads your skin before treating it."
+    neuskin_method:
+      title: "The NeuSkin Method™ — Read the skin, then treat it"
+      description: "The philosophy behind every NeuSkin plan: skin, hair, body and lifestyle read as one system and sequenced over twelve months."
+    the_team:
+      title: "The Medical Team — NeuSkin Clinic"
+      description: "Meet the licensed doctors and specialists behind NeuSkin's protocols — the medical team that writes, reads and signs every plan."
+    treatments:
+      title: "Treatments by Outcome — NeuSkin Clinic"
+      description: "Browse NeuSkin treatments by the outcome you want: skin, hair, body, injectables and device-based care, each owned by a written protocol."
+    technologies:
+      title: "Our Technologies — NeuSkin Clinic"
+      description: "The device portfolio behind NeuSkin's protocols — what each technology does, and how it fits inside a doctor-led plan."
+    private_care:
+      title: "Private Care — NeuSkin Clinic"
+      description: "By-invitation private care at NeuSkin: private hours, a dedicated patient relations lead and a bespoke twelve-month roadmap."
+    stories:
+      title: "Patient Stories — NeuSkin Clinic"
+      description: "Consented patient stories from NeuSkin Clinic in Riyadh — in their own words, shared with written permission."
+    faq:
+      title: "Frequently Asked Questions — NeuSkin Clinic"
+      description: "Answers to common questions about consultations, protocols, pricing, privacy and visiting NeuSkin Clinic in Riyadh."
+    journal:
+      title: "The Journal — NeuSkin Clinic"
+      description: "Notes from the NeuSkin medical team: skin science, clinic life, rituals and patient notes — written to inform, not to sell."
+    protocols:
+      title: "Protocols — NeuSkin Clinic"
+      description: "NeuSkin's staged treatment protocols: written, sequenced plans for skin, hair and body, each beginning with a medical consultation."
+    inquire:
+      title: "Contact & Inquiry — NeuSkin Clinic"
+      description: "Send a private inquiry to NeuSkin Clinic in Riyadh. We reply personally within two hours, Saturday to Thursday."
+    bridal:
+      title: "Bridal Concierge — NeuSkin Clinic"
+      description: "A calm, sequenced skin plan for your wedding day — NeuSkin's bridal concierge, with a countdown checklist and the Bride's 180 protocol."
+    privacy:
+      title: "Privacy Policy & PDPL — NeuSkin Clinic"
+      description: "How NeuSkin Clinic collects, uses and protects your personal data under Saudi Arabia's Personal Data Protection Law, and the rights you have."
+    medical_disclaimer:
+      title: "Medical Advertising Disclaimer — NeuSkin Clinic"
+      description: "Results vary and nothing on this site is medical advice: NeuSkin Clinic's medical advertising disclaimer under Saudi regulations."
+    terms:
+      title: "Terms of Service & Inquiry — NeuSkin Clinic"
+      description: "The terms that apply when you use neuskin.me, send an inquiry or contact NeuSkin Clinic via WhatsApp."
+    legal_related: "Also see"
+    legal_related_aria: "Other legal documents"

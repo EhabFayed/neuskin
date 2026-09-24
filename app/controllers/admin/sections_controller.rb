@@ -21,7 +21,8 @@ module Admin
       "protocols_index" => "protocols/index",
       "journal"         => "journal/index",
       "bridal"          => "bridal/show",
-      "technologies"    => "pages/technologies"
+      "technologies"    => "pages/technologies",
+      "inquire"         => "inquiries/new"
     }.freeze
 
     def preview
@@ -93,6 +94,8 @@ module Admin
         @treatments = Treatment.all
       when "technologies"
         @devices = Device.all
+      when "inquire"
+        @inquiry = Inquiry.new
       end
     end
 

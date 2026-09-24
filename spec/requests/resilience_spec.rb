@@ -37,13 +37,17 @@ RSpec.describe "Page resilience", type: :request do
     end
 
     it "renders the pages that show those records, plus their detail pages" do
+      # A journal article has a slug per language: its Arabic page lives under
+      # the Arabic slug (the English slug 301s there — see JournalController).
+      arabic_slug = ERB::Util.url_encode(Blog.find_by!(slug_en: "bare-note").slug_ar)
       [ "/", "/protocols", "/protocols/bare", "/journal", "/journal/bare-note",
        "/the-team", "/stories", "/faq", "/treatments", "/treatments/bare-skin",
        "/technologies" ].each do |path|
         get path
         expect(response).to have_http_status(:ok), "MINIMAL: #{path} -> #{response.status}"
-        get "/ar#{path}"
-        expect(response).to have_http_status(:ok), "MINIMAL: /ar#{path} -> #{response.status}"
+        ar_path = path == "/journal/bare-note" ? "/journal/#{arabic_slug}" : path
+        get "/ar#{ar_path}"
+        expect(response).to have_http_status(:ok), "MINIMAL: /ar#{ar_path} -> #{response.status}"
       end
     end
   end

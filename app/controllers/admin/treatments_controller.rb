@@ -48,7 +48,8 @@ module Admin
       params.require(:treatment).permit(
         :slug, :position, :protocol_slug, :image,
         :title_en, :title_ar, :headline_en, :headline_ar,
-        :look_en, :look_ar, :how_en, :how_ar, :view_en, :view_ar
+        :look_en, :look_ar, :how_en, :how_ar, :view_en, :view_ar,
+        :meta_title_en, :meta_title_ar, :meta_description_en, :meta_description_ar
       )
     end
   end

@@ -13,9 +13,10 @@ RSpec.describe "Locale direction", type: :request do
     expect(response.body).to match(/<html lang="ar" dir="rtl"/)
   end
 
-  it "serves English LTR under the explicit /en prefix" do
+  it "sends the explicit /en prefix to the unprefixed English page (one URL per language)" do
     get "/en"
-    expect(response.body).to match(/<html lang="en" dir="ltr"/)
+    expect(response).to have_http_status(:moved_permanently)
+    expect(response).to redirect_to("/")
   end
 
   describe "header language switcher" do

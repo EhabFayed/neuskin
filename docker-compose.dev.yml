@@ -1,0 +1,88 @@
+# Development stack. docker-compose.yml is the PRODUCTION stack the server runs
+# (RAILS_ENV=production, port 9020); this file runs the same image in
+# development: source bind-mounted, Rails on http://localhost:3000, all gem
+# groups installed so rspec works inside the container.
+#
+#   docker compose -f docker-compose.dev.yml up --build     # first run / after Gemfile changes
+#   docker compose -f docker-compose.dev.yml up -d          # later runs
+#   docker compose -f docker-compose.dev.yml exec app bundle exec rspec
+#
+# Same project name and volumes as before, so the existing tba_development
+# data and uploads are reused.
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tba_development
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      args:
+        RAILS_ENV: development
+        BUNDLE_WITHOUT: ""
+    image: neuskin_dev:latest
+    restart: unless-stopped
+    # Run as the host user so bind-mounted files (tmp, log, db) stay writable.
+    user: "1001:1001"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:password@db:5432/tba_development
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - .:/rails
+      - storage:/rails/storage
+    ports:
+      - "3000:3000"
+    # The entrypoint runs db:prepare (create + migrate) before any "rails server".
+    command: ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+
+  sidekiq:
+    image: neuskin_dev:latest
+    restart: unless-stopped
+    user: "1001:1001"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:password@db:5432/tba_development
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - .:/rails
+      - storage:/rails/storage
+    command: ["bundle", "exec", "sidekiq"]
+
+volumes:
+  postgres_data:
+  storage:

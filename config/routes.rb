@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  # robots.txt + sitemap.xml are rendered by SeoController (short cache, live
+  # DB, hreflang alternates) — not static files in public/. Outside the locale
+  # scope: there is one of each for the whole site.
+  get "robots.txt",  to: "seo#robots",  defaults: { format: :text }
+  get "sitemap.xml", to: "seo#sitemap", defaults: { format: :xml }
+
   # Devise session/auth routes — must stay outside the locale scope.
   devise_for :users
 
@@ -29,7 +35,9 @@ Rails.application.routes.draw do
     resources :uploads, only: [ :create ]
   end
 
-  # Locale-scoped pages. Arabic is the default; English is /en.
+  # Locale-scoped pages. English is the default (no prefix); Arabic is /ar.
+  # /en/... still routes but 301s to the bare path
+  # (ApplicationController#drop_default_locale_prefix) — one URL per language.
   # See docs/DESIGN-AND-TECH-DIRECTION.md §2.7 (path-prefix locales for SEO).
   scope "(:locale)", locale: /ar|en/ do
     root "pages#home"

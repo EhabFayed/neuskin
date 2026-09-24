@@ -17,6 +17,7 @@ module SitePages
     { slug: "legal",          name: "Legal" },
     { slug: "protocols_index", name: "Protocols (hub)" },
     { slug: "bridal",         name: "Bridal Concierge" },
+    { slug: "inquire",        name: "Contact & Inquiry" },
     { slug: "global",         name: "Site-wide" }
   ].freeze
 

@@ -70,6 +70,8 @@
     </div>
   <% end %>
 
+  <%= render "admin/shared/search_meta_fields", form: form %>
+
   <div class="ns-savebar">
     <%= link_to "Back to protocols", admin_protocols_path, class: "ns-btn ghost" %>
     <% if @protocol.persisted? %>

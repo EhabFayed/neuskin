@@ -91,9 +91,16 @@ module ApplicationHelper
     # locale. Arabic is default, so it carries no /ar prefix.
     params = request.path_parameters.merge(request.query_parameters).symbolize_keys
     params[:locale] = (other == I18n.default_locale ? nil : other)
-    url_for(params.merge(only_path: true))
+    url_for(params.merge(localized_route_params(other)).merge(only_path: true))
   rescue ActionController::UrlGenerationError
     root_path(locale: (other == I18n.default_locale ? nil : other))
+  end
+
+  # Route params that differ per language for the current page — a journal
+  # article's slug_en vs slug_ar. Controllers set them with
+  # ApplicationController#localize_route_params; most pages have none.
+  def localized_route_params(locale)
+    (@localized_route_params || {}).fetch(locale.to_sym, {})
   end
 
   # Absolute URL for the CURRENT page in the given locale, query string
@@ -102,7 +109,7 @@ module ApplicationHelper
   def page_url_in(locale)
     params = request.path_parameters.symbolize_keys
     params[:locale] = (locale == I18n.default_locale ? nil : locale)
-    "#{seo_origin}#{url_for(params.merge(only_path: true))}"
+    "#{seo_origin}#{url_for(params.merge(localized_route_params(locale)).merge(only_path: true))}"
   rescue ActionController::UrlGenerationError
     "#{seo_origin}#{root_path(locale: (locale == I18n.default_locale ? nil : locale))}"
   end
@@ -131,8 +138,7 @@ module ApplicationHelper
   NBSP = /\u00A0|&nbsp;/
 
   def rich(html)
-    sanitize(html.to_s.gsub(NBSP, " "), tags: RICH_TAGS, attributes: RICH_ATTRS)
-    webp_images(sanitize(html.to_s, tags: RICH_TAGS, attributes: RICH_ATTRS))
+    webp_images(sanitize(html.to_s.gsub(NBSP, " "), tags: RICH_TAGS, attributes: RICH_ATTRS))
   end
 
   # Images the editor uploaded into an article body point at the raw blob

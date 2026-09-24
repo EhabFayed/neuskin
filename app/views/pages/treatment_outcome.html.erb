@@ -1,6 +1,10 @@
 <%# Treatment outcome — NeuSkin Clinic (standalone) design port. English / LTR.
     One template, one Treatment record per outcome — copy and image are fully
     managed in the dashboard (Admin → Treatments). %>
+<%# Search snippet: the record's own meta fields (Admin → Treatments → Search
+    preview), else built from the headline + "what it looks like". %>
+<% content_for :title, @treatment.meta_title.presence || "#{@treatment.headline} — #{t('seo.site_name')}" %>
+<% content_for :meta_description, @treatment.meta_description.presence || @treatment.look.presence || @treatment.how %>
 
 <%# ---- 1 · Full-bleed hero, text bottom-left (design 72vh) ---- %>
 <section class="over-hero over-hero--outcome" data-controller="reveal parallax">

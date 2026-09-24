@@ -21,7 +21,7 @@ class Device < ApplicationRecord
 
   # Locale-aware readers: device.tagline returns tagline_ar or tagline_en for
   # the current I18n locale, falling back to English when Arabic is blank.
-  %i[tagline body specs].each do |attr|
+  %i[tagline body specs meta_title meta_description].each do |attr|
     define_method(attr) do
       ar = public_send("#{attr}_ar")
       en = public_send("#{attr}_en")

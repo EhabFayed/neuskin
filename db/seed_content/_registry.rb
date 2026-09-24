@@ -5,7 +5,9 @@ module SeedContent
   @pages = {}
   class << self
     attr_reader :pages
-    def register(page, sections) = (@pages[page.to_s] = sections)
+    # Appends, so one file may add sections to a page another file registered
+    # (db/seed_content/seo.rb adds the "Search preview" section to every page).
+    def register(page, sections) = ((@pages[page.to_s] ||= []).concat(sections))
     def reset! = (@pages = {})
   end
 end
