@@ -40,7 +40,7 @@ RSpec.describe "Admin image fields", type: :request do
   it "purges device and section slot images via their flags" do
     d = Device.create!(name: "ZZZ")
     attach!(d, :front_image)
-    patch "/admin/devices/#{d.id}", params: { device: { name: "ZZZ", remove_front_image: "1" } }
+    patch "/admin/devices/#{d.slug}", params: { device: { name: "ZZZ", remove_front_image: "1" } }
     expect(d.reload.front_image).not_to be_attached
 
     s = Section.create!(page: "home", kind: "home_principles")

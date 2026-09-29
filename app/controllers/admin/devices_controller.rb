@@ -43,7 +43,7 @@ module Admin
     private
 
     def set_device
-      @device = Device.find(params[:id])
+      @device = Device.find_by!(slug: params[:id])
     end
 
     def device_params
