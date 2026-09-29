@@ -33,4 +33,42 @@ namespace :content do
 
     puts "Seeded #{total_sections} sections across #{SeedContent.pages.size} pages."
   end
+
+  desc "Create sections/contents missing from the DB WITHOUT touching existing rows (production-safe: preserves Studio edits)"
+  task seed_missing: :environment do
+    require Rails.root.join("db/seed_content/_registry")
+    SeedContent.reset!
+    Dir[Rails.root.join("db/seed_content/*.rb")].sort.each { |f| load f }
+
+    new_sections = 0
+    new_contents = 0
+    SeedContent.pages.each do |page, sections|
+      sections.each_with_index do |sec, si|
+        section = Section.find_or_initialize_by(page: page, kind: sec[:kind])
+        if section.new_record?
+          section.label    = sec[:label]
+          section.position = sec[:position] || si
+          section.items    = sec[:items] if sec.key?(:items)
+          section.save!
+          new_sections += 1
+        end
+
+        Array(sec[:contents]).each_with_index do |c, i|
+          content = Content.find_or_initialize_by(parentable: section, key: c[:key])
+          next unless content.new_record?
+
+          content.label        = c[:label]
+          content.hint         = c[:hint] if c.key?(:hint)
+          content.value_en     = c[:en]
+          content.value_ar     = c[:ar]
+          content.content_type = c[:content_type] || "text"
+          content.position     = i
+          content.save!
+          new_contents += 1
+        end
+      end
+    end
+
+    puts "Added #{new_sections} new sections and #{new_contents} new contents (existing rows untouched)."
+  end
 end

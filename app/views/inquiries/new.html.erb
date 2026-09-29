@@ -1,6 +1,8 @@
 <%# Contact & Inquiry (design §isContact) — two-path layout + private form.
     Fully localized (inquire.* keys). The form itself is shared/_inquiry_form. %>
-<% content_for :title, "#{t('inquire.form.meta_title')} — NeuSkin Clinic" %>
+<%# No content_for :title here — the title/description resolve through
+    SeoHelper (dashboard "Search preview (SEO)" section → seo.inquire.* default),
+    like every other static page. %>
 <%# Links from protocol pages carry ?codeword=&persona= so the form is
     prefilled. Those variants must not be indexed as separate pages: the
     canonical already points at the bare /inquire URL, and any query-string
