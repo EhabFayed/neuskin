@@ -30,9 +30,11 @@ ENV RAILS_ENV="${RAILS_ENV}" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
+# Install packages needed to build gems, plus `minify` (tdewolff) to shrink the
+# CSS/JS below — Propshaft ships assets verbatim, unminified. Pinned so a base
+# image or Debian update cannot silently change the minified output.
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config minify=2.20.37-1 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
@@ -49,7 +51,24 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompile assets for production without requiring secret RAILS_MASTER_KEY
 # Only production ships precompiled assets; development serves them live.
-RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile; fi
+#
+# Minify the app's own CSS/JS sources BEFORE precompile (PageSpeed "Minify
+# CSS/JS"). Propshaft fingerprints each file from its contents, so minifying
+# first means every change gets a new digest URL. Minifying the digested output
+# afterwards would change contents under the old URL, and the year-long
+# immutable cache would then keep a stale or broken copy even after a rollback.
+# Only the build stage's copy is touched; the repo and development are not.
+# set -e + xargs fail the build on any minify error (find -exec would not).
+# *.min.* files are already minified and skipped. Gem assets (turbo,
+# stimulus, trix) are not in these paths; the site loads their prebuilt .min
+# builds through the importmap.
+RUN if [ "$RAILS_ENV" = "production" ]; then \
+      set -e; \
+      find app/assets/stylesheets app/javascript vendor/javascript \
+           -type f \( -name "*.css" -o -name "*.js" \) ! -name "*.min.*" -print0 \
+        | xargs -0 -n1 sh -c 'minify -o "$0" "$0"'; \
+      SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile; \
+    fi
 
 
 # Final stage for app image
