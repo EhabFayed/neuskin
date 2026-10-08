@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def stories
-    @stories = Story.with_attached_photo
+    @stories = Story.visible.with_attached_photo
   end
 
   def faq

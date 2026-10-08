@@ -1,5 +1,6 @@
 # The three launch patient stories — previously the stories/story_items
-# section keys. Idempotent by quote_en.
+# section keys. Idempotent by quote_en. Seeded hidden (client request, Oct
+# 2026): untick "Hidden from site" in the dashboard to publish one.
 STORY_SEEDS = [
   {
     position: 1,
@@ -41,7 +42,7 @@ created = 0
 STORY_SEEDS.each do |attrs|
   next if Story.exists?(quote_en: attrs[:quote_en])
 
-  Story.create!(attrs)
+  Story.create!(attrs.merge(hidden: true))
   created += 1
 end
 puts "Seeded #{created} stories." if created.positive?

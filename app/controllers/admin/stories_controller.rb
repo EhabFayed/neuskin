@@ -46,7 +46,7 @@ module Admin
     def story_params
       params.require(:story).permit(
         :intro_ar, :intro_en, :quote_ar, :quote_en, :protocol_line_ar, :protocol_line_en,
-        :close_ar, :close_en, :byline_ar, :byline_en, :position, :photo
+        :close_ar, :close_en, :byline_ar, :byline_en, :position, :photo, :hidden
       )
     end
   end

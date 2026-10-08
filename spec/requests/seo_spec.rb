@@ -18,7 +18,7 @@ RSpec.describe "Technical SEO", type: :request do
 
   STATIC_PAGES = %w[
     / /the-clinic /journal /stories /faq /privacy /medical-disclaimer /terms
-    /the-team /neuskin-method /technologies /treatments /private-care /protocols
+    /neuskin-method /technologies /treatments /private-care /protocols
     /inquire /bridal-concierge
   ].freeze
 

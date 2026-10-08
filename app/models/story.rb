@@ -7,6 +7,9 @@ class Story < ApplicationRecord
 
   default_scope { order(:position) }
 
+  # /stories only shows visible stories; the dashboard lists them all.
+  scope :visible, -> { where(hidden: false) }
+
   # Locale-aware readers, mirroring Protocol.
   %i[intro quote protocol_line close byline].each do |attr|
     define_method(attr) do

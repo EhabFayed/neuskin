@@ -7,7 +7,8 @@ module SitePages
     # dashboard doesn't offer it. Restore alongside the route in routes.rb.
     { slug: "the_clinic",     name: "The Clinic" },
     { slug: "maysa_method",   name: "The NeuSkin Method" },
-    { slug: "the_team",       name: "The Medical Team" },
+    # The Medical Team page hidden (Oct 2026) — entry removed so the dashboard
+    # doesn't offer it. Restore alongside the route in routes.rb.
     { slug: "treatments",     name: "Treatments" },
     { slug: "technologies",   name: "Our Technologies" },
     { slug: "private_care",   name: "Private Care" },

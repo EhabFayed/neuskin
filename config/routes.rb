@@ -66,8 +66,11 @@ Rails.application.routes.draw do
     # re-adding the header/footer/home links and the SitePages entry.
     # get "dr-maysa", to: "pages#dr_maysa", as: :dr_maysa
 
-    # The Medical Team (§04) — the credibility layer.
-    get "the-team", to: "pages#the_team", as: :the_team
+    # The Medical Team (§04) — the credibility layer. HIDDEN (Oct 2026, client
+    # request): view, TeamMember records and dashboard kept; restore by
+    # uncommenting this, the footer link, the SeoController sitemap entry and
+    # the SitePages entry.
+    # get "the-team", to: "pages#the_team", as: :the_team
 
     # The NeuSkin Method™ — the philosophy page (§05), not the protocol page.
     # (Renamed from "The Maysa Method™", July 2026; the maysa_method CMS page

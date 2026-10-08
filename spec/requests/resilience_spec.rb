@@ -9,7 +9,7 @@ RSpec.describe "Page resilience", type: :request do
   # unknown URL — 301s home (see the "minimal records" block for the real page).
   PUBLIC_PATHS = %w[
     / /the-clinic /journal /stories /faq /privacy /medical-disclaimer /terms
-    /the-team /neuskin-method /technologies /treatments
+    /neuskin-method /technologies /treatments
     /private-care /protocols /inquire /bridal-concierge
   ].freeze
 
@@ -41,7 +41,7 @@ RSpec.describe "Page resilience", type: :request do
       # the Arabic slug (the English slug 301s there — see JournalController).
       arabic_slug = ERB::Util.url_encode(Blog.find_by!(slug_en: "bare-note").slug_ar)
       [ "/", "/protocols", "/protocols/bare", "/journal", "/journal/bare-note",
-       "/the-team", "/stories", "/faq", "/treatments", "/treatments/bare-skin",
+       "/stories", "/faq", "/treatments", "/treatments/bare-skin",
        "/technologies" ].each do |path|
         get path
         expect(response).to have_http_status(:ok), "MINIMAL: #{path} -> #{response.status}"

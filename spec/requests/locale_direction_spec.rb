@@ -41,7 +41,7 @@ RSpec.describe "Locale direction", type: :request do
       get "/ar"
       expect(response.body).to include("العيادة")          # nav: The Clinic
       expect(response.body).to include("استفسري")          # header Inquire button
-      expect(response.body).to include("الفريق الطبي")     # footer: The Medical Team
+      expect(response.body).to include("منهج نيوسكن™")     # footer: The NeuSkin Method
       expect(response.body).to include("الجمعة · مغلق")    # footer: Friday · Closed
     end
 
@@ -49,7 +49,7 @@ RSpec.describe "Locale direction", type: :request do
       get "/"
       expect(response.body).to include(">The Clinic<")
       expect(response.body).to include(">Inquire<")
-      expect(response.body).to include("The Medical Team")
+      expect(response.body).to include("The NeuSkin Method™")
       expect(response.body).to include("© #{Time.current.year} NeuSkin Clinic · SFDA / MOH licensed")
     end
   end

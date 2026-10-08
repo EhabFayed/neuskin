@@ -11,20 +11,23 @@ RSpec.describe "Team members", type: :request do
     }.merge(attrs))
   end
 
-  describe "public page" do
-    it "renders members from the DB in position order" do
+  # The public page is hidden (Oct 2026, client request) — its URL 301s home
+  # like any unknown path, and the footer no longer links to it. The admin
+  # CRUD below still works so the members are ready when the page returns.
+  describe "public page (hidden)" do
+    it "sends /the-team home in both languages" do
       make_member
-      make_member(name_en: "Dr. Amal Al-Rashid", name_ar: "د. أمل الراشد", position: 1)
       get "/the-team"
-      expect(response.body).to include("Dr. Lina Haddad")
-      expect(response.body.index("Dr. Amal Al-Rashid")).to be < response.body.index("Dr. Lina Haddad")
+      expect(response).to redirect_to("/")
+      get "/ar/the-team"
+      expect(response).to redirect_to("/ar")
     end
 
-    it "renders Arabic fields under /ar" do
-      make_member
-      get "/ar/the-team"
-      expect(response.body).to include("د. لينا حدّاد")
-      expect(response.body).to include("التخصص · الحقن وضبط النفس")
+    it "is not linked from the footer or listed in the sitemap" do
+      get "/"
+      expect(response.body).not_to include("/the-team")
+      get "/sitemap.xml"
+      expect(response.body).not_to include("/the-team")
     end
   end
 

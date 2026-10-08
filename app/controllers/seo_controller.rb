@@ -14,7 +14,7 @@ class SeoController < ApplicationController
   # Public site pages, by route helper name — both languages of each go in.
   STATIC_ROUTES = %i[
     root the_clinic journal stories faq privacy medical_disclaimer terms
-    the_team neuskin_method treatments technologies private_care protocols
+    neuskin_method treatments technologies private_care protocols
     inquire bridal_concierge
   ].freeze
 

@@ -23,6 +23,13 @@ RSpec.describe "Stories and protocol admin", type: :request do
       get "/ar/stories"
       expect(response.body).to include("وعدوني بجدولٍ زمني، والتزموا به.")
     end
+
+    it "leaves hidden stories off the page (dashboard → Hidden from site)" do
+      make_story(hidden: true)
+      get "/stories"
+      expect(response).to have_http_status(:ok)
+      expect(response.body).not_to include("They promised me a calendar")
+    end
   end
 
   describe "stories admin" do

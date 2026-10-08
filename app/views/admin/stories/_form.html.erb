@@ -34,8 +34,17 @@
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
-    <span class="ns-field-title">Display position</span>
-    <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+    <span class="ns-field-title">Settings</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Display position</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
+        <%= form.check_box :hidden %> Hidden from site
+      </label>
+    </div>
+    <p class="hint" style="margin-top:10px">A hidden story stays off /stories until unticked. Nothing is deleted.</p>
   </div>
 
   <div class="ns-savebar">
