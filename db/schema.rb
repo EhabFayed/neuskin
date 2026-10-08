@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_24_100000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_08_100000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -236,6 +236,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_24_100000) do
     t.string "meta_title_ar"
     t.text "meta_description_en"
     t.text "meta_description_ar"
+    t.boolean "hidden", default: false, null: false
     t.index ["slug"], name: "index_treatments_on_slug", unique: true
   end
 

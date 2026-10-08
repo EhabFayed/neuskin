@@ -9,6 +9,10 @@ class Treatment < ApplicationRecord
 
   default_scope { order(:position) }
 
+  # Public site only shows visible outcomes; the dashboard lists them all.
+  # A hidden treatment keeps its copy, image and URL for when it returns.
+  scope :visible, -> { where(hidden: false) }
+
   # Admin can leave the slug blank on create — derived from the English title.
   before_validation { self.slug = title_en.to_s.parameterize if slug.blank? }
 

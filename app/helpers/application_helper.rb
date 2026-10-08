@@ -1,7 +1,7 @@
 module ApplicationHelper
   # Header submenu data — memoized per request; the tables are tiny.
   def nav_protocols  = (@__nav_protocols  ||= Protocol.all.to_a)
-  def nav_treatments = (@__nav_treatments ||= Treatment.all.to_a)
+  def nav_treatments = (@__nav_treatments ||= Treatment.visible.to_a)
   def nav_devices    = (@__nav_devices    ||= Device.all.to_a)
 
   # Anchor id for a device card on /technologies (header submenu target).

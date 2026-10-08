@@ -50,4 +50,29 @@ RSpec.describe "Treatment outcome pages", type: :request do
     expect(response).to have_http_status(:moved_permanently)
     expect(response).to redirect_to("/")
   end
+
+  describe "a hidden treatment (dashboard → Hidden from site)" do
+    before { Treatment.find_by!(slug: "hair").update!(hidden: true) }
+
+    it "drops out of the header submenu and the /treatments cards" do
+      get "/treatments"
+      expect(response).to have_http_status(:ok)
+      expect(response.body).not_to match(%r{href="(/en)?/treatments/hair"})
+      %w[skin body injectables devices].each do |outcome|
+        expect(response.body).to match(%r{href="(/en)?/treatments/#{outcome}"})
+      end
+    end
+
+    it "sends its own page home like an unknown URL" do
+      get "/treatments/hair"
+      expect(response).to have_http_status(:moved_permanently)
+      expect(response).to redirect_to("/")
+    end
+
+    it "is left out of the sitemap" do
+      get "/sitemap.xml"
+      expect(response.body).to include("<loc>http://www.example.com/treatments/skin</loc>")
+      expect(response.body).not_to include("/treatments/hair")
+    end
+  end
 end

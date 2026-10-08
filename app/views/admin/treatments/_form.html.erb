@@ -48,7 +48,11 @@
         <span class="lang-lbl">Owning protocol ("the protocol that owns this")</span><br>
         <%= form.select :protocol_slug, Protocol.all.map { |p| [p.name_en, p.slug] }, { include_blank: "— none —" }, class: "ns-input" %>
       </label>
+      <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
+        <%= form.check_box :hidden %> Hidden from site
+      </label>
     </div>
+    <p class="hint" style="margin-top:10px">Hidden treatments disappear from the header menu, the /treatments cards and the sitemap; their page sends visitors home. Nothing is deleted — untick to bring it back.</p>
   </div>
 
   <%= render "admin/shared/search_meta_fields", form: form %>

@@ -31,13 +31,14 @@ class PagesController < ApplicationController
 
   # Treatments — browse by outcome (design §08).
   def treatments
-    @treatments = Treatment.all
+    @treatments = Treatment.visible
   end
 
   # One outcome page (design §08 "Outcome" screen). Each outcome is owned by
   # a single protocol — the map mirrors the design's OUT data.
+  # A hidden treatment behaves like an unknown URL (301 home, see routes).
   def treatment_outcome
-    @treatment = Treatment.find_by!(slug: params[:outcome])
+    @treatment = Treatment.visible.find_by!(slug: params[:outcome])
     @outcome   = @treatment.slug
     @protocol  = @treatment.protocol
   end

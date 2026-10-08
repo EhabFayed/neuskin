@@ -35,7 +35,7 @@ class SeoController < ApplicationController
   def sitemap_entries
     entries = STATIC_ROUTES.map { |route| entry(route) }
     entries += Protocol.all.map  { |p| entry(:protocol, p, id: p.slug) }
-    entries += Treatment.all.map { |t| entry(:treatment_outcome, t, outcome: t.slug) }
+    entries += Treatment.visible.map { |t| entry(:treatment_outcome, t, outcome: t.slug) }
     entries += Device.all.map    { |d| entry(:technology, d, slug: d.slug) }
     entries += Blog.published.newest_first.map do |b|
       entry(:journal_article, b, en: { slug: b.slug_en }, ar: { slug: b.slug_ar.presence || b.slug_en })

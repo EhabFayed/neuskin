@@ -12,7 +12,9 @@ TREATMENT_SEEDS = [
     how_ar: "نبدأُ بفهم الأسباب قبل أن نلجأ لأي جهاز. فغالباً ما يكون الشحوب نتيجةً لاختلالٍ في حاجز البشرة أو الترطيب أو معدل التجدد. بناءً على ذلك، نضعُ لكِ بروتوكولاً متسلسلاً يعيد للبشرة صفاءها تدريجياً، مع قياس التقدم مقارنةً بحالتكِ في البداية.",
     view_en: "Tired skin is rarely one problem; it’s usually three small ones compounding. Treat the cause in order and the glow returns on its own — chasing it with a single facial almost never holds.",
     view_ar: "" },
-  { slug: "hair", position: 2, protocol_slug: "reset-crown",
+  # Hidden from the public site for now (client request, Oct 2026) — the
+  # record stays so it can be switched back on from the dashboard.
+  { slug: "hair", position: 2, protocol_slug: "reset-crown", hidden: true,
     title_en: "Thinning & shedding", title_ar: "تساقط الشعر وخفّته",
     headline_en: "Comprehensive care for thinning hair",
     headline_ar: "عناية متكاملة لتقوية الشعر والحد من تساقطه",
