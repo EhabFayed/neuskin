@@ -1,0 +1,13 @@
+<%# Floating booking CTA — the one always-present conversion affordance.
+    Replaces the floating WhatsApp pill (Oct 2026): leads go to the Repzo
+    online booking page (Clinic::BOOKING_URL, same target as the header
+    button). Short label on wide screens, icon-only on phones. %>
+<a class="floating-wa floating-booking" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"
+   aria-label="<%= t("layout.floating_book") %>" data-controller="magnetic">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2"/>
+    <path d="M16 2v4M8 2v4M3 10h18"/>
+    <path d="M9 16l2 2 4-4"/>
+  </svg>
+  <span class="floating-wa-label"><%= t("layout.floating_book") %></span>
+</a>

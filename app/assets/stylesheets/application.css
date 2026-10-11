@@ -1824,3 +1824,8 @@ html[data-theme="light"] .nav-sub { box-shadow: 0 30px 60px -28px rgba(43,33,37,
 /* Arabic eyebrows over photo heroes: no tracking (breaks letter joins) */
 [dir="rtl"] .clinic-hero-eyebrow, [dir="rtl"] .mysa-hero-eyebrow, [dir="rtl"] .journey-eyebrow,
 [dir="rtl"] .mysa-method-eyebrow, [dir="rtl"] .badge, [dir="rtl"] .tech-card .badge { letter-spacing: 0; }
+
+/* ---- Floating booking CTA (Oct 2026) — the WhatsApp pill repurposed to the
+   Repzo booking page; brand mauve instead of WhatsApp green. ---- */
+.floating-wa.floating-booking { background: var(--accent); }
+.floating-wa.floating-booking:hover { background: var(--accent-dusty); }
