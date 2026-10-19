@@ -45,6 +45,7 @@ module Admin
       # bail to a single render so we never double-render.
       if assign_items && @section.update(section_params)
         purge_flagged_images
+        attach_gallery_additions
         redirect_to admin_section_path(@section), notice: "Saved."
       else
         render :show, status: :unprocessable_entity
@@ -55,6 +56,14 @@ module Admin
 
     def set_section
       @section = Section.find(params[:id])
+    end
+
+    # "Add images" under a gallery appends to the current set (the plain
+    # gallery field replaces it). Lets editors keep adding clinic photos
+    # without re-uploading the ones already there (client audit, Oct 2026).
+    def attach_gallery_additions
+      files = Array(params.dig(:section, :gallery_add)).reject(&:blank?)
+      @section.gallery.attach(files) if files.any?
     end
 
     # "Remove" in the image fields only sets section[remove_<slot>]=1; the
@@ -77,6 +86,7 @@ module Admin
         @sections = Section.where(page: "home").includes(:contents).index_by(&:kind)
         @latest_posts = Blog.published.newest_first.with_attached_image.with_attached_image_ar
                             .includes(:contents).limit(3)
+        @home_stories = Story.visible.highlighted.limit(3)
       when "protocols_index"
         @protocols = Protocol.all
       when "bridal"

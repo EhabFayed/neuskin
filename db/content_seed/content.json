@@ -1392,7 +1392,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "عن نيوسكن",
+        "value_ar": "عن نيوسكين",
         "value_en": "About NeuSkin",
         "content_type": "text",
         "position": 0
@@ -1401,7 +1401,7 @@
         "key": "body_1",
         "label": "Body paragraph 1",
         "hint": null,
-        "value_ar": "تأسست 'نيوسكن' لتكون صوتاً مختلفاً يبتعد عن صخب التجميل التقليدي. نحن نؤمن بنهجٍ طبي يضع وقتك وثقتك فوق كل اعتبار؛ فكل امرأة تستحق الوضوح، وخطةً صُممت خصيصاً لها، ونتائجَ تُكرم جمالها الطبيعي بلمسةٍ تجمع بين الصبرِ والخبرة.",
+        "value_ar": "في نيوسكن، نؤمن أن الجمال لا يحتاج إلى تغيير ملامحكِ، بل إلى عناية تفهم احتياجاتكِ وتُبرز جمالكِ الطبيعي. لذلك، تأسست نيوسكن لتقدم مفهومًا مختلفًا في عالم التجميل، يجمع بين الخبرة الطبية، والتقنيات الحديثة، والاهتمام بالتفاصيل التي تصنع فارقًا حقيقيًا في تجربتكِ.",
         "value_en": "NeuSkin was founded to move beyond the noise of mass-market beauty. We believe in a medical approach that values your time and trust above all else. Every woman deserves clarity, a bespoke plan, and results that honor her natural beauty, guided by patience and clinical expertise.",
         "content_type": "text",
         "position": 1
@@ -1410,7 +1410,7 @@
         "key": "body_2",
         "label": "Body paragraph 2",
         "hint": null,
-        "value_ar": "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً.",
+        "value_ar": "نحن أكثر من مجرد عيادة تجميل؛ فنحن نؤمن بأن لكل امرأة احتياجاتها الخاصة، وأن البداية الصحيحة تأتي من فهم طبيعة بشرتها وأهدافها، ثم اختيار الحلول المناسبة لها بوضوح واهتمام. هدفنا أن تحصلي على تجربة عناية مدروسة، تشعرين فيها بالثقة والراحة، وتضع صحة بشرتكِ وجمالها الطبيعي في مقدمة أولوياتنا.",
         "value_en": "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
         "content_type": "text",
         "position": 2
@@ -1432,6 +1432,15 @@
         "value_en": "Read her philosophy →",
         "content_type": "text",
         "position": 4
+      },
+      {
+        "key": "cta",
+        "label": "Button — book a consultation",
+        "hint": "Opens the online booking page. Leave blank to hide the button.",
+        "value_ar": "احجزي استشارتكِ الآن",
+        "value_en": "Book your consultation now",
+        "content_type": "text",
+        "position": 5
       }
     ]
   },
@@ -1450,7 +1459,7 @@
         "key": "eyebrow",
         "label": "Eyebrow (small line above headline)",
         "hint": null,
-        "value_ar": "بإشراف طبيبة · الرياض",
+        "value_ar": "",
         "value_en": "Doctor-led · Riyadh",
         "content_type": "text",
         "position": 0
@@ -1459,7 +1468,7 @@
         "key": "headline_1",
         "label": "Headline line 1",
         "hint": null,
-        "value_ar": "دقةُ الطب،",
+        "value_ar": "أفضل عيادة تجميل بالرياض |",
         "value_en": "Medical Precision.",
         "content_type": "text",
         "position": 1
@@ -1468,7 +1477,7 @@
         "key": "headline_2",
         "label": "Headline line 2",
         "hint": null,
-        "value_ar": "ورقيُّ الجمال.",
+        "value_ar": "عيادة نيوسكين",
         "value_en": "Aesthetic Grace.",
         "content_type": "text",
         "position": 2
@@ -1486,7 +1495,7 @@
         "key": "sub",
         "label": "Sub-text under headline",
         "hint": null,
-        "value_ar": "وجهتُكِ في الرياض للعناية بالبشرة تحت إشرافٍ طبيٍّ متخصص؛ حيثُ نمنحُكِ جمالاً طبيعياً هادئاً، يضعُ خصوصيتكِ وراحتكِ في المقدمة.",
+        "value_ar": "أفضل عيادة تجميل متكاملة في الرياض للعناية بالبشرة تحت إشراف طبي متخصص؛ نضمن لكِ نتائج مدروسة تبرز جمالكِ الطبيعي وسط بيئة تضمن خصوصيتكِ وراحتكِ أولاً.",
         "value_en": "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
         "content_type": "text",
         "position": 4
@@ -1530,7 +1539,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "وعدنا",
+        "value_ar": "",
         "value_en": "The Promise",
         "content_type": "text",
         "position": 0
@@ -1539,7 +1548,7 @@
         "key": "title",
         "label": "Heading",
         "hint": null,
-        "value_ar": "ثلاثةُ وعود نلتزمُ بها بدقة.",
+        "value_ar": "لماذا تختارين عيادة نيوسكن",
         "value_en": "Three pillars of our promise.",
         "content_type": "text",
         "position": 1
@@ -1548,7 +1557,7 @@
         "key": "p1_num",
         "label": "Principle 1 — number/label",
         "hint": null,
-        "value_ar": "٠١ — مبدأ",
+        "value_ar": "٠١",
         "value_en": "01 — Principle",
         "content_type": "text",
         "position": 2
@@ -1557,7 +1566,7 @@
         "key": "p1_title",
         "label": "Principle 1 — title",
         "hint": null,
-        "value_ar": "قيادة طبية",
+        "value_ar": "قيادة طبية بخطط مخصصة",
         "value_en": "Doctor-led",
         "content_type": "text",
         "position": 3
@@ -1566,7 +1575,7 @@
         "key": "p1_body",
         "label": "Principle 1 — body",
         "hint": null,
-        "value_ar": "لا نعتمدُ أبداً على قوائمَ جاهزة؛ كلُّ خطةٍ علاجيةٍ يُصممها فريقُنا الطبي خصيصاً لكِ. تلتقينَ بالمتخصصين أولاً، لنرسمَ معاً الطريقَ الأنسب لجمالك.",
+        "value_ar": "في نيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، ثم نساعدكِ في اختيار الإجراءات المناسبة لكِ ضمن خطة عناية مخصصة، لأن كل بشرة لها احتياجاتها الخاصة.",
         "value_en": "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second.",
         "content_type": "text",
         "position": 4
@@ -1575,7 +1584,7 @@
         "key": "p2_num",
         "label": "Principle 2 — number/label",
         "hint": null,
-        "value_ar": "٠٢ — مبدأ",
+        "value_ar": "٠٢",
         "value_en": "02 — Principle",
         "content_type": "text",
         "position": 5
@@ -1584,7 +1593,7 @@
         "key": "p2_title",
         "label": "Principle 2 — title",
         "hint": null,
-        "value_ar": "خصوصيةٍ تامة",
+        "value_ar": "خصوصية تامة في كل خطوة",
         "value_en": "Discreet",
         "content_type": "text",
         "position": 6
@@ -1593,7 +1602,7 @@
         "key": "p2_body",
         "label": "Principle 2 — body",
         "hint": null,
-        "value_ar": "استشارةٌ خاصة، جلسةٌ خاصة، ونتائجُ لكِ وحدك. اسمكِ لا يغادرُ غرفتنا، وملفُّكِ لا يخرجُ من عيادتنا.",
+        "value_ar": "في عيادة تجميل للبشرة بنيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، وتصميم خطة عناية تناسبكِ، لتكون كل خطوة مبنية على احتياجاتكِ وأهدافكِ.",
         "value_en": "Private consultation. Private treatment. Private results. Your name never leaves the room, and your file never leaves the clinic.",
         "content_type": "text",
         "position": 7
@@ -1602,7 +1611,7 @@
         "key": "p3_num",
         "label": "Principle 3 — number/label",
         "hint": null,
-        "value_ar": "٠٣ — مبدأ",
+        "value_ar": "٠٣",
         "value_en": "03 — Principle",
         "content_type": "text",
         "position": 8
@@ -1611,7 +1620,7 @@
         "key": "p3_title",
         "label": "Principle 3 — title",
         "hint": null,
-        "value_ar": "نتائجَ مدروسة",
+        "value_ar": "نتائج مدروسة بعناية",
         "value_en": "Measured",
         "content_type": "text",
         "position": 9
@@ -1620,7 +1629,7 @@
         "key": "p3_body",
         "label": "Principle 3 — body",
         "hint": null,
-        "value_ar": "نُوَثِّقُ تقدّمكِ كلَّ ربعِ سنة. بلا افتراضات أو مبالغات، نعتمدُ فقط على حالة بشرتكِ عند مقارنتها ببدايةِ رحلتكِ معنا.",
+        "value_ar": "تبدأ رحلتكِ داخل عيادة تجميل للبشرة تهتم بفهم احتياجات بشرتكِ، واختيار الإجراءات المناسبة لكِ بناءً على تقييم متخصص، لتنعمي بتجربة عناية تناسب أهدافكِ التجميلية.",
         "value_en": "Outcomes documented every quarter. No guesswork, no theatre — only what the skin shows when we compare it to where it began.",
         "content_type": "text",
         "position": 10
@@ -1651,7 +1660,7 @@
         "key": "title",
         "label": "Heading",
         "hint": null,
-        "value_ar": "ستةُ بروتوكولات.",
+        "value_ar": "تعرفي على بروتوكولات عيادة تجميل نيوسكن",
         "value_en": "Six protocols.",
         "content_type": "text",
         "position": 1
@@ -1660,7 +1669,7 @@
         "key": "title_em",
         "label": "Heading (emphasis)",
         "hint": null,
-        "value_ar": "فلسفةٌ واحدة.",
+        "value_ar": "",
         "value_en": "One philosophy.",
         "content_type": "text",
         "position": 2
@@ -3524,7 +3533,7 @@
         "key": "title_1",
         "label": "Title part 1 (before emphasis)",
         "hint": null,
-        "value_ar": "عيادةٌ خاصة في حي الملقا، محورها تساؤلٌ واحد:",
+        "value_ar": "عيادة نيوسكين |",
         "value_en": "A private clinic in Al Malqa, built around one question:",
         "content_type": "text",
         "position": 1
@@ -3533,7 +3542,7 @@
         "key": "title_em",
         "label": "Title emphasis span",
         "hint": null,
-        "value_ar": "كيف ستكون بشرتكِ بعد خمس سنوات؟",
+        "value_ar": "أفضل عيادة تجميل في الرياض",
         "value_en": "what will your skin look like in five years?",
         "content_type": "text",
         "position": 2
@@ -3776,7 +3785,7 @@
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "المكان",
+        "value_ar": "صور أفضل عيادة تجميل نيوسكين",
         "value_en": "The Space",
         "content_type": "text",
         "position": 0
@@ -4223,7 +4232,7 @@
         "key": "title",
         "label": "Heading (before emphasis)",
         "hint": null,
-        "value_ar": "أحدث المقالات،",
+        "value_ar": "أحدث المقالات",
         "value_en": "Latest notes,",
         "content_type": "text",
         "position": 1
@@ -4232,7 +4241,7 @@
         "key": "title_em",
         "label": "Heading emphasis span",
         "hint": null,
-        "value_ar": "بهدوء.",
+        "value_ar": "",
         "value_en": "quietly kept.",
         "content_type": "text",
         "position": 2

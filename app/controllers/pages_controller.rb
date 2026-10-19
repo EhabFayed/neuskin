@@ -4,6 +4,9 @@ class PagesController < ApplicationController
     # Three newest Journal notes for the pre-footer band.
     @latest_posts = Blog.published.newest_first.with_attached_image.with_attached_image_ar
                         .includes(:contents).limit(3)
+    # Reviews band (client audit, Oct 2026): up to three patient stories that
+    # are visible AND "Highlight on home" (Admin → Stories). None → no band.
+    @home_stories = Story.visible.highlighted.limit(3)
   end
 
   def dr_maysa

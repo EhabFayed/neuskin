@@ -15,10 +15,10 @@ SeedContent.register("the_clinic", [
         en: "About · The Clinic", ar: "" },
       { key: "title_1",   label: "Title part 1 (before emphasis)",
         en: "A private clinic in Al Malqa, built around one question:",
-        ar: "عيادةٌ خاصة في حي الملقا، محورها تساؤلٌ واحد:" },
+        ar: "عيادة نيوسكين |" },
       { key: "title_em",  label: "Title emphasis span",
         en: "what will your skin look like in five years?",
-        ar: "كيف ستكون بشرتكِ بعد خمس سنوات؟" }
+        ar: "أفضل عيادة تجميل في الرياض" }
     ]
   },
   {
@@ -48,7 +48,7 @@ SeedContent.register("the_clinic", [
     kind: "clinic_space", label: "The Space — photo grid captions", position: 2,
     contents: [
       { key: "eyebrow",     label: "Eyebrow",
-        en: "The Space", ar: "" },
+        en: "The Space", ar: "صور أفضل عيادة تجميل نيوسكين" },
       { key: "shot_1_caption", label: "Photo 1 caption (lounge)",
         en: "The lounge", ar: "صالة الاستقبال" },
       { key: "shot_2_caption", label: "Photo 2 caption (diptyque)",

@@ -12,17 +12,17 @@ SeedContent.register("home", [
       kind: "home_hero", label: "Hero — top of page", position: 0,
       contents: [
         { key: "eyebrow",    label: "Eyebrow (small line above headline)",
-          en: "Doctor-led · Riyadh", ar: "بإشراف طبيبة · الرياض" },
+          en: "Doctor-led · Riyadh", ar: "" },
         # Hero runs as two lines (dashboard edit, "heros" commit) — line 3 empty.
         { key: "headline_1", label: "Headline line 1",
-          en: "Medical Precision.", ar: "دقةُ الطب،" },
+          en: "Medical Precision.", ar: "أفضل عيادة تجميل بالرياض |" },
         { key: "headline_2", label: "Headline line 2",
-          en: "Aesthetic Grace.", ar: "ورقيُّ الجمال." },
+          en: "Aesthetic Grace.", ar: "عيادة نيوسكين" },
         { key: "headline_3", label: "Headline line 3 (emphasis)",
           en: "", ar: "" },
         { key: "sub",        label: "Sub-text under headline",
           en: "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
-          ar: "وجهتُكِ في الرياض للعناية بالبشرة تحت إشرافٍ طبيٍّ متخصص؛ حيثُ نمنحُكِ جمالاً طبيعياً هادئاً، يضعُ خصوصيتكِ وراحتكِ في المقدمة." },
+          ar: "أفضل عيادة تجميل متكاملة في الرياض للعناية بالبشرة تحت إشراف طبي متخصص؛ نضمن لكِ نتائج مدروسة تبرز جمالكِ الطبيعي وسط بيئة تضمن خصوصيتكِ وراحتكِ أولاً." },
         { key: "foot_1",     label: "Footer note 1",
           en: "Est. Al Malqa · Riyadh", ar: "تأسست في الملقا · الرياض" },
         { key: "foot_2",     label: "Footer note 2",
@@ -33,30 +33,30 @@ SeedContent.register("home", [
       kind: "home_principles", label: "Three principles", position: 1,
       contents: [
         { key: "eyebrow",   label: "Eyebrow",
-          en: "The Promise", ar: "وعدنا" },
+          en: "The Promise", ar: "" },
         { key: "title",     label: "Heading",
-          en: "Three pillars of our promise.", ar: "ثلاثةُ وعود نلتزمُ بها بدقة." },
+          en: "Three pillars of our promise.", ar: "لماذا تختارين عيادة نيوسكن" },
         { key: "p1_num",    label: "Principle 1 — number/label",
-          en: "01 — Principle", ar: "٠١ — المبدأ" },
+          en: "01 — Principle", ar: "٠١" },
         { key: "p1_title",  label: "Principle 1 — title",
-          en: "Doctor-led", ar: "قيادة طبية" },
+          en: "Doctor-led", ar: "قيادة طبية بخطط مخصصة" },
         { key: "p1_body",   label: "Principle 1 — body",
           en: "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second.",
-          ar: "لا نعتمدُ أبداً على قوائمَ جاهزة؛ كلُّ خطةٍ علاجيةٍ يُصممها فريقُنا الطبي خصيصاً لكِ. تلتقينَ بالمتخصصين أولاً، لنرسمَ معاً الطريقَ الأنسب لجمالك." },
+          ar: "في نيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، ثم نساعدكِ في اختيار الإجراءات المناسبة لكِ ضمن خطة عناية مخصصة، لأن كل بشرة لها احتياجاتها الخاصة." },
         { key: "p2_num",    label: "Principle 2 — number/label",
-          en: "02 — Principle", ar: "٠٢ — المبدأ" },
+          en: "02 — Principle", ar: "٠٢" },
         { key: "p2_title",  label: "Principle 2 — title",
-          en: "Discreet", ar: "خصوصيةٍ تامة" },
+          en: "Discreet", ar: "خصوصية تامة في كل خطوة" },
         { key: "p2_body",   label: "Principle 2 — body",
           en: "Private consultation. Private treatment. Private results. Your name never leaves the room, and your file never leaves the clinic.",
-          ar: "استشارةٌ خاصة، جلسةٌ خاصة، ونتائجُ لكِ وحدك. اسمكِ لا يغادرُ غرفتنا، وملفُّكِ لا يخرجُ من عيادتنا." },
+          ar: "في عيادة تجميل للبشرة بنيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، وتصميم خطة عناية تناسبكِ، لتكون كل خطوة مبنية على احتياجاتكِ وأهدافكِ." },
         { key: "p3_num",    label: "Principle 3 — number/label",
-          en: "03 — Principle", ar: "٠٣ — المبدأ" },
+          en: "03 — Principle", ar: "٠٣" },
         { key: "p3_title",  label: "Principle 3 — title",
-          en: "Measured", ar: "نتائجَ مدروسة" },
+          en: "Measured", ar: "نتائج مدروسة بعناية" },
         { key: "p3_body",   label: "Principle 3 — body",
           en: "Outcomes documented every quarter. No guesswork, no theatre — only what the skin shows when we compare it to where it began.",
-          ar: "نُوَثِّقُ تقدّمكِ كلَّ ربعِ سنة. بلا افتراضات أو مبالغات، نعتمدُ فقط على حالة بشرتكِ عند مقارنتها ببدايةِ رحلتكِ معنا." }
+          ar: "تبدأ رحلتكِ داخل عيادة تجميل للبشرة تهتم بفهم احتياجات بشرتكِ، واختيار الإجراءات المناسبة لكِ بناءً على تقييم متخصص، لتنعمي بتجربة عناية تناسب أهدافكِ التجميلية." }
       ]
     },
     {
@@ -64,28 +64,32 @@ SeedContent.register("home", [
       kind: "home_founder", label: "About NeuSkin", position: 2,
       contents: [
         { key: "eyebrow", label: "Eyebrow",
-          en: "About NeuSkin", ar: "عن نيوسكن" },
+          en: "About NeuSkin", ar: "عن نيوسكين" },
         { key: "body_1",  label: "Body paragraph 1",
           en: "NeuSkin was founded to move beyond the noise of mass-market beauty. We believe in a medical approach that values your time and trust above all else. Every woman deserves clarity, a bespoke plan, and results that honor her natural beauty, guided by patience and clinical expertise.",
-          ar: "تأسست 'نيوسكن' لتكون صوتاً مختلفاً يبتعد عن صخب التجميل التقليدي. نحن نؤمن بنهجٍ طبي يضع وقتك وثقتك فوق كل اعتبار؛ فكل امرأة تستحق الوضوح، وخطةً صُممت خصيصاً لها، ونتائجَ تُكرم جمالها الطبيعي بلمسةٍ تجمع بين الصبرِ والخبرة." },
+          ar: "في نيوسكن، نؤمن أن الجمال لا يحتاج إلى تغيير ملامحكِ، بل إلى عناية تفهم احتياجاتكِ وتُبرز جمالكِ الطبيعي. لذلك، تأسست نيوسكن لتقدم مفهومًا مختلفًا في عالم التجميل، يجمع بين الخبرة الطبية، والتقنيات الحديثة، والاهتمام بالتفاصيل التي تصنع فارقًا حقيقيًا في تجربتكِ." },
         { key: "body_2",  label: "Body paragraph 2",
           en: "Our journey begins with a deep, intuitive understanding of your skin. Together, we prioritize what truly serves your long-term health, leaving behind the trends that don't.",
-          ar: "رحلتنا معك تبدأ بفهمٍ حقيقي لطبيعة بشرتك واحتياجاتها الفعلية. معاً، نضع الأولوية لكل ما يخدم صحة جمالك على المدى الطويل، متجاوزين كل الصيحات المؤقتة التي لا تضيف لمستقبلك شيئاً." },
+          ar: "نحن أكثر من مجرد عيادة تجميل؛ فنحن نؤمن بأن لكل امرأة احتياجاتها الخاصة، وأن البداية الصحيحة تأتي من فهم طبيعة بشرتها وأهدافها، ثم اختيار الحلول المناسبة لها بوضوح واهتمام. هدفنا أن تحصلي على تجربة عناية مدروسة، تشعرين فيها بالثقة والراحة، وتضع صحة بشرتكِ وجمالها الطبيعي في مقدمة أولوياتنا." },
         { key: "sign",    label: "Signature",
           en: "", ar: "" },
         { key: "link",    label: "Link text",
-          en: "Read her philosophy →", ar: "" }
+          en: "Read her philosophy →", ar: "" },
+        # Client audit (Oct 2026): booking button under the About copy.
+        { key: "cta",     label: "Button — book a consultation",
+          hint: "Opens the online booking page. Leave blank to hide the button.",
+          en: "Book your consultation now", ar: "احجزي استشارتكِ الآن" }
       ]
     },
     {
       kind: "home_protocols", label: "Six protocols — heading", position: 3,
       contents: [
         { key: "eyebrow",  label: "Eyebrow",
-          en: "The Six Protocols", ar: "" },
+          en: "The Six Protocols", ar: "البروتوكولات الستة" },
         { key: "title",    label: "Heading",
-          en: "Six protocols.", ar: "ستةُ بروتوكولات." },
+          en: "Six protocols.", ar: "تعرفي على بروتوكولات عيادة تجميل نيوسكن" },
         { key: "title_em", label: "Heading (emphasis)",
-          en: "One philosophy.", ar: "فلسفةٌ واحدة." },
+          en: "One philosophy.", ar: "" },
         { key: "link",     label: "Link text",
           en: "View all protocols →", ar: "" }
       ]
@@ -165,8 +169,8 @@ SeedContent.register("home", [
       kind: "home_journal", label: "Latest from the Journal", position: 9,
       contents: [
         { key: "eyebrow",  label: "Eyebrow",                   en: "From the Journal", ar: "من المجلّة" },
-        { key: "title",    label: "Heading (before emphasis)", en: "Latest notes,",    ar: "أحدث المقالات،" },
-        { key: "title_em", label: "Heading emphasis span",     en: "quietly kept.",    ar: "بهدوء." },
+        { key: "title",    label: "Heading (before emphasis)", en: "Latest notes,",    ar: "أحدث المقالات" },
+        { key: "title_em", label: "Heading emphasis span",     en: "quietly kept.",    ar: "" },
         { key: "link",     label: "\"All notes\" link text",   en: "Read all notes →", ar: "كل المقالات ←" }
       ]
     }

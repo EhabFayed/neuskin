@@ -483,6 +483,7 @@ en:
     cta_assessment: "Request an assessment"
     cta_whatsapp: "Speak privately on WhatsApp"
     explore_protocol: "Explore this protocol →"
+    all_stories: "All patient stories →"
     marquee: ["Doctor-led", "Discreet", "Measured", "Skin intelligence", "Protocol-led", "Riyadh"]
   protocol_page:
     duration: "Duration"
@@ -638,12 +639,14 @@ en:
   # Site chrome — header nav + footer (shared/_header, shared/_footer).
   layout:
     nav:
+      home: "Home"
       the_clinic: "The Clinic"
       dr_maysa: "The Team"
       protocols: "Protocols"
       treatments: "Treatments"
       technologies: "Technologies"
       journal: "Journal"
+      contact: "Contact"
       inquire: "Inquire"
       menu: "Menu"
       all_treatments: "All treatments"

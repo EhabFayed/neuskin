@@ -40,7 +40,7 @@ RSpec.describe "Locale direction", type: :request do
     it "renders the nav and footer in Arabic under /ar" do
       get "/ar"
       expect(response.body).to include("العيادة")          # nav: The Clinic
-      expect(response.body).to include("استفسري")          # header Inquire button
+      expect(response.body).to include("اتصل بنا")         # nav: Contact (client audit, Oct 2026)
       expect(response.body).to include("منهج نيوسكن™")     # footer: The NeuSkin Method
       expect(response.body).to include("الجمعة · مغلق")    # footer: Friday · Closed
     end
@@ -48,7 +48,7 @@ RSpec.describe "Locale direction", type: :request do
     it "keeps the English nav and footer unchanged" do
       get "/"
       expect(response.body).to include(">The Clinic<")
-      expect(response.body).to include(">Inquire<")
+      expect(response.body).to include(">Contact<")
       expect(response.body).to include("The NeuSkin Method™")
       expect(response.body).to include("© #{Time.current.year} NeuSkin Clinic · SFDA / MOH licensed")
     end

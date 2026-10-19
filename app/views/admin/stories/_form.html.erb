@@ -43,8 +43,11 @@
       <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
         <%= form.check_box :hidden %> Hidden from site
       </label>
+      <label style="display:inline-flex;align-items:center;gap:8px;padding-bottom:10px">
+        <%= form.check_box :highlighted %> Highlight on home page
+      </label>
     </div>
-    <p class="hint" style="margin-top:10px">A hidden story stays off /stories until unticked. Nothing is deleted.</p>
+    <p class="hint" style="margin-top:10px">A hidden story stays off /stories until unticked. Nothing is deleted. Highlighted stories (up to three, in display order) also appear in the reviews band on the home page — only while not hidden.</p>
   </div>
 
   <div class="ns-savebar">

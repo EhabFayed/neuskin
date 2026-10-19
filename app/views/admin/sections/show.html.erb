@@ -54,7 +54,10 @@
                 </figure>
               <% end %>
             </div>
-            <span class="ns-field-title" style="display:block;margin-bottom:6px">Replace gallery</span>
+            <span class="ns-field-title" style="display:block;margin-bottom:6px">Add images</span>
+            <%= render "admin/shared/image_field", name: "section[gallery_add][]", current: nil, multiple: true, size: "sm",
+                       hint: "Appended after the current photos, in the order selected." %>
+            <span class="ns-field-title" style="display:block;margin:14px 0 6px">Replace gallery</span>
             <%= render "admin/shared/image_field", name: "section[gallery][]", current: nil, multiple: true, size: "sm",
                        hint: "Select all images together, in display order — they replace the current set on save." %>
           </div>

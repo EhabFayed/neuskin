@@ -1,7 +1,9 @@
 <%# Site header. Desktop: inline nav with hover submenus for Protocols /
     Treatments / Technologies (every record links to its own page or card).
     Mobile: burger → full-width panel; carets open the same submenus on tap.
-    Booking (Repzo) moved up here from the old floating button (audit item 9). %>
+    Booking (Repzo) moved up here from the old floating button (audit item 9).
+    Client audit (Oct 2026): "Home" link first, "Contact" link last, and the
+    separate Inquire button removed (Contact now covers it). %>
 <header class="site-header" data-controller="header nav">
   <%= link_to root_path, class: "brand", "aria-label": "NeuSkin Clinic" do %>
     <%= image_tag "site/logo-ns.webp", class: "brand-logo", alt: "NeuSkin", width: 42, height: 40 %>
@@ -17,6 +19,7 @@
   </button>
 
   <nav class="site-nav" data-nav-target="panel" aria-label="<%= t("layout.nav.menu") %>">
+    <%= link_to t("layout.nav.home"), root_path %>
     <%= link_to t("layout.nav.the_clinic"), the_clinic_path %>
 
     <%# Protocols — hub + one entry per protocol %>
@@ -71,11 +74,11 @@
     </div>
 
     <%= link_to t("layout.nav.journal"), journal_path %>
+    <%= link_to t("layout.nav.contact"), inquire_path %>
 
     <%# Mobile-only actions (duplicated from header-actions, hidden on desktop) %>
     <div class="nav-mobile-actions">
       <a class="btn" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= t("layout.book") %></a>
-      <%= link_to t("layout.nav.inquire"), inquire_path, class: "btn btn--ghost" %>
     </div>
   </nav>
 
@@ -102,6 +105,5 @@
     </a>
     <%# Booking — online appointment (Repzo). Was the floating button. %>
     <a class="btn-book" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= t("layout.book") %></a>
-    <%= link_to t("layout.nav.inquire"), inquire_path, class: "btn-inquire" %>
   </div>
 </header>

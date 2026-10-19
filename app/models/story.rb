@@ -9,6 +9,9 @@ class Story < ApplicationRecord
 
   # /stories only shows visible stories; the dashboard lists them all.
   scope :visible, -> { where(hidden: false) }
+  # Ticked "Highlight on home" in the dashboard — the home reviews band shows
+  # visible + highlighted stories only (client audit, Oct 2026).
+  scope :highlighted, -> { where(highlighted: true) }
 
   # Locale-aware readers, mirroring Protocol.
   %i[intro quote protocol_line close byline].each do |attr|

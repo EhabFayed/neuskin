@@ -11,42 +11,56 @@
   </div>
 </section>
 
-<%# ---- Philosophy (design copy) — 50/50 split ---- %>
+<%# ---- Philosophy — photo + numbered points ----
+    Client audit (Oct 2026): the big "measured by what it refuses to do"
+    statement is gone; the photo sits on its own and the copy next to it is a
+    numbered list. Texts stay CMS-editable (clinic_philosophy body_1..3, sign);
+    the old statement_* keys are no longer rendered. %>
 <section class="section section--surface" data-controller="reveal">
-  <div class="section-inner split" style="align-items:start">
-    <div class="clinic-statement-col">
-      <h2 class="clinic-statement">
-        <span data-reveal="mask" data-reveal-delay="80"><span><%= sec_text("the_clinic", "clinic_philosophy", "statement_1").presence || "We believe a clinic should be measured" %></span></span>
-        <span data-reveal="mask" data-reveal-delay="200"><span><%= sec_text("the_clinic", "clinic_philosophy", "statement_2").presence || "by" %> <span class="em"><%= sec_text("the_clinic", "clinic_philosophy", "statement_2_em").presence || "what it refuses to do." %></span></span></span>
-      </h2>
-      <%# Photo under the statement — the clinic_philosophy section image in
-          the dashboard; static shot as fallback. %>
-      <figure class="clinic-statement-media" data-reveal="scale" data-reveal-delay="280">
-        <%= sec_image_tag("the_clinic", "clinic_philosophy", :clinic_shot_2, alt: "Inside the NeuSkin clinic") %>
-      </figure>
+  <div class="section-inner split media-left">
+    <div class="split-media reveal" data-reveal-target="item">
+      <%= sec_image_tag("the_clinic", "clinic_philosophy", :clinic_shot_2, alt: "Inside the NeuSkin clinic", loading: "lazy") %>
     </div>
-    <div>
-      <div class="body-copy" style="font-size:clamp(1.05rem,1.5vw,1.3rem)">
-        <p data-reveal="up" data-reveal-delay="160"><%= sec_text("the_clinic", "clinic_philosophy", "body_1").presence || "NeuSkin began with a frustration: skin care in Riyadh had become a list of treatments and a public price grid, sold the way a menu is sold. We wanted the opposite — a quiet room, a doctor who looks properly, and a plan written for one person at a time." %></p>
-        <p data-reveal="up" data-reveal-delay="240"><%= sec_text("the_clinic", "clinic_philosophy", "body_2").presence || "So we built a clinic around diagnosis, not display. Every patient begins with the NeuSkin Method™ — a full reading of skin, hair and body — before anything is recommended, let alone performed. We chose Al Malqa for its discretion, and we chose women as our focus because they have been sold to longest, and listened to least." %></p>
-        <p data-reveal="up" data-reveal-delay="320"><%= sec_text("the_clinic", "clinic_philosophy", "body_3").presence || "We are not the loudest clinic in the city. We intend to be the one you keep." %></p>
-      </div>
-      <p class="sign" data-reveal="up" data-reveal-delay="400" style="margin-top:32px"><%= sec_text("the_clinic", "clinic_philosophy", "sign").presence || "— The NeuSkin Team" %></p>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <% point_defaults = ["NeuSkin began with a frustration: skin care in Riyadh had become a list of treatments and a public price grid, sold the way a menu is sold. We wanted the opposite — a quiet room, a doctor who looks properly, and a plan written for one person at a time.",
+                           "So we built a clinic around diagnosis, not display. Every patient begins with the NeuSkin Method™ — a full reading of skin, hair and body — before anything is recommended, let alone performed. We chose Al Malqa for its discretion, and we chose women as our focus because they have been sold to longest, and listened to least.",
+                           "We are not the loudest clinic in the city. We intend to be the one you keep."] %>
+      <ol class="clinic-points">
+        <% point_defaults.each_with_index do |fallback, idx| %>
+          <li data-reveal="up" data-reveal-delay="<%= 160 + idx * 90 %>"><%= sec_text("the_clinic", "clinic_philosophy", "body_#{idx + 1}").presence || fallback %></li>
+        <% end %>
+      </ol>
+      <p class="sign" data-reveal="up" data-reveal-delay="440" style="margin-top:32px"><%= sec_text("the_clinic", "clinic_philosophy", "sign").presence || "— The NeuSkin Team" %></p>
     </div>
   </div>
 </section>
 
-<%# ---- The Space ---- %>
+<%# ---- The Space — moving photo gallery ----
+    Client audit (Oct 2026): the label is the section h2 and the photos glide
+    across in a seamless loop (pauses on hover, reverses for RTL, static under
+    reduced motion). Every image attached to the clinic_space gallery in the
+    dashboard is shown, in order, so editors can keep adding photos; captions
+    1–5 come from shot_N_caption, later photos have none. Falls back to the
+    five launch shots when nothing is attached. %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner">
-    <span class="eyebrow reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_space", "eyebrow").presence || "The Space" %></span>
-    <div class="shot-grid reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
-      <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5]) %>
-      <figure class="shot w4"><%= image_tag clinic_space_imgs[0], alt: "Waiting lounge" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_1_caption").presence || "The lounge" %></figcaption></figure>
-      <figure class="shot w2"><%= image_tag clinic_space_imgs[1], alt: "In the detail" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_2_caption").presence || "In the detail" %></figcaption></figure>
-      <figure class="shot w2"><%= image_tag clinic_space_imgs[2], alt: "Device room" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_3_caption").presence || "Device room" %></figcaption></figure>
-      <figure class="shot w3"><%= image_tag clinic_space_imgs[3], alt: "Treatment room" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_4_caption").presence || "Treatment room" %></figcaption></figure>
-      <figure class="shot w3"><%= image_tag clinic_space_imgs[4], alt: "The entrance at dusk" %><figcaption><%= sec_text("the_clinic", "clinic_space", "shot_5_caption").presence || "The entrance" %></figcaption></figure>
+    <h2 class="sec-title-md reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_space", "eyebrow").presence || "The Space" %></h2>
+  </div>
+  <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5], width: 1000) %>
+  <% caption_defaults = ["The lounge", "In the detail", "Device room", "Treatment room", "The entrance"] %>
+  <div class="photo-marquee reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
+    <div class="photo-marquee-track">
+      <% 2.times do |copy| %>
+        <div class="photo-marquee-seg"<%= ' aria-hidden="true"'.html_safe if copy == 1 %>>
+          <% clinic_space_imgs.each_with_index do |src, i| %>
+            <% caption = sec_text("the_clinic", "clinic_space", "shot_#{i + 1}_caption").presence || caption_defaults[i] %>
+            <figure class="shot pm-shot">
+              <%= image_tag src, alt: caption.to_s, loading: "lazy", decoding: "async" %>
+              <% if caption.present? %><figcaption><%= caption %></figcaption><% end %>
+            </figure>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

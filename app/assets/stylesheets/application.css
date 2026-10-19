@@ -1829,3 +1829,48 @@ html[data-theme="light"] .nav-sub { box-shadow: 0 30px 60px -28px rgba(43,33,37,
    Repzo booking page; brand mauve instead of WhatsApp green. ---- */
 .floating-wa.floating-booking { background: var(--accent); }
 .floating-wa.floating-booking:hover { background: var(--accent-dusty); }
+
+/* ============ client audit (Oct 2026) — headings, reviews, gallery, footer ============ */
+/* Labels promoted to h2 keep the eyebrow look (the global h2 rules would serif + stroke them). */
+h2.eyebrow { font-family: var(--sans); font-weight: 500; -webkit-text-stroke: 0; margin: 0; }
+/* A sentence demoted from h2 to h3 keeps the section-title look. */
+.sec-head h3.sec-title {
+  font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.12;
+  letter-spacing: -.01em; color: var(--text-bright); max-width: 18ch;
+}
+/* Mid-size section h2 ("About NeuSkin", "The Space"). */
+.sec-title-md { font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.14; letter-spacing: -.01em; color: var(--text-bright); margin-block-end: 26px; }
+.section--light .sec-title-md { color: var(--text); }
+.about-cta { margin-block-start: 28px; }
+
+/* Clinic philosophy as a numbered list beside the photo. */
+.clinic-points { list-style: none; counter-reset: pt; margin: 0; padding: 0; display: grid; gap: clamp(20px, 2.6vw, 32px); }
+.clinic-points li { position: relative; padding-inline-start: 58px; color: var(--text-muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.15rem); }
+.clinic-points li::before {
+  counter-increment: pt; content: counter(pt, decimal-leading-zero);
+  position: absolute; inset-inline-start: 0; top: .35em;
+  font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: .26em; color: var(--accent);
+}
+.clinic-points li::after { content: ""; position: absolute; inset-inline-start: 30px; top: 1em; width: 18px; height: 1px; background: var(--accent); }
+[dir="rtl"] .clinic-points li::before { content: counter(pt, arabic-indic); letter-spacing: .1em; }
+
+/* Moving photo gallery (clinic). Same loop mechanics as the word marquee. */
+.photo-marquee { overflow: hidden; }
+.photo-marquee-track { display: flex; width: max-content; animation: ns-marquee 70s linear infinite; will-change: transform; }
+.photo-marquee:hover .photo-marquee-track { animation-play-state: paused; }
+.photo-marquee-seg { display: flex; flex: none; gap: 16px; padding-inline-end: 16px; }
+.pm-shot { flex: none; width: clamp(240px, 32vw, 460px); aspect-ratio: 4 / 3; }
+[dir="rtl"] .photo-marquee-track { animation-name: ns-marquee-rtl; }
+@media (prefers-reduced-motion: reduce) {
+  .photo-marquee { overflow-x: auto; }
+  .photo-marquee-track { animation: none; }
+  .photo-marquee-seg[aria-hidden] { display: none; }
+}
+
+/* Footer "Visit" lines with an icon in front. */
+.footer-line { display: flex; align-items: flex-start; gap: 10px; }
+.footer-line > svg { flex: none; width: 15px; height: 15px; margin-block-start: 2px; color: var(--accent); }
+.footer-line a { color: var(--text-muted); transition: color .3s; }
+.footer-line a:hover { color: var(--text-soft); }
+/* Reviews band from patient stories: two small lines under a quote (protocol + byline). */
+.home-stories .by + .by { margin-block-start: 6px; }

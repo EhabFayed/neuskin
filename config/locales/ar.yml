@@ -483,6 +483,7 @@ ar:
     cta_assessment: "اطلبي تقييمكِ"
     cta_whatsapp: "تحدّثي معنا بخصوصية على واتساب"
     explore_protocol: "اكتشفي هذا البروتوكول ←"
+    all_stories: "كل قصص المريضات ←"
     marquee: ["بإشراف طبيبة", "خصوصية تامّة", "نتائج مدروسة", "ذكاء البشرة", "بروتوكولات لا قوائم", "الرياض"]
   protocol_page:
     duration: "المدّة"
@@ -639,12 +640,14 @@ ar:
   # Site chrome — header nav + footer (shared/_header, shared/_footer).
   layout:
     nav:
+      home: "الرئيسية"
       the_clinic: "العيادة"
       dr_maysa: "الفريق"
       protocols: "البروتوكولات"
       treatments: "العلاجات"
       technologies: "التقنيات"
       journal: "المجلّة"
+      contact: "اتصل بنا"
       inquire: "استفسري"
       menu: "القائمة"
       all_treatments: "كل العلاجات"
@@ -707,8 +710,8 @@ ar:
     book_title: "احجزي استشارتك"
     book_whatsapp: "تحدّثي معنا على واتساب"
     home_eyebrow: "من المجلّة"
-    home_title: "أحدث المقالات،"
-    home_title_em: "بهدوء."
+    home_title: "أحدث المقالات"
+    home_title_em: ""
     home_all: "كل المقالات ←"
     categories:
       clinic_notes: "من العيادة"

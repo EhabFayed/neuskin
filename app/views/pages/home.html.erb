@@ -16,7 +16,10 @@
            data-controller="herovideo" data-herovideo-src-value="/videos/neuskin-hero-1280.mp4"></video>
   </div>
   <div class="hero-copy">
-    <span class="eyebrow no-rule" data-reveal="fade"><%= sec_text("home", "home_hero", "eyebrow").presence || "Doctor-led · Riyadh" %></span>
+    <%# Eyebrow is CMS-only and optional: blank hides it (client audit, Oct 2026 — removed on Arabic). %>
+    <% if (hero_eyebrow = sec_text("home", "home_hero", "eyebrow")).present? %>
+      <span class="eyebrow no-rule" data-reveal="fade"><%= hero_eyebrow %></span>
+    <% end %>
     <h1>
       <% hero_lines = [sec_text("home", "home_hero", "headline_1").presence || "Medical Precision.",
                        sec_text("home", "home_hero", "headline_2").presence || "Aesthetic Grace.",
@@ -51,7 +54,9 @@
   <%= render "shared/orn", variant: "rings", pos: "tr", float: true %>
   <div class="section-inner">
     <div class="sec-head center reveal" data-reveal-target="item">
-      <span class="eyebrow center"><%= sec_text("home", "home_principles", "eyebrow").presence || "The Promise" %></span>
+      <% if (principles_eyebrow = sec_text("home", "home_principles", "eyebrow")).present? %>
+        <span class="eyebrow center"><%= principles_eyebrow %></span>
+      <% end %>
       <h2><%= sec_text("home", "home_principles", "title").presence || "Three commitments, quietly kept." %></h2>
     </div>
     <%# Slide carousel (Seline-style): one principle per full-width slide —
@@ -87,12 +92,17 @@
       <%= sec_image_tag("home", "home_founder", :lounge, alt: "Inside the NeuSkin clinic", class: "breathe", loading: "lazy") %>
     </div>
     <div class="split-text reveal d1" data-reveal-target="item">
-      <span class="eyebrow"><%= sec_text("home", "home_founder", "eyebrow").presence || "Meet the founder" %></span>
+      <%# Client audit (Oct 2026): the small "About NeuSkin" label is now the section h2. %>
+      <h2 class="sec-title-md"><%= sec_text("home", "home_founder", "eyebrow").presence || "About NeuSkin" %></h2>
       <div class="body-copy">
         <p><%= sec_text("home", "home_founder", "body_1").presence || "I opened NeuSkin because I was tired of watching women sold ten treatments to fill a calendar. Skin is data — it can be read, and once read, it can be treated honestly." %></p>
         <p><%= sec_text("home", "home_founder", "body_2").presence || "Every patient here is met by one doctor, who builds one plan and reviews it every quarter. Nothing is rushed, and nothing is sold that isn't needed." %></p>
       </div>
       <p class="sign"><%= sec_text("home", "home_founder", "sign") %></p>
+      <%# Booking CTA (client audit, Oct 2026) — same online booking as the header button. %>
+      <% if (about_cta = sec_text("home", "home_founder", "cta")).present? %>
+        <p class="about-cta"><a class="btn" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= about_cta %></a></p>
+      <% end %>
       <%# "Read her philosophy" link hidden with the Dr. Maysa page (July 2026). %>
       <% if false %>
         <p style="margin-top:20px"><%= link_to (sec_text("home", "home_founder", "link").presence || "Read her philosophy →"), dr_maysa_path, class: "arrowlink" %></p>
@@ -112,8 +122,9 @@
   <div class="section-inner">
     <div class="sec-head-row" data-reveal="up">
       <div class="sec-head" style="margin:0">
-        <span class="eyebrow"><%= sec_text("home", "home_protocols", "eyebrow").presence || "The Six Protocols" %></span>
-        <h2 style="margin-top:22px"><%= sec_text("home", "home_protocols", "title").presence || "Six named protocols." %> <span class="em"><%= sec_text("home", "home_protocols", "title_em").presence || "One philosophy. Zero menu pricing." %></span></h2>
+        <%# Heading levels per client audit (Oct 2026): the eyebrow is the h2, the sentence under it an h3. %>
+        <h2 class="eyebrow"><%= sec_text("home", "home_protocols", "eyebrow").presence || "The Six Protocols" %></h2>
+        <h3 class="sec-title" style="margin-top:22px"><%= sec_text("home", "home_protocols", "title").presence || "Six named protocols." %><% if (proto_em = sec_text("home", "home_protocols", "title_em")).present? %> <span class="em"><%= proto_em %></span><% end %></h3>
       </div>
       <%= link_to (sec_text("home", "home_protocols", "link").presence || "View all protocols →"), protocols_path, class: "arrowlink" %>
     </div>
@@ -177,38 +188,38 @@
   </div>
 </section>
 
-<%# ---- Testimonials (light contrast band) ----
-     Hidden per the content team (July 2026): these services are not live yet;
-     the section returns once real, consented patient reviews are available.
-     The home_quotes CMS section is kept so no copy is lost. %>
-<% if false %>
-<section class="section section--light" data-controller="reveal">
+<%# ---- Reviews (light contrast band) ----
+     Client audit (Oct 2026), in place of the closing CTA band: up to three
+     patient stories that are visible AND "Highlight on home" (Admin → Stories,
+     same records as /stories), linking to the full page. No highlighted story
+     → the band is not rendered at all (no placeholder copy). %>
+<% if @home_stories.present? %>
+<section class="section section--light home-reviews" data-controller="reveal">
   <div class="section-inner">
-    <div class="sec-head center reveal" data-reveal-target="item">
-      <span class="eyebrow center"><%= sec_text("home", "home_quotes", "eyebrow").presence || "In their words" %></span>
+    <div class="sec-head-row" data-reveal="up">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow"><%= sec_text("home", "home_quotes", "eyebrow").presence || "In their words" %></span>
+      </div>
+      <%= link_to t("home_page.all_stories"), stories_path, class: "arrowlink" %>
     </div>
-    <div class="quotes reveal d1" data-reveal-target="item">
-      <div class="quote">
-        <span class="mark">“</span>
-        <p><%= sec_text("home", "home_quotes", "quote_1").presence || "She told me what I didn't need before she told me what I did. I'd never had a doctor do that." %></p>
-        <p class="by"><%= sec_text("home", "home_quotes", "by_1").presence || "L.M. · Riyadh" %></p>
-      </div>
-      <div class="quote">
-        <span class="mark">“</span>
-        <p><%= sec_text("home", "home_quotes", "quote_2").presence || "Six months, one plan, reviewed every quarter. My skin looks like mine — only rested." %></p>
-        <p class="by"><%= sec_text("home", "home_quotes", "by_2").presence || "A.R. · Riyadh" %></p>
-      </div>
-      <div class="quote">
-        <span class="mark">“</span>
-        <p><%= sec_text("home", "home_quotes", "quote_3").presence || "Discreet from the first message to the last review. I never felt like a number on a calendar." %></p>
-        <p class="by"><%= sec_text("home", "home_quotes", "by_3").presence || "F.K. · Riyadh" %></p>
-      </div>
+    <div class="quotes home-stories reveal d1" data-reveal-target="item">
+      <% @home_stories.each do |story| %>
+        <div class="quote">
+          <span class="mark">“</span>
+          <p><%= story.quote %></p>
+          <% if story.protocol_line.present? %><p class="by"><%= story.protocol_line %></p><% end %>
+          <% if story.byline.present? %><p class="by"><%= story.byline %></p><% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
 <% end %>
 
-<%# ---- Closing CTA band ---- %>
+<%# ---- Closing CTA band ----
+     Hidden per the client audit (Oct 2026: "no need for this section");
+     the reviews above replace it. The home_cta CMS section is kept. %>
+<% if false %>
 <section class="cta-band" data-controller="reveal">
   <div class="cta-band-media reveal" data-reveal-target="item">
     <%= sec_image_tag("home", "home_cta", :lounge, alt: "The lounge at NeuSkin", class: "breathe float-delay-2", loading: "lazy") %>
@@ -220,6 +231,7 @@
     <p class="sign"><%= sec_text("home", "home_cta", "sign").presence || "— The NeuSkin Team" %></p>
   </div>
 </section>
+<% end %>
 
 <%# ---- Latest from the Journal — three newest published notes, just above
       the footer (audit items 8 + 13). Heading copy is CMS-editable
