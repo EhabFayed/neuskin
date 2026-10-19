@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :pages, only: [ :index, :show ]
     resources :sections, only: [ :show, :update ] do
       member { match :preview, via: %i[get post] }
+      # Album photos (The Clinic → "The Space"): delete one photo.
+      resources :photos, only: [ :destroy ], controller: "section_photos"
     end
     resources :blogs, except: [ :show ]
     resources :team_members, except: [ :show ]

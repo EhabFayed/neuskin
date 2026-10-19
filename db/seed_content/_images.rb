@@ -18,7 +18,18 @@ module SeedImages
 
   GALLERY = {
     [ "home", "home_clinic" ]       => %i[treatment_room lounge device_table diptyque interior_ext],
-    [ "dr_maysa", "drmaysa_clips" ] => %i[doctor_coat consult beauty_eyes],
-    [ "the_clinic", "clinic_space" ] => %i[clinic_shot_1 clinic_shot_2 clinic_shot_3 clinic_shot_4 clinic_shot_5]
+    [ "dr_maysa", "drmaysa_clips" ] => %i[doctor_coat consult beauty_eyes]
+  }.freeze
+
+  # Photo albums (Section#photos — one SectionPhoto per image, each with its
+  # own caption): ordered [image key, caption_en, caption_ar] triples.
+  ALBUMS = {
+    [ "the_clinic", "clinic_space" ] => [
+      [ :clinic_shot_1, "The lounge",     "صالة الاستقبال" ],
+      [ :clinic_shot_2, "In the detail",  "في التفاصيل" ],
+      [ :clinic_shot_3, "Device room",    "غرفة الأجهزة" ],
+      [ :clinic_shot_4, "Treatment room", "غرفة الإجراءات" ],
+      [ :clinic_shot_5, "The entrance",   "المدخل" ]
+    ]
   }.freeze
 end

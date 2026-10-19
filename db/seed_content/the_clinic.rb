@@ -45,20 +45,12 @@ SeedContent.register("the_clinic", [
     ]
   },
   {
+    # Photo captions live on each SectionPhoto (one per photo, any number of
+    # photos) — see SeedImages::ALBUMS and the dashboard "Photos" editor.
     kind: "clinic_space", label: "The Space — photo grid captions", position: 2,
     contents: [
       { key: "eyebrow",     label: "Eyebrow",
-        en: "The Space", ar: "صور أفضل عيادة تجميل نيوسكين" },
-      { key: "shot_1_caption", label: "Photo 1 caption (lounge)",
-        en: "The lounge", ar: "صالة الاستقبال" },
-      { key: "shot_2_caption", label: "Photo 2 caption (diptyque)",
-        en: "In the detail", ar: "في التفاصيل" },
-      { key: "shot_3_caption", label: "Photo 3 caption (device room)",
-        en: "Device room", ar: "غرفة الأجهزة" },
-      { key: "shot_4_caption", label: "Photo 4 caption (treatment room)",
-        en: "Treatment room", ar: "غرفة الإجراءات" },
-      { key: "shot_5_caption", label: "Photo 5 caption (entrance)",
-        en: "The entrance", ar: "المدخل" }
+        en: "The Space", ar: "صور أفضل عيادة تجميل نيوسكين" }
     ]
   },
   {

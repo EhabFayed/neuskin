@@ -75,3 +75,6 @@ application.register("magnetic", MagneticController)
 
 import SmoothscrollController from "controllers/smoothscroll_controller"
 application.register("smoothscroll", SmoothscrollController)
+
+import ShotcapController from "controllers/shotcap_controller"
+application.register("shotcap", ShotcapController)

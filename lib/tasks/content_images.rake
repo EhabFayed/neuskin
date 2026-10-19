@@ -25,6 +25,16 @@ namespace :content do
       galleries += 1
     end
 
-    puts "Attached #{single} section images + #{galleries} galleries."
+    albums = 0
+    SeedImages::ALBUMS.each do |(page, kind), shots|
+      s = Section.find_by(page: page, kind: kind) or next
+      next if s.photos.exists?
+      shots.each_with_index do |(key, en, ar), i|
+        s.photos.create!(image: attach.call(s, key), caption_en: en, caption_ar: ar, position: i)
+      end
+      albums += 1
+    end
+
+    puts "Attached #{single} section images + #{galleries} galleries + #{albums} photo albums."
   end
 end

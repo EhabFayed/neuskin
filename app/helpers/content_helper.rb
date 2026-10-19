@@ -155,4 +155,28 @@ module ContentHelper
       Array(fallback_keys).map { |k| ns_image(k) }
     end
   end
+
+  # Sections edited as a photo album — one SectionPhoto per image, each with
+  # its own caption — instead of the plain multi-image gallery field.
+  SECTION_PHOTO_ALBUMS = %w[the_clinic/clinic_space].freeze
+
+  def sec_photo_album?(section)
+    SECTION_PHOTO_ALBUMS.include?("#{section.page}/#{section.kind}")
+  end
+
+  AlbumPhoto = Struct.new(:url, :caption)
+
+  # Ordered album photos (url + locale caption) for a section. Falls back to
+  # the given static keys and captions (parallel arrays) when no photo is
+  # attached, so the page renders unchanged before any upload.
+  def sec_photos(page, kind, fallback_keys = [], fallback_captions = [], width: 1200)
+    section = sec(page, kind)
+    photos = section.persisted? ? section.photos.reject(&:marked_for_destruction?) : []
+    photos = photos.select { |p| p.image.attached? }
+    if photos.any?
+      photos.map { |p| AlbumPhoto.new(opt_url(p.image, width: width), p.caption) }
+    else
+      Array(fallback_keys).each_with_index.map { |k, i| AlbumPhoto.new(ns_image(k), fallback_captions[i].to_s) }
+    end
+  end
 end

@@ -42,6 +42,17 @@ RSpec.describe "Client audit — Oct 2026", type: :request do
       expect(response.body).to include('<a class="arrowlink" href="/stories">All patient stories →</a>')
     end
 
+    it "hides the principle card label when its CMS field is blank (no English fallback)" do
+      section = Section.create!(page: "home", kind: "home_principles", label: "Three principles")
+      section.contents.create!(key: "p1_num", value_en: "01 — Principle", value_ar: "")
+      section.contents.create!(key: "p2_num", value_en: "", value_ar: "")
+      get "/"
+      expect(response.body.scan('<span class="num">').size).to eq(1)
+      expect(response.body).to include('<span class="num">01 — Principle</span>')
+      get "/ar"
+      expect(response.body).not_to include('<span class="num">')
+    end
+
     it "promotes the protocols label to h2 and demotes the sentence to h3" do
       expect(response.body).to include('<h2 class="eyebrow">')
       expect(response.body).to include('<h3 class="sec-title"')

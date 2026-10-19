@@ -37,6 +37,17 @@ module ContentSeed
         nil
       end : []
 
+      # Photo albums (Section#photos): file + caption per photo, in order.
+      photo_files = section.photos.filter_map.with_index do |photo, i|
+        next unless photo.image.attached?
+        name = "#{section.page}__#{section.kind}__photo#{i}__#{photo.image.filename}"
+        File.binwrite(files_dir.join(name), photo.image.download)
+        { file: name, caption_en: photo.caption_en, caption_ar: photo.caption_ar }
+      rescue ActiveStorage::FileNotFoundError
+        warn "SKIP missing album photo #{i}: #{section.page}/#{section.kind}"
+        nil
+      end
+
       # Per-card slot images (card_image_1..6, see Section) — pillar photos,
       # flip-card back faces, and the like.
       card_files = (1..6).each_with_object({}) do |i, h|
@@ -54,7 +65,7 @@ module ContentSeed
       {
         page: section.page, kind: section.kind, label: section.label,
         position: section.position, settings: section.settings, items: section.items,
-        image: image_file, gallery: gallery_files, cards: card_files,
+        image: image_file, gallery: gallery_files, photos: photo_files, cards: card_files,
         contents: section.contents.map do |c|
           c.slice("key", "label", "hint", "value_ar", "value_en", "content_type", "position")
         end
@@ -94,6 +105,17 @@ module ContentSeed
          s["gallery"].all? { |f| File.exist?(files_dir.join(f)) }
         s["gallery"].each do |f|
           section.gallery.attach(io: File.open(files_dir.join(f)), filename: f.split("__").last)
+        end
+      end
+      # Album photos (with captions) only when the album is still empty.
+      photos = Array(s["photos"])
+      if photos.any? && !section.photos.exists? &&
+         photos.all? { |p| File.exist?(files_dir.join(p["file"])) }
+        photos.each_with_index do |p, i|
+          section.photos.create!(
+            image: { io: File.open(files_dir.join(p["file"])), filename: p["file"].split("__").last },
+            caption_en: p["caption_en"], caption_ar: p["caption_ar"], position: i
+          )
         end
       end
       (s["cards"] || {}).each do |i, f|

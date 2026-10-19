@@ -43,6 +43,62 @@
             </div>
             <p class="hint" style="margin-top:10px">Each slot replaces the image on that one card. Leave a slot empty to keep its current image.</p>
           </div>
+        <% elsif sec_photo_album?(@section) %>
+          <%# Photo album: one card per photo with its own caption + Delete;
+              photos are added one at a time with their caption. %>
+          <div style="margin-top:16px">
+            <div class="ns-eyebrow" style="margin-bottom:10px">Photos (<%= @section.photos.size %>) — each with its own caption</div>
+            <% if @section.photos.any? %>
+              <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+                <%= form.fields_for :photos do |pf| %>
+                  <% photo = pf.object %>
+                  <div class="ns-card ns-album-photo" style="padding:14px;display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start">
+                    <div>
+                      <% if photo.image.attached? %>
+                        <%= image_tag url_for(photo.image), alt: "", style: "width:120px;height:86px;object-fit:cover;border-radius:6px;border:1px solid var(--ns-border)" %>
+                      <% else %>
+                        <div style="width:120px;height:86px;border-radius:6px;border:1px dashed var(--ns-border);display:grid;place-items:center;font-size:11px;color:var(--ns-muted-2)">No image</div>
+                      <% end %>
+                      <div style="font-size:11px;color:var(--ns-muted-2);margin-top:6px">Photo <%= pf.index + 1 %></div>
+                    </div>
+                    <div>
+                      <%= pf.hidden_field :id %>
+                      <div class="ns-pair">
+                        <div class="en">
+                          <span class="lang-lbl">Caption · English</span>
+                          <%= pf.text_field :caption_en, class: "ns-input", data: { lang: "en" } %>
+                        </div>
+                        <div class="ar">
+                          <span class="lang-lbl">التعليق · Arabic</span>
+                          <%= pf.text_field :caption_ar, dir: "rtl", class: "ns-input", data: { lang: "ar" } %>
+                        </div>
+                      </div>
+                      <div style="margin-top:10px">
+                        <%# The button belongs to a tiny DELETE form rendered after the
+                            editor form (forms cannot nest). %>
+                        <button type="submit" form="delete-photo-<%= photo.id %>" class="ns-btn danger small">Delete photo</button>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+            <div class="ns-card" style="padding:14px">
+              <span class="ns-field-title" style="display:block;margin-bottom:6px">Add a photo</span>
+              <%= render "admin/shared/image_field", name: "section[new_photo][image]", current: nil, size: "sm",
+                         hint: "One photo at a time, with its caption. It is appended after the current photos on Save." %>
+              <div class="ns-pair" style="margin-top:10px">
+                <div class="en">
+                  <span class="lang-lbl">Caption · English</span>
+                  <%= text_field_tag "section[new_photo][caption_en]", params.dig(:section, :new_photo, :caption_en), class: "ns-input" %>
+                </div>
+                <div class="ar">
+                  <span class="lang-lbl">التعليق · Arabic</span>
+                  <%= text_field_tag "section[new_photo][caption_ar]", params.dig(:section, :new_photo, :caption_ar), dir: "rtl", class: "ns-input" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% elsif @section.gallery.attached? %>
           <div style="margin-top:16px">
             <div class="ns-eyebrow" style="margin-bottom:10px">Gallery (<%= @section.gallery.count %> images)</div>
@@ -124,4 +180,14 @@
     <a href="<%= root_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View this page</a>
     <%= form.submit "Save & publish", class: "ns-btn primary" %>
   </div>
+<% end %>
+
+<%# Per-photo DELETE forms for album sections — outside the editor form; the
+    "Delete photo" buttons above point at them via form="…". %>
+<% if sec_photo_album?(@section) %>
+  <% @section.photos.select(&:persisted?).each do |photo| %>
+    <%= form_with url: admin_section_photo_path(@section, photo), method: :delete, id: "delete-photo-#{photo.id}",
+                  data: { turbo_confirm: "Delete this photo? This cannot be undone." } do %>
+    <% end %>
+  <% end %>
 <% end %>

@@ -39,24 +39,33 @@
     Client audit (Oct 2026): the label is the section h2 and the photos glide
     across in a seamless loop (pauses on hover, reverses for RTL, static under
     reduced motion). Every image attached to the clinic_space gallery in the
-    dashboard is shown, in order, so editors can keep adding photos; captions
-    1–5 come from shot_N_caption, later photos have none. Falls back to the
-    five launch shots when nothing is attached. %>
+    dashboard is shown, in order, so editors can keep adding photos. Every
+    photo carries its own caption (SectionPhoto), hidden until the viewer
+    taps the photo's "i" button. Falls back to the five launch shots when
+    nothing is attached. %>
 <section class="section section--surface" data-controller="reveal">
   <div class="section-inner">
     <h2 class="sec-title-md reveal" data-reveal-target="item"><%= sec_text("the_clinic", "clinic_space", "eyebrow").presence || "The Space" %></h2>
   </div>
-  <% clinic_space_imgs = sec_gallery_urls("the_clinic", "clinic_space", [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5], width: 1000) %>
-  <% caption_defaults = ["The lounge", "In the detail", "Device room", "Treatment room", "The entrance"] %>
+  <% clinic_space_photos = sec_photos("the_clinic", "clinic_space",
+                                      [:clinic_shot_1, :clinic_shot_2, :clinic_shot_3, :clinic_shot_4, :clinic_shot_5],
+                                      ["The lounge", "In the detail", "Device room", "Treatment room", "The entrance"], width: 1000) %>
+  <% cap_label = I18n.locale == :ar ? "عرض التعليق" : "Show caption" %>
   <div class="photo-marquee reveal d1" data-reveal-target="item" style="margin-top:var(--space-block)">
     <div class="photo-marquee-track">
       <% 2.times do |copy| %>
         <div class="photo-marquee-seg"<%= ' aria-hidden="true"'.html_safe if copy == 1 %>>
-          <% clinic_space_imgs.each_with_index do |src, i| %>
-            <% caption = sec_text("the_clinic", "clinic_space", "shot_#{i + 1}_caption").presence || caption_defaults[i] %>
-            <figure class="shot pm-shot">
-              <%= image_tag src, alt: caption.to_s, loading: "lazy", decoding: "async" %>
-              <% if caption.present? %><figcaption><%= caption %></figcaption><% end %>
+          <% clinic_space_photos.each do |photo| %>
+            <% caption = photo.caption.to_s %>
+            <figure class="shot pm-shot"<%= ' data-controller="shotcap"'.html_safe if caption.present? %>>
+              <%= image_tag photo.url, alt: caption, loading: "lazy", decoding: "async" %>
+              <% if caption.present? %>
+                <button type="button" class="pm-cap-btn" aria-expanded="false" aria-label="<%= cap_label %>"
+                        data-action="shotcap#toggle" data-shotcap-target="button"<%= ' tabindex="-1"'.html_safe if copy == 1 %>>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+                </button>
+                <figcaption class="pm-cap"><%= caption %></figcaption>
+              <% end %>
             </figure>
           <% end %>
         </div>

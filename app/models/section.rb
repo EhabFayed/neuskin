@@ -7,6 +7,11 @@ class Section < ApplicationRecord
 
   has_one_attached  :image
   has_many_attached :gallery
+  # Photo album with a caption per photo (The Clinic → "The Space"). Which
+  # sections use it: ContentHelper::SECTION_PHOTO_ALBUMS.
+  has_many :photos, -> { order(:position, :id) },
+           class_name: "SectionPhoto", dependent: :destroy, inverse_of: :section
+  accepts_nested_attributes_for :photos
   # Per-card image slots for flip-card sections (see ContentHelper::SECTION_CARD_SLOTS):
   # slot N renders on card N, so editors always know which image lands where.
   (1..6).each { |i| has_one_attached :"card_image_#{i}" }

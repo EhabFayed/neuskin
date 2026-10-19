@@ -30,7 +30,9 @@ module Admin
       # the same content records so each value maps to the right key.
       @__preview_section = @section
       assign_items
-      @section.assign_attributes(section_params.except(:image))
+      # Caption edits on existing album photos preview live; a not-yet-saved
+      # new photo (file upload) is left out of the preview.
+      @section.assign_attributes(section_params.except(:image, :new_photo))
 
       template = PAGE_TEMPLATES[@section.page]
       return head(:not_found) unless template
@@ -43,9 +45,10 @@ module Admin
     def update
       # assign_items returns false (and records an error) on invalid JSON;
       # bail to a single render so we never double-render.
-      if assign_items && @section.update(section_params)
+      if assign_items && valid_new_photo? && @section.update(section_params.except(:new_photo))
         purge_flagged_images
         attach_gallery_additions
+        add_album_photo
         redirect_to admin_section_path(@section), notice: "Saved."
       else
         render :show, status: :unprocessable_entity
@@ -56,6 +59,30 @@ module Admin
 
     def set_section
       @section = Section.find(params[:id])
+    end
+
+    # "Add a photo" on an album section: one file plus its captions, appended
+    # after the current photos. Captions typed without a file are an error
+    # rather than silently dropped.
+    def new_photo_params
+      params.dig(:section, :new_photo) || {}
+    end
+
+    def valid_new_photo?
+      np = new_photo_params
+      return true if np[:image].present? || np.values_at(:caption_en, :caption_ar).all?(&:blank?)
+
+      @section.errors.add(:base, "Choose an image file to add a photo (captions alone are not saved).")
+      false
+    end
+
+    def add_album_photo
+      np = new_photo_params
+      return if np[:image].blank?
+
+      next_position = (@section.photos.maximum(:position) || -1) + 1
+      @section.photos.create!(image: np[:image], caption_en: np[:caption_en].to_s,
+                              caption_ar: np[:caption_ar].to_s, position: next_position)
     end
 
     # "Add images" under a gallery appends to the current set (the plain
@@ -138,7 +165,9 @@ module Admin
         contents_attributes: [
           :id, :key, :label, :hint, :value_ar, :value_en,
           :content_type, :position, :_destroy
-        ]
+        ],
+        photos_attributes: [ :id, :caption_en, :caption_ar, :position ],
+        new_photo: [ :image, :caption_en, :caption_ar ]
       )
     end
   end

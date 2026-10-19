@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_19_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_19_130000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -169,6 +169,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_19_120000) do
     t.index ["slug"], name: "index_protocols_on_slug", unique: true
   end
 
+  create_table "section_photos", force: :cascade do |t|
+    t.bigint "section_id", null: false
+    t.integer "position", default: 0, null: false
+    t.text "caption_en"
+    t.text "caption_ar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id", "position"], name: "index_section_photos_on_section_id_and_position"
+    t.index ["section_id"], name: "index_section_photos_on_section_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "page", null: false
     t.string "kind", null: false
@@ -258,4 +269,5 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_19_120000) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "section_photos", "sections"
 end

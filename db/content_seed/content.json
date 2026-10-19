@@ -1557,7 +1557,7 @@
         "key": "p1_num",
         "label": "Principle 1 — number/label",
         "hint": null,
-        "value_ar": "٠١",
+        "value_ar": "",
         "value_en": "01 — Principle",
         "content_type": "text",
         "position": 2
@@ -1584,7 +1584,7 @@
         "key": "p2_num",
         "label": "Principle 2 — number/label",
         "hint": null,
-        "value_ar": "٠٢",
+        "value_ar": "",
         "value_en": "02 — Principle",
         "content_type": "text",
         "position": 5
@@ -1611,7 +1611,7 @@
         "key": "p3_num",
         "label": "Principle 3 — number/label",
         "hint": null,
-        "value_ar": "٠٣",
+        "value_ar": "",
         "value_en": "03 — Principle",
         "content_type": "text",
         "position": 8
@@ -3772,13 +3772,7 @@
     "settings": {},
     "items": [],
     "image": null,
-    "gallery": [
-      "the_clinic__clinic_space__gallery0__clinic-1.webp",
-      "the_clinic__clinic_space__gallery1__clinic-2.webp",
-      "the_clinic__clinic_space__gallery2__clinic-3.webp",
-      "the_clinic__clinic_space__gallery3__clinic-4.webp",
-      "the_clinic__clinic_space__gallery4__clinic-5.webp"
-    ],
+    "gallery": [],
     "cards": {},
     "contents": [
       {
@@ -3789,51 +3783,33 @@
         "value_en": "The Space",
         "content_type": "text",
         "position": 0
+      }
+    ],
+    "photos": [
+      {
+        "file": "the_clinic__clinic_space__gallery0__clinic-1.webp",
+        "caption_en": "The lounge",
+        "caption_ar": "صالة الاستقبال"
       },
       {
-        "key": "shot_1_caption",
-        "label": "Photo 1 caption (lounge)",
-        "hint": null,
-        "value_ar": "صالة الاستقبال",
-        "value_en": "The lounge",
-        "content_type": "text",
-        "position": 1
+        "file": "the_clinic__clinic_space__gallery1__clinic-2.webp",
+        "caption_en": "In the detail",
+        "caption_ar": "في التفاصيل"
       },
       {
-        "key": "shot_2_caption",
-        "label": "Photo 2 caption (diptyque)",
-        "hint": null,
-        "value_ar": "في التفاصيل",
-        "value_en": "In the detail",
-        "content_type": "text",
-        "position": 2
+        "file": "the_clinic__clinic_space__gallery2__clinic-3.webp",
+        "caption_en": "Device room",
+        "caption_ar": "غرفة الأجهزة"
       },
       {
-        "key": "shot_3_caption",
-        "label": "Photo 3 caption (device room)",
-        "hint": null,
-        "value_ar": "غرفة الأجهزة",
-        "value_en": "Device room",
-        "content_type": "text",
-        "position": 3
+        "file": "the_clinic__clinic_space__gallery3__clinic-4.webp",
+        "caption_en": "Treatment room",
+        "caption_ar": "غرفة الإجراءات"
       },
       {
-        "key": "shot_4_caption",
-        "label": "Photo 4 caption (treatment room)",
-        "hint": null,
-        "value_ar": "غرفة الإجراءات",
-        "value_en": "Treatment room",
-        "content_type": "text",
-        "position": 4
-      },
-      {
-        "key": "shot_5_caption",
-        "label": "Photo 5 caption (entrance)",
-        "hint": null,
-        "value_ar": "المدخل",
-        "value_en": "The entrance",
-        "content_type": "text",
-        "position": 5
+        "file": "the_clinic__clinic_space__gallery4__clinic-5.webp",
+        "caption_en": "The entrance",
+        "caption_ar": "المدخل"
       }
     ]
   },

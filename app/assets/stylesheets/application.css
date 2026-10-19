@@ -1860,6 +1860,15 @@ h2.eyebrow { font-family: var(--sans); font-weight: 500; -webkit-text-stroke: 0;
 .photo-marquee:hover .photo-marquee-track { animation-play-state: paused; }
 .photo-marquee-seg { display: flex; flex: none; gap: 16px; padding-inline-end: 16px; }
 .pm-shot { flex: none; width: clamp(240px, 32vw, 460px); aspect-ratio: 4 / 3; }
+/* Per-photo caption toggle: the caption stays hidden until the "i" button is
+   pressed (figure.is-open, set by shotcap_controller). The button sits at the
+   bottom-end corner above the gradient; the caption slides in at bottom-start. */
+.pm-shot .pm-cap { opacity: 0; transform: translateY(8px); transition: opacity .35s var(--ease-soft), transform .35s var(--ease-soft); pointer-events: none; max-width: calc(100% - 80px); }
+.pm-shot.is-open .pm-cap { opacity: 1; transform: none; }
+.pm-cap-btn { position: absolute; inset-inline-end: 14px; bottom: 14px; z-index: 2; width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid rgba(244,236,232,.45); background: rgba(20,16,17,.55); color: rgba(244,236,232,.95); cursor: pointer; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); transition: background .3s, border-color .3s, transform .3s var(--ease-soft); }
+.pm-cap-btn:hover, .pm-cap-btn:focus-visible { background: rgba(20,16,17,.8); border-color: rgba(244,236,232,.8); outline: none; }
+.pm-cap-btn:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+.pm-shot.is-open .pm-cap-btn { background: var(--accent); border-color: var(--accent); color: #141011; transform: rotate(180deg); }
 [dir="rtl"] .photo-marquee-track { animation-name: ns-marquee-rtl; }
 @media (prefers-reduced-motion: reduce) {
   .photo-marquee { overflow-x: auto; }

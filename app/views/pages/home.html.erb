@@ -68,13 +68,15 @@
                   [3, "03 — Principle", "Measured",    "Outcomes documented quarterly. No guesswork, no drama — only what the skin shows, recorded and reviewed."]] %>
     <div class="ns-expand reveal d1" data-reveal-target="item">
       <% pillars.each do |i, num_default, title_default, body_default| %>
-        <% p_num   = sec_text("home", "home_principles", "p#{i}_num").presence   || num_default %>
+        <%# Card label ("01 — Principle") is CMS-only: a blank field hides it
+            (client audit, Oct 2026: the Arabic "مبدأ" label is removed). %>
+        <% p_num   = sec_text("home", "home_principles", "p#{i}_num") %>
         <% p_title = sec_text("home", "home_principles", "p#{i}_title").presence || title_default %>
         <% p_body  = sec_text("home", "home_principles", "p#{i}_body").presence  || body_default %>
         <div class="ns-panel">
           <img src="<%= sec_card_image("home", "home_principles", i, pillar_defaults[i - 1]) %>" alt="" loading="lazy" decoding="async">
           <div class="ns-panel-copy">
-            <span class="num"><%= p_num %></span>
+            <% if p_num.present? %><span class="num"><%= p_num %></span><% end %>
             <h3><%= p_title %></h3>
             <p><%= p_body %></p>
           </div>
