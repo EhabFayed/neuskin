@@ -40,12 +40,12 @@
     <!-- End Google Tag Manager -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%# Self-hosted site fonts only (the deck's Bodoni hairlines were too faint
-        on the card): Google Sans Flex for the card, Hanken Grotesk for the rest. %>
-    <% if ar? %>
-      <%= preload_link_tag asset_path("DroidKufi-Regular.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
-    <% end %>
-    <%= preload_link_tag asset_path("GoogleSansFlex-Latin.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+    <%# Self-hosted IBM Plex Sans Arabic for the whole page (the deck's Bodoni
+        hairlines were too faint on the card). Preload the subset this
+        language paints first. %>
+    <% subset = ar? ? "arabic" : "latin" %>
+    <%= preload_link_tag asset_path("IBMPlexSansArabic-400-#{subset}.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+    <%= preload_link_tag asset_path("IBMPlexSansArabic-600-#{subset}.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
     <%= preload_link_tag asset_path("promo/envelope-closed.webp"), as: "image" %>
     <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "promo", "data-turbo-track": "reload" %>

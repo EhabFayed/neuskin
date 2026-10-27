@@ -19,8 +19,10 @@
   --g-taupe: #a89581;
   --g-brown: #5a4037;
   --g-espresso: #382923;
-  --g-serif: "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
-  --g-sans: "Hanken Grotesk", "Google Sans Flex", -apple-system, "Segoe UI", system-ui, sans-serif;
+  /* IBM Plex Sans Arabic for the whole page, both languages (its Latin is
+     IBM Plex Sans), with the site faces as fallback. */
+  --g-serif: "IBM Plex Sans Arabic", "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --g-sans: "IBM Plex Sans Arabic", "Hanken Grotesk", "Google Sans Flex", -apple-system, "Segoe UI", system-ui, sans-serif;
 
   margin: 0;
   min-height: 100vh;
@@ -35,7 +37,7 @@
   display: flex;
   justify-content: center;
 }
-html[dir="rtl"] .promo-body { --g-sans: "Droid Arabic Kufi", "Hanken Grotesk", Tahoma, system-ui, sans-serif; }
+html[dir="rtl"] .promo-body { --g-sans: "IBM Plex Sans Arabic", "Droid Arabic Kufi", Tahoma, system-ui, sans-serif; }
 
 .gift-main {
   width: 100%;
@@ -165,8 +167,8 @@ html[dir="rtl"] .gift-sub { font-family: var(--g-sans); font-size: 3.6cqw; }
   position: absolute;
   left: 49.6%;
   top: 63.5%;
-  width: 22cqw;
-  height: 22cqw;
+  width: 26cqw;
+  height: 26cqw;
   transform: translate(-50%, -50%);
   border: 0;
   background: transparent;
@@ -179,14 +181,55 @@ html[dir="rtl"] .gift-sub { font-family: var(--g-sans); font-size: 3.6cqw; }
 }
 .gift-seal:focus-visible { outline: 2px solid var(--g-ivory); outline-offset: 4px; border-radius: 50%; }
 .is-open .gift-seal { opacity: 0; pointer-events: none; }
-.gift-ring, .gift-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; }
+.gift-ring, .gift-wax { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; }
 .gift-ring {
   width: 60%; height: 60%;
   border: 2px solid var(--g-ivory);
   animation: gift-tap 2.6s cubic-bezier(.16, 1, .3, 1) infinite;
 }
 .gift-ring--2 { animation-delay: 1.3s; }
-.gift-dot { width: 17%; height: 17%; background: var(--g-ivory); box-shadow: 0 6px 18px rgba(56, 41, 35, .35); }
+/* The wax seal: a pressed mauve disc (site accent) with the NS monogram
+   embossed in it. The slightly uneven radius and the inset shadows read as
+   hand-poured wax; the mark is the logo's alpha used as a CSS mask. */
+.gift-wax {
+  --wax: #9a7f83;        /* brand mauve, as wax */
+  --wax-deep: #6b4f54;
+  --wax-light: #b89ba0;
+  width: 64%;
+  height: 64%;
+  border-radius: 49% 51% 50% 50% / 51% 49% 51% 49%;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 240, 235, .55), transparent 42%),
+    radial-gradient(circle at 70% 78%, rgba(60, 35, 40, .35), transparent 50%),
+    radial-gradient(circle at 50% 50%, var(--wax) 0 60%, var(--wax-deep) 100%);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 235, 230, .18),   /* lip */
+    inset 0 2px 4px rgba(255, 240, 235, .35),     /* top light */
+    inset 0 -3px 6px rgba(50, 28, 32, .45),       /* lower pool */
+    0 2px 2px rgba(40, 22, 25, .25),
+    0 10px 22px -6px rgba(40, 22, 25, .55);       /* onto the envelope */
+}
+/* a rim where the stamp pressed the wax outwards */
+.gift-wax::before {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 240, 235, .35),
+    inset 0 -1px 2px rgba(50, 28, 32, .35),
+    0 0 0 1px rgba(50, 28, 32, .12);
+}
+/* the monogram, debossed into the wax */
+.gift-wax-mark {
+  position: absolute;
+  inset: 24%;
+  background: linear-gradient(180deg, #ead9d6, #d7c0bf);
+  -webkit-mask: url("promo/seal-mark.png") center / contain no-repeat;
+  mask: url("promo/seal-mark.png") center / contain no-repeat;
+  filter: drop-shadow(0 1px 0 rgba(50, 28, 32, .45)) drop-shadow(0 -1px 0 rgba(255, 240, 235, .25));
+}
+.gift-seal--static { pointer-events: none; }
 @keyframes gift-tap {
   0%   { transform: translate(-50%, -50%) scale(.45); opacity: .95; }
   100% { transform: translate(-50%, -50%) scale(1.35); opacity: 0; }

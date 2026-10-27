@@ -35,7 +35,8 @@
         <%# The seal: tap target + pulsing rings (deck's TapIndicator) %>
         <button type="button" class="gift-seal" data-action="envelope#open" data-envelope-target="seal"
                 aria-label="<%= t("promo.open_aria") %>" data-opened-label="<%= t("promo.opened_aria") %>">
-          <span class="gift-ring"></span><span class="gift-ring gift-ring--2"></span><span class="gift-dot"></span>
+          <span class="gift-ring"></span><span class="gift-ring gift-ring--2"></span>
+          <span class="gift-wax"><span class="gift-wax-mark"></span></span>
         </button>
       </div>
     </div>
@@ -52,6 +53,7 @@
     <div class="gift-stage gift-stage--empty">
       <div class="gift-scene">
         <%= image_tag "promo/envelope-closed.webp", class: "gift-art gift-art--closed", alt: t("promo.art_alt_closed"), width: 1536, height: 1024 %>
+        <span class="gift-seal gift-seal--static" aria-hidden="true"><span class="gift-wax"><span class="gift-wax-mark"></span></span></span>
       </div>
     </div>
     <div class="gift-empty">
