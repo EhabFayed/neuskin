@@ -34,10 +34,27 @@
   </div>
 
   <div class="ns-card" style="margin-bottom:14px">
-    <span class="ns-field-title">Placement</span>
+    <span class="ns-field-title">Where it shows</span>
+    <label style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <%= form.check_box :on_faq_page %> On the FAQ page (in its group below)
+    </label>
+    <span class="lang-lbl">Also on these pages</span>
+    <%= hidden_field_tag "faq[placements][]", "" %>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:6px">
+      <% Faq.placement_options.each do |label, key| %>
+        <label style="display:flex;align-items:center;gap:6px;font-size:13.5px">
+          <%= check_box_tag "faq[placements][]", key, @faq.placed_on?(key), id: "faq_placement_#{key.parameterize}" %> <%= label %>
+        </label>
+      <% end %>
+    </div>
+    <p class="hint" style="margin-top:10px">A question can be on the FAQ page, on one or more protocol pages, or both. The protocol page lists its questions in position order.</p>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">FAQ page group &amp; order</span>
     <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
       <label style="display:block">
-        <span class="lang-lbl">Group</span><br>
+        <span class="lang-lbl">Group (FAQ page)</span><br>
         <%= form.select :category, Faq.category.values.map { |v| [I18n.t("faq.groups.#{v}", locale: :en), v] }, {}, class: "ns-input" %>
       </label>
       <label style="display:block">

@@ -5,6 +5,10 @@
 <% content_for :title, p.meta_title.presence || "#{p.name} — #{t('seo.site_name')}" %>
 <% content_for :meta_description, p.meta_description.presence || p.promise.presence || p.who_for %>
 
+<%# Shared copy on every protocol page (Pages → "Protocol page (shared copy)",
+    section protocol/template); the locale string is the fallback. %>
+<% shared = ->(key) { sec_text("protocol", "template", key).presence || t("protocol_page.#{key}") } %>
+
 <%# Hero image = the protocol's dashboard image (Admin → Protocols), launch
     static asset as fallback — see protocol_image_url. %>
 <% for_who = p.who_for.to_s.split(/[.\n]/).first.to_s.strip.presence || t("protocol_page.by_assessment") %>
@@ -18,22 +22,32 @@
     <span class="eyebrow reveal" data-reveal-target="item"><%= p.meta %></span>
     <h1><span data-reveal="mask" data-reveal-delay="120"><span><bdi><%= p.name %><% if p.trademark %><span class="tm">™</span><% end %></bdi></span></span></h1>
     <p class="lead reveal d2" data-reveal-target="item"><%= p.promise %></p>
+    <%# Rows under the title: the protocol's own list (Admin → Protocols →
+        "Hero rows"), or the original three when the list is empty. %>
+    <% hero_rows = p.specs_for_locale %>
     <ul class="specs reveal d3" data-reveal-target="item">
-      <li><span class="k"><%= t("protocol_page.duration") %></span><span class="v"><%= p.duration %></span></li>
-      <li><span class="k"><%= t("protocol_page.format") %></span><span class="v"><%= t("protocol_page.format_value") %></span></li>
-      <li><span class="k"><%= t("protocol_page.for") %></span><span class="v"><%= for_who %></span></li>
+      <% if hero_rows.any? %>
+        <% hero_rows.each do |label, value| %>
+          <li><span class="k"><%= label %></span><span class="v"><%= value %></span></li>
+        <% end %>
+      <% else %>
+        <li><span class="k"><%= t("protocol_page.duration") %></span><span class="v"><%= p.duration %></span></li>
+        <li><span class="k"><%= t("protocol_page.format") %></span><span class="v"><%= shared.(:format_value) %></span></li>
+        <li><span class="k"><%= t("protocol_page.for") %></span><span class="v"><%= for_who %></span></li>
+      <% end %>
     </ul>
     <p class="reveal d4" data-reveal-target="item"><%= link_to t("protocol_page.request_plan"), inquire_path(codeword: p.codeword, persona: p.persona), class: "btn" %></p>
   </div>
 </section>
 
 <%# 2 · Who it's for ---- %>
-<% signs = t("protocol_page.signs").each_with_index.map { |line, i| [format("%02d", i + 1), line] } %>
+<% signs = p.signs.each_with_index.map { |line, i| [format("%02d", i + 1), line] } %>
 <section class="section section--surface proto-detail" data-controller="reveal">
   <div class="section-inner split">
     <div class="split-text reveal" data-reveal-target="item">
       <span class="eyebrow"><%= t("protocol_page.who_for") %></span>
-      <p class="lead"><%= p.who_for %></p>
+      <%# h2 for the document outline / SEO; styled as the lead paragraph. %>
+      <h2 class="lead"><%= p.who_for %></h2>
     </div>
     <div class="split-text">
       <ul class="rows">
@@ -41,7 +55,7 @@
           <li data-reveal="left" data-reveal-delay="<%= 120 + i * 140 %>"><span class="n"><%= n %></span><span class="t"><%= t %></span></li>
         <% end %>
       </ul>
-      <p class="sign" style="font-style:italic;margin-top:24px" data-reveal="fade" data-reveal-delay="<%= 120 + signs.size * 140 %>"><%= t("protocol_page.not_for_all") %></p>
+      <p class="sign" style="font-style:italic;margin-top:24px" data-reveal="fade" data-reveal-delay="<%= 120 + signs.size * 140 %>"><%= shared.(:not_for_all) %></p>
     </div>
   </div>
 </section>
@@ -64,9 +78,55 @@
       <% end %>
     </div>
     <% end %>
-    <p class="note" data-reveal="fade" data-reveal-delay="<%= 160 + p.stages.size * 150 %>" style="margin-top:46px"><%= t("protocol_page.scope_note") %></p>
+    <p class="note" data-reveal="fade" data-reveal-delay="<%= 160 + p.stages.size * 150 %>" style="margin-top:46px"><%= shared.(:scope_note) %></p>
   </div>
 </section>
+
+<%# 3b · Why choose … — per-protocol heading + numbered reasons (Admin →
+      Protocols). Hidden when the protocol has no points in this language. %>
+<% why = p.why_points_for_locale %>
+<% if why.any? %>
+<section class="section section--surface proto-detail proto-why" data-controller="reveal">
+  <div class="section-inner split">
+    <div class="split-text reveal" data-reveal-target="item">
+      <h2 class="proto-why-title"><%= p.why_title.presence || t("protocol_page.why_default", name: p.name) %></h2>
+    </div>
+    <div class="split-text">
+      <ul class="rows">
+        <% why.each_with_index do |point, i| %>
+          <% label, rest = point.split(/[:：]/, 2) if point =~ /\A.{2,60}?[:：]\s/ %>
+          <li data-reveal="left" data-reveal-delay="<%= 120 + i * 110 %>">
+            <span class="n"><%= format("%02d", i + 1) %></span>
+            <span class="t"><% if rest %><strong><%= label.strip %></strong>: <%= rest.strip %><% else %><%= point %><% end %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<%# 3c · Frequently asked — questions placed on this protocol in Admin → FAQ
+      ("Where it shows"); heading + subtitle from the shared protocol copy. %>
+<% page_faqs = Faq.placed_on("protocol:#{p.slug}").to_a %>
+<% if page_faqs.any? %>
+<section class="section proto-detail proto-faq" data-controller="reveal">
+  <div class="section-inner">
+    <div class="sec-head reveal" data-reveal-target="item">
+      <h2><%= shared.(:faq) %></h2>
+      <h3 class="proto-faq-sub"><%= shared.(:faq_subtitle) %></h3>
+    </div>
+    <div class="faq-group">
+      <% page_faqs.each_with_index do |faq, i| %>
+        <details class="faq" data-reveal="up" data-reveal-delay="<%= 140 + i * 110 %>">
+          <summary><%= faq.question %> <span class="sign">+</span></summary>
+          <div class="faq-a"><%= faq.answer %></div>
+        </details>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>
 
 <%# 4 · What's not included ---- %>
 <% exclusions = p.excludes.to_s.split(/[.;\n]/).map(&:strip).reject(&:blank?) %>
@@ -75,7 +135,7 @@
   <div class="section-inner split">
     <div class="split-text">
       <span class="eyebrow" data-reveal="fade"><%= t("protocol_page.excludes") %></span>
-      <h2 data-reveal="mask" data-reveal-delay="120"><span><%= t("protocol_page.honesty") %></span></h2>
+      <h2 data-reveal="mask" data-reveal-delay="120"><span><%= shared.(:honesty) %></span></h2>
     </div>
     <div class="split-text">
       <ul class="exclude">
@@ -98,7 +158,9 @@
     <div class="ns-expand reveal d1" data-reveal-target="item">
       <% journey_imgs = ["site/space/waiting-lounge.webp", "site/space/consultation.webp", "site/space/private-suite.webp", "site/space/treatment.webp"] %>
       <% t("protocol_page.journey_steps").each_with_index do |step, i| %>
-        <% num, title, body, img = step[:num], step[:title], step[:body], journey_imgs[i] %>
+        <% num, img = step[:num], journey_imgs[i] %>
+        <% title = sec_text("protocol", "template", "journey_#{i + 1}_title").presence || step[:title] %>
+        <% body  = sec_text("protocol", "template", "journey_#{i + 1}_body").presence  || step[:body] %>
         <div class="ns-panel">
           <%= image_tag img, alt: title, loading: "lazy" %>
           <div class="ns-panel-copy">
@@ -119,25 +181,6 @@
       <div class="pull-band">
         <blockquote data-reveal="scale"><%= p.loc(p.patient_story, "quote").presence || p.patient_story["quote_en"] %></blockquote>
         <p class="by" data-reveal="fade" data-reveal-delay="260">— <%= p.patient_story["initials"] %> · <%= p.name %> · <%= p.patient_story["year"] %></p>
-      </div>
-    </div>
-  </section>
-<% end %>
-
-<%# 7 · Frequently asked ---- %>
-<% if p.faqs.present? %>
-  <section class="section" data-controller="reveal">
-    <div class="section-inner">
-      <div class="sec-head reveal" data-reveal-target="item">
-        <span class="eyebrow"><%= t("protocol_page.faq") %></span>
-      </div>
-      <div class="faq-group">
-        <% p.faqs.each_with_index do |faq, i| %>
-          <details class="faq" data-reveal="up" data-reveal-delay="<%= 140 + i * 120 %>">
-            <summary><%= p.loc(faq, "q") %> <span class="sign">+</span></summary>
-            <div class="faq-a"><%= p.loc(faq, "a") %></div>
-          </details>
-        <% end %>
       </div>
     </div>
   </section>

@@ -528,6 +528,8 @@ en:
     codeword_html: "Send <strong>%{word}</strong> on WhatsApp for a private inquiry."
     begin: "Begin %{name}."
     send_button: "Send “%{word}”"
+    why_default: "Why choose %{name}?"
+    faq_subtitle: "Everything you need to know before booking"
     hub_filter: "I'm here because…"
     chips:
       all: "Show me everything"

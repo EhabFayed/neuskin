@@ -514,6 +514,15 @@ html[data-theme="light"] .orn { opacity: .17; }
 .split-media .cap .nm { font-family: var(--serif); font-size: 17px; color: var(--text-soft); }
 .split-media .cap .rl { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-rose); margin-block-start: 5px; }
 .split-text .eyebrow { margin-block-end: 26px; }
+/* Protocol "who it's for": an h2 for the outline, but it reads as the lead
+   paragraph — no display-heading white rim. */
+.proto-detail h2.lead { -webkit-text-stroke: 0; font-family: var(--sans); }
+/* Protocol "why choose": split heading + numbered reasons; labels in bold. */
+.proto-why .proto-why-title { font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.15; color: var(--text-bright); max-width: 16ch; }
+.proto-why .rows .t strong { font-weight: 600; color: var(--text-bright); }
+/* Protocol FAQ block: h2 + h3 subtitle above the accordion. */
+.proto-faq .sec-head h2 { margin-block-end: 10px; }
+.proto-faq .proto-faq-sub { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 400; color: var(--text-muted); margin: 0 0 8px; }
 .split-text .sign { font-size: 1.3rem; margin: 26px 0 0; }
 @media (max-width: 880px) { .split, .split.media-left { grid-template-columns: 1fr; gap: 40px; } }
 

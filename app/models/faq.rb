@@ -11,10 +11,27 @@ class Faq < ApplicationRecord
 
   default_scope { order(:position) }
 
+  # Where a question shows: the /faq page (on_faq_page, grouped by category)
+  # and/or other pages via placements, e.g. "protocol:neuskin-method". One
+  # question, written once, reused wherever it is placed.
+  scope :on_faq_page, -> { where(on_faq_page: true) }
+  scope :placed_on, ->(key) { where("placements @> ?", [ key.to_s ].to_json) }
+
+  # The pages a question can be placed on: [["The NeuSkin Method", "protocol:neuskin-method"], …]
+  def self.placement_options
+    Protocol.all.map { |p| [ "Protocol · #{p.name_en}", "protocol:#{p.slug}" ] }
+  end
+
+  def placements=(list)
+    super(Array(list).map(&:to_s).map(&:strip).reject(&:blank?).uniq)
+  end
+
+  def placed_on?(key) = placements.include?(key.to_s)
+
   # Groups in enum order, only those that have questions:
   # [[:before_you_come_in, [faq, …]], …]
   def self.grouped
-    by_cat = all.group_by { |f| f.category.to_s }
+    by_cat = on_faq_page.group_by { |f| f.category.to_s }
     category.values.filter_map { |cat| [ cat, by_cat[cat.to_s] ] if by_cat[cat.to_s] }
   end
 

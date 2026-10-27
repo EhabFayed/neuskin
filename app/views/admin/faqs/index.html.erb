@@ -3,7 +3,7 @@
 <% content_for :title, "FAQ" %>
 
 <div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px">
-  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">Questions on the public FAQ page, grouped as they appear.</p>
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">Every question, grouped by its FAQ-page group. Each one can show on the FAQ page, on protocol pages, or both — see “Where it shows” inside.</p>
   <%= link_to "Add question", new_admin_faq_path, class: "ns-btn primary" %>
 </div>
 
@@ -16,6 +16,9 @@
         <li>
           <%= link_to edit_admin_faq_path(faq), class: "ns-row" do %>
             <span class="r-title"><%= faq.question_en %></span>
+            <span class="r-meta" style="width:260px;text-align:right">
+              <%= faq.on_faq_page? ? "FAQ page" : "" %><%= " · " if faq.on_faq_page? && faq.placements.any? %><%= faq.placements.map { |k| k.split(":").last }.join(", ") %>
+            </span>
             <span class="r-meta" style="width:80px">#<%= faq.position %></span>
             <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
           <% end %>

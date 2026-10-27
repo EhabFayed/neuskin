@@ -19,6 +19,7 @@ module Admin
       "faq"             => "pages/faq",
       "legal"           => "pages/legal",
       "protocols_index" => "protocols/index",
+      "protocol"        => "protocols/show",
       "journal"         => "journal/index",
       "bridal"          => "bridal/show",
       "technologies"    => "pages/technologies",
@@ -116,6 +117,10 @@ module Admin
         @home_stories = Story.visible.highlighted.limit(3)
       when "protocols_index"
         @protocols = Protocol.all
+      when "protocol"
+        # The shared protocol copy previews on the first protocol; a stand-in
+        # keeps the preview working on a database with no protocols yet.
+        @protocol = Protocol.first || Protocol.new(slug: "preview", name_en: "A protocol", name_ar: "بروتوكول")
       when "bridal"
         @protocol = Protocol.find_by(slug: "brides-180")
         @lead = BridalLead.new

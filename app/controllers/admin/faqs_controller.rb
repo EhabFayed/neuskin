@@ -43,7 +43,7 @@ module Admin
 
     def faq_params
       params.require(:faq).permit(:question_ar, :question_en, :answer_ar, :answer_en,
-                                  :category, :position)
+                                  :category, :position, :on_faq_page, placements: [])
     end
   end
 end

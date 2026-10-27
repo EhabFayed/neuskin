@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_27_100000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_27_190000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -120,7 +120,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_27_100000) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "on_faq_page", default: true, null: false
+    t.jsonb "placements", default: [], null: false
     t.index ["category", "position"], name: "index_faqs_on_category_and_position"
+    t.index ["placements"], name: "index_faqs_on_placements", using: :gin
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -184,6 +187,12 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_27_100000) do
     t.string "meta_title_ar"
     t.text "meta_description_en"
     t.text "meta_description_ar"
+    t.text "signs_en"
+    t.text "signs_ar"
+    t.string "why_title_en"
+    t.string "why_title_ar"
+    t.jsonb "why_points", default: [], null: false
+    t.jsonb "specs", default: [], null: false
     t.index ["position"], name: "index_protocols_on_position"
     t.index ["slug"], name: "index_protocols_on_slug", unique: true
   end

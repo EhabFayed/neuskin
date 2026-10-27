@@ -1,0 +1,64 @@
+<%# Repeating rows editor for a protocol's JSONB list (timeline stages, FAQ).
+    locals: name (:stages / :faqs), rows (array of hashes), row_label ("Stage"),
+    fields: [[base_key, label, :text_field | :text_area], …] — each renders an
+    EN/AR pair (base_key_en / base_key_ar). Rows post as
+    protocol[name][index][key]; the controller orders by position, drops rows
+    flagged _destroy or left blank. JS: rows_controller (add / remove). %>
+<%
+  field_html = lambda do |idx, key, label, widget, row|
+    en, ar = "#{key}_en", "#{key}_ar"
+    tag_name = ->(k) { "protocol[#{name}][#{idx}][#{k}]" }
+    cls = widget == :text_area ? "ns-textarea" : "ns-input"
+    capture do %>
+      <div style="margin-bottom:10px">
+        <span class="lang-lbl" style="display:block;margin-bottom:4px"><%= label %></span>
+        <div class="ns-pair">
+          <div class="en">
+            <% if widget == :text_area %>
+              <%= text_area_tag tag_name.(en), row[en], class: cls, rows: 2, placeholder: "English" %>
+            <% else %>
+              <%= text_field_tag tag_name.(en), row[en], class: cls, placeholder: "English" %>
+            <% end %>
+          </div>
+          <div class="ar">
+            <% if widget == :text_area %>
+              <%= text_area_tag tag_name.(ar), row[ar], class: cls, rows: 2, dir: "rtl", placeholder: "العربية" %>
+            <% else %>
+              <%= text_field_tag tag_name.(ar), row[ar], class: cls, dir: "rtl", placeholder: "العربية" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end
+  end
+
+  row_html = lambda do |idx, row, n|
+    capture do %>
+      <div class="ns-card ns-row-item" data-rows-target="row" style="padding:16px;margin-bottom:10px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <strong style="font-size:13px;color:var(--ns-text-hi)"><%= row_label %> <span data-rows-target="number"><%= n %></span></strong>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ns-muted)">
+            Order <%= number_field_tag "protocol[#{name}][#{idx}][position]", n, class: "ns-input", style: "width:64px;padding:4px 8px", min: 1 %>
+          </label>
+          <span style="flex:1"></span>
+          <%= hidden_field_tag "protocol[#{name}][#{idx}][_destroy]", "0", data: { rows_target: "destroy" } %>
+          <button type="button" class="ns-btn ghost" style="padding:5px 10px;font-size:12px" data-action="rows#remove">Remove</button>
+        </div>
+        <% fields.each do |key, label, widget| %>
+          <%= field_html.(idx, key, label, widget, row) %>
+        <% end %>
+      </div>
+    <% end
+  end
+%>
+<div data-controller="rows" data-rows-label-value="<%= row_label %>">
+  <%= hidden_field_tag "protocol[#{name}_form]", "1" %>
+  <div data-rows-target="list">
+    <% rows.each_with_index do |row, i| %>
+      <%= row_html.(i, row, i + 1) %>
+    <% end %>
+  </div>
+  <template data-rows-target="template"><%= row_html.("__IDX__", {}, "__N__") %></template>
+  <p class="hint" data-rows-target="empty" <%= "hidden" if rows.any? %> style="margin:0 0 10px">None yet — this block stays hidden on the public page until a row is added.</p>
+  <button type="button" class="ns-btn ghost" data-action="rows#add">Add <%= row_label.downcase %></button>
+</div>

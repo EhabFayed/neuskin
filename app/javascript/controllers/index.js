@@ -76,6 +76,9 @@ application.register("magnetic", MagneticController)
 import SmoothscrollController from "controllers/smoothscroll_controller"
 application.register("smoothscroll", SmoothscrollController)
 
+import RowsController from "controllers/rows_controller"
+application.register("rows", RowsController)
+
 import EnvelopeController from "controllers/envelope_controller"
 application.register("envelope", EnvelopeController)
 

@@ -8,6 +8,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -75,6 +76,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -115,6 +117,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -173,6 +176,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -222,6 +226,7 @@
     "items": [],
     "image": "bridal__bridal_hero__bridal-mood.jpg",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -289,6 +294,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -356,6 +362,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -423,6 +430,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -527,6 +535,38 @@
     ]
   },
   {
+    "page": "bridal",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "Bridal Concierge | خدمات العروس في الرياض | نيوسكن",
+        "value_en": "Bridal Concierge | Bridal Care in Riyadh | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "خدمة Bridal Concierge من نيوسكن تمنح العروس خطة عناية مخصصة للبشرة والشعر والجسم قبل الزفاف، مع متابعة وإشراف طبي في الرياض.",
+        "value_en": "NeuSkin Bridal Concierge offers personalized skin, hair, and body care plans for brides before their wedding, with dedicated medical guidance in Riyadh.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "dr_maysa",
     "kind": "drmaysa_clips",
     "label": "In her words — three clips",
@@ -539,6 +579,7 @@
       "dr_maysa__drmaysa_clips__gallery1__consultation.jpg",
       "dr_maysa__drmaysa_clips__gallery2__skin.jpg"
     ],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -588,6 +629,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -646,6 +688,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -695,6 +738,7 @@
     "items": [],
     "image": "dr_maysa__drmaysa_hero__maysa-hero.webp",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -735,6 +779,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -856,6 +901,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -941,6 +987,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -999,6 +1046,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1193,6 +1241,38 @@
     ]
   },
   {
+    "page": "faq",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "الأسئلة الشائعة عن علاجات البشرة والشعر | نيوسكن",
+        "value_en": "FAQs About Skin & Hair Treatments | NeuSkin Clinic",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "إجابات عن أهم الأسئلة حول علاجات البشرة والشعر والتقنيات والبروتوكولات والحجز في عيادة نيوسكن بالرياض.",
+        "value_en": "Find answers to common questions about NeuSkin skin and hair treatments, technologies, protocols, consultations, and appointments.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "home",
     "kind": "home_clinic",
     "label": "Inside the clinic (hscroll)",
@@ -1207,6 +1287,7 @@
       "home__home_clinic__gallery3__private-suite.webp",
       "home__home_clinic__gallery4__entrance.webp"
     ],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1328,6 +1409,7 @@
     "items": [],
     "image": "home__home_cta__waiting-lounge.webp",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1384,15 +1466,16 @@
     "position": 2,
     "settings": {},
     "items": [],
-    "image": "home__home_founder__about-neuskin-clinic.jpg",
+    "image": "home__home_founder__WhatsApp Image 2026-10-13 at 5.29.26 PM.webp",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
         "key": "eyebrow",
         "label": "Eyebrow",
         "hint": null,
-        "value_ar": "عن نيوسكين",
+        "value_ar": "عن نيوسكن",
         "value_en": "About NeuSkin",
         "content_type": "text",
         "position": 0
@@ -1453,6 +1536,7 @@
     "items": [],
     "image": "home__home_hero__hero-clinic.webp",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1468,7 +1552,7 @@
         "key": "headline_1",
         "label": "Headline line 1",
         "hint": null,
-        "value_ar": "أفضل عيادة تجميل بالرياض |",
+        "value_ar": "أفضل عيادة تجميل بالرياض",
         "value_en": "Medical Precision.",
         "content_type": "text",
         "position": 1
@@ -1478,7 +1562,7 @@
         "label": "Headline line 2",
         "hint": null,
         "value_ar": "عيادة نيوسكين",
-        "value_en": "Aesthetic Grace.",
+        "value_en": "Aesthetic Grace",
         "content_type": "text",
         "position": 2
       },
@@ -1495,7 +1579,7 @@
         "key": "sub",
         "label": "Sub-text under headline",
         "hint": null,
-        "value_ar": "أفضل عيادة تجميل متكاملة في الرياض للعناية بالبشرة تحت إشراف طبي متخصص؛ نضمن لكِ نتائج مدروسة تبرز جمالكِ الطبيعي وسط بيئة تضمن خصوصيتكِ وراحتكِ أولاً.",
+        "value_ar": "افضل عيادة تجميل متكاملة في الرياض للعناية بالبشرة تحت إشراف طبي متخصص؛ نضمن لكِ نتائج مدروسة تبرز جمالكِ الطبيعي وسط بيئة تضمن وراحتكِ أولاً",
         "value_en": "Riyadh's doctor-led skin intelligence clinic. Where your aesthetic journey is guided by expert care, subtle results, and absolute privacy.",
         "content_type": "text",
         "position": 4
@@ -1522,6 +1606,56 @@
   },
   {
     "page": "home",
+    "kind": "home_journal",
+    "label": "Latest from the Journal",
+    "position": 9,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "eyebrow",
+        "label": "Eyebrow",
+        "hint": null,
+        "value_ar": "من المجلّة",
+        "value_en": "From the Journal",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "title",
+        "label": "Heading (before emphasis)",
+        "hint": null,
+        "value_ar": "أحدث المقالات",
+        "value_en": "Latest notes,",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "title_em",
+        "label": "Heading emphasis span",
+        "hint": null,
+        "value_ar": "",
+        "value_en": "quietly kept.",
+        "content_type": "text",
+        "position": 2
+      },
+      {
+        "key": "link",
+        "label": "\"All notes\" link text",
+        "hint": null,
+        "value_ar": "كل المقالات ←",
+        "value_en": "Read all notes →",
+        "content_type": "text",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "page": "home",
     "kind": "home_principles",
     "label": "Three principles",
     "position": 1,
@@ -1529,6 +1663,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {
       "1": "home__home_principles__card1__doctor-led.jpg",
       "2": "home__home_principles__card2__discreet.jpg",
@@ -1540,7 +1675,7 @@
         "label": "Eyebrow",
         "hint": null,
         "value_ar": "",
-        "value_en": "The Promise",
+        "value_en": "",
         "content_type": "text",
         "position": 0
       },
@@ -1548,7 +1683,7 @@
         "key": "title",
         "label": "Heading",
         "hint": null,
-        "value_ar": "لماذا تختارين عيادة نيوسكن",
+        "value_ar": "لماذا تختارين عيادة نيوسكن.",
         "value_en": "Three pillars of our promise.",
         "content_type": "text",
         "position": 1
@@ -1558,7 +1693,7 @@
         "label": "Principle 1 — number/label",
         "hint": null,
         "value_ar": "",
-        "value_en": "01 — Principle",
+        "value_en": "",
         "content_type": "text",
         "position": 2
       },
@@ -1575,7 +1710,7 @@
         "key": "p1_body",
         "label": "Principle 1 — body",
         "hint": null,
-        "value_ar": "في نيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، ثم نساعدكِ في اختيار الإجراءات المناسبة لكِ ضمن خطة عناية مخصصة، لأن كل بشرة لها احتياجاتها الخاصة.",
+        "value_ar": "في نيوسكن، تبدأ رحلتكِ بتقييم متخصص لفهم احتياجات بشرتكِ، ثم نساعدكِ في اختيار الإجراءات المناسبة لكِ ضمن خطة عناية مخصصة، لأن كل بشرة لها احتياجاتها الخاصة. ",
         "value_en": "Every plan is designed by our medical team — never assembled from a treatment menu. You meet a clinician first, and a recommendation second.",
         "content_type": "text",
         "position": 4
@@ -1585,7 +1720,7 @@
         "label": "Principle 2 — number/label",
         "hint": null,
         "value_ar": "",
-        "value_en": "02 — Principle",
+        "value_en": "",
         "content_type": "text",
         "position": 5
       },
@@ -1593,7 +1728,7 @@
         "key": "p2_title",
         "label": "Principle 2 — title",
         "hint": null,
-        "value_ar": "خصوصية تامة في كل خطوة",
+        "value_ar": "خصوصية تامة في كل خطوة ",
         "value_en": "Discreet",
         "content_type": "text",
         "position": 6
@@ -1612,7 +1747,7 @@
         "label": "Principle 3 — number/label",
         "hint": null,
         "value_ar": "",
-        "value_en": "03 — Principle",
+        "value_en": "",
         "content_type": "text",
         "position": 8
       },
@@ -1645,6 +1780,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1660,7 +1796,7 @@
         "key": "title",
         "label": "Heading",
         "hint": null,
-        "value_ar": "تعرفي على بروتوكولات عيادة تجميل نيوسكن",
+        "value_ar": "تعرفي على بروتوكولات",
         "value_en": "Six protocols.",
         "content_type": "text",
         "position": 1
@@ -1669,7 +1805,7 @@
         "key": "title_em",
         "label": "Heading (emphasis)",
         "hint": null,
-        "value_ar": "",
+        "value_ar": "عيادة تجميل نيوسكن",
         "value_en": "One philosophy.",
         "content_type": "text",
         "position": 2
@@ -1694,6 +1830,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1762,6 +1899,70 @@
     ]
   },
   {
+    "page": "home",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "عيادة نيوسكن للعناية بالبشرة والشعر في الرياض | NeuSkin",
+        "value_en": "NeuSkin Clinic for Skin & Hair Care in Riyadh",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "عيادة نيوسكن في الرياض للعناية بالبشرة والشعر بإشراف طبي، مع خطط علاجية مخصصة وتقنيات متقدمة وخصوصية تامة للنساء.",
+        "value_en": "NeuSkin Clinic in Riyadh offers expert skin and hair care with personalized treatment plans, advanced technologies, and complete privacy for women.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "inquire",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "تواصل مع عيادة نيوسكن في الرياض | احجزي استشارتك",
+        "value_en": "Contact NeuSkin Clinic in Riyadh | Book Your Consultation",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "تواصلي مع عيادة نيوسكن في حي الملقا بالرياض للاستفسار وحجز استشارتك الخاصة للعناية بالبشرة والشعر بإشراف طبي",
+        "value_en": "Contact NeuSkin Clinic in Al Malqa, Riyadh to ask about our skin and hair care services or book a private consultation.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "journal",
     "kind": "journal_hero",
     "label": "Journal — hero",
@@ -1770,6 +1971,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1811,6 +2013,38 @@
     ]
   },
   {
+    "page": "journal",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "مجلة نيوسكن | نصائح العناية بالبشرة والشعر",
+        "value_en": "NeuSkin Journal | Skin & Hair Care Tips",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اقرئي نصائح ومعلومات متخصصة للعناية بالبشرة والشعر، واكتشفي أفضل طرق العناية والروتين المناسب لبشرة وشعر أكثر صحة.",
+        "value_en": "Discover expert tips and guides for healthier skin and hair, including skincare routines, treatment insights, and professional care advice.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "legal",
     "kind": "legal_blocks",
     "label": "Legal sections",
@@ -1819,6 +2053,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1931,6 +2166,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1971,6 +2207,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -1994,6 +2231,102 @@
     ]
   },
   {
+    "page": "legal",
+    "kind": "seo_medical_disclaimer",
+    "label": "Search preview (SEO) — Medical disclaimer",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "إخلاء المسؤولية الطبية | نيوسكن",
+        "value_en": "Medical Disclaimer | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اطلعي على إخلاء المسؤولية الطبية في نيوسكن، وتعرفي على حدود المعلومات الطبية المقدمة عبر الموقع وأهمية الاستشارة الطبية المتخصصة.",
+        "value_en": "Read NeuSkin’s medical disclaimer and understand the limitations of medical information provided on the website and the importance of professional consultation.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "legal",
+    "kind": "seo_privacy",
+    "label": "Search preview (SEO) — Privacy",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "سياسة الخصوصية | نيوسكن",
+        "value_en": "Privacy Policy | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "تعرفي على سياسة الخصوصية في نيوسكن وكيفية جمع واستخدام وحماية بياناتك الشخصية عند استخدام الموقع وخدمات العيادة.",
+        "value_en": "Learn how NeuSkin collects, uses, and protects your personal information when you use our website and clinic services.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "legal",
+    "kind": "seo_terms",
+    "label": "Search preview (SEO) — Terms",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "الشروط والأحكام | نيوسكن",
+        "value_en": "Terms & Conditions | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اطلعي على الشروط والأحكام الخاصة بعيادة نيوسكن، بما في ذلك استخدام الموقع والخدمات والحجوزات والالتزامات المتعلقة بالمستخدم.",
+        "value_en": "Review NeuSkin’s terms and conditions covering website use, services, appointments, bookings, and user responsibilities.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "maysa_method",
     "kind": "method_cta",
     "label": "Closing CTA",
@@ -2002,6 +2335,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2051,6 +2385,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2091,6 +2426,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2167,7 +2503,12 @@
     "items": [],
     "image": null,
     "gallery": [],
-    "cards": {},
+    "photos": [],
+    "cards": {
+      "1": "maysa_method__method_pillars__card1__DSC09436.webp",
+      "2": "maysa_method__method_pillars__card2__WhatsApp Image 2026-10-11 at 5.31.35 PM.webp",
+      "4": "maysa_method__method_pillars__card4__Neuskin Dec_96.webp"
+    },
     "contents": [
       {
         "key": "pillar_1_num",
@@ -2288,6 +2629,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2319,7 +2661,11 @@
     "items": [],
     "image": null,
     "gallery": [],
-    "cards": {},
+    "photos": [],
+    "cards": {
+      "3": "maysa_method__method_timeline__card3__DSC09386.webp",
+      "4": "maysa_method__method_timeline__card4__DSC09421.webp"
+    },
     "contents": [
       {
         "key": "eyebrow",
@@ -2495,6 +2841,38 @@
     ]
   },
   {
+    "page": "maysa_method",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "منهج نيوسكن للعناية بالبشرة | تشخيص وخطة علاجية في الرياض",
+        "value_en": "NeuSkin Method | Personalized Skin Care in Riyadh",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اكتشفي منهج نيوسكن الذي يبدأ بتقييم البشرة والشعر والجسم ثم بناء خطة علاجية مخصصة بإشراف طبيبة في الرياض.",
+        "value_en": "Discover the NeuSkin Method, a personalized approach that assesses your skin, hair, and body before creating a tailored care plan under medical supervision.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "private_care",
     "kind": "private_apply",
     "label": "Application",
@@ -2503,6 +2881,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2633,6 +3012,7 @@
     "items": [],
     "image": "private_care__private_hero__desert-atmosphere.jpg",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2691,6 +3071,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2767,6 +3148,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2889,6 +3271,38 @@
     ]
   },
   {
+    "page": "private_care",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "الرعاية الخاصة للنساء في الرياض | عيادة نيوسكن",
+        "value_en": "Private Care for Women in Riyadh | NeuSkin Clinic",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اكتشفي تجربة الرعاية الخاصة في عيادة نيوسكن بالرياض، مع خصوصية تامة وخدمة مخصصة وخطط عناية مصممة وفق احتياجاتك.",
+        "value_en": "Experience private care at NeuSkin Clinic in Riyadh with complete privacy, personalized service, and tailored skin and beauty care.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "protocols_index",
     "kind": "protocols_cta",
     "label": "Closing CTA",
@@ -2897,6 +3311,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2946,6 +3361,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -2968,6 +3384,7 @@
     "items": [],
     "image": "protocols_index__protocols_hero__Gemini_Generated_Image_jwy4ubjwy4ubjwy4.png",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3009,6 +3426,70 @@
     ]
   },
   {
+    "page": "protocols_index",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "بروتوكولات العناية بالبشرة والشعر في الرياض | نيوسكن",
+        "value_en": "Skin & Hair Care Protocols in Riyadh | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اكتشفي بروتوكولات نيوسكن المخصصة للعناية بالبشرة والشعر والقوام في الرياض، بخطط علاجية مدروسة وإشراف طبيبة ونتائج تُراجع باستمرار.",
+        "value_en": "Explore personalized NeuSkin care protocols for skin, hair, and body in Riyadh, designed with medical supervision and structured treatment plans.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "stories",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "قصص وتجارب المريضات | عيادة نيوسكن الرياض",
+        "value_en": "Patient Stories & Experiences | NeuSkin Clinic",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اكتشفي قصص وتجارب المريضات في عيادة نيوسكن، وتعرفي على رحلات العناية بالبشرة والشعر والخطط العلاجية المخصصة.",
+        "value_en": "Explore patient stories and experiences at NeuSkin Clinic, featuring personalized skin, hair, and aesthetic care journeys.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
     "page": "stories",
     "kind": "story_hero",
     "label": "Hero",
@@ -3017,6 +3498,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3066,6 +3548,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3207,6 +3690,38 @@
   },
   {
     "page": "technologies",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "تقنيات علاج البشرة والشعر في الرياض | NeuSkin",
+        "value_en": "Advanced Skin & Hair Technologies in Riyadh | NeuSkin",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "تعرفي على التقنيات المتقدمة في عيادة نيوسكن بالرياض للعناية بالبشرة والشعر وتحسين المظهر باستخدام أحدث الأجهزة والتقنيات الطبية.",
+        "value_en": "Explore advanced skin and hair technologies at NeuSkin Clinic in Riyadh, using modern medical devices and innovative treatment techniques.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "technologies",
     "kind": "tech_cta",
     "label": "Closing CTA",
     "position": 9,
@@ -3214,6 +3729,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3259,6 +3775,7 @@
       "technologies__tech_hero__gallery2__tech-page-4.jpg",
       "technologies__tech_hero__gallery3__tech-page.jpg"
     ],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3317,6 +3834,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3357,6 +3875,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3478,6 +3997,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3518,6 +4038,7 @@
     "items": [],
     "image": "the_clinic__clinic_hero__clinic-hero.webp",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3558,7 +4079,11 @@
     "items": [],
     "image": null,
     "gallery": [],
-    "cards": {},
+    "photos": [],
+    "cards": {
+      "2": "the_clinic__clinic_journey__card2__DSC04320.webp",
+      "3": "the_clinic__clinic_journey__card3__IMG_0344.webp"
+    },
     "contents": [
       {
         "key": "eyebrow",
@@ -3697,6 +4222,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3773,6 +4299,33 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [
+      {
+        "file": "the_clinic__clinic_space__photo0__clinic-1.webp",
+        "caption_en": "The lounge",
+        "caption_ar": "صالة الاستقبال"
+      },
+      {
+        "file": "the_clinic__clinic_space__photo1__clinic-2.webp",
+        "caption_en": "In the detail",
+        "caption_ar": "في التفاصيل"
+      },
+      {
+        "file": "the_clinic__clinic_space__photo2__clinic-3.webp",
+        "caption_en": "Device room",
+        "caption_ar": "غرفة الأجهزة"
+      },
+      {
+        "file": "the_clinic__clinic_space__photo3__clinic-4.webp",
+        "caption_en": "Treatment room",
+        "caption_ar": "غرفة الإجراءات"
+      },
+      {
+        "file": "the_clinic__clinic_space__photo4__clinic-5.webp",
+        "caption_en": "The entrance",
+        "caption_ar": "المدخل"
+      }
+    ],
     "cards": {},
     "contents": [
       {
@@ -3784,32 +4337,69 @@
         "content_type": "text",
         "position": 0
       }
-    ],
-    "photos": [
+    ]
+  },
+  {
+    "page": "the_clinic",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
       {
-        "file": "the_clinic__clinic_space__gallery0__clinic-1.webp",
-        "caption_en": "The lounge",
-        "caption_ar": "صالة الاستقبال"
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "عن عيادة نيوسكن | عيادة البشرة والشعر في الرياض",
+        "value_en": "About NeuSkin Clinic | Skin & Hair Clinic in Riyadh",
+        "content_type": "text",
+        "position": 0
       },
       {
-        "file": "the_clinic__clinic_space__gallery1__clinic-2.webp",
-        "caption_en": "In the detail",
-        "caption_ar": "في التفاصيل"
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "تعرفي على عيادة نيوسكن في الرياض ونهجنا في العناية بالبشرة والشعر من خلال خطط مخصصة وإشراف طبي وتقنيات متقدمة.",
+        "value_en": "Discover NeuSkin Clinic in Riyadh and our approach to personalized skin and hair care through medical expertise and advanced technologies.",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "page": "the_team",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "الفريق الطبي في نيوسكن | أطباء الجلدية والتجميل في الرياض",
+        "value_en": "NeuSkin Medical Team | Dermatology & Aesthetic Doctors",
+        "content_type": "text",
+        "position": 0
       },
       {
-        "file": "the_clinic__clinic_space__gallery2__clinic-3.webp",
-        "caption_en": "Device room",
-        "caption_ar": "غرفة الأجهزة"
-      },
-      {
-        "file": "the_clinic__clinic_space__gallery3__clinic-4.webp",
-        "caption_en": "Treatment room",
-        "caption_ar": "غرفة الإجراءات"
-      },
-      {
-        "file": "the_clinic__clinic_space__gallery4__clinic-5.webp",
-        "caption_en": "The entrance",
-        "caption_ar": "المدخل"
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "تعرفي على الفريق الطبي في عيادة نيوسكن بالرياض، من أطباء الجلدية والتجميل والمتخصصين في العناية بالبشرة والشعر بخبرة ورعاية مخصصة.",
+        "value_en": "Meet the medical team at NeuSkin Clinic in Riyadh, specializing in dermatology, aesthetics, skin care, and personalized treatment plans.",
+        "content_type": "text",
+        "position": 1
       }
     ]
   },
@@ -3822,6 +4412,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3871,6 +4462,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -3878,7 +4470,7 @@
         "label": "Member 1 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Medical Director",
+        "value_en": "",
         "content_type": "text",
         "position": 0
       },
@@ -3887,7 +4479,7 @@
         "label": "Member 1 role",
         "hint": null,
         "value_ar": "",
-        "value_en": "Founder · Medical Director",
+        "value_en": "",
         "content_type": "text",
         "position": 1
       },
@@ -3896,7 +4488,7 @@
         "label": "Member 1 credentials",
         "hint": null,
         "value_ar": "",
-        "value_en": "MBBS · Dermatology · Aesthetic Medicine Fellowship",
+        "value_en": "",
         "content_type": "text",
         "position": 2
       },
@@ -3905,7 +4497,7 @@
         "label": "Member 1 focus",
         "hint": null,
         "value_ar": "",
-        "value_en": "Diagnosis & the 12-month plan",
+        "value_en": "",
         "content_type": "text",
         "position": 3
       },
@@ -3914,7 +4506,7 @@
         "label": "Member 1 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Every patient begins and ends with the medical director, who reads the baseline, writes the plan, and signs off each quarterly review — the one constant across the whole journey.",
+        "value_en": "",
         "content_type": "richtext",
         "position": 4
       },
@@ -3923,7 +4515,7 @@
         "label": "Member 2 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Dr. Lina Haddad",
+        "value_en": "",
         "content_type": "text",
         "position": 5
       },
@@ -3932,7 +4524,7 @@
         "label": "Member 2 role",
         "hint": null,
         "value_ar": "",
-        "value_en": "Senior Aesthetic Physician",
+        "value_en": "",
         "content_type": "text",
         "position": 6
       },
@@ -3941,7 +4533,7 @@
         "label": "Member 2 credentials",
         "hint": null,
         "value_ar": "",
-        "value_en": "MBBS · Diploma in Aesthetic Medicine",
+        "value_en": "",
         "content_type": "text",
         "position": 7
       },
@@ -3950,7 +4542,7 @@
         "label": "Member 2 focus",
         "hint": null,
         "value_ar": "",
-        "value_en": "Injectables & restraint",
+        "value_en": "",
         "content_type": "text",
         "position": 8
       },
@@ -3959,7 +4551,7 @@
         "label": "Member 2 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Lina executes the plan with a light hand. Her reputation is built less on what she does than on what she declines to do — and patients trust her for exactly that.",
+        "value_en": "",
         "content_type": "richtext",
         "position": 9
       },
@@ -3968,7 +4560,7 @@
         "label": "Member 3 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Dr. Sara Othman",
+        "value_en": "",
         "content_type": "text",
         "position": 10
       },
@@ -3977,7 +4569,7 @@
         "label": "Member 3 role",
         "hint": null,
         "value_ar": "",
-        "value_en": "Dermatology Associate",
+        "value_en": "",
         "content_type": "text",
         "position": 11
       },
@@ -3986,7 +4578,7 @@
         "label": "Member 3 credentials",
         "hint": null,
         "value_ar": "",
-        "value_en": "MBBS · Clinical Dermatology",
+        "value_en": "",
         "content_type": "text",
         "position": 12
       },
@@ -3995,7 +4587,7 @@
         "label": "Member 3 focus",
         "hint": null,
         "value_ar": "",
-        "value_en": "Skin barrier & pigment",
+        "value_en": "",
         "content_type": "text",
         "position": 13
       },
@@ -4004,7 +4596,7 @@
         "label": "Member 3 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Sara handles the slow, unglamorous work that good skin actually depends on — barrier repair, pigment correction, and the careful sequencing that holds results over months.",
+        "value_en": "",
         "content_type": "richtext",
         "position": 14
       },
@@ -4013,7 +4605,7 @@
         "label": "Member 4 name",
         "hint": null,
         "value_ar": "",
-        "value_en": "Noor Al-Fahad",
+        "value_en": "",
         "content_type": "text",
         "position": 15
       },
@@ -4022,7 +4614,7 @@
         "label": "Member 4 role",
         "hint": null,
         "value_ar": "",
-        "value_en": "Patient Relations Lead",
+        "value_en": "",
         "content_type": "text",
         "position": 16
       },
@@ -4031,7 +4623,7 @@
         "label": "Member 4 credentials",
         "hint": null,
         "value_ar": "",
-        "value_en": "First point of contact · privacy-trained",
+        "value_en": "",
         "content_type": "text",
         "position": 17
       },
@@ -4040,7 +4632,7 @@
         "label": "Member 4 focus",
         "hint": null,
         "value_ar": "",
-        "value_en": "Discretion & continuity",
+        "value_en": "",
         "content_type": "text",
         "position": 18
       },
@@ -4049,9 +4641,41 @@
         "label": "Member 4 bio",
         "hint": null,
         "value_ar": "",
-        "value_en": "Noor reads every inquiry personally and protects each patient's privacy from the first message to the last review. Nothing reaches the clinic floor that she has not handled with care.",
+        "value_en": "",
         "content_type": "richtext",
         "position": 19
+      }
+    ]
+  },
+  {
+    "page": "treatments",
+    "kind": "seo",
+    "label": "Search preview (SEO)",
+    "position": 99,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "meta_title",
+        "label": "Meta title",
+        "hint": "Shown as the clickable headline in Google and in link previews. Leave blank to use the built-in default. Under 60 characters is safest.",
+        "value_ar": "علاجات البشرة والشعر في الرياض | عيادة نيوسكن",
+        "value_en": "Skin & Hair Treatments in Riyadh | NeuSkin Clinic",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "meta_description",
+        "label": "Meta description",
+        "hint": "The one or two sentences shown under the headline in Google. Leave blank to use the built-in default. Under 160 characters.",
+        "value_ar": "اكتشفي علاجات البشرة والشعر في عيادة نيوسكن بالرياض، مع حلول مخصصة للتصبغات، النضارة، تساقط الشعر ومشكلات البشرة المختلفة.",
+        "value_en": "Explore skin and hair treatments at NeuSkin Clinic in Riyadh, with personalized solutions for pigmentation, skin concerns, hair loss, and more.",
+        "content_type": "text",
+        "position": 1
       }
     ]
   },
@@ -4064,6 +4688,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -4113,6 +4738,7 @@
     "items": [],
     "image": null,
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -4144,6 +4770,7 @@
     "items": [],
     "image": "treatments__treatments_hero__Gemini_Generated_Image_ad31apad31apad31.png",
     "gallery": [],
+    "photos": [],
     "cards": {},
     "contents": [
       {
@@ -4180,55 +4807,6 @@
         "value_ar": "تبحثين عن إجراءٍ بعينه؟ وجهي تركيزكِ نحو التغيير الذي تطمحين إليه. نحن هنا لنرسم معكِ خارطة الطريق، ونربط طموحاتكِ بالبروتوكول الدقيقِ الذي يُحقق لكِ النتيجةَ المرجوة.",
         "value_en": "Searching for a specific procedure? Instead, look toward the change you wish to see. We guide your journey, connecting your goals to the precise protocol that delivers them.",
         "content_type": "richtext",
-        "position": 3
-      }
-    ]
-  },
-  {
-    "page": "home",
-    "kind": "home_journal",
-    "label": "Latest from the Journal",
-    "position": 9,
-    "settings": {},
-    "items": [],
-    "image": null,
-    "gallery": [],
-    "cards": {},
-    "contents": [
-      {
-        "key": "eyebrow",
-        "label": "Eyebrow",
-        "hint": null,
-        "value_ar": "من المجلّة",
-        "value_en": "From the Journal",
-        "content_type": "text",
-        "position": 0
-      },
-      {
-        "key": "title",
-        "label": "Heading (before emphasis)",
-        "hint": null,
-        "value_ar": "أحدث المقالات",
-        "value_en": "Latest notes,",
-        "content_type": "text",
-        "position": 1
-      },
-      {
-        "key": "title_em",
-        "label": "Heading emphasis span",
-        "hint": null,
-        "value_ar": "",
-        "value_en": "quietly kept.",
-        "content_type": "text",
-        "position": 2
-      },
-      {
-        "key": "link",
-        "label": "\"All notes\" link text",
-        "hint": null,
-        "value_ar": "كل المقالات ←",
-        "value_en": "Read all notes →",
-        "content_type": "text",
         "position": 3
       }
     ]

@@ -8,9 +8,10 @@
   <% {
     "Name" => [:name_en, :name_ar, :text_field],
     "Promise — the one-line pitch" => [:promise_en, :promise_ar, :text_area],
-    "Duration (e.g. 12 weeks)" => [:duration_en, :duration_ar, :text_field],
+    "Duration — the short tag on the menu, home and hub cards (e.g. 12 weeks)" => [:duration_en, :duration_ar, :text_field],
     "Meta line (e.g. 12 weeks · Skin reset)" => [:meta_en, :meta_ar, :text_field],
     "Who it's for" => [:who_for_en, :who_for_ar, :text_area],
+    "Who it's for — the numbered signs (one per line)" => [:signs_en, :signs_ar, :text_area],
     "What it covers" => [:scope_en, :scope_ar, :text_area],
     "What it excludes" => [:excludes_en, :excludes_ar, :text_area]
   }.each do |label, (en_attr, ar_attr, widget)| %>
@@ -28,6 +29,13 @@
       </div>
     </div>
   <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Hero rows — the small table under the title (Duration · Format · For …)</span>
+    <p class="hint" style="margin:0 0 12px">Each row is a label and a value. Add as many as you need; use Order to arrange them. These rows are what the protocol page shows; the Duration field above is the short tag used on the menu and cards, so keep the two in step.</p>
+    <%= render "admin/protocols/rows", name: :specs, rows: @protocol.specs, row_label: "Row",
+               fields: [["label", "Label (e.g. Duration)", :text_field], ["value", "Value (e.g. 12 weeks)", :text_field]] %>
+  </div>
 
   <div class="ns-card" style="margin-bottom:14px">
     <span class="ns-field-title">Image (home protocols stage · hub card · protocol page hero)</span>
@@ -63,12 +71,53 @@
     <% end %>
   </div>
 
-  <% if @protocol.persisted? && @protocol.stages.blank? %>
-    <div class="ns-card" style="margin-bottom:14px">
-      <span class="ns-field-title">Timeline stages</span>
-      <p class="hint">This protocol has no staged timeline yet — the "What's inside" grid stays hidden on the public page. Stages are set up with the development team.</p>
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">What's inside — the timeline stages</span>
+    <p class="hint" style="margin:0 0 12px">The staged plan under “What's inside”. Each stage shows its week, a title and one line. Use Order to arrange them.</p>
+    <%= render "admin/protocols/rows", name: :stages, rows: @protocol.stages, row_label: "Stage",
+               fields: [["week", "Week (e.g. Weeks 1–4)", :text_field], ["title", "Title", :text_field], ["body", "Line", :text_area]] %>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Why choose this protocol — heading + reasons</span>
+    <p class="hint" style="margin:0 0 12px">Shown after “What's inside” as a heading with a numbered list. Leave the list empty to hide the block. A point written as “Label: text” shows its label in bold.</p>
+    <div class="ns-pair" style="margin-bottom:14px">
+      <div class="en"><span class="lang-lbl">Heading · English</span><%= form.text_field :why_title_en, class: "ns-input", placeholder: "Why choose the NeuSkin Method?" %></div>
+      <div class="ar"><span class="lang-lbl">العنوان · Arabic</span><%= form.text_field :why_title_ar, class: "ns-input", dir: "rtl", placeholder: "لماذا تختارين منهج نيو سكين؟" %></div>
     </div>
-  <% end %>
+    <%= render "admin/protocols/rows", name: :why_points, rows: @protocol.why_points, row_label: "Reason",
+               fields: [["text", "Point", :text_area]] %>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Frequently asked — questions on this page</span>
+    <% placed = @protocol.persisted? ? Faq.placed_on("protocol:#{@protocol.slug}").to_a : [] %>
+    <% if placed.any? %>
+      <ul class="ns-list" style="margin:0 0 10px">
+        <% placed.each do |faq| %>
+          <li><%= link_to edit_admin_faq_path(faq), class: "ns-row" do %><span class="r-title"><%= faq.question_en %></span><span class="r-meta" style="width:60px">#<%= faq.position %></span><% end %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="hint" style="margin:0 0 10px">No questions placed on this page yet — the block stays hidden.</p>
+    <% end %>
+    <p class="hint" style="margin:0">Questions live once in <%= link_to "FAQ", admin_faqs_path, style: "color:inherit" %> and are reused: open a question → “Where it shows” → tick this protocol. The heading and subtitle of the block are in Pages → Protocol page (shared copy).</p>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Patient story — one consented quote</span>
+    <p class="hint" style="margin:0 0 12px">Shown as a pull quote on the protocol page. Leave the quote empty to hide the block.</p>
+    <%= hidden_field_tag "protocol[story_form]", "1" %>
+    <% story = @protocol.patient_story || {} %>
+    <div class="ns-pair" style="margin-bottom:10px">
+      <div class="en"><span class="lang-lbl">Quote · English</span><%= text_area_tag "protocol[patient_story][quote_en]", story["quote_en"], class: "ns-textarea", rows: 3 %></div>
+      <div class="ar"><span class="lang-lbl">الاقتباس · Arabic</span><%= text_area_tag "protocol[patient_story][quote_ar]", story["quote_ar"], class: "ns-textarea", rows: 3, dir: "rtl" %></div>
+    </div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <label style="display:block"><span class="lang-lbl">Initials (e.g. L.M.)</span><br><%= text_field_tag "protocol[patient_story][initials]", story["initials"], class: "ns-input", style: "max-width:140px" %></label>
+      <label style="display:block"><span class="lang-lbl">Year</span><br><%= text_field_tag "protocol[patient_story][year]", story["year"], class: "ns-input", style: "max-width:120px" %></label>
+    </div>
+  </div>
 
   <%= render "admin/shared/search_meta_fields", form: form %>
 

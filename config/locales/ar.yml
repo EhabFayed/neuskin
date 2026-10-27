@@ -528,6 +528,8 @@ ar:
     codeword_html: "أرسلي <strong>%{word}</strong> على واتساب لاستفسار خاص."
     begin: "ابدئي %{name}."
     send_button: "أرسلي «%{word}»"
+    why_default: "لماذا تختارين %{name}؟"
+    faq_subtitle: "كل ما تحتاجين معرفته قبل الحجز"
     hub_filter: "أنا هنا لأن…"
     chips:
       all: "أريني كل شيء"
