@@ -1,0 +1,70 @@
+<%# NeuSkin Digital Gift Card (concept deck, idea 1). A closed envelope waits;
+    one tap on the seal opens it and the gift card rises out with the offer,
+    then the reserve button and code appear beneath. Both envelope states are
+    the deck's photographs, cropped on a portrait stage; the card copy is laid
+    over the blank card in the open photo (card box = 495,202 × 547 wide on the
+    1536 × 1024 plate, scaled in promo.css). Promo rows: Admin → Promos.
+    Layout: layouts/promo (no site chrome). JS: envelope_controller.js. %>
+
+<main class="gift-main">
+  <header class="gift-brand">
+    <%= link_to root_path, "aria-label": "NeuSkin Clinic" do %>
+      <%= image_tag "site/logo-ns.webp", class: "gift-brand-mark", alt: "NeuSkin Clinic", width: 42, height: 40 %>
+    <% end %>
+  </header>
+
+  <% if @promo %>
+    <div class="gift-wrap" data-controller="envelope"
+         data-envelope-claim-url-value="<%= promo_claim_path(code: @promo.code) %>">
+    <div class="gift-stage">
+      <div class="gift-scene" data-envelope-target="scene">
+        <%= image_tag "promo/envelope-closed.webp", class: "gift-art gift-art--closed", alt: t("promo.art_alt_closed"), width: 1536, height: 1024, fetchpriority: "high" %>
+        <%= image_tag "promo/envelope-open.webp",   class: "gift-art gift-art--open",   alt: t("promo.art_alt_open"),   width: 1536, height: 1024 %>
+
+        <%# The card copy, over the blank card in the open photo %>
+        <div class="gift-card" aria-live="polite">
+          <p class="gift-eyebrow rise" style="--d:.5s"><%= t("promo.eyebrow") %></p>
+          <p class="gift-title rise" style="--d:.7s"><%= @promo.title %></p>
+          <% if @promo.description.present? %>
+            <p class="gift-sub rise" style="--d:.8s"><%= @promo.description %></p>
+          <% end %>
+          <p class="gift-value rise" style="--d:.95s"><%= @promo.label %> · <%= t("promo.percent_off", percent: @promo.percent) %></p>
+          <p class="gift-code rise" style="--d:1.1s" dir="ltr"><span><%= t("promo.your_code") %></span> <strong><%= @promo.code %></strong></p>
+        </div>
+
+        <%# The seal: tap target + pulsing rings (deck's TapIndicator) %>
+        <button type="button" class="gift-seal" data-action="envelope#open" data-envelope-target="seal"
+                aria-label="<%= t("promo.open_aria") %>" data-opened-label="<%= t("promo.opened_aria") %>">
+          <span class="gift-ring"></span><span class="gift-ring gift-ring--2"></span><span class="gift-dot"></span>
+        </button>
+      </div>
+    </div>
+
+    <p class="gift-hint" data-envelope-target="hint"><%= t("promo.tap_hint") %></p>
+
+    <div class="gift-act" data-envelope-target="act" aria-hidden="true">
+      <a class="gift-cta" href="<%= @promo.whatsapp_url %>" target="_blank" rel="noopener" data-action="envelope#claim"><%= t("promo.cta") %></a>
+      <p class="gift-act-code" dir="ltr"><%= t("promo.your_code") %> &nbsp;<strong><%= @promo.code %></strong></p>
+      <button type="button" class="gift-close" data-action="envelope#close"><%= t("promo.close") %></button>
+    </div>
+    </div>
+  <% else %>
+    <div class="gift-stage gift-stage--empty">
+      <div class="gift-scene">
+        <%= image_tag "promo/envelope-closed.webp", class: "gift-art gift-art--closed", alt: t("promo.art_alt_closed"), width: 1536, height: 1024 %>
+      </div>
+    </div>
+    <div class="gift-empty">
+      <p class="gift-empty-title"><%= t("promo.empty_title") %></p>
+      <p class="gift-empty-text"><%= t("promo.empty_text") %></p>
+      <a class="gift-cta" href="<%= whatsapp_url %>" target="_blank" rel="noopener"><%= t("promo.empty_cta") %></a>
+    </div>
+  <% end %>
+
+  <p class="gift-foot">
+    <a href="<%= root_path %>">neuskin.me</a>
+    <span aria-hidden="true">·</span>
+    <% other = ar? ? nil : :ar %>
+    <%= link_to(ar? ? "English" : "العربية", @promo ? promo_code_path(code: @promo.code, locale: other) : promo_path(locale: other), class: "gift-lang") %>
+  </p>
+</main>

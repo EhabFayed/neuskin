@@ -479,6 +479,22 @@ en:
     cta_note: "All initial consultations are conducted personally by our medical director."
   whatsapp:
     prefill: "Hello NeuSkin, I'd like to make a private inquiry."
+  # Digital Gift Card — the promo-code page (/promo).
+  promo:
+    eyebrow: "NeuSkin Gift Card"
+    art_alt_closed: "A closed envelope from NeuSkin Clinic."
+    art_alt_open: "The envelope opens and a gift card rises out."
+    percent_off: "%{percent}% off"
+    your_code: "Your code"
+    tap_hint: "Tap the seal to open"
+    open_aria: "Open your gift"
+    opened_aria: "Your gift is open"
+    cta: "Reserve my private glow"
+    close: "Close the envelope"
+    whatsapp_message: "Hello NeuSkin, I'd like to reserve my private glow. Code: %{code}"
+    empty_title: "No gift is waiting today."
+    empty_text: "Our next gift is being prepared. Speak to us privately on WhatsApp in the meantime."
+    empty_cta: "Message us"
   home_page:
     cta_assessment: "Request an assessment"
     cta_whatsapp: "Speak privately on WhatsApp"
@@ -760,6 +776,9 @@ en:
     private_care:
       title: "Private Care — NeuSkin Clinic"
       description: "By-invitation private care at NeuSkin: private hours, a dedicated patient relations lead and a bespoke twelve-month roadmap."
+    promo:
+      title: "A Gift Is Waiting for You — NeuSkin Clinic"
+      description: "Open your NeuSkin digital gift card: a private offer, your code and a WhatsApp reservation in one tap."
     stories:
       title: "Patient Stories — NeuSkin Clinic"
       description: "Consented patient stories from NeuSkin Clinic in Riyadh — in their own words, shared with written permission."

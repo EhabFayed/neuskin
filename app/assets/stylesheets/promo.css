@@ -1,0 +1,283 @@
+/*
+ * NeuSkin Digital Gift Card — the /promo page (concept deck, idea 1).
+ * Loaded only by layouts/promo.html.erb, after tokens.css. Everything is
+ * scoped under .promo-body so nothing here reaches the rest of the site.
+ *
+ * The stage is a container: the deck's 1536 × 1024 envelope photographs are
+ * cropped to a portrait plate (image = 180% of the stage width, centred), so
+ * the envelope fills ~88% of a phone. The card copy sits over the blank card
+ * in the open photo — its box on the plate is x 495, y 202, w 547 — mapped to
+ * stage units: left = 495/1536·1.8 − 0.4 = 18%, width = 547/1536·1.8 = 64%,
+ * top = 202/1024 of the stage height.
+ */
+
+.promo-body {
+  --g-bg: #d6c4ad;          /* the photo's plaster, so the plate melts in */
+  --g-ivory: #f7f3ec;
+  --g-cream: #efe7da;
+  --g-sand: #e1d2bf;
+  --g-taupe: #a89581;
+  --g-brown: #5a4037;
+  --g-espresso: #382923;
+  --g-serif: "Google Sans Flex", "Hanken Grotesk", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --g-sans: "Hanken Grotesk", "Google Sans Flex", -apple-system, "Segoe UI", system-ui, sans-serif;
+
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--g-bg);
+  background-image:
+    radial-gradient(70% 50% at 50% 0%, rgba(255, 248, 238, .55), transparent 70%),
+    radial-gradient(60% 45% at 50% 100%, rgba(120, 90, 75, .22), transparent 70%);
+  color: var(--g-espresso);
+  font-family: var(--g-sans);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
+html[dir="rtl"] .promo-body { --g-sans: "Droid Arabic Kufi", "Hanken Grotesk", Tahoma, system-ui, sans-serif; }
+
+.gift-main {
+  width: 100%;
+  max-width: 460px;
+  padding: 26px 16px calc(28px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- Brand ---- */
+.gift-brand { display: flex; justify-content: center; margin-bottom: 22px; }
+.gift-brand a { display: block; line-height: 0; }
+.gift-brand-mark { width: 72px; height: auto; display: block; opacity: .92; }
+
+/* ---- The plate ---- */
+.gift-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.gift-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  container-type: inline-size;
+  border-radius: 7cqw;
+  overflow: hidden;
+  box-shadow: 0 40px 90px -40px rgba(56, 41, 35, .55), 0 0 0 1px rgba(90, 64, 55, .08);
+  isolation: isolate;
+}
+.gift-scene { position: absolute; inset: 0; }
+
+.gift-art {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 180%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.gift-art--open { opacity: 0; transition: opacity .9s cubic-bezier(.16, 1, .3, 1); }
+.is-open .gift-art--open { opacity: 1; }
+.gift-art--closed { transition: opacity .9s cubic-bezier(.16, 1, .3, 1); }
+.is-open .gift-art--closed { opacity: 0; }
+
+/* Soft light drift over the plate (deck's .light-drift) */
+.gift-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(60% 55% at 28% 22%, rgba(255, 246, 232, .38), transparent 70%);
+  mix-blend-mode: soft-light;
+  animation: gift-drift 16s ease-in-out infinite alternate;
+}
+@keyframes gift-drift {
+  0%   { transform: translateZ(0); opacity: 1; }
+  100% { transform: translate3d(6%, 4%, 0); opacity: .7; }
+}
+
+/* ---- The card copy, over the card in the open photo ---- */
+.gift-card {
+  position: absolute;
+  left: 18%;
+  width: 64%;
+  top: 19.7%;
+  padding: 5cqw 3cqw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--g-espresso);
+  pointer-events: none;
+}
+.rise {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  transition: opacity 1.1s cubic-bezier(.16, 1, .3, 1), transform 1.1s cubic-bezier(.16, 1, .3, 1), filter 1.1s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: 0s;
+}
+.is-open .rise { opacity: 1; transform: none; filter: blur(0); transition-delay: var(--d, 0s); }
+
+.gift-eyebrow {
+  margin: 0;
+  font-size: 3cqw;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--g-brown);
+}
+.gift-title {
+  margin: 2.2cqw 0 0;
+  font: 500 8.2cqw/1.05 var(--g-serif);
+  letter-spacing: -.01em;
+  color: var(--g-espresso);
+}
+.gift-sub {
+  margin: 1.6cqw 0 0;
+  font: 400 4.2cqw/1.3 var(--g-serif);
+  color: var(--g-brown);
+}
+.gift-value {
+  margin: 3.4cqw 0 0;
+  font-size: 3.6cqw;
+  font-weight: 600;
+  color: var(--g-espresso);
+}
+.gift-code {
+  margin: 2.4cqw 0 0;
+  font-size: 3.2cqw;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--g-brown);
+}
+.gift-code strong { font-weight: 700; color: var(--g-espresso); letter-spacing: .2em; }
+
+html[dir="rtl"] .gift-eyebrow, html[dir="rtl"] .gift-value { letter-spacing: 0; }
+html[dir="rtl"] .gift-title { font-family: var(--g-sans); font-weight: 700; font-size: 6.8cqw; line-height: 1.25; letter-spacing: 0; }
+html[dir="rtl"] .gift-sub { font-family: var(--g-sans); font-size: 3.6cqw; }
+
+/* ---- The seal: tap target with the deck's pulsing rings ---- */
+.gift-seal {
+  position: absolute;
+  left: 49.6%;
+  top: 63.5%;
+  width: 22cqw;
+  height: 22cqw;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  z-index: 2;
+  transition: opacity .4s;
+}
+.gift-seal:focus-visible { outline: 2px solid var(--g-ivory); outline-offset: 4px; border-radius: 50%; }
+.is-open .gift-seal { opacity: 0; pointer-events: none; }
+.gift-ring, .gift-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; }
+.gift-ring {
+  width: 60%; height: 60%;
+  border: 2px solid var(--g-ivory);
+  animation: gift-tap 2.6s cubic-bezier(.16, 1, .3, 1) infinite;
+}
+.gift-ring--2 { animation-delay: 1.3s; }
+.gift-dot { width: 17%; height: 17%; background: var(--g-ivory); box-shadow: 0 6px 18px rgba(56, 41, 35, .35); }
+@keyframes gift-tap {
+  0%   { transform: translate(-50%, -50%) scale(.45); opacity: .95; }
+  100% { transform: translate(-50%, -50%) scale(1.35); opacity: 0; }
+}
+
+/* ---- Hint + actions under the plate ---- */
+.gift-hint {
+  margin: 24px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--g-espresso);
+  transition: opacity .4s;
+}
+.gift-hint.is-hidden { opacity: 0; }
+html[dir="rtl"] .gift-hint { letter-spacing: 0; font-size: 13px; }
+
+.gift-act {
+  width: 100%;
+  margin-top: -14px; /* sits where the hint was */
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity .8s ease, transform .8s ease;
+}
+.gift-act.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+
+.gift-cta {
+  display: block;
+  padding: 17px 20px;
+  border-radius: 40px;
+  background: var(--g-brown);
+  color: var(--g-ivory);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  transition: transform .2s ease, filter .2s ease;
+}
+.gift-cta:hover { filter: brightness(1.06); }
+.gift-cta:active { transform: scale(.98); }
+.gift-cta:focus-visible { outline: 2px solid var(--g-ivory); outline-offset: 3px; }
+html[dir="rtl"] .gift-cta { letter-spacing: 0; font-size: 15px; }
+
+.gift-act-code {
+  margin: 14px 0 0;
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--g-brown);
+}
+.gift-act-code strong { font-weight: 700; color: var(--g-espresso); }
+.gift-close {
+  margin-top: 12px;
+  background: none;
+  border: 0;
+  padding: 6px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--g-espresso);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ---- Empty state: no live gift ---- */
+.gift-stage--empty .gift-art--closed { filter: saturate(.85); }
+.gift-empty { margin-top: 26px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.gift-empty-title { margin: 0; font: 500 24px/1.15 var(--g-serif); color: var(--g-espresso); }
+html[dir="rtl"] .gift-empty-title { font-family: var(--g-sans); font-size: 20px; }
+.gift-empty-text { margin: 0 0 8px; font-size: 14px; line-height: 1.5; color: var(--g-brown); max-width: 320px; }
+
+/* ---- Footer line ---- */
+.gift-foot {
+  margin: 28px 0 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--g-brown);
+}
+.gift-foot a { color: inherit; text-decoration: none; }
+.gift-foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.gift-lang { text-transform: none; letter-spacing: 0; }
+html[dir="rtl"] .gift-foot { letter-spacing: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gift-art, .gift-art--open, .gift-art--closed, .rise, .gift-act, .gift-hint, .gift-seal { transition-duration: .01s; transition-delay: 0s; }
+  .gift-ring, .gift-scene::after { animation: none; }
+}

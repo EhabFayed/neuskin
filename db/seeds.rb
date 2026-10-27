@@ -212,3 +212,6 @@ load Rails.root.join("db/seeds/treatments.rb")
 
 # Device cards on /technologies (bilingual, idempotent by name).
 load Rails.root.join("db/seeds/devices.rb")
+
+# Digital gift cards on /promo (bilingual, idempotent by code).
+load Rails.root.join("db/seeds/promos.rb")

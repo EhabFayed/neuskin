@@ -33,7 +33,8 @@ module SeoHelper
     "inquiries#new"            => { cms: %w[inquire seo],                key: "inquire" },
     "inquiries#create"         => { cms: %w[inquire seo],                key: "inquire" },
     "bridal#show"              => { cms: %w[bridal seo],                 key: "bridal" },
-    "bridal#checklist"         => { cms: %w[bridal seo],                 key: "bridal" }
+    "bridal#checklist"         => { cms: %w[bridal seo],                 key: "bridal" },
+    "promos#show"              => { cms: %w[promo seo],                  key: "promo" }
   }.freeze
 
   # Longest description Google shows in full; anything longer is cut on a word.

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<%# Digital Gift Card campaign layout — a standalone, phone-first page shared
+    by link (Instagram, WhatsApp, ads). No site header/footer/splash: the
+    envelope IS the page. Keeps the real tokens + fonts and the importmap so
+    the envelope Stimulus controller runs. %>
+<html lang="<%= I18n.locale %>" dir="<%= loc_dir %>" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title><%= seo_title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="<%= seo_description %>">
+    <%# Canonical + alternates name the gift actually shown (a dead code in the
+        URL falls back to the first live gift, and must not be canonicalised). %>
+    <% gift_url = ->(loc) {
+         opts = { locale: (loc == I18n.default_locale ? nil : loc) }
+         "#{seo_origin}#{@promo ? promo_code_path(code: @promo.code, **opts) : promo_path(**opts)}"
+       } %>
+    <link rel="canonical" href="<%= gift_url.(I18n.locale) %>">
+    <link rel="alternate" hreflang="en" href="<%= gift_url.(:en) %>">
+    <link rel="alternate" hreflang="ar" href="<%= gift_url.(:ar) %>">
+    <link rel="alternate" hreflang="x-default" href="<%= gift_url.(:en) %>">
+    <meta property="og:site_name" content="<%= t("seo.site_name") %>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= seo_title %>">
+    <meta property="og:description" content="<%= seo_description %>">
+    <meta property="og:url" content="<%= gift_url.(I18n.locale) %>">
+    <meta property="og:image" content="<%= seo_image %>">
+    <meta property="og:locale" content="<%= seo_og_locale %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#d6c4ad">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ4HN4KB');</script>
+    <!-- End Google Tag Manager -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%# Self-hosted site fonts only (the deck's Bodoni hairlines were too faint
+        on the card): Google Sans Flex for the card, Hanken Grotesk for the rest. %>
+    <% if ar? %>
+      <%= preload_link_tag asset_path("DroidKufi-Regular.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+    <% end %>
+    <%= preload_link_tag asset_path("GoogleSansFlex-Latin.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+    <%= preload_link_tag asset_path("promo/envelope-closed.webp"), as: "image" %>
+    <%= stylesheet_link_tag "tokens", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "promo", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="promo-body">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ4HN4KB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <%= yield %>
+  </body>
+</html>

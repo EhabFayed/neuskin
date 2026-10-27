@@ -30,6 +30,7 @@ module Admin
       @nav_faq_count   = Faq.count
       @nav_stories_count   = Story.count
       @nav_protocols_count = Protocol.count
+      @nav_promos_count    = Promo.count
     end
 
     # Guard for admin-only areas (e.g. user management). Editors are bounced.

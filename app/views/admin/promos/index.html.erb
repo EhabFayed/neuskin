@@ -1,0 +1,52 @@
+<% content_for :crumb, "Workspace" %>
+<% content_for :heading, "Promos" %>
+<% content_for :title, "Promos" %>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin:0 0 22px;gap:16px;flex-wrap:wrap">
+  <p style="color:var(--ns-muted);font-size:13.5px;margin:0">
+    The digital gift cards. <a href="<%= promo_path %>" target="_blank" rel="noopener" style="color:inherit">/promo</a> opens the first live gift;
+    each gift also has its own link (/promo/CODE) to share. A gift stops showing when it is switched off or its uses run out.
+  </p>
+  <%= link_to "Add promo", new_admin_promo_path, class: "ns-btn primary" %>
+</div>
+
+<% if @promos.any? %>
+  <div class="ns-thead">
+    <span class="r-title">Gift · headline on the card</span>
+    <span style="width:70px">Off</span>
+    <span style="width:110px">Code</span>
+    <span style="width:110px">Uses</span>
+    <span style="width:70px">Order</span>
+    <span style="width:90px">Status</span>
+    <span style="width:16px"></span>
+  </div>
+
+  <ul class="ns-list">
+    <% @promos.each do |promo| %>
+      <li>
+        <%= link_to edit_admin_promo_path(promo), class: "ns-row" do %>
+          <span class="r-title">
+            <%= promo.label_en %>
+            <span style="display:block;font-size:12px;color:var(--ns-muted);margin-top:2px"><%= truncate(promo.title_en, length: 70) %></span>
+          </span>
+          <span class="r-meta" style="width:70px"><%= promo.percent %>%</span>
+          <span class="r-meta" style="width:110px;letter-spacing:.12em"><%= promo.code %></span>
+          <span class="r-meta" style="width:110px"><%= promo.uses_count %> / <%= promo.unlimited? ? "∞" : promo.max_uses %></span>
+          <span class="r-meta" style="width:70px"><%= promo.position %></span>
+          <span style="width:90px">
+            <% if !promo.active? %>
+              <span class="ns-status draft">Off</span>
+            <% elsif promo.exhausted? %>
+              <span class="ns-status draft">Used up</span>
+            <% else %>
+              <span class="ns-status published">Live</span>
+            <% end %>
+          </span>
+          <svg class="r-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18l6-6-6-6"/></svg>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="ns-empty">No promos yet — add the first one and it appears on the dial.</div>
+<% end %>

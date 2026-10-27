@@ -1,0 +1,110 @@
+<%= form_with model: @promo, url: @promo.persisted? ? admin_promo_path(@promo) : admin_promos_path, local: true do |form| %>
+  <% if @promo.errors.any? %>
+    <div class="ns-flash" style="margin-bottom:16px">
+      <% @promo.errors.full_messages.each do |msg| %><p style="margin:2px 0"><%= msg %></p><% end %>
+    </div>
+  <% end %>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Gift name (treatment or gift, shown on the card next to the percentage)</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_field :label_en, class: "ns-input", placeholder: "Skin Boosters" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_field :label_ar, dir: "rtl", class: "ns-input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">The offer</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Percentage off</span><br>
+        <%= form.number_field :percent, min: 1, max: 100, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Promo code (what the client sends on WhatsApp)</span><br>
+        <%= form.text_field :code, class: "ns-input", placeholder: "GLOW30", style: "letter-spacing:.12em;text-transform:uppercase" %>
+      </label>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Text above the code — headline</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_field :title_en, class: "ns-input", placeholder: "A Gift of Care" %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_field :title_ar, dir: "rtl", class: "ns-input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Text above the code — second line (optional)</span>
+    <div class="ns-pair">
+      <div class="en">
+        <span class="lang-lbl">English</span>
+        <%= form.text_area :description_en, rows: 2, class: "ns-textarea", placeholder: "For someone special." %>
+      </div>
+      <div class="ar">
+        <span class="lang-lbl">العربية · Arabic</span>
+        <%= form.text_area :description_ar, rows: 2, dir: "rtl", class: "ns-textarea" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Uses</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Number of uses allowed (blank = unlimited)</span><br>
+        <%= form.number_field :max_uses, min: 1, class: "ns-input", style: "max-width:160px", placeholder: "∞" %>
+      </label>
+      <label style="display:block">
+        <span class="lang-lbl">Uses so far (set to 0 to reset)</span><br>
+        <%= form.number_field :uses_count, min: 0, class: "ns-input", style: "max-width:160px" %>
+      </label>
+    </div>
+    <p style="color:var(--ns-muted);font-size:12.5px;margin:10px 0 0">
+      One use is counted each time a client taps “Reserve my private glow” for this code. When the uses run out the gift stops showing.
+    </p>
+  </div>
+
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title">Placement</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <label style="display:block">
+        <span class="lang-lbl">Order (the first live gift is the one /promo opens)</span><br>
+        <%= form.number_field :position, class: "ns-input", style: "max-width:120px" %>
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;padding-bottom:8px">
+        <%= form.check_box :active %> Active (live)
+      </label>
+    </div>
+    <% if @promo.persisted? %>
+      <p style="color:var(--ns-muted);font-size:12.5px;margin:12px 0 0">
+        Direct link for this gift:
+        <a href="<%= promo_code_path(code: @promo.code) %>" target="_blank" rel="noopener" style="color:inherit"><%= promo_code_url(code: @promo.code) %></a>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="ns-savebar">
+    <%= link_to "Back to promos", admin_promos_path, class: "ns-btn ghost" %>
+    <a href="<%= @promo.persisted? ? promo_code_path(code: @promo.code) : promo_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+    <span class="spacer"></span>
+    <% if @promo.persisted? %>
+      <%= link_to "Delete promo", admin_promo_path(@promo), class: "ns-btn danger",
+                  data: { turbo_method: :delete, turbo_confirm: "Delete “#{@promo.code}”? It disappears from the dial immediately." } %>
+    <% end %>
+    <%= form.submit "Save", class: "ns-btn primary" %>
+  </div>
+<% end %>

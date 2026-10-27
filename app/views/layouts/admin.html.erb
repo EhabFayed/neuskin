@@ -89,6 +89,12 @@
             <span class="grow">Devices</span>
           <% end %>
 
+          <%= link_to admin_promos_path, class: "ns-navitem #{'active' if admin_nav == :promos}" do %>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.6 13.4L13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+            <span class="grow">Promos</span>
+            <% if defined?(@nav_promos_count) && @nav_promos_count %><span class="count"><%= @nav_promos_count %></span><% end %>
+          <% end %>
+
           <div class="ns-navitem soon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="9" r="1.5"/></svg>
             <span class="grow">Media</span><span class="soon-tag">Soon</span>

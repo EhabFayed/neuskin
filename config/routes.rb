@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     resources :protocols, except: [ :show ]
     resources :treatments, except: [ :show ]
     resources :devices, except: [ :show ]
+    # Digital gift cards / promo codes on /promo.
+    resources :promos, except: [ :show ]
     resource :settings, only: [ :show, :update ], controller: "settings"
     # Image uploads from the Studio rich-text editor (Quill) — returns a
     # permanent ActiveStorage proxy URL that is inserted into the article HTML.
@@ -94,6 +96,13 @@ Rails.application.routes.draw do
 
     # Private Care / VIP (§09) — gated, by invitation. Not in public nav.
     get "private-care", to: "pages#private_care", as: :private_care
+
+    # Digital Gift Card — the promo-code campaign page (Oct 2026). Shared by
+    # link, not in the nav; /promo/:code opens one specific gift. The claim
+    # beacon counts one use per WhatsApp tap.
+    get  "promo",             to: "promos#show",  as: :promo
+    get  "promo/:code",       to: "promos#show",  as: :promo_code
+    post "promo/:code/claim", to: "promos#claim", as: :promo_claim
 
     # Protocols Hub (§06) + protocol template pages (§07a–f).
     resources :protocols, only: %i[index show]

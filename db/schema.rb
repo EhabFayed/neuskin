@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_19_130000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_27_100000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -134,6 +134,25 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_19_130000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["created_at"], name: "index_inquiries_on_created_at"
+  end
+
+  create_table "promos", force: :cascade do |t|
+    t.string "label_en", null: false
+    t.string "label_ar"
+    t.integer "percent", null: false
+    t.string "code", null: false
+    t.string "title_en", null: false
+    t.string "title_ar"
+    t.text "description_en"
+    t.text "description_ar"
+    t.integer "max_uses"
+    t.integer "uses_count", default: 0, null: false
+    t.boolean "active", default: true, null: false
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active", "position"], name: "index_promos_on_active_and_position"
+    t.index ["code"], name: "index_promos_on_code", unique: true
   end
 
   create_table "protocols", force: :cascade do |t|
