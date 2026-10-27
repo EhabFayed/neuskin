@@ -23,10 +23,8 @@ RSpec.describe "Team members", type: :request do
       expect(response).to redirect_to("/ar")
     end
 
-    it "is not linked from the footer or listed in the sitemap" do
+    it "is not linked from the footer" do
       get "/"
-      expect(response.body).not_to include("/the-team")
-      get "/sitemap.xml"
       expect(response.body).not_to include("/the-team")
     end
   end

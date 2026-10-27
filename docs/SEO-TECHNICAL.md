@@ -2,8 +2,9 @@
 
 Sept 2026. Companion to the technical SEO audit of neuskin.me. The first
 section is for whoever administers the Cloudflare zone (no code involved);
-the rest documents what the Rails app now guarantees, so nobody re-adds a
-static robots.txt or a hand-made sitemap.
+the rest documents what the Rails app now guarantees. (Oct 2026 update: the
+sitemap and robots.txt are hand-maintained files again — see §2 — but still
+served by the app, not from `public/`, to keep the short cache.)
 
 ## 1. Cloudflare dashboard — to do (cannot be done from code)
 
@@ -74,14 +75,20 @@ dashboard-editable opening/closing lines for that document, the consent
 policy only on Privacy) and links to the other two.
 
 ### robots.txt and sitemap.xml
-Both are rendered by `SeoController` (routes at the top of
-`config/routes.rb`), not static files — `public/robots.txt` and
-`public/sitemap.xml` were removed. Do not re-add them: a file in `public/`
-would win over the route and bring back the one-year cache header.
-- `robots.txt`: same rules as before, `Cache-Control: max-age=3600, public`.
-- `sitemap.xml`: built from the live database — every static page, protocol,
-  treatment outcome, device and *published* journal post, in both languages,
-  each `<url>` with `xhtml:link` hreflang alternates. Same one-hour cache.
+Both are **hand-maintained files** in `config/seo/` (`robots.txt`,
+`sitemap.xml`), served verbatim by `SeoController` (routes at the top of
+`config/routes.rb`) with `Cache-Control: max-age=3600, public`. The sitemap
+is the Screaming Frog export supplied by the client (Oct 2026); the app no
+longer builds it from the database.
+
+- **To update either file:** replace it under `config/seo/`, deploy, then
+  purge the two URLs in Cloudflare (or wait up to an hour).
+- New journal posts, treatments, devices and protocols are **not** added to
+  the sitemap automatically any more — add the URL to `config/seo/sitemap.xml`
+  (or re-export the crawl) when content changes.
+- Do **not** put `robots.txt` / `sitemap.xml` in `public/`: a file there wins
+  over the route and brings back the one-year cache header that caused the
+  "Cloudflare is changing our robots.txt" problem.
 
 ## 3. Deploying this change
 1. `bin/rails db:migrate` — adds `meta_title_*` / `meta_description_*` to

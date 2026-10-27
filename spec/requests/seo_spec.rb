@@ -22,45 +22,39 @@ RSpec.describe "Technical SEO", type: :request do
     /inquire /bridal-concierge
   ].freeze
 
+  # robots.txt and sitemap.xml are hand-maintained files under config/seo/
+  # (Oct 2026): the app serves them verbatim, with the short cache that keeps
+  # Cloudflare from pinning an old copy.
   describe "robots.txt" do
-    it "is rendered by the app as text with a one-hour public cache" do
+    it "serves config/seo/robots.txt verbatim as text with a one-hour public cache" do
       get "/robots.txt"
       expect(response).to have_http_status(:ok)
       expect(response.media_type).to eq("text/plain")
-      expect(response.body).to include("Disallow: /admin/").and include("Disallow: /cdn-cgi/")
-      expect(response.body).to include("Sitemap: http://www.example.com/sitemap.xml")
+      expect(response.body).to eq(Rails.root.join("config/seo/robots.txt").read)
+      expect(response.body).to include("Sitemap: https://neuskin.me/sitemap.xml")
       expect(response.headers["Cache-Control"]).to include("max-age=3600").and include("public")
     end
   end
 
   describe "sitemap.xml" do
-    it "lists every page in both languages with hreflang alternates" do
-      Protocol.create!(slug: "bare", name_en: "Bare", name_ar: "الأدنى")
-      Treatment.create!(slug: "bare-skin", title_en: "Skin", headline_en: "Bare skin")
-      Device.create!(name: "EMFACE")
+    it "serves config/seo/sitemap.xml verbatim as XML with a one-hour public cache" do
+      make_blog # database content no longer changes the sitemap
       get "/sitemap.xml"
       expect(response).to have_http_status(:ok)
       expect(response.media_type).to eq("application/xml")
-      expect(response.headers["Cache-Control"]).to include("max-age=3600")
-      expect(response.body).to include("<loc>http://www.example.com/the-clinic</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/ar/the-clinic</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/protocols/bare</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/ar/treatments/bare-skin</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/ar/technologies/emface</loc>")
-      expect(response.body).to include('hreflang="ar" href="http://www.example.com/ar/the-clinic"')
-      expect(response.body).to include('hreflang="x-default" href="http://www.example.com/the-clinic"')
-      expect(response.body).not_to include("/en/")
+      expect(response.headers["Cache-Control"]).to include("max-age=3600").and include("public")
+      expect(response.body).to eq(Rails.root.join("config/seo/sitemap.xml").read)
+      expect(response.body).to include("<loc>https://neuskin.me/</loc>")
+      expect(response.body).not_to include("a-quiet-room")
     end
 
-    it "uses each language's own slug for journal articles and skips drafts" do
-      blog = make_blog
-      make_blog(title_en: "Draft", title_ar: "مسودة", slug_en: "draft-note", slug_ar: "مسودة", is_published: false)
-      get "/sitemap.xml"
-      expect(response.body).to include("<loc>http://www.example.com/journal/a-quiet-room</loc>")
-      expect(response.body).to include("<loc>http://www.example.com/ar/journal/#{encoded(blog.slug_ar)}</loc>")
-      expect(response.body).not_to include("/ar/journal/a-quiet-room")
-      expect(response.body).not_to include("http://www.example.com/journal/#{encoded(blog.slug_ar)}")
-      expect(response.body).not_to include("draft-note")
+    it "is well-formed XML whose URLs all live on neuskin.me, with no /en/ duplicates" do
+      doc = Nokogiri::XML(Rails.root.join("config/seo/sitemap.xml").read) { |c| c.strict }
+      locs = doc.css("url loc").map(&:text)
+      expect(locs).not_to be_empty
+      expect(locs).to all(start_with("https://neuskin.me/"))
+      expect(locs.grep(%r{/en/})).to be_empty
+      expect(locs.uniq.size).to eq(locs.size)
     end
   end
 

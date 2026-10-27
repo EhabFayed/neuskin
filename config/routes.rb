@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   # Health check for load balancers / uptime monitors.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # robots.txt + sitemap.xml are rendered by SeoController (short cache, live
-  # DB, hreflang alternates) — not static files in public/. Outside the locale
-  # scope: there is one of each for the whole site.
+  # robots.txt + sitemap.xml are the hand-maintained files in config/seo/,
+  # served verbatim by SeoController with a one-hour cache — not static files
+  # in public/ (one-year cache). Outside the locale scope: one of each.
   get "robots.txt",  to: "seo#robots",  defaults: { format: :text }
   get "sitemap.xml", to: "seo#sitemap", defaults: { format: :xml }
 
@@ -72,8 +72,8 @@ Rails.application.routes.draw do
 
     # The Medical Team (§04) — the credibility layer. HIDDEN (Oct 2026, client
     # request): view, TeamMember records and dashboard kept; restore by
-    # uncommenting this, the footer link, the SeoController sitemap entry and
-    # the SitePages entry.
+    # uncommenting this, the footer link and the SitePages entry
+    # (config/seo/sitemap.xml already lists /the-team).
     # get "the-team", to: "pages#the_team", as: :the_team
 
     # The NeuSkin Method™ — the philosophy page (§05), not the protocol page.

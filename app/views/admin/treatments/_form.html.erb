@@ -52,7 +52,7 @@
         <%= form.check_box :hidden %> Hidden from site
       </label>
     </div>
-    <p class="hint" style="margin-top:10px">Hidden treatments disappear from the header menu, the /treatments cards and the sitemap; their page sends visitors home. Nothing is deleted — untick to bring it back.</p>
+    <p class="hint" style="margin-top:10px">Hidden treatments disappear from the header menu and the /treatments cards; their page sends visitors home. Nothing is deleted — untick to bring it back. (The sitemap is a hand-maintained file — config/seo/sitemap.xml — so remove or add the URL there separately.)</p>
   </div>
 
   <%= render "admin/shared/search_meta_fields", form: form %>

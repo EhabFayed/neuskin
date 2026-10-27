@@ -68,11 +68,5 @@ RSpec.describe "Treatment outcome pages", type: :request do
       expect(response).to have_http_status(:moved_permanently)
       expect(response).to redirect_to("/")
     end
-
-    it "is left out of the sitemap" do
-      get "/sitemap.xml"
-      expect(response.body).to include("<loc>http://www.example.com/treatments/skin</loc>")
-      expect(response.body).not_to include("/treatments/hair")
-    end
   end
 end
