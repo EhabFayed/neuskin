@@ -10,7 +10,7 @@ module Admin
     end
 
     def new
-      @device = Device.new(position: Device.count + 1)
+      @device = Device.new(position: Device.count + 1).ensure_blocks!
     end
 
     def create
@@ -18,11 +18,15 @@ module Admin
       if @device.save
         redirect_to admin_devices_path, notice: "Device created."
       else
+        @device.ensure_blocks!
         render :new, status: :unprocessable_entity
       end
     end
 
-    def edit; end
+    # Page-section rows are created on demand so every registry field shows.
+    def edit
+      @device.ensure_blocks!
+    end
 
     def update
       if @device.update(device_params)
@@ -31,6 +35,7 @@ module Admin
         end
         redirect_to admin_devices_path, notice: "Device saved."
       else
+        @device.ensure_blocks!
         render :edit, status: :unprocessable_entity
       end
     end
@@ -50,7 +55,8 @@ module Admin
       params.require(:device).permit(
         :name, :slug, :position, :front_image, :back_image,
         :tagline_en, :tagline_ar, :body_en, :body_ar, :specs_en, :specs_ar,
-        :meta_title_en, :meta_title_ar, :meta_description_en, :meta_description_ar
+        :meta_title_en, :meta_title_ar, :meta_description_en, :meta_description_ar,
+        contents_attributes: [ :id, :key, :value_ar, :value_en ]
       )
     end
   end

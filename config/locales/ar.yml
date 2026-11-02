@@ -543,6 +543,16 @@ ar:
     view_protocol: "اطّلعي على البروتوكول ←"
     neuskin_view: "رؤية نيوسكن"
     private_inquiry: "ابدئي باستفسار خاص"
+  # Detail pages (treatments/<slug>, technologies/<slug>) — client PDFs, Nov 2026.
+  # Site-wide labels; the CMS "global" page (detail_cta / detail_faq) overrides them.
+  detail_page:
+    book: "احجزي استشارتكِ"
+    cta_title: "هل هذا الخيار المناسب لكِ؟"
+    cta_body: "كل خطة تبدأ بتقييم طبي متخصص. احجزي استشارتكِ أو ابدئي بمحادثة خاصة وسنوضح لكِ بصدق ما يناسب بشرتكِ."
+    cta_button: "احجزي استشارتكِ الآن"
+    cta_inquire: "استفسري بخصوصية"
+    faq_title: "الأسئلة الشائعة"
+    faq_subtitle: "كل ما تحتاجين معرفته قبل الحجز"
   technology_page:
     eyebrow: "تقنياتنا"
     learn_more: "اعرفي أكثر ←"

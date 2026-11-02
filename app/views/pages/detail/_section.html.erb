@@ -1,0 +1,39 @@
+<%# One question section: h2 (+ optional line under it), optional intro,
+    items as points / numbered steps / cards, optional closing paragraph.
+    Locals: title, items; optional subtitle, intro, outro, style (:points |
+    :steps | :cards), tone ("surface" | "light"). Skipped when title is blank. %>
+<% if title.present? %>
+<% style = local_assigns.fetch(:style, :points); tone = local_assigns.fetch(:tone, "surface") %>
+<% subtitle = local_assigns[:subtitle]; intro = local_assigns[:intro]; outro = local_assigns[:outro] %>
+<section class="section section--<%= tone %> dp-section" data-controller="reveal">
+  <div class="section-inner">
+    <div class="dp-sec-head reveal" data-reveal-target="item">
+      <h2><%= title %></h2>
+      <% if subtitle.present? %><p class="dp-sub"><%= subtitle %></p><% end %>
+      <% if intro.present? %><p class="dp-intro"><%= intro %></p><% end %>
+    </div>
+    <% if items.any? %>
+      <% if style == :steps %>
+        <ol class="clinic-points dp-steps reveal d1" data-reveal-target="item">
+          <% items.each do |it| %>
+            <li><% if it[:title] %><b><%= it[:title] %></b> <% end %><%= it[:body] %></li>
+          <% end %>
+        </ol>
+      <% elsif style == :cards %>
+        <div class="dp-cards reveal d1" data-reveal-target="item">
+          <% items.each do |it| %>
+            <div class="dp-card"><% if it[:title] %><h3><%= it[:title] %></h3><% end %><p><%= it[:body] %></p></div>
+          <% end %>
+        </div>
+      <% else %>
+        <ul class="dp-list reveal d1" data-reveal-target="item">
+          <% items.each do |it| %>
+            <li><% if it[:title] %><b><%= it[:title] %></b> <% end %><%= it[:body] %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+    <% if outro.present? %><p class="dp-outro reveal d2" data-reveal-target="item"><%= outro %></p><% end %>
+  </div>
+</section>
+<% end %>

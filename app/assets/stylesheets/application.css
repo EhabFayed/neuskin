@@ -1892,3 +1892,42 @@ h2.eyebrow { font-family: var(--sans); font-weight: 500; -webkit-text-stroke: 0;
 .footer-line a:hover { color: var(--text-soft); }
 /* Reviews band from patient stories: two small lines under a quote (protocol + byline). */
 .home-stories .by + .by { margin-block-start: 6px; }
+
+/* ============ detail pages (treatments/<slug>, technologies/<slug>) — client PDFs Nov 2026 ============ */
+.dp-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 72vh; background: var(--card-2); }
+.dp-hero-media { position: relative; overflow: hidden; min-height: 320px; }
+.dp-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.dp-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(100px, 13vh, 140px) clamp(28px, 5vw, 84px) clamp(50px, 6vh, 80px); }
+.dp-hero-copy .eyebrow { margin-block-end: 26px; }
+.dp-hero-copy h1 { font-weight: 300; font-size: clamp(1.9rem, 3.4vw, 3.3rem); line-height: 1.12; letter-spacing: -.01em; color: var(--text-bright); margin: 0; }
+.dp-lead { margin: 24px 0 0; font-weight: 400; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.8; color: var(--text-muted); max-width: 54ch; }
+.dp-hero-cta { margin: 34px 0 0; }
+.dp-sec-head { max-width: 62ch; margin-block-end: clamp(28px, 4vw, 44px); }
+.dp-sec-head h2, .dp-h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.16; letter-spacing: -.01em; color: var(--text-bright); margin: 0; }
+.section--light .dp-sec-head h2 { color: var(--text); }
+.dp-sub { margin: 14px 0 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--accent-soft); }
+.section--light .dp-sub { color: #8a6e72; }
+.dp-intro, .dp-outro { color: var(--text-muted); line-height: 1.85; margin: 18px 0 0; max-width: 70ch; }
+.dp-outro { margin-block-start: clamp(24px, 3vw, 36px); }
+.dp-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 48px; }
+.dp-list li { position: relative; padding-inline-start: 24px; color: var(--text-muted); line-height: 1.8; }
+.dp-list li::before { content: ""; position: absolute; inset-inline-start: 0; top: .72em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.dp-list b, .dp-steps b { color: var(--text-bright); font-weight: 500; }
+.section--light .dp-list li, .section--light .dp-steps li, .section--light .dp-intro, .section--light .dp-outro { color: #4a3f41; }
+.section--light .dp-list b, .section--light .dp-steps b { color: var(--text); }
+.dp-steps { max-width: 72ch; }
+.dp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.dp-card { border: 1px solid var(--line); background: var(--card); padding: clamp(22px, 2.6vw, 32px); }
+.dp-card h3 { font-size: 1.15rem; color: var(--text-bright); margin: 0 0 10px; }
+.dp-card p { margin: 0; color: var(--text-muted); line-height: 1.8; }
+.section--light .dp-card { background: rgba(255,255,255,.55); border-color: rgba(0,0,0,.08); }
+.section--light .dp-card h3 { color: var(--text); }
+.section--light .dp-card p { color: #4a3f41; }
+.dp-faq .faq summary > span:first-child { flex: 1; }
+.dp-cta .btn + .btn { margin-inline-start: 14px; }
+@media (max-width: 880px) {
+  .dp-hero { grid-template-columns: 1fr; min-height: auto; }
+  .dp-hero-media { height: 52vh; min-height: 0; }
+  .dp-hero-copy { padding-top: 48px; }
+  .dp-cta .btn + .btn { margin: 12px 0 0; }
+}

@@ -1,0 +1,41 @@
+<%# Page-section fields for a detail page (Treatment / Device): one card per
+    group from the model's DETAIL_GROUPS registry, English / Arabic side by
+    side. Rows come from record.ensure_blocks! (built in memory for a new
+    record, persisted otherwise). Locals: form, record. %>
+<% rows = record.contents.index_by(&:key) %>
+<h2 class="ns-section-title" style="margin-top:28px">Page sections</h2>
+<p class="hint" style="margin:0 0 14px">Everything below is the sub-page as the visitor reads it, top to bottom. A section with an empty heading is skipped on the page. Lists take one point per line; write “Title: text” to show a bold lead. The page uses these sections only once a heading is filled in for that language — until then it keeps the card copy.</p>
+<% record.class::DETAIL_GROUPS.each do |group| %>
+  <div class="ns-card" style="margin-bottom:14px">
+    <span class="ns-field-title" style="font-size:15px"><%= group[:label] %></span>
+    <% group[:fields].each do |key, kind, label, hint| %>
+      <% content = rows[key] or next %>
+      <%= form.fields_for :contents, content do |cf| %>
+        <div style="margin-top:14px">
+          <%= cf.hidden_field :id if content.persisted? %>
+          <%= cf.hidden_field :key %>
+          <span class="lang-lbl" style="display:block;margin-bottom:6px;color:var(--ns-muted)"><%= label %></span>
+          <% if hint.present? %><p class="hint" style="margin:-2px 0 6px"><%= hint %></p><% end %>
+          <div class="ns-pair">
+            <div class="en">
+              <span class="lang-lbl">English</span>
+              <% if kind == :text %>
+                <%= cf.text_field :value_en, class: "ns-input" %>
+              <% else %>
+                <%= cf.text_area :value_en, rows: (kind == :lines ? 6 : 3), class: "ns-textarea" %>
+              <% end %>
+            </div>
+            <div class="ar">
+              <span class="lang-lbl">العربية · Arabic</span>
+              <% if kind == :text %>
+                <%= cf.text_field :value_ar, dir: "rtl", class: "ns-input" %>
+              <% else %>
+                <%= cf.text_area :value_ar, dir: "rtl", rows: (kind == :lines ? 6 : 3), class: "ns-textarea" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

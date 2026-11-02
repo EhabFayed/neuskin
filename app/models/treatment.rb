@@ -2,7 +2,23 @@
 # card on /treatments and one sub-page at /treatments/<slug>. Fully managed
 # in the dashboard (Admin::TreatmentsController), mirroring Protocol.
 class Treatment < ApplicationRecord
+  include DetailBlocks
+
   has_one_attached :image
+
+  # Sub-page sections (client PDF, Nov 2026): hero, four question sections
+  # (causes → how NeuSkin chooses → the options → after treatment) and a FAQ.
+  detail_groups [
+    { key: "hero", label: "Page hero (sub-page only)", fields: [
+      [ "hero_title", :text, "Page title (h1)", "Shown on the sub-page only — the card on /treatments keeps its own headline. Blank = card headline." ],
+      [ "hero_intro", :textarea, "Intro paragraph", "Blank = the card description." ],
+      [ "hero_cta", :text, "Button label", "Opens the online booking page. Blank = “Book your consultation”." ] ] },
+    { key: "s1", label: "Section 1 — the causes", fields: list_section_fields("s1", "Section 1") },
+    { key: "s2", label: "Section 2 — how NeuSkin chooses the treatment", fields: list_section_fields("s2", "Section 2", numbered: true) },
+    { key: "s3", label: "Section 3 — the treatment options", fields: list_section_fields("s3", "Section 3") },
+    { key: "s4", label: "Section 4 — keeping the results", fields: list_section_fields("s4", "Section 4") },
+    { key: "faq", label: "FAQ (up to six)", fields: faq_fields }
+  ]
 
   validates :slug, presence: true, uniqueness: true
   validates :title_en, :headline_en, presence: true

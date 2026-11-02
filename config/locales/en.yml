@@ -543,6 +543,16 @@ en:
     view_protocol: "View the protocol →"
     neuskin_view: "The NeuSkin view"
     private_inquiry: "Begin with a private inquiry"
+  # Detail pages (treatments/<slug>, technologies/<slug>) — client PDFs, Nov 2026.
+  # Site-wide labels; the CMS "global" page (detail_cta / detail_faq) overrides them.
+  detail_page:
+    book: "Book your consultation"
+    cta_title: "Is this the right option for you?"
+    cta_body: "Every plan begins with a specialist medical assessment. Book a consultation or start a private conversation and we will tell you honestly what suits your skin."
+    cta_button: "Book your consultation now"
+    cta_inquire: "Inquire privately"
+    faq_title: "Frequently asked questions"
+    faq_subtitle: "Everything you need to know before booking"
   technology_page:
     eyebrow: "Our Technologies"
     learn_more: "Learn more →"

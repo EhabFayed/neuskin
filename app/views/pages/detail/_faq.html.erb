@@ -1,0 +1,20 @@
+<%# FAQ block: h2 + h3 (site-wide labels, CMS "global → detail_faq", i18n
+    fallback) + accordion. Locals: faqs ([{q:, a:}]). Skipped when empty. %>
+<% if faqs.present? %>
+<section class="section section--surface dp-faq" data-controller="reveal">
+  <div class="section-inner">
+    <div class="dp-sec-head reveal" data-reveal-target="item">
+      <h2><%= sec_text("global", "detail_faq", "title").presence || t("detail_page.faq_title") %></h2>
+      <h3 class="dp-sub"><%= sec_text("global", "detail_faq", "subtitle").presence || t("detail_page.faq_subtitle") %></h3>
+    </div>
+    <div class="reveal d1" data-reveal-target="item">
+      <% faqs.each do |f| %>
+        <details class="faq">
+          <summary><span><%= f[:q] %></span><span class="sign" aria-hidden="true">+</span></summary>
+          <div class="faq-a"><%= f[:a] %></div>
+        </details>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>

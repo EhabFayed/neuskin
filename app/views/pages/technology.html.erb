@@ -3,9 +3,45 @@
 <%# Search snippet: the record's own meta fields (Admin → Devices → Search
     preview), else built from the name + tagline / card copy. %>
 <% content_for :title, @device.meta_title.presence || t("technology_page.meta_title", name: @device.name, tagline: @device.tagline) %>
-<% content_for :meta_description, @device.meta_description.presence || @device.body.to_s %>
+<% content_for :meta_description, @device.meta_description.presence || @device.block("hero_intro").presence || @device.body.to_s %>
 <% hero_url = @device.back_image.attached? ? opt_url(@device.back_image, width: 1800) : image_path("site/space/device-room.webp") %>
 
+<% if @device.detail_blocks? %>
+<%# ================= Client content PDF (Nov 2026) — dashboard-editable
+    sections (Admin → Devices → Page sections). Same photos as before: the
+    in-clinic shot beside the hero copy, the product shot beside "what it is". %>
+<%= render "pages/detail/hero",
+      image: tag.img(src: hero_url, alt: @device.name, fetchpriority: "high", decoding: "async"),
+      eyebrow: @device.block("hero_eyebrow").presence || "#{t('technology_page.eyebrow')} · #{@device.tagline}",
+      title: @device.block("hero_title").presence || @device.name,
+      intro: @device.block("hero_intro").presence || @device.body,
+      cta_label: @device.block("hero_cta") %>
+<% if @device.block("what_title").present? %>
+<section class="section section--surface dp-section" data-controller="reveal">
+  <div class="section-inner split media-left device-split">
+    <div class="device-shot reveal" data-reveal-target="item">
+      <% if @device.front_image.attached? %>
+        <%= image_tag opt_url(@device.front_image, width: 1000), alt: @device.name, loading: "lazy", decoding: "async" %>
+      <% else %>
+        <%= ns_image_tag :device_table, alt: @device.name, loading: "lazy" %>
+      <% end %>
+    </div>
+    <div class="split-text reveal d1" data-reveal-target="item">
+      <h2 class="dp-h2"><%= @device.block("what_title") %></h2>
+      <div class="body-copy"><% @device.block("what_body").split(/\r?\n+/).map(&:strip).reject(&:blank?).each do |para| %><p><%= para %></p><% end %></div>
+    </div>
+  </div>
+</section>
+<% end %>
+<%= render "pages/detail/section", title: @device.block("how_title"), intro: @device.block("how_intro"), items: @device.block_items("how_items"), outro: @device.block("how_outro"), style: :cards, tone: "light" %>
+<%= render "pages/detail/section", title: @device.block("benefits_title"), subtitle: @device.block("benefits_subtitle"), intro: @device.block("benefits_intro"), items: @device.block_items("benefits_items"), outro: @device.block("benefits_outro"), style: :points, tone: "surface" %>
+<%= render "pages/detail/section", title: @device.block("steps_title"), intro: @device.block("steps_intro"), items: @device.block_items("steps_items"), outro: @device.block("steps_outro"), style: :steps, tone: "light" %>
+<%= render "pages/detail/cta" %>
+<%= render "pages/detail/section", title: @device.block("who_title"), intro: @device.block("who_intro"), items: @device.block_items("who_items"), outro: @device.block("who_outro"), style: :points, tone: "surface" %>
+<%= render "pages/detail/section", title: @device.block("why_title"), intro: @device.block("why_intro"), items: @device.block_items("why_items"), outro: @device.block("why_outro"), style: :points, tone: "light" %>
+<%= render "pages/detail/faq", faqs: @device.detail_faqs %>
+<%= render "pages/detail/cta" %>
+<% else %>
 <%# 1 · Overlay hero on the in-clinic photo %>
 <section class="over-hero over-hero--device" data-controller="reveal parallax">
   <div class="over-hero-media" data-parallax data-parallax-speed="0.08">
@@ -51,6 +87,8 @@
   <p class="reveal d1" data-reveal-target="item"><%= t("technology_page.cta_body") %></p>
   <p class="reveal d2" data-reveal-target="item"><%= link_to t("technology_page.cta_button"), inquire_path(codeword: "TECH"), class: "btn" %></p>
 </section>
+
+<% end %>
 
 <%# 4 · Other devices %>
 <% if @other_devices.any? %>

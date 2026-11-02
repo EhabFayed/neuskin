@@ -1,0 +1,13 @@
+<%# Detail-page hero (client PDFs, Nov 2026): photo on one side, copy on the
+    other, booking button. Locals: image (html), eyebrow, title, intro, cta_label. %>
+<section class="dp-hero" data-controller="reveal">
+  <div class="dp-hero-media reveal" data-reveal-target="item"><%= image %></div>
+  <div class="dp-hero-copy">
+    <% if eyebrow.present? %><span class="eyebrow reveal" data-reveal-target="item"><%= eyebrow %></span><% end %>
+    <h1 data-reveal="up"><%= title %></h1>
+    <% if intro.present? %><p class="dp-lead" data-reveal="up" data-reveal-delay="120"><%= intro %></p><% end %>
+    <p class="dp-hero-cta" data-reveal="up" data-reveal-delay="220">
+      <a class="btn" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= cta_label.presence || t("detail_page.book") %></a>
+    </p>
+  </div>
+</section>

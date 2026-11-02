@@ -1,0 +1,11 @@
+<%# Call-to-action band between sections. Copy is site-wide (CMS "global →
+    detail_cta", i18n fallback); the button opens the online booking page. %>
+<section class="cta-center cta-center--tight orn-host dp-cta" data-controller="reveal">
+  <%= render "shared/orn", variant: "rings", pos: "halo", size: 380 %>
+  <h2 class="reveal" data-reveal-target="item"><%= sec_text("global", "detail_cta", "title").presence || t("detail_page.cta_title") %></h2>
+  <p class="reveal d1" data-reveal-target="item"><%= sec_text("global", "detail_cta", "body").presence || t("detail_page.cta_body") %></p>
+  <p class="reveal d2" data-reveal-target="item">
+    <a class="btn" href="<%= Clinic::BOOKING_URL %>" target="_blank" rel="noopener"><%= sec_text("global", "detail_cta", "button").presence || t("detail_page.cta_button") %></a>
+    <%= link_to t("detail_page.cta_inquire"), inquire_path, class: "btn btn--ghost" %>
+  </p>
+</section>

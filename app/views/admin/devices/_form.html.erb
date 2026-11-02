@@ -53,12 +53,14 @@
     </div>
   </div>
 
+  <%= render "admin/shared/detail_blocks", form: form, record: @device %>
+
   <%= render "admin/shared/search_meta_fields", form: form %>
 
   <div class="ns-savebar">
     <%= link_to "Back to devices", admin_devices_path, class: "ns-btn ghost" %>
     <% if @device.persisted? %>
-      <a href="<%= technologies_path %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
+      <a href="<%= technology_path(@device) %>" target="_blank" rel="noopener" class="ns-btn ghost">View page</a>
     <% end %>
     <span class="spacer"></span>
     <% if @device.persisted? %>

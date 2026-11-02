@@ -4810,5 +4810,78 @@
         "position": 3
       }
     ]
+  },
+  {
+    "page": "global",
+    "kind": "detail_cta",
+    "label": "Treatment & device pages — CTA band",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "title",
+        "label": "Heading",
+        "hint": "Shown in the call-to-action bands on every treatment and technology page.",
+        "value_ar": "هل هذا الخيار المناسب لكِ؟",
+        "value_en": "Is this the right option for you?",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "body",
+        "label": "Text",
+        "hint": null,
+        "value_ar": "كل خطة تبدأ بتقييم طبي متخصص. احجزي استشارتكِ أو ابدئي بمحادثة خاصة وسنوضح لكِ بصدق ما يناسب بشرتكِ.",
+        "value_en": "Every plan begins with a specialist medical assessment. Book a consultation or start a private conversation and we will tell you honestly what suits your skin.",
+        "content_type": "text",
+        "position": 1
+      },
+      {
+        "key": "button",
+        "label": "Booking button label",
+        "hint": "Opens the online booking page.",
+        "value_ar": "احجزي استشارتكِ الآن",
+        "value_en": "Book your consultation now",
+        "content_type": "text",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "page": "global",
+    "kind": "detail_faq",
+    "label": "Treatment & device pages — FAQ labels",
+    "position": 0,
+    "settings": {},
+    "items": [],
+    "image": null,
+    "gallery": [],
+    "photos": [],
+    "cards": {},
+    "contents": [
+      {
+        "key": "title",
+        "label": "FAQ heading (h2)",
+        "hint": null,
+        "value_ar": "الأسئلة الشائعة",
+        "value_en": "Frequently asked questions",
+        "content_type": "text",
+        "position": 0
+      },
+      {
+        "key": "subtitle",
+        "label": "Line under the heading (h3)",
+        "hint": null,
+        "value_ar": "كل ما تحتاجين معرفته قبل الحجز",
+        "value_en": "Everything you need to know before booking",
+        "content_type": "text",
+        "position": 1
+      }
+    ]
   }
 ]

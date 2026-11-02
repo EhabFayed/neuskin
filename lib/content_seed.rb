@@ -10,6 +10,10 @@
 # alone so server-side admin edits and re-runs are safe.
 module ContentSeed
   DEFAULT_DIR = "db/content_seed"
+  # Detail-page sections (Treatment / Device DetailBlocks) travel in a second
+  # file: { "treatments" => { slug => { key => { "ar" =>, "en" => } } }, "devices" => … }.
+  DETAIL_FILE = "detail_pages.json"
+  DETAIL_MODELS = { "treatments" => "Treatment", "devices" => "Device" }.freeze
 
   module_function
 
@@ -73,8 +77,23 @@ module ContentSeed
     end
 
     File.write(dir.join("content.json"), JSON.pretty_generate(dump))
+    export_detail_pages(dir)
     { sections: dump.size, contents: dump.sum { |s| s[:contents].size },
       files: Dir[files_dir.join("*")].size }
+  end
+
+  def export_detail_pages(dir = Rails.root.join(DEFAULT_DIR))
+    data = DETAIL_MODELS.to_h do |plural, model|
+      klass = model.constantize
+      rows = klass.unscoped.order(:slug).includes(:contents).filter_map do |rec|
+        keys = klass.detail_field_keys
+        vals = rec.contents.select { |c| keys.include?(c.key) && (c.value_ar.present? || c.value_en.present?) }
+        next if vals.empty?
+        [ rec.slug, vals.sort_by { |c| keys.index(c.key) }.to_h { |c| [ c.key, { "ar" => c.value_ar, "en" => c.value_en } ] } ]
+      end
+      [ plural, rows.to_h ]
+    end
+    File.write(dir.join(DETAIL_FILE), JSON.pretty_generate(data))
   end
 
   def import(dir = Rails.root.join(DEFAULT_DIR))
@@ -125,6 +144,31 @@ module ContentSeed
       end
     end
 
+    import_detail_pages(dir)
     { sections: Section.count, contents: Content.count }
+  end
+
+  # Upserts detail-page rows by (model, slug, key). Only the languages present
+  # in the file are written, so a seed carrying Arabic alone leaves English as
+  # the editor last saved it. Records missing from the DB are skipped.
+  def import_detail_pages(dir = Rails.root.join(DEFAULT_DIR))
+    file = dir.join(DETAIL_FILE)
+    return unless File.exist?(file)
+
+    JSON.parse(File.read(file)).each do |plural, by_slug|
+      klass = DETAIL_MODELS[plural]&.constantize or next
+      keys = klass.detail_field_keys
+      by_slug.each do |slug, fields|
+        rec = klass.unscoped.find_by(slug: slug) or next
+        rec.ensure_blocks!
+        fields.each do |key, vals|
+          next unless keys.include?(key)
+          row = rec.contents.detect { |c| c.key == key }
+          row.value_ar = vals["ar"] if vals.key?("ar") && !vals["ar"].nil?
+          row.value_en = vals["en"] if vals.key?("en") && !vals["en"].nil?
+          row.save! if row.changed?
+        end
+      end
+    end
   end
 end
